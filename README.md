@@ -54,6 +54,7 @@ They provide a way to pair a PlaceOS instance with a release maturity suited to 
 ### `nightly`
 Collects the state of all services based on their primary branch and builds against upstream dependencies every 24 hours.
 Releases on this channel are automated and should not be considered stable.
+These are ephemeral and _do not_ have a corresponding platform version.
 
 Intended primarily for development environments.
 
