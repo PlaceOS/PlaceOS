@@ -6,7 +6,6 @@ on:
     inputs:
       version:
         description: 'Platform Version'
-        default: ${{ github.ref }}
         required: true
 
 jobs:
