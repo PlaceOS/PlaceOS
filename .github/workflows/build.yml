@@ -30,7 +30,7 @@ jobs:
     needs: platform-info
     strategy:
       matrix:
-        service: ${{ fromJson(needs.platform-info.output.services) }}
+        service: ${{ fromJson(needs.platform-info.outputs.services) }}
     runs-on: ubuntu-latest
     steps:
     - id: checkout-release
