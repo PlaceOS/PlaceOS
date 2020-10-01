@@ -24,7 +24,7 @@ jobs:
           git submodule status -- services |
             jq -Rnc '. |= [ inputs[1:] | split(" ") |
               {
-                name: .[1]|ltrim("services/"),
+                name: .[1]|ltrimstr("services/"),
                 sha:  .[0],
                 path: .[1]
               }
