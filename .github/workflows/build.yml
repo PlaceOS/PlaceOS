@@ -14,23 +14,23 @@ jobs:
     outputs:
       services: ${{ steps.introspect.outputs.services }}
     steps:
-    - id: checkout
+    - name: checkout-release
       uses: actions/checkout@v2
-    - id: introspect-services
+    - name: introspect
+      id:   introspect
       run: |
         echo ::set-output name=services::$(
           git submodule status -- services |
             jq \
-              --raw-input \
-              --null-input \
+              --raw-input      \
+              --null-input     \
               --compact-output \
               '. |=
               [
-                inputs | ltrimstr(" ") | split(" ") |
+                inputs | .[1:-1] | split(" ") |
                 {
-                  sha:      .[0],
-                  path:     .[1],
-                  describe: .[2][1:-1]
+                  sha:  .[0],
+                  path: .[1]
                 }
               ]'
         )
@@ -42,9 +42,9 @@ jobs:
         service: ${{ fromJson(needs.platform-info.outputs.services) }}
     runs-on: ubuntu-latest
     steps:
-    - id: checkout-release
+    - name: checkout-release
       uses: actions/checkout@v2
-    - id: checkout-service
-      run: git submodule init -- ${{ matrix.service.path }}
-    - id: debug
-      run: echo "::debug::${{ matrix.service.sha }}"
+    - name: checkout-service
+      run:  git submodule init -- ${{ matrix.service.path }}
+    - name: debug
+      run:  echo "::debug::${{ matrix.service.sha }}"
