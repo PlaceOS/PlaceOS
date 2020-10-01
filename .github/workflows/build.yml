@@ -16,15 +16,24 @@ jobs:
     steps:
     - id: checkout
       uses: actions/checkout@v2
-    - id: introspect
+    - id: introspect-services
       run: |
-        git submodule status -- services |
-          jq \
-            --raw-input \
-            --null-input \
-            --compact-output \
-            '. |= [inputs | split(" ") | {sha: .[1], path: .[2], describe: .[3][1:-1]}]' |
-          xargs echo '::set-output name=services::'
+        echo ::set-output name=services::$(
+          git submodule status -- services |
+            jq \
+              --raw-input \
+              --null-input \
+              --compact-output \
+              '. |=
+              [
+                inputs | ltrimstr(" ") | split(" ") |
+                {
+                  sha:      .[0],
+                  path:     .[1],
+                  describe: .[2][1:-1]
+                }
+              ]'
+        )
 
   build-services:
     needs: platform-info
