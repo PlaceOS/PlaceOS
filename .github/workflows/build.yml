@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  # Tempory manual dispatch for testing
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Platform Version'
+        default: ${{ github.ref }}
+        required: true
+
+jobs:
+  platform-info:
+    runs-on: ubuntu-latest
+    outputs:
+      services: ${{ steps.introspect.outputs.services }}
+    steps:
+    - id: checkout
+      uses: actions/checkout@v2
+    - id: introspect
+      run: >
+        git submodule status -- services
+          | jq
+              --raw-input
+              --null-input
+              --compact-output
+              '. |= [inputs | split(" ") | {sha: .[1], path: .[2], describe: .[3][1:-1]}]'
+          | xargs echo '::set-output name=services::'
+
+  build-services:
+    needs: platform-info
+    strategy:
+      matrix:
+        service: ${{ fromJson(needs.platform-info.output.services) }}
+    runs-on: ubuntu-latest
+    steps:
+    - id: checkout-release
+      uses: actions/checkout@v2
+    - id: checkout-service
+      run: git submodule init -- ${{ matrix.service.path }}
+    - id: debug
+      run: echo "::debug::${{ matrix.service.sha }}"
