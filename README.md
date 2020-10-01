@@ -1,4 +1,6 @@
-# PlaceOS
+<p align="center">
+  <img src="https://github.com/placeos.png?size=200" alt="PlaceOS" />
+</p>
 
 This repository defines PlaceOS platform releases.
 It provides new release notification and the canonical reference for release history.
@@ -26,14 +28,14 @@ Releases that share a major version are consistent for core features.
 Moving to a new major version _may_ include breaking changes and the removal of deprecated functionality.
 This includes both machine facing (API’s, infrastructure) and human facing (core platform concepts, UX).
 
-## Minor
+### Minor
 Minor versions introduce new features that are forwards compatible.
 
-Numbering reflects the original release packaging date (`YYMM`). This will perpetually increase, including across major releases.
+Numbering reflects the original release packaging date (`YYMM`). This will perpetually increase, including across major versions.
 
 When moving to a new minor version deprecation warnings _may_ appear in API responses and logging, but functionality will remain.
 
-## Revision
+### Revision
 Revisions increment within each minor version, resetting to `1`.
 These represent change to address a bug, feature limitation or security vulnerability in the originally packaged minor release.
 
@@ -41,7 +43,7 @@ An increment to a release number can represent a change to one or more underlyin
 
 ---
 
-When operating a deployment, all components must use a consistent version.
+When operating a deployment, all components should use a consistent version.
 
 
 ## Channels
