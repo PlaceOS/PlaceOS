@@ -58,5 +58,6 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ${{ matrix.service.path }}
+        file: ${{ matrix.service.path }}/Dockerfile
         # push: true
         tags: placeos/${{ matrix.service.name }}:${{ github.event.inputs.version }}
