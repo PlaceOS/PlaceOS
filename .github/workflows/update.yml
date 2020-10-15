@@ -1,0 +1,21 @@
+name: Update
+
+on:
+  # Tempory manual dispatch for testing
+  workflow_dispatch:
+
+jobs:
+  update-submodules:
+    runs-on: ubuntu-latest
+    name: Update submodules
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Update
+      run:  git submodule update --init --remote
+    - name: Commit
+      run: |
+        git diff --name-only | xargs --max-args=1 --replace=PATH \
+        git commit --message="auto-pull PATH" PATH
+    - name: Push
+      run:  git push
