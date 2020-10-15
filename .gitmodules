@@ -1,30 +1,30 @@
 [submodule "auth"]
 	path = services/auth
-	url = git@github.com:placeos/auth.git
+	url = https://github.com/placeos/auth.git
 [submodule "core"]
 	path = services/core
-	url = git@github.com:placeos/core.git
+	url = https://github.com/placeos/core.git
 [submodule "rest-api"]
 	path = services/rest-api
-	url = git@github.com:placeos/rest-api.git
+	url = https://github.com/placeos/rest-api.git
 [submodule "ts-client"]
 	path = clients/typescript
-	url = git@github.com:placeos/ts-client.git
+	url = https://github.com/placeos/ts-client.git
 [submodule "triggers"]
 	path = services/triggers
-	url = git@github.com:placeos/triggers.git
+	url = https://github.com/placeos/triggers.git
 [submodule "source"]
 	path = services/source
-	url = git@github.com:placeos/source.git
+	url = https://github.com/placeos/source.git
 [submodule "rubber-soul"]
 	path = services/rubber-soul
-	url = git@github.com:placeos/rubber-soul.git
+	url = https://github.com/placeos/rubber-soul.git
 [submodule "dispatch"]
 	path = services/dispatch
-	url = git@github.com:placeos/dispatch.git
+	url = https://github.com/placeos/dispatch.git
 [submodule "frontends"]
 	path = services/frontends
-	url = git@github.com:placeos/frontends.git
+	url = https://github.com/placeos/frontends.git
 [submodule "crystal-client"]
 	path = clients/crystal
-	url = git@github.com:placeos/crystal-client.git
+	url = https://github.com/placeos/crystal-client.git
