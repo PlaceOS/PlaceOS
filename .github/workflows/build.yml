@@ -61,3 +61,4 @@ jobs:
         file: ${{ matrix.service.path }}/Dockerfile
         # push: true
         tags: placeos/${{ matrix.service.name }}:${{ github.event.inputs.version }}
+        build-args: PLACE_COMMIT=${{ github.sha }}
