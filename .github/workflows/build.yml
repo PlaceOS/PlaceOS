@@ -14,6 +14,7 @@ jobs:
     outputs:
       services: ${{ steps.introspect.outputs.services }}
       commit: ${{ steps.introspect.outputs.commit }}
+      version: ${{ github.event.inputs.version }}
     name: Prepare
     steps:
     - name: Checkout release
@@ -63,5 +64,5 @@ jobs:
       with:
         context: ${{ matrix.service.repo }}#${{ matrix.service.ref }}
         # push: true
-        tags: placeos/${{ matrix.service.name }}:${{ github.event.inputs.version }}
+        tags: placeos/${{ matrix.service.name }}:${{ needs.platform-info.outputs.version }}
         build-args: PLACE_COMMIT=${{ needs.platform-info.outputs.commit }}
