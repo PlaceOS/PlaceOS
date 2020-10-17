@@ -53,4 +53,4 @@ jobs:
         context: ${{ matrix.service.repo}}#${{ matrix.service.ref }}
         name:    ${{ matrix.service.name }}
         tag:     ${{ github.event.inputs.version }}
-        commit:  ${{ need.platform-info.outputs.commit }}
+        commit:  ${{ needs.platform-info.outputs.commit }}
