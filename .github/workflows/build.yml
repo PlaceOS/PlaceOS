@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build ${{ matrix.service.name }}
     steps:
-    - uses: ./.github/action/build-service-image
+    - uses: ./.github/actions/build-service-image
       with:
         context: ${{ matrix.service.repo}}#${{ matrix.service.ref }}
         name:    ${{ matrix.service.name }}
