@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       services: ${{ steps.introspect.outputs.services }}
+      commit: ${{ steps.introspect.outputs.commit }}
     name: Prepare
     steps:
     - name: Checkout release
@@ -20,15 +21,23 @@ jobs:
     - name: Discover services
       id:   introspect
       run: |
+        echo ::set-output name=commit::$(git rev-parse HEAD)
         echo ::set-output name=services::$(
-          git submodule status -- services |
-            jq -Rnc '. |= [ inputs[1:] | split(" ") |
-              {
-                name: .[1]|ltrimstr("services/"),
-                sha:  .[0],
-                path: .[1]
-              }
-            ]'
+          git submodule--helper list services |
+          while read -r _ sha _ path; do
+            sm_name=$(git submodule--helper name $path)
+            name=$(basename $path)
+            repo=$(git submodule--helper config submodule.$sm_name.url)
+            echo "$name $path $repo $sha"
+          done |
+          jq -Rnc '. |= [ inputs | split(" ") |
+            {
+              name: .[0],
+              path: .[1],
+              repo: .[2],
+              ref:  .[3]
+            }
+          ]'
         )
 
   build-services:
@@ -39,24 +48,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Build ${{ matrix.service.name }}
     steps:
-    - name: Checkout release
-      uses: actions/checkout@v2
-    - name: Checkout ${{ matrix.service.name }}
-      run:  git submodule update --init -- ${{ matrix.service.path }}
-    - name: Set up QEMU
-      uses: docker/setup-qemu-action@v1
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
-#   - name: Login to DockerHub
-#     uses: docker/login-action@v1
-#     with:
-#       username: ${{ secrets.DOCKERHUB_USERNAME }}
-#       password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Build and push
-      uses: docker/build-push-action@v2
+    - uses: ./.github/action/build-service-image
       with:
-        context: ${{ matrix.service.path }}
-        file: ${{ matrix.service.path }}/Dockerfile
-        # push: true
-        tags: placeos/${{ matrix.service.name }}:${{ github.event.inputs.version }}
-        build-args: PLACE_COMMIT=${{ github.sha }}
+        context: ${{ matrix.service.repo}}#${{ matrix.service.ref }}
+        name:    ${{ matrix.service.name }}
+        tag:     ${{ github.event.inputs.version }}
+        commit:  ${{ need.platform-info.outputs.commit }}
