@@ -6,7 +6,7 @@ on:
     branches: [nightly]
     types: [completed]
   push:
-    paths:
+    branches:
       - '[0-9].[0-9][0-9][0-9][0-9]'
 
 jobs:
