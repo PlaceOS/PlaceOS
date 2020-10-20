@@ -3,10 +3,6 @@ name: Build
 on:
   # Tempory manual dispatch for testing
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Platform Version'
-        required: true
   workflow_run:
     workflows: [Update]
     branches: [nightly]
@@ -21,18 +17,22 @@ jobs:
     outputs:
       services: ${{ steps.introspect.outputs.services }}
       commit: ${{ steps.introspect.outputs.commit }}
-      version: ${{ github.event.inputs.version || steps.version.tag || "nightly" }}
+      version: ${{ steps.version.tag }}
     name: Prepare
     steps:
     - name: Checkout release
       uses: actions/checkout@v2
     - name: Generate version number
       id: version
-      if: github.event_name == 'push'
       run: |
-        version=$(git branch --show-current)
-        revision=$(git rev-list nightly.. --count)
-        echo ::set-output name=tag::placeos-$version.$revision
+        branch=$(git branch --show-current)
+        if [ $branch == "nightly" ]
+        then
+          echo ::set-output name=tag::nightly
+        else
+          offset=$(git rev-list nightly.. --count)
+          echo ::set-output name=tag::placeos-$branch.$offset
+        fi
     - name: Discover services
       id:   introspect
       run: |
