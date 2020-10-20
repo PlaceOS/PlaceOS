@@ -1,8 +1,9 @@
 name: Update
 
 on:
-  # Tempory manual dispatch for testing
   workflow_dispatch:
+  schedule:
+    cron: '* 10 * * *'
 
 jobs:
   update-submodules:
