@@ -21,18 +21,18 @@ jobs:
     outputs:
       services: ${{ steps.introspect.outputs.services }}
       commit: ${{ steps.introspect.outputs.commit }}
-      version: ${{ github.event.inputs.version || steps.branch.version || "nightly" }}
+      version: ${{ github.event.inputs.version || steps.version.tag || "nightly" }}
     name: Prepare
     steps:
     - name: Checkout release
       uses: actions/checkout@v2
     - name: Generate version number
-      id: branch
+      id: version
       if: github.event_name == 'push'
       run: |
         version=$(git branch --show-current)
         revision=$(git rev-list nightly.. --count)
-        echo ::set-output name=version::$version.$revision
+        echo ::set-output name=tag::placeos-$version.$revision
     - name: Discover services
       id:   introspect
       run: |
