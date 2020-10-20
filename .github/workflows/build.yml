@@ -7,7 +7,7 @@ on:
     types: [completed]
   push:
     paths:
-      - '[0-9]+.[0-9]+'
+      - '[0-9].[0-9][0-9][0-9][0-9]'
 
 jobs:
   platform-info:
@@ -20,13 +20,15 @@ jobs:
     steps:
     - name: Checkout release
       uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
     - name: Generate version number
       id: version
       run: |
         branch=$(git branch --show-current)
         if [ $branch == "nightly" ]
         then
-          echo ::set-output name=tag::nightly
+          echo ::set-output name=tag::$branch
         else
           offset=$(git rev-list nightly.. --count)
           echo ::set-output name=tag::placeos-$branch.$offset
