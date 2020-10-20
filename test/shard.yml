@@ -1,0 +1,7 @@
+name: placeos-release
+version: 1.0.0
+
+dependencies:
+  placeos:
+    github: placeos/crystal-client
+    version: ~> 2

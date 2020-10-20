@@ -1,0 +1,349 @@
+version: "3.7"
+
+networks:
+  placeos:
+    name: placeos
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.31.231.0/24
+
+volumes:
+  elastic-data:
+  redis-data:
+  influx-data:
+  rethink-data:
+  www:
+
+# YAML Anchors
+
+x-deployment-env: &deployment-env
+  ENV: ${ENV:-development}
+  SG_ENV: ${SG_ENV:-development}
+  TZ: $TZ
+
+x-elastic-client-env: &elastic-client-env
+  ES_HOST: ${ELASTIC_HOST:-elastic}
+  ES_PORT: ${ELASTIC_PORT:-9200}
+
+x-etcd-client-env: &etcd-client-env
+  ETCD_HOST: ${ETCD_HOST:-etcd}
+  ETCD_PORT: ${ETCD_PORT:-2379}
+
+x-influxdb-client-env: &influxdb-client-env
+  INFLUX_BUCKET: ${INFLUX_BUCKET:-place}
+  INFLUX_HOST: ${INFLUX_HOST:-influxdb}
+  INFLUX_ORG: ${INFLUX_ORG:-PlaceOS}
+
+x-place-loader-client-env: &place-loader-client-env
+  PLACE_LOADER_URI: ${PLACE_LOADER_URI:-http://frontends:3000}
+
+x-redis-client-env: &redis-client-env
+  REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+
+x-rethinkdb-client-env: &rethinkdb-client-env
+  RETHINKDB_HOST: ${RETHINKDB_HOST:-rethink}
+  RETHINKDB_PORT: ${RETHINKDB_PORT:-28015}
+  RETHINKDB_DB: ${RETHINKDB_DB:-place_development}
+
+x-rubber-soul-client-env: &rubber-soul-client-env
+  RUBBER_SOUL_URI: ${RUBBER_SOUL_URI:-http://rubber-soul:3000}
+
+x-smtp-client-env: &smtp-client-env
+  SMTP_SERVER: ${SMTP_SERVER}
+  SMTP_PORT: ${SMTP_PORT:-587}
+  SMTP_USER: ${SMTP_USER}      # username if required, will not authenticate if blank
+  SMTP_PASS: ${SMTP_PASS}      # password if required
+  SMTP_SECURE: ${SMTP_SECURE}  # blank for unsecure, `SMTPS` for TLS, `STARTTLS` for negotiating TLS on unsecure connection
+
+services:
+
+  # Services
+
+  api: # Rest API
+    image: placeos/rest-api:${PLACE_REST_API_TAG:-latest}
+    restart: always
+    container_name: api
+    hostname: api
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.2
+    depends_on:
+      - auth
+      - elastic
+      - etcd
+      - redis
+      - rethink
+      - rubber-soul
+    # env_file:
+    #   - *jwt-public
+    #   - *jwt-secret
+    environment:
+      # Environment
+      << : *deployment-env
+      # Service Hosts
+      << : *elastic-client-env
+      << : *etcd-client-env
+      << : *place-loader-client-env
+      << : *redis-client-env
+      << : *rethinkdb-client-env
+      << : *rubber-soul-client-env
+
+  auth: # Authentication Service
+    image: placeos/auth:${PLACE_AUTH_TAG:-latest}
+    restart: always
+    container_name: auth
+    hostname: auth
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.3
+    depends_on:
+      - rethink
+    # env_file:
+    #   - *jwt-secret
+    environment:
+      << : *rethinkdb-client-env
+      COAUTH_NO_SSL: "true"
+      TZ: $TZ
+
+  core: # Module coordinator
+    image: placeos/core:${PLACE_CORE_TAG:-latest}
+    restart: always
+    container_name: core
+    hostname: core
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.4
+    depends_on:
+      - etcd
+      - redis
+      - rethink
+    environment:
+      # Service Hosts
+      << : *etcd-client-env
+      << : *redis-client-env
+      << : *rethinkdb-client-env
+      # Environment
+      << : *deployment-env
+
+  frontends: # Frontend deployment service
+    image: placeos/frontends:${PLACE_FRONTENDS_TAG:-latest}
+    restart: always
+    container_name: frontends
+    hostname: frontends
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.5
+    volumes:
+      - type: volume
+        source: www
+        target: /app/www
+    depends_on:
+      - rethink
+    environment:
+      PLACE_LOADER_WWW: www
+      << : *rethinkdb-client-env
+      # Environment
+      << : *deployment-env
+
+  # source:
+  #   image: docker.io/placeos/source:${PLACE_SOURCE_TAG:-latest}
+  #   restart: always
+  #   container_name: source
+  #   networks:
+  #     placeos:
+  #       ipv4_address: 172.31.231.15
+  #   depends_on:
+  #     - redis
+  #     - rethink
+  #     - influxdb
+  #   env_file:
+  #     - *influxdb-api-key
+  #   environment:
+  #     # Service Hosts
+  #     << : *influxdb-client-env
+  #     << : *redis-client-env
+  #     << : *rethinkdb-client-env
+  #     # Environment
+  #     << : *deployment-env
+
+  triggers: # Conditional execution service
+    image: placeos/triggers:${PLACE_TRIGGERS_TAG:-latest}
+    restart: always
+    container_name: triggers
+    hostname: triggers
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.6
+    depends_on:
+      - etcd
+      - redis
+      - rethink
+    environment:
+      # Service Hosts
+      << : *etcd-client-env
+      << : *redis-client-env
+      << : *rethinkdb-client-env
+      << : *smtp-client-env
+      # Environment
+      << : *deployment-env
+
+  # Support
+
+  init:
+    image: placeos/init:${PLACE_INIT_TAG:-latest}
+    container_name: init
+    restart: on-failure
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.7
+    depends_on:
+      - rubber-soul
+    environment:
+      # User/Application Configuration
+      PLACE_DOMAIN: ${PLACE_DOMAIN:-localhost:8443}
+      PLACE_APPLICATION: ${PLACE_APPLICATION:-backoffice}
+      PLACE_AUTH_HOST: ${PLACE_AUTH_HOST:-auth:8080}
+      PLACE_USERNAME: ${PLACE_USERNAME:-Place Support (localhost:8443)}
+      PLACE_EMAIL: ${PLACE_EMAIL:-support@place.tech}
+      PLACE_PASSWORD: ${PLACE_PASSWORD:-development}
+      PLACE_TLS: ${PLACE_TLS:-true}
+      # Service Hosts
+      << : *rethinkdb-client-env
+      << : *elastic-client-env
+      # Environment
+      << : *deployment-env
+
+  rubber-soul: # RethinkDB to Elasticsearch Service
+    image: placeos/rubber-soul:${PLACE_RUBBER_SOUL_TAG:-latest}
+    restart: always
+    container_name: rubber-soul
+    hostname: rubber-soul
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.8
+    depends_on:
+      - elastic
+      - rethink
+    environment:
+      # Service Hosts
+      << : *rethinkdb-client-env
+      << : *elastic-client-env
+      # Environment
+      << : *deployment-env
+
+  dispatch: # Engine driver server registration and data routing
+    image: placeos/dispatch:${PLACE_DISPATCH_TAG:-latest}
+    restart: always
+    container_name: dispatch
+    hostname: dispatch
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.9
+    environment:
+      SERVER_SECRET: ${PLACE_SERVER_SECRET:-development}
+
+  # Resources
+
+  elastic:
+    image: blacktop/elasticsearch:${ELASTIC_VERSION:-7.6}
+    restart: always
+    container_name: elastic
+    hostname: elastic
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.10
+    volumes:
+      - type: volume
+        source: elastic-data
+        target: /usr/share/elasticsearch/data
+    environment:
+      bootstrap.memory_lock: "true"
+      cluster.routing.allocation.disk.threshold_enabled: "false"
+      discovery.type: single-node
+      TZ: $TZ
+
+  etcd:
+    image: bitnami/etcd:${ETCD_VERSION:-3.3.13}
+    restart: always
+    container_name: etcd
+    hostname: etcd
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.11
+    environment:
+      ALLOW_NONE_AUTHENTICATION: "yes"
+      TZ: $TZ
+
+  influxdb:
+    image: quay.io/influxdb/influxdb:${INFLUXDB_IMAGE_TAG-2.0.0-beta}
+    container_name: influx
+    restart: always
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.16
+    hostname: influx
+    healthcheck:
+      test: influx bucket list
+    volumes:
+      - type: volume
+        source: influx-data
+        target: /root/.influxdbv2
+    command: "--reporting-disabled"
+
+  nginx:
+    image: placeos/nginx:${PLACE_NGINX_TAG:-latest}
+    restart: always
+    container_name: nginx
+    hostname: nginx
+    ports:
+      - 8080:80
+      - 8443:443
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.12
+    depends_on:
+      - auth
+      - api
+    volumes:
+      - type: volume
+        source: www
+        target: /etc/nginx/html/
+        read_only: true
+    # env_file:
+    #   - *jwt-public
+    #   - *influxdb-api-key
+    environment:
+      PLACE_DOMAIN: ${PLACE_DOMAIN:-localhost:8443}
+      TZ: $TZ
+
+  redis:
+    image: eqalpha/keydb
+    restart: always
+    container_name: redis
+    hostname: redis
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.13
+    volumes:
+      - type: volume
+        source: redis-data
+        target: /data
+    environment:
+      TZ: $TZ
+
+  rethink:
+    image: rethinkdb:${RETHINKDB_VERSION:-2.4}
+    restart: always
+    container_name: rethink
+    hostname: rethink
+    networks:
+      placeos:
+        ipv4_address: 172.31.231.14
+    volumes:
+      - type: volume
+        source: rethink-data
+        target: /data/rethinkdb_data
+    environment:
+      TZ: $TZ
