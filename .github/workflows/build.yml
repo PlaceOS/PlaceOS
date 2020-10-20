@@ -1,8 +1,6 @@
 name: Build
 
 on:
-  # Tempory manual dispatch for testing
-  workflow_dispatch:
   workflow_run:
     workflows: [Update]
     branches: [nightly]
