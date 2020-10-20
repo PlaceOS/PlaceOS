@@ -31,7 +31,7 @@ jobs:
         then
           echo ::set-output name=tag::$branch
         else
-          offset=$(git rev-list nightly.. --count)
+          offset=$(git rev-list origin/nightly.. --count)
           echo ::set-output name=tag::placeos-$branch.$offset
         fi
     - name: Discover services
