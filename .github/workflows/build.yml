@@ -7,8 +7,10 @@ on:
       version:
         description: 'Platform Version'
         required: true
-  schedule:
-    - cron: '* 10 * * *'
+  workflow_run:
+    workflows: [Update]
+    branches: [nightly]
+    types: [completed]
   push:
     paths:
       - '[0-9]+.[0-9]+'
