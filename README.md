@@ -77,9 +77,6 @@ Recommended for production environments.
 
 Images for all services are available from [Docker Hub](https://hub.docker.com/u/placeos).
 
-References to these are available in [`docker-images.yaml`](./docker-images.yaml).
-This includes YAML anchors to allow this to merge with a templated configuration.
-
 ### Source Code
 
 References to all source repositories exist as submodules.
