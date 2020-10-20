@@ -21,12 +21,13 @@ jobs:
     outputs:
       services: ${{ steps.introspect.outputs.services }}
       commit: ${{ steps.introspect.outputs.commit }}
-      version: ${{ github.event.inputs.version || step.version.commit }}
+      version: ${{ github.event.inputs.version || steps.branch.version || "nightly" }}
     name: Prepare
     steps:
     - name: Checkout release
       uses: actions/checkout@v2
-    - name: Generate version identifier
+    - name: Generate version number
+      id: branch
       if: github.event_name == 'push'
       run: |
         version=$(git branch --show-current)
