@@ -17,7 +17,7 @@ jobs:
     outputs:
       services: ${{ steps.introspect.outputs.services }}
       commit: ${{ steps.introspect.outputs.commit }}
-      version: ${{ steps.version.tag }}
+      version: ${{ steps.version.outputs.tag }}
     name: Prepare
     steps:
     - name: Checkout release
