@@ -31,3 +31,6 @@
 [submodule "services/nginx"]
 	path = services/nginx
 	url = https://github.com/placeos/nginx.git
+[submodule "services/init"]
+	path = services/init
+	url = https://github.com/placeos/init.git
