@@ -28,3 +28,6 @@
 [submodule "crystal-client"]
 	path = clients/crystal
 	url = https://github.com/placeos/crystal-client.git
+[submodule "services/nginx"]
+	path = services/nginx
+	url = https://github.com/placeos/nginx.git
