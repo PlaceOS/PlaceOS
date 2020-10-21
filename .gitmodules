@@ -1,31 +1,31 @@
-[submodule "auth"]
+[submodule "services/auth"]
 	path = services/auth
 	url = https://github.com/placeos/auth.git
-[submodule "core"]
+[submodule "services/core"]
 	path = services/core
 	url = https://github.com/placeos/core.git
-[submodule "rest-api"]
+[submodule "services/rest-api"]
 	path = services/rest-api
 	url = https://github.com/placeos/rest-api.git
-[submodule "ts-client"]
+[submodule "clients/typescript"]
 	path = clients/typescript
 	url = https://github.com/placeos/ts-client.git
-[submodule "triggers"]
+[submodule "services/triggers"]
 	path = services/triggers
 	url = https://github.com/placeos/triggers.git
-[submodule "source"]
+[submodule "services/source"]
 	path = services/source
 	url = https://github.com/placeos/source.git
-[submodule "rubber-soul"]
+[submodule "services/rubber-soul"]
 	path = services/rubber-soul
 	url = https://github.com/placeos/rubber-soul.git
-[submodule "dispatch"]
+[submodule "services/dispatch"]
 	path = services/dispatch
 	url = https://github.com/placeos/dispatch.git
-[submodule "frontends"]
+[submodule "services/frontends"]
 	path = services/frontends
 	url = https://github.com/placeos/frontends.git
-[submodule "crystal-client"]
+[submodule "clients/crystal"]
 	path = clients/crystal
 	url = https://github.com/placeos/crystal-client.git
 [submodule "services/nginx"]
