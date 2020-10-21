@@ -11,8 +11,8 @@ networks:
 
 volumes:
   elastic-data:
-  redis-data:
   influx-data:
+  redis-data:
   rethink-data:
   www:
 
@@ -63,6 +63,7 @@ services:
 
   api: # Rest API
     image: placeos/rest-api:${PLACE_REST_API_TAG:-latest}
+    build: ../services/rest-api
     restart: always
     container_name: api
     hostname: api
@@ -92,6 +93,7 @@ services:
 
   auth: # Authentication Service
     image: placeos/auth:${PLACE_AUTH_TAG:-latest}
+    build: ../services/auth
     restart: always
     container_name: auth
     hostname: auth
@@ -109,6 +111,7 @@ services:
 
   core: # Module coordinator
     image: placeos/core:${PLACE_CORE_TAG:-latest}
+    build: ../services/core
     restart: always
     container_name: core
     hostname: core
@@ -129,6 +132,7 @@ services:
 
   frontends: # Frontend deployment service
     image: placeos/frontends:${PLACE_FRONTENDS_TAG:-latest}
+    build: ../services/frontends
     restart: always
     container_name: frontends
     hostname: frontends
@@ -149,6 +153,7 @@ services:
 
   # source:
   #   image: docker.io/placeos/source:${PLACE_SOURCE_TAG:-latest}
+  #   build: ../services/source
   #   restart: always
   #   container_name: source
   #   networks:
@@ -170,6 +175,7 @@ services:
 
   triggers: # Conditional execution service
     image: placeos/triggers:${PLACE_TRIGGERS_TAG:-latest}
+    build: ../services/triggers
     restart: always
     container_name: triggers
     hostname: triggers
@@ -193,6 +199,7 @@ services:
 
   init:
     image: placeos/init:${PLACE_INIT_TAG:-latest}
+    build: ../services/init
     container_name: init
     restart: on-failure
     networks:
@@ -217,6 +224,7 @@ services:
 
   rubber-soul: # RethinkDB to Elasticsearch Service
     image: placeos/rubber-soul:${PLACE_RUBBER_SOUL_TAG:-latest}
+    build: ../services/rubber-soul
     restart: always
     container_name: rubber-soul
     hostname: rubber-soul
@@ -235,6 +243,7 @@ services:
 
   dispatch: # Engine driver server registration and data routing
     image: placeos/dispatch:${PLACE_DISPATCH_TAG:-latest}
+    build: ../services/dispatch
     restart: always
     container_name: dispatch
     hostname: dispatch
@@ -278,22 +287,23 @@ services:
 
   influxdb:
     image: quay.io/influxdb/influxdb:${INFLUXDB_IMAGE_TAG-2.0.0-beta}
-    container_name: influx
     restart: always
+    container_name: influx
+    hostname: influx
     networks:
       placeos:
         ipv4_address: 172.31.231.16
-    hostname: influx
-    healthcheck:
-      test: influx bucket list
     volumes:
       - type: volume
         source: influx-data
         target: /root/.influxdbv2
+    healthcheck:
+      test: influx bucket list
     command: "--reporting-disabled"
 
   nginx:
     image: placeos/nginx:${PLACE_NGINX_TAG:-latest}
+    build: ../services/nginx
     restart: always
     container_name: nginx
     hostname: nginx
