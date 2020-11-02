@@ -3,5 +3,4 @@ version: 1.0.0
 
 dependencies:
   placeos:
-    github: placeos/crystal-client
-    version: ~> 2
+    path: /Users/macbook/Documents/GitHub/crystal-client
