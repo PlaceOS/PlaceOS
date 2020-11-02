@@ -2,25 +2,37 @@ require "./helper"
 
 describe "Zones" do
   it "should simulate the zone flows" do
-    # # Basic Zone Behaviour
-    # Add a zone
-    # Create a system using the zone
+    with_client do |client|
+      # # # Basic Zone Behaviour
+      # # Add a zone
+      # client.zones.create
 
-    # # Zone Hierarchy
+      # # Create a system using the zone
+      # client.systems.create
 
-    # Create a zone
-    # Create a zone that references the first zone
-    # Add metadata to the child zone
-    # List children metadata for the parent zone
+      # # # Zone Hierarchy
 
-    # # Zone Tags Behaviour
+      # # Create a zone
+      # client.zones.create
 
-    # # Zone Systems Behaviours
+      # # Create a zone that references the first zone
+      # client.zones.create
 
-    # # Zone Metadata
+      # # Add metadata to the child zone
 
-    # adding
-    # updating
+      # # List children metadata for the parent zone
+      # client.zones.children
 
+      # # # Zone Tags Behaviour
+
+      # # # Zone Systems Behaviours
+
+      # # # Zone Metadata
+      # # Adding
+      # client.zones.create
+
+      # # Updating
+      # client.zones.update
+    end
   end
 end

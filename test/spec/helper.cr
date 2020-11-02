@@ -1,5 +1,6 @@
 require "openssl"
 require "placeos"
+require "placeos-models"
 
 require "spec"
 
