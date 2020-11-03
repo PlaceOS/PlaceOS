@@ -94,9 +94,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Download service artifacts
       uses: actions/download-artifact@v2
-    - name: Load images locally
-      run: |
-        for service in ./*; do
-          echo ::debug::Loading $service
-          docker load --input $service/image.tar
-        done
+    - name: Load images
+      run:  for service in *; do docker load --input $service/image.tar; done
+    - name: Publish
+      run:  for service in *; do docker push $service; done
