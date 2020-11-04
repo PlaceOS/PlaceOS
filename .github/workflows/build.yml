@@ -75,9 +75,16 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ${{ matrix.service.repo }}#${{ matrix.service.ref }}
-        tags: placeos/${{ matrix.service.name }}:${{ needs.platform-info.outputs.version }}
         build-args: PLACE_COMMIT=${{ needs.platform-info.outputs.commit }}
         outputs: type=oci,dest=image.tar
+        tags: placeos/${{ matrix.service.name }}:${{ needs.platform-info.outputs.version }}
+        labels: |
+          org.opencontainers.image.url=${{ matrix.service.repo }}
+          org.opencontainers.image.source=${{ matrix.service.repo }}/tree/${{ matrix.service.ref }}
+          org.opencontainers.image.version=${{ needs.platform-info.outputs.version }}
+          org.opencontainers.image.revision=${{ matrix.service.ref }}
+          org.opencontainers.image.vendor=Place Technology Limited
+          org.opencontainers.image.title=${{ matrix.service.name }}
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
