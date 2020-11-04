@@ -108,4 +108,4 @@ jobs:
     - name: Load images
       run:  for service in *; do docker load --input $service/image.tar; done
     - name: Publish
-      run:  for service in *; do docker push $service; done
+      run:  for service in *; do docker push placeos/$service; done
