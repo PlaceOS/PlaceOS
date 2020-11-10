@@ -16,9 +16,6 @@ class OpenSSL::SSL::Context::Client
   end
 end
 
-# DOMAIN  = "https://example.place.technology"
-# HEADERS = HTTP::Headers{"Host" => URI.parse(DOMAIN).host.as(String)}
-
 CLIENT_ID   = "b52e653071c45353dbff4e8f47d51cdf"
 PLACEOS_URI = URI.parse("https://localhost:8443")
 

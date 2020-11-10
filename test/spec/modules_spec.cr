@@ -1,7 +1,7 @@
 require "./helper"
 
 describe "Module" do
-  it "should simulate the module creation flow and execute a command on a module", focus: true do
+  it "should simulate the module creation flow and execute a command on a module" do
     with_client do |client|
       # # # Module Creation Flow
       # # add a repository
