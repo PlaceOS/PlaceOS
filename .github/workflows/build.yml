@@ -127,4 +127,9 @@ jobs:
         done
     -
       name: Publish
-      run:  for service in *; do docker push placeos/$service; done
+      run:  |
+        for service in *; do
+          echo ::group::$service
+          docker push placeos/$service
+          echo ::endgroup::
+        done
