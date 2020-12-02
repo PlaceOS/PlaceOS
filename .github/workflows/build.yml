@@ -78,7 +78,7 @@ jobs:
       with:
         context: ${{ matrix.service.repo }}#${{ matrix.service.sha }}
         build-args: PLACE_COMMIT=${{ needs.platform-info.outputs.commit }}
-        outputs: type=oci,dest=image.tar
+        outputs: type=docker,dest=image.tar
         tags: placeos/${{ matrix.service.name }}:${{ needs.platform-info.outputs.version }}
         labels: |
           org.opencontainers.image.url=${{ matrix.service.href }}
