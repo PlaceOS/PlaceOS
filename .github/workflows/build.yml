@@ -5,9 +5,11 @@ on:
     workflows: [Update]
     branches: [nightly]
     types: [completed]
+
   push:
     branches:
       - '[0-9].[0-9][0-9][0-9][0-9]'
+
   workflow_dispatch:
 
 jobs:
@@ -19,11 +21,13 @@ jobs:
       version: ${{ steps.version.outputs.tag }}
     name: Prepare
     steps:
-    - name: Checkout release
+    -
+      name: Checkout release
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: Generate version number
+    -
+      name: Generate version number
       id: version
       run: |
         branch=$(git branch --show-current)
@@ -36,7 +40,8 @@ jobs:
           echo ::debug::Not on a release branch, using branch name
           echo ::set-output name=tag::$branch
         fi
-    - name: Discover services
+    -
+      name: Discover services
       id:   introspect
       run: |
         echo ::set-output name=commit::$(git rev-parse HEAD)
@@ -68,11 +73,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Build ${{ matrix.service.name }}
     steps:
-    - name: Set up QEMU
+    -
+      name: Set up QEMU
       uses: docker/setup-qemu-action@v1
-    - name: Set up Docker Buildx
+    -
+      name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
-    - name: Build image
+    -
+      name: Build image
       id:   build
       uses: docker/build-push-action@v2
       with:
@@ -87,7 +95,8 @@ jobs:
           org.opencontainers.image.revision=${{ matrix.service.sha }}
           org.opencontainers.image.vendor=Place Technology Limited
           org.opencontainers.image.title=${{ matrix.service.name }}
-    - name: Upload artifact
+    -
+      name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: ${{ matrix.service.name }}
@@ -98,14 +107,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Publish
     steps:
-    - name: Login to DockerHub
+    -
+      name: Login to DockerHub
       uses: docker/login-action@v1
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Download service artifacts
+    -
+      name: Download service artifacts
       uses: actions/download-artifact@v2
-    - name: Load images
+    -
+      name: Load images
       run:  |
         for service in *; do
           echo ::group::$service
@@ -113,5 +125,6 @@ jobs:
           awk '{print $NF}' | xargs docker inspect
           echo ::endgroup::
         done
-    - name: Publish
+    -
+      name: Publish
       run:  for service in *; do docker push placeos/$service; done
