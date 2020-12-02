@@ -106,6 +106,12 @@ jobs:
     - name: Download service artifacts
       uses: actions/download-artifact@v2
     - name: Load images
-      run:  for service in *; do docker load --input $service/image.tar; done
+      run:  |
+        for service in *; do
+          echo ::group::$service
+          docker load --input $service/image.tar |
+          awk '{print $NF}' | xargs docker inspect
+          echo ::endgroup::
+        done
     - name: Publish
       run:  for service in *; do docker push placeos/$service; done
