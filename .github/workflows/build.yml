@@ -138,6 +138,6 @@ jobs:
       run:  |
         for service in *; do
           echo ::group::$service
-          docker push placeos/$service
+          docker push placeos/$service --all-tags
           echo ::endgroup::
         done
