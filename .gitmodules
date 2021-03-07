@@ -34,3 +34,6 @@
 [submodule "services/init"]
 	path = services/init
 	url = https://github.com/placeos/init.git
+[submodule "services/edge"]
+	path = services/edge
+	url = https://github.com/placeos/core.git
