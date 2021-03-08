@@ -91,7 +91,9 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ${{ matrix.service.repo }}#${{ matrix.service.sha }}
-        build-args: PLACE_COMMIT=${{ needs.platform-info.outputs.commit }}
+        build-args: |
+          PLACE_COMMIT=${{ needs.platform-info.outputs.commit }}
+          TARGET=${{ matrix.service.name }}
         outputs: type=docker,dest=image.tar
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
