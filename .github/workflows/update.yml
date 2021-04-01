@@ -20,6 +20,6 @@ jobs:
     - name: Commit
       run: |
         git diff --name-only | xargs --max-args=1 --replace=PATH \
-        git commit --message="auto-pull PATH" PATH
+        git commit --message="chore: update PATH" PATH
     - name: Push
       run:  git push
