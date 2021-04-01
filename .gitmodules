@@ -37,3 +37,6 @@
 [submodule "services/edge"]
 	path = services/edge
 	url = https://github.com/placeos/core.git
+[submodule "interfaces/backoffice"]
+	path = interfaces/backoffice
+	url = https://github.com/placeos/backoffice.git
