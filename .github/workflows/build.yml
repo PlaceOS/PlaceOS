@@ -78,13 +78,13 @@ jobs:
       name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
     -
-      name: Cache Docker layers
+      name: Set up Docker Cache
       uses: actions/cache@v2
       with:
         path: /tmp/.buildx-cache
-        key: ${{ runner.os }}-buildx-${{ matrix.service.sha }}
+        key: ${{ runner.os }}-${{ matrix.service.name }}-${{ matrix.service.sha }}
         restore-keys: |
-          ${{ runner.os }}-buildx-
+          ${{ runner.os }}-${{ matrix.service.name }}-
     -
       name: Build image
       id:   build
