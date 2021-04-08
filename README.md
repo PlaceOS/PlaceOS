@@ -14,7 +14,7 @@ Platform versions overlay this to provide a set of compatible, deployable compon
 
 A platform version looks like:
 
-    placeos-1.2007.1
+    placeos-1.2104.1
             |  |   |
             |  |   revision
             |  |
