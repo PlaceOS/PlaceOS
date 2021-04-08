@@ -36,7 +36,7 @@ Numbering reflects the original release packaging date (`YYMM`). This will perpe
 When moving to a new minor version deprecation warnings _may_ appear in API responses and logging, but functionality will remain.
 
 ### Revision
-Revisions increment within each minor version, resetting to `1`.
+Revisions increment within each minor version, resetting to `0`.
 These represent change to address a bug, feature limitation or security vulnerability in the originally packaged minor release.
 
 An increment to a release number can represent a change to one or more underlying services.
