@@ -1,5 +1,6 @@
 require "openssl"
 require "placeos"
+require "placeos-models"
 
 require "spec"
 
@@ -15,7 +16,7 @@ class OpenSSL::SSL::Context::Client
   end
 end
 
-CLIENT_ID = "b52e653071c45353dbff4e8f47d51cdf"
+CLIENT_ID   = "b52e653071c45353dbff4e8f47d51cdf"
 PLACEOS_URI = URI.parse("https://localhost:8443")
 
 def client

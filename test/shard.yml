@@ -5,3 +5,6 @@ dependencies:
   placeos:
     github: placeos/crystal-client
     version: ~> 2
+  placeos-models:
+    github: placeos/models
+    version: ~> 4.2
