@@ -14,13 +14,13 @@ env:
   CRYSTAL_VERSION: 1.1.1
 
 jobs:
-  platform-info:
+  discover:
     runs-on: ubuntu-latest
     outputs:
       services: ${{ steps.introspect.outputs.services }}
       commit: ${{ steps.introspect.outputs.commit }}
       version: ${{ steps.version.outputs.tag }}
-    name: Prepare
+    name: Discover
     steps:
     -
       name: Checkout release
@@ -65,11 +65,11 @@ jobs:
           ]'
         )
 
-  build-services:
-    needs: platform-info
+  build:
+    needs: discover
     strategy:
       matrix:
-        service: ${{ fromJson(needs.platform-info.outputs.services) }}
+        service: ${{ fromJson(needs.discover.outputs.services) }}
       fail-fast: false
     runs-on: ubuntu-latest
     name: Build ${{ matrix.service.name }}
@@ -88,17 +88,17 @@ jobs:
         context: ${{ matrix.service.repo }}#${{ matrix.service.sha }}
         build-args: |
           CRYSTAL_VERSION=${{ env.CRYSTAL_VERSION }}
-          PLACE_COMMIT=${{ needs.platform-info.outputs.commit }}
-          PLACE_VERSION=${{ needs.platform-info.outputs.version }}
+          PLACE_COMMIT=${{ needs.discover.outputs.commit }}
+          PLACE_VERSION=${{ needs.discover.outputs.version }}
           TARGET=${{ matrix.service.name }}
         outputs: type=docker,dest=image.tar
         cache-from: type=gha,scope=${{ matrix.service.name }}
         cache-to: type=gha,scope=${{ matrix.service.name }},mode=max
-        tags: placeos/${{ matrix.service.name }}:${{ needs.platform-info.outputs.version }}
+        tags: placeos/${{ matrix.service.name }}:${{ needs.discover.outputs.version }}
         labels: |
           org.opencontainers.image.url=${{ matrix.service.href }}
           org.opencontainers.image.source=${{ matrix.service.href }}/tree/${{ matrix.service.sha }}
-          org.opencontainers.image.version=${{ needs.platform-info.outputs.version }}
+          org.opencontainers.image.version=${{ needs.discover.outputs.version }}
           org.opencontainers.image.revision=${{ matrix.service.sha }}
           org.opencontainers.image.vendor=Place Technology Limited
           org.opencontainers.image.title=${{ matrix.service.name }}
@@ -109,8 +109,9 @@ jobs:
         name: ${{ matrix.service.name }}
         path: image.tar
 
-  publish-images:
-    needs: build-services
+  publish:
+    needs:
+    - build
     runs-on: ubuntu-latest
     name: Publish
     steps:
