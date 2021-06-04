@@ -93,6 +93,7 @@ jobs:
         context: ${{ matrix.service.repo }}#${{ matrix.service.sha }}
         build-args: |
           PLACE_COMMIT=${{ needs.platform-info.outputs.commit }}
+          PLACE_VERSION=${{ needs.platform-info.outputs.version }}
           TARGET=${{ matrix.service.name }}
         outputs: type=docker,dest=image.tar
         cache-from: type=local,src=/tmp/.buildx-cache
