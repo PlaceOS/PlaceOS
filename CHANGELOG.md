@@ -7,6 +7,9 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ## [Unreleased]
 
+### Fixed
+- Allow compilation of drivers that do not exist in default branches.
+
 
 ## [1.2108.0]
 
