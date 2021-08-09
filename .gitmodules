@@ -43,3 +43,6 @@
 [submodule "interfaces/templates"]
 	path = interfaces/templates
 	url = https://github.com/placeos/user-interfaces.git
+[submodule "services/staff-api"]
+	path = services/staff-api
+	url = https://github.com/placeos/staff-api.git
