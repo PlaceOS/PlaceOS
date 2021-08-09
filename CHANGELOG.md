@@ -7,6 +7,9 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ## [Unreleased]
 
+### Added
+- Inclusion of [`staff-api`](https://github.com/PlaceOS/staff-api) in release packaging.
+
 ### Fixed
 - Allow compilation of drivers that do not exist in default branches.
 
