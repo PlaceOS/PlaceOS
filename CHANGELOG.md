@@ -7,6 +7,11 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ## [Unreleased]
 
+## [1.2108.1]
+
+### Fixed
+- Recover from malformed data in `source`.
+- Resolve cross-branch driver compilation bug in `core`.
 
 ## [1.2108.0]
 
