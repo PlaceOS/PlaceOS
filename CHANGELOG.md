@@ -7,6 +7,15 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ## [Unreleased]
 
+## [1.2108.3]
+
+### Fixed
+- Fixes an issue showing SSO users PlaceOS/rest-api#172
+- Adds missing DB indexes to Auth container
+
+### Added
+- Allow 3rd party apps to use PlaceOS as an SSO provider
+
 ## [1.2108.2]
 
 ### Added
