@@ -7,6 +7,11 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ## [Unreleased]
 
+## [1.2108.4]
+
+### Fixed
+- SSO email hashing
+
 ## [1.2108.3]
 
 ### Fixed
