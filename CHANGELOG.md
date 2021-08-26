@@ -7,6 +7,9 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ## [Unreleased]
 
+### Added
+- Inclusion of [`build`](https://github.com/PlaceOS/build) in release packaging.
+
 ## [1.2108.4]
 
 ### Fixed
