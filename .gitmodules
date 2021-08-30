@@ -48,4 +48,4 @@
 	url = https://github.com/placeos/staff-api.git
 [submodule "services/build"]
 	path = services/build
-	url = https://github.com/PlaceOS/build
+	url = https://github.com/PlaceOS/build.git
