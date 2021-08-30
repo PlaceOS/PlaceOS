@@ -88,8 +88,8 @@ jobs:
           PLACE_VERSION=${{ needs.platform-info.outputs.version }}
           TARGET=${{ matrix.service.name }}
         outputs: type=docker,dest=image.tar
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
+        cache-from: type=gha,scope=${{ matrix.service.name }}
+        cache-to: type=gha,scope=${{ matrix.service.name }},mode=max
         tags: placeos/${{ matrix.service.name }}:${{ needs.platform-info.outputs.version }}
         labels: |
           org.opencontainers.image.url=${{ matrix.service.href }}
