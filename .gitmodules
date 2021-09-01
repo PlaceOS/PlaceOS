@@ -22,9 +22,9 @@
 [submodule "services/dispatch"]
 	path = services/dispatch
 	url = https://github.com/placeos/dispatch.git
-[submodule "services/frontends"]
-	path = services/frontends
-	url = https://github.com/placeos/frontends.git
+[submodule "services/frontend-loader"]
+	path = services/frontend-loader
+	url = https://github.com/placeos/frontend-loader.git
 [submodule "clients/crystal"]
 	path = clients/crystal
 	url = https://github.com/placeos/crystal-client.git
