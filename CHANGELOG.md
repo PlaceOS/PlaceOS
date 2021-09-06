@@ -8,11 +8,11 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 ## Unreleased
 
 ### Added
-- Inclusion of [`build`](https://github.com/PlaceOS/build) in release packaging.
-- Support updates to repository credentials.
 - Support updates to guest email addresses.
 - Provide user context to driver method execution.
 - Support guest search against multiple tokens.
+- Include [`build`](https://github.com/PlaceOS/build) in release packaging.
+  _(note: early preview only - not currently an active platform component.)_
 
 ### Changed
 - Renamed `frontends` → `frontend-loader`.
@@ -25,7 +25,8 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Normalise handling of user email case sensitivity.
 - Provide full commit list for current repository branches.
 - Prevent cyclic behaviour when updating interface repositories.
-- Update default docker healthcheck URI's.
+- Support updates to repository credentials.
+- Incorrect default healthcheck on `triggers` service.
 
 
 ## 1.2108.4
