@@ -12,7 +12,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Provide user context to driver method execution.
 - Support guest search against multiple tokens.
 - Include [`build`](https://github.com/PlaceOS/build) in release packaging.
-  _(note: early preview only - not currently an active platform component.)_
+  _(note: early preview only)_
 
 ### Changed
 - Renamed `frontends` → `frontend-loader`.
@@ -21,7 +21,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Use crystal 1.1.1 for driver compilation.
 
 ### Fixed
-- Improve application recover of `staff-api` when database connectivity is disrupted.
+- Improve application-level recovery of `staff-api` following disruption to database connectivity.
 - Normalise handling of user email case sensitivity.
 - Provide full commit list for current repository branches.
 - Prevent cyclic behaviour when updating interface repositories.
