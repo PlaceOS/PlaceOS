@@ -9,7 +9,23 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ### Added
 - Inclusion of [`build`](https://github.com/PlaceOS/build) in release packaging.
-- Support updates to repository credentials
+- Support updates to repository credentials.
+- Support updates to guest email addresses.
+- Provide user context to driver method execution.
+- Support guest search against multiple tokens.
+
+### Changed
+- Renamed `frontends` → `frontend-loader`.
+- Renamed environment variables for UDP logging.
+- Build services against crystal 1.1.1.
+- Use crystal 1.1.1 for driver compilation.
+
+### Fixed
+- Improve application recover of `staff-api` when database connectivity is disrupted.
+- Normalise handling of user email case sensitivity.
+- Provide full commit list for current repository branches.
+- Prevent cyclic behaviour when updating interface repositories.
+- Update default docker healthcheck URI's.
 
 
 ## 1.2108.4
