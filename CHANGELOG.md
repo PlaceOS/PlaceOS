@@ -4,16 +4,23 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+
+
 ## Unreleased
 
-- Fix healthcheck of `frontend-loader`.
-- Account for branches in commit listing in `rest-api`.
-- Fix `core` and `frontend-loader` resetting to master on git queries.
-- Fix rethinkdb driver reconnections on writes.
-- Fix token revocation in `auth`.
-- Improve handling of GraphAPI errors in `staff-api`.
+### Changed
+- Use full commit hashes for repository pinning.
+
+### Fixed
+- Update default healthcheck on `frontend-loader` service.
+- Support commit listing on repositories using non-default branches.
+- Prevent repositories reverting to master branch.
+- Ensure reconnection to RethinkDB following write error.
+
+### Security
 - Add permissions check on event creation in `staff-api`.
-- Full commits (as opposed to short commits) retrieved and stored against the `Repository` model.
+- Support refresh token revocation.
+
 
 ## 1.2109.0
 
