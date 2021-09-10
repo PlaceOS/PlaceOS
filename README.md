@@ -2,8 +2,10 @@
   <img src="https://github.com/placeos.png?size=200" alt="PlaceOS" />
 </p>
 
-This repository defines PlaceOS platform releases.
-It provides new release notification and the canonical reference for release history.
+[![Build](https://github.com/PlaceOS/PlaceOS/actions/workflows/build.yml/badge.svg)](https://github.com/PlaceOS/PlaceOS/actions/workflows/build.yml)
+
+This repository defines [PlaceOS](https://place.technology/) platform releases.
+It provides new release notification and the canonical reference for the platform's release history.
 
 
 ## Platform Versioning
