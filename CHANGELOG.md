@@ -5,6 +5,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
 
+## 1.2109.1
+
+### Changed
+- Use full commit hashes for repository pinning.
+
+### Fixed
+- Update default healthcheck on `frontend-loader` service.
+- Support commit listing on repositories using non-default branches.
+- Prevent repositories reverting to master branch.
+- Ensure reconnection to RethinkDB following write error.
+- Build `staff-api` service against crystal 1.1.1.
+- Resolve replication issue for search indicies.
+
+### Security
+- Add permissions check on event creation in `staff-api`.
+- Support refresh token revocation.
+
+
 ## 1.2109.0
 
 ### Added
