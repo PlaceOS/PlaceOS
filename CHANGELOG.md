@@ -17,8 +17,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Prevent repositories reverting to master branch.
 - Ensure reconnection to RethinkDB following write error.
 - Build `staff-api` service against crystal 1.1.1.
-- Ensure correct search index creation on boot.
-- Provide extended logging from `rubber-soul` service.
+- Resolve replication issue for search indicies.
 
 ### Security
 - Add permissions check on event creation in `staff-api`.
