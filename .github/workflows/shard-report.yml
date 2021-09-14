@@ -1,11 +1,11 @@
 name: Shard Report
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: [Update]
     branches: [nightly]
     types: [completed]
-  workflow_dispatch:
 
 jobs:
   generate:
@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          submodules: recursive
       -
         name: Generate report
         run: |
