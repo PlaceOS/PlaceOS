@@ -85,3 +85,22 @@ References to all source repositories exist as submodules.
 If you have already cloned this repo, you can access these via `git submodule update --init`.
 These reference commits used to construct the built artefacts at each release.
 
+## CI Status
+
+[![Build](https://img.shields.io/github/workflow/status/PlaceOS/build/CI?label=build&style=flat-square)](https://github.com/PlaceOS/build/actions/workflows/ci.yml)
+
+[![Core](https://img.shields.io/github/workflow/status/PlaceOS/core/CI?label=core&style=flat-square)](https://github.com/PlaceOS/core/actions/workflows/ci.yml)
+
+[![Dispatch](https://img.shields.io/github/workflow/status/PlaceOS/dispatch/CI?label=dispatch&style=flat-square)](https://github.com/PlaceOS/dispatch/actions/workflows/ci.yml)
+
+[![Frontend Loader](https://img.shields.io/github/workflow/status/PlaceOS/frontend-loader/CI?label=frontend-loader&style=flat-square)](https://github.com/PlaceOS/frontend-loader/actions/workflows/ci.yml)
+
+[![Rest API](https://img.shields.io/github/workflow/status/PlaceOS/rest-api/CI?label=rest-api&style=flat-square)](https://github.com/PlaceOS/rest-api/actions/workflows/ci.yml)
+
+[![Rubber Soul](https://img.shields.io/github/workflow/status/PlaceOS/rubber-soul/CI?label=rubber-soul&style=flat-square)](https://github.com/PlaceOS/rubber-soul/actions/workflows/ci.yml)
+
+[![Source](https://img.shields.io/github/workflow/status/PlaceOS/source/CI?label=source&style=flat-square)](https://github.com/PlaceOS/source/actions/workflows/ci.yml)
+
+[![Staff API](https://img.shields.io/github/workflow/status/PlaceOS/staff-api/CI?label=staff-api&style=flat-square)](https://github.com/PlaceOS/staff-api/actions/workflows/ci.yml)
+
+[![Triggers](https://img.shields.io/github/workflow/status/PlaceOS/triggers/CI?label=triggers&style=flat-square)](https://github.com/PlaceOS/triggers/actions/workflows/ci.yml)
