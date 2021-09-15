@@ -10,7 +10,7 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    image: crystallang/crystal:1.1.1
+    container: crystallang/crystal:1.1.1
     steps:
       -
         name: Checkout release
