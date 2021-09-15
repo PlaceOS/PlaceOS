@@ -1,0 +1,44 @@
+name: Shard Report
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Update]
+    branches: [nightly]
+    types: [completed]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    image: crystallang/crystal:1.1.1
+    steps:
+      -
+        name: Checkout release
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      -
+        name: Generate report
+        run: |
+          ./.scripts/query_shard_versions.cr . \
+            action-controller \
+            clustering \
+            hound-dog \
+            neuroplastic \
+            placeos \
+            placeos-compiler \
+            placeos-core-client \
+            placeos-driver \
+            placeos-log-backend \
+            placeos-models \
+            placeos-resource \
+            rethinkdb \
+            rethinkdb-orm > shard_report.md
+      -
+        name: Upload report
+        uses: actions/upload-artifact@v2
+        with:
+          name: Shard Report
+          path: shard_report.md
+
