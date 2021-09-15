@@ -67,7 +67,7 @@ puts "# PlaceOS `shards` audit"
 puts "\nDate: #{Time.local(Time::Location.fixed(10)).to_rfc3339} AEST"
 puts "PlaceOS Version: #{ENV["PLACEOS_VERSION"]}" if ENV.has_key? "PLACEOS_VERSION"
 puts "\n**Shards considered**\n"
-puts "- #{filtered_shards.join("")}\n\n"
+puts "- #{filtered_shards.join("\n- ")}\n\n"
 
 if tally
   puts "## `shards` by frequency\n\n"
