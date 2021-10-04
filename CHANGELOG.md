@@ -4,6 +4,20 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## Unreleased
+
+### Added
+- Get access token using resource owner's credentials (insecure) in `crystal-client`
+- Granular OAuth Scopes in `rest-api`
+- Support for nest hashes in `source` influx publisher
+
+### Fixed
+- Handle proxied PUBLISH events in `edge`
+- Resolved issues with multi-type fields in `rubber-soul` table manager
+- Add validation for booking times in `staff-api`
+- Look up events with system mailbox in `staff-api`
+- Able to mark visitor as unexpected in `staff-api`
+- Allow tenant conference_type to be configurable in `staff-api`
 
 ## 1.2109.1
 
@@ -21,7 +35,6 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 ### Security
 - Add permissions check on event creation in `staff-api`.
 - Support refresh token revocation.
-
 
 ## 1.2109.0
 
@@ -46,12 +59,10 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Support updates to repository credentials.
 - Incorrect default healthcheck on `triggers` service.
 
-
 ## 1.2108.4
 
 ### Fixed
 - SSO email hashing
-
 
 ## 1.2108.3
 
@@ -62,20 +73,17 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 ### Added
 - Allow 3rd party apps to use PlaceOS as an SSO provider
 
-
 ## 1.2108.2
 
 ### Added
 - Inclusion of [`staff-api`](https://github.com/PlaceOS/staff-api) in release packaging.
 - Metadata endpoints on `rest-api` entities.
 
-
 ## 1.2108.1
 
 ### Fixed
 - Recover from malformed data in `source`.
 - Resolve cross-branch driver compilation bug in `core`.
-
 
 ## 1.2108.0
 
