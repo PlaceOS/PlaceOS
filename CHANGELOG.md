@@ -7,18 +7,16 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 ## Unreleased
 
 ### Added
-- Get access token using resource owner's credentials (insecure) in `crystal-client`
 - Granular OAuth Scopes in `rest-api`
-- Support for nest hashes in `source` influx publisher
+- Support for nested hashes in `source` influx publisher
 
 ### Fixed
 - Handle proxied PUBLISH events in `edge`
-- Resolved issues with multi-type fields in `rubber-soul` table manager
+- Resolved issues with Elasticsearch indexing
 - Add validation for booking times in `staff-api`
 - Look up events with system mailbox in `staff-api`
-- Able to mark visitor as unexpected in `staff-api`
+- Ability to mark visitor as unexpected in `staff-api`
 - Allow tenant conference_type to be configurable in `staff-api`
-
 
 ## 1.2109.1
 
