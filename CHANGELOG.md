@@ -4,6 +4,19 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## Unreleased
+
+### Added
+- Granular OAuth Scopes in `rest-api`
+- Support for nested hashes in `source` influx publisher
+
+### Fixed
+- Handle proxied PUBLISH events in `edge`
+- Resolved issues with Elasticsearch indexing
+- Add validation for booking times in `staff-api`
+- Look up events with system mailbox in `staff-api`
+- Ability to mark visitor as unexpected in `staff-api`
+- Allow tenant conference_type to be configurable in `staff-api`
 
 ## 1.2109.1
 
