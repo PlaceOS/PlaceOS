@@ -1,0 +1,63 @@
+name: Platform Info
+description: Introspects the repository structure for build and version details
+
+inputs:
+  ref:
+    description: git ref to introspect (branch, tag, or sha)
+    required: true
+
+outputs:
+  services:
+    description: JSON encoded list of objects containing service information
+    value: ${{ steps.introspect.outputs.services }}
+  version:
+    description: Platform version identifier
+    value: ${{ steps.version.outputs.tag }}
+
+runs:
+  using: composite
+  steps:
+    -
+      name: Checkout release
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ inputs.ref }}
+        fetch-depth: 0
+    -
+      name: Generate version number
+      id: version
+      shell: bash
+      run: |
+        branch=$(git branch --show-current)
+        if [[ $branch =~ ^[0-9]+\.[0-9]{4}$ ]]
+        then
+          echo ::debug::Generating platform version
+          offset=$(git rev-list origin/nightly.. --count)
+          echo ::set-output name=tag::placeos-$branch.$offset
+        else
+          echo ::debug::Not on a release branch, using branch name
+          echo ::set-output name=tag::$branch
+        fi
+    -
+      name: Discover services
+      id: introspect
+      shell: bash
+      run: |
+        echo ::set-output name=services::$(
+          git submodule--helper list services |
+          while read -r _ sha _ path; do
+            sm_name=$(git submodule--helper name $path)
+            name=$(basename $path)
+            repo=$(git submodule--helper config submodule.$sm_name.url)
+            echo "$name $path $repo $sha"
+          done |
+          jq -Rnc '. |= [ inputs | split(" ") |
+            {
+              name: .[0],
+              path: .[1],
+              repo: .[2],
+              href: .[2][:-4],
+              sha:  .[3],
+            }
+          ]'
+        )

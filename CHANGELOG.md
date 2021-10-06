@@ -5,15 +5,33 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
-## 1.2110.4
+## 1.2110.5
+
+### Added
+
+- Reindexes of Elasticsearch now return whether the action failed or succeeded.
 
 ### Changed
 
-- Initial load of interfaces is now non-blocking. This removes an unneccessary failover-dependency between the interface loader and other services.
+- Search indexing's resiliency to failover has been improved.
+- The dispatch service mounted on `/api/dispatch/v1` instead of `/api/server`
+
+### Fixed
+
+- Resolve an issue with debugging drivers that have been reloaded.
+- Resolve a corruption issue with the WebSocket API.
+- Invalid UTF-8 responses from drivers are scrubbed.
+
+
+## 1.2110.4
 
 ### Added
 
 - `frontend-loader` exposes `/api/frontend-loader/v1/startup` for `startupProbe` in Kubernetes
+
+### Changed
+
+- Initial load of interfaces is now non-blocking. This removes an unnecessary failover-dependency between the interface loader and other services.
 
 ### Fixed
 
@@ -32,6 +50,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 - Granular OAuth Scopes in `rest-api`
 - Support for nested hashes in `source` influx publisher
+- JSON logging, configurable via `PLACE_LOG_FORMAT=json` in container environment
 
 ### Fixed
 
@@ -41,6 +60,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Look up events with system mailbox in `staff-api`
 - Ability to mark visitor as unexpected in `staff-api`
 - Allow tenant conference_type to be configurable in `staff-api`
+
 
 ## 1.2109.1
 
