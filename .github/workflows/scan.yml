@@ -36,6 +36,9 @@ jobs:
     name: Scan ${{ matrix.service.name }}
     steps:
     -
+      name: Checkout
+      uses: actions/checkout@v2
+    -
       name: Pull
       run: docker pull placeos/${{ matrix.service.name }}:${{ matrix.version }}
     -
