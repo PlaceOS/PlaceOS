@@ -78,49 +78,8 @@ jobs:
         name: ${{ matrix.service.name }}
         path: image.tar
 
-  scan:
-    needs:
-    - discover
-    - build
-    strategy:
-      matrix:
-        service: ${{ fromJson(needs.discover.outputs.services) }}
-        version:
-        - ${{ needs.discover.outputs.version }}
-      fail-fast: false
-    runs-on: ubuntu-latest
-    name: Scan ${{ matrix.service.name }}
-    steps:
-    -
-      name: Download image artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: ${{ matrix.service.name }}
-    -
-      name: Load
-      run: docker load --input image.tar
-    -
-      name: Scan
-      uses: anchore/scan-action@v3
-      id: scan
-      with:
-        image: placeos/${{ matrix.service.name }}:${{ matrix.version }}
-        fail-build: true
-        severity-cutoff: critical
-        acs-report-enable: true
-        debug: true
-    -
-      name: Report
-      if: ${{ always() }}
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: ${{ steps.scan.outputs.sarif }}
-        category: ${{ github.workflow }}/${{ github.job }}/${{ matrix.service.path }}/${{ matrix.version }}/${{ github.run_id }}
-
   publish:
-    needs:
-    - build
-    - scan
+    needs: build
     runs-on: ubuntu-latest
     name: Publish
     steps:
