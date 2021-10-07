@@ -20,52 +20,19 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       services: ${{ steps.introspect.outputs.services }}
-      commit: ${{ steps.introspect.outputs.commit }}
-      version: ${{ steps.version.outputs.tag }}
+      version:  ${{ steps.introspect.outputs.version }}
+      commit:   ${{ github.sha }}
     name: Discover
     steps:
     -
-      name: Checkout release
+      name: Checkout local actions and scripts
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    -
-      name: Generate version number
-      id: version
-      run: |
-        branch=$(git branch --show-current)
-        if [[ $branch =~ ^[0-9]+\.[0-9]{4}$ ]]
-        then
-          echo ::debug::Generating platform version
-          offset=$(git rev-list origin/nightly.. --count)
-          echo ::set-output name=tag::placeos-$branch.$offset
-        else
-          echo ::debug::Not on a release branch, using branch name
-          echo ::set-output name=tag::$branch
-        fi
     -
       name: Discover services
       id:   introspect
-      run: |
-        echo ::set-output name=commit::$(git rev-parse HEAD)
-        echo ::set-output name=services::$(
-          git submodule--helper list services |
-          while read -r _ sha _ path; do
-            sm_name=$(git submodule--helper name $path)
-            name=$(basename $path)
-            repo=$(git submodule--helper config submodule.$sm_name.url)
-            echo "$name $path $repo $sha"
-          done |
-          jq -Rnc '. |= [ inputs | split(" ") |
-            {
-              name: .[0],
-              path: .[1],
-              repo: .[2],
-              href: .[2][:-4],
-              sha:  .[3],
-            }
-          ]'
-        )
+      uses: ./.github/actions/platform-info
+      with:
+        ref: ${{ github.ref }}
 
   build:
     needs: discover
