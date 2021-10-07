@@ -1,0 +1,9 @@
+{
+  "watchForFileChanges":false,
+  "waitForAnimations":true,
+  "retries": 2,
+  "chromeWebSecurity": false,
+  "experimentalSessionSupport": true,
+  "video": false,
+  "screenshotOnRunFailure": true
+}

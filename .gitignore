@@ -1,0 +1,5 @@
+cypress-tests/node_modules
+cypress-tests/cypress/downloads/*
+cypress-tests/cypress/screenshots/*
+cypress-tests/cypress/.DS_Store
+cypress-tests/cypress/integration/.DS_Store

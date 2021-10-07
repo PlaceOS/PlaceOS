@@ -1,0 +1,44 @@
+name: Cypress E2E Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo with tests
+        uses: actions/checkout@v2
+        with:
+          path: main
+      - name: Checkout partner environment repo
+        uses: actions/checkout@v2
+        with:
+          repository: place-labs/partner-environment
+          path: environment
+      - name: Spin up PlaceOS
+        working-directory: ./environment
+        run: ./placeos start --verbose
+        env:
+          PLACEOS_TAG: ${{ matrix.version }}
+          PLACE_EMAIL: support@place.tech
+          PLACE_PASSWORD: development
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          working-directory: ./main/cypress-tests
+          start: npm run test
+          headless: true
+          browser: chrome
+          wait-on: "https://localhost:8443/backoffice"
+          wait-on-timeout: 121
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: 0
+      - name: Archive test screenshots
+        uses: actions/upload-artifact@v1
+        with:
+          name: screenshots
+          path: main/cypress-tests/cypress/screenshots
+        if: ${{ failure() }}
