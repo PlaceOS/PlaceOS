@@ -141,6 +141,7 @@ jobs:
         fail-build: true
         severity-cutoff: critical
         acs-report-enable: true
+        debug: true
     -
       name: Report
       if: ${{ always() }}
