@@ -4,11 +4,12 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
-## Unreleased
+## 1.2110.0
 
 ### Added
 - Granular OAuth Scopes in `rest-api`
 - Support for nested hashes in `source` influx publisher
+- JSON logging, configurable via `PLACE_LOG_FORMAT=json` in container environment
 
 ### Fixed
 - Handle proxied PUBLISH events in `edge`
