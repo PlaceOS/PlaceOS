@@ -1,8 +1,30 @@
 # Changelog
+
 All notable changes to PlaceOS are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
+
+## 1.2110.4
+
+### Changed
+
+- Initial load of interfaces is now non-blocking. This removes an unneccessary failover-dependency between the interface loader and other services.
+
+### Added
+
+- `frontend-loader` exposes `/api/frontend-loader/v1/startup` for `startupProbe` in Kubernetes
+
+### Fixed
+
+- Elasticsearch document indexing is more resilient to connection failures.
+
+## 1.2110.3
+
+### Fixed
+
+- Drivers with malformed settings were not loading
+- Using websockets, in Javascript, with `X-API-KEY` authentication
 
 ## 1.2110.0
 
