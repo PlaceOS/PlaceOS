@@ -6,6 +6,7 @@ jobs:
   test:
     name: "version: ${{ matrix.version != '' && matrix.version || 'empty'}}, os: ${{ matrix.os }}, stable: ${{ matrix.stable }}"
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
     continue-on-error: ${{ !matrix.stable }}
     strategy:
       fail-fast: false
