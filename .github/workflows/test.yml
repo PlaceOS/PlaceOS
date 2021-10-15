@@ -4,29 +4,29 @@ on:
 jobs:
   test:
     name: "version: ${{ matrix.version != '' && matrix.version || 'empty'}}, os: ${{ matrix.os }}, stable: ${{ matrix.stable }}"
-      runs-on: ${{ matrix.os }}
-      continue-on-error: ${{ !matrix.stable }}
-      strategy:
-        fail-fast: false
-        matrix:
-          stable: [true]
-          os:
-            - ubuntu-18.04
-            - ubuntu-latest
-          version:
-            - "" # Test empty tag
-            - placeos-1.2105.3
-            - placeos-1.2107.4
-            - placeos-1.2108.4
-            - placeos-1.2109.0
-            - placeos-1.2109.1
-          include:
-            - version: nightly
-              stable: false
-              os: ubuntu-18.04
-            - version: nightly
-              stable: false
-              os: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ !matrix.stable }}
+    strategy:
+      fail-fast: false
+      matrix:
+        stable: [true]
+        os:
+          - ubuntu-18.04
+          - ubuntu-latest
+        version:
+          - "" # Test empty tag
+          - placeos-1.2105.3
+          - placeos-1.2107.4
+          - placeos-1.2108.4
+          - placeos-1.2109.0
+          - placeos-1.2109.1
+        include:
+          - version: nightly
+            stable: false
+            os: ubuntu-18.04
+          - version: nightly
+            stable: false
+            os: ubuntu-latest
     steps:
       - name: Checkout repo with tests
         uses: actions/checkout@v2
