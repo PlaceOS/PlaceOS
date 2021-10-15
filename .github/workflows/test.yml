@@ -1,5 +1,6 @@
 name: Cypress E2E Test
 on:
+  push:
   workflow_dispatch:
 jobs:
   test:
