@@ -56,7 +56,6 @@ Cypress.Commands.add('addDriver', (name = "MyDriver")=> {
   cy.get('[placeholder="Search for repository..."]').click({force: true});
   cy.wait(1000);
   cy.get('*[class^="mat-option-text"]').contains(/^Drivers$/).click({force: true});
-	//cy.contains(/^Drivers$/).click({force: true});
   cy.wait(1000);
   cy.get('[placeholder="Search for driver..."]').click();
   cy.wait(1000);
@@ -67,7 +66,7 @@ Cypress.Commands.add('addDriver', (name = "MyDriver")=> {
   cy.get('*[class^="mat-option-text"]').contains("feat: migrate to standalone drivers").click({force: true});
   cy.contains('Loading driver details for commit...', { timeout: 80000 }).should('not.exist');
   cy.get('[placeholder="Driver Name"]').focus().clear().type(name);
-  cy.contains('Save').click();
+  cy.contains('Save').click({force: true });
   cy.get('*[class^="mat-simple-snackbar ng-star-inserted"]').contains("Successfully");
 });
 
@@ -80,7 +79,7 @@ Cypress.Commands.add('addSystem', (system_name) => {
   cy.wait(1000);
   cy.get('*[class^="mat-option-text"]').first().click({force: true});
   cy.get('[placeholder="System Name"]').click().type(system_name)
-  cy.contains('Save').click();
+  cy.contains('Save').click({force: true });
   cy.get('*[class^="mat-simple-snackbar ng-star-inserted"]').contains("Successfully added system");
 });
 
@@ -93,7 +92,7 @@ Cypress.Commands.add('addModule', (driver_name) => {
   cy.wait(1000);
   cy.get('*[class^="mat-option-text"]').contains(driver_name).click({force: true});
 	cy.get('[placeholder="Module URI"]').focus().clear().type("https://localhost.com")
-  cy.contains('Save').click();
+  cy.contains('Save').click({force: true });
   cy.contains("Successfully added module");
 });
 
@@ -103,7 +102,7 @@ Cypress.Commands.add('addTrigger', (trigger_name) => {
   cy.get('*[class^="mat-focus-indicator mat-tooltip-trigger add mat-icon-button mat-button-base ng-star-inserted"]').click();
   cy.wait(1000);
   cy.get('input[name="trigger-name"]').type(trigger_name);
-  cy.contains('Save').click();
+  cy.contains('Save').click({force: true });
   cy.wait(50);
   cy.get('*[class^="mat-simple-snackbar ng-star-inserted"]').contains("Successfully added trigger");
 });
@@ -115,7 +114,7 @@ Cypress.Commands.add('addDomain', (domain_name) => {
 	cy.wait(1000);
 	cy.get('input[name="domain-name"]').type(domain_name);
 	cy.get('input[name="domain"]').type("localhost" + getRandomInt(100))
-	cy.contains('Save').click();
+	cy.contains('Save').click({force: true });
 	cy.wait(50);
 	cy.get('*[class^="heading select-text"]').contains(domain_name);
 });
@@ -126,7 +125,7 @@ Cypress.Commands.add('addZone', (zone_name) => {
 	cy.get('*[class^="mat-focus-indicator mat-tooltip-trigger add mat-icon-button mat-button-base ng-star-inserted"]').click();
 	cy.wait(1000);
 	cy.get('input[name="zone-name"]').type(zone_name);
-	cy.contains('Save').click();
+	cy.contains('Save').click({force: true });
 	cy.get('*[class^="mat-simple-snackbar ng-star-inserted"]').contains("Successfully");
 	cy.reload();
 	cy.wait(1000);
@@ -144,7 +143,7 @@ Cypress.Commands.add('addSystem', (system_name, zone_name = "false") => {
 		  cy.get('*[class^="mat-option-text"]').contains(zone_name).click({force: true});
 		}
 	cy.get('[placeholder="System Name"]').click().type(system_name)
-	cy.contains('Save').click();
+	cy.contains('Save').click({force: true });
 	cy.get('*[class^="mat-simple-snackbar ng-star-inserted"]').contains("Successfully");
 	cy.get('*[class^="search"]').type(system_name);
 	cy.wait(1000);
@@ -167,7 +166,7 @@ Cypress.Commands.add('addSystemWithModule', (system_name, module_name) => {
 	cy.get('*[class^="mat-option-text"]').first().click({force: true});
 	cy.wait(1000);
 	cy.get('[placeholder="Custom Name"]').click().type(module_name);
-	cy.contains('Save').click();
+	cy.contains('Save').click({force: true });
 	cy.get('*[class^="mat-simple-snackbar ng-star-inserted"]').contains("Successfully");
 	cy.reload();
 	cy.wait(1000);
@@ -184,7 +183,7 @@ Cypress.Commands.add('addUser', (first_name, last_name) => {
 	cy.get('input[name="useremail"]').type(first_name + "@email.au");
 	cy.get('input[name="new-password"]').type(last_name + "123!");
 	cy.get('input[name="confirm-password"]').type(last_name + "123!");
-	cy.contains('Save').click();
+	cy.contains('Save').click({force: true });
 	cy.get('*[class^="mat-simple-snackbar ng-star-inserted"]').contains("Successfully");
 	cy.reload();
 	cy.wait(1000);

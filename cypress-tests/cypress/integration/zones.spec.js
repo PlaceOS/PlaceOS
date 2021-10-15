@@ -261,6 +261,8 @@ describe("Zones test", () => {
 	});
 
   it("Can associate a new trigger with a Zone", () => {
+		let trigger_name = uniqueNamesGenerator(config) + getRandomInt(100);
+		cy.addTrigger(trigger_name);
 		let zone_name = uniqueNamesGenerator(config) + getRandomInt(100);
 		cy.addZone(zone_name);
 		cy.get('*[class^="search"]').type(zone_name);
@@ -270,7 +272,7 @@ describe("Zones test", () => {
 			force: true
 		});
     cy.get('*[class^="mat-button-wrapper"]').contains('Add Trigger').click();
-		cy.get('[placeholder="Search..."]').last().click({force: true});
+		cy.get('[placeholder="Search..."]').last().type(trigger_name);
     cy.wait(1000);
     cy.get('*[class^="mat-option-text"]').first().click({force: true});
     cy.wait(1000);
@@ -292,6 +294,8 @@ describe("Zones test", () => {
 	});
 
   it("Can delete a trigger from a Zone", () => {
+		let trigger_name = uniqueNamesGenerator(config) + getRandomInt(100);
+		cy.addTrigger(trigger_name);
 		let zone_name = uniqueNamesGenerator(config) + getRandomInt(100);
 		cy.addZone(zone_name);
 		cy.get('*[class^="search"]').type(zone_name);
@@ -301,7 +305,7 @@ describe("Zones test", () => {
 			force: true
 		});
     cy.get('*[class^="mat-button-wrapper"]').contains('Add Trigger').click();
-		cy.get('[placeholder="Search..."]').last().click({force: true});
+		cy.get('[placeholder="Search..."]').last().type(trigger_name);
     cy.wait(1000);
     cy.get('*[class^="mat-option-text"]').first().click({force: true});
     cy.wait(1000);
@@ -323,17 +327,6 @@ describe("Zones test", () => {
 		cy.get('*[class^="search"]').type(zone_name);
 		cy.wait(1000);
     cy.get('*[class^="cdk-virtual-scroll-content-wrapper"]').children().first().click({force: true});
-    cy.get('*[class^="name"]').contains('Triggers').click({
-			force: true
-		});
-    cy.get('*[class^="mat-button-wrapper"]').contains('Add Trigger').click();
-		cy.get('[placeholder="Search..."]').last().click({force: true});
-    cy.wait(1000);
-    cy.get('*[class^="mat-option-text"]').first().click({force: true});
-    cy.wait(1000);
-    cy.get('*[class^="mat-button-wrapper"]').contains(/^Add$/).click({force: true});
-    cy.get('*[class^="truncate"]');
-
 
     let child_name = uniqueNamesGenerator(config) + getRandomInt(100);
     cy.get('*[class^="mat-focus-indicator mat-tooltip-trigger add mat-icon-button mat-button-base ng-star-inserted"]').click();
