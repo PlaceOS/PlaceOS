@@ -60,7 +60,7 @@ Cypress.Commands.add('addDriver', (name = "MyDriver")=> {
   cy.get('[placeholder="Search for driver..."]').click();
   cy.wait(1000);
   cy.get('*[class^="mat-option-text"]').contains("drivers > whispir > messages.cr").click({force: true});
-  cy.wait(1000);
+	cy.contains('Driver Commit:', { timeout: 80000 }).should('exist');
   cy.get('[placeholder="Search for commit..."]').click();
   cy.wait(1000);
   cy.get('*[class^="mat-option-text"]').contains("feat: migrate to standalone drivers").click({force: true});

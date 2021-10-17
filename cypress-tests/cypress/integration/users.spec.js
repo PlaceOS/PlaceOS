@@ -56,8 +56,7 @@ describe("Users test", () => {
 			force: true,
 		});
 		let new_name = uniqueNamesGenerator(config)
-		cy.get('input[name="first-name"]').focus().clear()
-		cy.get('input[name="first-name"]').type(new_name);
+		cy.get('[placeholder="First name"]').focus().clear().type(new_name); 
 		cy.contains('Save').click({
 			force: true
 		})
