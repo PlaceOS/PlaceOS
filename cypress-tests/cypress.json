@@ -1,7 +1,7 @@
 {
   "watchForFileChanges":false,
   "waitForAnimations":true,
-  "retries": 2,
+  "retries": 3,
   "chromeWebSecurity": false,
   "experimentalSessionSupport": true,
   "video": false,

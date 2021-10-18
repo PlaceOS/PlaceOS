@@ -30,20 +30,8 @@ describe("Zones test", () => {
   it("Can add a zone to a System", () => {
 		let zone_name = uniqueNamesGenerator(config) + getRandomInt(100);
 		cy.addZone(zone_name);
-
-    cy.visit('https://localhost:8443/backoffice/#/systems/-/about');
-    cy.wait(1000);
-    cy.get('*[class^="cdk-virtual-scroll-content-wrapper"]').children().first().click({
-			force: true
-		});
-    cy.wait(1000);
-    cy.get('*[class^="name"]').contains('Zones').click({force: true});
-		cy.get('[placeholder="Search for zone..."]').click({force: true}).type(zone_name);
-    cy.wait(1000);
-    cy.get('*[class^="mat-option-text"]').first().click({force: true});
-    cy.wait(1000);
-    cy.contains('Save Pending').click();
-    cy.get('*[class^="mat-simple-snackbar ng-star-inserted"]').contains("Successfully");
+		let system_name = uniqueNamesGenerator(config) + getRandomInt(100);
+		cy.addSystemwithZone(system_name,zone_name)
 	});
 
   it("Can search for systems in a Zone", () => {
@@ -178,7 +166,7 @@ describe("Zones test", () => {
 			force: true
 		});
 		cy.wait(1000);
-		cy.get('*[class^="backoffice-trash ng-star-inserted"]').click();
+		cy.get('*[class^="backoffice-trash ng-star-inserted"]').click({force: true});
     cy.contains('Ok').click();
     cy.get('*[class^="mat-simple-snackbar ng-star-inserted"]').contains("Successfully");
 	});
@@ -272,12 +260,11 @@ describe("Zones test", () => {
 			force: true
 		});
     cy.get('*[class^="mat-button-wrapper"]').contains('Add Trigger').click();
-		cy.get('[placeholder="Search..."]').last().type(trigger_name);
+		cy.get('[placeholder="Search..."]').last().focus().type(trigger_name);
     cy.wait(1000);
     cy.get('*[class^="mat-option-text"]').first().click({force: true});
     cy.wait(1000);
     cy.get('*[class^="mat-button-wrapper"]').contains(/^Add$/).click({force: true});
-    cy.get('*[class^="truncate"]');
 	});
 
   it("Can search for triggers in a Zone", () => {
@@ -305,18 +292,18 @@ describe("Zones test", () => {
 			force: true
 		});
     cy.get('*[class^="mat-button-wrapper"]').contains('Add Trigger').click();
-		cy.get('[placeholder="Search..."]').last().type(trigger_name);
+		cy.get('[placeholder="Search..."]').last().focus().type(trigger_name);
     cy.wait(1000);
     cy.get('*[class^="mat-option-text"]').first().click({force: true});
     cy.wait(1000);
     cy.get('*[class^="mat-button-wrapper"]').contains(/^Add$/).click({force: true});
-    cy.get('*[class^="truncate"]');
+    cy.wait(1000);
 
     cy.get('*[class^="name"]').contains('Triggers').click({
 			force: true
 		});
 
-    cy.get('*[class^="backoffice-trash ng-star-inserted"]').click()
+    cy.get('*[class^="backoffice-trash ng-star-inserted"]').click({force: true});
     cy.contains('Ok').click();
     cy.get('*[class^="mat-simple-snackbar ng-star-inserted"]').contains("Successfully");
 	});
@@ -331,7 +318,7 @@ describe("Zones test", () => {
     let child_name = uniqueNamesGenerator(config) + getRandomInt(100);
     cy.get('*[class^="mat-focus-indicator mat-tooltip-trigger add mat-icon-button mat-button-base ng-star-inserted"]').click();
     cy.wait(1000);
-    cy.get('input[name="zone-name"]').type(child_name);
+    cy.get('input[name="zone-name"]').focus().type(child_name);
     cy.get('*[class^="item-search-field"]').click({force: true}).type(zone_name);
     cy.wait(1000);
     cy.get('*[class^="mat-option-text"]').first().click({force: true});
