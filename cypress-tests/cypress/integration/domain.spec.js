@@ -117,7 +117,7 @@ describe("Domain test", () => {
     cy.get('input[name="redirect-uri"]').type("invalid");
     cy.get('*[class^="mat-button-wrapper"]').contains('Save').click();
     cy.get('*[class^="mat-button-wrapper"]').contains('Save').should('exist');
-    cy.get('*[class^="mat-button-wrapper"]').contains('Cancel').click();
+    cy.get('*[class^="mat-button-wrapper"]').contains('Cancel').click({force: true});
   });
 
   it("Can get the secret for an Application", () => {

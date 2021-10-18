@@ -328,7 +328,7 @@ describe("Systems test", () => {
 		let zone_name = uniqueNamesGenerator(config) + getRandomInt(1000);
 		cy.addZone(zone_name);
 		let system_name = uniqueNamesGenerator(config) + getRandomInt(1000);
-		cy.addSystem(system_name, zone_name);
+		cy.addSystemwithZone(system_name, zone_name);
 
     cy.get('*[class^="name"]').contains('Zones').click({force: true });
     cy.wait(1000);
@@ -341,7 +341,7 @@ describe("Systems test", () => {
 		let zone_name = uniqueNamesGenerator(config) + getRandomInt(1000);
 		cy.addZone(zone_name);
 		let system_name = uniqueNamesGenerator(config) + getRandomInt(1000);
-		cy.addSystem(system_name, zone_name);
+		cy.addSystemwithZone(system_name, zone_name);
 
     cy.get('*[class^="name"]').contains('Zones').click({force: true });
     cy.wait(1000);

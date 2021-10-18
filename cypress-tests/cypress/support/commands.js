@@ -71,11 +71,13 @@ Cypress.Commands.add('addDriver', (name = "MyDriver")=> {
 });
 
 Cypress.Commands.add('addSystem', (system_name) => {
+	let zone_name = uniqueNamesGenerator(config) + getRandomInt(1000);
+	cy.addZone(zone_name);
   cy.visit('https://localhost:8443/backoffice/#/systems/-/about');
   cy.wait(1000);
   cy.get('*[class^="mat-focus-indicator mat-tooltip-trigger add mat-icon-button mat-button-base ng-star-inserted"]').click();
   cy.wait(1000);
-  cy.get('[placeholder="Search for zone..."]').click();
+  cy.get('[placeholder="Search for zone..."]').type(zone_name);
   cy.wait(1000);
   cy.get('*[class^="mat-option-text"]').first().click({force: true});
   cy.get('[placeholder="System Name"]').click().type(system_name)
@@ -131,7 +133,7 @@ Cypress.Commands.add('addZone', (zone_name) => {
 	cy.wait(1000);
 });
 
-Cypress.Commands.add('addSystem', (system_name, zone_name = "false") => {
+Cypress.Commands.add('addSystemwithZone', (system_name, zone_name = "false") => {
   cy.visit('https://localhost:8443/backoffice/#/systems/-/about');
   cy.wait(1000);
 	cy.get('*[class^="mat-focus-indicator mat-tooltip-trigger add mat-icon-button mat-button-base ng-star-inserted"]').click();

@@ -61,5 +61,5 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: screenshots
-          path: main/cypress-tests/cypress/screenshots
+          path: main/cypress-tests/cypress/screenshots/${{ matrix.version }}_${{ matrix.os }}
         if: ${{ failure() }}
