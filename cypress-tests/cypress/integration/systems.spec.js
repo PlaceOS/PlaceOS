@@ -67,6 +67,8 @@ describe("Systems test", () => {
   it("Can filter the systems", () => {
 		let system_name = uniqueNamesGenerator(config) + getRandomInt(1000);
     cy.addSystem(system_name);
+    cy.get('*[class^="search"]').type(system_name);
+		cy.wait(1000);
 		cy.get('*[class^="cdk-virtual-scroll-content-wrapper"]').children().should('have.length', 1)
 		cy.get('*[class^="search"]').clear();
 	});
