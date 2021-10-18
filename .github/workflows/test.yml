@@ -6,7 +6,7 @@ jobs:
   test:
     name: "version: ${{ matrix.version != '' && matrix.version || 'empty'}}, os: ${{ matrix.os }}, stable: ${{ matrix.stable }}"
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 90
+    timeout-minutes: 120
     continue-on-error: ${{ !matrix.stable }}
     strategy:
       fail-fast: false
@@ -57,11 +57,9 @@ jobs:
           wait-on-timeout: 121
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 0
-      - name: Make screenshot directory
-        run: mkdir -p main/cypress-tests/cypress/screenshots/${{ matrix.version }}_${{ matrix.os }}
       - name: Archive test screenshots
         uses: actions/upload-artifact@v1
         with:
           name: screenshots
-          path: main/cypress-tests/cypress/screenshots/${{ matrix.version }}_${{ matrix.os }}
+          path: main/cypress-tests/cypress/screenshots
         if: ${{ failure() }}
