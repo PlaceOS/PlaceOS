@@ -10,66 +10,35 @@ on:
     branches:
       - '[0-9].[0-9][0-9][0-9][0-9]'
 
+  workflow_dispatch:
+
 env:
   CRYSTAL_VERSION: 1.1.1
 
 jobs:
-  platform-info:
+  discover:
     runs-on: ubuntu-latest
     outputs:
       services: ${{ steps.introspect.outputs.services }}
-      commit: ${{ steps.introspect.outputs.commit }}
-      version: ${{ steps.version.outputs.tag }}
-    name: Prepare
+      version:  ${{ steps.introspect.outputs.version }}
+      commit:   ${{ github.sha }}
+    name: Discover
     steps:
     -
-      name: Checkout release
+      name: Checkout local actions and scripts
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    -
-      name: Generate version number
-      id: version
-      run: |
-        branch=$(git branch --show-current)
-        if [[ $branch =~ ^[0-9]+\.[0-9]{4}$ ]]
-        then
-          echo ::debug::Generating platform version
-          offset=$(git rev-list origin/nightly.. --count)
-          echo ::set-output name=tag::placeos-$branch.$offset
-        else
-          echo ::debug::Not on a release branch, using branch name
-          echo ::set-output name=tag::$branch
-        fi
     -
       name: Discover services
       id:   introspect
-      run: |
-        echo ::set-output name=commit::$(git rev-parse HEAD)
-        echo ::set-output name=services::$(
-          git submodule--helper list services |
-          while read -r _ sha _ path; do
-            sm_name=$(git submodule--helper name $path)
-            name=$(basename $path)
-            repo=$(git submodule--helper config submodule.$sm_name.url)
-            echo "$name $path $repo $sha"
-          done |
-          jq -Rnc '. |= [ inputs | split(" ") |
-            {
-              name: .[0],
-              path: .[1],
-              repo: .[2],
-              href: .[2][:-4],
-              sha:  .[3],
-            }
-          ]'
-        )
+      uses: ./.github/actions/platform-info
+      with:
+        ref: ${{ github.ref }}
 
-  build-services:
-    needs: platform-info
+  build:
+    needs: discover
     strategy:
       matrix:
-        service: ${{ fromJson(needs.platform-info.outputs.services) }}
+        service: ${{ fromJson(needs.discover.outputs.services) }}
       fail-fast: false
     runs-on: ubuntu-latest
     name: Build ${{ matrix.service.name }}
@@ -88,17 +57,17 @@ jobs:
         context: ${{ matrix.service.repo }}#${{ matrix.service.sha }}
         build-args: |
           CRYSTAL_VERSION=${{ env.CRYSTAL_VERSION }}
-          PLACE_COMMIT=${{ needs.platform-info.outputs.commit }}
-          PLACE_VERSION=${{ needs.platform-info.outputs.version }}
+          PLACE_COMMIT=${{ needs.discover.outputs.commit }}
+          PLACE_VERSION=${{ needs.discover.outputs.version }}
           TARGET=${{ matrix.service.name }}
         outputs: type=docker,dest=image.tar
         cache-from: type=gha,scope=${{ matrix.service.name }}
         cache-to: type=gha,scope=${{ matrix.service.name }},mode=max
-        tags: placeos/${{ matrix.service.name }}:${{ needs.platform-info.outputs.version }}
+        tags: placeos/${{ matrix.service.name }}:${{ needs.discover.outputs.version }}
         labels: |
           org.opencontainers.image.url=${{ matrix.service.href }}
           org.opencontainers.image.source=${{ matrix.service.href }}/tree/${{ matrix.service.sha }}
-          org.opencontainers.image.version=${{ needs.platform-info.outputs.version }}
+          org.opencontainers.image.version=${{ needs.discover.outputs.version }}
           org.opencontainers.image.revision=${{ matrix.service.sha }}
           org.opencontainers.image.vendor=Place Technology Limited
           org.opencontainers.image.title=${{ matrix.service.name }}
@@ -109,8 +78,8 @@ jobs:
         name: ${{ matrix.service.name }}
         path: image.tar
 
-  publish-images:
-    needs: build-services
+  publish:
+    needs: build
     runs-on: ubuntu-latest
     name: Publish
     steps:

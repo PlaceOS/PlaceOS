@@ -1,0 +1,4 @@
+# https://github.com/anchore/grype#specifying-matches-to-ignore
+
+ignore:
+
