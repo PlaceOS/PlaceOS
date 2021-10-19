@@ -5,6 +5,24 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2110.5
+
+### Added
+
+- Reindexes of Elasticsearch now return whether the action failed or succeeded.
+
+### Changed
+
+- Search indexing's resiliency to failover has been improved.
+- The dispatch service mounted on `/api/dispatch/v1` instead of `/api/server`
+
+### Fixed
+
+- Resolve an issue with debugging drivers that have been reloaded.
+- Resolve a corruption issue with the WebSocket API.
+- Invalid UTF-8 responses from drivers are scrubbed.
+
+
 ## 1.2110.4
 
 ### Changed
@@ -19,12 +37,14 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 - Elasticsearch document indexing is more resilient to connection failures.
 
+
 ## 1.2110.3
 
 ### Fixed
 
 - Drivers with malformed settings were not loading
 - Using websockets, in Javascript, with `X-API-KEY` authentication
+
 
 ## 1.2110.0
 
@@ -40,6 +60,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Look up events with system mailbox in `staff-api`
 - Ability to mark visitor as unexpected in `staff-api`
 - Allow tenant conference_type to be configurable in `staff-api`
+
 
 ## 1.2109.1
 
