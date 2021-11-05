@@ -12,6 +12,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - PlaceOS Pulse telemetry added (disabled by default).
 - Place Staff API gained support for delegated calendar access in O365.
 - An instance's encryption secret can be rotated via a task defined in PlaceOS Init
+- Updated services to Crystal v1.2.1
 
 ### Changed
 - Unified boolean URI parameter handling across the API surface.
