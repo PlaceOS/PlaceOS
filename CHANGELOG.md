@@ -10,6 +10,8 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 ### Added
 - Persist driver binaries and repositories across container recreation.
 - PlaceOS Pulse telemetry added (disabled by default).
+- Place Staff API gained support for delegated calendar access in O365.
+- An instance encryption secret can be rotated via a task defined in PlaceOS Init
 
 ### Changed
 - Unified boolean URI parameter handling across the API surface.
@@ -17,7 +19,6 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ### Fixed
 - Requests for driver metadata had the potential of blocking.
-- Invalid UTF-8 characters could corrupt WebSocket API messages.
 - Improved concurrent safety of the WebSocket API.
 - Calendar availability check improved.
 - Resolve CVE advisories for container dependencies.
