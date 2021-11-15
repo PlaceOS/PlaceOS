@@ -5,6 +5,16 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2111.1
+
+### Changed
+- `search-ingest` waits for `elasticsearch` to be healthy before interaction.
+
+### Fixed
+- Emails are normalised in `staff-api`.
+- Invalid schema responses from `elasticsearch` are gracefully handled.
+
+
 ## 1.2111.0
 
 ### Added
