@@ -5,6 +5,20 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2111.2
+
+### Changed
+- Support for `etcd` versions less than `3.4` has been dropped.
+
+### Added
+- Support sessions in iframes.
+- `core` waits for upstream services before starting boot processes.
+
+### Fixed
+- Resolved an issue with service discovery and Crystal v1.2.x
+- `PLACE_SERVER_SECRET` was incorrectly generated in `init`
+
+
 ## 1.2111.1
 
 ### Changed
