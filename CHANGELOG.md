@@ -5,6 +5,23 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+
+## 1.2111.3
+
+## Changed
+- Update to Crystal v1.2.2
+
+## Added
+- Forward `user_id` for identifying the initiator of module executes. ([#217](https://github.com/PlaceOS/rest-api/pull/217), [#153](https://github.com/PlaceOS/core/pull/153), [#103](https://github.com/PlaceOS/driver/pull/103))
+- Endpoint to get events by extension data. ([#131](https://github.com/PlaceOS/staff-api/pull/131))
+
+## Fixed
+- Allow spaces in passwords passed to the `init` container.
+- Tweak handling of auth for websockets when in an iframe.
+- Improve cleanup of IO resources in drivers.
+- Resolve an issue where an event's hosts were included as a guest. ([#132](https://github.com/PlaceOS/staff-api/pull/132))
+
+
 ## 1.2111.2
 
 ### Changed
