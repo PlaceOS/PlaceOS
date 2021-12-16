@@ -29,7 +29,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Improve cleanup of IO resources in drivers.
 - Resolve an issue where an event's hosts were included as a guest. ([#132](https://github.com/PlaceOS/staff-api/pull/132))
 
-## Known Issues
+### Known Issues
 - Fresh installs of the [`partner-environment`](https://github.com/place-labs/partner-environment) fail to generate secrets
 
 
