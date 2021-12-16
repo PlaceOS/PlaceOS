@@ -5,23 +5,31 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2111.4
+
+### Changed
+- HTTP no longer supported.
+
+### Fixed
+- Fixed incorrect secret generation that prevented `partner-environment` starting.
+
 
 ## 1.2111.3
 
-## Changed
+### Changed
 - Update to Crystal v1.2.2
 
-## Added
+### Added
 - Forward `user_id` for identifying the initiator of module executes. ([#217](https://github.com/PlaceOS/rest-api/pull/217), [#153](https://github.com/PlaceOS/core/pull/153), [#103](https://github.com/PlaceOS/driver/pull/103))
 - Endpoint to get events by extension data. ([#131](https://github.com/PlaceOS/staff-api/pull/131))
 
-## Fixed
+### Fixed
 - Allow spaces in passwords passed to the `init` container.
 - Tweak handling of auth for websockets when in an iframe.
 - Improve cleanup of IO resources in drivers.
 - Resolve an issue where an event's hosts were included as a guest. ([#132](https://github.com/PlaceOS/staff-api/pull/132))
 
-## Known Issues
+### Known Issues
 - Fresh installs of the [`partner-environment`](https://github.com/place-labs/partner-environment) fail to generate secrets
 
 
