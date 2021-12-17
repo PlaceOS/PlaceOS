@@ -5,13 +5,27 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
-## 1.2111.4
+
+## 1.2112.0
+
+### Added
+- Asset manager. ([#222](https://github.com/PlaceOS/rest-api/pull/222))
+- Static analysis via `brakeman` and `standardrb` to `auth`.
+- Support `X-Api-Key` in `auth`. ([#44](https://github.com/PlaceOS/auth/pull/44))
+- Routes for authenticating Mosquitto MQTT broker. ([#219](https://github.com/PlaceOS/rest-api/pull/219))
+- Upstream MQTT broker in `nginx`.
 
 ### Changed
-- HTTP no longer supported.
+- HTTP is no longer supported.
+- Flag deleted bookings instead of removing them. ([#136](https://github.com/PlaceOS/staff-api/pull/136))
+- Improved load errors in `core`.
 
 ### Fixed
+- Guests queries in `staff-api` are scoped beneath tenant. ([#137](https://github.com/PlaceOS/staff-api/pull/137))
 - Fixed incorrect secret generation that prevented `partner-environment` starting.
+- Fix `htpasswd` generation in `init`.
+- Stricter domain modelling of emails in `staff-api`.
+- Remove a potentially reflected parameter in `auth`.
 
 
 ## 1.2111.3
