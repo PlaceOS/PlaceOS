@@ -1,6 +1,7 @@
 name: Shard Report
 
 on:
+  push:
   workflow_dispatch:
   workflow_run:
     workflows: [Update]
