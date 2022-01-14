@@ -1,7 +1,6 @@
 name: Cypress E2E Test
 on:
   push:
-  workflow_dispatch:
 jobs:
   test:
     name: "version: ${{ matrix.version != '' && matrix.version || 'empty'}}, os: ${{ matrix.os }}, stable: ${{ matrix.stable }}"
