@@ -6,7 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
 
-## 1.2201.0
+## 1.2201.2
+
+### Added
+- Auth: Enable all available scopes
+
+### Fixed
+- Core: Resolve issue where initiating user's id was not propagated to module instance  ([#155](https://github.com/PlaceOS/core/pull/155))
+
+
+## 1.2201.1
 
 ### Added
 - Source: Allow drivers to define measurement names ([#27](https://github.com/PlaceOS/source/pull/27))
