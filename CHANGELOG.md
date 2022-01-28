@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
 
+## Unreleased
+
+### Changed
+- Crystal services built with [Crystal 1.3.2](https://github.com/crystal-lang/crystal/blob/master/CHANGELOG.md#132-2022-01-18)
+> Backoffice: Clarify columns on System's Module page.
+
+### Added
+- RestAPI: Add `/api/engine/v2/platform` to render platform metadata. ([#228](https://github.com/placeos/rest-api/pull/228))
+- Workplace: Add logic for auto allocation of desks when booking. ([#99](https://github.com/placeos/user-interfaces/pull/99))
+- Workplace: Add logic for preventing duplicate parking space bookings.
+- StaffAPI: Add configurable limits on booked assets. ([#145](https://github.com/placeos/staff-api/pull/145))
+
+### Fixed
+- Resolve CVE-2022-22823 ([#15](https://github.com/placeos/nginx/pull/15), [#53](https://github.com/placeos/init/pull/53), [#157](https://github.com/placeos/core/pull/157))
+- Backoffice: Fix adding new MQTT brokers. ([#247](https://github.com/placeos/backoffice/pull/247))
+- Backoffice: Fix to user name display.
+- Source: Creating mqtt publisher no longer blocks. ([#29](https://github.com/placeos/source/pull/29))
+- RestAPI: Swallow channel errors in produced by single-document changefeeds. ([#227](https://github.com/placeos/rest-api/pull/227))
+- RestAPI: Support `authority_id` in addition to `authority` param to auth source requests.
+
+
 ## 1.2201.2
 
 ### Added
