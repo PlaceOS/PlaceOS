@@ -10,7 +10,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ### Changed
 - Crystal services built with [Crystal 1.3.2](https://github.com/crystal-lang/crystal/blob/master/CHANGELOG.md#132-2022-01-18)
-> Backoffice: Clarify columns on System's Module page.
+- Backoffice: Clarify columns on System's Module page.
 
 ### Added
 - RestAPI: Add `/api/engine/v2/platform` to render platform metadata. ([#228](https://github.com/placeos/rest-api/pull/228))
