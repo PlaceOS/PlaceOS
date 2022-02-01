@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
 
-## Unreleased
+## 1.2202.0
 
 ### Changed
 - Crystal services built with [Crystal 1.3.2](https://github.com/crystal-lang/crystal/blob/master/CHANGELOG.md#132-2022-01-18)
@@ -24,6 +24,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Backoffice: Fix to user name display.
 - Source: Creating mqtt publisher no longer blocks. ([#29](https://github.com/placeos/source/pull/29))
 - RestAPI: Swallow channel errors in produced by single-document changefeeds. ([#227](https://github.com/placeos/rest-api/pull/227))
+- RestAPI, Core: Merge settings favouring lower privilege keys. ([#137](https://github.com/PlaceOS/models/pull/137))
 - RestAPI: Support `authority_id` in addition to `authority` param to auth source requests.
 
 
