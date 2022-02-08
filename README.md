@@ -97,7 +97,7 @@ These reference commits used to construct the built artefacts at each release.
 
 [![Rest API](https://img.shields.io/github/workflow/status/PlaceOS/rest-api/CI?label=rest-api&logo=github)](https://github.com/PlaceOS/rest-api/actions/workflows/ci.yml)
 
-[![Rubber Soul](https://img.shields.io/github/workflow/status/PlaceOS/rubber-soul/CI?label=rubber-soul&logo=github)](https://github.com/PlaceOS/rubber-soul/actions/workflows/ci.yml)
+[![Search Ingest](https://img.shields.io/github/workflow/status/PlaceOS/search-ingest/CI?label=search-ingest&logo=github)](https://github.com/PlaceOS/search-ingest/actions/workflows/ci.yml)
 
 [![Source](https://img.shields.io/github/workflow/status/PlaceOS/source/CI?label=source&logo=github)](https://github.com/PlaceOS/source/actions/workflows/ci.yml)
 
