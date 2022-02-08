@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
 
+## 1.2202.2
+
+### Added
+- Interface/Backoffice: Show platform changelogs.
+- Interface/Concierge: Add ability to add desks from the management
+- StaffAPI: Booking `department` field ([#149](https://github.com/placeos/staff-api/pull/149))
+
+### Fixed
+- FrontendLoader, Nginx: Resolve CVE-2022-23990
+- Interface/Explore: Tweak desks status handling
+- Source: MQTT publishing
+
+
 ## 1.2202.1
 
 ### Added
@@ -16,7 +29,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ### Changed
 - Crystal services built with [Crystal 1.3.2](https://github.com/crystal-lang/crystal/blob/master/CHANGELOG.md#132-2022-01-18)
-- Backoffice: Clarify columns on System's Module page.
+- Interface/Backoffice: Clarify columns on System's Module page.
 
 ### Added
 - RestAPI: Add `/api/engine/v2/platform` to render platform metadata. ([#228](https://github.com/placeos/rest-api/pull/228))
@@ -26,8 +39,8 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ### Fixed
 - Resolve CVE-2022-22823 ([#15](https://github.com/placeos/nginx/pull/15), [#53](https://github.com/placeos/init/pull/53), [#157](https://github.com/placeos/core/pull/157))
-- Backoffice: Fix adding new MQTT brokers. ([#247](https://github.com/placeos/backoffice/pull/247))
-- Backoffice: Fix to user name display.
+- Interface/Backoffice: Fix adding new MQTT brokers. ([#247](https://github.com/placeos/backoffice/pull/247))
+- Interface/Backoffice: Fix to user name display.
 - Source: Creating mqtt publisher no longer blocks. ([#29](https://github.com/placeos/source/pull/29))
 - RestAPI: Swallow channel errors in produced by single-document changefeeds. ([#227](https://github.com/placeos/rest-api/pull/227))
 - RestAPI, Core: Merge settings favouring lower privilege keys. ([#137](https://github.com/PlaceOS/models/pull/137))
@@ -47,14 +60,14 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ### Added
 - Source: Allow drivers to define measurement names ([#27](https://github.com/PlaceOS/source/pull/27))
-- Backoffice: Update version view to show new data from API ([#238](https://github.com/PlaceOS/backoffice/pull/238))
+- Interface/Backoffice: Update version view to show new data from API ([#238](https://github.com/PlaceOS/backoffice/pull/238))
 - RestAPI: Add support for user model soft delete ([#224](https://github.com/PlaceOS/rest-api/pull/224))
 
 ### Fixed
 - Patch CVE-2021-44790
-- Backoffice: Fix updating local state for triggers on change ([#240](https://github.com/PlaceOS/backoffice/pull/240))
-- Backoffice: Fix copying and removing keys ([#242](https://github.com/PlaceOS/backoffice/pull/242))
-- Backoffice: Fix for obtaining domain auth sources ([#244](https://github.com/PlaceOS/backoffice/pull/244))
+- Interface/Backoffice: Fix updating local state for triggers on change ([#240](https://github.com/PlaceOS/backoffice/pull/240))
+- Interface/Backoffice: Fix copying and removing keys ([#242](https://github.com/PlaceOS/backoffice/pull/242))
+- Interface/Backoffice: Fix for obtaining domain auth sources ([#244](https://github.com/PlaceOS/backoffice/pull/244))
 - RestAPI: Deny flag is also a Read flag for Mosquitto MQTT auth route ([#223](https://github.com/PlaceOS/rest-api/pull/223))
 - Source: Tags are required to be unique ([#28](https://github.com/PlaceOS/source/pull/28))
 - StaffAPI: Add unique migration for deleted and email digest ([#139](https://github.com/PlaceOS/staff-api/pull/139))
