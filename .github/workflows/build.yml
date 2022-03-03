@@ -79,7 +79,9 @@ jobs:
         path: image.tar
 
   publish:
-    needs: build
+    needs:
+      - build
+      - discover
     runs-on: ubuntu-latest
     name: Publish
     steps:
@@ -109,3 +111,19 @@ jobs:
           docker push placeos/$service --all-tags
           echo ::endgroup::
         done
+    -
+      name: Google Chat Notification
+      if: success()
+      uses: Co-qn/google-chat-notification@releases/v1
+      with:
+          name: Build PlaceOS ${{ needs.discover.outputs.version }}
+          url: ${{ secrets.CHAT_SUCCESS }}
+          status: ${{ job.status }}
+    -
+      name: Google Chat Notification
+      if: ${{ failure() || cancelled() }}
+      uses: Co-qn/google-chat-notification@releases/v1
+      with:
+          name: Build PlaceOS ${{ needs.discover.outputs.version }}
+          url: ${{ secrets.CHAT_ERROR }}
+          status: ${{ job.status }}
