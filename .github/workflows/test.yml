@@ -1,22 +1,21 @@
 name: Cypress E2E Test
 on:
   push:
+    paths-ignore:
+      - "*.md"
+
 jobs:
   test:
     name: "version: ${{ matrix.version != '' && matrix.version || 'empty'}}, os: ${{ matrix.os }}, stable: ${{ matrix.stable }}"
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 120
-    continue-on-error: ${{ !matrix.stable }}
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
         stable: [true]
-        os:
-          - ubuntu-18.04
-          - ubuntu-latest
+        os: ubuntu-latest
         version:
-          - placeos-1.2109.0
-          - placeos-1.2110.0
+          - placeos-1.2203.1
         include:
           - version: nightly
             stable: false
