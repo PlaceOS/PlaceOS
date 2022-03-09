@@ -1,6 +1,7 @@
 name: Shard Report
 
 on:
+  push:
   workflow_dispatch:
   workflow_run:
     workflows: [Update]
@@ -33,6 +34,7 @@ jobs:
             placeos-log-backend \
             placeos-models \
             placeos-resource \
+            promise \
             rethinkdb \
             rethinkdb-orm > shard_report.md
       -
@@ -41,4 +43,6 @@ jobs:
         with:
           name: Shard Report
           path: shard_report.md
-
+      -
+        name: Show report
+        run: cat shard_report.md

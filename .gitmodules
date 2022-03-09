@@ -17,8 +17,8 @@
 	path = services/source
 	url = https://github.com/placeos/source.git
 [submodule "services/rubber-soul"]
-	path = services/rubber-soul
-	url = https://github.com/placeos/rubber-soul.git
+	path = services/search-ingest
+	url = https://github.com/placeos/search-ingest.git
 [submodule "services/dispatch"]
 	path = services/dispatch
 	url = https://github.com/placeos/dispatch.git
