@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         stable: [true]
-        os: ubuntu-latest
+        os: [ubuntu-latest]
         version:
           - placeos-1.2203.1
         include:
@@ -25,11 +25,11 @@ jobs:
             os: ubuntu-latest
     steps:
       - name: Checkout repo with tests
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: main
       - name: Checkout partner environment repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: place-labs/partner-environment
           path: environment
