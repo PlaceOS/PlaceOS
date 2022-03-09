@@ -9,6 +9,7 @@ jobs:
     name: "version: ${{ matrix.version != '' && matrix.version || 'empty'}}, os: ${{ matrix.os }}, stable: ${{ matrix.stable }}"
     runs-on: ${{ matrix.os }}
     timeout-minutes: 20
+    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
