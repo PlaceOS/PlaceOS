@@ -11,12 +11,13 @@ on:
       # Monthly releases
       - '[0-9]+.[0-9][0-9][0-9][0-9]'
       # Release candidates
-      - '[0-9]+.[0-9][0-9][0-9][0-9].[0-9]+-rc[0-9]+'
+      - '[0-9]+.[0-9][0-9][0-9][0-9].[0-9]+-preview'
 
   workflow_dispatch:
 
 env:
   CRYSTAL_VERSION: 1.3.2
+  RELEASE_REPO: PlaceOS/PlaceOS
 
 jobs:
   discover:
@@ -117,39 +118,6 @@ jobs:
         name: ${{ matrix.service.name }}
         path: image.tar
 
-  release:
-    needs:
-      - publish
-    environment: release
-    runs-on: ubuntu-latest
-    name: Tag and release
-    steps:
-      - name: Tag
-        shell: bash
-        run: |
-          # Iterate through tags from the build jobs, force updating tags (spooky)
-          IFS=','
-          read -ratags<<< "${{ needs.build.outputs.tags }}"
-          for tag in "${tags[@]}"; do
-            git tag --force $tag
-          done
-          IFS=''
-
-      # TODO: step to get the whether to create release or not
-      # - if $version is formatted like a release
-      #   - create a release with it
-      #     - body has link to the ref on github _with_ markdown anchor to correct version
-      #     - see if there's a way to embed a range of text from another file, like a code snippet.
-
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          # note you'll typically need to create a personal access token
-          # with permissions to create releases in the other repo
-          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
-        env:
-          GITHUB_REPOSITORY: my_gh_org/my_gh_repo
-
   publish:
     needs:
       - build
@@ -200,3 +168,53 @@ jobs:
           name: Build PlaceOS ${{ needs.discover.outputs.version }}
           url: ${{ secrets.CHAT_ERROR }}
           status: ${{ job.status }}
+
+  release:
+    needs:
+      - discover
+      - publish
+    environment: release
+    runs-on: ubuntu-latest
+    name: Tag and release
+    steps:
+      - name: Tag
+        shell: bash
+        run: |
+          # Iterate through tags from the build jobs, force updating tags (spooky)
+          IFS=','
+          read -ratags<<< "${{ needs.build.outputs.tags }}"
+          for tag in "${tags[@]}"; do
+            git tag --force $tag
+          done
+          IFS=''
+
+      - id: prepare-release
+        run: |
+          # Check if $version is formatted like a release
+          version=${{ needs.discover.outputs.version }}
+          if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ ]]
+          then
+            should_release=true
+          else
+            should_release=false
+          fi
+          echo ::set-output name=should-release::$should_release
+
+          # Generate anchor to point to CHANGELOG heading in release notes
+          anchor=$(echo $version | tr -d '.')
+          echo ::set-output name=anchor::$anchor
+
+      # Create a release
+      # - The body has link to the ref on github _with_ markdown anchor to correct version.
+      #
+      # TODO: See if there's a way to embed a range of text from the CHANGELOG, like a code snippet.
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: ${{ steps.prepare-release.outputs.should-release }}
+        with:
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          generate_release_notes: false
+          repository: ${{ env.RELEASE_REPO }}
+          tag_name: ${{ needs.discover.outputs.version }}
+          body: |
+            See the [`CHANGELOG`](https://github.com/${{ env.RELEASE_REPO }}/blob/${{ needs.discover.outputs.version }}/CHANGELOG.md#${{ steps.prepare-release.outputs.anchor }}) for release notes.
