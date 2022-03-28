@@ -60,18 +60,15 @@ These are ephemeral and _do not_ have a corresponding platform version.
 
 Intended primarily for development environments.
 
-### `preview`
-References the latest release candidate.
-This may contain issues that do not present within test environments.
-
-Releases on this channel are suitable for staging and canary deployments.
-
 ### `latest`
 Main release channel.
-This tails `preview` by one minor release cycle.
 
 Recommended for production environments.
 
+### `preview`
+The latest preview build.
+
+**NOT** recommended for production environments.
 
 ## Release Artefacts
 

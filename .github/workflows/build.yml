@@ -8,7 +8,10 @@ on:
 
   push:
     branches:
-      - '[0-9].[0-9][0-9][0-9][0-9]'
+      # Monthly releases
+      - '[0-9]+.[0-9][0-9][0-9][0-9]'
+      # Release candidates
+      - '[0-9]+.[0-9][0-9][0-9][0-9].[0-9]+-rc[0-9]+'
 
   workflow_dispatch:
 
@@ -41,6 +44,8 @@ jobs:
         service: ${{ fromJson(needs.discover.outputs.services) }}
       fail-fast: false
     runs-on: ubuntu-latest
+    outputs:
+      tags: ${{ steps.tags.outputs.tags }}
     name: Build ${{ matrix.service.name }}
     steps:
     -
@@ -49,6 +54,40 @@ jobs:
     -
       name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
+    -
+      name: Construct Tags
+      id: tags
+      run: |
+        branch=${GITHUB_REF#refs/*/}
+        version=${{ needs.discover.outputs.version }}
+
+        # This will default to the branch name if `VERSION` has not changed
+        tags=placeos/${{ matrix.service.name }}:${version}
+
+        # Update monthly tag if a version is created.
+        # i.e. Tag `1.2203` in addition to `1.2203.1`
+        if [[ $branch =~ ^[0-9]+\.[0-9]{4}$ ]]
+        then
+          tags="${tags},${branch}"
+        fi
+
+        # Add `latest` tag if creating newest version
+        latest_release_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+$' | tail -1)
+        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ && $version > $latest_release_tag ]]
+        then
+          tags="$tags,latest"
+        fi
+
+
+        # Add `preview` tag if creating newest preview version
+        latest_preview_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$' | tail -1)
+        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$ && $version > $latest_preview_tag ]]
+        then
+          tags="$tags,preview"
+        fi
+
+
+        echo ::set-output name=tags::$tags
     -
       name: Build image
       id:   build
@@ -63,7 +102,7 @@ jobs:
         outputs: type=docker,dest=image.tar
         cache-from: type=gha,scope=${{ matrix.service.name }}
         cache-to: type=gha,scope=${{ matrix.service.name }},mode=max
-        tags: placeos/${{ matrix.service.name }}:${{ needs.discover.outputs.version }}
+        tags: ${{ steps.tags.outputs.tags }}
         labels: |
           org.opencontainers.image.url=${{ matrix.service.href }}
           org.opencontainers.image.source=${{ matrix.service.href }}/tree/${{ matrix.service.sha }}
@@ -78,11 +117,45 @@ jobs:
         name: ${{ matrix.service.name }}
         path: image.tar
 
+  release:
+    needs:
+      - publish
+    environment: release
+    runs-on: ubuntu-latest
+    name: Tag and release
+    steps:
+      - name: Tag
+        shell: bash
+        run: |
+          # Iterate through tags from the build jobs, force updating tags (spooky)
+          IFS=','
+          read -ratags<<< "${{ needs.build.outputs.tags }}"
+          for tag in "${tags[@]}"; do
+            git tag --force $tag
+          done
+          IFS=''
+
+      # TODO: step to get the whether to create release or not
+      # - if $version is formatted like a release
+      #   - create a release with it
+      #     - body has link to the ref on github _with_ markdown anchor to correct version
+      #     - see if there's a way to embed a range of text from another file, like a code snippet.
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          # note you'll typically need to create a personal access token
+          # with permissions to create releases in the other repo
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        env:
+          GITHUB_REPOSITORY: my_gh_org/my_gh_repo
+
   publish:
     needs:
       - build
       - discover
     runs-on: ubuntu-latest
+    environment: release
     name: Publish
     steps:
     -
