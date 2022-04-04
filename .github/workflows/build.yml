@@ -8,12 +8,16 @@ on:
 
   push:
     branches:
-      - '[0-9].[0-9][0-9][0-9][0-9]'
+      # Monthly releases
+      - '[0-9]+.[0-9][0-9][0-9][0-9]'
+      # Release candidates
+      - '[0-9]+.[0-9][0-9][0-9][0-9].[0-9]+-preview'
 
   workflow_dispatch:
 
 env:
   CRYSTAL_VERSION: 1.3.2
+  RELEASE_REPO: PlaceOS/PlaceOS
 
 jobs:
   discover:
@@ -41,6 +45,8 @@ jobs:
         service: ${{ fromJson(needs.discover.outputs.services) }}
       fail-fast: false
     runs-on: ubuntu-latest
+    outputs:
+      tags: ${{ steps.tags.outputs.tags }}
     name: Build ${{ matrix.service.name }}
     steps:
     -
@@ -49,6 +55,40 @@ jobs:
     -
       name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
+    -
+      name: Construct Tags
+      id: tags
+      run: |
+        branch=${GITHUB_REF#refs/*/}
+        version=${{ needs.discover.outputs.version }}
+
+        # This will default to the branch name if `VERSION` has not changed
+        tags=placeos/${{ matrix.service.name }}:${version}
+
+        # Update monthly tag if a version is created.
+        # i.e. Tag `1.2203` in addition to `1.2203.1`
+        if [[ $branch =~ ^[0-9]+\.[0-9]{4}$ ]]
+        then
+          tags="${tags},${branch}"
+        fi
+
+        # Add `latest` tag if creating newest version
+        latest_release_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+$' | tail -1)
+        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ && $version > $latest_release_tag ]]
+        then
+          tags="$tags,latest"
+        fi
+
+
+        # Add `preview` tag if creating newest preview version
+        latest_preview_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$' | tail -1)
+        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$ && $version > $latest_preview_tag ]]
+        then
+          tags="$tags,preview"
+        fi
+
+
+        echo ::set-output name=tags::$tags
     -
       name: Build image
       id:   build
@@ -63,7 +103,7 @@ jobs:
         outputs: type=docker,dest=image.tar
         cache-from: type=gha,scope=${{ matrix.service.name }}
         cache-to: type=gha,scope=${{ matrix.service.name }},mode=max
-        tags: placeos/${{ matrix.service.name }}:${{ needs.discover.outputs.version }}
+        tags: ${{ steps.tags.outputs.tags }}
         labels: |
           org.opencontainers.image.url=${{ matrix.service.href }}
           org.opencontainers.image.source=${{ matrix.service.href }}/tree/${{ matrix.service.sha }}
@@ -83,6 +123,7 @@ jobs:
       - build
       - discover
     runs-on: ubuntu-latest
+    environment: release
     name: Publish
     steps:
     -
@@ -127,3 +168,53 @@ jobs:
           name: Build PlaceOS ${{ needs.discover.outputs.version }}
           url: ${{ secrets.CHAT_ERROR }}
           status: ${{ job.status }}
+
+  release:
+    needs:
+      - discover
+      - publish
+    environment: release
+    runs-on: ubuntu-latest
+    name: Tag and release
+    steps:
+      - name: Tag
+        shell: bash
+        run: |
+          # Iterate through tags from the build jobs, force updating tags (spooky)
+          IFS=','
+          read -ratags<<< "${{ needs.build.outputs.tags }}"
+          for tag in "${tags[@]}"; do
+            git tag --force $tag
+          done
+          IFS=''
+
+      - id: prepare-release
+        run: |
+          # Check if $version is formatted like a release
+          version=${{ needs.discover.outputs.version }}
+          if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ ]]
+          then
+            should_release=true
+          else
+            should_release=false
+          fi
+          echo ::set-output name=should-release::$should_release
+
+          # Generate anchor to point to CHANGELOG heading in release notes
+          anchor=$(echo $version | tr -d '.')
+          echo ::set-output name=anchor::$anchor
+
+      # Create a release
+      # - The body has link to the ref on github _with_ markdown anchor to correct version.
+      #
+      # TODO: See if there's a way to embed a range of text from the CHANGELOG, like a code snippet.
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: ${{ steps.prepare-release.outputs.should-release }}
+        with:
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          generate_release_notes: false
+          repository: ${{ env.RELEASE_REPO }}
+          tag_name: ${{ needs.discover.outputs.version }}
+          body: |
+            See the [`CHANGELOG`](https://github.com/${{ env.RELEASE_REPO }}/blob/${{ needs.discover.outputs.version }}/CHANGELOG.md#${{ steps.prepare-release.outputs.anchor }}) for release notes.
