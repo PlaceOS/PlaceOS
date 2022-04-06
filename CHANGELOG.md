@@ -5,6 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2203.1
+
+### Fixed
+
+- Init: Remove `Edge` placeholder
+- Core: Better module stopped errors ([#163](https://github.com/placeos/core/pull/163))
+- RestAPI: fix response using driver status codes ([#240](https://github.com/placeos/rest-api/pull/240), [#242](https://github.com/PlaceOS/rest-api/pull/242))
+- RestAPI: `put_redirect` to prevent manual  update redirect ([#239](https://github.com/placeos/rest-api/pull/239))
+
+### Changed
+
+- Core: Move process manager lookup by path to ModuleManager
+- Core: Refactor: use `Log.with_context` with args
+- Core: Use `require "uri/json"`
+- Triggers: DRY through abstract inheritance ([#24](https://github.com/placeos/triggers/pull/24))
+
 ## 1.2203.0
 
 ### Added
@@ -26,6 +42,11 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 ### Changed
 
 - Edge, Core, RestAPI: `X-API-KEY` for edge token authentication ([#174](https://github.com/PlaceOS/rest-api/issues/174))
+
+### Known Issues
+
+- Failure to create seed `Edge` model breaks fresh initiation of `partner-environment`
+- Malformed responses from module executes via `/systems` and `/modules` routes
 
 ## 1.2202.2
 
