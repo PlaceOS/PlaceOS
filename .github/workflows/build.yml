@@ -190,14 +190,14 @@ jobs:
       - id: prepare-release
         run: |
           # Check if $version is formatted like a release
+          should_release='false'
           version=${{ needs.discover.outputs.version }}
           if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ ]]
           then
-            should_release=true
-          else
-            should_release=false
+            should_release='true'
           fi
-          echo ::set-output name=should-release::$should_release
+
+          echo ::set-output name=should-release::${should_release}
 
           # Generate anchor to point to CHANGELOG heading in release notes
           anchor=$(echo $version | tr -d '.')
@@ -209,7 +209,7 @@ jobs:
       # TODO: See if there's a way to embed a range of text from the CHANGELOG, like a code snippet.
       - name: Release
         uses: softprops/action-gh-release@v1
-        if: ${{ steps.prepare-release.outputs.should-release }}
+        if: ${{ steps.prepare-release.outputs.should-release == 'true' }}
         with:
           token: ${{ github.token }}
           generate_release_notes: false
