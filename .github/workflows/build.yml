@@ -173,7 +173,6 @@ jobs:
     needs:
       - discover
       - publish
-    environment: release
     runs-on: ubuntu-latest
     name: Tag and release
     steps:
