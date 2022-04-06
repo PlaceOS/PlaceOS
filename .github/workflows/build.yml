@@ -212,7 +212,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: ${{ steps.prepare-release.outputs.should-release }}
         with:
-          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          token: ${{ github.token }}
           generate_release_notes: false
           repository: ${{ env.RELEASE_REPO }}
           tag_name: ${{ needs.discover.outputs.version }}
