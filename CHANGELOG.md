@@ -5,6 +5,47 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2204.0
+
+### Fixed
+
+- Auth: Apply `nobrainer` duplicate table fix
+- Auth: Fix any remaining open redirects ([#61](https://github.com/placeos/auth/pull/61))
+- Auth: Mark deleted users as active on SSO ([#60](https://github.com/placeos/auth/pull/60))
+- Auth: Check if user deleted ([#58](https://github.com/placeos/auth/pull/58))
+- Auth: Prevent local auth on deleted users
+- Build: Discovery no longer matches abstract classes ([#39](https://github.com/placeos/build/pull/39))
+- Core: Propagate RemoteExceptions ([#175](https://github.com/placeos/core/pull/175))
+- Core: Add error codes to coming from RemoteExceptions ([#172](https://github.com/placeos/core/pull/172))
+- Init: Discard extraneous lines in `create:instance_key` ([#57](https://github.com/placeos/init/pull/57))
+- Interface/BookingPanel: Allow for panel UI to scale with screen size
+- RestAPI: Extract status from exec response ([#242](https://github.com/placeos/rest-api/pull/242))
+- RestAPI: Response using driver status codes ([#240](https://github.com/placeos/rest-api/pull/240))
+- StaffAPI: Correct booking logic ([#169](https://github.com/placeos/staff-api/pull/169))
+- StaffAPI: Update to support limits by tenant ([#168](https://github.com/placeos/staff-api/pull/168))
+- StaffAPI: Avoid unnecessary allocation ([#160](https://github.com/placeos/staff-api/pull/160))
+
+### Changed
+
+- Core: Better module stopped errors ([#163](https://github.com/placeos/core/pull/163))
+- FrontendLoader: Download git repo archive instead of clone & pull ([#47](https://github.com/placeos/frontend-loader/pull/47))
+- StaffAPI: Improve booking validation ([#166](https://github.com/placeos/staff-api/pull/166))
+
+### Added
+
+- Auth: Add `flux` scope ([#58](https://github.com/placeos/auth/pull/58))
+- Interface/BookingPanel: allow for custom URLs for QR code
+- Interface/ContactTracing: Hookup contact tracing to API
+- Interface/Workplace: Add logic to handle group desk bookings
+- Interface/Workplace: Add setting to hide dashboard availability
+- RestAPI: Add releases endpoint ([#262](https://github.com/placeos/rest-api/pull/262))
+- RestAPI: Query by single email ([#260](https://github.com/placeos/rest-api/pull/260))
+- RestAPI: Add driver response codes to public API ([#261](https://github.com/placeos/rest-api/pull/261))
+- RestAPI: Add `/metadata/:parent_id/history` ([#258](https://github.com/placeos/rest-api/pull/258))
+- RestAPI: Set modifier for metadata and settings ([#256](https://github.com/placeos/rest-api/pull/256))
+- StaffAPI: Expose tenant booking limits in the API ([#164](https://github.com/placeos/staff-api/pull/164))
+- StaffAPI: Restrict `booking_limits` by zones ([#163](https://github.com/placeos/staff-api/pull/163))
+
 ## 1.2203.1
 
 ### Fixed
