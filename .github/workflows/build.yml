@@ -69,14 +69,14 @@ jobs:
         # i.e. Tag `1.2203` in addition to `1.2203.1`
         if [[ $branch =~ ^[0-9]+\.[0-9]{4}$ ]]
         then
-          tags="${tags},${branch}"
+          tags="${tags},placeos/${{ matrix.service.name }}:placeos-${branch}"
         fi
 
         # Add `latest` tag if creating newest version
         latest_release_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+$' | tail -1)
         if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ && $version > $latest_release_tag ]]
         then
-          tags="$tags,latest"
+          tags="${tags},placeos/${{ matrix.service.name }}:latest"
         fi
 
 
@@ -84,7 +84,7 @@ jobs:
         latest_preview_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$' | tail -1)
         if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$ && $version > $latest_preview_tag ]]
         then
-          tags="$tags,preview"
+          tags="${tags},placeos/${{ matrix.service.name }}:latest"
         fi
 
 
@@ -119,12 +119,12 @@ jobs:
         path: image.tar
 
   publish:
+    name: Publish ${{ needs.discover.outputs.version }}
     needs:
       - build
       - discover
     runs-on: ubuntu-latest
     environment: release
-    name: Publish
     steps:
     -
       name: Login to DockerHub
