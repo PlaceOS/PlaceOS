@@ -29,6 +29,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 - Core: Better module stopped errors ([#163](https://github.com/placeos/core/pull/163))
 - FrontendLoader: Download git repo archive instead of clone & pull ([#47](https://github.com/placeos/frontend-loader/pull/47))
+- Init: Migrate `Metadata.details` to JSON ([#59](https://github.com/placeos/init/pull/59))
 - StaffAPI: Improve booking validation ([#166](https://github.com/placeos/staff-api/pull/166))
 
 ### Added
@@ -38,11 +39,13 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Interface/ContactTracing: Hookup contact tracing to API
 - Interface/Workplace: Add logic to handle group desk bookings
 - Interface/Workplace: Add setting to hide dashboard availability
+- RestAPI: Add an index method `../metadata` ([#264](https://github.com/placeos/rest-api/pull/264))
 - RestAPI: Add releases endpoint ([#262](https://github.com/placeos/rest-api/pull/262))
 - RestAPI: Query by single email ([#260](https://github.com/placeos/rest-api/pull/260))
 - RestAPI: Add driver response codes to public API ([#261](https://github.com/placeos/rest-api/pull/261))
 - RestAPI: Add `/metadata/:parent_id/history` ([#258](https://github.com/placeos/rest-api/pull/258))
 - RestAPI: Set modifier for metadata and settings ([#256](https://github.com/placeos/rest-api/pull/256))
+- StaffAPI: Precise free/busy availability requests ([#170](https://github.com/placeos/staff-api/pull/170))
 - StaffAPI: Expose tenant booking limits in the API ([#164](https://github.com/placeos/staff-api/pull/164))
 - StaffAPI: Restrict `booking_limits` by zones ([#163](https://github.com/placeos/staff-api/pull/163))
 
