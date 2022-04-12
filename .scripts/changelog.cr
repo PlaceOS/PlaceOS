@@ -1,10 +1,6 @@
 require "path"
 
-begin
-new_version, previous_reference = ARGV
-rescue IndexError
-  abort("Expected positional arguments: <new_version> <previous_reference>")
-end
+GITHUB_ORGANISATION = "https://github.com/PlaceOS"
 
 def submodules(reference)
   `git ls-tree -r #{reference}`
@@ -22,6 +18,31 @@ def commits(previous_reference)
     .transform_values!(&.sort_by!(&.date))
 end
 
+def log(path, from = nil)
+  output = IO::Memory.new
+
+  arguments = [
+    "log",
+    "--pretty=%at %s",
+  ]
+
+  arguments << "#{from}..HEAD" if from
+
+  Process.run("git", arguments, output: output, chdir: path.to_s)
+  output.to_s.lines.compact_map do |line|
+    Commit.from_line?(path, line)
+  end
+end
+
+def changelog(version, previous_reference)
+  puts "## #{version}\n\n"
+  commits(previous_reference: "1.2203").each do |type, commits|
+    puts "### #{Commit::CHANGELOG_HEADINGS[type]}"
+    commits.sort_by(&.name).each { |commit| puts commit }
+    puts ""
+  end
+end
+
 record(
   Commit,
   submodule_path : Path,
@@ -32,14 +53,13 @@ record(
   subject : String,
   breaking : Bool
 ) do
-
   getter name : String do
     self.class.normalize_name(submodule_path)
   end
 
   getter repository_url : String do
     repo = submodule_path.to_s.split('/').last
-    "https://github.com/PlaceOS/#{repo}"
+    File.join(GITHUB_ORGANISATION, repo)
   end
 
   MESSAGE_REGEX = /(?<type>\w+)(?<scope>(?:\([^()\r\n]*\)|\())?(?<breaking>!)?(?<separator>:)? ?(?<subject>.+$)/
@@ -97,29 +117,10 @@ record(
   end
 end
 
-def log(path, from = nil)
-  output = IO::Memory.new
-
-  arguments = [
-    "log",
-    "--pretty=%at %s",
-  ]
-
-  arguments << "#{from}..HEAD" if from
-
-  Process.run("git", arguments, output: output, chdir: path.to_s)
-  output.to_s.lines.compact_map do |line|
-    Commit.from_line?(path, line)
-  end
-end
-
-def changelog(version, previous_reference)
-  puts "## #{version}\n\n"
-  commits(previous_reference: "1.2203").each do |type, commits|
-    puts "### #{Commit::CHANGELOG_HEADINGS[type]}"
-    commits.sort_by(&.name).each { |commit| puts commit }
-    puts ""
-  end
+begin
+  new_version, previous_reference = ARGV
+rescue IndexError
+  abort("Expected positional arguments: <new_version> <previous_reference>")
 end
 
 changelog(new_version, previous_reference)
