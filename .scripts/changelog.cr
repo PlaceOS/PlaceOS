@@ -14,8 +14,8 @@ end
 def commits(previous_reference)
   submodules(previous_reference)
     .flat_map { |submodule, from| log(submodule, from) }
-    .group_by(&.type)
-    .transform_values!(&.sort_by!(&.date))
+    .group_by { |commit| Commit::CHANGELOG_HEADINGS[commit.type] }
+    .transform_values!(&.sort_by!(&.date).sort_by!(&.name))
 end
 
 def log(path, from = nil)
@@ -35,12 +35,36 @@ def log(path, from = nil)
 end
 
 def changelog(version, previous_reference)
-  puts "## #{version}\n\n"
-  commits(previous_reference: "1.2203").each do |type, commits|
-    puts "### #{Commit::CHANGELOG_HEADINGS[type]}"
-    commits.sort_by(&.name).each { |commit| puts commit }
-    puts ""
+  String.build do |io|
+    io.puts "## #{version}\n\n"
+    commits(previous_reference: "1.2203").each do |heading, commits|
+      io.puts "### #{heading}"
+      commits.each { |commit| io.puts commit }
+      io.puts ""
+    end
   end
+end
+
+def update_changelog(version, previous, file = "CHANGELOG.md")
+  changelog_lines = File.read_lines(file)
+  latest_version_index = changelog_lines.index do |line|
+    line.starts_with?("## ")
+  end || 0
+
+  latest_version_header = changelog_lines[latest_version_index]
+
+  # Remove latest changelog run for current version
+  if latest_version_header.includes?(version)
+    previous_version_index = changelog_lines.index(offset: latest_version_index + 1) do |line|
+      line.starts_with?("## ")
+    end || latest_version_index
+
+    changelog_lines.delete_at(latest_version_index..previous_version_index - 1)
+  end
+
+  new_changelog_entry = changelog(version, previous).chomp
+  updated_changelog = changelog_lines.insert(latest_version_index, new_changelog_entry).join('\n')
+  File.write(file, updated_changelog)
 end
 
 record(
@@ -123,4 +147,4 @@ rescue IndexError
   abort("Expected positional arguments: <new_version> <previous_reference>")
 end
 
-changelog(new_version, previous_reference)
+update_changelog(new_version, previous_reference)
