@@ -9,6 +9,7 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ### Fixed
 
+- Auth: User id should be prefixed ([#66](https://github.com/placeos/auth/pull/66))
 - Auth: Apply `nobrainer` duplicate table fix
 - Auth: Fix any remaining open redirects ([#61](https://github.com/placeos/auth/pull/61))
 - Auth: Mark deleted users as active on SSO ([#60](https://github.com/placeos/auth/pull/60))
@@ -17,6 +18,8 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Build: Discovery no longer matches abstract classes ([#39](https://github.com/placeos/build/pull/39))
 - Core: Propagate RemoteExceptions ([#175](https://github.com/placeos/core/pull/175))
 - Core: Add error codes to coming from RemoteExceptions ([#172](https://github.com/placeos/core/pull/172))
+- FrontendLoader: Remove the creation of the base www model ([#55](https://github.com/placeos/frontend-loader/pull/55))
+- Init: Ensure user id prefixed by user table name ([#61](https://github.com/placeos/init/pull/61))
 - Init: Discard extraneous lines in `create:instance_key` ([#57](https://github.com/placeos/init/pull/57))
 - Interface/BookingPanel: Allow for panel UI to scale with screen size
 - RestAPI: Extract status from exec response ([#242](https://github.com/placeos/rest-api/pull/242))
@@ -39,12 +42,14 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Interface/ContactTracing: Hookup contact tracing to API
 - Interface/Workplace: Add logic to handle group desk bookings
 - Interface/Workplace: Add setting to hide dashboard availability
+- RestAPI: Add `include_parent` to metadata index
 - RestAPI: Add an index method `../metadata` ([#264](https://github.com/placeos/rest-api/pull/264))
 - RestAPI: Add releases endpoint ([#262](https://github.com/placeos/rest-api/pull/262))
 - RestAPI: Query by single email ([#260](https://github.com/placeos/rest-api/pull/260))
 - RestAPI: Add driver response codes to public API ([#261](https://github.com/placeos/rest-api/pull/261))
 - RestAPI: Add `/metadata/:parent_id/history` ([#258](https://github.com/placeos/rest-api/pull/258))
 - RestAPI: Set modifier for metadata and settings ([#256](https://github.com/placeos/rest-api/pull/256))
+- StaffAPI: Add support for declining events ([#176](https://github.com/placeos/staff-api/pull/176))
 - StaffAPI: Precise free/busy availability requests ([#170](https://github.com/placeos/staff-api/pull/170))
 - StaffAPI: Expose tenant booking limits in the API ([#164](https://github.com/placeos/staff-api/pull/164))
 - StaffAPI: Restrict `booking_limits` by zones ([#163](https://github.com/placeos/staff-api/pull/163))
