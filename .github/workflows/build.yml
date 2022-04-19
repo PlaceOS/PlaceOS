@@ -18,6 +18,7 @@ on:
 env:
   CRYSTAL_VERSION: 1.4.0
   RELEASE_REPO: PlaceOS/PlaceOS
+  PARTNER_ENVIRONMENT_REPO: place-labs/partner-environment
 
 jobs:
   discover:
@@ -217,3 +218,10 @@ jobs:
           tag_name: ${{ needs.discover.outputs.version }}
           body: |
             See the [`CHANGELOG`](https://github.com/${{ env.RELEASE_REPO }}/blob/${{ needs.discover.outputs.version }}/CHANGELOG.md#${{ steps.prepare-release.outputs.anchor }}) for release notes.
+
+      - name: Update partner-environment
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: update
+          repository: ${{ env.PARTNER_ENVIRONMENT_REPO }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
