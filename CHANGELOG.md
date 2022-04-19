@@ -5,6 +5,12 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2204.1
+
+### Fixed
+
+- Init: Skip validation of User model in migration ([#61](https://github.com/placeos/init/pull/61))
+
 ## 1.2204.0
 
 ### Fixed
