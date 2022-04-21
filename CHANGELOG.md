@@ -5,6 +5,16 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2204.2
+
+### Fixed
+
+- Init: Skip ORM when migrating User model
+
+### Added
+
+- Init: Lock migration and start tasks
+
 ## 1.2204.1
 
 ### Fixed
