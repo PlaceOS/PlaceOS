@@ -186,7 +186,7 @@ jobs:
           for tag in "${tags[@]}"; do
             git tag --force $tag
           done
-          IFS=''
+          git push --tags --force
 
       - id: prepare-release
         run: |
