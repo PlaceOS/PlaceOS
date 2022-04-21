@@ -227,6 +227,7 @@ jobs:
 
       -
         name: Update partner-environment
+        if: ${{ steps.prepare-release.outputs.should-release == 'true' }}
         uses: peter-evans/repository-dispatch@v2
         with:
           event-type: update
