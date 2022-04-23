@@ -8,12 +8,14 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 ## 1.2204.2
 
 ### Fixed
-
-- Init: Skip ORM when migrating User model
+- Init: Resolve issues with User id migration.
 
 ### Added
+- Init: Lock migration tasks
+- Init: Lock start tasks
 
-- Init: Lock migration and start tasks
+### Changed
+- SearchIngest: Utilise `placeos::resource(t)` ([#56](https://github.com/PlaceOS/search-ingest/pull/56))
 
 ## 1.2204.1
 
