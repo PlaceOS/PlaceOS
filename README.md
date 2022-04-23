@@ -1,6 +1,6 @@
-<p align="center">
-  <img src="https://github.com/placeos.png?size=200" alt="PlaceOS" />
-</p>
+<img align="right" src="https://github.com/placeos.png?size=200" alt="PlaceOS" />
+
+# PlaceOS
 
 [![Build](https://github.com/PlaceOS/PlaceOS/actions/workflows/build.yml/badge.svg)](https://github.com/PlaceOS/PlaceOS/actions/workflows/build.yml)
 
