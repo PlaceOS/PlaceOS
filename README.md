@@ -86,6 +86,16 @@ These reference commits used to construct the built artefacts at each release.
 
 ## CI Status
 
+### Libraries
+
+[![Models](https://img.shields.io/github/workflow/status/PlaceOS/models/CI?label=models&logo=github)](https://github.com/PlaceOS/models/actions/workflows/ci.yml)
+
+[![Resource](https://img.shields.io/github/workflow/status/place-labs/resource/CI?label=resource&logo=github)](https://github.com/PlaceOS/models/actions/workflows/ci.yml)
+
+[![Driver](https://img.shields.io/github/workflow/status/PlaceOS/driver/CI?label=driver&logo=github)](https://github.com/PlaceOS/models/actions/workflows/ci.yml)
+
+### Services
+
 [![Build](https://img.shields.io/github/workflow/status/PlaceOS/build/CI?label=build&logo=github)](https://github.com/PlaceOS/build/actions/workflows/ci.yml)
 
 [![Core](https://img.shields.io/github/workflow/status/PlaceOS/core/CI?label=core&logo=github)](https://github.com/PlaceOS/core/actions/workflows/ci.yml)
