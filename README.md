@@ -1,4 +1,6 @@
-<img align="right" src="https://github.com/placeos.png?size=200" alt="PlaceOS" />
+<a href="https://placeos.com">
+    <img align="right" src="https://github.com/placeos.png?size=200" alt="PlaceOS" />
+</a>
 
 # PlaceOS
 
