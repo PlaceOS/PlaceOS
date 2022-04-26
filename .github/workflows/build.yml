@@ -193,7 +193,10 @@ jobs:
           IFS=','
           read -ratags<<< "${{ needs.build.outputs.tags }}"
           for tag in "${tags[@]}"; do
-            git tag --force $tag
+            # Remove prefix
+            tag="$(sed -rE 's/^.*:?(placeos-)+(.*)$/\2/'<<<$tag)"
+            echo "Tagging ${tag}"
+            git tag --force "$tag"
           done
           git push --tags --force
 
