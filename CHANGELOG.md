@@ -11,11 +11,12 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 - Init: Resolve issues with User id migration.
 
 ### Added
+- Models: Expose `staff_id` in users ([#171](https://github.com/PlaceOS/models/pull/171))
 - Init: Lock migration tasks
 - Init: Lock start tasks
 
 ### Changed
-- SearchIngest: Utilise `placeos::resource(t)` ([#56](https://github.com/PlaceOS/search-ingest/pull/56))
+- SearchIngest: Utilise `PlaceOS::Resource(T)` ([#56](https://github.com/PlaceOS/search-ingest/pull/56))
 
 ## 1.2204.1
 

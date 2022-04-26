@@ -12,7 +12,7 @@ It provides new release notification and the canonical reference for the platfor
 
 ## Platform Versioning
 
-A PlaceOS deployment is a set of interdependant services and associated tools.
+A PlaceOS deployment is a set of interdependent services and associated tools.
 Each of these have their own version number, test and release process.
 Platform versions overlay this to provide a set of compatible, deployable components.
 
