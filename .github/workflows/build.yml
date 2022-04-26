@@ -70,6 +70,7 @@ jobs:
         # i.e. Tag `1.2203` in addition to `1.2203.1`
         if [[ $branch =~ ^[0-9]+\.[0-9]{4}$ ]]
         then
+          echo "Adding \`placeos-${branch}\` tag"
           tags="${tags},placeos/${{ matrix.service.name }}:placeos-${branch}"
         fi
 
@@ -77,14 +78,17 @@ jobs:
         latest_release_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+$' | tail -1)
         if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ && $version > $latest_release_tag ]]
         then
+          echo 'Adding `latest` tag'
           tags="${tags},placeos/${{ matrix.service.name }}:latest"
         fi
 
 
         # Add `preview` tag if creating newest preview version
         latest_preview_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$' | tail -1)
-        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$ && $version > $latest_preview_tag ]]
+
+        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$ && $version > "$latest_preview_tag" ]]
         then
+          echo 'Adding `preview` tag'
           tags="${tags},placeos/${{ matrix.service.name }}:preview"
         fi
 
@@ -172,6 +176,7 @@ jobs:
 
   release:
     needs:
+      - build
       - discover
       - publish
     runs-on: ubuntu-latest
