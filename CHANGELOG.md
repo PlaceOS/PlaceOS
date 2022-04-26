@@ -8,14 +8,18 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 ## 1.2204.2
 
 ### Fixed
+
 - Init: Resolve issues with User id migration.
 
 ### Added
+
+- Support `LOG_LEVEL` environment variable to configure runtime logging severity.
 - Models: Expose `staff_id` in users ([#171](https://github.com/PlaceOS/models/pull/171))
 - Init: Lock migration tasks
 - Init: Lock start tasks
 
 ### Changed
+
 - SearchIngest: Utilise `PlaceOS::Resource(T)` ([#56](https://github.com/PlaceOS/search-ingest/pull/56))
 
 ## 1.2204.1
