@@ -31,7 +31,7 @@ jobs:
     steps:
     -
       name: Checkout local actions and scripts
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     -
       name: Discover services
       id:   introspect
@@ -70,6 +70,7 @@ jobs:
         # i.e. Tag `1.2203` in addition to `1.2203.1`
         if [[ $branch =~ ^[0-9]+\.[0-9]{4}$ ]]
         then
+          echo "Adding \`placeos-${branch}\` tag"
           tags="${tags},placeos/${{ matrix.service.name }}:placeos-${branch}"
         fi
 
@@ -77,14 +78,17 @@ jobs:
         latest_release_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+$' | tail -1)
         if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ && $version > $latest_release_tag ]]
         then
+          echo 'Adding `latest` tag'
           tags="${tags},placeos/${{ matrix.service.name }}:latest"
         fi
 
 
         # Add `preview` tag if creating newest preview version
         latest_preview_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$' | tail -1)
-        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$ && $version > $latest_preview_tag ]]
+
+        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$ && $version > "$latest_preview_tag" ]]
         then
+          echo 'Adding `preview` tag'
           tags="${tags},placeos/${{ matrix.service.name }}:preview"
         fi
 
@@ -172,23 +176,32 @@ jobs:
 
   release:
     needs:
+      - build
       - discover
       - publish
     runs-on: ubuntu-latest
     name: Tag and release
     steps:
-      - name: Tag
+      -
+        name: Checkout Repository
+        uses: actions/checkout@v3
+      -
+        name: Tag
         shell: bash
         run: |
           # Iterate through tags from the build jobs, force updating tags (spooky)
           IFS=','
           read -ratags<<< "${{ needs.build.outputs.tags }}"
           for tag in "${tags[@]}"; do
-            git tag --force $tag
+            # Remove prefix
+            tag="$(sed -rE 's/^.*:(placeos-)?(.*)$/\2/'<<<$tag)"
+            echo "Tagging ${tag}"
+            git tag --force "$tag"
           done
-          IFS=''
+          git push --tags --force
 
-      - id: prepare-release
+      -
+        id: prepare-release
         run: |
           # Check if $version is formatted like a release
           should_release='false'
@@ -208,7 +221,8 @@ jobs:
       # - The body has link to the ref on github _with_ markdown anchor to correct version.
       #
       # TODO: See if there's a way to embed a range of text from the CHANGELOG, like a code snippet.
-      - name: Release
+      -
+        name: Release
         uses: softprops/action-gh-release@v1
         if: ${{ steps.prepare-release.outputs.should-release == 'true' }}
         with:
@@ -219,7 +233,9 @@ jobs:
           body: |
             See the [`CHANGELOG`](https://github.com/${{ env.RELEASE_REPO }}/blob/${{ needs.discover.outputs.version }}/CHANGELOG.md#${{ steps.prepare-release.outputs.anchor }}) for release notes.
 
-      - name: Update partner-environment
+      -
+        name: Update partner-environment
+        if: ${{ steps.prepare-release.outputs.should-release == 'true' }}
         uses: peter-evans/repository-dispatch@v2
         with:
           event-type: update
