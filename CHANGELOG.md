@@ -9,11 +9,15 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ### Fixed
 
-- Init: Resolve issues with User id migration.
+- Init: Solves issue with changing primary key ([#63](https://github.com/PlaceOS/init/pull/63))
+- FrontendLoader: Bring logging inline with other services ([#59](https://github.com/PlaceOS/frontend-loader/pull/59))
+- Backoffice: Fix tab data post changes of domain items and staff tenants ([#52](https://github.com/PlaceOS/backoffice/pull/52))
 
 ### Added
 
+- Add OpenTelemetry instrumentation
 - Support `LOG_LEVEL` environment variable to configure runtime logging severity.
+- FrontendLoader: Add support for generic repositories ([#60](https://github.com/PlaceOS/frontend-loader/pull/60))
 - Models: Expose `staff_id` in users ([#171](https://github.com/PlaceOS/models/pull/171))
 - Init: Lock migration tasks
 - Init: Lock start tasks
