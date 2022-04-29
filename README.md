@@ -1,6 +1,8 @@
-<p align="center">
-  <img src="https://github.com/placeos.png?size=200" alt="PlaceOS" />
-</p>
+<a href="https://placeos.com">
+    <img align="right" src="https://github.com/placeos.png?size=200" alt="PlaceOS" />
+</a>
+
+# PlaceOS
 
 [![Build](https://github.com/PlaceOS/PlaceOS/actions/workflows/build.yml/badge.svg)](https://github.com/PlaceOS/PlaceOS/actions/workflows/build.yml)
 
@@ -10,7 +12,7 @@ It provides new release notification and the canonical reference for the platfor
 
 ## Platform Versioning
 
-A PlaceOS deployment is a set of interdependant services and associated tools.
+A PlaceOS deployment is a set of interdependent services and associated tools.
 Each of these have their own version number, test and release process.
 Platform versions overlay this to provide a set of compatible, deployable components.
 
@@ -83,6 +85,16 @@ If you have already cloned this repo, you can access these via `git submodule up
 These reference commits used to construct the built artefacts at each release.
 
 ## CI Status
+
+### Libraries
+
+[![Models](https://img.shields.io/github/workflow/status/PlaceOS/models/CI?label=models&logo=github)](https://github.com/PlaceOS/models/actions/workflows/ci.yml)
+
+[![Resource](https://img.shields.io/github/workflow/status/place-labs/resource/CI?label=resource&logo=github)](https://github.com/PlaceOS/models/actions/workflows/ci.yml)
+
+[![Driver](https://img.shields.io/github/workflow/status/PlaceOS/driver/CI?label=driver&logo=github)](https://github.com/PlaceOS/models/actions/workflows/ci.yml)
+
+### Services
 
 [![Build](https://img.shields.io/github/workflow/status/PlaceOS/build/CI?label=build&logo=github)](https://github.com/PlaceOS/build/actions/workflows/ci.yml)
 

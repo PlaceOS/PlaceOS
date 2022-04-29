@@ -5,6 +5,33 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2204.2
+
+### Fixed
+- FrontendLoader: Bring logging inline with other services ([#59](https://github.com/PlaceOS/frontend-loader/pull/59))
+- Backoffice: Allow selecting branches if release are unavailable
+- Backoffice: Simplify metadata ui into one component
+- Backoffice: Simplify url validation
+- Backoffice: Fix display of settings details and metadata details
+- Init: Solves issue with changing primary key ([#63](https://github.com/PlaceOS/init/pull/63))
+- Backoffice: Fix tab data post changes of domain items and staff tenants ([#52](https://github.com/PlaceOS/backoffice/pull/52))
+
+### Added
+
+- RestAPI: Return `staff_id` in User responses
+- StaffAPI: Change error code on booking limits ([#179](https://github.com/PlaceOS/staff-api/pull/179))
+- StaffAPI: Add user_id migrations ([#180](https://github.com/PlaceOS/staff-api/pull/180))
+- Add OpenTelemetry instrumentation
+- Support `LOG_LEVEL` environment variable to configure runtime logging severity.
+- FrontendLoader: Add support for generic repositories ([#60](https://github.com/PlaceOS/frontend-loader/pull/60))
+- Models: Expose `staff_id` in users ([#171](https://github.com/PlaceOS/models/pull/171))
+- Init: Lock migration tasks
+- Init: Lock start tasks
+
+### Changed
+
+- SearchIngest: Utilise `PlaceOS::Resource(T)` ([#56](https://github.com/PlaceOS/search-ingest/pull/56))
+
 ## 1.2204.1
 
 ### Fixed
