@@ -59,6 +59,7 @@ jobs:
     -
       name: Checkout local actions and scripts
       uses: actions/checkout@v3
+      with:
         fetch-depth: 0
     -
       name: Construct Tags
