@@ -59,7 +59,10 @@ jobs:
     -
       name: Construct Tags
       id: tags
+      shell: bash
       run: |
+        set -x #echo on
+
         branch=${GITHUB_REF#refs/*/}
         version=${{ needs.discover.outputs.version }}
 
@@ -75,23 +78,22 @@ jobs:
         fi
 
         # Add `latest` tag if creating newest version
-        latest_release_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+$' | tail -1)
-        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ && $version > $latest_release_tag ]]
+        latest_release_tag="$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+$' | tail -1)"
+        echo "current latest ${latest_release_tag}"
+        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ && ($version > "$latest_release_tag" || $version == "$latest_release_tag") ]]
         then
           echo 'Adding `latest` tag'
           tags="${tags},placeos/${{ matrix.service.name }}:latest"
         fi
 
-
         # Add `preview` tag if creating newest preview version
-        latest_preview_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$' | tail -1)
-
-        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$ && $version > "$latest_preview_tag" ]]
+        latest_preview_tag="$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$' | tail -1)"
+        echo "current preview ${latest_preview_tag}"
+        if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$ && ($version > "$latest_preview_tag" || $version == "$latest_preview_tag") ]]
         then
           echo 'Adding `preview` tag'
           tags="${tags},placeos/${{ matrix.service.name }}:preview"
         fi
-
 
         echo ::set-output name=tags::$tags
     -
