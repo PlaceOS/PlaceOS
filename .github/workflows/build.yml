@@ -57,6 +57,10 @@ jobs:
       name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
     -
+      name: Checkout local actions and scripts
+      uses: actions/checkout@v3
+        fetch-depth: 0
+    -
       name: Construct Tags
       id: tags
       shell: bash
