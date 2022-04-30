@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
 
 env:
-  CRYSTAL_VERSION: 1.4.0
+  CRYSTAL_VERSION: 1.4.1
   RELEASE_REPO: PlaceOS/PlaceOS
   PARTNER_ENVIRONMENT_REPO: place-labs/partner-environment
 
