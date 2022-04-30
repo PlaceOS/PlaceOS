@@ -5,6 +5,16 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2205.0
+
+### Fixed
+
+- Update `placeos-compiler` to resolve issues compiling the PlaceOS StaffAPI Driver.
+
+### Changed
+
+- Add OpenTelemetry instrumentation to `placeos-resource`
+
 ## 1.2204.2
 
 ### Fixed
