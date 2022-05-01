@@ -64,15 +64,16 @@ jobs:
     -
       name: Construct Tags
       id: tags
+      shell: bash
       run: |
-        branch=${GITHUB_REF#refs/*/}
-        version=${{ needs.discover.outputs.version }}
+        branch="${GITHUB_REF#refs/*/}"
+        version="${{ needs.discover.outputs.version }}"
 
         # Remove the `placeos-` prefix from platform version tag
-        version=${version#placeos-}
+        version="${version#placeos-}"
 
         # This will default to the branch name if `VERSION` has not changed
-        tags=placeos/${{ matrix.service.name }}:${version}
+        tags="placeos/${{ matrix.service.name }}:${version}"
 
         # Update monthly tag if a version is created.
         # i.e. Tag `1.2203` in addition to `1.2203.1`
@@ -83,26 +84,26 @@ jobs:
         fi
 
         # Add `latest` tag if creating newest version
-        latest_release_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+$' | tail -1)
+        latest_release_tag="$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+$' | tail -1)"
         echo "latest release: $latest_release_tag"
         if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ && ($version == "$latest_release_tag" || $version > "$latest_release_tag") ]]
         then
-          echo 'Adding `latest` tag'
+          echo "Adding \`latest\` tag"
           tags="${tags},placeos/${{ matrix.service.name }}:latest"
         fi
 
 
         # Add `preview` tag if creating newest preview version
-        latest_preview_tag=$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$' | tail -1)
+        latest_preview_tag="$(git tag | grep -E '^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$' | tail -1)"
         echo "latest preview: $latest_preview_tag"
         if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+-rc[0-9]+$ && ($version == "$latest_preview_tag" || $version > "$latest_preview_tag") ]]
         then
-          echo 'Adding `preview` tag'
+          echo "Adding \`preview\` tag"
           tags="${tags},placeos/${{ matrix.service.name }}:preview"
         fi
 
 
-        echo ::set-output name=tags::$tags
+        echo "::set-output name=tags::$tags"
     -
       name: Build image
       id:   build
@@ -153,8 +154,8 @@ jobs:
       name: Load images
       run:  |
         for service in *; do
-          echo ::group::$service
-          docker load --input $service/image.tar |
+          echo "::group::$service"
+          docker load --input "$service/image.tar" |
           awk '{print $NF}' | xargs docker inspect
           echo ::endgroup::
         done
@@ -162,8 +163,8 @@ jobs:
       name: Publish
       run:  |
         for service in *; do
-          echo ::group::$service
-          docker push placeos/$service --all-tags
+          echo "::group::$service"
+          docker push "placeos/$service" --all-tags
           echo ::endgroup::
         done
     -
@@ -203,7 +204,7 @@ jobs:
           read -ratags<<< "${{ needs.build.outputs.tags }}"
           for tag in "${tags[@]}"; do
             # Remove prefix
-            tag="$(sed -rE 's/^.*:(placeos-)?(.*)$/\2/'<<<$tag)"
+            tag="$(sed -rE 's/^.*:(placeos-)?(.*)$/\2/'<<<"$tag")"
             echo "Tagging ${tag}"
             git tag --force "$tag"
           done
@@ -211,6 +212,7 @@ jobs:
 
       -
         id: prepare-release
+        shell: bash
         run: |
           # Check if $version is formatted like a release
           should_release='false'
@@ -220,11 +222,11 @@ jobs:
             should_release='true'
           fi
 
-          echo ::set-output name=should-release::${should_release}
+          echo "::set-output name=should-release::${should_release}"
 
           # Generate anchor to point to CHANGELOG heading in release notes
-          anchor=$(echo $version | tr -d '.')
-          echo ::set-output name=anchor::$anchor
+          anchor="$(echo $version | tr -d '.')"
+          echo "::set-output name=anchor::$anchor"
 
       # Create a release
       # - The body has link to the ref on github _with_ markdown anchor to correct version.
