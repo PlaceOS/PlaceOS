@@ -15,9 +15,14 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 - Add OpenTelemetry instrumentation to `placeos-resource`
 
+### Added
+
+- RestAPI: `PATCH` to patch `Metadata.details`, `PUT` to replace ([#269](https://github.com/PlaceOS/rest-api/pull/269))
+
 ## 1.2204.2
 
 ### Fixed
+
 - FrontendLoader: Bring logging inline with other services ([#59](https://github.com/PlaceOS/frontend-loader/pull/59))
 - Backoffice: Allow selecting branches if release are unavailable
 - Backoffice: Simplify metadata ui into one component
