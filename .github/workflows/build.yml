@@ -69,11 +69,11 @@ jobs:
         branch="${GITHUB_REF#refs/*/}"
         version="${{ needs.discover.outputs.version }}"
 
-        # Remove the `placeos-` prefix from platform version tag
-        version="${version#placeos-}"
-
         # This will default to the branch name if `VERSION` has not changed
         tags="placeos/${{ matrix.service.name }}:${version}"
+
+        # Remove the `placeos-` prefix from platform version tag
+        version="${version#placeos-}"
 
         # Update monthly tag if a version is created.
         # i.e. Tag `1.2203` in addition to `1.2203.1`
