@@ -10,6 +10,8 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 ### Fixed
 
 - Update `placeos-compiler` to resolve issues compiling the PlaceOS StaffAPI Driver.
+- RestAPI: Default of logged in user when creating an Edge token
+- StaffAPI: Handle pull parser when setting history
 
 ### Changed
 
