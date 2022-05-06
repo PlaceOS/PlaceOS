@@ -41,7 +41,7 @@ module Changelog
     String.build do |io|
       io.puts "## #{version}\n\n"
       commits(previous_reference: previous_reference).each do |heading, commits|
-        io.puts "### #{heading}"
+        io.puts "### #{heading}\n\n"
         commits.each { |commit| io.puts commit }
         io.puts ""
       end
@@ -89,7 +89,7 @@ module Changelog
       File.join(GITHUB_ORGANISATION, repo)
     end
 
-    REGEX = /(?<type>\w+)(?<scope>(?:\([^()\r\n]*\)|\())?(?<breaking>!)?: ?(?<subject>.+$)/
+    REGEX = /(?<type>\w+)(?:\((?<scope>[^()\r\n]*)\)|\(\))?(?<breaking>!)?: ?(?<subject>.+$)/
 
     CHANGELOG_HEADINGS = {
       "feat"     => "Added",
@@ -111,19 +111,16 @@ module Changelog
     end
 
     def to_s(io)
-      io << "- "
-      io << name << ": "
-      io << normalized_subject
+      io << "- " << name
+      io << "(**" << scope << "**)" if scope
+      io << ": " << normalized_subject
     end
 
     def self.normalize_name(path)
       path
         .to_s
-        .split('/')
-        .last
-        .split('-').join("", &.capitalize)
+        .split('/').join('/', &.split('-').join("", &.capitalize))
         .gsub(/api/i, "API")
-        .camelcase
     end
 
     def self.from_line?(repository_path, line)
