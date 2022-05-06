@@ -58,3 +58,6 @@
 [submodule "libraries/placeos-resource"]
 	path = libraries/placeos-resource
 	url = https://github.com/place-labs/resource
+[submodule "libraries/placeos-log-backend"]
+	path = libraries/placeos-log-backend
+	url = https://github.com/place-labs/log-backend
