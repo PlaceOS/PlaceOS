@@ -5,6 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2205.1
+
+### Fixed
+
+- Services/Auth(**coauth controller**): Improve redirect security check
+- Services/Core(**edge**): Resolve `crystal not found` error ([#178](https://github.com/PlaceOS/core/pull/178))
+- Services/FrontendLoader(**remote**): Fix listing a single commit ([#65](https://github.com/PlaceOS/frontend-loader/pull/65))
+- Services/FrontendLoader(**client**): Revert to breaking change to commit format
+- Services/RestAPI(**controller/edges**): Include `x_api_token` in Edge creation response ([#270](https://github.com/PlaceOS/rest-api/pull/270))
+
+### Added
+
+- Services/RestAPI(**controller/metadata**): Add pagination for `query` route ([#271](https://github.com/PlaceOS/rest-api/pull/271))
+- Add OpenTelemetry instrumentation to `crystal-rethinkdb`
+- Add OpenTelemetry instrumentation to `http/websocket`
+
 ## 1.2205.0
 
 ### Fixed
