@@ -9,17 +9,30 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ### Fixed
 
+- Clients/Typescript(**metadata**): Parse details if a string instead of JSON
 - Services/Auth(**coauth controller**): Improve redirect security check
+- Services/Auth(**Gemfile.lock**): Handle changes to std lib ([#70](https://github.com/PlaceOS/auth/pull/70))
 - Services/Core(**edge**): Resolve `crystal not found` error ([#178](https://github.com/PlaceOS/core/pull/178))
-- Services/FrontendLoader(**remote**): Fix listing a single commit ([#65](https://github.com/PlaceOS/frontend-loader/pull/65))
-- Services/FrontendLoader(**client**): Revert to breaking change to commit format
-- Services/RestAPI(**controller/edges**): Include `x_api_token` in Edge creation response ([#270](https://github.com/PlaceOS/rest-api/pull/270))
+- Services/FrontendLoader(**remote**): Previously listing a single commit ([#65](https://github.com/PlaceOS/frontend-loader/pull/65))
+- Services/FrontendLoader(**client**): Revert changes to the commit response
+- Services/FrontendLoader(**api/remote**): Cleanup temp files
+- Services/RestAPI(**controller/edges**): Include `x_api_token` in edge creation response ([#270](https://github.com/PlaceOS/rest-api/pull/270))
 
 ### Added
 
+- Services/Auth: Default to root if continue not provided
+- Services/Auth(**generic_oauth**): Add support for fallback values
+- Services/Auth(**telemetry**): Add opentelemetry ([#69](https://github.com/PlaceOS/auth/pull/69))
+- Services/FrontendLoader: Refactor using git-repository ([#66](https://github.com/PlaceOS/frontend-loader/pull/66))
 - Services/RestAPI(**controller/metadata**): Add pagination for `query` route ([#271](https://github.com/PlaceOS/rest-api/pull/271))
-- Add OpenTelemetry instrumentation to `crystal-rethinkdb`
-- Add OpenTelemetry instrumentation to `http/websocket`
+- Services/RestAPI(**users**): Resource token to default to first oauth app ([#273](https://github.com/PlaceOS/rest-api/pull/273))
+- Services/StaffAPI: Add support for delegated api access ([#188](https://github.com/PlaceOS/staff-api/pull/188))
+- Services/StaffAPI(**bookings**): Adjust booking limit checks ([#189](https://github.com/PlaceOS/staff-api/pull/189))
+- Services/StaffAPI(**controllers/bookings**): Add include checked out flag ([#190](https://github.com/PlaceOS/staff-api/pull/190))
+
+### Changed
+
+- Services/StaffAPI: Set app name to `staff-api` ([#185](https://github.com/PlaceOS/staff-api/pull/185))
 
 ## 1.2205.0
 
