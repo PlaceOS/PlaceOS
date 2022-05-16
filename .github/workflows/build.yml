@@ -205,6 +205,8 @@ jobs:
           for tag in "${tags[@]}"; do
             # Remove prefix
             tag="$(sed -rE 's/^.*:(placeos-)?(.*)$/\2/'<<<"$tag")"
+            # Remove the `placeos-` prefix from platform version tag
+            tag="${tag#placeos-}"
             echo "Tagging ${tag}"
             git tag --force "$tag"
           done
@@ -224,6 +226,10 @@ jobs:
 
           echo "::set-output name=should-release::${should_release}"
 
+          # Remove the `placeos-` prefix from platform version tag
+          version="${version#placeos-}"
+          echo "::set-output name=version::$version"
+
           # Generate anchor to point to CHANGELOG heading in release notes
           anchor="$(echo $version | tr -d '.')"
           echo "::set-output name=anchor::$anchor"
@@ -240,9 +246,9 @@ jobs:
           token: ${{ github.token }}
           generate_release_notes: false
           repository: ${{ env.RELEASE_REPO }}
-          tag_name: ${{ needs.discover.outputs.version }}
+          tag_name: ${{ steps.prepare-release.outputs.version }}
           body: |
-            See the [`CHANGELOG`](https://github.com/${{ env.RELEASE_REPO }}/blob/${{ needs.discover.outputs.version }}/CHANGELOG.md#${{ steps.prepare-release.outputs.anchor }}) for release notes.
+            See the [`CHANGELOG`](https://github.com/${{ env.RELEASE_REPO }}/blob/${{ steps.prepare-release.outputs.version }}/CHANGELOG.md#${{ steps.prepare-release.outputs.anchor }}) for release notes.
 
       -
         name: Update partner-environment
