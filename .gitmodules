@@ -49,3 +49,15 @@
 [submodule "services/build"]
 	path = services/build
 	url = https://github.com/PlaceOS/build.git
+[submodule "libraries/placeos-models"]
+	path = libraries/placeos-models
+	url = https://github.com/PlaceOS/models
+[submodule "libraries/placeos-driver"]
+	path = libraries/placeos-driver
+	url = https://github.com/PlaceOS/driver
+[submodule "libraries/placeos-resource"]
+	path = libraries/placeos-resource
+	url = https://github.com/place-labs/resource
+[submodule "libraries/placeos-log-backend"]
+	path = libraries/placeos-log-backend
+	url = https://github.com/place-labs/log-backend

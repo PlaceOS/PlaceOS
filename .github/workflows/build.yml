@@ -18,7 +18,7 @@ on:
 env:
   CRYSTAL_VERSION: 1.4.1
   RELEASE_REPO: PlaceOS/PlaceOS
-  PARTNER_ENVIRONMENT_REPO: place-labs/partner-environment
+  PARTNER_ENVIRONMENT_REPO: placeos/local
 
 jobs:
   discover:
