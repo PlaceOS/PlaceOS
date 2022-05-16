@@ -217,7 +217,7 @@ jobs:
           # Check if $version is formatted like a release
           should_release='false'
           version=${{ needs.discover.outputs.version }}
-          if [[ $version =~ ^[0-9]+\.[0-9]{4}\.[0-9]+$ ]]
+          if [[ $version =~ ^placeos-[0-9]+\.[0-9]{4}\.[0-9]+$ ]]
           then
             should_release='true'
           fi
