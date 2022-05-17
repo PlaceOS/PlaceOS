@@ -8,7 +8,8 @@ next_version = nil
 previous_reference = nil
 
 OptionParser.parse do |parser|
-  parser.banner = "Usage: ./update_changelog [arguments]"
+  parser.banner = "Usage: crystal run .scripts/update_changelog.cr -- [arguments]\n\n`--next-version` is required.\n"
+
   parser.on("--next-version VERSION", "Version to create CHANGELOG for") { |v| next_version = v }
   parser.on("--previous-reference REF", "Ref/version to start CHANGELOG entries from") { |v| previous_reference = v }
   parser.on("-h", "--help", "Show this help") do
