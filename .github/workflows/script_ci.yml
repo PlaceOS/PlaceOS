@@ -1,0 +1,32 @@
+name: Script CI
+
+on:
+  push:
+    paths:
+      - '.scripts/**'
+
+env:
+  CRYSTAL_VERSION: 1.4.1
+
+jobs:
+  crystal-style:
+    uses: PlaceOS/.github/.github/workflows/crystal-style.yml@main
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install crystal
+        uses: crystal-lang/install-crystal@v1.6.0
+        with:
+          crystal: ${{ env.CRYSTAL_VERSION }}
+      - name: Install shards
+        run: |
+          (
+          cd .scripts
+          shards install
+          )
+      - name: Run specs
+        run: crystal spec --error-trace --verbose

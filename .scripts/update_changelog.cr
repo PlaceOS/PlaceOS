@@ -1,4 +1,4 @@
-require "./common/changelog"
+require "./src/changelog"
 
 begin
   new_version, previous_reference = ARGV
