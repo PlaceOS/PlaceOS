@@ -8,18 +8,7 @@ require "src/update"
 #
 # Passing `--preview` will create the latest release candidate.
 # Similar to when called with no arguments, just adds an incremental `rc` suffix to whatever the new version _will_ be.
-
-# Types of updates
 #
-# - Major
-# - Monthly
-#   - Current month
-#   - Next Month
-# - Preview
-#   - New candidate for existing preview
-#   - Preview current month
-#   - Preview major
-
 # CLI Arguments
 ###############################################################################################
 #
