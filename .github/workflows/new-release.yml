@@ -72,9 +72,14 @@ jobs:
           VERSION: ${{ steps.update-version.outputs.new-version }}
 
       - name: Push
+        id: push
         run: |
-          git checkout -b "$VERSION"
-          git push -u origin "$VERSION"
+          branch="staged/$VERSION"
+
+          git checkout -b "$branch"
+          git push -u origin "$branch"
+
+          echo "::set-output name=branch::${branch}"
         env:
           VERSION: ${{ steps.update-version.outputs.new-version }}
 
@@ -86,7 +91,7 @@ jobs:
 
           # Create PR
           gh pr create \
-              --head "${VERSION}" \
+              --head "$BRANCH" \
               --title "build: \`${VERSION}\`" \
               --assignee 'placeos-robot' \
               --reviewer 'placeos/release' \
@@ -94,4 +99,5 @@ jobs:
               --base release \
               --body 'A new PlaceOS release, ready to go.'
         env:
+          BRANCH: ${{ steps.push.outputs.branch }}
           VERSION: ${{  steps.update-version.outputs.new-version  }}
