@@ -1,0 +1,97 @@
+name: New Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: "Type of release"
+        required: true
+        default: "minor"
+        type: choice
+        options:
+          - minor
+          - month
+          - major
+      preview:
+        description: "Whether to create a release candidate"
+        required: true
+        default: true
+        type: boolean
+
+env:
+  CRYSTAL_VERSION: 1.4.1
+
+jobs:
+  new-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Install crystal
+        uses: crystal-lang/install-crystal@v1.6.0
+        with:
+          crystal: ${{ env.CRYSTAL_VERSION }}
+
+      - name: Update VERSION
+        id: update-version
+        shell: bash
+        run: |
+          old_version="$(cat VERSION)"
+
+          crystal run .scripts/update.cr \
+            ${{ github.event.inputs.preview && '--preview' || '' }} \
+            --${{ github.event.inputs.release_type }}
+
+          new_version="$(cat VERSION)"
+
+          echo "::set-output name=old-version::${old_version}"
+          echo "::set-output name=new-version::${new_version}"
+
+      - name: Update CHANGELOG
+        shell: bash
+        run: |
+          # Remove release candidate suffix AND `placeos-` prefix
+          stripped_new="$(sed -rE 's/^(placeos-)?([0-9\.]*)(-rc[0-9]+)?$/\2/'<<<"${NEW_VERSION}")"
+          crystal run .scripts/update_changelog.cr --next-version "${stripped_new}"
+        env:
+          NEW_VERSION: ${{ steps.update-version.outputs.new-version }}
+
+      - name: Configure git user
+        run: |
+          git config user.email "robots@place.technology"
+          git config user.name "PlaceOS Robot"
+
+      - name: Commit
+        run: |
+          git commit --all --message="build: update for $VERSION"
+        env:
+          VERSION: ${{ steps.update-version.outputs.new-version }}
+
+      - name: Push
+        run: |
+          git checkout -b "$VERSION"
+          git push -u origin "$VERSION"
+        env:
+          VERSION: ${{ steps.update-version.outputs.new-version }}
+
+      - name: Create a PR
+        shell: bash
+        run: |
+          # Login with GitHub CLI
+          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+
+          # Create PR
+          gh pr create \
+              --head "${VERSION}" \
+              --title "build: \`${VERSION}\`" \
+              --assignee 'placeos-robot' \
+              --reviewer 'placeos/release' \
+              --label 'type: maintenance' \
+              --base release \
+              --body 'A new PlaceOS release, ready to go.'
+        env:
+          VERSION: ${{  steps.update-version.outputs.new-version  }}

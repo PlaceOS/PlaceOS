@@ -29,4 +29,6 @@ jobs:
           shards install
           )
       - name: Run specs
-        run: crystal spec --error-trace --verbose
+        run: |
+          cd .scripts
+          crystal spec --error-trace --verbose
