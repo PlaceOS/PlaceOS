@@ -1,28 +1,26 @@
 module Update
+  enum Type
+    Minor
+    Month
+    Major
+  end
+
   def self.update(
     version : String | PlaceCalver,
-    month : Bool = false,
-    major : Bool = false,
+    type : Type = Type::Minor,
     preview : Bool = false,
     versions : Array(PlaceCalver)? = nil
   )
-    if {major, month}.count(true) > 1
-      abort("Cannot specify more than ONE of `--major` and `--month`")
-    end
-
     unless version.is_a?(PlaceCalver)
       version = PlaceCalver.parse?(version) || abort("Malformed version: #{version}")
     end
 
     args = {preview: preview, versions: versions}
 
-    if major
-      version.next_major(**args)
-    elsif month
-      version.next_month(**args)
-    else
-      # Default to calculating the next minor
-      version.next_minor(**args)
+    case type
+    in .major? then version.next_major(**args)
+    in .month? then version.next_month(**args)
+    in .minor? then version.next_minor(**args)
     end
   end
 end
