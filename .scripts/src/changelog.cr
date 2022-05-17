@@ -48,12 +48,16 @@ module Changelog
     end
   end
 
-  def update_changelog(version, previous, file = "CHANGELOG.md")
+  def update_changelog(version : String, previous = nil, file = "CHANGELOG.md")
     changelog_lines = File.read_lines(file)
+
+    if previous.nil?
+      previous = extract_previous_version(version, changelog_lines)
+    end
+
     latest_version_index = changelog_lines.index do |line|
       line.starts_with?("## ")
     end || 0
-
     latest_version_header = changelog_lines[latest_version_index]
 
     # Remove latest changelog run for current version
@@ -68,6 +72,15 @@ module Changelog
     new_changelog_entry = changelog(version, previous).chomp
     updated_changelog = changelog_lines.insert(latest_version_index, new_changelog_entry).join('\n')
     File.write(file, updated_changelog)
+  end
+
+  private def extract_previous_version(current : String, lines)
+    previous_version_index = lines.index do |line|
+      line.starts_with?("## ") && !line.includes?(current)
+    end || 0
+
+    latest_version_header = lines[previous_version_index]
+    latest_version_header.split(' ', limit: 2).last
   end
 
   record(

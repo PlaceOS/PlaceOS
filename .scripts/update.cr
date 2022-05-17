@@ -25,7 +25,7 @@ require "src/update"
 # PlaceOS Release Process
 preview = false
 
-relase_type = nil
+release_type = nil
 
 type_count = 0
 
