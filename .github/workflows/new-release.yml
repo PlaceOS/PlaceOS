@@ -121,7 +121,7 @@ jobs:
               --head "$BRANCH" \
               --title "build: \`${VERSION}\`" \
               --assignee 'placeos-robot' \
-              --reviewer 'PlaceOS/release' \
+              --reviewer 'placeOS/release' \
               --label 'release,type: maintenance' \
               --base "$base" \
               --body "A new PlaceOS ${base}, ready to go."
