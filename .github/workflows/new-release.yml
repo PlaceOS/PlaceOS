@@ -108,13 +108,14 @@ jobs:
 
       - name: Create a PR
         shell: bash
+        if: ${{ !github.event.inputs.preview }}
         run: |
           set -x
 
           # Login with GitHub CLI
           echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
 
-          base=${{ github.event.inputs.preview && 'preview' || 'release' }}
+          base='release'
 
           # Create PR
           gh pr create \
