@@ -14,12 +14,7 @@ module Update
     versions : Array(PlaceCalver)? = nil
   )
     unless version.is_a?(PlaceCalver)
-      if version == NIGHTLY
-        # Use the latest version as the base if on `nightly`
-        version = PlaceCalver.latest(versions)
-      else
-        version = PlaceCalver.parse?(version) || abort("Malformed version: #{version}")
-      end
+      version = PlaceCalver.parse?(version) || abort("Malformed version: #{version}")
     end
 
     args = {preview: preview, versions: versions}
@@ -54,7 +49,7 @@ record(
 
   def self.from_file(file : String = VERSION_FILE) : PlaceCalver
     version = File.read(VERSION_FILE) rescue abort("Expected a `VERSION` file")
-    parse?(version) || abort("Expected well formated version file")
+    parse?(version) || abort("Expected well formated version: #{version}")
   end
 
   REGEX        = /(placeos-)?(?<major>\d+)\.(?<year>\d{2})(?<month>\d{2})\.(?<minor>\d+)(-rc(?<release_candidate>\d+))?/
@@ -154,7 +149,10 @@ record(
   end
 
   def self.parse?(version)
-    return unless data = REGEX.match(version)
+    # Use the latest version as the base if on `nightly`
+    return PlaceCalver.latest(versions) if version == NIGHTLY
+    # Ensure the version matches otherwirse
+    return unless (data = REGEX.match(version)).nil?
 
     year = data["year"].to_i + 2000
     month = data["month"].to_i
