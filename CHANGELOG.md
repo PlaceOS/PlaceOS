@@ -5,6 +5,17 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
 
+## 1.2205.3
+
+### Fixed
+
+- Services/FrontendLoader(**app**): Removal of connect-proxy ext broke compilation
+- Services/RestAPI(**repositories**): Inconsistent pull responses ([#277](https://github.com/PlaceOS/rest-api/pull/277))
+
+### Added
+
+- Services/FrontendLoader: Add support for dev.azure repositories
+
 ## 1.2205.2
 
 ### Added
