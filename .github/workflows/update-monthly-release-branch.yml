@@ -27,8 +27,7 @@ jobs:
 
           echo "${monthly_branch}"
 
-          git checkout --merge "$monthly_branch" || git checkout -b "$monthly_branch"
+          git switch "$monthly_branch" || git checkout -b "$monthly_branch"
 
-          git branch --set-upstream-to="origin/${monthly_branch}" "${monthly_branch}" || echo "branch not in remote"
           git merge --strategy-option=theirs release
           git push -u origin "$monthly_branch"
