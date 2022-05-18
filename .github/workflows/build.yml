@@ -208,8 +208,8 @@ jobs:
             # Remove the `placeos-` prefix from platform version tag
             tag="${tag#placeos-}"
 
-            # Ignore monthly tags (prevents ambiguity between branch and tag)
-            if [[ ! $branch =~ ^[0-9]+\.[0-9]{4}$ ]]
+            # Ignore monthly/nightly tags (prevents ambiguity between branch and the tag)
+            if [[ ! ($tag =~ ^[0-9]+\.[0-9]{4}$ || $tag == "nightly") ]]
             then
               echo "Tagging ${tag}"
               git tag --force "$tag"
