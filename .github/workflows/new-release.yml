@@ -1,0 +1,129 @@
+name: New Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: "Type of release"
+        required: true
+        default: "minor"
+        type: choice
+        options:
+          - minor
+          - month
+          - major
+      preview:
+        description: "Create a preview"
+        required: true
+        default: true
+        type: boolean
+
+env:
+  CRYSTAL_VERSION: 1.4.1
+  EPHEMERAL_STAGING_BRANCH: placeos-ephemeral-staging
+
+jobs:
+  new-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Install crystal
+        uses: crystal-lang/install-crystal@v1.6.0
+        with:
+          crystal: ${{ env.CRYSTAL_VERSION }}
+
+      - name: Update VERSION
+        id: update-version
+        shell: bash
+        run: |
+          set -x
+
+          git fetch --all
+
+          git checkout -b ${{ env.EPHEMERAL_STAGING_BRANCH }}
+
+          old_version="$(cat VERSION)"
+
+          crystal run .scripts/update.cr -- \
+            ${{ github.event.inputs.preview && '--preview' || '' }} \
+            --${{ github.event.inputs.release_type }}
+
+          new_version="$(cat VERSION)"
+
+          # Remove release candidate suffix AND `placeos-` prefix
+          stripped_new="$(sed -rE 's/^(placeos-)?([0-9\.]*)(-rc[0-9]+)?$/\2/'<<<"${new_version}")"
+
+          echo "::set-output name=old-version::${old_version}"
+          echo "::set-output name=new-version::${new_version}"
+          echo "::set-output name=stripped-new-version::${stripped_new}"
+
+      - name: Update CHANGELOG
+        shell: bash
+        run: |
+          crystal run .scripts/update_changelog.cr -- --next-version "${STRIPPED_NEW_VERSION}"
+        env:
+          STRIPPED_NEW_VERSION: ${{ steps.update-version.outputs.stripped-new-version }}
+
+      - name: Configure git user
+        run: |
+          git config user.email "robots@place.technology"
+          git config user.name "PlaceOS Robot"
+
+      - name: Commit
+        run: |
+          git commit --all --message="build: update for $VERSION"
+        env:
+          VERSION: ${{ steps.update-version.outputs.new-version }}
+
+      - name: Push
+        id: push
+        shell: bash
+        run: |
+          set -x
+
+          branch="${STRIPPED_NEW_VERSION}${{ github.event.inputs.preview && '-preview' || '-staging' }}"
+
+          # Checkout the new branch, or existing
+          git checkout -b "$branch" || git checkout "$branch"
+
+          git branch --set-upstream-to="origin/${branch}" "${branch}" || echo "branch not in remote"
+          git pull --ff-only || echo "branch not in remote"
+
+          # Merge changes from the working branch
+          git merge ${{ env.EPHEMERAL_STAGING_BRANCH }}
+
+          git push -u origin "$branch"
+
+          echo "::set-output name=branch::${branch}"
+        env:
+          VERSION: ${{ steps.update-version.outputs.new-version }}
+          STRIPPED_NEW_VERSION: ${{ steps.update-version.outputs.stripped-new-version }}
+
+      - name: Create a PR
+        shell: bash
+        run: |
+          set -x
+
+          # Login with GitHub CLI
+          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+
+          base=${{ github.event.inputs.preview && 'preview' || 'release' }}
+
+          # Create PR
+          gh pr create \
+              --head "$BRANCH" \
+              --title "build: \`${VERSION}\`" \
+              --assignee 'placeos-robot' \
+              --reviewer '@PlaceOS/release' \
+              --label 'type: maintenance' \
+              --label 'release' \
+              --base "$base" \
+              --body "A new PlaceOS ${base}, ready to go."
+        env:
+          BRANCH: ${{ steps.push.outputs.branch }}
+          VERSION: ${{  steps.update-version.outputs.new-version  }}

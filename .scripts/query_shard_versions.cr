@@ -78,7 +78,7 @@ if tally
   shard_tallys.to_a.sort_by(&.[1].*(-1)).each do |shard, count|
     next unless filtered_shards.empty? || shard.name.in?(filtered_shards)
 
-    puts "| `#{ shard.name }` | #{ shard.repository_markdown } | #{ count } |"
+    puts "| `#{shard.name}` | #{shard.repository_markdown} | #{count} |"
   end
 
   puts ""
