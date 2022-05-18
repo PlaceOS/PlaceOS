@@ -22,5 +22,5 @@ jobs:
           git checkout nightly
           git checkout release -- CHANGELOG.md
           git add CHANGELOG.md
-          git commit --message='chore: update CHANGELOG changes from `release`'
+          git commit --message="chore: update CHANGELOG changes from \`release\`"
           git push
