@@ -88,14 +88,16 @@ jobs:
 
           branch="${STRIPPED_NEW_VERSION}${{ github.event.inputs.preview && '-preview' || '-staging' }}"
 
-          # Checkout the new branch, or existing
-          git checkout -b "$branch" || git checkout "$branch"
+          git fetch --all
+
+          # Checkout the existing branch, or make a new one
+          git checkout --merge "$branch" || git checkout -b "$branch"
 
           git branch --set-upstream-to="origin/${branch}" "${branch}" || echo "branch not in remote"
-          git pull --ff-only || echo "branch not in remote"
+          git pull --no-rebase || echo "failed to pull"
 
           # Merge changes from the working branch
-          git merge ${{ env.EPHEMERAL_STAGING_BRANCH }}
+          git merge --strategy-option=theirs ${{ env.EPHEMERAL_STAGING_BRANCH }}
 
           git push -u origin "$branch"
 
