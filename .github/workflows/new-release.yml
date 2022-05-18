@@ -49,7 +49,7 @@ jobs:
           old_version="$(cat VERSION)"
 
           crystal run .scripts/update.cr -- \
-            ${{ github.event.inputs.preview && '--preview' || '' }} \
+            ${{ github.event.inputs.preview == 'true' && '--preview' || '' }} \
             --${{ github.event.inputs.release_type }}
 
           new_version="$(cat VERSION)"
@@ -85,7 +85,7 @@ jobs:
         run: |
           set -x
 
-          branch="${STRIPPED_NEW_VERSION}${{ github.event.inputs.preview && '-preview' || '-staging' }}"
+          branch="${STRIPPED_NEW_VERSION}${{ github.event.inputs.preview == 'true' && '-preview' || '-staging' }}"
 
           git fetch --all
 
@@ -107,7 +107,7 @@ jobs:
 
       - name: Create a PR
         shell: bash
-        if: github.event.inputs.preview == false
+        if: github.event.inputs.preview == 'false'
         run: |
           set -x
 
