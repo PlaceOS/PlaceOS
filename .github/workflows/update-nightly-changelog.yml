@@ -19,8 +19,8 @@ jobs:
           git config user.name "PlaceOS Robot"
       - name: Extract release CHANGELOG changes and commit to nightly
         run: |
-          git checkout nightly
+          git fetch --all
+          git switch nightly
           git checkout release -- CHANGELOG.md
-          git add CHANGELOG.md
           git commit --message="chore: update CHANGELOG changes from \`release\`"
           git push
