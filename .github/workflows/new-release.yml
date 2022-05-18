@@ -97,7 +97,7 @@ jobs:
           git pull --no-rebase || echo "failed to pull"
 
           # Merge changes from the working branch
-          git merge ${{ env.EPHEMERAL_STAGING_BRANCH }}
+          git merge --strategy-option=theirs ${{ env.EPHEMERAL_STAGING_BRANCH }}
 
           git push -u origin "$branch"
 
