@@ -114,8 +114,9 @@ jobs:
               --head "$BRANCH" \
               --title "build: \`${VERSION}\`" \
               --assignee 'placeos-robot' \
-              --reviewer 'placeos/release' \
+              --reviewer '@PlaceOS/release' \
               --label 'type: maintenance' \
+              --label 'release' \
               --base "$base" \
               --body "A new PlaceOS ${base}, ready to go."
         env:
