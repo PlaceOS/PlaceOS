@@ -6,7 +6,7 @@ on:
       - release
 
 jobs:
-  update-changelog:
+  update-monthly-branch:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,7 +27,8 @@ jobs:
 
           echo "${monthly_branch}"
 
-          git checkout "$monthly_branch" --track "origin/${monthly_branch}" || git checkout -b "$monthly_branch"
+          git checkout --merge "$monthly_branch" || git checkout -b "$monthly_branch"
+
           git branch --set-upstream-to="origin/${monthly_branch}" "${monthly_branch}" || echo "branch not in remote"
           git merge --strategy-option=theirs release
           git push -u origin "$monthly_branch"
