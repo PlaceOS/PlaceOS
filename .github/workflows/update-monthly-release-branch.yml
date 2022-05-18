@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Configure git user
         run: |
           git config user.email "robots@place.technology"
@@ -23,7 +25,9 @@ jobs:
 
           monthly_branch="$(sed -rE 's/^(placeos-)?([0-9\.]*)\.[0-9]+(-rc[0-9]+)?$/\2/' < VERSION)"
 
-          git checkout --merge "$monthly_branch" || git checkout -b "$monthly_branch"
+          echo "${monthly_branch}"
+
+          git checkout "$monthly_branch" --track "origin/${monthly_branch}" || git checkout -b "$monthly_branch"
           git branch --set-upstream-to="origin/${monthly_branch}" "${monthly_branch}" || echo "branch not in remote"
           git merge --strategy-option=theirs release
           git push -u origin "$monthly_branch"
