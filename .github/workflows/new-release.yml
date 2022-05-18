@@ -120,8 +120,7 @@ jobs:
           gh pr create \
               --head "$BRANCH" \
               --title "build: \`${VERSION}\`" \
-              --assignee 'placeos-robot' \
-              --reviewer 'placeos/release' \
+              --assignee placeos-robot \
               --label 'release,type: maintenance' \
               --base "$base" \
               --body "A new PlaceOS ${base}, ready to go."
