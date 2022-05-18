@@ -1,0 +1,6 @@
+name: scripts
+version: 0.0.0
+license: MIT
+development_dependencies:
+  timecop:
+    github: crystal-community/timecop.cr
