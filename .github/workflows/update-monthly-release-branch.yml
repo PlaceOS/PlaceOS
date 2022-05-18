@@ -5,15 +5,14 @@ on:
     branches:
       - release
 
-env:
-  EPHEMERAL_STAGING_BRANCH: placeos-ephemeral-staging
-
 jobs:
-  update-changelog:
+  update-monthly-branch:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Configure git user
         run: |
           git config user.email "robots@place.technology"
@@ -22,11 +21,13 @@ jobs:
         shell: bash
         run: |
           set -x
+          git fetch --all
+
           monthly_branch="$(sed -rE 's/^(placeos-)?([0-9\.]*)\.[0-9]+(-rc[0-9]+)?$/\2/' < VERSION)"
-          git checkout -b ${{ env.EPHEMERAL_STAGING_BRANCH }}
 
-          git checkout "$monthly_branch" || git checkout -b "$monthly_branch"
-          git branch --set-upstream-to="origin/${monthly_branch}" "${monthly_branch}" || echo "branch not in remote"
+          echo "${monthly_branch}"
 
-          git merge -- ${{ env.EPHEMERAL_STAGING_BRANCH }}
+          git switch "$monthly_branch" || git checkout -b "$monthly_branch"
+
+          git merge --strategy-option=theirs release
           git push -u origin "$monthly_branch"
