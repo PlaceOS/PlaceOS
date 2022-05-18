@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Configure git user
         run: |
           git config user.email "robots@place.technology"
@@ -21,7 +23,7 @@ jobs:
       - name: Extract release CHANGELOG changes and commit to nightly
         run: |
           git fetch --all
-          git switch nightly --track origin/nightly
-          git checkout release --track origin/release -- CHANGELOG.md
+          git switch nightly
+          git checkout release -- CHANGELOG.md
           git commit --message="chore: update CHANGELOG changes from \`release\`"
           git push
