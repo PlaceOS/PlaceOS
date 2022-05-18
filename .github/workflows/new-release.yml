@@ -92,7 +92,7 @@ jobs:
           git checkout -b "$branch" || git checkout "$branch"
 
           git branch --set-upstream-to="origin/${branch}" "${branch}" || echo "branch not in remote"
-          git pull || echo "branch not in remote"
+          git pull --ff-only || echo "branch not in remote"
 
           # Merge changes from the working branch
           git merge ${{ env.EPHEMERAL_STAGING_BRANCH }}
