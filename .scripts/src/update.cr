@@ -12,7 +12,7 @@ module Update
     versions : Array(PlaceCalver)? = nil
   )
     unless version.is_a?(PlaceCalver)
-      version = PlaceCalver.parse?(version) || abort("Malformed version: #{version}")
+      version = PlaceCalver.parse?(version, versions) || abort("Malformed version: #{version}")
     end
 
     args = {preview: preview, versions: versions}
@@ -42,7 +42,7 @@ record(
       .compact_map { |ref|
         unless ref.empty?
           tag = ref.split("\trefs/tags/", limit: 2).last
-          parse?(tag)
+          _parse(tag)
         end
       }.sort!.reverse!
   end
@@ -148,11 +148,18 @@ record(
     PlaceCalver.new(major, next_year_value, next_month_value, next_minor_value, next_release_candidate)
   end
 
-  def self.parse?(version)
+  def self.parse?(version, versions = nil)
+    versions = PlaceCalver.from_tags if versions.nil?
+
     # Use the latest version as the base if on `nightly`
     return PlaceCalver.latest(versions) if version == NIGHTLY
+
+    _parse(version)
+  end
+
+  protected def self._parse(version)
     # Ensure the version matches otherwirse
-    return unless (data = REGEX.match(version)).nil?
+    return unless data = REGEX.match(version)
 
     year = data["year"].to_i + 2000
     month = data["month"].to_i
