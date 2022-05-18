@@ -6,6 +6,7 @@ on:
       - release
     paths:
       - 'CHANGELOG.md'
+      - '.github/workflows/update-nightly-changelog.yml'
 
 jobs:
   update-changelog:
@@ -19,8 +20,8 @@ jobs:
           git config user.name "PlaceOS Robot"
       - name: Extract release CHANGELOG changes and commit to nightly
         run: |
-          git checkout nightly
-          git checkout release -- CHANGELOG.md
-          git add CHANGELOG.md
+          git fetch --all
+          git switch nightly --track origin/nightly
+          git checkout release --track origin/release -- CHANGELOG.md
           git commit --message="chore: update CHANGELOG changes from \`release\`"
           git push
