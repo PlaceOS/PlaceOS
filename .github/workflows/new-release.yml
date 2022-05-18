@@ -84,10 +84,12 @@ jobs:
         run: |
           set -x
 
-          branch="$VERSION${{ github.event.inputs.preview && '-preview' || '-staging' }}"
+          branch="${STRIPPED_NEW_VERSION}${{ github.event.inputs.preview && '-preview' || '-staging' }}"
 
           # Checkout the new branch, or existing
           git checkout -b "$branch" || git checkout "$branch"
+
+          git pull || echo "no upstream"
 
           # Merge changes from the working branch
           git merge ${{ env.EPHEMERAL_STAGING_BRANCH }}
