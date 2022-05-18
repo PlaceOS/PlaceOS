@@ -15,7 +15,6 @@ on:
       preview:
         description: "Create a preview"
         required: true
-        default: true
         type: boolean
 
 env:
@@ -108,7 +107,7 @@ jobs:
 
       - name: Create a PR
         shell: bash
-        if: ${{ !github.event.inputs.preview }}
+        if: github.event.inputs.preview == false
         run: |
           set -x
 
