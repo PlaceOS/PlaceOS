@@ -5,8 +5,6 @@ module Update
     Major
   end
 
-  NIGHTLY = "nightly"
-
   def self.update(
     version : String | PlaceCalver,
     type : Type = Type::Minor,
@@ -35,6 +33,8 @@ record(
   minor : Int32,
   release_candidate : Int32? = nil,
 ) do
+  NIGHTLY = "nightly"
+
   def self.from_tags
     `git fetch --all`
     `git ls-remote --tags`
