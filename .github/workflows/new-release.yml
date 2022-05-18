@@ -89,7 +89,8 @@ jobs:
           # Checkout the new branch, or existing
           git checkout -b "$branch" || git checkout "$branch"
 
-          git pull || echo "no upstream"
+          git branch -u origin 1.2205.3-preview || echo "branch not in remote"
+          git pull || echo "branch not in remote"
 
           # Merge changes from the working branch
           git merge ${{ env.EPHEMERAL_STAGING_BRANCH }}
