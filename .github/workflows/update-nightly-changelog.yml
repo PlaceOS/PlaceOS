@@ -1,0 +1,26 @@
+name: Update `nightly` CHANGELOG
+
+on:
+  push:
+    branches:
+      - release
+    paths:
+      - 'CHANGELOG.md'
+
+jobs:
+  update-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Configure git user
+        run: |
+          git config user.email "robots@place.technology"
+          git config user.name "PlaceOS Robot"
+      - name: Extract release CHANGELOG changes and commit to nightly
+        run: |
+          git checkout nightly
+          git checkout release -- CHANGELOG.md
+          git add CHANGELOG.md
+          git commit --message='chore: update CHANGELOG changes from `release`'
+          git push
