@@ -47,7 +47,7 @@ jobs:
 
           old_version="$(cat VERSION)"
 
-          crystal run .scripts/update.cr \
+          crystal run .scripts/update.cr -- \
             ${{ github.event.inputs.preview && '--preview' || '' }} \
             --${{ github.event.inputs.release_type }}
 
@@ -63,7 +63,7 @@ jobs:
       - name: Update CHANGELOG
         shell: bash
         run: |
-          crystal run .scripts/update_changelog.cr --next-version "${STRIPPED_NEW_VERSION}"
+          crystal run .scripts/update_changelog.cr -- --next-version "${STRIPPED_NEW_VERSION}"
         env:
           STRIPPED_NEW_VERSION: ${{ steps.update-version.outputs.stripped-new-version }}
 
