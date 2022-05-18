@@ -6,6 +6,7 @@ on:
       - release
     paths:
       - 'CHANGELOG.md'
+      - '.github/workflows/update-nightly-changelog.yml'
 
 jobs:
   update-changelog:
