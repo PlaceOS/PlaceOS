@@ -91,7 +91,7 @@ jobs:
           # Checkout the new branch, or existing
           git checkout -b "$branch" || git checkout "$branch"
 
-          git branch --set-upstream="origin/${branch}" "${branch}" || echo "branch not in remote"
+          git branch --set-upstream-to="origin/${branch}" "${branch}" || echo "branch not in remote"
           git pull || echo "branch not in remote"
 
           # Merge changes from the working branch
