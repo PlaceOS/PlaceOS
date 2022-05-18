@@ -207,8 +207,13 @@ jobs:
             tag="$(sed -rE 's/^.*:(placeos-)?(.*)$/\2/'<<<"$tag")"
             # Remove the `placeos-` prefix from platform version tag
             tag="${tag#placeos-}"
-            echo "Tagging ${tag}"
-            git tag --force "$tag"
+
+            # Ignore monthly/nightly tags (prevents ambiguity between branch and the tag)
+            if [[ ! ($tag =~ ^[0-9]+\.[0-9]{4}$ || $tag == "nightly") ]]
+            then
+              echo "Tagging ${tag}"
+              git tag --force "$tag"
+            fi
           done
           git push --tags --force
 
