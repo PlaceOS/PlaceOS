@@ -149,6 +149,7 @@ record(
   end
 
   def self.parse?(version, versions = nil)
+    version = version.chomp
     versions = PlaceCalver.from_tags if versions.nil?
 
     # Use the latest version as the base if on `nightly`
