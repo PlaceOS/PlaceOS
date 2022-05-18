@@ -5,6 +5,8 @@ module Update
     Major
   end
 
+  NIGHTLY = "nightly"
+
   def self.update(
     version : String | PlaceCalver,
     type : Type = Type::Minor,
@@ -12,7 +14,12 @@ module Update
     versions : Array(PlaceCalver)? = nil
   )
     unless version.is_a?(PlaceCalver)
-      version = PlaceCalver.parse?(version) || abort("Malformed version: #{version}")
+      if version == NIGHTLY
+        # Use the latest version as the base if on `nightly`
+        version = PlaceCalver.latest(versions)
+      else
+        version = PlaceCalver.parse?(version) || abort("Malformed version: #{version}")
+      end
     end
 
     args = {preview: preview, versions: versions}

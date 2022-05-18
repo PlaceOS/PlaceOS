@@ -28,6 +28,9 @@ describe "./update" do
       current_version = "1.2205.2"
       expected_version = "1.2205.3"
       Update.update(current_version, type: :minor, preview: false, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+      current_version = "nightly"
+      Update.update(current_version, type: :minor, preview: false, versions: VERSION_MOCKS).to_s.should eq(expected_version)
     end
 
     it "starts from zero for a new month" do
@@ -37,6 +40,9 @@ describe "./update" do
         current_version = "1.2205.2"
         expected_version = "1.2206.0"
         Update.update(current_version, type: :minor, preview: false, versions: mocks).to_s.should eq(expected_version)
+
+        current_version = "nightly"
+        Update.update(current_version, type: :minor, preview: false, versions: VERSION_MOCKS).to_s.should eq(expected_version)
       end
     end
 
@@ -48,17 +54,25 @@ describe "./update" do
           current_version = "1.2205.2"
           expected_version = "1.2206.0-rc0"
           Update.update(current_version, type: :minor, preview: true, versions: mocks).to_s.should eq(expected_version)
+          current_version = "nightly"
+          Update.update(current_version, type: :minor, preview: true, versions: mocks).to_s.should eq(expected_version)
         end
       end
       it "creates a preview of the next minor" do
         current_version = "1.2205.2"
         expected_version = "1.2205.3-rc0"
         Update.update(current_version, type: :minor, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+        current_version = "nightly"
+        Update.update(current_version, type: :minor, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
       end
 
       it "creates the next preview version" do
         current_version = "1.2205.2-rc1"
         expected_version = "1.2205.3-rc0"
+        Update.update(current_version, type: :minor, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+        current_version = "nightly"
         Update.update(current_version, type: :minor, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
       end
 
@@ -69,6 +83,9 @@ describe "./update" do
         mocks = (VERSION_MOCKS.dup << PlaceCalver.parse?(current_version).as(PlaceCalver)).sort!.reverse!
         expected_version = "1.2205.3-rc1"
         Update.update(current_version, type: :minor, preview: true, versions: mocks).to_s.should eq(expected_version)
+
+        current_version = "nightly"
+        Update.update(current_version, type: :minor, preview: true, versions: mocks).to_s.should eq(expected_version)
       end
     end
   end
@@ -78,6 +95,9 @@ describe "./update" do
       current_version = "1.2206.0-rc1"
       expected_version = "1.2206.0"
       Update.update(current_version, type: :month, preview: false, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+      current_version = "nightly"
+      Update.update(current_version, type: :month, preview: false, versions: VERSION_MOCKS).to_s.should eq(expected_version)
     end
 
     context "--preview" do
@@ -85,17 +105,26 @@ describe "./update" do
         current_version = "1.2205.2"
         expected_version = "1.2206.0-rc2"
         Update.update(current_version, type: :month, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+        current_version = "nightly"
+        Update.update(current_version, type: :month, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
       end
 
       it "creates the next preview version" do
         current_version = "1.2205.2-rc1"
         expected_version = "1.2206.0-rc2"
         Update.update(current_version, type: :month, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+        current_version = "nightly"
+        Update.update(current_version, type: :month, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
       end
 
       it "bumps an existing preview version" do
         current_version = "1.2206.0-rc1"
         expected_version = "1.2206.0-rc2"
+        Update.update(current_version, type: :month, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+        current_version = "nightly"
         Update.update(current_version, type: :month, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
       end
     end
@@ -106,6 +135,9 @@ describe "./update" do
       current_version = "2.2205.0-rc0"
       expected_version = "2.2205.0"
       Update.update(current_version, type: :major, preview: false, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+      current_version = "nightly"
+      Update.update(current_version, type: :major, preview: false, versions: VERSION_MOCKS).to_s.should eq(expected_version)
     end
 
     context "--preview" do
@@ -113,17 +145,26 @@ describe "./update" do
         current_version = "1.2205.2"
         expected_version = "2.2205.0-rc1"
         Update.update(current_version, type: :major, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+        current_version = "nightly"
+        Update.update(current_version, type: :major, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
       end
 
       it "creates the next preview version" do
         current_version = "1.2205.2-rc0"
         expected_version = "2.2205.0-rc1"
         Update.update(current_version, type: :major, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+        current_version = "nightly"
+        Update.update(current_version, type: :major, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
       end
 
       it "bumps an existing preview version" do
         current_version = "2.2205.0-rc0"
         expected_version = "2.2205.0-rc1"
+        Update.update(current_version, type: :major, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
+
+        current_version = "nightly"
         Update.update(current_version, type: :major, preview: true, versions: VERSION_MOCKS).to_s.should eq(expected_version)
       end
     end
