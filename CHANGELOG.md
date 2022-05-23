@@ -7,8 +7,6 @@ and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-v
 
 ## 1.2205.4
 
-## 2.2205.4
-
 ### Added
 
 - Clients/Crystal(**`Metadata`**): Add `merge` ([#30](https://github.com/PlaceOS/crystal/pull/30))
