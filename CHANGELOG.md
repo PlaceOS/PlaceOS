@@ -99,6 +99,17 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Services/FrontendLoader(**app**): Removal of connect-proxy ext broke compilation
 - Services/RestAPI(**repositories**): Inconsistent pull responses ([#277](https://github.com/PlaceOS/rest-api/pull/277))
 
+## 2.2205.4
+
+### Added
+
+- Clients/Crystal(**`Metadata`**): Add `merge` ([#30](https://github.com/PlaceOS/crystal/pull/30))
+
+### Fixed
+
+- Services/Build(**run_from**): Skip clearing env
+- Services/StaffAPI(**bookings**): refactor checkin function ([#191](https://github.com/PlaceOS/staff-api/pull/191))
+
 ## 1.2205.3
 
 ### Added
