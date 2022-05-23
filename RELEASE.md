@@ -12,13 +12,17 @@ crystal run .scripts/update.cr
 
  When called with no arguments, this script will update increment of the previous version in `VERSION` for the current month.
 
+- `--minor`
+
+This will produce the next minor version. This is the default, and implied unless other flags are passed.
+
 - `--major`
 
 This will produce the next major version.
 
 - `--month`
 
-This will produce the next monthly version.
+This will produce the monthly version for the upcoming month. Best used with `--preview`.
 
 - `--preview`
 
@@ -43,12 +47,6 @@ Defaults to bumping to the next minor version.
 ```
 
 ## Updating the `CHANGELOG.md`
-
-Run...
-
-```shell-session
-crystal run .scripts/update_changelog.cr -- <new_version> <previous_reference>
-```
 
 ### Usage
 
