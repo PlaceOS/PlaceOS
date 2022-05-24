@@ -3,7 +3,7 @@
 All notable changes to PlaceOS are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [PlaceOS Platform Versioning](./README.md#platform-versioning).
+and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
 ## 1.2205.4
 
