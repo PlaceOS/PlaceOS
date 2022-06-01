@@ -125,7 +125,7 @@ module Changelog
 
     def to_s(io)
       io << "- " << name
-      io << "(**" << scope << "**)" if scope
+      io << " [**" << scope << "**]" if scope
       io << ": " << normalized_subject
     end
 
