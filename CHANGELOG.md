@@ -10,7 +10,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Added
 
 - Clients/Crystal [**api_wrapper/users**]: Add `include_deleted` param ([#31](https://github.com/PlaceOS/crystal/pull/31))
-- Interfaces/Backoffice [**admin**]: Add ability to edit PlaceOS StaffAPI tenant's booking limits
+- Interfaces/Backoffice [**admin**]: Add ability to edit StaffAPI tenant's booking limits
 - Libraries/Models: Add `PlaceOS::Model::Executable`
 - Services/RestAPI [**users**]: Add route for reviving a deleted user ([#280](https://github.com/PlaceOS/rest-api/pull/280))
 - Services/StaffAPI: Add group related routes ([#192](https://github.com/PlaceOS/staff-api/pull/192))
@@ -22,12 +22,11 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Backoffice [**admin**]: Tweak handling of fields for StaffAPI tenants
 - Interfaces/Backoffice [**ui**]: Fix filtering of item search list ([#272](https://github.com/PlaceOS/backoffice/pull/272))
 - Libraries/Driver: Don't use back ticks to obtain interface ([#148](https://github.com/PlaceOS/placeos-driver/pull/148))
-- Libraries/Driver [**`-d`**]: Prevent log leaking into defaults output ([#149](https://github.com/PlaceOS/placeos-driver/pull/149))
-- Libraries/Driver: Logging when processing command line flags
+- Libraries/Driver: Prevent log leaking into defaults output ([#149](https://github.com/PlaceOS/placeos-driver/pull/149))
 - Libraries/Models [**executable**]: Short commit ([#177](https://github.com/PlaceOS/placeos-models/pull/177))
 - Services/Build [**api**]: Write headers before body ([#42](https://github.com/PlaceOS/build/pull/42))
-- Services/Core [**edge**]: Use correct `api-key` param and update key validation  ([#181](https://github.com/PlaceOS/core/pull/181))
-- Services/StaffAPI [**events**]: Update on graph API where host event switch not made ([#194](https://github.com/PlaceOS/staff-api/pull/194))
+- Services/Core, Services/Edge [**edge**]: Use correct api-key param and update key validation  ([#181](https://github.com/PlaceOS/core/pull/181))
+- Services/StaffAPI [**events**]: Update on graph api where host event switch not made ([#194](https://github.com/PlaceOS/staff-api/pull/194))
 
 ## 1.2205.4
 
