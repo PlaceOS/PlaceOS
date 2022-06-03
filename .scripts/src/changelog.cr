@@ -125,7 +125,7 @@ module Changelog
 
     def to_s(io)
       io << "- " << name
-      io << "(**" << scope << "**)" if scope
+      io << " [**" << scope << "**]" if scope
       io << ": " << normalized_subject
     end
 
@@ -134,6 +134,7 @@ module Changelog
         .to_s
         .split('/').join('/', &.split('-').join("", &.capitalize))
         .gsub(/api/i, "API")
+        .gsub(/placeos/i, "")
     end
 
     def self.from_line?(repository_path, line)
