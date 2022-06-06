@@ -5,6 +5,19 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2206.1
+
+### Fixed
+
+- Interfaces/Templates [**events**]: Only check availability when there are spaces selected
+- Services/Build [**driver_store/filesystem**]: More effectively search for drivers
+
+### Added
+
+- Interfaces/Templates [**spaces**]: Start adding logic for space select map components
+- Interfaces/Templates [**form-fields**]: Add rich text input component ([#142](https://github.com/PlaceOS/templates/pull/142))
+- Services/StaffAPI [**events**]: Add dedicated metadata update methods ([#195](https://github.com/PlaceOS/staff-api/pull/195))
+
 ## 1.2206.0
 
 ### Added
