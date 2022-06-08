@@ -48,8 +48,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates: Changed loading values in upcoming bookings component
 - Interfaces/Templates: Fixed loading issue of upcoming bookings
 - Interfaces/Templates: Filtered showed upcoming bookings by currentuser().name
-- Services/Core [**workflow/build**]: Target core and edge
-- Services/Edge [**workflow/build**]: Target core and edge
 
 ## 1.2206.1
 
