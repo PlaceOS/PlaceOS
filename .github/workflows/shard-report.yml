@@ -27,6 +27,8 @@ jobs:
             clustering \
             hound-dog \
             neuroplastic \
+            opentelemetry-api \
+            opentelemetry-instrumentation \
             placeos \
             placeos-compiler \
             placeos-core-client \
