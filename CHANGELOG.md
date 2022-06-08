@@ -5,6 +5,51 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2206.2
+
+### Fixed
+
+- Interfaces/Templates [**spaces**]: Tweak new space select map component
+- Interfaces/Templates [**form-fields**]: Fix user list field adding external users and styling
+- Interfaces/Templates [**events**]: Fix editing events
+- Interfaces/Templates [**events**]: Update logic to exclude periods when editing space durations
+- Services/Auth [**sessions/destroy**]: Use current_authority helper to obtain logout url
+
+### Added
+
+- Interfaces/Templates: Added additional button and viewing pane in manifest.xml to display confirmed bookings
+- Interfaces/Templates: Worked on component to show upcoming bookings
+- Interfaces/Templates: Starting on service to find existing bookings
+- Interfaces/Templates [**spaces**]: Add logic for space select map component
+- Interfaces/Templates [**workplace**]: Add support ticket modal component
+- Interfaces/Templates [**workplace**]: Allow for all day bookings in space booking flow
+- Interfaces/Templates [**workplace**]: Show notes on event details
+- Interfaces/Templates [**events**]: Tweak checks for space availability
+- Services/StaffAPI [**bookings**]: Checked_in to canclled state transition ([#196](https://github.com/PlaceOS/staff-api/pull/196))
+
+### Changed
+
+- Interfaces/Templates: Added function-files to builds
+- Interfaces/Templates: Applying map features after map has loaded:
+- Interfaces/Templates: Refactored maploaded property to behaviorsubject
+- Interfaces/Templates: Changed z-index, data typing of mapfeatures in find-space component
+- Interfaces/Templates: Added timer to delay mapfeatures being calculated
+- Interfaces/Templates: Refactor map service
+- Interfaces/Templates: Refactored data type of map features due to typeerror. added flag to identify when map features are applied
+- Interfaces/Templates: Refactored map service to using baseclass.timeout but map pins still not showing
+- Interfaces/Templates: Added timeout in find-space component, added map styles, map pins not showing up
+- Interfaces/Templates: Changed timeout length
+- Interfaces/Templates: Fixed error of incorrect map_id being passed
+- Interfaces/Templates: Changed extensionpoint to show add-in on composing new calendar event
+- Interfaces/Templates: Setting properties and typing in existing-bookings service
+- Interfaces/Templates: Looking at queryevents method
+- Interfaces/Templates: Retrieving booking details to be displayed in cards
+- Interfaces/Templates: Date formats conversion
+- Interfaces/Templates: Changed loading flag to behaviorsubject
+- Interfaces/Templates: Changed loading values in upcoming bookings component
+- Interfaces/Templates: Fixed loading issue of upcoming bookings
+- Interfaces/Templates: Filtered showed upcoming bookings by currentuser().name
+
 ## 1.2206.1
 
 ### Fixed
