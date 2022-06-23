@@ -5,6 +5,55 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2206.3
+
+### Fixed
+
+- Clients/Typescript [**auth**]: Allow forcing the api version
+- Interfaces/Backoffice [**forms**]: Handle errors from listing releases/branches
+- Interfaces/Backoffice [**forms**]: List invalid fields on save error
+- Interfaces/Templates [**outlook addin**]: Correct typo of variable name from selectedlevel to selected_level in find-space.component
+- Interfaces/Templates [**workplace**]: Check for valid bookings
+- Interfaces/Templates [**concierge**]: Include desk name in desk bokings
+- Interfaces/Templates [**outlook addin**]: Change incorrect src path to svg in image components
+- Interfaces/Templates [**outlook**]: Styling tweak
+- Interfaces/Templates [**outlook addin**]: Fix styling issue where toggle buttons were incorrectly aligned in find-space.component
+- Interfaces/Templates [**workplace**]: Update booking confirm to correctly show all day details
+- Interfaces/Templates: Clean up workplace related settings
+- Interfaces/Templates [**form-fields**]: Tweak aria label for user list field
+- Interfaces/Templates [**form-fields**]: Add value accessors to asset and catering list components
+- Libraries/LogBackend [**opentelemetry-backend**]: Log with a sync dispatcher
+- Services/Init [**entities**]: Upsert appliation on name and redirect_uri ([#66](https://github.com/PlaceOS/init/pull/66))
+- Services/RestAPI [**metadata**]: Users can create their own metadata ([#287](https://github.com/PlaceOS/rest-api/pull/287))
+- Services/StaffAPI: Use correct routes for calendar view with delegated access ([#198](https://github.com/PlaceOS/staff-api/pull/198))
+
+### Added
+
+- Interfaces/Templates [**workplace**]: Consider booking checked-in state for desks
+- Interfaces/Templates [**components**]: Add pipe for formatting durations
+- Interfaces/Templates [**events**]: Allow for cancelling of form post requests
+- Interfaces/Templates [**users**]: Add pipe for converting user id into a user object
+- Interfaces/Templates [**spaces**]: Add pipe for converting space id into a user object
+- Interfaces/Templates [**workplace**]: Add success and confirm sections of the new meeting flow
+- Libraries/Models [**user**]: Add admin_metadata json output ([#179](https://github.com/PlaceOS/placeos-models/pull/179))
+- Libraries/Models [**metadata**]: Remove queries and optimize uniqueness check ([#180](https://github.com/PlaceOS/placeos-models/pull/180))
+- Services/Init [**initialization**]: Use `place_skip_placeholders` to skip base entities ([#67](https://github.com/PlaceOS/init/pull/67))
+- Services/RestAPI [**users**]: Add route for deleting resource tokens ([#283](https://github.com/PlaceOS/rest-api/pull/283))
+- Services/RestAPI: Add metadata change signaling ([#286](https://github.com/PlaceOS/rest-api/pull/286))
+- Services/RestAPI [**users**]: Optionally include user metadata ([#288](https://github.com/PlaceOS/rest-api/pull/288))
+- Services/RestAPI [**metadata**]: Remove metadata querying ([#289](https://github.com/PlaceOS/rest-api/pull/289))
+- Services/RestAPI [**application**]: Improve query result accuracy ([#290](https://github.com/PlaceOS/rest-api/pull/290))
+
+### Changed
+
+- Interfaces/Templates [**outlook addin**]: Add mat option for all levels in map view
+- Interfaces/Templates [**outlook addin**]: Apply delay of processing map features when the floor level is changed so that map pins will load
+- Interfaces/Templates [**outlook addin**]: Refactor find-space.component to remove unmanaged subscription, delete unused debug tracing
+- Interfaces/Templates [**outlook addin**]: Add microsoftonline.com as an appdomain in the manifest.xml file
+- Libraries/Models: Extracted json-merge-patch to a shard
+- Services/Auth [**deps**]: Bump rack from 2.2.3 to 2.2.3.1 ([#72](https://github.com/PlaceOS/auth/pull/72))
+- Services/Auth [**deps**]: Bump yajl-ruby from 1.4.2 to 1.4.3 ([#71](https://github.com/PlaceOS/auth/pull/71))
+
 ## 1.2206.2
 
 ### Fixed
