@@ -9,19 +9,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**auth**]: Allow forcing the api version
-- Interfaces/Backoffice [**forms**]: Handle errors from listing releases/branches
-- Interfaces/Backoffice [**forms**]: List invalid fields on save error
-- Interfaces/Templates [**outlook addin**]: Correct typo of variable name from selectedlevel to selected_level in find-space.component
-- Interfaces/Templates [**workplace**]: Check for valid bookings
-- Interfaces/Templates [**concierge**]: Include desk name in desk bokings
-- Interfaces/Templates [**outlook addin**]: Change incorrect src path to svg in image components
-- Interfaces/Templates [**outlook**]: Styling tweak
-- Interfaces/Templates [**outlook addin**]: Fix styling issue where toggle buttons were incorrectly aligned in find-space.component
-- Interfaces/Templates [**workplace**]: Update booking confirm to correctly show all day details
-- Interfaces/Templates: Clean up workplace related settings
-- Interfaces/Templates [**form-fields**]: Tweak aria label for user list field
-- Interfaces/Templates [**form-fields**]: Add value accessors to asset and catering list components
 - Libraries/LogBackend [**opentelemetry-backend**]: Log with a sync dispatcher
 - Services/Init [**entities**]: Upsert appliation on name and redirect_uri ([#66](https://github.com/PlaceOS/init/pull/66))
 - Services/RestAPI [**metadata**]: Users can create their own metadata ([#287](https://github.com/PlaceOS/rest-api/pull/287))
@@ -29,12 +16,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Added
 
-- Interfaces/Templates [**workplace**]: Consider booking checked-in state for desks
-- Interfaces/Templates [**components**]: Add pipe for formatting durations
-- Interfaces/Templates [**events**]: Allow for cancelling of form post requests
-- Interfaces/Templates [**users**]: Add pipe for converting user id into a user object
-- Interfaces/Templates [**spaces**]: Add pipe for converting space id into a user object
-- Interfaces/Templates [**workplace**]: Add success and confirm sections of the new meeting flow
 - Libraries/Models [**user**]: Add admin_metadata json output ([#179](https://github.com/PlaceOS/placeos-models/pull/179))
 - Libraries/Models [**metadata**]: Remove queries and optimize uniqueness check ([#180](https://github.com/PlaceOS/placeos-models/pull/180))
 - Services/Init [**initialization**]: Use `place_skip_placeholders` to skip base entities ([#67](https://github.com/PlaceOS/init/pull/67))
@@ -44,60 +25,15 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Services/RestAPI [**metadata**]: Remove metadata querying ([#289](https://github.com/PlaceOS/rest-api/pull/289))
 - Services/RestAPI [**application**]: Improve query result accuracy ([#290](https://github.com/PlaceOS/rest-api/pull/290))
 
-### Changed
-
-- Interfaces/Templates [**outlook addin**]: Add mat option for all levels in map view
-- Interfaces/Templates [**outlook addin**]: Apply delay of processing map features when the floor level is changed so that map pins will load
-- Interfaces/Templates [**outlook addin**]: Refactor find-space.component to remove unmanaged subscription, delete unused debug tracing
-- Interfaces/Templates [**outlook addin**]: Add microsoftonline.com as an appdomain in the manifest.xml file
-- Libraries/Models: Extracted json-merge-patch to a shard
-- Services/Auth [**deps**]: Bump rack from 2.2.3 to 2.2.3.1 ([#72](https://github.com/PlaceOS/auth/pull/72))
-- Services/Auth [**deps**]: Bump yajl-ruby from 1.4.2 to 1.4.3 ([#71](https://github.com/PlaceOS/auth/pull/71))
-
 ## 1.2206.2
 
 ### Fixed
 
-- Interfaces/Templates [**spaces**]: Tweak new space select map component
-- Interfaces/Templates [**form-fields**]: Fix user list field adding external users and styling
-- Interfaces/Templates [**events**]: Fix editing events
-- Interfaces/Templates [**events**]: Update logic to exclude periods when editing space durations
 - Services/Auth [**sessions/destroy**]: Use current_authority helper to obtain logout url
 
 ### Added
 
-- Interfaces/Templates: Added additional button and viewing pane in manifest.xml to display confirmed bookings
-- Interfaces/Templates: Worked on component to show upcoming bookings
-- Interfaces/Templates: Starting on service to find existing bookings
-- Interfaces/Templates [**spaces**]: Add logic for space select map component
-- Interfaces/Templates [**workplace**]: Add support ticket modal component
-- Interfaces/Templates [**workplace**]: Allow for all day bookings in space booking flow
-- Interfaces/Templates [**workplace**]: Show notes on event details
-- Interfaces/Templates [**events**]: Tweak checks for space availability
 - Services/StaffAPI [**bookings**]: Checked_in to canclled state transition ([#196](https://github.com/PlaceOS/staff-api/pull/196))
-
-### Changed
-
-- Interfaces/Templates: Added function-files to builds
-- Interfaces/Templates: Applying map features after map has loaded:
-- Interfaces/Templates: Refactored maploaded property to behaviorsubject
-- Interfaces/Templates: Changed z-index, data typing of mapfeatures in find-space component
-- Interfaces/Templates: Added timer to delay mapfeatures being calculated
-- Interfaces/Templates: Refactor map service
-- Interfaces/Templates: Refactored data type of map features due to typeerror. added flag to identify when map features are applied
-- Interfaces/Templates: Refactored map service to using baseclass.timeout but map pins still not showing
-- Interfaces/Templates: Added timeout in find-space component, added map styles, map pins not showing up
-- Interfaces/Templates: Changed timeout length
-- Interfaces/Templates: Fixed error of incorrect map_id being passed
-- Interfaces/Templates: Changed extensionpoint to show add-in on composing new calendar event
-- Interfaces/Templates: Setting properties and typing in existing-bookings service
-- Interfaces/Templates: Looking at queryevents method
-- Interfaces/Templates: Retrieving booking details to be displayed in cards
-- Interfaces/Templates: Date formats conversion
-- Interfaces/Templates: Changed loading flag to behaviorsubject
-- Interfaces/Templates: Changed loading values in upcoming bookings component
-- Interfaces/Templates: Fixed loading issue of upcoming bookings
-- Interfaces/Templates: Filtered showed upcoming bookings by currentuser().name
 
 ## 1.2206.1
 
