@@ -34,7 +34,7 @@ for service_repository_path in services/*/; do
 
         # Using submodules is a pain.
         # This config line must be removed.
-        sed -i .bak -E '/[[:space:]]+worktree = /d' "${git_dir}/config"
+        sed -i .bak -E '/[[:space:]]+worktree = /d' "${git_dir}/config" || true
 
         cd "${temporary_repository_path}" || exit
 
