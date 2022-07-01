@@ -5,6 +5,38 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2207.0
+
+### Added
+
+- Clients/Crystal [**users**]: Add `include_metadata` flag
+- Interfaces/Templates [**outlook addin**]: Add 'new booking' button in booking-confirmed component to return to form
+- Interfaces/Templates [**explore**]: Add handling for signs of life for desk data ([#157](https://github.com/PlaceOS/templates/pull/157))
+- Libraries/Driver: Provide a method for dumping memory usage stats
+- Libraries/LogBackend: Use only one signal and toggle log levels
+- Services/RestAPI [**webhook**]: Add additional routes ([#293](https://github.com/PlaceOS/rest-api/pull/293))
+
+### Fixed
+
+- Interfaces/Backoffice [**ui**]: Allow clear of input on selecting items from search component ([#274](https://github.com/PlaceOS/backoffice/pull/274))
+- Interfaces/Templates [**outlook addin**]: Disable submit button in room-confirm component after first click, as it was making multiple bookings for the same room
+- Interfaces/Templates [**spaces**]: Change control and booking panel uis to request rooms on demand
+- Interfaces/Templates [**workplace**]: Minor fixes to meeting flow
+- Interfaces/Templates: Add error handling to querying bookings and events
+- Interfaces/Templates [**components**]: Add empty state to interactive map component ([#162](https://github.com/PlaceOS/templates/pull/162))
+- Interfaces/Templates [**form-fields**]: Add favourite toggling to space list field items
+- Interfaces/Templates [**outlook addin**]: Fix type error in form fields and delete booking_type which was unnecessary
+- Libraries/Driver [**driver_manager**]: Apply system config updates
+- Libraries/Driver: Re-establish the signal registration once executed
+- Services/Core [**control_system_modules**]: Update system references in modules ([#215](https://github.com/PlaceOS/core/pull/215))
+- Services/RestAPI [**websocket**]: Resolve a memory leak in control API ([#291](https://github.com/PlaceOS/rest-api/pull/291))
+- Services/StaffAPI [**calendar**]: Downcase candidate keys ([#200](https://github.com/PlaceOS/staff-api/pull/200))
+
+### Changed
+
+- Interfaces/Templates: Add notfound component and redirect wildcard url paths to this component
+- Libraries/LogBackend: `opentelemetry-api` -> `opentelemetry-sdk`
+
 ## 1.2206.3
 
 ### Fixed
@@ -72,6 +104,34 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Services/StaffAPI [**events**]: Update on graph api where host event switch not made ([#194](https://github.com/PlaceOS/staff-api/pull/194))
 
 ## 1.2205.4
+
+### Added
+
+- Clients/Crystal(**`Metadata`**): Add `merge` ([#30](https://github.com/PlaceOS/crystal/pull/30))
+
+### Fixed
+
+- Services/Build(**run_from**): Skip clearing env
+- Services/StaffAPI(**bookings**): refactor checkin function ([#191](https://github.com/PlaceOS/staff-api/pull/191))
+
+## 1.2205.3
+
+### Added
+
+- Interfaces/Templates(**spaces**): New space select modal
+- Interfaces/Templates(**spaces**): Add space list component
+- Interfaces/Templates(**spaces**): Add space details component
+- Interfaces/Templates(**spaces**): Add space filter display component
+- Interfaces/Templates(**spaces**): Add logic to handle selecting spaces
+- Interfaces/Templates(**spaces**): Add space filters component
+- Services/FrontendLoader: Add support for dev.azure repositories
+
+### Fixed
+
+- Services/FrontendLoader(**app**): Removal of connect-proxy ext broke compilation
+- Services/RestAPI(**repositories**): Inconsistent pull responses ([#277](https://github.com/PlaceOS/rest-api/pull/277))
+
+## 2.2205.4
 
 ### Added
 
