@@ -54,7 +54,9 @@ for service_repository_path in services/*/; do
 
             git commit -am "chore: update shards ${date_string}"
             git push -u origin "${branch}"
-            gh pr create --fill
+            gh pr create \
+                --fill \
+                --label 'type: maintenance'
         fi
     ) &
 done
