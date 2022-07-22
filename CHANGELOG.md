@@ -9,40 +9,26 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice [**admin**]: Fix required display for conference type on staff tenant form
-- Interfaces/Backoffice [**admin**]: Hide delegate checkbox for google platform
-- Interfaces/Templates [**assets**]: Tweaks to asset select modal
-- Interfaces/Templates [**catering**]: Minor fixes
 - Interfaces/Templates [**events**]: Fix post form call
 - Interfaces/Templates [**events**]: Add fallback for room ids when checking availability
 - Interfaces/Templates [**form-fields**]: Add host select form field for selecting delegated users as host for bookings
 - Interfaces/Templates [**workplace**]: Add names to space booking form fields
 - Interfaces/Templates [**explore**]: Set booking type to desk when making desk booking from map
 - Interfaces/Templates: Fix adding and removing items from asset and catering fields
-- Interfaces/Templates: Change to inline styling
-- Interfaces/Templates [**workplace**]: Remove unused property
 - Interfaces/Templates [**explore**]: Minor tweak to desk name display on info tooltip
 - Interfaces/Templates: Fix booking and event form get values from disabled fields
 - Interfaces/Templates [**workplace**]: Fix desk flow form
 - Interfaces/Templates [**workplace**]: Fix selecting user calendars on schedule page ([#171](https://github.com/PlaceOS/templates/pull/171))
 - Interfaces/Templates: Remove empty fields when making booking/event requests
 - Libraries/Driver [**interface/lighting**]: Fix `join_with` helper
-- Libraries/LogBackend: Remove dispatch specification on log backend
-- Services/Build [**client**]: Ensure correct forwarding of environment variables
-- Services/Build: Typo broke specs
 - Services/Build [**Client#compiled?**]: Add missing parameters and authorization
 - Services/Build [**repository_store**]: Relative paths for commit listing
 - Services/Core [**control_system_modules**]: Ensure correct totals when refreshing ([#222](https://github.com/PlaceOS/core/pull/222))
-- Services/Edge [**control_system_modules**]: Ensure correct totals when refreshing ([#222](https://github.com/PlaceOS/edge/pull/222))
 - Services/Nginx [**nginx.conf**]: Add trailing / redirect to app requests ([#20](https://github.com/PlaceOS/nginx/pull/20))
-- Services/SearchIngest: Update placeos-log-backend
 - Services/StaffAPI [**utilities/helpers**]: Ensure emails are downcased ([#202](https://github.com/PlaceOS/staff-api/pull/202))
 
 ### Added
 
-- Interfaces/Templates [**desk**]: Wip new desk flow
-- Interfaces/Templates [**workplace**]: Wip, new desk flow selector
-- Interfaces/Templates [**catering**]: Add components for new order item select modal
 - Interfaces/Templates [**explore**]: Add legend to map view
 - Interfaces/Templates [**workplace**]: Desk filters
 - Interfaces/Templates [**workplace**]: Favourite desk and filtering
@@ -61,24 +47,17 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**workplace**]: Add work from home settings components
 - Interfaces/Templates [**bookings**]: Add component for inviting visitors ([#123](https://github.com/PlaceOS/templates/pull/123))
 - Interfaces/Templates [**workplace**]: Add invite visitor flow to workplace
-- Interfaces/Templates [**workplace**]: Hookup font size changes in accessibility options
 - Interfaces/Templates [**payments**]: Add form field for card inputs
 - Interfaces/Templates [**org**]: Add setting to allow setting a default building
 - Libraries/Driver: Improve memory usage ([#150](https://github.com/PlaceOS/placeos-driver/pull/150))
 - Libraries/Driver: Add termination check helper ([#152](https://github.com/PlaceOS/placeos-driver/pull/152))
 - Services/Core [**module_manager**]: Periodically check that processes are alive ([#225](https://github.com/PlaceOS/core/pull/225))
-- Services/Edge [**module_manager**]: Periodically check that processes are alive ([#225](https://github.com/PlaceOS/edge/pull/225))
 
 ### Changed
 
-- Interfaces/Templates [**components**]: Tweak styling and cleanup image carousel
 - Services/Auth [**deps**]: Bump rails-html-sanitizer from 1.4.2 to 1.4.3 ([#73](https://github.com/PlaceOS/auth/pull/73))
 - Services/Auth [**deps**]: Bump tzinfo from 1.2.9 to 1.2.10 ([#74](https://github.com/PlaceOS/auth/pull/74))
-- Services/Build: Use a compiler built in release ([#48](https://github.com/PlaceOS/build/pull/48))
-- Services/Build [**Dockerfile**]: Revert to crystal build
 - Services/Build [**client**]: Return an object from compiled endpoint
-- Services/Core [**deps**]: Bump alstr/todo-to-issue-action from 4.6.5 to 4.6.7 ([#220](https://github.com/PlaceOS/core/pull/220))
-- Services/Edge [**deps**]: Bump alstr/todo-to-issue-action from 4.6.5 to 4.6.7 ([#220](https://github.com/PlaceOS/edge/pull/220))
 
 ## 1.2207.0
 
