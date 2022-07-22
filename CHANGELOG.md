@@ -5,6 +5,60 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2207.1
+
+### Fixed
+
+- Interfaces/Templates [**events**]: Fix post form call
+- Interfaces/Templates [**events**]: Add fallback for room ids when checking availability
+- Interfaces/Templates [**form-fields**]: Add host select form field for selecting delegated users as host for bookings
+- Interfaces/Templates [**workplace**]: Add names to space booking form fields
+- Interfaces/Templates [**explore**]: Set booking type to desk when making desk booking from map
+- Interfaces/Templates: Fix adding and removing items from asset and catering fields
+- Interfaces/Templates [**explore**]: Minor tweak to desk name display on info tooltip
+- Interfaces/Templates: Fix booking and event form get values from disabled fields
+- Interfaces/Templates [**workplace**]: Fix desk flow form
+- Interfaces/Templates [**workplace**]: Fix selecting user calendars on schedule page ([#171](https://github.com/PlaceOS/templates/pull/171))
+- Interfaces/Templates: Remove empty fields when making booking/event requests
+- Libraries/Driver [**interface/lighting**]: Fix `join_with` helper
+- Services/Build [**Client#compiled?**]: Add missing parameters and authorization
+- Services/Build [**repository_store**]: Relative paths for commit listing
+- Services/Core [**control_system_modules**]: Ensure correct totals when refreshing ([#222](https://github.com/PlaceOS/core/pull/222))
+- Services/Nginx [**nginx.conf**]: Add trailing / redirect to app requests ([#20](https://github.com/PlaceOS/nginx/pull/20))
+- Services/StaffAPI [**utilities/helpers**]: Ensure emails are downcased ([#202](https://github.com/PlaceOS/staff-api/pull/202))
+
+### Added
+
+- Interfaces/Templates [**explore**]: Add legend to map view
+- Interfaces/Templates [**workplace**]: Desk filters
+- Interfaces/Templates [**workplace**]: Favourite desk and filtering
+- Interfaces/Templates [**catering**]: Add more logic to new catering order modal components
+- Interfaces/Templates [**workplace**]: Desk details
+- Interfaces/Templates [**catering**]: Add filters for catering order menu
+- Interfaces/Templates [**spaces**]: Add desktop styles to new space select modal
+- Interfaces/Templates [**workplace**]: Desk details map
+- Interfaces/Templates [**catering**]: Add desktop styles for catering order modal
+- Interfaces/Templates [**worplace**]: Desk map view
+- Interfaces/Templates [**workplace**]: Booking confirmation flow
+- Interfaces/Templates [**workplace**]: Desk booking success state
+- Interfaces/Templates [**workplace**]: Styling tweaks
+- Interfaces/Templates [**workplace**]: Add assets booking
+- Interfaces/Templates [**assets**]: Add desktop styles for asset select modal
+- Interfaces/Templates [**workplace**]: Add work from home settings components
+- Interfaces/Templates [**bookings**]: Add component for inviting visitors ([#123](https://github.com/PlaceOS/templates/pull/123))
+- Interfaces/Templates [**workplace**]: Add invite visitor flow to workplace
+- Interfaces/Templates [**payments**]: Add form field for card inputs
+- Interfaces/Templates [**org**]: Add setting to allow setting a default building
+- Libraries/Driver: Improve memory usage ([#150](https://github.com/PlaceOS/placeos-driver/pull/150))
+- Libraries/Driver: Add termination check helper ([#152](https://github.com/PlaceOS/placeos-driver/pull/152))
+- Services/Core [**module_manager**]: Periodically check that processes are alive ([#225](https://github.com/PlaceOS/core/pull/225))
+
+### Changed
+
+- Services/Auth [**deps**]: Bump rails-html-sanitizer from 1.4.2 to 1.4.3 ([#73](https://github.com/PlaceOS/auth/pull/73))
+- Services/Auth [**deps**]: Bump tzinfo from 1.2.9 to 1.2.10 ([#74](https://github.com/PlaceOS/auth/pull/74))
+- Services/Build [**client**]: Return an object from compiled endpoint
+
 ## 1.2207.0
 
 ### Added
