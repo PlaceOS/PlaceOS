@@ -5,6 +5,32 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2207.2
+
+### Fixed
+
+- Clients/Typescript [**clusters**]: Update loading of process model for clusters
+- Clients/Typescript [**clusters**]: Fix to previous commit
+- Interfaces/Backoffice [**admin**]: Fix loading of cluster processes
+- Interfaces/Templates [**workplace**]: Remove required validation for old flow
+- Interfaces/Templates [**workplace**]: Disable confirm if form invalid
+- Interfaces/Templates [**workplace**]: Remove desk from booking
+- Interfaces/Templates [**workplace**]: Pr fixes
+- Interfaces/Templates [**workplace**]: Redo desk booking form validator
+- Interfaces/Templates [**worplace**]: Use spectatorrouting
+- Interfaces/Templates [**workplace**]: Change to use createcomponentfactory when routing is not used
+- Interfaces/Templates [**components**]: Fix custom tooltip opening on touch devices
+- Interfaces/Templates [**spaces**]: Display image on select list
+- Services/Core [**process_check**]: Fix a race condition ([#226](https://github.com/PlaceOS/core/pull/226))
+- Services/Edge [**process_check**]: Fix a race condition ([#226](https://github.com/PlaceOS/edge/pull/226))
+
+### Added
+
+- Interfaces/Templates [**workplace**]: Desk booking flow tests
+- Interfaces/Templates [**workplace**]: Add some test for success flow
+- Interfaces/Templates [**payments**]: Add ability to make payments
+- Libraries/Driver [**protocol**]: Review and optimize ([#153](https://github.com/PlaceOS/placeos-driver/pull/153))
+
 ## 1.2207.1
 
 ### Fixed
