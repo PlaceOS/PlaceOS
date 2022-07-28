@@ -5,6 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2207.3
+
+### Fixed
+
+- Interfaces/Templates: Fix build errors
+- Interfaces/Templates [**events**]: Add handling of availability checks when not using calendars
+- Interfaces/Templates [**mocks**]: Fix people finding mocks
+- Interfaces/Templates [**explore**]: Fix searching and locating spaces on maps
+- Interfaces/Templates [**map-kiosk**]: Fix locating spaces
+- Interfaces/Templates [**workplace**]: Fix shown data on dashboard when no user calendar
+
+### Added
+
+- Interfaces/Templates [**workplace**]: Add logic to handle non-calendar room bookings
+- Services/Auth: Support b2c ([#75](https://github.com/PlaceOS/auth/pull/75))
+
 ## 1.2207.2
 
 ### Fixed
