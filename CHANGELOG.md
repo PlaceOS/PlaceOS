@@ -24,18 +24,14 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates [**outlook addin**]: Use eventemitter to correctly update spaces based on filter selections
 - Interfaces/Templates [**calendar**]: Prevent loading calendars when no user calendar available
 - Interfaces/Templates [**workplace**]: Allow hiding the map when selecting a desk
-- Interfaces/Templates [**events**]: Tweak to loading existing form data
 - Interfaces/Templates [**events**]: Set default host to current user
 - Interfaces/Templates [**components**]: Fix closing custom tooltips
 - Interfaces/Templates: Fix redirecting based on settings
 - Interfaces/Templates [**workplace**]: Fix desk icon on schedule
 - Interfaces/Templates [**workplace**]: Add setting to prevent standalone room bookings
 - Interfaces/Templates [**workplace**]: Fix feature list for space filtering
-- Interfaces/Templates [**workplace**]: Tweak link for root page
-- Interfaces/Templates [**workplace**]: Minor style tweak to desk flow map view
 - Interfaces/Templates [**workplace**]: Add empty state to colleagues list on landing page
 - Interfaces/Templates [**workplace**]: Show past state on booking and event cards
 - Interfaces/Templates [**events**]: Reload space list on building change
@@ -43,9 +39,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**workplace**]: Fix auto allocation of desk without map
 - Interfaces/Templates [**events**]: Add handling for approvals through bookings
 - Interfaces/Templates [**workplace**]: Tweak icons for schedule items
-- Interfaces/Templates [**outlook addin**]: Access image property of spaces via space.images
-- Interfaces/Templates [**workplace**]: Use id of the selected desk has no name
-- Interfaces/Templates: Minor fixes
+- Interfaces/Templates [**workplace**]: Use id if the selected desk has no name
 - Interfaces/Templates [**explore**]: Fix listing of spaces for map statuses
 - Interfaces/Templates: Fix redirect component initial redirect
 - Interfaces/Templates [**events**]: Add logic to ignore booking when checking availability
@@ -53,26 +47,20 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**outlook-rooms-addin**]: Hide space image block when there is no image for space
 - Interfaces/Templates [**outlook-rooms-addin**]: Fix custom csv template button
 - Interfaces/Templates [**outlook-plugin**]: Fix handling of room data when making a booking
-- Interfaces/Templates [**outlook-plugin**]: Minor fixes
 - Interfaces/Templates [**catering**]: Allow setting the currency globally
 - Interfaces/Templates [**outlook-plugin**]: Fix building selection filter
 - Interfaces/Templates [**form-fields**]: Force duration to match one of the available options
 - Interfaces/Templates [**concierge**]: Fix default route setting
 - Interfaces/Templates [**outlook-plugin**]: Hook up filters for location
 - Interfaces/Templates [**outlook-plugin**]: Fix upcoming bookings
-- Interfaces/Templates [**workplace**]: Various cosmetic fixes
 - Interfaces/Templates [**workplace**]: Add missing fields from meeting form (all_day, host)
 - Interfaces/Templates [**workplace**]: Add logic for editing and deleting bookings
-- Interfaces/Templates: Fix build errors
 - Interfaces/Templates [**workplace**]: Show images for available spaces on landing page
-- Interfaces/Templates: Styling tweaks
 - Interfaces/Templates [**events**]: Fix default for event host
-- Interfaces/Templates: Minor fixes
 - Interfaces/Templates [**common**]: Cleanup pending settings after server posted
 - Interfaces/Templates [**common**]: Fix saving user settings
 - Interfaces/Templates [**workplace**]: Fix getting space details on landing page
 - Interfaces/Templates [**events**]: Tweak handling default host
-- Interfaces/Templates [**workplace**]: Minor fix
 - Interfaces/Templates [**workplace**]: Fix minor issues with new desk booking on desktop
 - Interfaces/Templates [**workplace**]: Fix host being required for bookings
 - Interfaces/Templates [**spaces**]: Fix overflow on space list for select modal
@@ -82,21 +70,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**workplace**]: Fix showing errors for meeting book confirm
 - Services/Auth [**b2c**]: Rewrite middleware ([#77](https://github.com/PlaceOS/auth/pull/77))
 - Services/Auth [**set_continue**]: Same_site cookie option for use in iframes ([#78](https://github.com/PlaceOS/auth/pull/78))
-- Services/Core [**process_check**]: Use `reject!`
-- Services/Core: Remove dead state
-- Services/Edge [**process_check**]: Use `reject!`
-- Services/Edge: Remove dead state
-
-### Changed
-
-- Interfaces/Templates [**outlook addin**]: Refactor filter logic, try to clear filter when navigating back to form page
-- Interfaces/Templates [**outlook addin**]: Make matbottomsheet service private
-- Interfaces/Templates [**outlook addin**]: Change eventemitter to behaviorsubject in features-filter service
-- Interfaces/Templates [**outlook addin**]: Add button to download csv template by using window.open method instead of a[download]
-- Interfaces/Templates [**outlook-plugin**]: Clean up time filter layout
-- Interfaces/Templates [**outlook-plugin**]: Simplify find space logic
-- Services/Core: Use tasker instead of timeout shard ([#229](https://github.com/PlaceOS/core/pull/229))
-- Services/Edge: Use tasker instead of timeout shard ([#229](https://github.com/PlaceOS/edge/pull/229))
+- Services/Core [**process_check**]: Resolve issue prevent restarting of dead driver processes
 
 ## 1.2207.3
 
