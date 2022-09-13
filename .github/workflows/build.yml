@@ -134,22 +134,6 @@ jobs:
           org.opencontainers.image.revision=${{ matrix.service.sha }}
           org.opencontainers.image.vendor=Place Technology Limited
           org.opencontainers.image.title=${{ matrix.service.name }}
-    -
-      name: Google Chat Notification
-      if: success()
-      uses: Co-qn/google-chat-notification@releases/v1
-      with:
-          name: Build PlaceOS ${{ needs.discover.outputs.version }}
-          url: ${{ secrets.CHAT_SUCCESS }}
-          status: ${{ job.status }}
-    -
-      name: Google Chat Notification
-      if: ${{ failure() || cancelled() }}
-      uses: Co-qn/google-chat-notification@releases/v1
-      with:
-          name: Build PlaceOS ${{ needs.discover.outputs.version }}
-          url: ${{ secrets.CHAT_ERROR }}
-          status: ${{ job.status }}
 
   release:
     needs:
@@ -229,3 +213,19 @@ jobs:
           event-type: update
           repository: ${{ env.PARTNER_ENVIRONMENT_REPO }}
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
+      -
+        name: Google Chat Notification
+        if: success()
+        uses: Co-qn/google-chat-notification@releases/v1
+        with:
+          name: Build PlaceOS ${{ needs.discover.outputs.version }}
+          url: ${{ secrets.CHAT_SUCCESS }}
+          status: ${{ job.status }}
+      -
+        name: Google Chat Notification
+        if: ${{ failure() || cancelled() }}
+        uses: Co-qn/google-chat-notification@releases/v1
+        with:
+          name: Build PlaceOS ${{ needs.discover.outputs.version }}
+          url: ${{ secrets.CHAT_ERROR }}
+          status: ${{ job.status }}
