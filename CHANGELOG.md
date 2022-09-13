@@ -5,72 +5,68 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2210.0
+
+### Fixed
+
+- Interfaces/Backoffice [**uploads**]: Consolidate uploads for system images to use global logic ([#277](https://github.com/PlaceOS/backoffice/pull/277))
+- Interfaces/Backoffice [**systems**]: Display loader when module connected state is undefined ([#283](https://github.com/PlaceOS/backoffice/pull/283))
+- Interfaces/Templates [**workplace**]: Fix switching calendars on schedule ([#171](https://github.com/PlaceOS/templates/pull/171))
+- Libraries/Driver [**edge-storage**]: Ensure key is a string ([#154](https://github.com/PlaceOS/placeos-driver/pull/154))
+- Services/Core: Handle driver `module_name` changes in module mappings ([#230](https://github.com/PlaceOS/core/pull/230))
+- Services/Core [**edge/transport**]: Reconnect on graceful api disconnect ([#234](https://github.com/PlaceOS/core/pull/234))
+- Services/Dispatch [**Dockerfile**]: Revert static build ([#19](https://github.com/PlaceOS/dispatch/pull/19))
+- Services/Edge: Handle driver `module_name` changes in module mappings ([#230](https://github.com/PlaceOS/edge/pull/230))
+- Services/Edge [**edge/transport**]: Reconnect on graceful api disconnect ([#234](https://github.com/PlaceOS/edge/pull/234))
+- Services/FrontendLoader [**Dockerfile**]: Revert static build ([#73](https://github.com/PlaceOS/frontend-loader/pull/73))
+- Services/Init [**Dockerfile**]: Don't use edge libraries ([#73](https://github.com/PlaceOS/init/pull/73))
+- Services/RestAPI [**Dockerfile**]: Don't use edge libraries ([#298](https://github.com/PlaceOS/rest-api/pull/298))
+- Services/SearchIngest [**Dockerfile**]: Revert static build ([#67](https://github.com/PlaceOS/search-ingest/pull/67))
+- Services/Source [**Dockerfile**]: Revert static build ([#42](https://github.com/PlaceOS/source/pull/42))
+- Services/StaffAPI [**events**]: Get event succeed if the host event can't be fetched ([#218](https://github.com/PlaceOS/staff-api/pull/218))
+- Services/Triggers [**Dockerfile**]: Revert static build ([#36](https://github.com/PlaceOS/triggers/pull/36))
+
+### Added
+
+- Interfaces/Templates [**explore**]: Add setting for hiding displayed fields on device tooltip ([#177](https://github.com/PlaceOS/templates/pull/177))
+- Libraries/Driver: Migrate to using json schema library ([#155](https://github.com/PlaceOS/placeos-driver/pull/155))
+- Services/Core: Update action controller and support arm64 ([#232](https://github.com/PlaceOS/core/pull/232))
+- Services/Core [**Dockerfile**]: Revert static build ([#233](https://github.com/PlaceOS/core/pull/233))
+- Services/Dispatch: Update libs and add arm64 support ([#18](https://github.com/PlaceOS/dispatch/pull/18))
+- Services/Edge: Update action controller and support arm64 ([#232](https://github.com/PlaceOS/edge/pull/232))
+- Services/Edge [**Dockerfile**]: Revert static build ([#233](https://github.com/PlaceOS/edge/pull/233))
+- Services/FrontendLoader: Add support for arm64 images ([#72](https://github.com/PlaceOS/frontend-loader/pull/72))
+- Services/Init: Remove libsodium requirement ([#71](https://github.com/PlaceOS/init/pull/71))
+- Services/Init: Add support for arm64 platform ([#72](https://github.com/PlaceOS/init/pull/72))
+- Services/RestAPI [**Dockerfile**]: Add support for arm64 builds ([#297](https://github.com/PlaceOS/rest-api/pull/297))
+- Services/SearchIngest: Add support for arm64 and update libs ([#66](https://github.com/PlaceOS/search-ingest/pull/66))
+- Services/Source: Update action controller ([#40](https://github.com/PlaceOS/source/pull/40))
+- Services/Source: Add arm64 image support ([#41](https://github.com/PlaceOS/source/pull/41))
+- Services/StaffAPI [**bookings**]: Add event_id column for associating bookings to events ([#207](https://github.com/PlaceOS/staff-api/pull/207))
+- Services/StaffAPI [**events**]: Relax when metadata is returned on events ([#210](https://github.com/PlaceOS/staff-api/pull/210))
+- Services/StaffAPI: Refactor for self documenting code ([#211](https://github.com/PlaceOS/staff-api/pull/211))
+- Services/StaffAPI [**Dockerfile**]: Add support for arm64 images ([#213](https://github.com/PlaceOS/staff-api/pull/213))
+- Services/StaffAPI [**tenants**]: Flag if running in delegated mode ([#219](https://github.com/PlaceOS/staff-api/pull/219))
+- Services/Triggers: Add arm support ([#34](https://github.com/PlaceOS/triggers/pull/34))
+- Services/Triggers: Update to be self documenting ([#35](https://github.com/PlaceOS/triggers/pull/35))
+- Services/Triggers: Update pulse client ([#38](https://github.com/PlaceOS/triggers/pull/38))
+
+### Changed
+
+- Services/Core [**api/command**]: Extract attaching debugger ([#224](https://github.com/PlaceOS/core/pull/224))
+- Services/Edge [**api/command**]: Extract attaching debugger ([#224](https://github.com/PlaceOS/edge/pull/224))
+
 ## 1.2208.0
 
 ### Added
 
-- Interfaces/Templates [**components**]: Add component to allow setting the default page
-- Interfaces/Templates [**workplace**]: Allow hiding notes and attendees fields
-- Interfaces/Templates [**workplace**]: Allow hiding view location buttons
-- Interfaces/Templates [**workplace**]: Add setting to set the label for features on space search
-- Interfaces/Templates [**workplace**]: Allow for auto-allocation when no departments setup
-- Interfaces/Templates [**workplace**]: Show simpler menu on mobile when less options
-- Interfaces/Templates [**workplace**]: Add features field to space flow form
-- Interfaces/Templates [**workplace**]: Add setting to auto-approval native bookings
-- Interfaces/Templates [**workplace**]: Add details modal for events and bookings
-- Interfaces/Templates [**workplace**]: Add ability to configure space zone allowed for adding catering
 - Libraries/Models [**user**]: User metadata should be available to authenticated users ([#181](https://github.com/PlaceOS/placeos-models/pull/181))
 - Services/RestAPI [**users**]: Allow any authenticated user to list users ([#296](https://github.com/PlaceOS/rest-api/pull/296))
 
 ### Fixed
 
-- Interfaces/Templates [**calendar**]: Prevent loading calendars when no user calendar available
-- Interfaces/Templates [**workplace**]: Allow hiding the map when selecting a desk
-- Interfaces/Templates [**events**]: Set default host to current user
-- Interfaces/Templates [**components**]: Fix closing custom tooltips
-- Interfaces/Templates: Fix redirecting based on settings
-- Interfaces/Templates [**workplace**]: Fix desk icon on schedule
-- Interfaces/Templates [**workplace**]: Add setting to prevent standalone room bookings
-- Interfaces/Templates [**workplace**]: Fix feature list for space filtering
-- Interfaces/Templates [**workplace**]: Add empty state to colleagues list on landing page
-- Interfaces/Templates [**workplace**]: Show past state on booking and event cards
-- Interfaces/Templates [**events**]: Reload space list on building change
-- Interfaces/Templates [**workplace**]: Fix check for standalone bookings
-- Interfaces/Templates [**workplace**]: Fix auto allocation of desk without map
-- Interfaces/Templates [**events**]: Add handling for approvals through bookings
-- Interfaces/Templates [**workplace**]: Tweak icons for schedule items
-- Interfaces/Templates [**workplace**]: Use id if the selected desk has no name
-- Interfaces/Templates [**explore**]: Fix listing of spaces for map statuses
-- Interfaces/Templates: Fix redirect component initial redirect
-- Interfaces/Templates [**events**]: Add logic to ignore booking when checking availability
-- Interfaces/Templates [**events**]: Prevent completing booking when resource is unavailable
-- Interfaces/Templates [**outlook-rooms-addin**]: Hide space image block when there is no image for space
-- Interfaces/Templates [**outlook-rooms-addin**]: Fix custom csv template button
-- Interfaces/Templates [**outlook-plugin**]: Fix handling of room data when making a booking
-- Interfaces/Templates [**catering**]: Allow setting the currency globally
-- Interfaces/Templates [**outlook-plugin**]: Fix building selection filter
-- Interfaces/Templates [**form-fields**]: Force duration to match one of the available options
-- Interfaces/Templates [**concierge**]: Fix default route setting
-- Interfaces/Templates [**outlook-plugin**]: Hook up filters for location
-- Interfaces/Templates [**outlook-plugin**]: Fix upcoming bookings
-- Interfaces/Templates [**workplace**]: Add missing fields from meeting form (all_day, host)
-- Interfaces/Templates [**workplace**]: Add logic for editing and deleting bookings
-- Interfaces/Templates [**workplace**]: Show images for available spaces on landing page
-- Interfaces/Templates [**events**]: Fix default for event host
-- Interfaces/Templates [**common**]: Cleanup pending settings after server posted
-- Interfaces/Templates [**common**]: Fix saving user settings
-- Interfaces/Templates [**workplace**]: Fix getting space details on landing page
-- Interfaces/Templates [**events**]: Tweak handling default host
-- Interfaces/Templates [**workplace**]: Fix minor issues with new desk booking on desktop
-- Interfaces/Templates [**workplace**]: Fix host being required for bookings
-- Interfaces/Templates [**spaces**]: Fix overflow on space list for select modal
-- Interfaces/Templates [**outlook-plugin**]: Fix checks when finding space
-- Interfaces/Templates [**workplace**]: Fix logo showing on mobile
-- Interfaces/Templates [**workplace**]: Fix footer menu
-- Interfaces/Templates [**workplace**]: Fix showing errors for meeting book confirm
 - Services/Auth [**b2c**]: Rewrite middleware ([#77](https://github.com/PlaceOS/auth/pull/77))
 - Services/Auth [**set_continue**]: Same_site cookie option for use in iframes ([#78](https://github.com/PlaceOS/auth/pull/78))
-- Services/Core [**process_check**]: Resolve issue prevent restarting of dead driver processes
 
 ## 1.2207.3
 
