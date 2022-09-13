@@ -41,6 +41,7 @@ jobs:
 
   build:
     needs: discover
+    environment: release
     strategy:
       matrix:
         service: ${{ fromJson(needs.discover.outputs.services) }}
@@ -61,6 +62,12 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
+    -
+      name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
       name: Construct Tags
       id: tags
@@ -107,7 +114,7 @@ jobs:
     -
       name: Build image
       id:   build
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v3
       with:
         context: ${{ matrix.service.repo }}#${{ matrix.service.sha }}
         build-args: |
@@ -115,7 +122,8 @@ jobs:
           PLACE_COMMIT=${{ needs.discover.outputs.commit }}
           PLACE_VERSION=${{ needs.discover.outputs.version }}
           TARGET=${{ matrix.service.name }}
-        outputs: type=docker,dest=image.tar
+        platforms: linux/amd64,linux/arm64
+        push: true
         cache-from: type=gha,scope=${{ matrix.service.name }}
         cache-to: type=gha,scope=${{ matrix.service.name }},mode=max
         tags: ${{ steps.tags.outputs.tags }}
@@ -126,47 +134,6 @@ jobs:
           org.opencontainers.image.revision=${{ matrix.service.sha }}
           org.opencontainers.image.vendor=Place Technology Limited
           org.opencontainers.image.title=${{ matrix.service.name }}
-    -
-      name: Upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: ${{ matrix.service.name }}
-        path: image.tar
-
-  publish:
-    name: Publish ${{ needs.discover.outputs.version }}
-    needs:
-      - build
-      - discover
-    runs-on: ubuntu-latest
-    environment: release
-    steps:
-    -
-      name: Login to DockerHub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-    -
-      name: Download service artifacts
-      uses: actions/download-artifact@v2
-    -
-      name: Load images
-      run:  |
-        for service in *; do
-          echo "::group::$service"
-          docker load --input "$service/image.tar" |
-          awk '{print $NF}' | xargs docker inspect
-          echo ::endgroup::
-        done
-    -
-      name: Publish
-      run:  |
-        for service in *; do
-          echo "::group::$service"
-          docker push "placeos/$service" --all-tags
-          echo ::endgroup::
-        done
     -
       name: Google Chat Notification
       if: success()
@@ -188,7 +155,6 @@ jobs:
     needs:
       - build
       - discover
-      - publish
     runs-on: ubuntu-latest
     name: Tag and release
     steps:
