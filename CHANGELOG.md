@@ -5,23 +5,12 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
-## 1.2209.0
+## 1.2210.1
 
 ### Fixed
 
-- Interfaces/Backoffice [**systems**]: Hide modules that are already in a system
-- Interfaces/Backoffice [**ui**]: Tweak information displayed on item sidebar
-- Interfaces/Templates [**explore**]: Set host when making space bookings from map
-- Services/Auth [**Gemfile.lock**]: Bump doorkeeper-rethinkdb
 - Services/Auth [**dockerfile**]: Add alpine compat package to fix nokogiri dep on arm64 arch ([#83](https://github.com/PlaceOS/auth/pull/83))
-- Services/Build [**Dockerfile**]: Add bash to build
-- Services/Core [**Dockerfile**]: Ensure exec_from included in release
-- Services/Core [**Dockerfile**]: Requires make
-- Services/Edge [**Dockerfile**]: Ensure exec_from included in release
-- Services/Edge [**Dockerfile**]: Requires make
-- Services/FrontendLoader [**Dockerfile**]: App dependencies and fs permissions
 - Services/Init [**grant**]: Remove doorkeeper grants without a ttl ([#74](https://github.com/PlaceOS/init/pull/74))
-- Services/RestAPI [**Dockerfile**]: Include application dependencies in build
 - Services/Source [**mappings**]: Lazy load in the driver ids if they don't exist ([#44](https://github.com/PlaceOS/source/pull/44))
 
 ### Added
