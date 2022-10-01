@@ -9,31 +9,18 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**edge**]: Add field for x api key
 - Interfaces/Backoffice [**ui**]: Fix font issue with settings field ([#286](https://github.com/PlaceOS/backoffice/pull/286))
 - Interfaces/Backoffice [**systems**]: Fix role display of modules ([#284](https://github.com/PlaceOS/backoffice/pull/284))
-- Interfaces/Backoffice [**zones**]: Fix typo in links for child zones
-- Interfaces/Backoffice [**ui**]: Use item name instead of display name for sidebar
 - Interfaces/Backoffice [**systems**]: Show module status a pending when loading initial state ([#283](https://github.com/PlaceOS/backoffice/pull/283))
 - Interfaces/Backoffice [**ui**]: Fix z-indexing of upload list ([#277](https://github.com/PlaceOS/backoffice/pull/277))
-- Interfaces/Backoffice [**ui**]: Fix font css for monaco editor
 - Interfaces/Backoffice [**debug**]: Fix error when formatting date strings for debug messages ([#285](https://github.com/PlaceOS/backoffice/pull/285))
-- Interfaces/Backoffice: Fix count indicators for drivers and make state more clear all other uses
-- Interfaces/Templates [**workplace**]: Force a host for space bookings
-- Libraries/Driver [**core_ext**]: Add monkey patch for dwarf 5 support
-- Services/Core [**edge/transport**]: Ensure reconnect is not missed ([#237](https://github.com/PlaceOS/core/pull/237))
-- Services/Core [**manager/edge**]: Start modules after registration ([#238](https://github.com/PlaceOS/core/pull/238))
 - Services/Edge [**edge/transport**]: Ensure reconnect is not missed ([#237](https://github.com/PlaceOS/edge/pull/237))
 - Services/Edge [**manager/edge**]: Start modules after registration ([#238](https://github.com/PlaceOS/edge/pull/238))
 - Services/FrontendLoader: Querying generic git repos with auth ([#75](https://github.com/PlaceOS/frontend-loader/pull/75))
 
 ### Added
 
-- Interfaces/Backoffice [**overlays**]: Allow for more custom confirm messages
 - Interfaces/Templates [**booking-panel**]: Add logic to show meeting details on panel ui ([#195](https://github.com/PlaceOS/templates/pull/195))
-- Interfaces/Templates [**workplace**]: Add feature to show calendar links for event booking
-- Interfaces/Templates: Add desktop styles for event and booking details modals
-- Interfaces/Templates [**workplace**]: Add custom meeting flow confirm modal for desktop
 - Services/Nginx [**cors**]: Allow portal domain origin ([#23](https://github.com/PlaceOS/nginx/pull/23))
 
 ## 1.2210.1
