@@ -5,6 +5,13 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2210.3
+
+### Added
+
+- Services/Core [**edge/protocol**]: Start modules as part of the handshake ([#240](https://github.com/PlaceOS/core/pull/240))
+- Services/Edge [**edge/protocol**]: Start modules as part of the handshake ([#240](https://github.com/PlaceOS/edge/pull/240))
+
 ## 1.2210.2
 
 ### Fixed
