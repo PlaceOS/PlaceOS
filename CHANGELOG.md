@@ -9,7 +9,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Added
 
-- Services/Core [**edge/protocol**]: Start modules as part of the handshake ([#240](https://github.com/PlaceOS/core/pull/240))
 - Services/Edge [**edge/protocol**]: Start modules as part of the handshake ([#240](https://github.com/PlaceOS/edge/pull/240))
 
 ## 1.2210.2
