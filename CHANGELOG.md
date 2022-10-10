@@ -5,6 +5,49 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2210.4
+
+### Fixed
+
+- Interfaces/Backoffice [**admin**]: Remove conference type from request when empty
+- Interfaces/Backoffice [**uploads**]: Fix dropping files to upload ([#199](https://github.com/PlaceOS/backoffice/pull/199))
+- Interfaces/Backoffice [**systems**]: Truncate long emails
+- Interfaces/Templates [**currency**]: Fix using setting for currency code ([#198](https://github.com/PlaceOS/templates/pull/198))
+- Interfaces/Templates [**catering**]: Fix passing currency code to catering modal
+- Interfaces/Templates [**events**]: Fix parsing of catering order data
+- Interfaces/Templates [**concierge**]: Fix minor issues with order listing
+- Interfaces/Templates [**workplace**]: Update confirm button text for desk flow
+- Interfaces/Templates [**workplace**]: Add more logic to desktop meeting confirm modal
+- Interfaces/Templates: Fix minor issues with dark mode
+- Interfaces/Templates [**workplace**]: Fix dark mode styles for visitor flow
+- Interfaces/Templates [**concierge**]: Only allow user to generate contact tracing report when user is selected
+- Interfaces/Templates [**concierge**]: Tweak to contact tracing report
+- Interfaces/Templates [**concierge**]: Fix dark mode styles for visitors
+- Interfaces/Templates [**workplace**]: Fix dark mode styles for old uis
+- Interfaces/Templates [**explore**]: Fix minor dark mode style issues
+- Interfaces/Templates [**workplace**]: Add locker mocks to old desk flow
+- Interfaces/Templates [**workplace**]: Fix more dark mode styles
+- Interfaces/Templates [**concierge**]: Fix minor dark mode issues
+- Interfaces/Templates [**concierge**]: Add dark mode styles for asset manager
+- Services/RestAPI [**domains**]: Before action must set instance variable ([#310](https://github.com/PlaceOS/rest-api/pull/310))
+
+### Added
+
+- Interfaces/Backoffice [**admin**]: Add service account field to tenant form
+- Interfaces/Templates [**concierge**]: Add dark mode styles
+- Services/StaffAPI: Add support for running using a service account ([#223](https://github.com/PlaceOS/staff-api/pull/223))
+
+### Changed
+
+- Interfaces/Backoffice [**users**]: Tweak handling of dark mode
+- Interfaces/Backoffice: Minor style tweaks
+- Interfaces/Templates [**explore**]: Update space info tooltip to match new design
+- Interfaces/Templates [**explore**]: Clean up styles for map view
+- Interfaces/Templates [**workplace**]: Update styles for global search
+- Interfaces/Templates [**workplace**]: Tweak to dark mode styles
+- Interfaces/Templates [**catering**]: Add dark mode styles to catering ui
+- Interfaces/Templates [**outlook-addin**]: Add dark mode styles
+
 ## 1.2210.3
 
 ### Added
