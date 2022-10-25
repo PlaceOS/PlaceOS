@@ -29,13 +29,13 @@ runs:
       shell: bash
       run: |
         echo ::debug::Using contents of VERSION file
-        echo ::set-output name=tag::$(cat VERSION)
+        echo "tag=$(cat VERSION)" >> $GITHUB_OUTPUT
     -
       name: Discover services
       id: introspect
       shell: bash
       run: |
-        echo ::set-output name=services::$(
+        echo "services=$(
           git submodule--helper list services |
           while read -r _ sha _ path; do
             sm_name=$(git submodule--helper name $path)
@@ -52,4 +52,4 @@ runs:
               sha:  .[3],
             }
           ]'
-        )
+        )" >> $GITHUB_OUTPUT
