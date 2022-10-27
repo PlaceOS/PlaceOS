@@ -16,7 +16,7 @@ jobs:
     steps:
     -
       name: Checkout local actions and scripts
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     -
       name: Discover services
       id:   introspect
@@ -37,7 +37,7 @@ jobs:
     steps:
     -
       name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     -
       name: Pull
       run: docker pull placeos/${{ matrix.service.name }}:${{ matrix.version }}
