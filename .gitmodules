@@ -16,9 +16,6 @@
 [submodule "services/source"]
 	path = services/source
 	url = https://github.com/placeos/source.git
-[submodule "services/rubber-soul"]
-	path = services/search-ingest
-	url = https://github.com/placeos/search-ingest.git
 [submodule "services/dispatch"]
 	path = services/dispatch
 	url = https://github.com/placeos/dispatch.git
@@ -61,3 +58,6 @@
 [submodule "libraries/placeos-log-backend"]
 	path = libraries/placeos-log-backend
 	url = https://github.com/place-labs/log-backend
+[submodule "services/search-ingest"]
+	path = services/search-ingest
+	url = https://github.com/placeos/search-ingest.git
