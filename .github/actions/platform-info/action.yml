@@ -36,8 +36,8 @@ runs:
       shell: bash
       run: |
         echo "services=$(
-          git submodule--helper list services |
-          while read -r _ sha _ path; do
+          git submodule status | grep services | sed 's/^-\(.*\)/\1/' |
+          while read -r sha path; do
             sm_name=$(git submodule--helper name $path)
             name=$(basename $path)
             repo=$(git submodule--helper config submodule.$sm_name.url)
