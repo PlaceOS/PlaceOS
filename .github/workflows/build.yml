@@ -109,8 +109,7 @@ jobs:
           tags="${tags},placeos/${{ matrix.service.name }}:preview"
         fi
 
-
-        echo "::set-output name=tags::$tags"
+        echo "tags=$tags" >> $GITHUB_OUTPUT
     -
       name: Build image
       id:   build
@@ -179,15 +178,15 @@ jobs:
             should_release='true'
           fi
 
-          echo "::set-output name=should-release::${should_release}"
+          echo "should-release=${should_release}" >> $GITHUB_OUTPUT
 
           # Remove the `placeos-` prefix from platform version tag
           version="${version#placeos-}"
-          echo "::set-output name=version::$version"
+          echo "version=$version" >> $GITHUB_OUTPUT
 
           # Generate anchor to point to CHANGELOG heading in release notes
           anchor="$(echo $version | tr -d '.')"
-          echo "::set-output name=anchor::$anchor"
+          echo "anchor=$anchor" >> $GITHUB_OUTPUT
 
       # Create a release
       # - The body has link to the ref on github _with_ markdown anchor to correct version.

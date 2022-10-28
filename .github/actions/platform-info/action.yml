@@ -19,7 +19,7 @@ runs:
   steps:
     -
       name: Checkout release
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         ref: ${{ inputs.ref }}
         fetch-depth: 0
@@ -29,18 +29,17 @@ runs:
       shell: bash
       run: |
         echo ::debug::Using contents of VERSION file
-        echo ::set-output name=tag::$(cat VERSION)
+        echo "tag=$(cat VERSION)" >> $GITHUB_OUTPUT
     -
       name: Discover services
       id: introspect
       shell: bash
       run: |
-        echo ::set-output name=services::$(
-          git submodule--helper list services |
-          while read -r _ sha _ path; do
-            sm_name=$(git submodule--helper name $path)
+        echo "services=$(
+          git submodule status | grep services | sed 's/^-\(.*\)/\1/' |
+          while read -r sha path; do
             name=$(basename $path)
-            repo=$(git submodule--helper config submodule.$sm_name.url)
+            repo=$(git submodule--helper config submodule.$path.url)
             echo "$name $path $repo $sha"
           done |
           jq -Rnc '. |= [ inputs | split(" ") |
@@ -52,4 +51,4 @@ runs:
               sha:  .[3],
             }
           ]'
-        )
+        )" >> $GITHUB_OUTPUT
