@@ -57,9 +57,9 @@ jobs:
           # Remove release candidate suffix AND `placeos-` prefix
           stripped_new="$(sed -rE 's/^(placeos-)?([0-9\.]*)(-rc[0-9]+)?$/\2/'<<<"${new_version}")"
 
-          echo "::set-output name=old-version::${old_version}"
-          echo "::set-output name=new-version::${new_version}"
-          echo "::set-output name=stripped-new-version::${stripped_new}"
+          echo "old-version=${old_version}" >> $GITHUB_OUTPUT
+          echo "new-version=${new_version}" >> $GITHUB_OUTPUT
+          echo "stripped-new-version=${stripped_new}" >> $GITHUB_OUTPUT
 
       - name: Update CHANGELOG
         shell: bash
@@ -100,7 +100,7 @@ jobs:
 
           git push -u origin "$branch"
 
-          echo "::set-output name=branch::${branch}"
+          echo "branch=${branch}" >> $GITHUB_OUTPUT
         env:
           VERSION: ${{ steps.update-version.outputs.new-version }}
           STRIPPED_NEW_VERSION: ${{ steps.update-version.outputs.stripped-new-version }}
