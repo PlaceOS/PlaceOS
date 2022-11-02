@@ -11,7 +11,7 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    container: crystallang/crystal:1.1.1
+    container: crystallang/crystal:latest
     steps:
       -
         name: Checkout release
