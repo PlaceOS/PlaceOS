@@ -5,6 +5,33 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2211.0
+
+### Fixed
+
+- Clients/Typescript [**repos**]: Fix getting remote default branch
+- Clients/Typescript [**repos**]: Remove default branch being master
+- Interfaces/Backoffice [**admin**]: Add empty state to platform details
+- Interfaces/Backoffice: Tweak versioning for app
+- Interfaces/Templates [**control**]: Fix handling of route parameters for auth
+- Interfaces/Templates [**workplace**]: Tweak code flow to create new booking for resource
+- Interfaces/Templates [**common**]: Tweak handling of spaces for calendar links
+- Interfaces/Templates [**spaces**]: Fix showing space display name when listed
+- Interfaces/Templates [**common**]: Fix adding spaces as attendees to google calendar links
+- Interfaces/Templates [**events**]: Fix attendee status counts for event details modal
+- Services/Core [**Dockerfile**]: Use `placeos/crystal` base images
+- Services/Edge [**Dockerfile**]: Use `placeos/crystal` base images
+- Services/RestAPI [**Dockerfile**]: Add git to the image for querying remotes ([#318](https://github.com/PlaceOS/rest-api/pull/318))
+- Services/RestAPI [**repositories**]: Use frontend-loader to grab commits
+- Services/StaffAPI [**outlook**]: Minor manifest fixes ([#235](https://github.com/PlaceOS/staff-api/pull/235))
+
+### Added
+
+- Clients/Typescript [**repos**]: Add new methods for remote repo endpoints
+- Interfaces/Backoffice [**repos**]: Update repository branch and commit logic
+- Libraries/Driver [**interface/camera**]: Update to use percentages for ranges
+- Services/FrontendLoader [**Dockerfile**]: Build a minimal image ([#79](https://github.com/PlaceOS/frontend-loader/pull/79))
+
 ## 1.2210.5
 
 ### Fixed
