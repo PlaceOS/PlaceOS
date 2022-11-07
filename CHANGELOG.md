@@ -5,6 +5,21 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2211.1
+
+### Added
+
+- Interfaces/Templates [**org**]: Add logic for setting default building based off geolocation
+- Interfaces/Templates [**form-fields**]: Update user list field to handle visitor details ([#215](https://github.com/PlaceOS/templates/pull/215))
+
+### Fixed
+
+- Interfaces/Templates [**workplace**]: Hide location on landing due to no data source for the value
+- Interfaces/Templates [**workplace**]: Fix explore background
+- Interfaces/Templates [**explore**]: Show links for delegated map bookings
+- Interfaces/Templates [**explore**]: Fix positioning of space info tooltips
+- Services/RestAPI [**webhook**]: Obtain body data before parsing params ([#320](https://github.com/PlaceOS/rest-api/pull/320))
+
 ## 1.2211.0
 
 ### Fixed
