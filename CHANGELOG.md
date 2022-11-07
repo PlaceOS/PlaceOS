@@ -5,6 +5,33 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2211.1
+
+### Added
+
+- Interfaces/Templates [**form-fields**]: Update user list field to handle visitor details ([#215](https://github.com/PlaceOS/templates/pull/215))
+
+### Fixed
+
+- Services/RestAPI [**webhook**]: Obtain body data before parsing params ([#320](https://github.com/PlaceOS/rest-api/pull/320))
+- Services/FrontendLoader [**Dockerfile**]: Improve security, minimal image and non-root user ([16da0b2](https://github.com/PlaceOS/frontend-loader/commit/4a640d9fdc71fe73619d5f3cab6a095a2b5ca04d))
+  - Note: for docker-compose installations the `www` volume needs to be re-created
+
+```shell
+# stop and remove frontend-loader and nginx containers
+docker stop frontend-loader nginx
+docker rm frontend-loader nginx
+
+# determine the name of the volume used for www:
+docker volume ls
+
+# delete it
+docker rm __name_of_www_volume__
+
+# recreate containers
+docker-compose up -d frontend-loader nginx
+```
+
 ## 1.2211.0
 
 ### Fixed
