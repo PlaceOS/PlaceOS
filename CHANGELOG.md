@@ -9,72 +9,30 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**zones**]: Fix parent query param
-- Interfaces/Backoffice [**admin**]: Fix adding new staff api tenants
-- Interfaces/Backoffice [**admin**]: Tweak display of edge api keys
-- Interfaces/Backoffice [**admin**]: Tweak edge key display
-- Interfaces/Backoffice [**admin**]: Move edge api key out of the table
-- Interfaces/Backoffice [**zones**]: Fix getting zone children
-- Interfaces/Backoffice [**admin**]: Tweak staff tenant form
-- Interfaces/Backoffice: Fix display of user avatar
-- Interfaces/Templates [**workplace**]: Fix removing items from my day
-- Interfaces/Templates [**workplace**]: Change free space polling to 60 second intervals
-- Interfaces/Templates [**control**]: Fix active output display colour
-- Interfaces/Templates: Fix placeholder icons for resources
-- Interfaces/Templates [**workplace**]: Clear level occupancy before updating
-- Interfaces/Templates [**org**]: Ignore levels not assigned to a building
-- Interfaces/Templates [**workplace**]: Show building for space list on landing
-- Interfaces/Templates [**explore**]: Fix updating space tooltips
-- Interfaces/Templates [**bookings**]: Hide desk images when none available
-- Interfaces/Templates [**spaces**]: Allow selecting building for space searching
-- Interfaces/Templates [**bookings**]: Add loading logic for parking spaces
-- Interfaces/Templates [**bookings**]: Fix getting parking space metadata
-- Interfaces/Templates [**workplace**]: Fix new parking flow
-- Interfaces/Templates [**workplace**]: Fix booking type for new parking flow
-- Interfaces/Templates [**bookings**]: Hide comma when no building address
+- Services/RestAPI [**shard.lock**]: Bump core-client to fix cluster listing ([#323](https://github.com/PlaceOS/rest-api/pull/323))
+- Services/RestAPI [**edge/connection**]: Refactor how connections are handled ([#324](https://github.com/PlaceOS/rest-api/pull/324))
+- Services/RestAPI [**webhook**]: Resolve 404 on friendly webhook uri ([#325](https://github.com/PlaceOS/rest-api/pull/325))
 - Interfaces/Templates [**bookings**]: Add level filter for desks ([#223](https://github.com/PlaceOS/templates/pull/223))
 - Interfaces/Templates [**workplace**]: Fix spelling mistake on landing ([#224](https://github.com/PlaceOS/templates/pull/224))
 - Interfaces/Templates [**workplace**]: Hide spaces from different buildings ([#225](https://github.com/PlaceOS/templates/pull/225))
-- Interfaces/Templates [**bookings**]: Fix checking in bookings from details modal
-- Interfaces/Templates [**events**]: Tweak handling of available spaces
-- Interfaces/Templates [**workplace**]: Show other resource types in favourites list
-- Interfaces/Templates [**catering**]: Update order category filter
-- Interfaces/Templates [**control**]: Fix hearing binding
 - Interfaces/Templates [**catering**]: Show item image on list ([#228](https://github.com/PlaceOS/templates/pull/228))
 - Interfaces/Templates [**workplace**]: Load contacts on initialisation ([#227](https://github.com/PlaceOS/templates/pull/227))
-- Interfaces/Templates [**concierge**]: Change room attendance to use max instead of average
 - Interfaces/Templates [**workplace**]: [#230](https://github.com/PlaceOS/templates/pull/230): prevent duplicate request
 - Interfaces/Templates [**workplace**]: [#234](https://github.com/PlaceOS/templates/pull/234) re-init zone after booking
 - Interfaces/Templates [**booking-panel**]: [#238](https://github.com/PlaceOS/templates/pull/238) fix auto populate host
 - Interfaces/Templates [**workplace**]: [#235](https://github.com/PlaceOS/templates/pull/235) change upcoming events to only load once and on every return to landing
 - Interfaces/Templates [**booking-panel**]: Set overlay header to white ([#238](https://github.com/PlaceOS/templates/pull/238))
 - Interfaces/Templates [**workplace**]: Change freebusy to only load once and on every return to landing ([#235](https://github.com/PlaceOS/templates/pull/235))
-- Services/RestAPI [**shard.lock**]: Bump core-client to fix cluster listing ([#323](https://github.com/PlaceOS/rest-api/pull/323))
-- Services/RestAPI [**edge/connection**]: Refactor how connections are handled ([#324](https://github.com/PlaceOS/rest-api/pull/324))
-- Services/RestAPI [**webhook**]: Resolve 404 on friendly webhook uri ([#325](https://github.com/PlaceOS/rest-api/pull/325))
 
 ### Added
 
-- Interfaces/Backoffice [**admin**]: Allow viewing of backoffice changelog
-- Interfaces/Templates [**workplace**]: Add group desk bookings to new flow
-- Interfaces/Templates [**workplace**]: Allow user to view the changelog
-- Interfaces/Templates [**form-fields**]: Add input for uploading images
-- Interfaces/Templates [**control**]: Add hearing loop code binding and ui
+- Services/Edge [**edge**]: Improve driver launch reliability ([#247](https://github.com/PlaceOS/edge/pull/247))
+- Services/Source [**status_events**]: Update values on startup ([#49](https://github.com/PlaceOS/source/pull/49))
 - Interfaces/Templates [**workplace**]: Add language selection ([#222](https://github.com/PlaceOS/templates/pull/222))
 - Interfaces/Templates [**workplace**]: Add settings to hide spaces or rooms ([#241](https://github.com/PlaceOS/templates/pull/241))
 - Interfaces/Templates [**workplace**]: Add setting to hide colleagues sidebar ([#240](https://github.com/PlaceOS/templates/pull/240))
 - Interfaces/Templates [**booking-panel**]: Use current user for qr checkin booking ([#237](https://github.com/PlaceOS/templates/pull/237))
 - Libraries/Driver [**transport**]: Provide a http_uri_override for non-http drivers ([#158](https://github.com/PlaceOS/placeos-driver/pull/158))
-- Services/Core [**edge**]: Improve driver launch reliability ([#247](https://github.com/PlaceOS/core/pull/247))
-- Services/Edge [**edge**]: Improve driver launch reliability ([#247](https://github.com/PlaceOS/edge/pull/247))
-- Services/Source [**status_events**]: Update values on startup ([#49](https://github.com/PlaceOS/source/pull/49))
-
-### Changed
-
-- Interfaces/Templates [**workplace**]: Fix image related issues ([#219](https://github.com/PlaceOS/templates/pull/219))
-- Interfaces/Templates [**workplace**]: Tweak dark mode styles
-- Services/Core [**deps**]: Bump alstr/todo-to-issue-action from 4.6.7 to 4.8.1 ([#246](https://github.com/PlaceOS/core/pull/246))
-- Services/Edge [**deps**]: Bump alstr/todo-to-issue-action from 4.6.7 to 4.8.1 ([#246](https://github.com/PlaceOS/edge/pull/246))
 
 ## 1.2211.1
 
