@@ -5,6 +5,79 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2212.0
+
+### Fixed
+
+- Clients/Crystal [**api_wrapper/zones**]: Use parent id as the param
+- Interfaces/Backoffice [**systems**]: Tweak module indicator for edge
+- Interfaces/Backoffice [**debug**]: Improve ux of debug console ([#292](https://github.com/PlaceOS/backoffice/pull/292))
+- Interfaces/Backoffice [**systems**]: Fix updating of debug state
+- Interfaces/Backoffice [**zones**]: Add filtering to timezones
+- Interfaces/Templates: Hide interactive map when no src is set ([#236](https://github.com/PlaceOS/templates/pull/236))
+- Interfaces/Templates [**explore**]: Update check for in use desks ([#242](https://github.com/PlaceOS/templates/pull/242))
+- Interfaces/Templates [**workplace**]: Tweak hiding colleague tab
+- Interfaces/Templates [**control**]: Remove remote reference to material icons
+- Interfaces/Templates: Remove remote ref to material icons
+- Interfaces/Templates [**booking-panel**]: Only show offline state when explicit offline image set ([#245](https://github.com/PlaceOS/templates/pull/245))
+- Interfaces/Templates: Initialise uploads service ([#249](https://github.com/PlaceOS/templates/pull/249))
+- Interfaces/Templates [**catering**]: Tweak layout ([#248](https://github.com/PlaceOS/templates/pull/248))
+- Interfaces/Templates [**workplace**]: Add setting to hide meeting assets form field
+- Interfaces/Templates: Only initialise uploads on apps that require it
+- Interfaces/Templates [**workplace**]: Minor fix when assets are hidden
+- Interfaces/Templates [**workplace**]: Add ability to hide landing sidebar ([#240](https://github.com/PlaceOS/templates/pull/240))
+- Interfaces/Templates [**mock**]: Add region zone handling
+- Interfaces/Templates [**org**]: Fix handling setting building when no region set
+- Interfaces/Templates [**org**]: Ignore setting region as undefined/null
+- Interfaces/Templates [**org**]: Fix handling regions without any buildings
+- Interfaces/Templates [**org**]: Allow setting region when no building is set
+- Interfaces/Templates [**org**]: Fix loading buildings for regions
+- Interfaces/Templates [**workplace**]: Limit building selection to active zone
+- Interfaces/Templates [**explore**]: Limit buildings to active region
+- Interfaces/Templates [**spaces**]: Setup status service to handle building switching
+- Interfaces/Templates [**assets**]: Fix typo in endpoint url ([#250](https://github.com/PlaceOS/templates/pull/250))
+- Interfaces/Templates [**events**]: Hookup booking checkin
+- Interfaces/Templates [**events**]: Disable check in when checked in
+- Interfaces/Templates [**booking-panel**]: Fix getting space details for new bookings
+- Interfaces/Templates [**org**]: Add handling for zone images ([#229](https://github.com/PlaceOS/templates/pull/229))
+- Interfaces/Templates [**concierge**]: Tweak menu creation ui
+- Interfaces/Templates: Fix logging passthrough
+- Interfaces/Templates [**workplace**]: Clean up request for space availability on landing page
+- Interfaces/Templates [**events**]: Simplify request for spaces
+- Interfaces/Templates [**workplace**]: Unbind status when switch buildings
+- Interfaces/Templates [**events**]: Prevent availability request happening for clean forms
+- Interfaces/Templates [**events**]: Using booking driver for near term availability
+- Interfaces/Templates [**workplace**]: Fix typo in translation key
+- Interfaces/Templates [**events**]: Tweak handling of availability bindings
+- Interfaces/Templates [**spaces**]: Fix typo
+- Interfaces/Templates [**events**]: Fix handling empty event bindings
+- Interfaces/Templates [**events**]: Tweak handling of available spaces
+- Interfaces/Templates [**events**]: Fix setting date when resetting form
+- Interfaces/Templates [**workplace**]: Change catering enablement to use menu instead of settings
+- Interfaces/Templates [**catering**]: Fix overflow of menu modals
+- Interfaces/Templates [**events**]: Fix clearing form on nav
+- Interfaces/Templates [**org**]: Tweak setting default building
+- Libraries/Driver [**interface/chat_bot**]: Improve chat bot interface ([#160](https://github.com/PlaceOS/placeos-driver/pull/160))
+
+### Added
+
+- Clients/Typescript [**zones**]: Add timezone and images fields to model
+- Interfaces/Backoffice [**systems**]: Show that modules are running on edge node
+- Interfaces/Backoffice [**modules**]: Display edge details on about page
+- Interfaces/Backoffice [**zones**]: Add timezone and images fields to zone form
+- Interfaces/Templates [**workplace**]: Switch to websocket subscription instead of freebusy api
+- Interfaces/Templates [**booking-panel**]: Allow booking from checkin timeline ([#246](https://github.com/PlaceOS/templates/pull/246))
+- Interfaces/Templates [**org**]: Add region zones
+- Interfaces/Templates [**workplace**]: Add region selection support ([#233](https://github.com/PlaceOS/templates/pull/233))
+- Interfaces/Templates [**org**]: Allow setting default building from user's timezone
+- Interfaces/Templates: Move to using ngx-translate for i18n
+- Interfaces/Templates [**catering**]: Allow hiding items from set zones
+- Interfaces/Templates [**catering**]: Add dietary tags ([#255](https://github.com/PlaceOS/templates/pull/255))
+- Libraries/Models [**zone**]: Add timezone ([#191](https://github.com/PlaceOS/placeos-models/pull/191))
+- Libraries/Models [**zone**]: Add images ([#192](https://github.com/PlaceOS/placeos-models/pull/192))
+- Services/RestAPI [**shards**]: Update shards ([#326](https://github.com/PlaceOS/rest-api/pull/326))
+- Services/StaffAPI [**survey**]: Add survey models and endpoints ([#236](https://github.com/PlaceOS/staff-api/pull/236))
+
 ## 1.2211.2
 
 ### Fixed
