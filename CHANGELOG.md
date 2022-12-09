@@ -9,35 +9,15 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Added
 
-- Interfaces/Backoffice [**debug**]: Rework terminal
-- Interfaces/Backoffice [**debug**]: Add filtering to messages
-- Interfaces/Backoffice [**uploads**]: Add logic to clear completed uploads
-- Interfaces/Templates [**locale**]: Add logic for setting locales
-- Interfaces/Templates [**concierge**]: Add ability to disable catering in rooms ([#254](https://github.com/PlaceOS/templates/pull/254))
-- Interfaces/Templates [**workplace**]: Allow using websocket to get user bookings
-- Interfaces/Templates [**workplace**]: Add extra logic for capacity based booking restrictions
 - Services/StaffAPI [**migrations**]: Add additional indexes to bookings table ([#240](https://github.com/PlaceOS/staff-api/pull/240))
+- Interfaces/Templates [**concierge**]: Add ability to disable catering in rooms ([#254](https://github.com/PlaceOS/templates/pull/254))
 
 ### Fixed
 
-- Interfaces/Backoffice [**debug**]: Reverse line order of debug messages
+- Services/Core [**api/drivers**]: Allow branch selection ([#249](https://github.com/PlaceOS/core/pull/249))
+- Services/RestAPI [**repositories**]: Driver details when not using master branch ([#327](https://github.com/PlaceOS/rest-api/pull/327))
 - Interfaces/Templates [**spaces**]: Fix display of levels on select modal ([#258](https://github.com/PlaceOS/templates/pull/258))
 - Interfaces/Templates [**workplace**]: Fix landing level display on available rooms ([#257](https://github.com/PlaceOS/templates/pull/257))
-- Interfaces/Templates [**assets**]: Clean model
-- Interfaces/Templates [**concierge**]: Fix sidebar error
-- Interfaces/Templates [**workplace**]: Fix truncating of resource names on favourite list
-- Interfaces/Templates [**workplace**]: Fix removing spaces from favourites on landing
-- Interfaces/Templates [**explore**]: Hide space image block when not set
-- Interfaces/Templates [**explore**]: Navigate to success page on space booking completion
-- Interfaces/Templates [**workplace**]: Fix space details display on confirm
-- Interfaces/Templates [**form-fields**]: Fix text colour for user list field
-- Interfaces/Templates [**form-fields**]: Fix input icon colors on dark mode
-- Interfaces/Templates [**workplace**]: Fix filtering for contact search
-- Interfaces/Templates [**events**]: Fix check availability when editing bookings
-- Interfaces/Templates [**workplace**]: Fix level display on landing favourites
-- Services/Core [**api/drivers**]: Allow branch selection ([#249](https://github.com/PlaceOS/core/pull/249))
-- Services/Edge [**api/drivers**]: Allow branch selection ([#249](https://github.com/PlaceOS/edge/pull/249))
-- Services/RestAPI [**repositories**]: Driver details when not using master branch ([#327](https://github.com/PlaceOS/rest-api/pull/327))
 
 ### Changed
 
