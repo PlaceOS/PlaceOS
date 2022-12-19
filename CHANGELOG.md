@@ -5,6 +5,62 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2212.2
+
+### Fixed
+
+- Interfaces/Backoffice [**systems**]: Fix overflow of item details
+- Interfaces/Backoffice [**repos**]: Allow selecting branch and commit for driver repos
+- Interfaces/Templates [**catering**]: Display item tags on order modal
+- Interfaces/Templates [**spaces**]: Show space features on select modal
+- Interfaces/Templates [**catering**]: Tweak catering config handling
+- Interfaces/Templates [**booking-panel**]: Add binding to room name
+- Interfaces/Templates [**catering**]: Minor tweaks
+- Interfaces/Templates [**catering**]: Connect form details to catering filters
+- Interfaces/Templates [**workplace**]: Add hover tooltip to colleague names
+- Interfaces/Templates [**workplace**]: Fix removing colleagues
+- Interfaces/Templates [**catering**]: Save selection when closing modal ([#263](https://github.com/PlaceOS/templates/pull/263))
+- Interfaces/Templates [**events**]: Send whether user has used links on close ([#259](https://github.com/PlaceOS/templates/pull/259))
+- Interfaces/Templates: Refactor redundant styling
+- Interfaces/Templates: Tweak building title font
+- Interfaces/Templates [**catering**]: Fix handling undefined settings
+- Interfaces/Templates [**explore**]: Ignore space actions when no map id
+- Interfaces/Templates [**catering**]: Fix getting catering settings for order modal
+- Interfaces/Templates [**catering**]: Fix editing of charge codes
+- Interfaces/Templates [**workplace**]: Fix handling catering rules
+- Interfaces/Templates [**workplace**]: Add setting to hide asset field on desk flow ([#270](https://github.com/PlaceOS/templates/pull/270))
+- Interfaces/Templates [**workplace**]: Hide schedule filters for disabled features ([#268](https://github.com/PlaceOS/templates/pull/268))
+- Interfaces/Templates: Various issues
+- Interfaces/Templates [**concierge**]: Fix qr code urls for desks
+- Interfaces/Templates [**workplace**]: Add success page for checking in resources
+- Interfaces/Templates [**catering**]: Fix listing of catering item options in orders ([#273](https://github.com/PlaceOS/templates/pull/273))
+- Libraries/Driver [**transport/udp**]: Connect doesn't work for multicast data ([#162](https://github.com/PlaceOS/placeos-driver/pull/162))
+- Libraries/Models [**asset**]: Time fields should be unix epochs at the api level ([#194](https://github.com/PlaceOS/placeos-models/pull/194))
+- Services/Core [**process_manager/local**]: Add edge node awareness ([#250](https://github.com/PlaceOS/core/pull/250))
+- Services/Edge [**process_manager/local**]: Add edge node awareness ([#250](https://github.com/PlaceOS/edge/pull/250))
+- Services/StaffAPI [**bookings**]: Add transaction lock to prevent duplicate bookings ([#242](https://github.com/PlaceOS/staff-api/pull/242))
+
+### Added
+
+- Interfaces/Templates [**workplace**]: Add catering notes support
+- Interfaces/Templates [**concierge**]: Allow catering notes to be viewed
+- Interfaces/Templates [**catering**]: Add ability to save charge codes
+- Interfaces/Templates [**survey**]: Add building-list and survey-list pages and associated components, and routes to concierge
+- Interfaces/Templates [**survey/concierge**]: Add more pages and components into concierge
+- Interfaces/Templates [**survey/concierge**]: Add components related to survey creator views and update routing
+- Interfaces/Templates [**events**]: Add ability to make catering notes required
+- Interfaces/Templates [**workplace**]: Add ability to select charge codes for meeting catering ([#261](https://github.com/PlaceOS/templates/pull/261))
+- Interfaces/Templates [**survey/concierge**]: Add complete-survey component and not-found component and update routes
+- Interfaces/Templates [**catering**]: Allow user to set require notes setting for catering
+- Interfaces/Templates [**catering**]: Allow for selection of multiple versions of the same item to be ordered
+- Services/StaffAPI [**surveys**]: Survey improvements ([#239](https://github.com/PlaceOS/staff-api/pull/239))
+
+### Changed
+
+- Interfaces/Templates [**survey/concierge**]: Re-add '404' path into routes
+- Interfaces/Templates [**survey/concierge**]: Re-route by building_id instead of building_name
+- Interfaces/Templates [**survey/concierge**]: Update navigate() method in design-preview-container to only navigate if it finds :id of associated building
+
 ## 1.2212.1
 
 ### Added
