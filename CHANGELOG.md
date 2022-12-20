@@ -5,6 +5,28 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2212.3
+
+### Fixed
+
+- Interfaces/Templates [**workplace**]: Fix checking in bookings from url ([#275](https://github.com/PlaceOS/templates/pull/275))
+- Interfaces/Templates [**workplace**]: Deny checkin in other users desk bookings ([#275](https://github.com/PlaceOS/templates/pull/275))
+- Interfaces/Templates [**workplace**]: Fix check for user
+- Interfaces/Templates [**events**]: Add check for spaces being bookable
+- Interfaces/Templates [**catering**]: Fix filtering of menu on order modal
+- Interfaces/Templates [**concierge**]: Fix space no show column on report
+- Interfaces/Templates [**concierge**]: Tweak room report fields
+- Interfaces/Templates [**conceirge**]: Fix to min count for space report
+- Interfaces/Templates [**catering**]: Fix handling multi-select options for adding items to order
+- Interfaces/Templates [**catering**]: Display options on listed items
+
+### Added
+
+- Interfaces/Templates [**concierge**]: Rework rooms report
+- Interfaces/Templates [**events**]: Add setting to set resource as meeting host
+- Interfaces/Templates [**events**]: Add setting to force host of meetings
+- Services/StaffAPI [**events**]: Allow meetings to be booked by service accounts ([#243](https://github.com/PlaceOS/staff-api/pull/243))
+
 ## 1.2212.2
 
 ### Fixed
