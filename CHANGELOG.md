@@ -9,24 +9,12 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates [**booking-panel**]: Fix check for displaying current status
-- Interfaces/Templates [**concierge**]: Fix total time display for users on rooms report
-- Interfaces/Templates [**control**]: Fix output listing with mocks
+- Services/SearchIngest [**shards.lock**]: Bump placeos-models ([#74](https://github.com/PlaceOS/search-ingest/pull/74))
 - Interfaces/Templates: Fix map selection of desks and spaces on desktop ([#272](https://github.com/PlaceOS/templates/pull/272))
-- Interfaces/Templates [**assets**]: Fix saving assets
-- Interfaces/Templates [**explore**]: Disable desk tooltip on mobile
 - Interfaces/Templates [**bookings**]: Tweak styling for visitor form ([#285](https://github.com/PlaceOS/templates/pull/285))
 - Interfaces/Templates [**workplace**]: Show all types of bookings for upcoming list ([#284](https://github.com/PlaceOS/templates/pull/284))
 - Interfaces/Templates [**workplace**]: Tweak handling of booking checks for qr code checkin ([#275](https://github.com/PlaceOS/templates/pull/275))
-- Interfaces/Templates [**events**]: Tweak add organiser/host as an attendee to new meetings
-- Interfaces/Templates [**workplace**]: Add force room data into schedule events from bindings
 - Interfaces/Templates [**workplace**]: Only show future bookings on landing ([#284](https://github.com/PlaceOS/templates/pull/284))
-- Interfaces/Templates [**events**]: Fix check on event card
-- Interfaces/Templates [**workplace**]: Tweaks to schedule event handling
-- Interfaces/Templates [**workplace**]: Tweak handling of bookings from bindings
-- Interfaces/Templates [**workplace**]: Tweaks to checkin flow
-- Interfaces/Templates [**workplace**]: Add check to code flow for future bookings
-- Services/SearchIngest [**shards.lock**]: Bump placeos-models ([#74](https://github.com/PlaceOS/search-ingest/pull/74))
 
 ## 1.2212.3
 
