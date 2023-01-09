@@ -9,17 +9,10 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates [**booking-panel**]: Redirect to bootstrap when invalid system set
 - Services/Core [**edge/transport**]: Possible reconnection issue ([#251](https://github.com/PlaceOS/core/pull/251))
 - Services/Core [**edge/transport**]: Restart service after a period of downtime ([#253](https://github.com/PlaceOS/core/pull/253))
-- Services/Edge [**edge/transport**]: Possible reconnection issue ([#251](https://github.com/PlaceOS/edge/pull/251))
-- Services/Edge [**edge/transport**]: Restart service after a period of downtime ([#253](https://github.com/PlaceOS/edge/pull/253))
 - Services/RestAPI: Edge exec lookup ([#329](https://github.com/PlaceOS/rest-api/pull/329))
 - Services/Triggers [**state**]: Execute on edge modules ([#42](https://github.com/PlaceOS/triggers/pull/42))
-
-### Added
-
-- Libraries/Driver [**proxy/remote_driver**]: Ensure edge ids are taken into account when routing requests
 
 ## 1.2212.4
 
