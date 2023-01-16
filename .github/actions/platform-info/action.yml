@@ -39,7 +39,7 @@ runs:
           git submodule status | grep services | sed 's/^-\(.*\)/\1/' |
           while read -r sha path; do
             name=$(basename $path)
-            repo=$(git submodule--helper config submodule.$path.url)
+            repo=$(git config --file=.gitmodules submodule.$path.url)
             echo "$name $path $repo $sha"
           done |
           jq -Rnc '. |= [ inputs | split(" ") |
