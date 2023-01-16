@@ -5,6 +5,52 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2301.4
+
+### Added
+
+- Clients/Typescript [**staff**]: Add staff survey endpoints
+- Clients/Typescript: Update questions modals
+- Clients/Typescript: Question and survey modal updates
+- Interfaces/Templates [**explore**]: Add setting to force use of polygons for zone display
+- Interfaces/Templates [**explore**]: Add simple sensor info tooltip
+- Interfaces/Templates [**explore**]: Add setting to change user search endpoint
+
+### Fixed
+
+- Clients/Typescript [**staff**]: Fix imports
+- Clients/Typescript [**staff**]: Fix typos in endpoint paths
+- Clients/Typescript: Renamed token to id
+- Clients/Typescript: Rename to id
+- Interfaces/Templates [**form-fields**]: Fix user list upload styling
+- Interfaces/Templates [**workplace**]: Fix button styling for desk flow
+- Interfaces/Templates [**catering**]: Add placeholder image for catering items
+- Interfaces/Templates [**workplace**]: Fix filtering of websocket schedule bookings
+- Interfaces/Templates [**spaces**]: Add translation key for favourites in space select modal
+- Interfaces/Templates [**workplace**]: Fix checkbox location for desk form ([#289](https://github.com/PlaceOS/templates/pull/289))
+- Interfaces/Templates [**bookings**]: Fix working of checkin button ([#288](https://github.com/PlaceOS/templates/pull/288))
+- Interfaces/Templates [**workplace**]: Hook up support ticket modal to smtp driver ([#290](https://github.com/PlaceOS/templates/pull/290))
+- Interfaces/Templates [**concierge**]: Tweak building listing for surveys ([#286](https://github.com/PlaceOS/templates/pull/286))
+- Interfaces/Templates: Tweaks to translation text
+- Interfaces/Templates: Store api key if set
+- Interfaces/Templates [**booking-panel**]: Fix check for showing room status
+- Interfaces/Templates [**booking-panel**]: Fix display of checkin info for current event
+- Interfaces/Templates: Fix some modals
+- Interfaces/Templates [**workplace**]: Fix submitting support tickets
+- Interfaces/Templates [**workplace**]: Tweak handling of loading for schedule
+- Interfaces/Templates [**bookings**]: Fix setting duration for all day
+- Interfaces/Templates: Fix some modals on mobile ([#293](https://github.com/PlaceOS/templates/pull/293))
+- Interfaces/Templates [**spaces**]: Fix space images being squished ([#291](https://github.com/PlaceOS/templates/pull/291))
+- Interfaces/Templates [**explore**]: Prevent booking non-free desks ([#292](https://github.com/PlaceOS/templates/pull/292))
+- Interfaces/Templates: More modal fixes
+- Interfaces/Templates [**explore**]: Add authority id to placeos user requests
+- Interfaces/Templates [**explore**]: Prevent search returning systems from other orgs
+- Interfaces/Templates [**explore**]: Fix user search from placeos endpoint
+- Interfaces/Templates [**bookings**]: Fix display of selected desk
+- Interfaces/Templates [**workplace**]: Fix display of catering order on confirm modal
+- Services/Auth [**user**]: Add department and preferred_language fields ([#95](https://github.com/PlaceOS/auth/pull/95))
+- Services/StaffAPI [**tenant**]: Don't set a default conference type ([#247](https://github.com/PlaceOS/staff-api/pull/247))
+
 ## 1.2301.3
 
 ### Fixed
