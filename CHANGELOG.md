@@ -5,6 +5,25 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2301.5
+
+### Fixed
+
+- Interfaces/Templates [**users**]: Fix new user modal
+- Interfaces/Templates [**workplace**]: Fix confirm when catering is disabled
+- Interfaces/Templates [**workplace**]: Add delay to changes to accessibility settings
+- Interfaces/Templates [**explore**]: Post internal changes to zoom and center position
+- Interfaces/Templates [**analytics**]: Update service to use google tags
+- Interfaces/Templates: Fix loading settings
+- Interfaces/Templates [**catering**]: Fix parsing of catering item data for selected options
+- Interfaces/Templates [**analytics**]: Tweak analytics logic
+- Interfaces/Templates [**workplace**]: Add extra confirm step for meetings with a room
+
+### Added
+
+- Services/RestAPI [**webhook**]: Add support for binary payloads ([#330](https://github.com/PlaceOS/rest-api/pull/330))
+- Services/StaffAPI [**survey**]: Add fields ([#246](https://github.com/PlaceOS/staff-api/pull/246))
+
 ## 1.2301.4
 
 ### Fixed
