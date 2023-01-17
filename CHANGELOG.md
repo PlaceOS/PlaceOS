@@ -7,18 +7,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ## 1.2301.5
 
-### Fixed
-
-- Interfaces/Templates [**users**]: Fix new user modal
-- Interfaces/Templates [**workplace**]: Fix confirm when catering is disabled
-- Interfaces/Templates [**workplace**]: Add delay to changes to accessibility settings
-- Interfaces/Templates [**explore**]: Post internal changes to zoom and center position
-- Interfaces/Templates [**analytics**]: Update service to use google tags
-- Interfaces/Templates: Fix loading settings
-- Interfaces/Templates [**catering**]: Fix parsing of catering item data for selected options
-- Interfaces/Templates [**analytics**]: Tweak analytics logic
-- Interfaces/Templates [**workplace**]: Add extra confirm step for meetings with a room
-
 ### Added
 
 - Services/RestAPI [**webhook**]: Add support for binary payloads ([#330](https://github.com/PlaceOS/rest-api/pull/330))
