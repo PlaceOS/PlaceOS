@@ -9,7 +9,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates [**explore**]: Delay adding actions for spaces
+- Base Image: include missing library
 
 ## 1.2301.5
 
