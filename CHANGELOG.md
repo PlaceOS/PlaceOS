@@ -5,6 +5,50 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2301.7
+
+### Fixed
+
+- Clients/Typescript [**users**]: Add department field
+- Clients/Typescript [**staff-api**]: Fix addsurvey mapping non-array response
+- Interfaces/Templates [**survey/concierge**]: Links in survey-list-component renders correct survey json saved in sessionstorage based on survey_id
+- Interfaces/Templates: Various fixes and tweaks
+- Interfaces/Templates [**workplace**]: Update condition for filtering upcoming bookings
+- Interfaces/Templates [**explore**]: Hide space tooltip on mobile
+- Interfaces/Templates: Fix forehead of details modals on mobile
+- Interfaces/Templates [**explore**]: Show user department on desk info tooltip
+- Interfaces/Templates [**bookings**]: Add handling for user departments
+- Interfaces/Templates [**bookings**]: Tweak department handling
+- Interfaces/Templates [**explore**]: Tweak grabbing of bookings
+- Interfaces/Templates [**catering**]: Tweak handling of options
+- Interfaces/Templates: Remove unsupported trigger
+- Interfaces/Templates [**bookings**]: Tweak visitor invite logic with old bookings
+- Interfaces/Templates: Same as previous
+- Interfaces/Templates [**concierge**]: Update buttons for survey section
+- Interfaces/Templates [**workplace**]: Various minor fixes
+- Interfaces/Templates [**form-fields**]: Update user list to search local users when set
+- Services/StaffAPI [**events**]: Fix cancel with service account ([#250](https://github.com/PlaceOS/staff-api/pull/250))
+
+### Added
+
+- Clients/Typescript: Update surveys modal for multi page support
+- Clients/Typescript: Update survey answer modal
+- Clients/Typescript [**staff-api**]: Add new building_id field
+- Interfaces/Templates: Wip: redesign question component
+- Interfaces/Templates: Add selection and line question component
+- Interfaces/Templates: Survey question components
+- Interfaces/Templates: Add survey api service classes
+- Interfaces/Templates: Question bank component
+- Interfaces/Templates: Survey builder component
+- Interfaces/Templates: Question tweaks
+- Interfaces/Templates: Various component and services rewrites
+- Services/StaffAPI [**survey**]: Triggers ([#249](https://github.com/PlaceOS/staff-api/pull/249))
+
+### Changed
+
+- Interfaces/Templates [**survey/concierge**]: Store survey json and survey_id in session storage, and update survey-list with survey_id
+- Interfaces/Templates [**survey/concierge**]: Clear state of selected_questions when draft is saved or completed
+
 ## 1.2301.6
 
 ### Fixed
