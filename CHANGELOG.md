@@ -5,6 +5,50 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2301.8
+
+### Fixed
+
+- Clients/Typescript [**staff-api**]: Fix addsurvey param signature
+- Interfaces/Templates: Minor fixes
+- Interfaces/Templates [**workplace**]: Fix desk booking for groups
+- Interfaces/Templates [**survey**]: Fix filtered question incorrect drop
+- Interfaces/Templates [**survey**]: Survey preview styling tweak
+- Interfaces/Templates [**survey**]: Fix builder bank questions sync
+- Interfaces/Templates [**survey**]: Fix select linking issue
+- Interfaces/Templates [**survey**]: Tweak layout
+- Interfaces/Templates [**survey**]: Page nav styling tweak
+- Interfaces/Templates: Tweak runner styling
+- Interfaces/Templates: Disable dark mode
+- Interfaces/Templates [**catering**]: Fix currency code on item listing
+- Interfaces/Templates: Catch errors with initialising locale
+- Interfaces/Templates [**events**]: Tweak handling of default title value
+- Interfaces/Templates [**concierge**]: Sort building list alphabetically
+- Interfaces/Templates [**explore**]: Only hide desk tooltip on mobile when free
+- Interfaces/Templates [**explore**]: Fix styles for desk info tooltip
+- Interfaces/Templates [**bookings**]: Force bookings to always be in the organisation zone
+- Interfaces/Templates [**workplace**]: Add setting for limiting future booking days
+- Interfaces/Templates [**bookings**]: Add query param for listing checked out bookings
+- Interfaces/Templates [**explore**]: Add error message when trying to book unavailable desks
+- Interfaces/Templates [**explore**]: Prevent booking spaces when unavailable
+- Interfaces/Templates: Fix ripple for schedule cards
+- Interfaces/Templates [**workplace**]: Change landing to make adhoc space bookings
+- Interfaces/Templates [**explore**]: Factor in checked out bookings for desk status
+- Interfaces/Templates [**booking**]: Tweak parsing model
+- Interfaces/Templates [**control**]: Fix button styles
+- Interfaces/Templates [**control**]: Debounce tab changes from binding
+- Interfaces/Templates [**workplace**]: Notify users of desk booking errors ([#303](https://github.com/PlaceOS/templates/pull/303))
+- Interfaces/Templates [**workplace**]: Tweak landing colleague search ([#301](https://github.com/PlaceOS/templates/pull/301))
+- Interfaces/Templates [**spaces**]: Minor styling fixes ([#300](https://github.com/PlaceOS/templates/pull/300))
+- Interfaces/Templates [**explore**]: Only navigate to success on workplace app
+- Services/StaffAPI [**events**]: Delete event with a service account user ([#251](https://github.com/PlaceOS/staff-api/pull/251))
+
+### Added
+
+- Interfaces/Templates [**survey**]: Add radio group question + rename question types
+- Interfaces/Templates [**survey**]: Survey runner component
+- Interfaces/Templates [**survey**]: Tweak loading text alignment
+
 ## 1.2301.7
 
 ### Fixed
