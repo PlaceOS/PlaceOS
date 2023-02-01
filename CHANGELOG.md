@@ -5,86 +5,20 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
-## 1.2302.3
+## 1.2302.1
 
 ### Fixed
 
-- Clients/Typescript [**staff-api**]: Fix addsurvey param signature
-- Clients/Typescript [**survey**]: Fix incorrect translation
-- Interfaces/Templates: Minor fixes
-- Interfaces/Templates [**workplace**]: Fix desk booking for groups
-- Interfaces/Templates [**survey**]: Fix filtered question incorrect drop
-- Interfaces/Templates [**survey**]: Survey preview styling tweak
-- Interfaces/Templates [**survey**]: Fix builder bank questions sync
-- Interfaces/Templates [**survey**]: Fix select linking issue
-- Interfaces/Templates [**survey**]: Tweak layout
-- Interfaces/Templates [**survey**]: Page nav styling tweak
-- Interfaces/Templates: Tweak runner styling
-- Interfaces/Templates: Disable dark mode
-- Interfaces/Templates [**catering**]: Fix currency code on item listing
-- Interfaces/Templates: Catch errors with initialising locale
-- Interfaces/Templates [**events**]: Tweak handling of default title value
-- Interfaces/Templates [**concierge**]: Sort building list alphabetically
-- Interfaces/Templates [**explore**]: Only hide desk tooltip on mobile when free
-- Interfaces/Templates [**explore**]: Fix styles for desk info tooltip
-- Interfaces/Templates [**bookings**]: Force bookings to always be in the organisation zone
-- Interfaces/Templates [**workplace**]: Add setting for limiting future booking days
-- Interfaces/Templates [**bookings**]: Add query param for listing checked out bookings
-- Interfaces/Templates [**explore**]: Add error message when trying to book unavailable desks
-- Interfaces/Templates [**explore**]: Prevent booking spaces when unavailable
-- Interfaces/Templates: Fix ripple for schedule cards
-- Interfaces/Templates [**workplace**]: Change landing to make adhoc space bookings
-- Interfaces/Templates [**explore**]: Factor in checked out bookings for desk status
-- Interfaces/Templates [**booking**]: Tweak parsing model
-- Interfaces/Templates [**control**]: Fix button styles
-- Interfaces/Templates [**control**]: Debounce tab changes from binding
+- Services/Init [**Dockerfile**]: Python compatibility for rethinkdb backups ([#81](https://github.com/PlaceOS/init/pull/81))
+- Services/StaffAPI [**events**]: Delete event with a service account user ([#251](https://github.com/PlaceOS/staff-api/pull/251))
+- Services/StaffAPI [**outlook**]: Xml manifest version ([#252](https://github.com/PlaceOS/staff-api/pull/252))
+- Services/StaffAPI [**staff_api**]: Check sent for not nil in surveys::invitations ([#253](https://github.com/PlaceOS/staff-api/pull/253))
 - Interfaces/Templates [**workplace**]: Notify users of desk booking errors ([#303](https://github.com/PlaceOS/templates/pull/303))
 - Interfaces/Templates [**workplace**]: Tweak landing colleague search ([#301](https://github.com/PlaceOS/templates/pull/301))
 - Interfaces/Templates [**spaces**]: Minor styling fixes ([#300](https://github.com/PlaceOS/templates/pull/300))
-- Interfaces/Templates [**explore**]: Only navigate to success on workplace app
-- Interfaces/Templates [**explore**]: Tweak handling of features
-- Interfaces/Templates [**workplace**]: Only show bookable spaces on landing availability list
-- Interfaces/Templates [**survey**]: Fix modal overflow (ppt-68)
-- Interfaces/Templates [**workplace**]: Pass system id to delete when no user calendar
-- Interfaces/Templates [**bookings**]: Tweak handling of asset name
-- Interfaces/Templates [**concierge**]: Fix deleting event
-- Interfaces/Templates [**concierge**]: Close event display after delete
 - Interfaces/Templates [**map-kiosk**]: All select host for desk bookings ([#306](https://github.com/PlaceOS/templates/pull/306))
 - Interfaces/Templates [**booking-panel**]: Tweak generation of next available time ([#304](https://github.com/PlaceOS/templates/pull/304))
-- Interfaces/Templates: Prevent user zoom on safari
-- Interfaces/Templates [**survey**]: Add survey response modal
 - Interfaces/Templates [**workplace**]: Minor tweaks to upcoming events ([#309](https://github.com/PlaceOS/templates/pull/309))
-- Interfaces/Templates [**explore**]: Fix setting host for desks
-- Interfaces/Templates [**form-fields**]: Allow user search field to query placeos users
-- Interfaces/Templates: Fix select modal overflow on mobile
-- Interfaces/Templates [**workplace**]: Tweak mobile calendar for schedule
-- Interfaces/Templates [**workplace**]: Tweak mobile action for resetting calendar month
-- Interfaces/Templates [**control**]: Fix toggling of input sources
-- Interfaces/Templates [**control**]: Delay updating source volume
-- Interfaces/Templates [**binding**]: Add logic to set a debounce delay before execute is called
-- Interfaces/Templates [**control**]: Add logic to allow ignoring server update from binding
-- Interfaces/Templates [**control**]: Ignore first change to microphone volume
-- Interfaces/Templates [**bindings**]: Delay execute by default
-- Interfaces/Templates: Binding tweaks
-- Interfaces/Templates [**concierge**]: Fix survey response alignment
-- Interfaces/Templates [**events**]: Fix passing correct system id on update
-- Services/Init [**Dockerfile**]: Python compatibility for rethinkdb backups ([#81](https://github.com/PlaceOS/init/pull/81))
-- Services/StaffAPI [**events**]: Delete event with a service account user ([#251](https://github.com/PlaceOS/staff-api/pull/251))
-- Services/StaffAPI [**events**]: Delete event with a service account user
-- Services/StaffAPI [**outlook**]: Xml manifest version ([#252](https://github.com/PlaceOS/staff-api/pull/252))
-- Services/StaffAPI [**staff_api**]: Check sent for not nil in surveys::invitations ([#253](https://github.com/PlaceOS/staff-api/pull/253))
-
-### Added
-
-- Interfaces/Templates [**survey**]: Add radio group question + rename question types
-- Interfaces/Templates [**survey**]: Survey runner component
-- Interfaces/Templates [**survey**]: Tweak loading text alignment
-- Interfaces/Templates [**survey**]: Add ability to duplicate questions
-- Interfaces/Templates [**survey**]: Survey response page frame
-- Interfaces/Templates [**survey**]: Add view survey responses menu
-- Interfaces/Templates [**survey**]: Survey response page
-- Interfaces/Templates [**survey**]: Ratings re-styling + various tweaks
-- Interfaces/Templates [**survey**]: Minor layout tweaks
 
 ## 1.2301.7
 
