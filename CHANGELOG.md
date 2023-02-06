@@ -5,6 +5,48 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2302.2
+
+### Fixed
+
+- Clients/Typescript [**repos**]: Add ability to add branch to commit query params
+- Interfaces/Backoffice [**repos**]: Only get repo commits from remote
+- Interfaces/Backoffice [**repos**]: Only get repo commits from remote"
+- Interfaces/Backoffice [**repos**]: Add logic to request commits from selected branch on edit
+- Interfaces/Templates [**events**]: Add logic to all overriding the host
+- Interfaces/Templates [**form-field**]: Prevent filtering out users with email addresses
+- Interfaces/Templates [**events**]: Re-validate duration after date changes
+- Interfaces/Templates [**events**]: Don't use host_override as host ([#317](https://github.com/PlaceOS/templates/pull/317))
+- Interfaces/Templates [**bookings**]: Fix removing desks ([#316](https://github.com/PlaceOS/templates/pull/316))
+- Interfaces/Templates [**bookings**]: Limit max size of desk filters ([#314](https://github.com/PlaceOS/templates/pull/314))
+- Interfaces/Templates [**users**]: Fix handling users without emails ([#313](https://github.com/PlaceOS/templates/pull/313))
+- Interfaces/Templates [**desks**]: Fix end time for all day ([#314](https://github.com/PlaceOS/templates/pull/314))
+- Interfaces/Templates [**locale**]: Fix sentence to make it more generic
+- Interfaces/Templates [**workplace**]: Fix deleting bookings from landing ([#321](https://github.com/PlaceOS/templates/pull/321))
+- Interfaces/Templates [**workplace**]: Close modal + refresh list after deleting event
+- Interfaces/Templates [**workplace**]: Fix remove booking asset
+- Interfaces/Templates [**bookings**]: Fix not showing map when desk is selected ([#320](https://github.com/PlaceOS/templates/pull/320))
+- Interfaces/Templates [**explore**]: Add ability to close custom tooltips after delay ([#315](https://github.com/PlaceOS/templates/pull/315))
+- Interfaces/Templates [**events**]: Tweak handling of space availability
+- Interfaces/Templates [**events**]: Fix availability check
+- Interfaces/Templates [**workplace**]: Set schedule date on landing load
+- Interfaces/Templates [**workplace**]: Tweak logout
+- Interfaces/Templates [**survey**]: Fix incorrect rating parsing
+- Libraries/Driver [**logger**]: Suppress logs returning metadata
+- Libraries/Driver [**protocol/request**]: Mark errors as a response
+
+### Added
+
+- Interfaces/Templates [**survey**]: Change selection widget viz
+- Interfaces/Templates [**survey**]: Various layout tweaks
+- Interfaces/Templates [**survey**]: Selection widget styling tweak
+- Interfaces/Templates [**survey**]: Add page sections to survey responses
+- Libraries/Models [**user**]: Expose email and phone number ([#195](https://github.com/PlaceOS/placeos-models/pull/195))
+- Services/Core: Improve cluster stabilisation under adverse conditions ([#254](https://github.com/PlaceOS/core/pull/254))
+- Services/Edge: Improve cluster stabilisation under adverse conditions ([#254](https://github.com/PlaceOS/edge/pull/254))
+- Services/RestAPI [**repositories**]: Add branch support ([#333](https://github.com/PlaceOS/rest-api/pull/333))
+- Services/StaffAPI [**survey**]: Use host_override if defined ([#254](https://github.com/PlaceOS/staff-api/pull/254))
+
 ## 1.2302.1
 
 ### Fixed
