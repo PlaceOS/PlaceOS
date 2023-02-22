@@ -5,6 +5,19 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2302.3
+
+### Fixed
+
+- Services/Core [**process_manager**]: Don't lock managers when querying ([#256](https://github.com/PlaceOS/core/pull/256))
+- Services/Source [**status_events**]: Handle errors on initial sync ([#52](https://github.com/PlaceOS/source/pull/52))
+
+### Added
+
+- Services/Source [**influx_publisher**]: Allow overriding the timestamp ([#53](https://github.com/PlaceOS/source/pull/53))
+- Services/StaffAPI [**survey**]: [ppt-91] filter answers on date range ([#255](https://github.com/PlaceOS/staff-api/pull/255))
+- Services/StaffAPI [**survey**]: [ppt-67|ppt-101] update /surveys/questions endpoint ([#257](https://github.com/PlaceOS/staff-api/pull/257))
+
 ## 1.2302.2
 
 ### Fixed
