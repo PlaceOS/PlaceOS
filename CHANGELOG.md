@@ -5,6 +5,37 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2302.3
+
+### Fixed
+
+- Clients/Typescript [**systems**]: Add public field to model
+- Clients/Typescript [**auth**]: Export apikey method
+- Interfaces/Backoffice [**repos**]: Display commit times in options
+- Interfaces/Backoffice [**systems**]: Add public field to form
+- Interfaces/Templates [**events**]: Fix availability check for spaces
+- Interfaces/Templates: Apply max future days to space filters
+- Interfaces/Templates [**booking-panel**]: Fix time status display checks
+- Interfaces/Templates [**bookings**]: Add setting to hide checkin when auto-checkin enabled (ppt-105)
+- Interfaces/Templates [**survey**]: Minor styling and layout tweak
+- Interfaces/Templates [**survey**]: Rename answer counter field.
+- Libraries/Driver [**transport/ssh**]: Prevent connect/disconnect race conditions
+- Services/Core [**process_manager**]: Don't lock managers when querying ([#256](https://github.com/PlaceOS/core/pull/256))
+- Services/Edge [**process_manager**]: Don't lock managers when querying ([#256](https://github.com/PlaceOS/edge/pull/256))
+- Services/Source [**status_events**]: Handle errors on initial sync ([#52](https://github.com/PlaceOS/source/pull/52))
+
+### Added
+
+- Interfaces/Templates: Add logic and labels to handle click tracking (ppt-87)
+- Interfaces/Templates [**analytics**]: Send route and page title changes (ppt-86)
+- Interfaces/Templates [**survey**]: Add survey statistics
+- Interfaces/Templates [**workplace**]: Fix for ppt-8
+- Interfaces/Templates [**survey**]: Read logo from concierge metadata
+- Interfaces/Templates [**survey**]: Add date filters
+- Services/Source [**influx_publisher**]: Allow overriding the timestamp ([#53](https://github.com/PlaceOS/source/pull/53))
+- Services/StaffAPI [**survey**]: [ppt-91] filter answers on date range ([#255](https://github.com/PlaceOS/staff-api/pull/255))
+- Services/StaffAPI [**survey**]: [ppt-67|ppt-101] update /surveys/questions endpoint ([#257](https://github.com/PlaceOS/staff-api/pull/257))
+
 ## 1.2302.2
 
 ### Fixed
