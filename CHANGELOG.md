@@ -10,7 +10,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Fixed
 
 - Services/Core [**process_manager/common**]: Prevent potential for deadlock ([#257](https://github.com/PlaceOS/core/pull/257))
-- Services/Edge [**process_manager/common**]: Prevent potential for deadlock ([#257](https://github.com/PlaceOS/edge/pull/257))
 
 ### Added
 
