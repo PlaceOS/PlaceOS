@@ -5,6 +5,17 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2302.5
+
+### Fixed
+
+- Services/Core [**process_manager/common**]: Prevent potential for deadlock ([#257](https://github.com/PlaceOS/core/pull/257))
+- Services/Edge [**process_manager/common**]: Prevent potential for deadlock ([#257](https://github.com/PlaceOS/edge/pull/257))
+
+### Added
+
+- Services/StaffAPI [**events**]: Improve event patching ([#258](https://github.com/PlaceOS/staff-api/pull/258))
+
 ## 1.2302.4
 
 ### Fixed
