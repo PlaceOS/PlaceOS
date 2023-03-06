@@ -5,6 +5,32 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2303.2
+
+### Fixed
+
+- Clients/Typescript [**systems**]: Add code field to system model
+- Clients/Typescript [**realtime**]: Change default binding value to undefined
+- Interfaces/Templates [**workplace**]: Hide location status for colleagues as it's not implemented (ppt-119)
+- Interfaces/Templates [**events**]: Default timezone to browser's value
+- Interfaces/Templates [**workplace**]: Fix availability requests for availability modal (ppt-181)
+- Interfaces/Templates [**workplace**]: Add setting to redirect support tickets to external url (ppt-178)
+- Interfaces/Templates [**org**]: Fix priority of settings overrides
+- Interfaces/Templates [**explore**]: Add ability to hide device mac
+- Services/Init [**entities**]: Adds building, level parent property. fixes [#82](https://github.com/PlaceOS/init/pull/82) ([#83](https://github.com/PlaceOS/init/pull/83))
+- Services/Init [**dockerfile**]: Add tzdata for timezone in final image ([#84](https://github.com/PlaceOS/init/pull/84))
+- Services/StaffAPI [**survey**]: Survey questions deleted json property ([#262](https://github.com/PlaceOS/staff-api/pull/262))
+
+### Added
+
+- Clients/Typescript [**questions**]: Question modal and endpoint updates
+- Clients/Typescript [**survey**]: Add question patch function
+- Interfaces/Backoffice [**systems**]: Add code field to systems
+- Libraries/Models [**control_system**]: Add public flag ([#196](https://github.com/PlaceOS/placeos-models/pull/196))
+- Services/RestAPI [**webrtc**]: Add a call signaling controller ([#332](https://github.com/PlaceOS/rest-api/pull/332))
+- Services/StaffAPI [**survey**]: Include deleted questions by default and include delete… ([#259](https://github.com/PlaceOS/staff-api/pull/259))
+- Services/StaffAPI [**survey**]: Soft-delete questions if they are used in a survey ([#260](https://github.com/PlaceOS/staff-api/pull/260))
+
 ## 1.2302.5
 
 ### Fixed
