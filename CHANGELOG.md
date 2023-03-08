@@ -5,6 +5,34 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2303.2
+
+### Fixed
+
+- Interfaces/Backoffice [**drivers**]: Display error for details loading on form (ppt-176)
+- Interfaces/Backoffice [**admin**]: Fix display of api versions (ppt-162)
+- Interfaces/Templates [**survey**]: Fix questions not showing correctly
+- Interfaces/Templates [**explore**]: Connect parking to map
+- Interfaces/Templates [**users**]: Fix find availability modal issues (ppt-181)
+- Interfaces/Templates [**concierge**]: Asset manager fixes
+- Interfaces/Templates [**booking-panel**]: Remove mock data
+- Interfaces/Templates [**booking-panel**]: Allow cross-origin images on event view
+- Interfaces/Templates [**booking-panel**]: Fix background image on event view
+- Interfaces/Templates [**bookings**]: Tweak handling of form data (ppt-167)
+- Interfaces/Templates: Open location modal when clicking smaller maps (ppt-168)
+- Services/StaffAPI [**events**]: Regression caused by missing calendar id ([#264](https://github.com/PlaceOS/staff-api/pull/264))
+
+### Added
+
+- Interfaces/Templates [**survey**]: Add deleted flag to question modal
+- Interfaces/Templates [**survey**]: Handle soft-deleted questions
+- Interfaces/Templates [**survey**]: Edit questions + soft delete handling
+- Interfaces/Templates [**booking-panel**]: Add event panel view
+
+### Changed
+
+- Interfaces/Templates [**survey**]: Refactor qbank reset + remove logging
+
 ## 1.2303.1
 
 ### Fixed
