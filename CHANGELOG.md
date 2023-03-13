@@ -5,6 +5,17 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2303.3
+
+### Fixed
+
+- Services/RestAPI [**webrtc**]: Make index route public ([#340](https://github.com/PlaceOS/rest-api/pull/340))
+
+### Added
+
+- Services/Auth [**sessions**]: Provide additional data around user profile ([#101](https://github.com/PlaceOS/auth/pull/101))
+- Services/StaffAPI [**event_metadata**]: Provide additional options for metadata queries ([#265](https://github.com/PlaceOS/staff-api/pull/265))
+
 ## 1.2303.2
 
 ### Fixed
