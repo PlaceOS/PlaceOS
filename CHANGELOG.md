@@ -9,22 +9,10 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice: Show domain in item header
-- Interfaces/Backoffice: Display tags next to item ids
-- Interfaces/Templates [**workplace**]: Default dark mode to hidden (ppt-211)
-- Interfaces/Templates [**workplace**]: Tweaks to find availability logic (ppt-181)
-- Interfaces/Templates [**users**]: Add translation to org field on new user form (ppt-214)
-- Interfaces/Templates [**form-fields**]: Remove text input for time field to allow display consistancy (ppt-215)
-- Interfaces/Templates [**bookings**]: Fix desk booking (ppt-167)
-- Interfaces/Templates [**bookings**]: Tweak handling of time data
-- Interfaces/Templates: Fix build error
-- Interfaces/Templates: Fix map rendering after opening modal for booking and event details
-- Interfaces/Templates [**workplace**]: Prevent date being in past on desk form load
 - Services/RestAPI [**webrtc**]: Make index route public ([#340](https://github.com/PlaceOS/rest-api/pull/340))
 
 ### Added
 
-- Interfaces/Templates [**workplace**]: Add quick links to landing page (ppt-166)
 - Services/Auth [**sessions**]: Provide additional data around user profile ([#101](https://github.com/PlaceOS/auth/pull/101))
 - Services/StaffAPI [**event_metadata**]: Provide additional options for metadata queries ([#265](https://github.com/PlaceOS/staff-api/pull/265))
 
