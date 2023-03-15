@@ -9,15 +9,8 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**auth**]: Remove x-api-key on invalidation
-- Clients/Typescript [**auth**]: Remove x-api-key on invalidation"
 - Interfaces/Backoffice [**auth**]: Add setting to ignore api key
-- Interfaces/Templates [**workplace**]: Close no room confirm modal on confirm
-- Interfaces/Templates [**bookings**]: Initial form state
 - Services/Core [**process_check**]: Ensure consistent state after recovery ([#259](https://github.com/PlaceOS/core/pull/259))
-- Services/Core [**process_check**]: Resolve possible hang condition
-- Services/Edge [**process_check**]: Ensure consistent state after recovery ([#259](https://github.com/PlaceOS/edge/pull/259))
-- Services/Edge [**process_check**]: Resolve possible hang condition
 
 ### Added
 
