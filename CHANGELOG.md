@@ -5,6 +5,26 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 1.2303.4
+
+### Fixed
+
+- Clients/Typescript [**auth**]: Remove x-api-key on invalidation
+- Clients/Typescript [**auth**]: Remove x-api-key on invalidation"
+- Interfaces/Backoffice [**auth**]: Add setting to ignore api key
+- Interfaces/Templates [**workplace**]: Close no room confirm modal on confirm
+- Interfaces/Templates [**bookings**]: Initial form state
+- Services/Core [**process_check**]: Ensure consistent state after recovery ([#259](https://github.com/PlaceOS/core/pull/259))
+- Services/Core [**process_check**]: Resolve possible hang condition
+- Services/Edge [**process_check**]: Ensure consistent state after recovery ([#259](https://github.com/PlaceOS/edge/pull/259))
+- Services/Edge [**process_check**]: Resolve possible hang condition
+
+### Added
+
+- Clients/Typescript [**auth**]: Add flag for ignoring x-api-key for auth
+- Interfaces/Templates [**spaces**]: Add name remapping and hiding to features list (ppt-283)
+- Services/Auth: Add an error template for failed authentication requests ([#104](https://github.com/PlaceOS/auth/pull/104))
+
 ## 1.2303.3
 
 ### Fixed
