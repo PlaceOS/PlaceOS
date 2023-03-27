@@ -9,9 +9,9 @@ on:
   push:
     branches:
       # Monthly releases
-      - '[0-9]+.[0-9][0-9][0-9][0-9]'
+      - '[0-9]+\.[0-9][0-9][0-9][0-9]'
       # Release candidates
-      - '[0-9]+.[0-9][0-9][0-9][0-9].[0-9]+-preview'
+      - '[0-9]+\.[0-9][0-9][0-9][0-9]\.[0-9]+\-preview'
 
   workflow_dispatch:
 
