@@ -5,6 +5,67 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2303.0
+
+### Fixed
+
+- Clients/Typescript [**systems**]: Add timezone field to model
+- Interfaces/Backoffice [**systems**]: Add timezones to systems
+- Interfaces/Backoffice [**systems**]: Add timezone field to form
+- Interfaces/Templates: Minor form fixes
+- Interfaces/Templates [**explore**]: Add placeholder value for user location priority
+- Interfaces/Templates [**users**]: Add translation to org error message on form
+- Interfaces/Templates [**events**]: Only show check once status is available
+- Interfaces/Templates [**booking-panel**]: Add bindings to customise booking form (ppt-310)
+- Interfaces/Templates [**events**]: Force update current available spaces on date change (ppt-348)
+- Interfaces/Templates [**components**]: Fix display of map location (ppt-347)
+- Interfaces/Templates [**explore**]: Fix updating space tooltip status (ppt-289)
+- Interfaces/Templates [**booking-panel**]: Use book_now exec for booking creation (ppt-310)
+- Interfaces/Templates [**workplace**]: Fix updating displayed fields on meeting form (ppt-362)
+- Interfaces/Templates [**booking-panel**]: Fix book_now parameters
+- Interfaces/Templates [**assets**]: Rename count field to quantity
+- Interfaces/Templates [**concierge**]: Fix passing asset details to backend
+- Interfaces/Templates [**events**]: Fix availability checks for all day bookings (ppt-363)
+- Interfaces/Templates [**booking-panel**]: Fix book_now duration value (ppt-310)
+- Interfaces/Templates [**outlook-addin**]: Add translation module
+- Interfaces/Templates [**booking-panel**]: Fix position of host and time details (ppt-366)
+- Interfaces/Templates [**assets**]: Tweaks to handling asset bookings
+- Interfaces/Templates [**concierge**]: Fix custom report container style
+- Interfaces/Templates [**concierge**]: Add api_key field to custom reports
+- Interfaces/Templates: Fix to previous commit
+- Libraries/Driver [**interface/lighting**]: Local and remote joins
+- Libraries/Models: Merge commit fb436e breaks asset and asset_instance ([#198](https://github.com/PlaceOS/placeos-models/pull/198))
+- Libraries/Models [**user**]: Adjust optional fields
+- Libraries/Models [**base/jwt**]: Generate public key from private ([#199](https://github.com/PlaceOS/placeos-models/pull/199))
+- Services/Auth [**models/user**]: Set default values
+- Services/Auth [**Dockerfile**]: Regression of arm64 fixes
+- Services/Auth [**user**]: Setting defaults
+- Services/Auth [**Gemfile**]: Regression of arm64 fixes ([#105](https://github.com/PlaceOS/auth/pull/105))
+- Services/Auth [**models/user**]: Don't update state if already configured
+- Services/RestAPI [**webrtc**]: Exit signal not firing
+- Services/RestAPI [**webrtc/clustered_sessions**]: Initializer spelling
+
+### Added
+
+- Interfaces/Templates [**concierge**]: Add feature to embed other uis in the reports section (ppt-307)
+- Interfaces/Templates [**surveys**]: Add visitor trigger to dropdown (ppt-359)
+- Services/RestAPI [**Dockerfile**]: Improve compile times and backtraces
+- Services/StaffAPI [**db**]: Support additional connection details ([#266](https://github.com/PlaceOS/staff-api/pull/266))
+- Services/StaffAPI [**events**]: Patch metadata lookup using ical uid ([#267](https://github.com/PlaceOS/staff-api/pull/267))
+
+### Changed
+
+- Libraries/Models: Migrate models to postgres via pg-orm ([#188](https://github.com/PlaceOS/placeos-models/pull/188))
+- Libraries/Resource: Migrate to postgresql ([#17](https://github.com/PlaceOS/placeos-resource/pull/17))
+- Services/Core: Migrate to postgres ([#248](https://github.com/PlaceOS/core/pull/248))
+- Services/Dispatch: Migrate to postgres ([#22](https://github.com/PlaceOS/dispatch/pull/22))
+- Services/Edge: Migrate to postgres ([#248](https://github.com/PlaceOS/edge/pull/248))
+- Services/FrontendLoader: Migrate to postgres ([#82](https://github.com/PlaceOS/frontend-loader/pull/82))
+- Services/Init: Migrate to postgres ([#80](https://github.com/PlaceOS/init/pull/80))
+- Services/RestAPI: Migrate to postgres ([#328](https://github.com/PlaceOS/rest-api/pull/328))
+- Services/SearchIngest: Migrate to postgresql ([#72](https://github.com/PlaceOS/search-ingest/pull/72))
+- Services/Source: Migrate to postgres ([#51](https://github.com/PlaceOS/source/pull/51))
+
 ## 1.2303.4
 
 ### Fixed
