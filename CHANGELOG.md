@@ -7,6 +7,13 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ## 2.2304.0
 
+**Second Major Release**
+
+Migration from RethinkDB to PostgreSQL.
+
+- No API changes or new features
+- A new database layer
+
 ## 1.2303.5, 1.2303.6
 
 ### Fixed
