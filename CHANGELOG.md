@@ -5,6 +5,25 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2304.0
+
+**Second Major Release**
+
+Migration from RethinkDB to PostgreSQL.
+
+- No API changes or new features
+- A new database layer
+
+## 1.2303.5, 1.2303.6
+
+### Fixed
+
+- Services/StaffAPI [**events**]: skip calendar check if it matches user ([#270](https://github.com/PlaceOS/staff-api/pull/270))
+
+### Added
+
+- Services/StaffAPI [**PPT-89**]: support Azure AD filter ([#269](https://github.com/PlaceOS/staff-api/pull/269))
+
 ## 1.2303.4
 
 ### Fixed
