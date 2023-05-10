@@ -5,6 +5,37 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2305.0
+
+### Fixed
+
+- Libraries/Driver: Modules failing to connect may not stop ([#165](https://github.com/PlaceOS/placeos-driver/pull/165))
+- Libraries/Models [**associations**]: Serialize should default to true
+- Libraries/Resource: Resource should hint at changes ([#18](https://github.com/PlaceOS/placeos-resource/pull/18))
+- Services/Init [**db/migrations**]: Make models repo the source of truth
+- Services/RestAPI [**modules**]: [ppt-32] search query ([#341](https://github.com/PlaceOS/rest-api/pull/341))
+- Services/RestAPI: Domain check skipped for x-api-keys ([#342](https://github.com/PlaceOS/rest-api/pull/342))
+- Services/StaffAPI [**migration**]: Alter attendees booking_id column type ([#273](https://github.com/PlaceOS/staff-api/pull/273))
+- Services/StaffAPI [**tenants**]: Enable patching delegated state ([#272](https://github.com/PlaceOS/staff-api/pull/272))
+- Services/StaffAPI: Bump forbidden log levels ([#274](https://github.com/PlaceOS/staff-api/pull/274))
+- Services/StaffAPI [**shard.lock**]: Bump models for jwt email downcasing ([#276](https://github.com/PlaceOS/staff-api/pull/276))
+
+### Added
+
+- Libraries/Driver [**proxy/system**]: Log module id if issue parsing metadata
+- Libraries/Models: Added to_rs method and support for dealing with nilable value in enumconverter ([#200](https://github.com/PlaceOS/placeos-models/pull/200))
+- Libraries/Models [**user_jwt**]: Always ensure email is downcased
+- Libraries/Models [**control_system**]: Remove feature auto-population ppt-392 ([#202](https://github.com/PlaceOS/placeos-models/pull/202))
+- Libraries/Models [**migrations**]: Add db level constraints to trig table ([#203](https://github.com/PlaceOS/placeos-models/pull/203))
+- Libraries/Models [**migrations**]: Sync migrations from init
+- Services/Core [**edge/protocol**]: Add support for crystal 1.8 ([#260](https://github.com/PlaceOS/core/pull/260))
+- Services/StaffAPI [**survey**]: [ppt-358] add visitor triggers ([#275](https://github.com/PlaceOS/staff-api/pull/275))
+
+### Changed
+
+- Libraries/Models: Added models for staff-api ([#201](https://github.com/PlaceOS/placeos-models/pull/201))
+- Services/StaffAPI: Migrated staff-api to pg-orm ([#277](https://github.com/PlaceOS/staff-api/pull/277))
+
 ## 2.2304.0
 
 **Second Major Release**
