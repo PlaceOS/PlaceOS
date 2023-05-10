@@ -9,87 +9,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Crystal [**endpoint**]: Inspect the response for invalid chars
-- Interfaces/Backoffice [**admin**]: Fix cluster process requests repeating forever after nav
-- Interfaces/Backoffice [**domains**]: Fix adding new applications
-- Interfaces/Backoffice [**domains**]: Fix to previous commit
-- Interfaces/Backoffice [**systems**]: Delay updating system after adding new module
-- Interfaces/Backoffice [**system**]: Fix display of new modules
-- Interfaces/Backoffice [**zones**]: Fix displaying details when no associated systems
-- Interfaces/Backoffice [**triggers**]: Fix removing triggers from parent
-- Interfaces/Backoffice [**triggers**]: Fix updating after delete
-- Interfaces/Templates [**booking-panel**]: Fix next booking button to allow bookings
-- Interfaces/Templates [**bookings**]: Show desk status on select modal map (ppt-409)
-- Interfaces/Templates [**control**]: Minor fixes
-- Interfaces/Templates [**booking-panel**]: Use current booking in determining status if not value available (ppt-418)
-- Interfaces/Templates [**booking-panel**]: Fix status line conditionals
-- Interfaces/Templates [**bookings**]: Add handling of resources without ids (ppt-420)
-- Interfaces/Templates [**bookings**]: Fix level display of parking space list (ppt-419)
-- Interfaces/Templates [**workplace**]: Fix initial load of schedule data (ppt-415)
-- Interfaces/Templates [**control**]: Fix status bar slider bindings
-- Interfaces/Templates [**workplace**]: Fix schedule state for events/bookings
-- Interfaces/Templates [**concierge**]: Show desk bookings that are checked out/deleted
-- Interfaces/Templates [**booking-panel**]: Fix check for bookings for status
-- Interfaces/Templates [**bookings**]: Add setting to hide desk status tooltip on select modal
-- Interfaces/Templates [**bookings**]: Fix status tooltip for in use desks on select modal
-- Interfaces/Templates [**concierge**]: Tweak desk request
-- Interfaces/Templates [**bookings**]: Tweak handling of booking status
-- Interfaces/Templates [**workplace**]: Fix search of custom pois
-- Interfaces/Templates [**workplace**]: Fix catering filters on validation check
-- Interfaces/Templates [**workplace**]: Tweaks to checking catering availability
-- Interfaces/Templates [**booking-panel**]: Scope bootstrap systems to org zone
-- Interfaces/Templates [**workplace**]: Fix catering checks
-- Interfaces/Templates [**bookings**]: Display checked out bookings as ended
-- Interfaces/Templates [**bookings**]: Tweaks
-- Interfaces/Templates [**concierge**]: Fix variable for desk restriction modal
-- Interfaces/Templates [**concierge**]: Fix overflow on desk restriction modal
-- Interfaces/Templates [**concierge**]: Fix display of desk count on restriction modal
-- Interfaces/Templates [**concierge**]: Fix saving of desk restrictions
-- Interfaces/Templates [**concierge**]: Fix adding desk to new bookings (ppt-452)
-- Interfaces/Templates [**bookings**]: Fix is_done check
-- Interfaces/Templates [**map-kiosk**]: Add ability to set host on map space bookings
-- Interfaces/Templates [**spaces**]: Fix map on space select modal (ppt-460)
-- Interfaces/Templates [**bookings**]: Fix booking non-lockers
-- Interfaces/Templates [**bookings**]: Tweak handling of checked_out_at field
-- Interfaces/Templates [**workplace**]: Fix editing and deleting events with driver data
-- Interfaces/Templates [**workplace**]: Force hide deleted events and bookings
-- Interfaces/Templates [**events**]: Fix hiding notes on details modal when not set
-- Interfaces/Templates [**explore**]: Fix duplicate label on book modal
-- Interfaces/Templates [**explore**]: Display resource name on set date/time modal (ppt-465)
-- Interfaces/Templates [**spaces**]: Tweak select modal pin size (ppt-442)
-- Interfaces/Templates [**explore**]: Set click cursor when hovering over spaces (ppt-402)
-- Interfaces/Templates [**catering**]: Fix display of order data when listed (ppt-469)
-- Interfaces/Templates [**catering**]: Fix updating of order list after change is made (ppt-468)
-- Interfaces/Templates [**events**]: Add department to booking extension data
-- Interfaces/Templates [**org**]: Get booking rules for buildings
-- Interfaces/Templates [**users**]: Fix find availability displaying data host
-- Interfaces/Templates [**explore**]: Fix getting locker data from driver response
-- Interfaces/Templates [**events**]: Fix level display for resources on edit
-- Interfaces/Templates [**catering**]: Fix complex orders
-- Interfaces/Templates [**catering**]: Force order status changes locally after update
-- Interfaces/Templates [**concierge**]: Prevent browser tooltip showing undefined (ppt-494)
-- Interfaces/Templates [**catering**]: Tweak to updating status of events
-- Interfaces/Templates [**catering**]: Fix runtime error
-- Interfaces/Templates [**events**]: Fix resources missing data on edit
-- Interfaces/Templates [**events**]: Fix setting form data when editing catering (ppt-492)
-- Interfaces/Templates [**concierge**]: Show more of the day-view event on hover (ppt-495)
-- Interfaces/Templates: Fix reference key for parking space metadata
-- Interfaces/Templates [**workplace**]: Prevent charge code validation when not codes (ppt-496)
-- Interfaces/Templates [**bookings**]: Add display to indicate booking for other user (ppt-499)
-- Interfaces/Templates [**events**]: Use ical_uid for ignoring existing events for availability (ppt-496)
-- Interfaces/Templates [**explore**]: Handle displaying desk statuses for future bookings (ppt-500)
-- Interfaces/Templates [**workplace**]: Fix check for catering codes (ppt-496)
-- Interfaces/Templates [**events**]: Fix sending the correct system_id when changing rooms
-- Interfaces/Templates [**bookings**]: Add field to indicate grouping
-- Interfaces/Templates [**bookings**]: Remove case when checking card owner
-- Interfaces/Templates [**concierge**]: Fix sizing of desk booking table
-- Interfaces/Templates [**concierge**]: Change time field for desk bookings
-- Interfaces/Templates [**explore**]: Only show parking labels above 200% zoom (ppt-505)
-- Interfaces/Templates [**events**]: Tweak handling of card location data
-- Interfaces/Templates [**map-kiosk**]: Add setting to hide zone options
-- Interfaces/Templates [**org**]: Allow arbitrary fields in desk class (ppt-508)
-- Interfaces/Templates [**events**]: Tweak system id passed
-- Interfaces/Templates [**events**]: Tweak updating of events
 - Libraries/Driver: Modules failing to connect may not stop ([#165](https://github.com/PlaceOS/placeos-driver/pull/165))
 - Libraries/Models [**associations**]: Serialize should default to true
 - Libraries/Resource: Resource should hint at changes ([#18](https://github.com/PlaceOS/placeos-resource/pull/18))
@@ -103,18 +22,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Added
 
-- Clients/Crystal [**api_wrapper/endpoint**]: Print payload on parse error
-- Interfaces/Backoffice [**users**]: Show user's department on their about page (ppt-497)
-- Interfaces/Templates [**workplace**]: Add logic for displaying locker bookings on my day
-- Interfaces/Templates [**explore**]: Hook up bank status modal to map
-- Interfaces/Templates [**bookings**]: Add tooltips to desk select map (ppt-409)
-- Interfaces/Templates [**workplace**]: Add locker flow
-- Interfaces/Templates [**explore**]: Add searchable map features
-- Interfaces/Templates [**concierge**]: Add ability to set desk restrictions (ppt-396)
-- Interfaces/Templates [**workplace**]: Add flow and select modal for lockers
-- Interfaces/Templates [**workplace**]: Add locker filter to schedule page
-- Interfaces/Templates [**form-fields**]: Add recurrence form fields (ppt-484)
-- Interfaces/Templates [**concierge**]: Add ability to add and edit catering to events (ppt-506)
 - Libraries/Driver [**proxy/system**]: Log module id if issue parsing metadata
 - Libraries/Models: Added to_rs method and support for dealing with nilable value in enumconverter ([#200](https://github.com/PlaceOS/placeos-models/pull/200))
 - Libraries/Models [**user_jwt**]: Always ensure email is downcased
@@ -122,15 +29,11 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Libraries/Models [**migrations**]: Add db level constraints to trig table ([#203](https://github.com/PlaceOS/placeos-models/pull/203))
 - Libraries/Models [**migrations**]: Sync migrations from init
 - Services/Core [**edge/protocol**]: Add support for crystal 1.8 ([#260](https://github.com/PlaceOS/core/pull/260))
-- Services/Edge [**edge/protocol**]: Add support for crystal 1.8 ([#260](https://github.com/PlaceOS/edge/pull/260))
 - Services/StaffAPI [**survey**]: [ppt-358] add visitor triggers ([#275](https://github.com/PlaceOS/staff-api/pull/275))
-- Services/Triggers [**shard.lock**]: Bump deps
 
 ### Changed
 
 - Libraries/Models: Added models for staff-api ([#201](https://github.com/PlaceOS/placeos-models/pull/201))
-- Services/Core [**deps**]: Bump alstr/todo-to-issue-action from 4.8.1 to 4.10.1 ([#258](https://github.com/PlaceOS/core/pull/258))
-- Services/Edge [**deps**]: Bump alstr/todo-to-issue-action from 4.8.1 to 4.10.1 ([#258](https://github.com/PlaceOS/edge/pull/258))
 - Services/StaffAPI: Migrated staff-api to pg-orm ([#277](https://github.com/PlaceOS/staff-api/pull/277))
 
 ## 2.2304.0
