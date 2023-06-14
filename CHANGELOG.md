@@ -5,6 +5,176 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2306.0
+
+### Fixed
+
+- Clients/Typescript [**systems**]: Add email query parameter
+- Clients/Typescript [**systems**]: Add method for querying systems by email
+- Clients/Typescript: Export new method from previous commit
+- Interfaces/Backoffice [**forms**]: Trim whitespace from redirect url values
+- Interfaces/Backoffice [**dark-mode**]: Fix form field styles
+- Interfaces/Templates [**explore**]: Fix display tag on search results (ppt-510)
+- Interfaces/Templates [**events**]: Fix display of location on the details modal (ppt-502)
+- Interfaces/Templates [**spaces**]: Fix loading individual space data (ppt-511)
+- Interfaces/Templates [**explore**]: Allow setting data for desk booking query (ppt-500)
+- Interfaces/Templates [**bookings**]: Fix map display when selecting desks (ppt-514)
+- Interfaces/Templates [**events**]: Fix charge code error on form
+- Interfaces/Templates [**events**]: Fix booking rules filtering rooms (ppt-516)
+- Interfaces/Templates [**events**]: Add booking rule checks to landing and explore actions
+- Interfaces/Templates [**workplace**]: Filter out events that don't match the ical_uid
+- Interfaces/Templates [**explore**]: Prevent booking desks with group mismatches
+- Interfaces/Templates [**concierge**]: Allow for reflow of report options layout (ppt-530)
+- Interfaces/Templates [**concierge**]: Remove toggle for cleaning state on day view
+- Interfaces/Templates [**bookings**]: Fix filtering of lockers
+- Interfaces/Templates [**bookings**]: Fix listing lockers for bookings
+- Interfaces/Templates [**booking-panel**]: Add error handling to bookings
+- Interfaces/Templates [**bookings**]: Throw error in booking checks with no host (ppt-539)
+- Interfaces/Templates [**explore**]: Fix setting custom host for desk bookings
+- Interfaces/Templates [**concierge**]: Fix holding staff checked in state (ppt-542)
+- Interfaces/Templates [**concierge**]: Tweak management of desks (ppt-541)
+- Interfaces/Templates [**booking-panel**]: Add flag to force using api for current bookings
+- Interfaces/Templates [**booking-panel**]: Fix to previous commit
+- Interfaces/Templates [**workplace**]: Fix position of all day checkbox for parking
+- Interfaces/Templates [**booking-panel**]: Limit available duration based on next booking
+- Interfaces/Templates [**booking_panel**]: Allow min duration to be applied
+- Interfaces/Templates [**booking-panel**]: Change book now to be a confirmation rather than form
+- Interfaces/Templates [**booking-panel**]: Fix book now calls
+- Interfaces/Templates [**booking-panel**]: Correctly handle errors
+- Interfaces/Templates [**concierge**]: Fix reject all confirm check
+- Interfaces/Templates [**events**]: Add check for recurrence
+- Interfaces/Templates [**assets**]: Clean fields before making requests
+- Interfaces/Templates [**events**]: Fix passing recurrence details to request
+- Interfaces/Templates: Tweak space and desk select maps to be slightly bigger (ppt-547)
+- Interfaces/Templates [**concierge**]: Minor fixes to room manager
+- Interfaces/Templates [**booking-panel**]: Round up minutes for status
+- Interfaces/Templates [**concierge**]: Fix setting remote for standalone visitors (ppt-537)
+- Interfaces/Templates [**concierge**]: Fix desk template csv
+- Interfaces/Templates [**concierge**]: Tweak handling add and remove from desk list
+- Interfaces/Templates [**explore**]: Fix type error
+- Interfaces/Templates [**concierge**]: Cleanup of asset models
+- Interfaces/Templates [**workplace**]: Add idle timeout for room booking form
+- Interfaces/Templates [**events**]: Fix setting catering time (ppt-556)
+- Interfaces/Templates [**map-kiosk**]: Add logic to handle pinning of non-space or user entities (ppt-557)
+- Interfaces/Templates [**workplace**]: Fix display of level of room booking success (ppt-551)
+- Interfaces/Templates [**concierge**]: Fix selecting purchase orders
+- Interfaces/Templates [**assets**]: Fix booking of assets
+- Interfaces/Templates [**assets**]: Add default end of life date on asset form
+- Interfaces/Templates [**booking-panel**]: Change handling of form title value (ppt-560)
+- Interfaces/Templates [**org**]: Fix parsing and tojson logic for desks (ppt-508)
+- Interfaces/Templates [**org**]: Set building metadata to load lazily
+- Interfaces/Templates [**org**]: Update region metadata to be lazy loaded
+- Interfaces/Templates [**concierge**]: Fix assets field on booking form
+- Interfaces/Templates [**concierge**]: Add flag for hiding assets form field
+- Interfaces/Templates [**assets**]: Default asset select count to 1 (ppt-584)
+- Interfaces/Templates [**form-fields**]: Tweak handling of host field data (ppt-583)
+- Interfaces/Templates [**explore**]: Tweak get module from binding data
+- Interfaces/Templates [**org**]: Tweak loading of building metadata
+- Interfaces/Templates [**org**]: Fix initialising building metadata
+- Interfaces/Templates [**bookings**]: Add logic to allow bookings to be linked with events
+- Interfaces/Templates [**spaces**]: Fix version of space (ppt-594)
+- Interfaces/Templates [**concierge**]: Fix navigation on cancel from asset product form (ppt-597)
+- Interfaces/Templates [**concierge**]: Fix getting images from type rather than asset (ppt-599)
+- Interfaces/Templates [**concierge**]: Update local data after asset related creation (ppt-600)
+- Interfaces/Templates [**concierge**]: Fix display for order number of purchase orders (ppt-601)
+- Interfaces/Templates [**concierge**]: Fix asset purchase order for on edit (ppt-602)
+- Interfaces/Templates [**concierge**]: Tweak product displays (ppt-604)
+- Interfaces/Templates [**assets**]: Various minor fixes
+- Interfaces/Templates [**assets**]: Fix availability
+- Interfaces/Templates [**assets**]: Fix availability on edit
+- Interfaces/Templates [**asset**]: Fix name of parent_id field for categories
+- Interfaces/Templates [**explore**]: Fix to user search
+- Interfaces/Templates [**concierge**]: Add ability to delete assets and purchase orders
+- Interfaces/Templates [**concierge**]: List asset product sub-items in tables
+- Interfaces/Templates [**concierge**]: Fix asset cancel nav (ppt-606)
+- Interfaces/Templates [**concierge**]: Fix count display for asset groups (ppt-605)
+- Interfaces/Templates [**assets**]: Fix saving selected assets on modal close (ppt-607)
+- Interfaces/Templates [**events**]: Truncate long host emails (ppt-608)
+- Interfaces/Templates [**concierge**]: Fix more details panel for asset requests (ppt-609)
+- Interfaces/Templates [**concierge**]: Fix fields and saving of asset models (ppt-602)
+- Interfaces/Templates [**concierge**]: Fix saving dates for asset purchase orders (ppt-610)
+- Interfaces/Templates [**events**]: Roll back event booking on asset booking failure
+- Interfaces/Templates [**events**]: Fix space name stored in asset bookings (ppt-609)
+- Interfaces/Templates [**assets**]: Add location id to booking for map locating
+- Interfaces/Templates [**concierge**]: Fix minor asset form issues
+- Interfaces/Templates [**concierge**]: Fix search filtering for asset purchase orders
+- Interfaces/Templates [**concierge**]: Fix requests for approving and declining asset requests
+- Interfaces/Templates [**concierge**]: Fix asset data sync after local updates
+- Interfaces/Templates [**concierge**]: Fix search filtering of purchase orders (ppt-623)
+- Interfaces/Templates [**concierge**]: Remove description field from assets (ppt-622)
+- Interfaces/Templates [**events**]: Add days of week to recurrence data
+- Interfaces/Templates [**concierge**]: Remove room manager more details button (ppt-625)
+- Interfaces/Templates [**booking-panel**]: Fix booking from checkin view (ppt-631)
+- Interfaces/Templates [**i18n**]: Catch errors setting the locale
+- Interfaces/Templates [**workplace**]: Fix idle timeout on room booking
+- Interfaces/Templates [**concierge**]: Remove requests for next week after removing asset
+- Interfaces/Templates [**events**]: Disable assets when no resources selected
+- Interfaces/Templates [**events**]: Prevent removing event after failure on edit
+- Interfaces/Templates [**assets**]: Fix editing of event assets requests
+- Interfaces/Templates [**assets**]: Fix availability filtering for form field
+- Interfaces/Templates [**assets**]: Fix editing asset count when selecting items
+- Interfaces/Templates [**assets**]: Tweak handling of parent event editing
+- Interfaces/Templates [**events**]: Fix display of assets on details modal
+- Interfaces/Templates [**assets**]: Fix asset list when editing the amount of existing selection
+- Interfaces/Templates [**concierge**]: Fix asset availability count
+- Interfaces/Templates [**concierge**]: Re-add pagination for desk management
+- Interfaces/Templates: Remove default breakdown time
+- Interfaces/Templates [**concierge**]: Minor routing fixes
+- Interfaces/Templates [**concierge**]: Fix sidebar routing
+- Interfaces/Templates [**concierge**]: Tweak how facilities options are displayed
+- Libraries/Models [**migrations**]: Incorrect trigger table name
+- Libraries/Models [**user**]: Update cleanup_auth_tokens with updated relations name
+- Libraries/Models [**booking**]: Add is_booking_type scope
+- Libraries/Models [**booking**]: Linked? inverted
+- Libraries/Models [**event_metadata**]: Add flag for rendering linked bookings
+- Libraries/Models [**event_metadata**]: Linked bookings spec
+- Libraries/Models [**module**]: Edge_id lookup query
+- Services/Init [**migrate_data**]: Don't migrate asset data
+- Services/RestAPI [**assets**]: Authenticated users can view
+- Services/RestAPI [**assets**]: Sort by id
+- Services/StaffAPI [**bookings**]: Add default response status to attendees
+- Services/StaffAPI [**events**]: Ensure metadata patching applied on room change
+- Services/StaffAPI [**events**]: Only return matching ical_uid when requested
+
+### Added
+
+- Interfaces/Backoffice: Update to angular 16
+- Interfaces/Templates [**concierge**]: Add listing of rooms
+- Interfaces/Templates [**concierge**]: Add view for asset purchase orders
+- Interfaces/Templates [**concierge**]: Allow selecting date for asset requests (ppt-612)
+- Interfaces/Templates [**concierge**]: Allow bulk upload of assets
+- Interfaces/Templates [**assets**]: Add zone id to assets
+- Interfaces/Templates [**concierge**]: Add layout components for new design
+- Interfaces/Templates [**concierge**]: Update core layout to match new design (ppt-536)
+- Libraries/Driver: Add support for `crystal docs`
+- Libraries/Driver: Add a docs workflow
+- Libraries/Models [**asset**]: New asset manager models ([#204](https://github.com/PlaceOS/placeos-models/pull/204))
+- Libraries/Models [**staff-api**]: Ppt-387 staff api implement linked bookings child parent relationship ([#205](https://github.com/PlaceOS/placeos-models/pull/205))
+- Libraries/Models [**asset**]: [ppt-334] elastic search index ([#207](https://github.com/PlaceOS/placeos-models/pull/207))
+- Libraries/Models [**asset_manager**]: Change ids to strings ([#208](https://github.com/PlaceOS/placeos-models/pull/208))
+- Libraries/Models: Link bookings to events ([#209](https://github.com/PlaceOS/placeos-models/pull/209))
+- Libraries/Models: Link assets to zones and clean up bookings ([#210](https://github.com/PlaceOS/placeos-models/pull/210))
+- Libraries/Models [**migrations**]: Ppt-431, 432 additional indices ([#211](https://github.com/PlaceOS/placeos-models/pull/211))
+- Libraries/Models [**tenant**]: Add multi-tenant per domain support ([#213](https://github.com/PlaceOS/placeos-models/pull/213))
+- Services/Auth [**sessions**]: Add support for pulling groups via sso
+- Services/RestAPI [**asset_manager**]: [ppt-335] new asset manager endpoints ([#343](https://github.com/PlaceOS/rest-api/pull/343))
+- Services/RestAPI [**asset_manager**]: Change ids to strings ([#345](https://github.com/PlaceOS/rest-api/pull/345))
+- Services/RestAPI: Ppt-520 ([#346](https://github.com/PlaceOS/rest-api/pull/346))
+- Services/RestAPI [**assets**]: Add zone_id filtering
+- Services/SearchIngest [**asset_manager**]: Add new asset manager tables ([#77](https://github.com/PlaceOS/search-ingest/pull/77))
+- Services/SearchIngest [**asset**]: [ppt-334] elastic search index ([#78](https://github.com/PlaceOS/search-ingest/pull/78))
+- Services/StaffAPI [**bookings**]: [ppt-387] implement linked bookings child parent relationship ([#278](https://github.com/PlaceOS/staff-api/pull/278))
+- Services/StaffAPI [**events**]: Include ical_uid in signals
+- Services/StaffAPI [**bookings**]: Add support for linking bookings ([#280](https://github.com/PlaceOS/staff-api/pull/280))
+- Services/StaffAPI [**events**]: Destroy metadata when event deleted
+- Services/StaffAPI [**events**]: Provide method to keep old resources when moving room
+- Services/StaffAPI [**events**]: Allow moving room to one that exists in the meeting
+- Services/StaffAPI [**events**]: Add push event endpoint ([#283](https://github.com/PlaceOS/staff-api/pull/283))
+
+### Changed
+
+- Interfaces/Templates: Add end time testing as well
+
 ## 2.2305.0
 
 ### Fixed
