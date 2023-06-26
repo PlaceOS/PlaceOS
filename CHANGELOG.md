@@ -9,13 +9,11 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates [**explore**]: Add logic to handle desk restrictions for map booking (ppt-644)
-- Interfaces/Templates [**concierge**]: Tweak desk booking table columns (ppt-639)
-- Interfaces/Templates [**concierge**]: Tweak desk bookings table (ppt-639)
 - Libraries/Models: Epochconverter#from_json
 
 ### Added
 
+- Interfaces/Templates [**concierge**]: Update day view components
 - Libraries/Models [**asset**]: Add barcode field ([#212](https://github.com/PlaceOS/placeos-models/pull/212))
 - Services/StaffAPI: Ppt-621 add pagination to bookings index route ([#284](https://github.com/PlaceOS/staff-api/pull/284))
 
