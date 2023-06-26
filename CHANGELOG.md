@@ -5,6 +5,20 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2306.1
+
+### Fixed
+
+- Interfaces/Templates [**explore**]: Add logic to handle desk restrictions for map booking (ppt-644)
+- Interfaces/Templates [**concierge**]: Tweak desk booking table columns (ppt-639)
+- Interfaces/Templates [**concierge**]: Tweak desk bookings table (ppt-639)
+- Libraries/Models: Epochconverter#from_json
+
+### Added
+
+- Libraries/Models [**asset**]: Add barcode field ([#212](https://github.com/PlaceOS/placeos-models/pull/212))
+- Services/StaffAPI: Ppt-621 add pagination to bookings index route ([#284](https://github.com/PlaceOS/staff-api/pull/284))
+
 ## 2.2306.0
 
 ### Fixed
