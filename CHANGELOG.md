@@ -9,41 +9,15 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates [**events**]: Tweak availability error message (ppt-646)
 - Interfaces/Templates [**explore**]: Add logic to handle desk restrictions for map booking (ppt-644)
 - Interfaces/Templates [**concierge**]: Tweak desk booking table columns (ppt-639)
 - Interfaces/Templates [**concierge**]: Tweak desk bookings table (ppt-639)
-- Interfaces/Templates [**concierge**]: Fix display of setup/breakdown
-- Interfaces/Templates [**concierge**]: Update service to get approval data from driver
-- Interfaces/Templates [**concierge**]: Use new space select modal for booking form
-- Interfaces/Templates [**form-fields**]: Fix display of recurrence details (ppt-648)
-- Interfaces/Templates [**explore**]: Fix locker driver binding runtime error
-- Interfaces/Templates [**form-fields**]: Fix non-custom recurrence options (ppt-650)
-- Interfaces/Templates [**workplace**]: Update locker assignment driver module name
-- Interfaces/Templates [**workplace**]: Fix binding to booked lockers
-- Interfaces/Templates [**workplace**]: Fix display of user locker bookings
-- Interfaces/Templates [**concierge**]: Create new components and update routing for new views
-- Libraries/Models [**migrations**]: Added checks
+- Libraries/Models: Epochconverter#from_json
 
 ### Added
 
-- Interfaces/Templates [**concierge**]: Update day view components
 - Libraries/Models [**asset**]: Add barcode field ([#212](https://github.com/PlaceOS/placeos-models/pull/212))
-- Services/Core [**shard.lock**]: Bump opentelemetry-instrumentation.cr
-- Services/Edge [**shard.lock**]: Bump opentelemetry-instrumentation.cr
-- Services/FrontendLoader [**shard.lock**]: Bump opentelemetry-instrumentation.cr
-- Services/RestAPI [**shard.lock**]: Bump opentelemetry-instrumentation.cr
-- Services/SearchIngest [**shard.lock**]: Bump models
-- Services/SearchIngest [**shard.lock**]: Bump opentelemetry-instrumentation.cr
-- Services/Source [**shard.lock**]: Bump opentelemetry-instrumentation.cr
 - Services/StaffAPI: Ppt-621 add pagination to bookings index route ([#284](https://github.com/PlaceOS/staff-api/pull/284))
-- Services/StaffAPI [**shard.lock**]: Bump opentelemetry-instrumentation.cr
-- Services/Triggers [**shard.lock**]: Bump opentelemetry-instrumentation.cr
-
-### Changed
-
-- Libraries/Models: Epochconverter#from_json
-- Services/Build_service: Changed url and made timeout configurable via env var
 
 ## 2.2306.0
 
