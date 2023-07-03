@@ -5,6 +5,41 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.0
+
+### Fixed
+
+- Interfaces/Backoffice [**admin**]: Add domain_email field to tenant form
+- Interfaces/Templates: Fix formatting of recurrence values
+- Interfaces/Templates: Fix to previous commit
+- Interfaces/Templates [**concierge**]: Fix style ordering (ppt-654)
+- Interfaces/Templates [**enrolment**]: Allow reading application settings from the authority
+- Interfaces/Templates: Tweak recurrence formatting (ppt-648)
+- Interfaces/Templates: Minor recurrence fixes
+- Interfaces/Templates: Fix recurrence end value
+- Interfaces/Templates [**events**]: Fix recurrence based off occurrences (ppt-648)
+- Interfaces/Templates [**assets**]: Add barcode field to asset (ppt-575)
+- Interfaces/Templates [**concierge**]: Add ability to set setup/breakdown when booking (ppt-535)
+- Interfaces/Templates [**concierge**]: Tweak handling of invalid setup and breakdown times for rendering (ppt-673)
+- Interfaces/Templates [**concierge**]: Update display for cancelled events on new day view
+- Interfaces/Templates [**form-fields**]: Minor tweaks to handling recurrence
+- Interfaces/Templates [**events**]: Fix editing recurring events
+- Interfaces/Templates [**assets**]: Update api usage
+- Libraries/Driver [**protocol\management**]: Reset pid and proc flags
+- Services/Core [**process_check**]: Kill unresponsive processes cleanly ([#263](https://github.com/PlaceOS/core/pull/263))
+- Services/Edge [**process_check**]: Kill unresponsive processes cleanly ([#263](https://github.com/PlaceOS/edge/pull/263))
+- Services/RestAPI [**asset_types**]: Zone filtering for counts ([#350](https://github.com/PlaceOS/rest-api/pull/350))
+- Services/StaffAPI [**events**]: Use relative monthly bookings by default ([#285](https://github.com/PlaceOS/staff-api/pull/285)) (ppt-651)
+- Services/StaffAPI [**event**]: Mark metadata as cancelled on augment
+- Services/StaffAPI [**event**]: Mark metadata as cancelled on augment
+
+### Added
+
+- Libraries/Driver [**management**]: Switch to using unix sockets for ipc
+- Libraries/Models [**asset_type**]: Include asset counts in responses ([#215](https://github.com/PlaceOS/placeos-models/pull/215))
+- Services/RestAPI [**assets**]: Add additional query options (ppt-669) ([#347](https://github.com/PlaceOS/rest-api/pull/347))
+- Services/RestAPI [**asset_types**]: Filter counts based on zone_id ([#349](https://github.com/PlaceOS/rest-api/pull/349))
+
 ## 2.2306.1
 
 ### Fixed
