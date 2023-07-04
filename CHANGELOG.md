@@ -5,6 +5,14 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.1
+
+### Fixed
+
+- Interfaces/Templates [**workplace**]: Make title not mandatory as it has a default value (ppt-690)
+- Services/FrontendLoader [**loader**]: Ensure sub directories are updated for www-core ([#83](https://github.com/PlaceOS/frontend-loader/pull/83))
+- Services/StaffAPI [**tenants**]: Don't error if no tenant configured
+
 ## 2.2307.0
 
 ### Fixed
