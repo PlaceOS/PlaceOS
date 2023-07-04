@@ -5,6 +5,18 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.2
+
+### Fixed
+
+- Clients/Crystal [**zones**]: Add missing fields to create and update
+- Services/Core [**eventbus**]: Handle read replica race conditions
+- Services/FrontendLoader [**eventbus**]: Handle read replica race conditions
+- Services/RestAPI [**eventbus**]: Handle read replica race conditions
+- Services/SearchIngest [**eventbus**]: Handle read replica race conditions
+- Services/Source [**eventbus**]: Handle read replica race conditions
+- Services/Triggers [**eventbus**]: Handle read replica race conditions
+
 ## 2.2307.1
 
 ### Fixed
