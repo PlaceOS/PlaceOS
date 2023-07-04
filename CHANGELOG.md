@@ -10,24 +10,11 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Fixed
 
 - Clients/Crystal [**zones**]: Add missing fields to create and update
-- Interfaces/Templates: Set custom monthly recurrence to be day of month
-- Interfaces/Templates [**bookings**]: Fix updating form values when no owner
-- Interfaces/Templates [**events**]: Fix formatting for month_day recurrence
-- Interfaces/Templates [**events**]: Fix parsing recurrence values
-- Interfaces/Templates [**concierge**]: Add selector for regions
 - Services/Core [**eventbus**]: Handle read replica race conditions
-- Services/Core [**eventbus**]: Handle read replica race conditions
-- Services/Edge [**eventbus**]: Handle read replica race conditions
-- Services/Edge [**eventbus**]: Handle read replica race conditions
-- Services/FrontendLoader [**eventbus**]: Handle read replica race conditions
 - Services/FrontendLoader [**eventbus**]: Handle read replica race conditions
 - Services/RestAPI [**eventbus**]: Handle read replica race conditions
-- Services/RestAPI [**eventbus**]: Handle read replica race conditions
-- Services/SearchIngest [**eventbus**]: Handle read replica race conditions
 - Services/SearchIngest [**eventbus**]: Handle read replica race conditions
 - Services/Source [**eventbus**]: Handle read replica race conditions
-- Services/Source [**eventbus**]: Handle read replica race conditions
-- Services/Triggers [**eventbus**]: Handle read replica race conditions
 - Services/Triggers [**eventbus**]: Handle read replica race conditions
 
 ## 2.2307.1
