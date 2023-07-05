@@ -5,6 +5,16 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.3
+
+### Fixed
+
+- Interfaces/Templates [**assets**]: Tweak page size for listing type items (ppt-668)
+- Interfaces/Templates [**workplace**]: Ignore availability status when booking from landing (ppt-686)
+- Libraries/Models [**migrations**]: Ensure unique constraint removed
+- Services/FrontendLoader [**eventbus**]: Handle read replica race conditions
+- Services/StaffAPI [**tenants**]: Allow updates to email_domain column
+
 ## 2.2307.2
 
 ### Fixed
