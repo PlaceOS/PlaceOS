@@ -5,6 +5,26 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.3
+
+### Fixed
+
+- Interfaces/Backoffice: Minor fix to confirm modal
+- Interfaces/Backoffice [**systems**]: Fix module options styling
+- Interfaces/Templates [**conciege**]: Fix routing for catering options
+- Interfaces/Templates [**concierge**]: Fix selecting buildings
+- Interfaces/Templates [**concierge**]: Fix routing to rooms report
+- Interfaces/Templates [**concierge**]: Fix event filtering (ppt-693)
+- Interfaces/Templates [**events**]: Force all day bookings to be the start of the date
+- Interfaces/Templates [**assets**]: Tweak page size for listing type items (ppt-668)
+- Interfaces/Templates [**workplace**]: Ignore availability status when booking from landing (ppt-686)
+- Interfaces/Templates [**concierge**]: Handle error when loading guest list (ppt-700)
+- Libraries/Models [**tenant**]: Email_domain should be set on create / update
+- Libraries/Models [**migrations**]: Ensure unique constraint removed
+- Libraries/Models: Tenants_domain migration
+- Services/FrontendLoader [**eventbus**]: Handle read replica race conditions
+- Services/StaffAPI [**tenants**]: Allow updates to email_domain column
+
 ## 2.2307.2
 
 ### Fixed
