@@ -10,18 +10,12 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Fixed
 
 - Interfaces/Templates: Add overflow to building list (ppt-705)
-- Interfaces/Templates [**concierge**]: Fix selecting regions
 - Interfaces/Templates [**org**]: Prevent filtering out levels from unloaded buildings (ppt-704)
 - Interfaces/Templates [**concierge**]: Add type filters to new day view (ppt-702)
-- Interfaces/Templates [**booking-panel**]: Show host select when disable_book_now_host is false
-- Interfaces/Templates [**events**]: Save visitors when creating events (ppt-701)
-- Libraries/Models [**migrations**]: Ensure unique_domain constraint does not exist
 
 ### Added
 
 - Libraries/Models [**migrations**]: Ppt-53 add index on metadata details
-- Services/Build_service: Ppt-670 made compilation request api async
-- Services/Init [**migrator**]: Added verbose flag to migration task
 - Services/RestAPI [**notifications**]: Publish on subscription id ([#352](https://github.com/PlaceOS/rest-api/pull/352))
 - Services/RestAPI [**users**]: Ppt-53 add user metadata search ([#353](https://github.com/PlaceOS/rest-api/pull/353))
 
