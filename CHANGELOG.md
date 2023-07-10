@@ -5,6 +5,16 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.5
+
+### Fixed
+
+- Interfaces/Templates [**bookings**]: Fix visitor error handling and form on extra requests (ppt-707)
+- Interfaces/Templates [**concierge**]: Fix filters on new day view (ppt-702)
+- Interfaces/Templates [**events**]: Add logic for deleting recurring events (ppt-692)
+- Libraries/Models [**migrations**]: Multi-line statement, updated spec pg version to 15
+- Services/StaffAPI [**events**]: Accepting an event must use a special route ([#286](https://github.com/PlaceOS/staff-api/pull/286))
+
 ## 2.2307.4
 
 ### Fixed
