@@ -11,13 +11,8 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 - Interfaces/Templates [**bookings**]: Fix visitor error handling and form on extra requests (ppt-707)
 - Interfaces/Templates [**concierge**]: Fix filters on new day view (ppt-702)
-- Interfaces/Templates [**events**]: Tweak handling of editing and deleting of events
-- Interfaces/Templates [**concierge**]: Fix to deleting events
-- Interfaces/Templates [**concierge**]: Finish room approval logic
-- Interfaces/Templates [**concierge**]: Fix deleting events
 - Interfaces/Templates [**events**]: Add logic for deleting recurring events (ppt-692)
 - Libraries/Models [**migrations**]: Multi-line statement, updated spec pg version to 15
-- Libraries/Models [**migrations**]: Added pgsql as language for pg func
 - Services/StaffAPI [**events**]: Accepting an event must use a special route ([#286](https://github.com/PlaceOS/staff-api/pull/286))
 
 ## 2.2307.4
