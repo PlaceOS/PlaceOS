@@ -13,15 +13,9 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice [**systems**]: Fix module action icons
-- Interfaces/Templates [**events**]: Fix space availability
-- Interfaces/Templates [**events**]: Fix to previous commit
-- Interfaces/Templates [**users**]: Fix find availability modal block display
-- Interfaces/Templates [**concierge**]: Remove event editing
 - Interfaces/Templates [**users**]: Fix availability modal scrolling (ppt-713)
 - Libraries/Resource: Add timeout to resource loading ([#19](https://github.com/PlaceOS/placeos-resource/pull/19))
-- Services/Core [**module_manager**]: Treat load as a stabilization event
-- Services/Edge [**module_manager**]: Treat load as a stabilization event
+- Services/Core [**module_manager**]: Treat system load as a stabilization event
 
 ## 2.2307.5
 
