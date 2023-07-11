@@ -5,6 +5,18 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.6
+
+### Added
+
+- Clients/Crystal [**settings**]: Add create and update helpers
+
+### Fixed
+
+- Interfaces/Templates [**users**]: Fix availability modal scrolling (ppt-713)
+- Libraries/Resource: Add timeout to resource loading ([#19](https://github.com/PlaceOS/placeos-resource/pull/19))
+- Services/Core [**module_manager**]: Treat system load as a stabilization event
+
 ## 2.2307.5
 
 ### Fixed
