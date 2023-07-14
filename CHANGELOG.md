@@ -5,6 +5,43 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.7
+
+### Added
+
+- Clients/Crystal: Add missing system fields and provide query helpers for settings
+
+### Fixed
+
+- Interfaces/Backoffice: Minor dark mode style fixes
+- Interfaces/Backoffice [**systems**]: Add custom placeholder for module search
+- Interfaces/Templates: Default outlook link to use office one (ppt-716)
+- Interfaces/Templates: Fix start and end time for all day with ical file (ppt-715)
+- Interfaces/Templates [**events**]: Fix removing recurring series (ppt-692)
+- Interfaces/Templates [**workplace**]: Tweak parsing of locker booking data (ppt-679)
+- Interfaces/Templates [**concierge**]: Show new assets correctly after bulk upload
+- Interfaces/Templates [**workplace**]: Add check to global search for contacts (ppt-718)
+- Interfaces/Templates [**bookings**]: Fix setting start time for visitor bookings (ppt-719)
+- Interfaces/Templates: Fix toggling favourites from form fields (ppt-682)
+- Interfaces/Templates [**concierge**]: List assets associated with purchase order on edit (ppt-619)
+- Interfaces/Templates [**explore**]: Use driver data for in use desk checks
+- Interfaces/Templates [**workplace**]: Ignore issues with invalid lockers
+- Interfaces/Templates [**workplace**]: Fix handling of locker data for bookings
+- Interfaces/Templates [**concierge**]: Add success indication of asset adding
+- Interfaces/Templates [**concierge**]: Show facilities option when no admin group set
+- Interfaces/Templates [**workplace**]: Force set desk form values if available (ppt-716)
+- Interfaces/Templates: Fix description for support ticket modal
+- Libraries/Resource [**placeos-resource**]: Fix missing change events
+- Services/Auth [**coauth_controller**]: Enable redirects to other hosts
+- Services/Core [**resource**]: Missing change events
+- Services/Core [**local**]: Error message may not be present
+- Services/Edge [**resource**]: Missing change events
+- Services/Edge [**local**]: Error message may not be present
+- Services/FrontendLoader [**resource**]: Missing change events
+- Services/FrontendLoader [**loader**]: Specify load timeout
+- Services/SearchIngest [**resource**]: Missing change events
+- Services/Source [**resource**]: Missing change events
+
 ## 2.2307.6
 
 ### Added
