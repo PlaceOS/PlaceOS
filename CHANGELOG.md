@@ -5,6 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.8
+
+### Fixed
+
+- Libraries/Resource [**resource**]: Replaced change feed iterator with async closure
+- Libraries/Resource [**resource**]: Replaced change feed iterator with async closure
+- Services/Core [**resource**]: Replaced change feed iterator with async closure
+- Services/Core [**resource**]: Replaced change feed iterator with async closure
+- Services/Edge [**resource**]: Replaced change feed iterator with async closure
+- Services/Edge [**resource**]: Replaced change feed iterator with async closure
+- Services/FrontendLoader [**resource**]: Replaced change feed iterator with async closure
+- Services/FrontendLoader [**resource**]: Replaced change feed iterator with async closure
+- Services/RestAPI [**resource**]: Replaced change feed iterator with async closure
+- Services/SearchIngest [**resource**]: Replaced change feed iterator with async closure
+- Services/Source [**resource**]: Replaced change feed iterator with async closure
+
 ## 2.2307.7
 
 ### Added
