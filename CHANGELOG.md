@@ -7,22 +7,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ## 2.2307.8
 
-### Fixed
-
-- Libraries/Resource [**resource**]: Replaced change feed iterator with async closure
-- Libraries/Resource [**resource**]: Replaced change feed iterator with async closure
-- Services/Core [**resource**]: Replaced change feed iterator with async closure
-- Services/Core [**resource**]: Replaced change feed iterator with async closure
-- Services/Edge [**resource**]: Replaced change feed iterator with async closure
-- Services/Edge [**resource**]: Replaced change feed iterator with async closure
-- Services/FrontendLoader [**resource**]: Replaced change feed iterator with async closure
-- Services/FrontendLoader [**resource**]: Replaced change feed iterator with async closure
-- Services/RestAPI [**resource**]: Replaced change feed iterator with async closure
-- Services/SearchIngest [**resource**]: Replaced change feed iterator with async closure
-- Services/Source [**resource**]: Replaced change feed iterator with async closure
-
-## 2.2307.7
-
 ### Added
 
 - Clients/Crystal: Add missing system fields and provide query helpers for settings
