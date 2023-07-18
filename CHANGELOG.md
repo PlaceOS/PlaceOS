@@ -9,9 +9,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates [**bookings**]: Minor fix
 - Interfaces/Templates [**workplace**]: Fix available levels (ppt-725)
-- Interfaces/Templates [**booking-panel**]: Allow for setting host on panel view
 - Services/Auth [**oauth-redirects**]: Ensure path based redirect on b2clogin ([#107](https://github.com/PlaceOS/auth/pull/107))
 
 ## 2.2307.8
