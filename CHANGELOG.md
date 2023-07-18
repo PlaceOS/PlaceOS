@@ -5,6 +5,13 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.9
+
+### Fixed
+
+- Interfaces/Templates [**workplace**]: Fix available levels (ppt-725)
+- Services/Auth [**oauth-redirects**]: Ensure path based redirect on b2clogin ([#107](https://github.com/PlaceOS/auth/pull/107))
+
 ## 2.2307.8
 
 ### Added
