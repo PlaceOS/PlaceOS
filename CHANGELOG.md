@@ -9,21 +9,12 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice [**admin**]: Tweak tenant delete message
-- Interfaces/Templates [**workplace**]: Add restriction to end date in desk-form date-picker
 - Interfaces/Templates [**map-kiosk**]: Add translation service
-- Libraries/Driver [**driver**]: Improve error messages around accessor usage
-- Libraries/Driver [**CI**]: Don't install ameba
-- Libraries/Driver [**discovery**]: Number check on accessor
-- Services/Core [**module_manager**]: Update to a lazy model loading method
-- Services/Edge [**module_manager**]: Update to a lazy model loading method
-- Services/SearchIngest [**api**]: Return healthy while we are starting up
-- Services/SearchIngest [**table**]: Update to a lazy model loading method
-- Services/Source [**status_events**]: Update to a lazy model loading method
-- Services/StaffAPI [**events**]: Fixes o365 decline events
+- Services/StaffAPI [**events**]: Fixes O365 decline events edge cases
 
 ### Added
 
+- Interfaces/Templates [**workplace**]: Add restriction to end date in desk-form date-picker
 - Libraries/Resource: Load resources in order of creation
 - Services/Auth: Pp-51 default callback uri for each domain ppt-728 ([#108](https://github.com/PlaceOS/auth/pull/108))
 - Services/SearchIngest: Add service loading route for k8s ([#81](https://github.com/PlaceOS/search-ingest/pull/81))
