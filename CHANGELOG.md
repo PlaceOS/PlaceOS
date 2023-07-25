@@ -5,6 +5,20 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2307.10
+
+### Fixed
+
+- Interfaces/Templates [**map-kiosk**]: Add translation service
+- Services/StaffAPI [**events**]: Fixes O365 decline events edge cases
+
+### Added
+
+- Interfaces/Templates [**workplace**]: Add restriction to end date in desk-form date-picker
+- Libraries/Resource: Load resources in order of creation
+- Services/Auth: Pp-51 default callback uri for each domain ppt-728 ([#108](https://github.com/PlaceOS/auth/pull/108))
+- Services/SearchIngest: Add service loading route for k8s ([#81](https://github.com/PlaceOS/search-ingest/pull/81))
+
 ## 2.2307.9
 
 ### Fixed
