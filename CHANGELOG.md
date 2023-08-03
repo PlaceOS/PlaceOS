@@ -5,6 +5,37 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2308.0
+
+### Fixed
+
+- Interfaces/Templates [**concierge**]: Add error handling for guest approval (ppt-721)
+- Interfaces/Templates [**concierge**]: Fix purchase order asset list names (ppt-619)
+- Interfaces/Templates [**concierge**]: Fix routing for new ui on asset manager views (ppt-735)
+- Interfaces/Templates [**events**]: Add booking rules filter to future available spaces (ppt-736)
+- Interfaces/Templates [**workplace**]: Fix selecting desk for booking from favourites (ppt-737)
+- Interfaces/Templates [**workplace**]: Re-enable desk booking editing (ppt-741)
+- Interfaces/Templates [**bookings**]: Only show checkin around booking period (ppt-740)
+- Interfaces/Templates [**workplace**]: Tweak editing of bookings (ppt-741)
+- Interfaces/Templates [**explore**]: Add zone info to feature locating (ppt-748)
+- Interfaces/Templates [**users**]: Update availability on date change (ppt-749)
+- Interfaces/Templates [**bookings**]: Ignore existing booking in availability checks (ppt-741)
+- Interfaces/Templates [**explore**]: Fix zone details for locating points of interest (ppt-748)
+- Interfaces/Templates [**workplace**]: Tweak setting desk in booking flow (ppt-741)
+- Interfaces/Templates [**workplace**]: Fix editing desk bookings (ppt-741)
+- Interfaces/Templates [**org**]: Tweak setting initial building when lazy loading buildings (ppt-750)
+- Interfaces/Templates [**concierge**]: Fix routing for custom reports (ppt-753)
+- Interfaces/Templates [**concierge**]: Fix scroll on survey responses and routing to new views (ppt-752)
+- Interfaces/Templates [**form-fields**]: Make default end date of recurrence 1 day less than a year (ppt-757)
+- Interfaces/Templates [**events**]: Fix id for status binding (ppt-759)
+- Libraries/Models [**PPT-729**]: Add missing fk cascade delete to fks ([#217](https://github.com/PlaceOS/placeos-models/pull/217))
+- Services/StaffAPI [**events**]: Check not required with delegated access ppt-758 ([#288](https://github.com/PlaceOS/staff-api/pull/288))
+
+### Added
+
+- Libraries/Models [**zone**]: Add root zone finding helper
+- Services/RestAPI [**assets**]: Add permissions system ppt-743 ([#354](https://github.com/PlaceOS/rest-api/pull/354))
+
 ## 2.2307.10
 
 ### Fixed
