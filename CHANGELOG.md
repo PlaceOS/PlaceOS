@@ -9,10 +9,8 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice: Fix metadata editors field
 - Interfaces/Templates [**concierge**]: Add error handling for guest approval (ppt-721)
 - Interfaces/Templates [**concierge**]: Fix purchase order asset list names (ppt-619)
-- Interfaces/Templates [**users**]: Tweak availability modal styles
 - Interfaces/Templates [**concierge**]: Fix routing for new ui on asset manager views (ppt-735)
 - Interfaces/Templates [**events**]: Add booking rules filter to future available spaces (ppt-736)
 - Interfaces/Templates [**workplace**]: Fix selecting desk for booking from favourites (ppt-737)
@@ -24,20 +22,13 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**bookings**]: Ignore existing booking in availability checks (ppt-741)
 - Interfaces/Templates [**explore**]: Fix zone details for locating points of interest (ppt-748)
 - Interfaces/Templates [**workplace**]: Tweak setting desk in booking flow (ppt-741)
-- Interfaces/Templates [**concierge**]: Fix sidebar names for reports
-- Interfaces/Templates [**concierge**]: Fix adding custom reports to sidebar
 - Interfaces/Templates [**workplace**]: Fix editing desk bookings (ppt-741)
 - Interfaces/Templates [**org**]: Tweak setting initial building when lazy loading buildings (ppt-750)
 - Interfaces/Templates [**concierge**]: Fix routing for custom reports (ppt-753)
 - Interfaces/Templates [**concierge**]: Fix scroll on survey responses and routing to new views (ppt-752)
-- Interfaces/Templates [**visitor-kiosk**]: Add translation module
 - Interfaces/Templates [**form-fields**]: Make default end date of recurrence 1 day less than a year (ppt-757)
 - Interfaces/Templates [**events**]: Fix id for status binding (ppt-759)
-- Interfaces/Templates [**visitor-kiosk**]: Add logic for handling standalone bookings
-- Interfaces/Templates [**visitor-kiosk**]: Fix ability to use maps
-- Libraries/Driver [**define_setting**]: Serialize to yaml
 - Libraries/Models [**PPT-729**]: Add missing fk cascade delete to fks ([#217](https://github.com/PlaceOS/placeos-models/pull/217))
-- Libraries/Models [**guest**]: Attending check
 - Services/StaffAPI [**events**]: Check not required with delegated access ppt-758 ([#288](https://github.com/PlaceOS/staff-api/pull/288))
 
 ### Added
