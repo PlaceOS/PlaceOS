@@ -5,6 +5,85 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2308.1
+
+### Added
+
+- Clients/Typescript [**zones**]: Add method for executing on a zone
+- Interfaces/Templates [**concierge**]: Add ability to make standalone visitor bookings (ppt-787)
+- Libraries/Models: Ppt-767 file upload models for storage and upload ([#219](https://github.com/PlaceOS/placeos-models/pull/219))
+- Libraries/Models [**storage**]: Added file extension and mime filter attributes ([#223](https://github.com/PlaceOS/placeos-models/pull/223))
+- Services/RestAPI: Add concierge permissions ppt-746 ([#355](https://github.com/PlaceOS/rest-api/pull/355))
+- Services/RestAPI: Ppt-767 file upload controller ([#357](https://github.com/PlaceOS/rest-api/pull/357))
+- Services/StaffAPI: Improve permissions checks ([#292](https://github.com/PlaceOS/staff-api/pull/292))
+- Services/StaffAPI: Add support for public.read and public.write scopes
+
+### Fixed
+
+- Clients/Typescript [**realtime**]: Make disconnect related info more clear
+- Interfaces/Backoffice [**admin**]: Fix selecting users for api key assignment (ppt-780)
+- Interfaces/Backoffice [**zones**]: Execute method on zone's systems instead of template system (ppt-812))
+- Interfaces/Templates [**bookings**]: Fix setting host for visitor bookings
+- Interfaces/Templates [**concierge**]: Fix approve/decline of guest (ppt-762)
+- Interfaces/Templates [**form-fields**]: Add setting for default recurrence period
+- Interfaces/Templates [**explore**]: Show desks as busy when auto checkin enable
+- Interfaces/Templates [**explore**]: Fix handling non-existant desk restrictions
+- Interfaces/Templates: Save selected building
+- Interfaces/Templates [**explore**]: Fix checked in check for desks
+- Interfaces/Templates [**bookings**]: Fix resource list update on building change (ppt-763)
+- Interfaces/Templates [**events**]: Add booking rule for available hours
+- Interfaces/Templates [**catering**]: Fix sorting of catering orders (proj-213)
+- Interfaces/Templates [**concierge**]: Fix report overflow (proj-208)
+- Interfaces/Templates [**form-fields**]: Change default recurrence period to 180 days (ppt-757)
+- Interfaces/Templates [**events**]: Update clear routes for form data (ppt-764)
+- Interfaces/Templates [**concierge**]: Fix handling building switches on booking room select (ppt-764)
+- Interfaces/Templates [**org**]: Load region before setting building
+- Interfaces/Templates [**org**]: Fix saving selected regions
+- Interfaces/Templates [**concierge**]: Fix adding/editing new parking spaces
+- Interfaces/Templates: Disable time field when all day for space and desk select
+- Interfaces/Templates [**form-fields**]: Allow forcing of displayed value on duration field
+- Interfaces/Templates [**booking-panel**]: Prevent checkin when disable_book_now true (ppt-778)
+- Interfaces/Templates: Tweak handling of all day for events and bookings (ppt-781)
+- Interfaces/Templates [**explore**]: Update svg-viewer and ordering of interactions (ppt-782)
+- Interfaces/Templates [**events**]: Remove custom all day logic
+- Interfaces/Templates [**bookings**]: Remove custom all day logic
+- Interfaces/Templates: Fix pin position (ppt-785)
+- Interfaces/Templates [**concierge**]: Update date options on new ui (ppt-784)
+- Interfaces/Templates [**bookings**]: Fix expanded map for booking details modal (ppt-679)
+- Interfaces/Templates [**concierge**]: Fix tagging newly created zones (ppt-788)
+- Interfaces/Templates [**concierge**]: Fix table scrolling for level manager (ppt-799)
+- Interfaces/Templates [**concierge**]: Fix removing buildings (ppt-798)
+- Interfaces/Templates [**form-fields**]: Fix plural form text on recurrence modal (ppt-805)
+- Interfaces/Templates [**workplace**]: Fix routing typo for desk booking success view (ppt-803)
+- Interfaces/Templates [**users**]: Fix email case sensitivity for availability display (ppt-811)
+- Interfaces/Templates [**explore**]: Handle checked in desks (ppt-809)
+- Interfaces/Templates [**explore**]: Fix checkin status handling for desks
+- Interfaces/Templates [**concierge**]: Fix booking desks from the map view (ppt-808)
+- Interfaces/Templates [**explore**]: Add ability to load desk status for future days
+- Interfaces/Templates [**explore**]: Add ability to hide zones toggle
+- Interfaces/Templates [**concierge**]: Fix setting guests as remote
+- Interfaces/Templates [**events**]: Fix saving event when setting setup and breakdown times (ppt-720)
+- Interfaces/Templates [**form-fields**]: Update support email requests (ppt-823)
+- Interfaces/Templates [**workplace**]: Fix minor runtime errors in schedule
+- Interfaces/Templates [**concierge**]: Allow custom reports as only reports on sidebar (ppt-816)
+- Interfaces/Templates [**concierge**]: Fix data selector on day view (ppt-784)
+- Interfaces/Templates [**explore**]: Tweak handling of desk data
+- Libraries/Models: Add skip_authorization field to the doorkeeper ([#218](https://github.com/PlaceOS/placeos-models/pull/218))
+- Libraries/Models [**zone**]: Find root zone id without being persisted ([#220](https://github.com/PlaceOS/placeos-models/pull/220))
+- Libraries/Models [**control_system**]: Reject invalid module ids at save ([#221](https://github.com/PlaceOS/placeos-models/pull/221))
+- Libraries/Models [**survey**]: Make survey::invitation.list return unsent invites if their sent state is null in the db and sent = false is passed to the function ([#222](https://github.com/PlaceOS/placeos-models/pull/222))
+- Services/RestAPI: Allow start and stop of modules
+- Services/StaffAPI [**events**]: [ppt-723] failed metadata lookup on recurring booking edit ([#290](https://github.com/PlaceOS/staff-api/pull/290))
+- Services/StaffAPI [**events**]: Patch_metadata attempts to obtain client
+- Services/StaffAPI [**calendar**]: Availability of timeslots imidiatly preceding another meeting ([#289](https://github.com/PlaceOS/staff-api/pull/289))
+- Services/StaffAPI [**guests**]: Invalid sql generated when there were no meetings
+- Services/StaffAPI [**calendar**]: Availability check ([#293](https://github.com/PlaceOS/staff-api/pull/293))
+- Services/StaffAPI [**calendars**]: Availability status request
+
+### Changed
+
+- Services/StaffAPI [**events**]: [ppt 503] replace #not_nil! with more specific errors ([#287](https://github.com/PlaceOS/staff-api/pull/287))
+
 ## 2.2308.0
 
 ### Fixed
