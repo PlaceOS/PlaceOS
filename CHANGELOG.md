@@ -5,6 +5,14 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2308.2
+
+### Fixed
+
+- Interfaces/Templates [**bookings**]: Fix setting for no_approvals with bookings (ppt-829)
+- Interfaces/Templates [**spaces**]: Force selected spaces to one item without setting (ppt-827)
+- Services/StaffAPI [**guests**]: query failed where there were no bookings
+
 ## 2.2308.1
 
 ### Added
