@@ -11,9 +11,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 - Interfaces/Templates [**bookings**]: Fix setting for no_approvals with bookings (ppt-829)
 - Interfaces/Templates [**spaces**]: Force selected spaces to one item without setting (ppt-827)
-- Interfaces/Templates [**concierge**]: Fix listing of guests for building
-- Interfaces/Templates [**bookings**]: Fix zone data when editing bookings
-- Services/StaffAPI [**guests**]: Query where there are no bookings
+- Services/StaffAPI [**guests**]: query failed where there were no bookings
 
 ## 2.2308.1
 
