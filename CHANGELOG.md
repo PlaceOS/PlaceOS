@@ -5,6 +5,20 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2308.3
+
+### Fixed
+
+- Interfaces/Templates [**workplace**]: Fix image overflow for landing availability (ppt-843)
+- Interfaces/Templates [**concierge**]: Fix sorting of desk bookings by name (ppt-842)
+- Libraries/Models [**storage**]: Clean extension prior to whitelist check
+
+### Added
+
+- Interfaces/Backoffice [**admin**]: Add section and logic for upload storage providers (ppt-820)
+- Services/RestAPI [**uploads**]: Improve documentation
+- Services/StaffAPI [**events**]: Skip some checks when in delegated mode ([#294](https://github.com/PlaceOS/staff-api/pull/294))
+
 ## 2.2308.2
 
 ### Fixed
