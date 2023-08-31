@@ -5,6 +5,40 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2308.3
+
+### Fixed
+
+- Interfaces/Backoffice: Add origin to private upload links
+- Interfaces/Templates [**concierge**]: Fix setting event visitors to remote
+- Interfaces/Templates [**explore**]: Show "desk" on error if desk has no name
+- Interfaces/Templates [**bookings**]: Fix setting date on edits
+- Interfaces/Templates [**explore**]: Fix errors with desk bookings
+- Interfaces/Templates [**bookings**]: Fix all day fields
+- Interfaces/Templates [**workplace**]: Tweak handling of booking errors
+- Interfaces/Templates [**concierge**]: Fix showing custom reports
+- Interfaces/Templates [**workplace**]: Fix data reflection of query parameters
+- Interfaces/Templates [**map-kiosk**]: Update level select button active styling
+- Interfaces/Templates [**bookings**]: Fix setting active resource for bookings
+- Interfaces/Templates [**explore**]: Clean binding logic for desk statuses
+- Interfaces/Templates [**workplace**]: Fix image overflow for landing availability (ppt-843)
+- Interfaces/Templates [**concierge**]: Fix sorting of desk bookings by name (ppt-842)
+- Interfaces/Templates [**concierge**]: Update desk booking list to more match new design
+- Interfaces/Templates [**booking-panel**]: Update start meeting logic
+- Interfaces/Templates [**booking-panel**]: Add pending expiry check to current event
+- Interfaces/Templates [**booking-panel**]: Fix ending meetings when pending period expires
+- Libraries/Models [**storage**]: Clean extension prior to filter
+- Services/RestAPI [**uploads**]: Remove . from ext check
+- Services/RestAPI [**uploads**]: Remove . from ext check"
+
+### Added
+
+- Interfaces/Backoffice: Update cloud-uploads lib and add permissions to uploads (ppt-824)
+- Interfaces/Backoffice [**admin**]: Add section and logic for upload storage providers (ppt-820)
+- Interfaces/Templates: Add support for authenticated images to all apps
+- Services/RestAPI [**uploads**]: Improve documentation
+- Services/StaffAPI [**events**]: Skip some checks when in delegated mode ([#294](https://github.com/PlaceOS/staff-api/pull/294))
+
 ## 2.2308.2
 
 ### Fixed
