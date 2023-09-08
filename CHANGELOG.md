@@ -9,48 +9,23 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**resources**]: Allow custom endpoints for query calls
-- Clients/Typescript [**resources**]: Fix next method for query calls
-- Clients/Typescript: Minor wording changes
 - Interfaces/Templates [**events**]: Tweak handling of availability when editing bookings (ppt-839)
-- Interfaces/Templates [**concierge**]: Cleanup logic to get booking data for reports
-- Interfaces/Templates: Allow user to use new version if they don't use the notification (ppt-865)
 - Interfaces/Templates [**concierge**]: Fix reload after adding a building (ppt-814)
-- Interfaces/Templates [**org**]: Add methods modifying org zones
-- Interfaces/Templates [**explore**]: Fix handling user data from desk bookings
 - Interfaces/Templates [**concierge**]: Add option to add new categories from management modal (ppt-857)
 - Interfaces/Templates [**concierge**]: Add uncategorised option to asset manager (ppt-857)
-- Interfaces/Templates [**concierge**]: Handle pagination for reports data
 - Interfaces/Templates [**bookings**]: Make host booking parent for group desk bookings (ppt-838)
 - Interfaces/Templates [**bookings**]: Fix warning for unavailable group booking members (ppt-851)
-- Interfaces/Templates: Fix paginated requests
 - Interfaces/Templates [**bookings**]: Fix setting date when in past (ppt-836)
 - Interfaces/Templates: Fix handling toggling of all day when editing bookings (ppt-839)
 - Interfaces/Templates [**concierge**]: Fix approve/decline of guests and view styling (ppt-869)
-- Interfaces/Templates [**booking-panel**]: Fix duration value when duration settings undefined
 - Interfaces/Templates [**concierge**]: Fix check-in/out of desk bookings (ppt-879)
 - Interfaces/Templates [**concierge**]: Fix time display for guests from calendar events (ppt-878)
 - Interfaces/Templates [**events**]: Fix availability check (ppt-839)
 - Interfaces/Templates [**events**]: Update day of week for recurrence on date change (ppt-846)
-- Interfaces/Templates [**concierge**]: Fix typo in decline desk option
-- Interfaces/Templates: Fix upload auth on ios
-- Interfaces/Templates: Fix cookie path for upload redirect
-- Interfaces/Templates: Set api key in header instead of cookie
 - Interfaces/Templates [**events**]: Fix setting setup/breakdown to 0 (ppt-881)
 - Interfaces/Templates [**workplace**]: Fix displayed time when editing in progress booking (ppt-734)
 - Libraries/Models [**storage**]: Fix mime types getting overwritten issue ([#224](https://github.com/PlaceOS/placeos-models/pull/224))
-- Libraries/Models [**api_key**]: Permissions are stored as an integer in the database
-- Libraries/Models [**Enum::ValueConverter**]: Support nilable integer enums
-- Libraries/Models [**api_key**]: Default permissions to be user
-- Libraries/Models [**api_key**]: Allow permissions to be nil
-- Libraries/Models [**api_key**]: Deal with nil values in the database
-- Libraries/Models [**api_key**]: Public json to return permissions as a string
-- Libraries/Models [**api_key**]: Allow field to be nillable
-- Libraries/Models [**api_key**]: Allow string or integer for setting permissions
 - Services/Init [**generate-secrets**]: Rails cookie secret is too long for nginx ([#87](https://github.com/PlaceOS/init/pull/87))
-- Services/Nginx [**entrypoint**]: Revert file mode to being executable by all
-- Services/Nginx [**entrypoint.sh**]: Correctly set https_redirect_port
-- Services/Nginx [**entrypoint.sh**]: Permissions error
 - Services/SearchIngest: Api-key indexing resolved via dependency bump [ppt-783]
 - Services/StaffAPI: Unauthorized if delegated access has expired ([#296](https://github.com/PlaceOS/staff-api/pull/296)) [ppt-731]
 
@@ -62,7 +37,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Services/Auth [**sessions**]: Add a verification cookie [ppt-870] [ppt-872] ([#111](https://github.com/PlaceOS/auth/pull/111))
 - Services/Nginx: Add method for protecting static assets ([#24](https://github.com/PlaceOS/nginx/pull/24)) [ppt-872]
 - Services/RestAPI [**uploads**]: Improve upload validation ([#360](https://github.com/PlaceOS/rest-api/pull/360))
-- Services/StaffAPI [**current-user**]: Match options in rest-api
 - Services/Triggers: Refactor triggers to use place resource ([#43](https://github.com/PlaceOS/triggers/pull/43))
 
 ## 2.2308.3
