@@ -5,6 +5,40 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2309.0
+
+### Fixed
+
+- Interfaces/Templates [**events**]: Tweak handling of availability when editing bookings (ppt-839)
+- Interfaces/Templates [**concierge**]: Fix reload after adding a building (ppt-814)
+- Interfaces/Templates [**concierge**]: Add option to add new categories from management modal (ppt-857)
+- Interfaces/Templates [**concierge**]: Add uncategorised option to asset manager (ppt-857)
+- Interfaces/Templates [**bookings**]: Make host booking parent for group desk bookings (ppt-838)
+- Interfaces/Templates [**bookings**]: Fix warning for unavailable group booking members (ppt-851)
+- Interfaces/Templates [**bookings**]: Fix setting date when in past (ppt-836)
+- Interfaces/Templates: Fix handling toggling of all day when editing bookings (ppt-839)
+- Interfaces/Templates [**concierge**]: Fix approve/decline of guests and view styling (ppt-869)
+- Interfaces/Templates [**concierge**]: Fix check-in/out of desk bookings (ppt-879)
+- Interfaces/Templates [**concierge**]: Fix time display for guests from calendar events (ppt-878)
+- Interfaces/Templates [**events**]: Fix availability check (ppt-839)
+- Interfaces/Templates [**events**]: Update day of week for recurrence on date change (ppt-846)
+- Interfaces/Templates [**events**]: Fix setting setup/breakdown to 0 (ppt-881)
+- Interfaces/Templates [**workplace**]: Fix displayed time when editing in progress booking (ppt-734)
+- Libraries/Models [**storage**]: Fix mime types getting overwritten issue ([#224](https://github.com/PlaceOS/placeos-models/pull/224))
+- Services/Init [**generate-secrets**]: Rails cookie secret is too long for nginx ([#87](https://github.com/PlaceOS/init/pull/87))
+- Services/SearchIngest: Api-key indexing resolved via dependency bump [ppt-783]
+- Services/StaffAPI: Unauthorized if delegated access has expired ([#296](https://github.com/PlaceOS/staff-api/pull/296)) [ppt-731]
+
+### Added
+
+- Interfaces/Templates [**concierge**]: Add ability to manage asset categories (ppt-857)
+- Interfaces/Templates [**concierge**]: Add pagination handling to desk booking list (ppt-860)
+- Libraries/Models [**upload**]: Ensures upload file names are valid across systems ([#226](https://github.com/PlaceOS/placeos-models/pull/226))
+- Services/Auth [**sessions**]: Add a verification cookie [ppt-870] [ppt-872] ([#111](https://github.com/PlaceOS/auth/pull/111))
+- Services/Nginx: Add method for protecting static assets ([#24](https://github.com/PlaceOS/nginx/pull/24)) [ppt-872]
+- Services/RestAPI [**uploads**]: Improve upload validation ([#360](https://github.com/PlaceOS/rest-api/pull/360))
+- Services/Triggers: Refactor triggers to use place resource ([#43](https://github.com/PlaceOS/triggers/pull/43))
+
 ## 2.2308.3
 
 ### Fixed
