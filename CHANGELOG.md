@@ -5,6 +5,34 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2309.1
+
+### Fixed
+
+- Interfaces/Templates [**bookings**]: Fix map select filter for desk select modal (ppt-892)
+- Interfaces/Templates [**concierge**]: Minor tweaks to desk bookings paginations (ppt-860)
+- Interfaces/Templates [**concierge**]: Fix overflow of desk book modal (ppt-898)
+- Interfaces/Templates: Fix image uploads (ppt-897)
+- Interfaces/Templates [**common**]: Tweak ms outlook links (ppt-900)
+- Interfaces/Templates [**events**]: Force status locally after checkin (ppt-895)
+- Interfaces/Templates [**concierge**]: Fix 24 hour time on new event form (ppt-848)
+- Interfaces/Templates [**concierge**]: Remove qr option on desk bookings list (ppt-902)
+- Interfaces/Templates [**explore**]: Fix typo in explore space booking success toast (ppt-906)
+- Interfaces/Templates [**visitor-kiosk**]: Fix input field mapping for visitor org data (ppt-910)
+- Services/Auth [**sessions**]: Ignore login requests with redirects to files
+- Services/StaffAPI [**bookings**]: Missing save on approve and reject routes
+
+### Added
+
+- Interfaces/Templates [**workplace**]: Add setting to allow 24 hour time (ppt-848)
+- Interfaces/Templates: Add ability to set the start of the week day for calendars (ppt-849)
+- Libraries/Models [**event_metadata**]: Render rejected bookings
+- Services/RestAPI: Ppt-864 fix and capture online and last seen edge core ([#361](https://github.com/PlaceOS/rest-api/pull/361))
+
+### Changed
+
+- Interfaces/Templates [**booking-panel**]: Clean up check-in/start meeting logic (ppt-899)
+
 ## 2.2309.0
 
 ### Fixed
