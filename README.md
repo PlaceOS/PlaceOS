@@ -88,28 +88,28 @@ These reference commits used to construct the built artefacts at each release.
 
 ### Libraries
 
-[![Models](https://img.shields.io/github/workflow/status/PlaceOS/models/CI?label=models&logo=github)](https://github.com/PlaceOS/models/actions/workflows/ci.yml)
+[![Models](https://img.shields.io/github/actions/workflow/status/PlaceOS/models/ci.yml?label=models&logo=github)](https://github.com/PlaceOS/models/actions/workflows/ci.yml)
 
-[![Resource](https://img.shields.io/github/workflow/status/place-labs/resource/CI?label=resource&logo=github)](https://github.com/place-labs/resource/actions/workflows/ci.yml)
+[![Resource](https://img.shields.io/github/actions/workflow/status/place-labs/resource/ci.yml?label=resource&logo=github)](https://github.com/place-labs/resource/actions/workflows/ci.yml)
 
-[![Driver](https://img.shields.io/github/workflow/status/PlaceOS/driver/CI?label=driver&logo=github)](https://github.com/PlaceOS/driver/actions/workflows/ci.yml)
+[![Driver](https://img.shields.io/github/actions/workflow/status/PlaceOS/driver/ci.yml?label=driver&logo=github)](https://github.com/PlaceOS/driver/actions/workflows/ci.yml)
 
 ### Services
 
-[![Build](https://img.shields.io/github/workflow/status/PlaceOS/build/CI?label=build&logo=github)](https://github.com/PlaceOS/build/actions/workflows/ci.yml)
+[![Build](https://img.shields.io/github/actions/workflow/status/PlaceOS/build/ci.yml?label=build&logo=github)](https://github.com/PlaceOS/build/actions/workflows/ci.yml)
 
-[![Core](https://img.shields.io/github/workflow/status/PlaceOS/core/CI?label=core&logo=github)](https://github.com/PlaceOS/core/actions/workflows/ci.yml)
+[![Core](https://img.shields.io/github/actions/workflow/status/PlaceOS/core/ci.yml?label=core&logo=github)](https://github.com/PlaceOS/core/actions/workflows/ci.yml)
 
-[![Dispatch](https://img.shields.io/github/workflow/status/PlaceOS/dispatch/CI?label=dispatch&logo=github)](https://github.com/PlaceOS/dispatch/actions/workflows/ci.yml)
+[![Dispatch](https://img.shields.io/github/actions/workflow/status/PlaceOS/dispatch/ci.yml?label=dispatch&logo=github)](https://github.com/PlaceOS/dispatch/actions/workflows/ci.yml)
 
-[![Frontend Loader](https://img.shields.io/github/workflow/status/PlaceOS/frontend-loader/CI?label=frontend-loader&logo=github)](https://github.com/PlaceOS/frontend-loader/actions/workflows/ci.yml)
+[![Frontend Loader](https://img.shields.io/github/actions/workflow/status/PlaceOS/frontend-loader/ci.yml?label=frontend-loader&logo=github)](https://github.com/PlaceOS/frontend-loader/actions/workflows/ci.yml)
 
-[![Rest API](https://img.shields.io/github/workflow/status/PlaceOS/rest-api/CI?label=rest-api&logo=github)](https://github.com/PlaceOS/rest-api/actions/workflows/ci.yml)
+[![Rest API](https://img.shields.io/github/actions/workflow/status/PlaceOS/rest-api/ci.yml?label=rest-api&logo=github)](https://github.com/PlaceOS/rest-api/actions/workflows/ci.yml)
 
-[![Search Ingest](https://img.shields.io/github/workflow/status/PlaceOS/search-ingest/CI?label=search-ingest&logo=github)](https://github.com/PlaceOS/search-ingest/actions/workflows/ci.yml)
+[![Search Ingest](https://img.shields.io/github/actions/workflow/status/PlaceOS/search-ingest/ci.yml?label=search-ingest&logo=github)](https://github.com/PlaceOS/search-ingest/actions/workflows/ci.yml)
 
-[![Source](https://img.shields.io/github/workflow/status/PlaceOS/source/CI?label=source&logo=github)](https://github.com/PlaceOS/source/actions/workflows/ci.yml)
+[![Source](https://img.shields.io/github/actions/workflow/status/PlaceOS/source/ci.yml?label=source&logo=github)](https://github.com/PlaceOS/source/actions/workflows/ci.yml)
 
-[![Staff API](https://img.shields.io/github/workflow/status/PlaceOS/staff-api/CI?label=staff-api&logo=github)](https://github.com/PlaceOS/staff-api/actions/workflows/ci.yml)
+[![Staff API](https://img.shields.io/github/actions/workflow/status/PlaceOS/staff-api/ci.yml?label=staff-api&logo=github)](https://github.com/PlaceOS/staff-api/actions/workflows/ci.yml)
 
-[![Triggers](https://img.shields.io/github/workflow/status/PlaceOS/triggers/CI?label=triggers&logo=github)](https://github.com/PlaceOS/triggers/actions/workflows/ci.yml)
+[![Triggers](https://img.shields.io/github/actions/workflow/status/PlaceOS/triggers/ci.yml?label=triggers&logo=github)](https://github.com/PlaceOS/triggers/actions/workflows/ci.yml)
