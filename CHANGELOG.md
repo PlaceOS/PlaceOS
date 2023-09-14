@@ -5,6 +5,56 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2309.1
+
+### Fixed
+
+- Interfaces/Templates [**org**]: Prevent setting invalid buildings
+- Interfaces/Templates [**concierge**]: Handling desk bookingsinitial page loading before buildings loaded
+- Interfaces/Templates [**bookings**]: Fix map select filter for desk select modal (ppt-892)
+- Interfaces/Templates [**concierge**]: Minor tweaks to desk bookings paginations (ppt-860)
+- Interfaces/Templates [**concierge**]: Fix approval view errors
+- Interfaces/Templates [**concierge**]: Fix overflow of desk book modal (ppt-898)
+- Interfaces/Templates: Fix image uploads (ppt-897)
+- Interfaces/Templates [**common**]: Tweak ms outlook links (ppt-900)
+- Interfaces/Templates [**events**]: Force status locally after checkin (ppt-895)
+- Interfaces/Templates: Fix setting availability check time for assets
+- Interfaces/Templates [**assets**]: Fix api query params for availability
+- Interfaces/Templates [**assets**]: Set parent_id on asset request creation
+- Interfaces/Templates [**events**]: Cleanup error handling for asset booking
+- Interfaces/Templates [**assets**]: Remove parent_id from bookings
+- Interfaces/Templates [**events**]: Fix removing the event on asset booking failure
+- Interfaces/Templates [**concierge**]: Fix search for asset manager requests list
+- Interfaces/Templates [**concierge**]: Fix initial date selector state when switch asset manager tabs
+- Interfaces/Templates [**concierge**]: Fix 24 hour time on new event form (ppt-848)
+- Interfaces/Templates [**concierge**]: Remove qr option on desk bookings list (ppt-902)
+- Interfaces/Templates [**explore**]: Fix 24 hour time on booking modal
+- Interfaces/Templates: Fix handling of query params when loading app
+- Interfaces/Templates [**concierge**]: Add desk manage actions
+- Interfaces/Templates [**explore**]: Fix typo in explore space booking success toast (ppt-906)
+- Interfaces/Templates [**visitor-kiosk**]: Fix input field mapping for visitor org data (ppt-910)
+- Services/Auth [**coauth_controller**]: Don't set continue to files
+- Services/Auth: Fallback routes and x-api-key redirects
+- Services/Auth [**sessions_controller**]: Support x-api-key query params in hash
+- Services/Auth [**sessions**]: Ignore login requests with redirects to files
+- Services/Auth [**sessions_controller**]: Use appropriate uri parser
+- Services/StaffAPI [**bookings**]: Missing save on approve and reject routes
+
+### Added
+
+- Interfaces/Templates [**workplace**]: Add setting to allow 24 hour time (ppt-848)
+- Interfaces/Templates [**concierge**]: Add ability to toggle between 24 hour time
+- Interfaces/Templates [**concierge**]: Add ability for user to configure 24 hour time usage (ppt-848)
+- Interfaces/Templates [**form-fields**]: Add settings to force upload config
+- Interfaces/Templates: Add ability to set the start of the week day for calendars (ppt-849)
+- Libraries/Models [**event_metadata**]: Render rejected bookings
+- Libraries/Models: Ppt-864 added fields to capture online and last seen activity ([#227](https://github.com/PlaceOS/placeos-models/pull/227))
+- Services/RestAPI: Ppt-864 fix and capture online and last seen activity ([#361](https://github.com/PlaceOS/rest-api/pull/361))
+
+### Changed
+
+- Interfaces/Templates [**booking-panel**]: Clean up check-in/start meeting logic (ppt-899)
+
 ## 2.2309.0
 
 ### Fixed
