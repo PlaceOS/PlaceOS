@@ -5,6 +5,50 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2310.0
+
+### Fixed
+
+
+- Interfaces/Templates [**concierge**]: Fix desk approved/decline (ppt-917)
+- Interfaces/Templates [**catering**]: Fix updating order status (ppt-912)
+- Interfaces/Templates [**concierge**]: Refresh desk booking list after creation (ppt-907)
+- Interfaces/Templates [**visitor-kiosk**]: Fix error displayed when invalid email entered (ppt-911)
+- Interfaces/Templates [**bookings**]: Minor tweak to desk restriction handling (ppt-914)
+- Interfaces/Templates [**concierge**]: Fix logic for setting active level on room manager (ppt-919)
+- Interfaces/Templates [**workplace**]: Add extra details to success pages (ppt-821)
+- Interfaces/Templates [**concierge**]: Allow editing of desk/room restrictions (ppt-932)
+- Interfaces/Templates [**concierge**]: Tweaks to restrictions (ppt-932)
+- Interfaces/Templates: Auto-reload page on new version when setup as fixed device (ppt-944)
+- Interfaces/Templates [**bookings**]: Pass user email when checking availability (ppt-851)
+- Interfaces/Templates: Update auto-reload checks on new version (ppt-946, ppt-947)
+- Interfaces/Templates [**visitor-kiosk**]: Fix redirect on bootstrap (ppt-938)
+- Interfaces/Templates [**visitor-kiosk**]: Update qr scanning to match new format (ppt-942)
+- Interfaces/Templates [**workplace**]: Fix polling of events on landing (ppt-821)
+- Interfaces/Templates: Update ical file start/end for all day (ppt-940)
+- Interfaces/Templates: Tweak duration for all day bookings (ppt-929)
+- Interfaces/Templates [**concierge**]: Display checkin errors for desk bookings (ppt-949)
+- Interfaces/Templates [**explore**]: Fix status display of parking spaces (ppt-950)
+- Interfaces/Templates [**workplace**]: Fix auto-fill of desk from qr code (ppt-953)
+- Interfaces/Templates [**concierge**]: Fix printing qr code for desks (ppt-952)
+- Interfaces/Templates [**concierge**]: Fix checking in event guests (ppt-538)
+- Libraries/Models [**booking**]: Check for clashing in a transaction ppt-931 ([#228](https://github.com/PlaceOS/placeos-models/pull/228))
+- Services/Nginx: Remove request uri when redirecting to https [ppt-772]
+- Services/StaffAPI [**bookings**]: Rejected / approved status [ppt-917]
+- Services/StaffAPI [**events**]: Update guest details [ppt-910]
+- Services/StaffAPI [**calendars**]: [ppt-945] remove busy times that are outside of the period in #free_busy ([#300](https://github.com/PlaceOS/staff-api/pull/300))
+- Services/StaffAPI [**events**]: Render rejected linked bookings [ppt-915]
+- Services/StaffAPI [**events**]: User checkin with custom calendar [ppt-538]
+
+### Added
+
+- Interfaces/Templates [**booking-panel**]: Add ability to end in progress meetings (ppt-909)
+- Interfaces/Templates: Add room restrictions (ppt-927)
+- Interfaces/Templates [**bookings**]: Add status display for linked asset bookings (ppt-915)
+- Libraries/Models [**migrations**]: Add index on bookings parent_id
+- Libraries/Models [**migrations**]: Move id indexes to hash indexes
+- Libraries/Models [**event_metadata**]: Add setup/breakdown time ([#229](https://github.com/PlaceOS/placeos-models/pull/229))
+
 ## 2.2309.1
 
 ### Fixed
