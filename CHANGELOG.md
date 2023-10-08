@@ -10,9 +10,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Fixed
 
 - Interfaces/Templates [**concierge**]: Fix check in/out of guests (ppt-954)
-- Interfaces/Templates [**explore**]: Fix displaying errors on space bookings
-- Interfaces/Templates [**events**]: Fix check in state of attendees when init from booking
-- Libraries/Models [**attendee**]: Resolve compile issue
 
 ### Added
 
