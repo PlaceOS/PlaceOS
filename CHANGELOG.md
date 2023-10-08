@@ -5,6 +5,19 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2310.1
+
+### Fixed
+
+- Interfaces/Templates [**concierge**]: Fix check in/out of guests (ppt-954)
+- Interfaces/Templates [**explore**]: Fix displaying errors on space bookings
+- Interfaces/Templates [**events**]: Fix check in state of attendees when init from booking
+- Libraries/Models [**attendee**]: Resolve compile issue
+
+### Added
+
+- Libraries/Models [**attendee**]: Ensure booking checked in if guest is ([#230](https://github.com/PlaceOS/placeos-models/pull/230))
+
 ## 2.2310.0
 
 ### Fixed
