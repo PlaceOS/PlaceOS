@@ -7,6 +7,14 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ## 2.2310.2
 
+### Fixed
+
+- Clients/Typescript [**auth**]: Add catch for errors when re-authorising
+- Clients/Typescript [**auth**]: Add catch for errors when re-authorising"
+- Clients/Typescript [**auth**]: Fix invalid handling of errors when loading authority
+- Interfaces/Templates: Fix initialising some services before authority has loaded
+- Services/StaffAPI [**bookings**]: Pagination using created ascending order ([#301](https://github.com/PlaceOS/staff-api/pull/301))
+
 ## 2.2310.1
 
 ### Fixed
