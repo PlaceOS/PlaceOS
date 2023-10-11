@@ -5,6 +5,19 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2310.3
+
+### Fixed
+
+- Clients/Typescript [**auth**]: Prevent error when getting token
+- Clients/Typescript [**auth**]: Simplify check for api key when checking isfixed
+- Libraries/Models [**parsing**]: improve assign_attributes from objects parsed from JSON
+
+### Added
+
+- Interfaces/Templates: Add indoor-maps component and initmapview method to wpa
+- Interfaces/Templates: Use geolocation api to initiate map location at user location
+
 ## 2.2310.2
 
 ### Fixed
