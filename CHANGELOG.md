@@ -5,6 +5,44 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2310.3
+
+### Fixed
+
+- Clients/Typescript: Revert auth change
+- Clients/Typescript [**auth**]: Prevent error when getting token
+- Clients/Typescript [**auth**]: Simplify check for api key when checking isfixed
+
+### Changed
+
+- Interfaces/Templates: Add init directions method
+- Interfaces/Templates: Add live data toggle
+- Interfaces/Templates: Add search results styling and transport mode ui
+- Interfaces/Templates: Add transport modes and routing
+- Interfaces/Templates: Update indoor-maps.component
+- Interfaces/Templates: Refactor room-status service to render available rooms in green
+- Interfaces/Templates: Move logic from room status service into indoor maps component, remove unused code
+- Interfaces/Templates: Get available spaces from explore state service and use asynchandler
+- Interfaces/Templates: Get statuses of available resources from booking form service not just room statuses
+- Interfaces/Templates: Work on using map_styles from explore state service to render polygons
+- Interfaces/Templates: Room status rendering working, added more mock rooms
+- Interfaces/Templates: Make renderspacestatus method faster by calling _setpolygonfill asynchronously, update string manipulation of key in styles
+- Interfaces/Templates: Map actions over click events, delete unused code
+- Interfaces/Templates: Toggle between svg and mapsindoors views based on whether maps api keys exist
+- Interfaces/Templates: Handle error alerting to user when geolocation is not turned on, geolocation is not supported, origin location outside of map zone, and when a route can't be found using the api
+- Interfaces/Templates: Use watchposition() geolocation method to detect changes in coordinates and re-route
+- Interfaces/Templates: Inject script inserting api keys into body instead of head
+- Interfaces/Templates: Replace bind method with arrow functions for readability
+- Interfaces/Templates: Allow custom coordinates to be used as fixed point on map
+- Interfaces/Templates: Hide explore-map-controls and explore-zoom-controls if showing indoormaps
+- Interfaces/Templates: Handle level and building changes
+- Interfaces/Templates: Readability and style tweaks
+
+### Added
+
+- Interfaces/Templates: Add indoor-maps component and initmapview method to wpa
+- Interfaces/Templates: Use geolocation api to initiate map location at user location
+
 ## 2.2310.2
 
 ### Fixed
