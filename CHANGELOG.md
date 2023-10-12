@@ -9,7 +9,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates: Force all day booking to specific period
 - Services/RestAPI [**root**]: Pg healthcheck with aurora db
 - Services/SearchIngest [**root**]: Pg healthcheck with aurora db
 - Services/Source [**root**]: Pg healthcheck with aurora db
