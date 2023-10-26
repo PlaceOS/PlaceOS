@@ -5,6 +5,52 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2310.5
+
+### Fixed
+
+- Interfaces/Templates [**workplace**]: Fix end date values for limiting user date selection (ppt-971)
+- Interfaces/Templates [**concierge**]: Tweaks to printing qr codes (ppt-952)
+- Interfaces/Templates [**concierge**]: Fix checking out guests (ppt-954)
+- Interfaces/Templates [**concierge**]: Disable checkin/out for desks after checkout (ppt-879)
+- Interfaces/Templates [**booking-panel**]: Add new custom status text when meeting is checked in early (ppt-976)
+- Interfaces/Templates [**bookings**]: Fix setting initial level when select desks from map (ppt-973)
+- Interfaces/Templates: Remove title attribute from custom table cells (ppt-979)
+- Interfaces/Templates [**concierge**]: Tweaks to printing qr codes (ppt-952)
+- Interfaces/Templates [**visitor-kiosk**]: Change date format to be less ambiguous (ppt-983)
+- Interfaces/Templates [**visitor-kiosk**]: Fix visitor checkin (ppt-982)
+- Interfaces/Templates [**visitor-kiosk**]: Fix visitor lookup for standalone bookings (ppt-986)
+- Interfaces/Templates [**form-fields**]: Remove space as item separator (ppt-984)
+- Interfaces/Templates [**visitor-kiosk**]: Tweak to handling checkin for visitor booking (ppt-982)
+- Interfaces/Templates [**visitor-kiosk**]: Minor fix to checking in visitors (ppt-982)
+- Interfaces/Templates [**concierge**]: Make id field for desks bigger (ppt-988)
+- Interfaces/Templates [**concierge**]: Fix asset manager product view overflow (ppt-997)
+- Interfaces/Templates [**workplace**]: Fix overflow of flow success views (ppt-1000)
+- Interfaces/Templates [**catering**]: Fix updating ui on room availability changes (ppt-1016)
+- Interfaces/Templates [**concierge**]: Tweak nav for asset manager (ppt-1002)
+- Interfaces/Templates [**bookings**]: Fix map colours on desk select modal (ppt-913)
+- Services/StaffAPI [**shard.lock**]: Bump office365 dep [proj-419]
+
+### Added
+
+- Interfaces/Templates: Add setting to default all day to true (ppt-964)
+- Interfaces/Templates: Simplify all day logic (ppt-962)
+- Interfaces/Templates [**concierge**]: Add ability to set availability rules for assets (ppt-956)
+- Interfaces/Templates [**workplace**]: Add asset restrictions to room booking flow (ppt-956)
+- Interfaces/Templates [**concierge**]: Update display of deleted bookings (ppt-998)
+- Interfaces/Templates [**concierge**]: Add view for locker bookings (ppt-1014)
+- Interfaces/Templates: Add ability to theme apps (ppt-416)
+- Libraries/Driver [**interface**]: Add llm chat capability interface
+- Libraries/Driver [**subscriptions**]: Log errors in subscription callbacks
+- Libraries/Models: Ppt-568 added models for chatbot ([#232](https://github.com/PlaceOS/placeos-models/pull/232))
+- Services/RestAPI: Ppt-568 added controller for chatbot ([#364](https://github.com/PlaceOS/rest-api/pull/364))
+- Services/StaffAPI [**events**]: Add setup/breakdown fields to destroyed signal
+- Services/StaffAPI [**events**]: Add setup/breakdown time to staffapi::event#aument ([#302](https://github.com/PlaceOS/staff-api/pull/302))
+
+### Changed
+
+- Interfaces/Templates: Clean up catering config modal styles and layout
+
 ## 2.2310.4
 
 ### Fixed
