@@ -9,17 +9,8 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**resources**]: Only add / to query calls with a path
-- Clients/Typescript [**realtime**]: Replay requests if websocket drops before they resolve
-- Interfaces/Templates [**workplace**]: Fix overflow for schedule sidebar filters (ppt-1020)
-- Interfaces/Templates [**concierge**]: Fix overflow on survey building list page
-- Interfaces/Templates [**workplace**]: Tweak topbar colours
-- Services/RestAPI [**chatgpt**]: Provide day of the week details
+- Services/RestAPI [**chatgpt**]: Provide day of the week details to GPT
 - Services/StaffAPI [**calendars**]: Availability removing busy items within period ([#303](https://github.com/PlaceOS/staff-api/pull/303))
-
-### Added
-
-- Interfaces/Templates [**assets**]: Add ability to disable asset booking for specific rooms
 
 ## 2.2310.5
 
