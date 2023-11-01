@@ -5,6 +5,13 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2311.0
+
+### Fixed
+
+- Services/RestAPI [**chatgpt**]: Provide day of the week details to GPT
+- Services/StaffAPI [**calendars**]: Availability removing busy items within period ([#303](https://github.com/PlaceOS/staff-api/pull/303))
+
 ## 2.2310.5
 
 ### Fixed
