@@ -5,6 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2311.0
+
+### Fixed
+
+- Clients/Typescript [**resources**]: Only add / to query calls with a path
+- Clients/Typescript [**realtime**]: Replay requests if websocket drops before they resolve
+- Interfaces/Templates [**workplace**]: Fix overflow for schedule sidebar filters (ppt-1020)
+- Interfaces/Templates [**concierge**]: Fix overflow on survey building list page
+- Interfaces/Templates [**workplace**]: Tweak topbar colours
+- Services/RestAPI [**chatgpt**]: Provide day of the week details
+- Services/StaffAPI [**calendars**]: Availability removing busy items within period ([#303](https://github.com/PlaceOS/staff-api/pull/303))
+
+### Added
+
+- Interfaces/Templates [**assets**]: Add ability to disable asset booking for specific rooms
+
 ## 2.2310.5
 
 ### Fixed
