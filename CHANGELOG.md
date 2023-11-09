@@ -5,6 +5,28 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2311.1
+
+### Fixed
+
+- Interfaces/Templates: Remove visitor usage from events and make them linked bookings (ppt-995, ppt-982)
+- Interfaces/Templates [**concierge**]: Various desk manage fixes (ppt-1030, ppt-1029, ppt-1028)
+- Interfaces/Templates [**bookings**]: Fix user tooltip display for desk select map (ppt-913)
+- Interfaces/Templates [**form-fields**]: Fix is between field on booking rules form (ppt-1031, ppt-1033)
+- Interfaces/Templates [**catering**]: Fix removing items with different options (proj-432)
+- Interfaces/Templates [**concierge**]: Re-add ability to checkin all visitors from room booking (ppt-982)
+- Interfaces/Templates [**concierge**]: Move room details icon to end of row (ppt-982)
+- Interfaces/Templates [**workplace**]: Fix action button colours (ppt-953)
+- Services/Auth: Verified cookie now valid forever
+- Services/Build_service [**task**]: Return valid driver name
+
+### Added
+
+- Libraries/Models [**chat_message**]: Track token usage
+- Services/Build: Cloud build service integration & crystal compatibility fixes ([#53](https://github.com/PlaceOS/build/pull/53))
+- Services/RestAPI [**chat_gpt**]: Compress chats once tasks are completed ([#366](https://github.com/PlaceOS/rest-api/pull/366))
+- Services/StaffAPI [**events**]: Provide strict requirements for processing responses [proj-433] [proj-420] [ppt-975] ([#304](https://github.com/PlaceOS/staff-api/pull/304))
+
 ## 2.2311.0
 
 ### Fixed
