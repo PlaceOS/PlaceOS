@@ -9,48 +9,23 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**realtime**]: Add id to websocket to allow requests for newer websocket connections
-- Clients/Typescript [**realtime**]: Retry bindings if they are in a pending state
-- Clients/Typescript: Remove debounce from binding rebind
-- Clients/Typescript [**realtime**]: Add method for listening to changes in websocket connection
 - Interfaces/Templates: Remove visitor usage from events and make them linked bookings (ppt-995, ppt-982)
-- Interfaces/Templates [**booking-panel**]: Fix text colour on status tile
-- Interfaces/Templates [**booking-panel**]: Only check pending cancel if room is pending
 - Interfaces/Templates [**concierge**]: Various desk manage fixes (ppt-1030, ppt-1029, ppt-1028)
 - Interfaces/Templates [**bookings**]: Fix user tooltip display for desk select map (ppt-913)
 - Interfaces/Templates [**form-fields**]: Fix is between field on booking rules form (ppt-1031, ppt-1033)
-- Interfaces/Templates [**concierge**]: Show checkin buttons for guests
-- Interfaces/Templates [**chat**]: Allow resuming chats on timeout
 - Interfaces/Templates [**catering**]: Fix removing items with different options (proj-432)
 - Interfaces/Templates [**concierge**]: Re-add ability to checkin all visitors from room booking (ppt-982)
-- Interfaces/Templates [**booking-panel**]: Prevent stale event data showing on the panel
 - Interfaces/Templates [**concierge**]: Move room details icon to end of row (ppt-982)
-- Interfaces/Templates [**visitor-kiosk**]: Fix displaying host name on check-in result page
-- Interfaces/Templates [**booking-panel**]: Fix check of current event details
-- Interfaces/Templates [**booking-panel**]: Debounce panel actions
-- Interfaces/Templates [**booking-panel**]: Fix check for next booking on confirm booking action
-- Interfaces/Templates [**booking-panel**]: Make sure system id available before binding to bookings
-- Interfaces/Templates [**booking-panel**]: Fix panel details template
 - Interfaces/Templates [**workplace**]: Fix action button colours (ppt-953)
-- Interfaces/Templates: Hide auto-approve when prevent booking active
-- Interfaces/Templates: Fix parsing dates into minute values for booking rules
-- Interfaces/Templates [**concierge**]: Fix scrolling to the top when new desk is added
-- Interfaces/Templates [**chat**]: Fix timestamp displayed for messages
 - Services/Auth: Verified cookie now valid forever
 - Services/Build_service [**task**]: Return valid driver name
 
 ### Added
 
-- Interfaces/Templates [**chat**]: Update response handling for longer server processes
-- Interfaces/Templates: Add service to refresh ui when in invalid state
 - Libraries/Models [**chat_message**]: Track token usage
 - Services/Build: Cloud build service integration & crystal compatibility fixes ([#53](https://github.com/PlaceOS/build/pull/53))
 - Services/RestAPI [**chat_gpt**]: Compress chats once tasks are completed ([#366](https://github.com/PlaceOS/rest-api/pull/366))
 - Services/StaffAPI [**events**]: Provide strict requirements for processing responses [proj-433] [proj-420] [ppt-975] ([#304](https://github.com/PlaceOS/staff-api/pull/304))
-
-### Changed
-
-- Interfaces/Templates: Map mapindoors floor index to buildinglevel id
 
 ## 2.2311.0
 
