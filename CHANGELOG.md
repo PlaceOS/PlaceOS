@@ -5,6 +5,219 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2312.0
+
+### Fixed
+
+- Clients/Typescript [**realtime**]: Fix function signature for connectionstate
+- Clients/Typescript [**realtime**]: Clear requests on websocket error
+- Clients/Typescript [**realtime**]: Minor tweak to caching
+- Clients/Typescript: Allow rebind when binding is in pending state
+- Clients/Typescript [**realtime**]: Tweak request handling
+- Clients/Typescript [**realtime**]: Reconnect websocket if not receiving pongs
+- Clients/Typescript [**drivers**]: Add update available field
+- Clients/Typescript [**realtime**]: Fix error handling
+- Interfaces/Backoffice: Various minor fixes
+- Interfaces/Backoffice: Fix font for settings form
+- Interfaces/Templates [**concierge**]: Use calendar value first for delete or decline of events (ppt-975)
+- Interfaces/Templates [**workplace**]: Fix disabling assets field on selecting a space (ppt-956)
+- Interfaces/Templates [**concierge**]: Add desk name below qr code (ppt-1049)
+- Interfaces/Templates [**concierge**]: Retry events request with delay on 429 (ppt-1047)
+- Interfaces/Templates [**bookings**]: Set resource as attendee in linked events
+- Interfaces/Templates: Set printable container as fixed
+- Interfaces/Templates [**events**]: Tweak to visit expected handling
+- Interfaces/Templates [**concierge**]: Fix working with emergency contact data
+- Interfaces/Templates [**concierge**]: Add ability to set map url for level zones
+- Interfaces/Templates [**concierge**]: Minor fix to parking
+- Interfaces/Templates [**concierge**]: Fix to display of setup/breakdown meetings (ppt-535)
+- Interfaces/Templates [**workplace**]: Add logic to prevent duplicates showing when using calendar links (ppt-981)
+- Interfaces/Templates [**concierge**]: Add ability to assign a level to emergency contacts
+- Interfaces/Templates [**events**]: Fix removing visit expected value on room bookings
+- Interfaces/Templates [**users**]: Update phone validation regex
+- Interfaces/Templates [**map-kiosk**]: Fix text colour for date value (ppt-1052)
+- Interfaces/Templates: Tweak min/max length checks for booking rules
+- Interfaces/Templates [**concierge**]: Fix clearing parking space user (ppt-797)
+- Interfaces/Templates [**booking-panel**]: Fix display of status details
+- Interfaces/Templates [**concierge**]: Fix heading for desk management by reading url because same component was being rendered for 2 tabs based on urls
+- Interfaces/Templates [**form-fields**]: Allow adding comma separated list of items
+- Interfaces/Templates [**org**]: Reduce level number value to 2 characters max (ppt-795)
+- Interfaces/Templates: Add check to booking rules for wildcard zone
+- Interfaces/Templates [**explore**]: Factor in assigned users for user status (ppt-797)
+- Interfaces/Templates [**wpa**]: Add 'cancelled' as a booking status and to status type
+- Interfaces/Templates [**org**]: Fix sorting of zones
+- Interfaces/Templates [**catering**]: Use time_format variable instead of hardcoded value
+- Interfaces/Templates [**events**]: Tweak parsing of data (ppt-981)
+- Interfaces/Templates [**events**]: Fix catering settings for main form group
+- Interfaces/Templates [**explore**]: Fix search listing for users with multiple roles (ppt-1044)
+- Interfaces/Templates [**concierge**]: Update retry logic for day view requests (ppt-1059)
+- Interfaces/Templates [**events**]: Set min duration for all day bookings to 24hrs (ppt-1060)
+- Interfaces/Templates [**catering**]: Hide options in search section (ppt-1066)
+- Interfaces/Templates [**chat**]: Various minor updates
+- Interfaces/Templates [**concierge**]: Fix removing roles for emergency contacts (ppt-1050)
+- Interfaces/Templates [**catering**]: Fix delivery options for all day (ppt-1086)
+- Interfaces/Templates [**workplace**]: Fix catering display on confirm modal
+- Interfaces/Templates [**chat**]: Fix closing chat
+- Interfaces/Templates [**events**]: Fix to associated id check (ppt-981)
+- Interfaces/Templates [**map-kiosk**]: Fix calls
+- Interfaces/Templates [**org**]: Fix applying region settings
+- Interfaces/Templates [**concierge**]: Add all day info to catering field
+- Interfaces/Templates [**workplace**]: Fix filtering duplicate events (ppt-981)
+- Interfaces/Templates [**concierge**]: Allow users to set level as a parking level (ppt-797)
+- Interfaces/Templates [**workplace**]: Prevent editing multi-day bookings
+- Interfaces/Templates [**workplace**]: Fix displaying catering orders on confirm view (ppt-1091)
+- Interfaces/Templates [**booking-panel**]: Prevent pending cancel when disable_end_meeting set
+- Interfaces/Templates [**control**]: Simplify shutdown for joined rooms (ppt-1094)
+- Interfaces/Templates [**control**]: Add binding for hiding join actions (ppt-1095)
+- Interfaces/Templates [**control**]: Add overlay to prevent use of slave panels in joined spaces (ppt-1093)
+- Interfaces/Templates [**booking-panel**]: Tweak book now logic (ppt-1096)
+- Interfaces/Templates [**events**]: Tweak to helpers for available periods (ppt-1078)
+- Interfaces/Templates [**concierge**]: Fix sorting desk bookings (ppt-842)
+- Interfaces/Templates [**bookings**]: Fix clearing form on navigation (ppt-1057)
+- Interfaces/Templates [**explore**]: Fix hiding zone toggle
+- Interfaces/Templates [**explore**]: Allow changing count value used for occupancy
+- Interfaces/Templates [**explore**]: Minor fixes
+- Interfaces/Templates: Fix error in hotkey service
+- Interfaces/Templates [**assets**]: Ignore cancelled and declined assets bookings for availability
+- Interfaces/Templates [**map-kiosk**]: Add parking to map kiosk (ppt-1100)
+- Interfaces/Templates [**concierge**]: Prevent selecting multiple levels for desks (ppt-796)
+- Interfaces/Templates [**assets**]: Ignore rejected bookings for availability
+- Interfaces/Templates [**org**]: Fix loading building settings on reload after change
+- Interfaces/Templates [**catering**]: Add handling for invalid delivery times (ppt-1108)
+- Interfaces/Templates [**map-kiosk**]: Fix showing parking data on maps (ppt-1100)
+- Interfaces/Templates [**events**]: Allow editing multi-day events
+- Interfaces/Templates [**catering**]: Only show orders for selected date (ppt-1106)
+- Interfaces/Templates [**concierge**]: Only show catering order with selected report period (ppt-1107)
+- Interfaces/Templates [**booking-panel**]: Allow setting host from panel view
+- Interfaces/Templates [**control**]: Fix ordering of topbar actions (ppt-1095)
+- Interfaces/Templates [**catering**]: Fix passing values to order modal (ppt-1109)
+- Interfaces/Templates [**events**]: Fix setting catering time when editing event (ppt-1110)
+- Interfaces/Templates [**workplace**]: Fix display of multiday event times
+- Interfaces/Templates [**events**]: Fix editing multiday bookings (ppt-1105)
+- Interfaces/Templates [**event**]: Allow editing multiday events without multiday enabled
+- Interfaces/Templates [**concierge**]: Update event form to more match workplace one (ppt-1109)
+- Interfaces/Templates [**booking-panel**]: Ignore next booking when it's current or expired
+- Interfaces/Templates [**events**]: Display of catering dates
+- Interfaces/Templates [**concierge**]: Fix backaway time for day view event request retries
+- Interfaces/Templates [**events**]: Fix display of catering times on all day bookings (ppt-1110)
+- Interfaces/Templates [**events**]: Tweak setting catering time on edit (ppt-1115)
+- Interfaces/Templates [**catering**]: Fix end time for all day events (ppt-1109)
+- Interfaces/Templates [**workplace**]: Fix icon colours in mobile footer menu
+- Interfaces/Templates [**events**]: Make all day bookings 24+ hours (ppt-1118)
+- Interfaces/Templates: Prevent select end times before start time (ppt-1060)
+- Interfaces/Templates [**workplace**]: Fix date value for order times on confirm modal (ppt-1110)
+- Interfaces/Templates [**catering**]: Use 24 hour time for filters when set (ppt-1116)
+- Interfaces/Templates [**spaces**]: Add handling for multiday bookings (ppt-1117)
+- Interfaces/Templates [**events**]: Fix handling end time of all day events (ppt-1115)
+- Interfaces/Templates [**catering**]: Add step interval setting for delivery times
+- Interfaces/Templates [**events**]: Minor fixes to date handling
+- Interfaces/Templates [**workplace**]: Fix min duration offset on multiday end time
+- Interfaces/Templates [**events**]: Correctly handle date when field disabled
+- Interfaces/Templates [**workplace**]: Fix data sync between shared input fields (ppt-1117)
+- Interfaces/Templates [**catering**]: Fix listing catering orders (ppt-1114)
+- Interfaces/Templates [**concierge**]: Fix catering data for reports
+- Interfaces/Templates [**events**]: Only show valid catering when viewing event details
+- Interfaces/Templates [**workplace**]: Fix selectable end times
+- Interfaces/Templates [**workplace**]: Add extra display info to multiday end time field
+- Interfaces/Templates [**workplace**]: Flag invalid catering orders on confirm modal (ppt-1064)
+- Interfaces/Templates [**workplace**]: Fix selectable durations (ppt-1120)
+- Interfaces/Templates [**catering**]: Fix display of order details
+- Interfaces/Templates [**catering**]: Fix displayed times of order events
+- Interfaces/Templates [**concierge**]: Ignore cancelled catering orders for report (ppt-1122)
+- Interfaces/Templates [**assets**]: Minor tweaks
+- Interfaces/Templates [**concierge**]: Fix asset meeting time when all day (ppt-1127)
+- Interfaces/Templates [**concierge**]: Fix changing asset tracking status (ppt-1125)
+- Interfaces/Templates: Fix to display of valid/invalid asset requests (ppt-1126)
+- Interfaces/Templates [**events**]: Add extra checks for availability on edit (ppt-1119)
+- Interfaces/Templates [**concierge**]: Fix filtering of invalid asset requests (ppt-1126)
+- Interfaces/Templates [**bookings**]: Fix formatting for all day bookings (ppt-1127)
+- Interfaces/Templates [**concierge**]: Update asset field to use new field format (ppt-1128)
+- Interfaces/Templates: Fix delivery times for assets and catering with all day (ppt-1110, ppt-1128)
+- Interfaces/Templates [**concierge**]: Add setting to allow editing day view events
+- Interfaces/Templates [**events**]: Fix check for catering order validators
+- Interfaces/Templates [**workplace**]: Fix invalid catering display on edit
+- Interfaces/Templates [**concierge**]: Handle ended state for visitor bookings (ppt-1131)
+- Interfaces/Templates [**events**]: Factor in all day when confirming availability
+- Interfaces/Templates [**events**]: Fix querying event availability for future dates
+- Interfaces/Templates [**concierge**]: Fix hide edit check for day view events
+- Interfaces/Templates [**events**]: Tweak availability checks
+- Interfaces/Templates [**concierge**]: Hook up day view edit to modal
+- Interfaces/Templates [**workplace**]: Fix confirm display of assets for desk bookings
+- Interfaces/Templates [**events**]: Fix filtering of valid catering orders (ppt-1072)
+- Interfaces/Templates [**events**]: Load metadata for event if needed
+- Interfaces/Templates [**catering**]: Fix to error updating statuses (ppt-1072)
+- Interfaces/Templates [**events**]: Update metadata if unable to update event setup/breakdown (ppt-1130)
+- Interfaces/Templates [**catering**]: Tweak event linking when listing orders (ppt-1072)
+- Interfaces/Templates [**catering**]: Only update event metadata on status changes
+- Interfaces/Templates [**visitor-kiosk**]: Show current time if no event set on results page
+- Libraries/Models [**control_system**]: Should only remove modules only in system [ppt-1102] ([#238](https://github.com/PlaceOS/placeos-models/pull/238))
+- Libraries/Models [**bookings**]: Remove ambiguity on extension_data
+- Libraries/Models [**guest**]: Remove property overload
+- Libraries/Models [**event_metadata**]: Metadata migration
+- Libraries/Models [**guest**]: Attending today query
+- Libraries/Models [**guest**]: Need to ensure the joins have a result
+- Libraries/Models [**guest**]: Order by the earliest starting booking
+- Libraries/Models [**guest**]: Checked_in is never null
+- Libraries/Models [**guest**]: Don't pick a meeting that has ended
+- Services/Auth [**omniauth**]: Use correct timestamp recording logins
+- Services/Build [**build**]: Properly parse cloud build service url ([#54](https://github.com/PlaceOS/build/pull/54))
+- Services/StaffAPI [**events**]: Recurring metadata visibility [ppt-1072] [ppt-1073] ([#309](https://github.com/PlaceOS/staff-api/pull/309))
+- Services/StaffAPI [**calendars**]: Allow any specified if delegated
+- Services/StaffAPI [**events**]: Resource calendar signal
+- Services/StaffAPI [**events**]: Refactor change notifications
+- Services/StaffAPI [**events**]: Check for declined status on push update
+- Services/StaffAPI [**events**]: Metadata updates to be resource_master_id aware
+
+### Added
+
+- Interfaces/Backoffice: Add badge to show driver has update available (ppt-1041)
+- Interfaces/Templates [**concierge**]: Add ability to manage emergency contacts
+- Interfaces/Templates [**visitor-kiosk**]: Add ability to print visitor label after checkin (ppt-656)
+- Interfaces/Templates: Add date period rule to booking rules
+- Interfaces/Templates [**explore**]: Add ability to query emergency contacts (ppt-1045)
+- Interfaces/Templates [**concierge**]: Add ability to manage emergency contact roles
+- Interfaces/Templates [**catering**]: Add ability for multiple orders per booking
+- Interfaces/Templates [**events**]: Update display of catering orders on details modal (ppt-1080)
+- Interfaces/Templates [**concierge**]: Add setting to remove days from reports (ppt-1056)
+- Interfaces/Templates [**catering**]: Add setting to restrict the available times for catering (ppt-1067)
+- Interfaces/Templates [**assets**]: Add category fields to assets select modal (ppt-1075)
+- Interfaces/Templates [**events**]: Add ability to handle multi-day events
+- Interfaces/Templates [**catering**]: Add ability to duplicate orders
+- Interfaces/Templates [**catering**]: Add ability to set orders past first day in multiday events (ppt-1105)
+- Interfaces/Templates [**assets**]: Add ability to book multiple groups of assets (ppt-1073)
+- Interfaces/Templates: Allow setting access groups via settings
+- Interfaces/Templates: Add ability to use mapbox with mapsindoors integration
+- Libraries/Driver [**sensor**]: Add ppm measurement
+- Libraries/Models: Ppt-1038 driver update required logic ([#234](https://github.com/PlaceOS/placeos-models/pull/234))
+- Libraries/Models: Ppt-1085 add openai tool call support ([#235](https://github.com/PlaceOS/placeos-models/pull/235))
+- Libraries/Models: Ppt-1077 add user login stats ([#236](https://github.com/PlaceOS/placeos-models/pull/236))
+- Libraries/Models: Ppt-1098 add support of multiple assets per booking ([#237](https://github.com/PlaceOS/placeos-models/pull/237))
+- Libraries/Models: Ppt-1113 add collection serialization logic ([#239](https://github.com/PlaceOS/placeos-models/pull/239))
+- Libraries/Models [**event_metadata**]: Include guest list in linked bookings
+- Libraries/Models [**bookings**]: Checked in status on booking guests ([#240](https://github.com/PlaceOS/placeos-models/pull/240))
+- Libraries/Models [**event_metadata**]: Allows lookup of recurring master events ([#241](https://github.com/PlaceOS/placeos-models/pull/241)) [ppt-1072]
+- Libraries/Models [**event_metadata**]: Add an additional query
+- Services/Auth: Ppt-1077 add user login stats ([#112](https://github.com/PlaceOS/auth/pull/112))
+- Services/Build: Build to retrieve individual entry point commit and forward to cloud build service
+- Services/Build_service: Added defaults link, refactored to execute one build at a time
+- Services/RestAPI: Ppt-524 integrate the build service into core ([#367](https://github.com/PlaceOS/rest-api/pull/367))
+- Services/RestAPI [**chat_gpt**]: Make the default api model configurable
+- Services/RestAPI: Allow public.read to work
+- Services/RestAPI: Ppt-1085 add openai tool call support ([#369](https://github.com/PlaceOS/rest-api/pull/369))
+- Services/StaffAPI [**events**]: Add filter to index ([#305](https://github.com/PlaceOS/staff-api/pull/305))
+- Services/StaffAPI [**guests**]: Deprecate event based guest queries
+- Services/StaffAPI [**events**]: Serialize requests from each user [proj-512] ([#306](https://github.com/PlaceOS/staff-api/pull/306))
+- Services/StaffAPI [**bookings**]: [ppt-1098] support multiple assets on a single booking ([#307](https://github.com/PlaceOS/staff-api/pull/307))
+- Services/StaffAPI [**bookings**]: Include any attending guests in responses ([#308](https://github.com/PlaceOS/staff-api/pull/308))
+- Services/Triggers: Ppt-1038 job to identify version upgrade for drivers ([#44](https://github.com/PlaceOS/triggers/pull/44))
+
+### Changed
+
+- Interfaces/Backoffice: Simplify styling to make theming easier
+- Interfaces/Templates [**concierge**]: Show meeting start and end times in catering section
+- Interfaces/Templates [**concierge**]: Refactor to use existing router events subscription in component
+- Services/Build: Cloud build service invocation ([#55](https://github.com/PlaceOS/build/pull/55))
+- Services/Build_service: Added error handling precautions
+
 ## 2.2311.1
 
 ### Fixed
