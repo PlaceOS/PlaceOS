@@ -5,6 +5,105 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2402.0
+
+### Added
+
+- Clients/Crystal [**user**]: [ppt-1154] add work_preferences and work_overrides to user ([#32](https://github.com/PlaceOS/crystal/pull/32))
+- Clients/Typescript [**user**]: Add worktime preferences to user
+- Interfaces/Backoffice [**drivers**]: Add ability to update multiple drivers at once (ppt-1042)
+- Interfaces/Backoffice [**debug**]: Add ability to download debug logs
+- Interfaces/Backoffice [**extensions**]: Add ability to resolve authenticated resources (ppt-1180, ppt-1181)
+- Interfaces/Templates [**concierge**]: Add signage playlists logic
+- Interfaces/Templates [**users**]: Update wfh settings
+- Interfaces/Templates [**events**]: Add ability to use the building parent instead of the building (ppt-1184)
+- Interfaces/Templates [**events**]: Add ability to use the building parent instead of the building (ppt-1184)"
+- Interfaces/Templates [**concierge**]: Add ability to set auto-release config
+- Interfaces/Templates [**workplace**]: Add confirm modal for keeping bookings when wfh is set (ppt-1155)
+- Libraries/Models [**wfh**]: [ppt-1148] add work_preferences to user model ([#243](https://github.com/PlaceOS/placeos-models/pull/243))
+- Libraries/Models [**zone**]: [ppt-1154] add auto_release ([#247](https://github.com/PlaceOS/placeos-models/pull/247))
+- Services/StaffAPI [**staff**]: Add pagination support getting staff [ppt-1170] ([#311](https://github.com/PlaceOS/staff-api/pull/311))
+
+### Fixed
+
+- Clients/Typescript [**drivers**]: Add update_available query parameter
+- Clients/Typescript [**drivers**]: Add update details field to driver model
+- Clients/Typescript [**realtime**]: Add log message for server pongs
+- Clients/Typescript [**http**]: Force user to re-login on error 511
+- Clients/Typescript [**user**]: Tweak worktime preferences
+- Interfaces/Backoffice [**extensions**]: Fix loading authenticated resources
+- Interfaces/Templates [**workplace**]: Fix to metadata for link created events (ppt-981)
+- Interfaces/Templates [**events**]: Tweak edit availability checks for future times (ppt-1119)
+- Interfaces/Templates [**visitor-kiosk**]: Fix time display on checked in message
+- Interfaces/Templates [**visitor-kiosk**]: Allow customising the results text with a template (ppt-1138)
+- Interfaces/Templates [**workplace**]: Fix overflow of details on meeting and desk confirm sections
+- Interfaces/Templates [**events**]: Update availability check at the end of the booking flow (ppt-1119)
+- Interfaces/Templates: Fix mapsindoors initialisation when using mapbox
+- Interfaces/Templates [**assets**]: Fix keeping status when event changes (ppt-1143)
+- Interfaces/Templates [**visitor-kiosk**]: Ignore event ids in visitor qr codes
+- Interfaces/Templates [**visitor-kiosk**]: Fix minor issue with rendering result template html
+- Interfaces/Templates: Fix colours of global banner
+- Interfaces/Templates: Ignore events related to the logger
+- Interfaces/Templates: Prevent post event infinite loop in remote logger
+- Interfaces/Templates [**workplace**]: Hide calendar events when they have an associated booking (ppt-981)
+- Interfaces/Templates [**concierge**]: Fix saving of new signage media
+- Interfaces/Templates [**events**]: Fix clearing loading state on error when assets are included
+- Interfaces/Templates: Clean up search styling for mapsindoors
+- Interfaces/Templates: Remove hardcoded custom location for mapindoors
+- Interfaces/Templates [**map-kiosk**]: Hide controls when using mapsindoors
+- Interfaces/Templates [**booking-panel**]: Allow setting booking duration when host disabled
+- Interfaces/Templates: Fix error in getroute call in mapsindoors component
+- Interfaces/Templates [**events**]: Fix checking availability on edits (ppt-1119)
+- Interfaces/Templates [**booking-panel**]: Force booking time when no future times allowed
+- Interfaces/Templates [**booking-panel**]: Fix check for showing next booking
+- Interfaces/Templates [**workplace**]: Notify user of errors when booking parking (ppt-1169)
+- Interfaces/Templates: Allow using mapsindoors components in more locations (ppt-1161)
+- Interfaces/Templates [**assets**]: Reduce request data stored in events/bookings
+- Interfaces/Templates [**form-fields**]: Fix selecting user data from less strict input (ppt-1171)
+- Interfaces/Templates [**assets**]: Tweak grab more items when requesting available assets (ppt-1159)
+- Interfaces/Templates [**assets**]: Change asset listing for availability to grab based off group (ppt-1159)
+- Interfaces/Templates: Add mapindoor usage to resource selection modals (ppt-1161)
+- Interfaces/Templates [**events**]: Also use event status for evaluating overall status (ppt-1167)
+- Interfaces/Templates [**catering**]: Fix catering item options creating unique order items (ppt-1179)
+- Interfaces/Templates: Set location to building for mapindoors when booking resources (ppt-1161)
+- Interfaces/Templates [**events**]: Only update asset options on change
+- Interfaces/Templates [**form-fields**]: Add work location for internal users on user list field (ppt-1150)
+- Interfaces/Templates [**concierge**]: Fix background color for parking disabled overlay (ppt-1188)
+- Interfaces/Templates: Fix converting json to csv
+- Interfaces/Templates [**assets**]: Fix asset counts when setting multiple requests (ppt-1187)
+- Interfaces/Templates [**users**]: Force page to reload after saving (ppt-1183)
+- Interfaces/Templates: Fix report downloaded data (ppt-1185)
+- Interfaces/Templates [**concierge**]: Tweak parsing of asset request data
+- Interfaces/Templates [**assets**]: Prevent overlapping requests duplicating id use (ppt-1192)
+- Interfaces/Templates [**user**]: Add ability to get location for specific time
+- Interfaces/Templates: Show when user is unavailable at selected time
+- Interfaces/Templates [**workplace**]: Fix editing catering/assets in existing bookings (ppt-1196)
+- Interfaces/Templates [**assets**]: Make sure values exist on requests
+- Interfaces/Templates [**assets**]: Add availability check before booking assets (ppt-1197)
+- Interfaces/Templates [**concierge**]: Tweak period counting for reports
+- Interfaces/Templates [**bookings**]: Prevent editing visitor bookings
+- Interfaces/Templates [**concierge**]: Show status desk bookings ended early (ppt-998)
+- Interfaces/Templates [**events**]: Prevent id being sent in events request
+- Interfaces/Templates [**bookings**]: Remove conflicting linked bookings when editing events/bookings (ppt-1199)
+- Interfaces/Templates [**explore**]: Prevent opening space book modal when panning
+- Interfaces/Templates [**assets**]: Get assets groups to use for duplicate checking (ppt-1192)
+- Interfaces/Templates [**users**]: Fix wfh icon and tooltip for work hours
+- Interfaces/Templates [**users**]: Tweak handling of times for location
+- Libraries/Driver [**driver_model**]: Add images array to system model
+- Libraries/Models [**user**]: Work_preferences need to be public
+- Libraries/Models [**users**]: [ppt-1148] work_preferences default ([#244](https://github.com/PlaceOS/placeos-models/pull/244))
+- Libraries/Models [**user**]: Change worktimepreference day to day_of_week ([#245](https://github.com/PlaceOS/placeos-models/pull/245))
+- Libraries/Models [**model**]: Dbhashconverter ([#246](https://github.com/PlaceOS/placeos-models/pull/246))
+- Libraries/Models [**booking**]: #clashing? with asset_ids ([#250](https://github.com/PlaceOS/placeos-models/pull/250))
+- Services/RestAPI [**user**]: Change worktimepreference day to day_of_week ([#372](https://github.com/PlaceOS/rest-api/pull/372))
+- Services/RestAPI [**changefeeds**]: Ensure change listener for drivers table remain intact ([#375](https://github.com/PlaceOS/rest-api/pull/375))
+- Services/StaffAPI [**bookings**]: Changed signal
+- Services/StaffAPI [**events**]: [ppt-1190] update metadata on rapid destroy after create ([#313](https://github.com/PlaceOS/staff-api/pull/313))
+
+### Changed
+
+- Libraries/Models [**zone**]: [ppt-1154] remove unused field ([#248](https://github.com/PlaceOS/placeos-models/pull/248))
+
 ## 2.2312.0
 
 ### Fixed
