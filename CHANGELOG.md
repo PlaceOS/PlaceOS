@@ -5,6 +5,61 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2402.0
+
+### Added
+
+- Clients/Crystal [**user**]: [ppt-1154] add work_preferences and work_overrides to user ([#32](https://github.com/PlaceOS/crystal/pull/32))
+- Clients/Typescript [**user**]: Add worktime preferences to user
+- Interfaces/Backoffice [**extensions**]: Add ability to resolve authenticated resources (ppt-1180, ppt-1181)
+- Interfaces/Templates [**events**]: Add ability to use the building parent instead of the building (ppt-1184)
+- Interfaces/Templates [**concierge**]: Add ability to set auto-release config
+- Interfaces/Templates [**workplace**]: Add confirm modal for keeping bookings when wfh is set (ppt-1155)
+- Libraries/Models [**wfh**]: [ppt-1148] add work_preferences to user model ([#243](https://github.com/PlaceOS/placeos-models/pull/243))
+- Libraries/Models [**zone**]: [ppt-1154] add auto_release ([#247](https://github.com/PlaceOS/placeos-models/pull/247))
+- Services/StaffAPI [**staff**]: Add pagination support getting staff [ppt-1170] ([#311](https://github.com/PlaceOS/staff-api/pull/311))
+
+### Fixed
+
+- Interfaces/Templates [**workplace**]: Fix to metadata for link created events (ppt-981)
+- Interfaces/Templates [**events**]: Tweak edit availability checks for future times (ppt-1119)
+- Interfaces/Templates [**visitor-kiosk**]: Allow customising the results text with a template (ppt-1138)
+- Interfaces/Templates [**events**]: Update availability check at the end of the booking flow (ppt-1119)
+- Interfaces/Templates [**assets**]: Fix keeping status when event changes (ppt-1143)
+- Interfaces/Templates [**workplace**]: Hide calendar events when they have an associated booking (ppt-981)
+- Interfaces/Templates [**events**]: Fix checking availability on edits (ppt-1119)
+- Interfaces/Templates [**workplace**]: Notify user of errors when booking parking (ppt-1169)
+- Interfaces/Templates: Allow using mapsindoors components in more locations (ppt-1161)
+- Interfaces/Templates [**form-fields**]: Fix selecting user data from less strict input (ppt-1171)
+- Interfaces/Templates [**assets**]: Tweak grab more items when requesting available assets (ppt-1159)
+- Interfaces/Templates [**assets**]: Change asset listing for availability to grab based off group (ppt-1159)
+- Interfaces/Templates: Add mapindoor usage to resource selection modals (ppt-1161)
+- Interfaces/Templates [**events**]: Also use event status for evaluating overall status (ppt-1167)
+- Interfaces/Templates [**catering**]: Fix catering item options creating unique order items (ppt-1179)
+- Interfaces/Templates: Set location to building for mapindoors when booking resources (ppt-1161)
+- Interfaces/Templates [**form-fields**]: Add work location for internal users on user list field (ppt-1150)
+- Interfaces/Templates [**concierge**]: Fix background color for parking disabled overlay (ppt-1188)
+- Interfaces/Templates [**assets**]: Fix asset counts when setting multiple requests (ppt-1187)
+- Interfaces/Templates [**users**]: Force page to reload after saving (ppt-1183)
+- Interfaces/Templates: Fix report downloaded data (ppt-1185)
+- Interfaces/Templates [**assets**]: Prevent overlapping requests duplicating id use (ppt-1192)
+- Interfaces/Templates [**workplace**]: Fix editing catering/assets in existing bookings (ppt-1196)
+- Interfaces/Templates [**assets**]: Add availability check before booking assets (ppt-1197)
+- Interfaces/Templates [**concierge**]: Show status desk bookings ended early (ppt-998)
+- Interfaces/Templates [**bookings**]: Remove conflicting linked bookings when editing events/bookings (ppt-1199)
+- Interfaces/Templates [**assets**]: Get assets groups to use for duplicate checking (ppt-1192)
+- Libraries/Models [**users**]: [ppt-1148] work_preferences default ([#244](https://github.com/PlaceOS/placeos-models/pull/244))
+- Libraries/Models [**user**]: Change worktimepreference day to day_of_week ([#245](https://github.com/PlaceOS/placeos-models/pull/245))
+- Libraries/Models [**model**]: Dbhashconverter ([#246](https://github.com/PlaceOS/placeos-models/pull/246))
+- Libraries/Models [**booking**]: #clashing? with asset_ids ([#250](https://github.com/PlaceOS/placeos-models/pull/250))
+- Services/RestAPI [**user**]: Change worktimepreference day to day_of_week ([#372](https://github.com/PlaceOS/rest-api/pull/372))
+- Services/RestAPI [**changefeeds**]: Ensure change listener for drivers table remain intact ([#375](https://github.com/PlaceOS/rest-api/pull/375))
+- Services/StaffAPI [**events**]: [ppt-1190] update metadata on rapid destroy after create ([#313](https://github.com/PlaceOS/staff-api/pull/313))
+
+### Changed
+
+- Libraries/Models [**zone**]: [ppt-1154] remove unused field ([#248](https://github.com/PlaceOS/placeos-models/pull/248))
+
 ## 2.2312.0
 
 ### Fixed
