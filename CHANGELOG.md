@@ -5,6 +5,33 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2402.1
+
+### Fixed
+
+- Interfaces/Backoffice: Fix uploading form images with permissions (ppt-1207)
+- Interfaces/Templates [**concierge**]: Fix showing future requests (ppt-1208)
+- Interfaces/Templates [**assets**]: Prevent user selecting more assets than allowed (ppt-1209)
+- Interfaces/Templates: Update uploads logic to more match backoffice (ppt-1207)
+- Interfaces/Templates: Fix removal of image links (ppt-1207)
+- Interfaces/Templates [**events**]: Prevent booking with external attendees without room (ppt-1141)
+- Interfaces/Templates [**explore**]: Prevent viewing parking maps on map view (ppt-1222)
+- Interfaces/Templates [**bookings**]: Fix availability of resource that have an assigned user (ppt-1223)
+- Interfaces/Templates [**events**]: Fix ignoring assets for availability on edit (ppt-1227)
+- Interfaces/Templates [**assets**]: Prevent overriding cached value when generating availability (ppt-1210)
+- Libraries/Models [**survey**]: Make survey::invitation.list(sent: false) return unsent invites ([#251](https://github.com/PlaceOS/placeos-models/pull/251))
+- Libraries/Models [**bookings**]: Details specs for desired behaviour [proj-636] ([#252](https://github.com/PlaceOS/placeos-models/pull/252))
+- Services/StaffAPI [**bookings**]: Ensure serialisable transactions ([#314](https://github.com/PlaceOS/staff-api/pull/314))
+
+### Changed
+
+- Interfaces/Templates: Cleanup image list component
+- Interfaces/Templates [**maps-people**]: Clean up naming of service and properties
+
+### Added
+
+- Services/StaffAPI [**events**]: Add a reason for cancellation ([#315](https://github.com/PlaceOS/staff-api/pull/315))
+
 ## 2.2402.0
 
 ### Added
