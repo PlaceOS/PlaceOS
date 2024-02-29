@@ -10,52 +10,26 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Fixed
 
 - Interfaces/Backoffice: Fix uploading form images with permissions (ppt-1207)
-- Interfaces/Backoffice: Add retry method for image uploads
-- Interfaces/Backoffice: Add authentication to restricted images.
 - Interfaces/Templates [**concierge**]: Fix showing future requests (ppt-1208)
-- Interfaces/Templates [**events**]: Add ability to set calendar resource for no space bookings (ppt-1141)
 - Interfaces/Templates [**assets**]: Prevent user selecting more assets than allowed (ppt-1209)
 - Interfaces/Templates: Update uploads logic to more match backoffice (ppt-1207)
 - Interfaces/Templates: Fix removal of image links (ppt-1207)
-- Interfaces/Templates [**assets**]: Prevent over selecting available assets across requests
-- Interfaces/Templates [**events**]: Handle availability request errors
-- Interfaces/Templates: Fix auth for private images on listing display
-- Interfaces/Templates [**assets**]: Handle not asset ids set on request items
-- Interfaces/Templates [**events**]: Tweak checks for valid asset requests
 - Interfaces/Templates [**events**]: Prevent booking with external attendees without room (ppt-1141)
-- Interfaces/Templates [**events**]: Send id when patching events
 - Interfaces/Templates [**explore**]: Prevent viewing parking maps on map view (ppt-1222)
-- Interfaces/Templates [**events**]: Load event data for edit form when not set
 - Interfaces/Templates [**bookings**]: Fix availability of resource that have an assigned user (ppt-1223)
-- Interfaces/Templates [**workplace**]: Fix overflow of topbar menu items
 - Interfaces/Templates [**events**]: Fix ignoring assets for availability on edit (ppt-1227)
 - Interfaces/Templates [**assets**]: Prevent overriding cached value when generating availability (ppt-1210)
-- Interfaces/Templates [**assets**]: Prevent duplicate asset ids being requested
-- Interfaces/Templates [**events**]: Fix getting assets status from linked bookings
-- Interfaces/Templates [**assets**]: Prevent de-duplicating asset ids if metadata is not available
 - Libraries/Models [**survey**]: Make survey::invitation.list(sent: false) return unsent invites ([#251](https://github.com/PlaceOS/placeos-models/pull/251))
-- Libraries/Models [**booking**]: Ensure all asset ids are unique in the booking
-- Libraries/Models [**bookings**]: Improve update_assets
 - Libraries/Models [**bookings**]: Details specs for desired behaviour [proj-636] ([#252](https://github.com/PlaceOS/placeos-models/pull/252))
-- Libraries/Models [**booking**]: Expose format_list_for_postgres
-- Libraries/Models [**bookings**]: Prevent start and end times being the same
-- Services/Auth: Continue redirect can't contain spaces
 - Services/StaffAPI [**bookings**]: Ensure serialisable transactions ([#314](https://github.com/PlaceOS/staff-api/pull/314))
-- Services/StaffAPI [**events**]: Update event id requirement
-- Services/StaffAPI [**bookings**]: Specs passing
-- Services/StaffAPI [**bookings**]: Add a serialisable backoff
-- Services/StaffAPI [**bookings**]: Remove isolated transactions
 
 ### Changed
 
-- Interfaces/Backoffice: Cleanup image listing component
 - Interfaces/Templates: Cleanup image list component
 - Interfaces/Templates [**maps-people**]: Clean up naming of service and properties
 
 ### Added
 
-- Libraries/Models [**bookings**]: Split out unique ids
-- Services/RestAPI [**uploads**]: Add temp link env vars
 - Services/StaffAPI [**events**]: Add a reason for cancellation ([#315](https://github.com/PlaceOS/staff-api/pull/315))
 
 ## 2.2402.0
