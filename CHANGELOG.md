@@ -9,8 +9,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice: Fix loading authenticated images
-- Interfaces/Templates: Fix loading authenticated images
 - Libraries/Models [**booking**]: Can't clash if deleted
 
 ### Added
