@@ -5,6 +5,16 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2403.0
+
+### Fixed
+
+- Libraries/Models [**booking**]: Can't clash if deleted
+
+### Added
+
+- Libraries/Models: Ppt-1224 add secret_expiry attribute to tenant model ([#253](https://github.com/PlaceOS/placeos-models/pull/253))
+
 ## 2.2402.1
 
 ### Fixed
