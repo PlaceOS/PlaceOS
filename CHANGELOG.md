@@ -5,6 +5,57 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2404.1
+
+### Fixed
+
+- Interfaces/Backoffice [**domains**]: Update logic for editing applications (ppt-1283)
+- Interfaces/Backoffice [**drivers**]: Only update drivers when the new commit is different (ppt-1144)
+- Interfaces/Templates [**explore**]: Fix rendering of zone sensor info (ppt-1229)
+- Interfaces/Templates [**concierge**]: Update auto-release setting to save to the metadata for workplace app (ppt-1155)
+- Interfaces/Templates [**concierge**]: Fix removing report data from days set as ignore (ppt-1056)
+- Interfaces/Templates [**workplace**]: Fix check for auto-release (ppt-1155)
+- Interfaces/Templates [**concierge**]: Handle numbers for ignore days for report gen (ppt-1232)
+- Interfaces/Templates [**form-fields**]: Fix booking rules between dates end date edit (ppt-1234)
+- Interfaces/Templates [**workplace**]: Ignore auto-release modal until within time range (ppt-1155)
+- Interfaces/Templates [**workplace**]: Fix auto-release checkin modal (ppt-1155)
+- Interfaces/Templates [**concierge**]: Fix saving building app settings (ppt-1240)
+- Interfaces/Templates [**concierge**]: Fix using indexes for ignored days in reports (ppt-1232)
+- Interfaces/Templates [**assets**]: Fix handling of clashes on edit (proj-658)
+- Interfaces/Templates: Fix selecting levels on map view (ppt-1184)
+- Interfaces/Templates [**concierge**]: Improve auto-release settings ux (ppt-1288)
+- Interfaces/Templates [**concierge**]: Fix setting up regions with existing buildings (ppt-1289)
+- Interfaces/Templates [**workplace**]: Prevent desk booking modal when panning map (ppt-1292)
+- Interfaces/Templates [**concierge**]: Tweak form to correctly set event and booking related settings (ppt-1301)
+- Interfaces/Templates [**map-kiosk**]: Fix styling (ppt-1239)
+- Interfaces/Templates [**bookings**]: Increase page size for checking resoure availability (ppt-1318)
+- Libraries/Models [**driver**]: Remove flag if commits match ([#257](https://github.com/PlaceOS/placeos-models/pull/257))
+- Services/Core [**driver_manager**]: Interacting with private repo ([#267](https://github.com/PlaceOS/core/pull/267))
+
+### Added
+
+- Interfaces/Backoffice [**admin**]: Add banner and display for tenant secret expiry (ppt-1271)
+- Interfaces/Templates [**workplace**]: Allow using regions for resource availability (ppt-1184)
+- Interfaces/Templates [**explore**]: Add ability to deeplink locations (ppt-1273)
+- Interfaces/Templates [**concierge**]: Add ability to manage points of interest (ppt-1238)
+- Libraries/Driver: Migrate to redis clustering ([#166](https://github.com/PlaceOS/placeos-driver/pull/166))
+- Libraries/LogBackend: `newreliclogbackend` ([#13](https://github.com/PlaceOS/placeos-log-backend/pull/13))
+- Libraries/Models [**booking**]: [ppt-1213] add images ([#254](https://github.com/PlaceOS/placeos-models/pull/254))
+- Libraries/Models: Add digital signage models ([#255](https://github.com/PlaceOS/placeos-models/pull/255)) [ppt-1040]
+- Libraries/Models [**booking**]: [ppt-1215] add permission field ([#256](https://github.com/PlaceOS/placeos-models/pull/256))
+- Libraries/Models [**shortener**]: Add url shortening model ([#258](https://github.com/PlaceOS/placeos-models/pull/258)) [ppt-1272]
+- Libraries/Models [**booking**]: [ppt-1267] add induction field ([#259](https://github.com/PlaceOS/placeos-models/pull/259))
+- Services/Core: Integrate build service ([#266](https://github.com/PlaceOS/core/pull/266))
+- Services/Core: Migrate to redis for service discovery ([#268](https://github.com/PlaceOS/core/pull/268))
+- Services/Nginx: Add a short uri redirect helper
+- Services/RestAPI: Add signage api [ppt-1040] ([#377](https://github.com/PlaceOS/rest-api/pull/377))
+- Services/RestAPI [**chat_gpt/plugin**]: Interaction api ([#378](https://github.com/PlaceOS/rest-api/pull/378))
+- Services/RestAPI: Integrate build service ([#370](https://github.com/PlaceOS/rest-api/pull/370))
+- Services/RestAPI [**short_url**]: Add api routes ([#379](https://github.com/PlaceOS/rest-api/pull/379)) [ppt-1237]
+- Services/RestAPI: Migrate to using redis service manager ([#380](https://github.com/PlaceOS/rest-api/pull/380))
+- Services/Triggers: Ppt-1224 add trigger to periodically check for secret expiry ([#45](https://github.com/PlaceOS/triggers/pull/45))
+- Services/Triggers: Migrate to redis service manager ([#46](https://github.com/PlaceOS/triggers/pull/46))
+
 ## 2.2403.0
 
 ### Fixed
