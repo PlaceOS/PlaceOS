@@ -5,6 +5,53 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2405.1
+
+### Fixed
+
+- Interfaces/Templates [**bookings**]: Add fallback for zone requested for availability checks (ppt-1318)
+- Interfaces/Templates [**explore**]: Simplify display of sensor info to allow more displayed on map (ppt-1317)
+- Interfaces/Templates [**catering**]: Remove ability to edit existing orders when field disabled (ppt-1340)
+- Interfaces/Templates [**concierge**]: Add print styling to reports sections (ppt-1344)
+- Interfaces/Templates: Fix zoom controls for resource selection (ppt-1361)
+- Interfaces/Templates [**maps-indoors**]: Fix map actions (ppt-1360)
+- Interfaces/Templates [**explore**]: Ignore bookings status for non-bookable rooms (ppt-1364)
+- Interfaces/Templates: Fix sizing of resource selection modals (ppt-1365)
+- Interfaces/Templates [**map-kiosk**]: Allow search when using maps indoors (ppt-1352)
+- Interfaces/Templates [**form-fields**]: Add check to file type when loading users from csv file (proj-768)
+- Interfaces/Templates [**workplace**]: Add setting to force colleague search to only used authenticated user (ppt-1366)
+- Interfaces/Templates [**form-fields**]: Clear input field after uploading image (ppt-1370)
+- Interfaces/Templates [**maps-people**]: Fix setting level from zone (ppt-1376)
+- Interfaces/Templates [**concierge**]: Tweak printing of reports (ppt-1344)
+- Interfaces/Templates [**concierge**]: Filter space report resources based on zone (ppt-1372)
+- Interfaces/Templates [**concierge**]: Fix adding new roles to emergency contacts (ppt-1389)
+- Interfaces/Templates [**explore**]: Fix space bookings when using maps people (ppt-1394)
+- Interfaces/Templates: Add ability to set custom emails on support request types (ppt-1342)
+- Interfaces/Templates [**map-kiosk**]: Fix resetting view and home button (ppt-1393)
+- Services/Core [**logging**]: Ppt-1368 - logging to use placeos-log-backend ([#271](https://github.com/PlaceOS/core/pull/271))
+- Services/Core [**driver_manager**]: Should be truncating when recomp driver is retrieved ([#273](https://github.com/PlaceOS/core/pull/273))
+- Services/RestAPI [**logging**]: Ppt-1368 - logging to use placeos-log-backend ([#381](https://github.com/PlaceOS/rest-api/pull/381))
+- Services/RestAPI [**repositories**]: List the files on the correct branch ([#383](https://github.com/PlaceOS/rest-api/pull/383))
+- Services/StaffAPI [**booking**]: [ppt-1205] update phone of existing guest when inviting visitor ([#317](https://github.com/PlaceOS/staff-api/pull/317))
+- Services/StaffAPI [**bookings**]: User/zones query with booking_type=group-event ([#319](https://github.com/PlaceOS/staff-api/pull/319))
+
+### Added
+
+- Interfaces/Backoffice [**modules**]: Add ability to view runtime errors (ppt-1324)
+- Interfaces/Templates [**concierge**]: Add event ui (ppt-1216)
+- Interfaces/Templates [**workplace**]: Add events ui (ppt-1217)
+- Interfaces/Templates [**workplace**]: Add integrations for group events (ppt-1220)
+- Interfaces/Templates: Add issue type to support request form (ppt-1341)
+- Interfaces/Templates [**concierge**]: Add ability to set support ticket types (ppt-1342)
+- Interfaces/Templates [**concierge**]: Add option to select points of interest from a map (ppt-1343)
+- Interfaces/Templates [**concierge**]: Add daily usage to spaces report (ppt-1355)
+- Libraries/Models [**booking**]: #by_user_or_email include open and public permissions ([#261](https://github.com/PlaceOS/placeos-models/pull/261))
+- Libraries/Models: Ppt-1321 update module model ([#260](https://github.com/PlaceOS/placeos-models/pull/260))
+- Services/RestAPI: Ppt-1323 added endpoint for module error retrieval ([#382](https://github.com/PlaceOS/rest-api/pull/382))
+- Services/StaffAPI [**bookings**]: [ppt-1215] allow users to add themselves as attendees to public events ([#316](https://github.com/PlaceOS/staff-api/pull/316))
+- Services/StaffAPI [**bookings**]: #index returns private, open, and public group-event bookings for the booking creator ([#318](https://github.com/PlaceOS/staff-api/pull/318))
+- Services/Triggers: Ppt-1322 trigger for periodic check of mods runtime error ([#47](https://github.com/PlaceOS/triggers/pull/47))
+
 ## 2.2404.2
 
 ### Fixed
