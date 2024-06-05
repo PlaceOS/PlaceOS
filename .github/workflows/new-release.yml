@@ -91,6 +91,8 @@ jobs:
 
             mv "$temp_file" "$input_file"
           done
+        env:
+          VERSION: ${{ steps.update-version.outputs.new-version }}
 
       - name: Configure git user
         run: |
