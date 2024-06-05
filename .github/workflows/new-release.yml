@@ -74,7 +74,7 @@ jobs:
 
           git fetch --all
 
-          submodules=("services/rest-api" "services/staff-api" "swagger/rest-api" "swagger/staff-api")
+          submodules=("services/rest-api" "services/staff-api")
 
           for submodule in "${submodules[@]}"; do
             commit_id=$(git submodule status "$submodule" | awk '{print $1}')
