@@ -5,6 +5,108 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2407.10
+
+### Added
+
+- Clients/Crystal [**zone**]: [ppt-1416] add timezone field to zone ([#34](https://github.com/PlaceOS/crystal/pull/34))
+- Clients/Typescript [**signage**]: Add signage types and endpoint methods
+- Interfaces/Backoffice [**staff-api**]: Add early_checkin field to tenants (ppt-1442)
+- Interfaces/Templates [**workplace**]: Add desk height options (ppt-1295, ppt-1298, ppt-1299, ppt-1300)
+- Interfaces/Templates [**workplace**]: Add desk height options (ppt-1295, ppt-1298, ppt-1299, ppt-1300)
+- Interfaces/Templates [**catering**]: Upgrade catering order table
+- Interfaces/Templates [**catering**]: Upgrade menu listing table.
+- Libraries/Driver [**interface/desk_control**]: Add desk control interface
+- Libraries/Driver [**transport**]: Add support for http client certificates
+- Libraries/Models: Ppt-1413 add error flag to repository model ([#264](https://github.com/PlaceOS/placeos-models/pull/264))
+- Libraries/Models [**bookings**]: Add recurring support to bookings ([#263](https://github.com/PlaceOS/placeos-models/pull/263))
+- Libraries/Models [**bookings**]: Transparent booking instance modification
+- Libraries/Models [**booking**]: Add helpers for paginating recurrences
+- Libraries/Models: Ppt-1437 add early_check field to tenant model ([#265](https://github.com/PlaceOS/placeos-models/pull/265))
+- Libraries/Models [**event_metadata**]: Add permission field ([#266](https://github.com/PlaceOS/placeos-models/pull/266))
+- Services/Build: Migrate to latest action controller for crystal 1.13 support
+- Services/Build_service [**shard.lock**]: Add crystal 1.13 support
+- Services/Dispatch [**shard.lock**]: Add crystal 1.13 support
+- Services/FrontendLoader: Ppt-1413 add error handling + reporting. clean-up and linting c… ([#84](https://github.com/PlaceOS/frontend-loader/pull/84))
+- Services/FrontendLoader [**shard.lock**]: Add crystal 1.13 support
+- Services/Init [**shard.lock**]: Add crystal 1.13 support
+- Services/Nginx [**nginx.conf.template**]: Add support for isolated origins
+- Services/RestAPI: Ppt-1329: removed git related methods from rest-api ([#386](https://github.com/PlaceOS/rest-api/pull/386))
+- Services/RestAPI: Ppt-1396 add search fields options to index endpoints ([#387](https://github.com/PlaceOS/rest-api/pull/387))
+- Services/RestAPI: Add crystal 1.13 support
+- Services/StaffAPI [**bookings**]: #index filter on permission field ([#320](https://github.com/PlaceOS/staff-api/pull/320))
+- Services/StaffAPI [**events**]: Preference metadata and system selection ([#322](https://github.com/PlaceOS/staff-api/pull/322))
+- Services/StaffAPI: Ppt-1326 add endpoint to provide a list of booking ids ([#323](https://github.com/PlaceOS/staff-api/pull/323))
+- Services/StaffAPI: Ppt-1437 allow checkin by early_checkin value ([#325](https://github.com/PlaceOS/staff-api/pull/325))
+- Services/StaffAPI [**bookings**]: Add recurring booking support [ppt-1382] ([#324](https://github.com/PlaceOS/staff-api/pull/324))
+- Services/StaffAPI [**events**]: #add_attendee ([#326](https://github.com/PlaceOS/staff-api/pull/326))
+- Services/Triggers: Make loki-search trigger loki presence dependent ([#48](https://github.com/PlaceOS/triggers/pull/48))
+
+### Fixed
+
+- Clients/Typescript [**modules**]: Prevent sending error fields to backend
+- Clients/Typescript [**realtime**]: Restrict websocket cookie to exact route
+- Clients/Typescript: Fix to previous commit
+- Clients/Typescript [**resources**]: Add query parameter for limiting to certain fields
+- Clients/Typescript: Tweaks
+- Clients/Typescript: Fix deps
+- Clients/Typescript: Same as previous
+- Interfaces/Backoffice: Fix creating/editing mqtt brokers
+- Interfaces/Backoffice [**domains**]: Fix deleting of applications (ppt-1418)
+- Interfaces/Templates [**events**]: Include booked event for room availability (ppt-1369)
+- Interfaces/Templates [**map-kiosk**]: Pin point of interest selected
+- Interfaces/Templates [**map-kiosk**]: Set building when deeplink-ing a level
+- Interfaces/Templates [**conicerge**]: Ignore errors when writing setup and breakdown times to zone metadata
+- Interfaces/Templates [**bookings**]: Fix availability checks when user has cancelled bookings
+- Interfaces/Templates [**assets**]: Add check to factor in cancelled and declined bookings for availability
+- Interfaces/Templates [**concierge**]: Make auto-release settings wording more clear
+- Interfaces/Templates [**concierge**]: Fix checks when no roles are set
+- Interfaces/Templates [**concierge**]: Hide report options on print
+- Interfaces/Templates [**concierge**]: Fix saving descriptions on saving events
+- Interfaces/Templates [**visitor-kiosk**]: Fix date and time display on checkin results template
+- Interfaces/Templates [**mapspeople**]: Tweak styling of map to use internal ids
+- Interfaces/Templates [**concierge**]: Fix report charts on initial load (ppt-1410)
+- Interfaces/Templates: Fix loading of booking rules for bookings and events
+- Interfaces/Templates [**concierge**]: Prevent editing event start time during event
+- Interfaces/Templates [**concierge**]: Add induction to visitor checkin flow
+- Interfaces/Templates [**bookings**]: Fix desk booking group
+- Interfaces/Templates [**concierge**]: Fix deleting linked event to group events
+- Interfaces/Templates: Tweak cookies for authenticate resources
+- Interfaces/Templates [**visitor-kiosk**]: Prevent check-in of rejected visitors bookings
+- Interfaces/Templates [**concierge**]: Prevent checkin of declined visitor bookings + approve on checkin
+- Interfaces/Templates [**caterer-ui**]: Add date options component from concierge
+- Interfaces/Templates [**spaces**]: Hide space select filters when viewing using mapsindoors (ppt-1407)
+- Interfaces/Templates: Update kiosk bootstrap pages to handle region listing of buildings (ppt-1428)
+- Interfaces/Templates [**mapspeople**]: Fix setting level
+- Interfaces/Templates [**bookings**]: Remove value to ignore hiding set desk height when not checked in (ppt-1298)
+- Interfaces/Templates [**org**]: Tweak initialisation of zone settings (ppt-1439)
+- Interfaces/Templates [**org**]: Handle errors with loading building settings
+- Interfaces/Templates [**concierge**]: Simplify getting ignore week days for reports (ppt-1440)
+- Interfaces/Templates: Limit before meeting notify to one hour
+- Libraries/Driver [**interface/desk_control**]: Height required
+- Libraries/Driver: Remove require that isn't used
+- Libraries/Driver: Compatibility with crystal 1.13
+- Libraries/Models [**module**]: Make error indicator fields as read-only ([#262](https://github.com/PlaceOS/placeos-models/pull/262))
+- Libraries/Models [**booking**]: Ensure clash check is appropriately scoped
+- Libraries/Models [**booking**]: Add timezone validation
+- Libraries/Models: Remove openapi-generator
+- Libraries/Models [**base/associations**]: Macro type resolution error
+- Libraries/Models: Crystal 1.13 scope issue
+- Services/RestAPI [**specs**]: Clean and fix specs ([#384](https://github.com/PlaceOS/rest-api/pull/384))
+- Services/Source [**status_events**]: Parsing of initial state
+- Services/StaffAPI [**events**]: [ppt-1390] return 404 instead of 500 and improve logging ([#321](https://github.com/PlaceOS/staff-api/pull/321))
+
+### Changed
+
+- Interfaces/Backoffice: Upgrade tables to use new component
+- Interfaces/Backoffice: Cleanup styling on about views
+- Interfaces/Backoffice: Cleanup instance details view
+- Interfaces/Backoffice [**triggers**]: Upgrade conditions and triggers tables
+- Interfaces/Templates [**concierge**]: Clean up styling inconsistencies
+- Interfaces/Templates [**workplace**]: Tweak level selectors for resource selection modals
+- Interfaces/Templates [**concierge**]: Cleanup styling for reports
+- Interfaces/Templates [**caterer-ui**]: Update to be more inline with concierge
+
 ## 2.2405.1
 
 ### Fixed
