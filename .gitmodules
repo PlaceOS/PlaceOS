@@ -64,3 +64,9 @@
 [submodule "services/build_service"]
 	path = services/build_service
 	url = https://github.com/placeos/build_service.git
+[submodule "swagger/rest-api"]
+	path = swagger/rest-api
+	url = https://github.com/PlaceOS/rest-api-swagger-ui.git
+[submodule "swagger/staff-api"]
+	path = swagger/staff-api
+	url = https://github.com/PlaceOS/staff-api-swagger-ui.git

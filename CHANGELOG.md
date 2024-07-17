@@ -5,6 +5,41 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2407.1
+
+### Added
+
+- Clients/Crystal [**zone**]: [ppt-1416] add timezone field to zone ([#34](https://github.com/PlaceOS/crystal/pull/34))
+- Interfaces/Backoffice [**staff-api**]: Add early_checkin field to tenants (ppt-1442)
+- Interfaces/Templates [**workplace**]: Add desk height options (ppt-1295, ppt-1298, ppt-1299, ppt-1300)
+- Libraries/Models: Ppt-1413 add error flag to repository model ([#264](https://github.com/PlaceOS/placeos-models/pull/264))
+- Libraries/Models [**bookings**]: Add recurring support to bookings ([#263](https://github.com/PlaceOS/placeos-models/pull/263))
+- Libraries/Models: Ppt-1437 add early_check field to tenant model ([#265](https://github.com/PlaceOS/placeos-models/pull/265))
+- Libraries/Models [**event_metadata**]: Add permission field ([#266](https://github.com/PlaceOS/placeos-models/pull/266))
+- Services/FrontendLoader: Ppt-1413 add error handling + reporting. clean-up and linting c… ([#84](https://github.com/PlaceOS/frontend-loader/pull/84))
+- Services/RestAPI: Ppt-1329: removed git related methods from rest-api ([#386](https://github.com/PlaceOS/rest-api/pull/386))
+- Services/RestAPI: Ppt-1396 add search fields options to index endpoints ([#387](https://github.com/PlaceOS/rest-api/pull/387))
+- Services/StaffAPI [**bookings**]: #index filter on permission field ([#320](https://github.com/PlaceOS/staff-api/pull/320))
+- Services/StaffAPI [**events**]: Preference metadata and system selection ([#322](https://github.com/PlaceOS/staff-api/pull/322))
+- Services/StaffAPI: Ppt-1326 add endpoint to provide a list of booking ids ([#323](https://github.com/PlaceOS/staff-api/pull/323))
+- Services/StaffAPI: Ppt-1437 allow checkin by early_checkin value ([#325](https://github.com/PlaceOS/staff-api/pull/325))
+- Services/StaffAPI [**bookings**]: Add recurring booking support [ppt-1382] ([#324](https://github.com/PlaceOS/staff-api/pull/324))
+- Services/StaffAPI [**events**]: #add_attendee ([#326](https://github.com/PlaceOS/staff-api/pull/326))
+- Services/Triggers: Make loki-search trigger loki presence dependent ([#48](https://github.com/PlaceOS/triggers/pull/48))
+
+### Fixed
+
+- Interfaces/Backoffice [**domains**]: Fix deleting of applications (ppt-1418)
+- Interfaces/Templates [**events**]: Include booked event for room availability (ppt-1369)
+- Interfaces/Templates [**concierge**]: Fix report charts on initial load (ppt-1410)
+- Interfaces/Templates [**spaces**]: Hide space select filters when viewing using mapsindoors (ppt-1407)
+- Interfaces/Templates: Update kiosk bootstrap pages to handle region listing of buildings (ppt-1428)
+- Interfaces/Templates [**bookings**]: Remove value to ignore hiding set desk height when not checked in (ppt-1298)
+- Interfaces/Templates [**org**]: Tweak initialisation of zone settings (ppt-1439)
+- Interfaces/Templates [**concierge**]: Simplify getting ignore week days for reports (ppt-1440)
+- Libraries/Models [**module**]: Make error indicator fields as read-only ([#262](https://github.com/PlaceOS/placeos-models/pull/262))
+- Services/StaffAPI [**events**]: [ppt-1390] return 404 instead of 500 and improve logging ([#321](https://github.com/PlaceOS/staff-api/pull/321))
+
 ## 2.2405.1
 
 ### Fixed
