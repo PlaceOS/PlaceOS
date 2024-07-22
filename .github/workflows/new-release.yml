@@ -68,6 +68,11 @@ jobs:
         env:
           STRIPPED_NEW_VERSION: ${{ steps.update-version.outputs.stripped-new-version }}
 
+      - name: Configure git user
+        run: |
+          git config user.email "robots@place.technology"
+          git config user.name "PlaceOS Robot"
+
       - name: Update OPEN API Doc Links
         shell: bash
         run: |
@@ -91,13 +96,17 @@ jobs:
 
             mv "$temp_file" "$input_file"
           done
+          pushd swagger
+          for submodule in */; do
+            cd "$dir"
+            git add versions.json
+            git commit -m "build: update for $VERSION"
+            git push origin
+            cd ..
+          done
+          popd
         env:
           VERSION: ${{ steps.update-version.outputs.new-version }}
-
-      - name: Configure git user
-        run: |
-          git config user.email "robots@place.technology"
-          git config user.name "PlaceOS Robot"
 
       - name: Commit
         run: |
