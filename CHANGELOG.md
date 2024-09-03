@@ -5,6 +5,158 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2409.2
+
+### Fixed
+
+- Clients/Typescript [**signage**]: Update signage logic to match api specs
+- Clients/Typescript [**users**]: Update interface for worktime preferences
+- Clients/Typescript [**signage**]: Update type information for signage classes
+- Clients/Typescript [**signage**]: Tweaks
+- Clients/Typescript [**signage**]: Tweak media item class logic
+- Clients/Typescript [**zones**]: Add playlists field
+- Clients/Typescript [**triggers**]: Add playlists field
+- Clients/Typescript [**signage**]: Minor model tweaks
+- Clients/Typescript [**signage**]: Add video_length field to media
+- Clients/Typescript [**signage**]: Tweak valid_x fields
+- Clients/Typescript [**signage**]: Tweak requests
+- Clients/Typescript [**signage**]: Change media animation to enum
+- Clients/Typescript: Export mediaanimation enum
+- Clients/Typescript [**signage**]: Add default value to animation enum
+- Interfaces/Backoffice [**systems**]: Fix zone name overflow
+- Interfaces/Backoffice [**drivers**]: Remove ability to recompile a driver
+- Interfaces/Backoffice [**systems**]: Remove power toggle from right clicking on module status dot
+- Interfaces/Backoffice [**systems**]: Fix check for module errors
+- Interfaces/Templates [**concierge**]: Add level selector to day view when use region set (ppt-1434)
+- Interfaces/Templates [**concierge**]: Up limit for requested rooms (ppt-1441)
+- Interfaces/Templates: Limit before meeting notify to one hour
+- Interfaces/Templates: Fix table filtering with invalid value (ppt-1450)
+- Interfaces/Templates [**concierge**]: Fix loading of room list by region
+- Interfaces/Templates [**concierge**]: Fix room booking view scroll when font size not default (proj-854)
+- Interfaces/Templates [**concierge**]: Simplify room booking timetable
+- Interfaces/Templates [**bookings**]: Remove room facilities from parking select details
+- Interfaces/Templates [**bookings**]: Show region instead of building in use_region mode
+- Interfaces/Templates [**bookings**]: Display region instead of building for visitor invite when configured (proj-852)
+- Interfaces/Templates [**events**]: Use room_booking_rules metadata (proj-804)
+- Interfaces/Templates [**events**]: Fix display of group event location
+- Interfaces/Templates [**workplace**]: Fix filters for showing group events
+- Interfaces/Templates [**events**]: Fix images display for group events
+- Interfaces/Templates [**bookings**]: Fix visitor name display (ppt-1453)
+- Interfaces/Templates [**concierge**]: Set host of group events to shared calendar
+- Interfaces/Templates [**events**]: Fix endpoint requests for attendees on group events
+- Interfaces/Templates [**events**]: Fix saving images on group events
+- Interfaces/Templates [**bookings**]: Tweak building display on details modal (ppt-1454)
+- Interfaces/Templates [**concierge**]: Split name and id columns on desk manage (ppt-1471)
+- Interfaces/Templates [**explore**]: Fix displaying plate numbers for parking spaces
+- Interfaces/Templates [**concierge**]: Prevent adding parking space when no level is selected
+- Interfaces/Templates [**concierge**]: Fix parking map loaded on refresh
+- Interfaces/Templates [**bookings**]: Fix adding appropriate zones for selected resources
+- Interfaces/Templates [**concierge**]: Fix status colours of parking bookings
+- Interfaces/Templates [**concierge**]: Fix saving visitor notes
+- Interfaces/Templates [**concierge**]: Fix managing desk bookable status (ppt-1471)
+- Interfaces/Templates [**explore**]: Fix parking info reserved status when space not assigned (ppt-1386)
+- Interfaces/Templates [**concierge**]: Fix form checks for unedited fields on desk manage modal (ppt-1471)
+- Interfaces/Templates [**explore**]: Re-poll parking bookings after making booking from map
+- Interfaces/Templates [**concierge**]: Add ms to checkout time when displaying left time for parking bookings
+- Interfaces/Templates [**concierge**]: Connect date selector to parking map data
+- Interfaces/Templates [**workplace**]: Apply parking asset id on form confirm
+- Interfaces/Templates [**concierge**]: Fix setting zones to parking assignment bookings
+- Interfaces/Templates [**explore**]: Fix getting parking status for region
+- Interfaces/Templates [**booking-panel**]: Send null for host when not set by default
+- Interfaces/Templates [**bookings**]: Fix switching buildings on parking select modal
+- Interfaces/Templates [**booking-panel**]: Tweak selected time for book now
+- Interfaces/Templates [**bookings**]: Fix handling bookings without resources
+- Interfaces/Templates [**bookings**]: Update logic to handle recurring instances
+- Interfaces/Templates [**concierge**]: Save support issue types to concierge metadata also (ppt-1485)
+- Interfaces/Templates [**concierge**]: Fix saving support issue types for concierge
+- Interfaces/Templates [**workplace**]: Handle removing booking instances (ppt-1480)
+- Interfaces/Templates [**bookings**]: Tweak zones for bookings
+- Interfaces/Templates [**visitors**]: Update induction api calls
+- Interfaces/Templates [**mapspeople**]: Tweak handling of building switching (ppt-1501)
+- Interfaces/Templates [**mapspeople**]: Clear directions when changing focus item (ppt-1504)
+- Interfaces/Templates [**mapspeople**]: Prioritise focus item over building for center
+- Interfaces/Templates [**concierge**]: Fix saving level id to parking assignment booking (ppt-1498)
+- Interfaces/Templates [**bookings**]: Fix ending booking instances (ppt-1480)
+- Interfaces/Templates [**explore**]: Fix selecting the same item twice from search (ppt-1504)
+- Interfaces/Templates [**bookings**]: Fix getting map id for pinning resource
+- Interfaces/Templates [**mapspeople**]: Store last position of the user (ppt-1504)
+- Interfaces/Templates [**explore**]: Fix grabbing map features for search
+- Interfaces/Templates [**events**]: Fix applying space zones to asset bookings (ppt-1346)
+- Interfaces/Templates [**bookings**]: Fix standalone visitor bookings
+- Interfaces/Templates [**control**]: Debounce volume changes
+- Interfaces/Templates [**booking-panel**]: Fix setting booking host from modal settings
+- Interfaces/Templates [**control**]: Fix voice control error handling
+- Interfaces/Templates [**concierge**]: Fix handling asset bookings report without linked events
+- Interfaces/Templates [**explore**]: Ignore rejected bookings for parking maps
+- Interfaces/Templates [**concierge**]: Fix whitespace on week view on larger screens
+- Interfaces/Templates [**concierge**]: Fix showing old data when switching zones on week view (ppt-1508)
+- Interfaces/Templates [**concierge**]: Fix z-index of room approvals section (ppt-1514)
+- Libraries/Driver [**interface/lighting**]: Support string ids
+- Libraries/Driver [**transport**]: Improve client certificate configuration
+- Libraries/Driver [**transport**]: Remove sleep after write
+- Libraries/Models [**migrations**]: Add default to email_domains
+- Libraries/Models [**authority**]: Email_domains should handle nilable
+- Libraries/Models [**authority**]: Add migration script to set defaults ([#271](https://github.com/PlaceOS/placeos-models/pull/271))
+- Libraries/Models [**playlist**]: Valid from and until field types
+- Libraries/Models [**booking**]: Prevent save if instance is set
+- Libraries/Models [**playlist/item**]: Update playlists when media is deleted
+- Libraries/Models [**control_system**]: Playlists_last_updated using created at
+- Libraries/Models [**playlist/item**]: Update playlists when an item is changed
+- Libraries/Models [**control_system**]: Include playlist updated at in cache bust
+- Libraries/Models [**playlist**]: Make 0 the default playlist animation
+- Libraries/Models [**Booking**]: Clashing should not inspect checked out bookings
+- Libraries/Models [**booking**]: Fix is_checked_in query
+- Libraries/Models [**booking**]: Provide a helper for filtering checked in/out instances
+- Services/Core [**Dockerfile**]: Edge tmp folder permissions
+- Services/Edge [**Dockerfile**]: Edge tmp folder permissions
+- Services/FrontendLoader [**remotes**]: Ensure file listing on a branch works
+- Services/Init [**shard.lock**]: Add default value to email_domains
+- Services/RestAPI [**signage/playlist_media**]: Don't cleanup media still in use
+- Services/RestAPI [**signage/playlists**]: Sort by name
+- Services/RestAPI [**signage/playlists**]: Name field sort
+- Services/RestAPI [**signage**]: Caching and cache busting updates
+- Services/RestAPI [**signage**]: Errors when no playlists scheduled
+- Services/SearchIngest [**schemas**]: Ignore parent if no index
+- Services/Source: Ppt-1503 refactor event processing logic to avoid memory leak ([#55](https://github.com/PlaceOS/source/pull/55))
+- Services/StaffAPI [**bookings**]: Modify how delete is performed
+- Services/StaffAPI [**bookings**]: Add approve and reject routes for recurring instances
+- Services/StaffAPI [**booking**]: Checked out filters to work with recurring bookings
+
+### Added
+
+- Interfaces/Templates [**concierge**]: Add ability to reserve parking for visitors (ppt-1388)
+- Interfaces/Templates [**concierge**]: Add ability to see parking space status on manage view (ppt-1379)
+- Interfaces/Templates [**explore**]: Setup parking map booking checks and status displays (ppt-1387)
+- Interfaces/Templates [**workplace**]: Update booking listings to show extra info for parking (ppt-1380)
+- Interfaces/Templates [**concierge**]: Add extra parking map display info (ppt-1386)
+- Interfaces/Templates: Update logic for group events to use calendar events (ppt-1424)
+- Interfaces/Templates [**bookings**]: Use new booked endpoint for resource availability (ppt-1443)
+- Interfaces/Templates [**concierge**]: Add ability to set notes on visitors (ppt-1472)
+- Interfaces/Templates [**workplace**]: Rework work location ui (ppt-1482)
+- Interfaces/Templates [**control**]: Add basic voice assistant
+- Interfaces/Templates: Add call to wake lock api on fixed devices
+- Interfaces/Templates [**concierge**]: Add ability to set booking rules for parking (ppt-1500)
+- Interfaces/Templates [**concierge**]: Add ability to restrict sections to certain groups (ppt-1500)
+- Interfaces/Templates [**control**]: Add binding to enable voice control
+- Interfaces/Templates [**concierge**]: Add week view for calendar events (ppt-1508)
+- Interfaces/Templates [**concierge**]: Add ability to search for calendar events (ppt-1509)
+- Libraries/Models [**booking**]: [ppt-1405] update approved/rejected fields on child bookings ([#267](https://github.com/PlaceOS/placeos-models/pull/267))
+- Libraries/Models: Ppt-1470 add email domain feature to authority model ([#269](https://github.com/PlaceOS/placeos-models/pull/269))
+- Libraries/Models [**playlist/item**]: Add video length ([#270](https://github.com/PlaceOS/placeos-models/pull/270))
+- Libraries/Models: Ppt-1475 mark trigger fields to ignore from es index ([#273](https://github.com/PlaceOS/placeos-models/pull/273))
+- Libraries/Models [**user**]: [ppt-1484] format of work_preferences and work_overrides ([#274](https://github.com/PlaceOS/placeos-models/pull/274))
+- Services/RestAPI [**systems**]: Add a filter for signage systems
+- Services/SearchIngest: Ppt-1476 add es_ignore attribute to avoid dynamic mapping ([#83](https://github.com/PlaceOS/search-ingest/pull/83))
+- Services/StaffAPI [**tenants**]: Early_checkin endpoints ([#327](https://github.com/PlaceOS/staff-api/pull/327))
+- Services/StaffAPI [**events**]: Debug log ([#329](https://github.com/PlaceOS/staff-api/pull/329))
+- Services/StaffAPI [**bookings**]: Update_induction endpoint ([#331](https://github.com/PlaceOS/staff-api/pull/331))
+
+### Changed
+
+- Interfaces/Templates [**concierge**]: Simplify visitor listing table
+- Libraries/Models [**booking**]: Change induction to an enum ([#272](https://github.com/PlaceOS/placeos-models/pull/272))
+- Services/FrontendLoader: Ppt-1456 remove raven dependency ([#85](https://github.com/PlaceOS/frontend-loader/pull/85))
+
 ## 2.2407.1
 
 ### Added
