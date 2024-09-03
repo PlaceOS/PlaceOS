@@ -1,0 +1,55 @@
+name: Update Open API Docs
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to be updated in versions.json'
+        required: true
+
+jobs:
+  update-open-api-doc-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+            submodules: true
+
+      - name: Configure git user
+        run: |
+          git config user.email "robots@place.technology"
+          git config user.name "PlaceOS Robot"
+
+      - name: Update OPEN API Doc Links
+        shell: bash
+        run: |
+          git fetch --all
+
+          submodules=("services/rest-api" "services/staff-api")
+
+          for submodule in "${submodules[@]}"; do
+            commit_id=$(git submodule status "$submodule" | awk '{print $1}')
+            module_name=$(basename "$submodule")
+            new_url="https://raw.githubusercontent.com/PlaceOS/${module_name}/${commit_id}/OPENAPI_DOC.yml"
+
+            input_file="swagger/$module_name/versions.json"
+            temp_file=$(mktemp)
+
+            jq --arg version "${{ github.event.inputs.version }}" --arg new_url "$new_url" \
+              'to_entries | (.[0:1] + [{"key": $version, "value": $new_url}] + .[1:]) | from_entries' \
+              "$input_file" > "$temp_file"
+
+            mv "$temp_file" "$input_file"
+          done
+          pushd swagger
+          for dir in */; do
+            cd "$dir"
+            git add versions.json
+            git commit -m "build: update for ${{ github.event.inputs.version }}"
+            git push origin
+            cd ..
+          done
+          popd
+
