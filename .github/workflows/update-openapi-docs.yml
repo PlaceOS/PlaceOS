@@ -36,9 +36,13 @@ jobs:
             module_name=$(basename "$submodule")
             cd - > /dev/null
 
-            new_url="https://raw.githubusercontent.com/PlaceOS/${module_name}/${commit_id}/OPENAPI_DOC.yml"
+            cd "swagger/$module_name"
+            git checkout master
+            git pull origin master
 
-            input_file="swagger/$module_name/versions.json"
+
+            new_url="https://raw.githubusercontent.com/PlaceOS/${module_name}/${commit_id}/OPENAPI_DOC.yml"
+            input_file="versions.json"
             temp_file=$(mktemp)
 
             jq --arg version "${{ github.event.inputs.version }}" --arg new_url "$new_url" \
@@ -47,11 +51,9 @@ jobs:
 
             mv "$temp_file" "$input_file"
 
-            # Commit and push the changes within the submodule
-            cd "swagger/$module_name"
             git add versions.json
             git commit -m "build: update for ${{ github.event.inputs.version }}"
-            git push origin
+            git push origin master
+
             cd ../../
           done
-
