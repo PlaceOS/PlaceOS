@@ -15,23 +15,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-            submodules: true
+          submodules: true
 
       - name: Configure git user
         run: |
-          git config user.email "robots@place.technology"
-          git config user.name "PlaceOS Robot"
+          git config --global user.email "robots@place.technology"
+          git config --global user.name "PlaceOS Robot"
 
       - name: Update OPEN API Doc Links
         shell: bash
         run: |
-          git fetch --all
+          set -e  # Exit if any command fails
 
           submodules=("services/rest-api" "services/staff-api")
 
           for submodule in "${submodules[@]}"; do
-            commit_id=$(git submodule status "$submodule" | awk '{print $1}')
+            cd "$submodule"
+            git fetch
+            commit_id=$(git rev-parse HEAD)
             module_name=$(basename "$submodule")
+            cd - > /dev/null
+
             new_url="https://raw.githubusercontent.com/PlaceOS/${module_name}/${commit_id}/OPENAPI_DOC.yml"
 
             input_file="swagger/$module_name/versions.json"
@@ -42,14 +46,12 @@ jobs:
               "$input_file" > "$temp_file"
 
             mv "$temp_file" "$input_file"
-          done
-          pushd swagger
-          for dir in */; do
-            cd "$dir"
+
+            # Commit and push the changes within the submodule
+            cd "swagger/$module_name"
             git add versions.json
             git commit -m "build: update for ${{ github.event.inputs.version }}"
             git push origin
-            cd ..
+            cd ../../
           done
-          popd
 
