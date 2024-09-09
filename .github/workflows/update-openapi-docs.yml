@@ -1,11 +1,9 @@
 name: Update Open API Docs
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to be updated in versions.json'
-        required: true
+  push:
+    branches:
+      - release
 
 jobs:
   update-open-api-doc-links:
@@ -23,8 +21,14 @@ jobs:
           git config --global user.email "robots@place.technology"
           git config --global user.name "PlaceOS Robot"
 
+      - name: Retrieve Version
+        id: get_version
+        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_ENV
+
       - name: Update OPEN API Doc Links
         shell: bash
+        env:
+          VERSION: ${{ env.VERSION }}
         run: |
           set -e  # Exit if any command fails
 
@@ -41,19 +45,18 @@ jobs:
             git checkout master
             git pull origin master
 
-
             new_url="https://raw.githubusercontent.com/PlaceOS/${module_name}/${commit_id}/OPENAPI_DOC.yml"
             input_file="versions.json"
             temp_file=$(mktemp)
 
-            jq --arg version "${{ github.event.inputs.version }}" --arg new_url "$new_url" \
+            jq --arg version "$VERSION" --arg new_url "$new_url" \
               'to_entries | (.[0:1] + [{"key": $version, "value": $new_url}] + .[1:]) | from_entries' \
               "$input_file" > "$temp_file"
 
             mv "$temp_file" "$input_file"
 
             git add versions.json
-            git commit -m "build: update for ${{ github.event.inputs.version }}"
+            git commit -m "build: update for $VERSION"
             git push origin master
 
             cd ../../
