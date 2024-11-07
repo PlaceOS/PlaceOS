@@ -5,21 +5,10 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
-## 2.2411.2
+## 2.2411.0
 
 ### Fixed
 
-- Clients/Crystal [**models/driver**]: Missing id field
-- Clients/Crystal [**models/driver**]: Fix role parsing
-- Clients/Crystal [**model/driver**]: Mark fields as optional
-- Clients/Crystal [**error**]: Output more information
-- Clients/Crystal [**error**]: Output more information
-- Clients/Crystal [**modes/system**]: Allow version to be updated
-- Clients/Crystal [**models/system**]: Revert system change
-- Clients/Typescript [**signage**]: Fix default playlist duration
-- Clients/Typescript [**domains**]: Add new field for email domains
-- Interfaces/Templates [**concierge**]: Fix display of form error when booking visitor parking
-- Interfaces/Templates [**booking-panel**]: Fix binding to event details on event panel
 - Interfaces/Templates [**concierge**]: Handle case where first instance is cancelled when removing parking assignment (ppt-1523)
 - Interfaces/Templates [**workplace**]: Set initial user for parking bookings (ppt-1520)
 - Interfaces/Templates [**concierge**]: Add ability to set host for visitor invites (ppt-1532)
@@ -31,39 +20,18 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**events**]: Fix extending bookings over another booking (ppt-1559)
 - Interfaces/Templates [**concierge**]: Fix setting visitors as remote (ppt-1556)
 - Interfaces/Templates [**bookings**]: Fix adding and viewing booked assets (ppt-1568)
-- Interfaces/Templates [**booking-panel**]: Fix loading undefined for room image
-- Interfaces/Templates [**concierge**]: Fix offset of timezone adjusted bookings on day view
 - Interfaces/Templates [**concierge**]: Fix zones when booking parking from map (ppt-1582)
 - Interfaces/Templates [**explore**]: Fix parking statuses on maps (ppt-1590)
-- Interfaces/Templates [**concierge**]: Fix setting unit price on purchase orders
 - Interfaces/Templates [**workplace**]: Re-enable ability to make non-all-day parking bookings (ppt-1595)
-- Interfaces/Templates [**control**]: Fix handling input switching across multiple panels
 - Interfaces/Templates [**concierge**]: Fix search for pending approvals (ppt-1609)
 - Interfaces/Templates [**concierge**]: Fix building timezone display on week view (ppt-1608)
 - Interfaces/Templates [**concierge**]: Fix user shown when editing parking bookings (ppt-1606)
 - Interfaces/Templates [**concierge**]: Update parking booking list after creation/edit (ppt-1605)
-- Interfaces/Templates [**concierge**]: Fix disabling time fields on parking modal
-- Interfaces/Templates [**booking-panel**]: Fix bootstrapping to event view
-- Interfaces/Templates [**concierge**]: Only ask for visitor induction when enabled
-- Libraries/Driver [**interface/guest_building_access**]: Require guest name
-- Libraries/Driver [**interface/guest_building_access**]: Protected abstract
-- Libraries/Driver [**interface/guest_building_access**]: Details class resolution
-- Libraries/Driver [**interface/guest_building_access**]: Subclass detection
-- Libraries/Driver [**interface/guest_building_access**]: Expose revoke_guest_access
-- Libraries/Driver [**interface/guest_building_access**]: Simplify interface
-- Libraries/Driver [**proxy/driver**]: Revert change to __send__ signature
-- Libraries/Driver [**proxy/driver**]: Make __send__ a reserved word
-- Libraries/Driver [**logger**]: Default to json is env is not present
-- Libraries/Driver: Deprecation warnings
 - Libraries/Models [**booking**]: Recurring booking clash check ([#276](https://github.com/PlaceOS/placeos-models/pull/276))
-- Services/RestAPI [**systems**]: Use must for public and signage filters
-- Services/StaffAPI [**bookings**]: Don't return rejected or deleted recurring master bookings
-- Services/StaffAPI [**bookings**]: Refactor how booking instance is applied
 
 ### Added
 
 - Interfaces/Backoffice: Add ability to add resources from staff api (ppt-1536)
-- Interfaces/Backoffice [**domains**]: Add domain emails field
 - Interfaces/Templates [**concierge**]: Add email templates section (ppt-1448)
 - Interfaces/Templates [**concierge**]: Add logic to use email template tokens (ppt-1459)
 - Interfaces/Templates [**form-fields**]: Add ability to attach files to input (ppt-1458)
@@ -71,7 +39,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**concierge**]: Add ability to send test emails (ppt-1460)
 - Interfaces/Templates [**explore**]: Add logic to show occupancy icons for rooms (ppt-1464)
 - Interfaces/Templates [**concierge**]: Add ui and logic to set booking panel settings (ppt-1282)
-- Interfaces/Templates [**concierge**]: Add ability display bookings based on the building timezone
 - Interfaces/Templates [**visitor-kiosk**]: Add ability for visitors to self register (ppt-1530)
 - Interfaces/Templates [**concierge**]: Add simple visitors report (ppt-1533)
 - Interfaces/Templates: Add ability to view building timezones when booking (ppt-1560, ppt-1564)
@@ -81,10 +48,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**concierge**]: Add button to link room to av control panel (ppt-1597)
 - Interfaces/Templates [**workplace**]: Add ability to book recurring desk bookings (ppt-1576)
 - Interfaces/Templates [**workplace**]: Disallow daily recurrence for all day events (ppt-1596)
-- Libraries/Driver [**interface/guest_building_access**]: Standardise guest access
-- Libraries/Driver [**interface/guest_building_access**]: Standardise guest access
-- Libraries/Driver [**interface/guest_building_access**]: Flag to indicate if confgured
-- Libraries/Driver [**interface/mailer**]: Add reply_to option
 - Libraries/Driver [**MailerTemplates**]: New interface for mailer template fields ([#167](https://github.com/PlaceOS/placeos-driver/pull/167))
 - Libraries/Driver [**logger**]: Default to json formatted logs on stdout
 - Libraries/Models: Ppt-642 added place_id attribute in zone model ([#275](https://github.com/PlaceOS/placeos-models/pull/275))
@@ -97,11 +60,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Services/RestAPI: Ppt-1470 add lookup by email endpoint in domains controller ([#388](https://github.com/PlaceOS/rest-api/pull/388))
 - Services/RestAPI: Ppt-1517 add azure storage support ([#392](https://github.com/PlaceOS/rest-api/pull/392))
 - Services/StaffAPI: Ppt-642 added place controller ([#333](https://github.com/PlaceOS/staff-api/pull/333))
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2409.2
-- Swagger/StaffAPI: Update for placeos-2.2409.2
 
 ## 2.2409.0
 
