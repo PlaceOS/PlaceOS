@@ -5,6 +5,62 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2411.0
+
+### Fixed
+
+- Interfaces/Templates [**concierge**]: Handle case where first instance is cancelled when removing parking assignment (ppt-1523)
+- Interfaces/Templates [**workplace**]: Set initial user for parking bookings (ppt-1520)
+- Interfaces/Templates [**concierge**]: Add ability to set host for visitor invites (ppt-1532)
+- Interfaces/Templates [**concierge**]: Fix removing parking users (ppt-1548)
+- Interfaces/Templates [**concierge**]: Fix minor room report issues (ppt-1554)
+- Interfaces/Templates [**concierge**]: Fix minor issues with desk reports (ppt-1554)
+- Interfaces/Templates [**workplace**]: Ignore catering checks when no menu available (ppt-1555)
+- Interfaces/Templates [**bookings**]: Fix check for user's availability (ppt-1557, ppt-1558)
+- Interfaces/Templates [**events**]: Fix extending bookings over another booking (ppt-1559)
+- Interfaces/Templates [**concierge**]: Fix setting visitors as remote (ppt-1556)
+- Interfaces/Templates [**bookings**]: Fix adding and viewing booked assets (ppt-1568)
+- Interfaces/Templates [**concierge**]: Fix zones when booking parking from map (ppt-1582)
+- Interfaces/Templates [**explore**]: Fix parking statuses on maps (ppt-1590)
+- Interfaces/Templates [**workplace**]: Re-enable ability to make non-all-day parking bookings (ppt-1595)
+- Interfaces/Templates [**concierge**]: Fix search for pending approvals (ppt-1609)
+- Interfaces/Templates [**concierge**]: Fix building timezone display on week view (ppt-1608)
+- Interfaces/Templates [**concierge**]: Fix user shown when editing parking bookings (ppt-1606)
+- Interfaces/Templates [**concierge**]: Update parking booking list after creation/edit (ppt-1605)
+- Libraries/Models [**booking**]: Recurring booking clash check ([#276](https://github.com/PlaceOS/placeos-models/pull/276))
+
+### Added
+
+- Interfaces/Backoffice: Add ability to add resources from staff api (ppt-1536)
+- Interfaces/Templates [**concierge**]: Add email templates section (ppt-1448)
+- Interfaces/Templates [**concierge**]: Add logic to use email template tokens (ppt-1459)
+- Interfaces/Templates [**form-fields**]: Add ability to attach files to input (ppt-1458)
+- Interfaces/Templates [**concierge**]: Add reply-to and from addresses (ppt-1461)
+- Interfaces/Templates [**concierge**]: Add ability to send test emails (ppt-1460)
+- Interfaces/Templates [**explore**]: Add logic to show occupancy icons for rooms (ppt-1464)
+- Interfaces/Templates [**concierge**]: Add ui and logic to set booking panel settings (ppt-1282)
+- Interfaces/Templates [**visitor-kiosk**]: Add ability for visitors to self register (ppt-1530)
+- Interfaces/Templates [**concierge**]: Add simple visitors report (ppt-1533)
+- Interfaces/Templates: Add ability to view building timezones when booking (ppt-1560, ppt-1564)
+- Interfaces/Templates [**concierge**]: Allow user to print all desk qr codes for a level (ppt-1572)
+- Interfaces/Templates [**workplace**]: Add ability to book desk after booking a room (ppt-1573)
+- Interfaces/Templates [**workplace**]: Add ability to show calendar options after booking parking (ppt-1586)
+- Interfaces/Templates [**concierge**]: Add button to link room to av control panel (ppt-1597)
+- Interfaces/Templates [**workplace**]: Add ability to book recurring desk bookings (ppt-1576)
+- Interfaces/Templates [**workplace**]: Disallow daily recurrence for all day events (ppt-1596)
+- Libraries/Driver [**MailerTemplates**]: New interface for mailer template fields ([#167](https://github.com/PlaceOS/placeos-driver/pull/167))
+- Libraries/Driver [**logger**]: Default to json formatted logs on stdout
+- Libraries/Models: Ppt-642 added place_id attribute in zone model ([#275](https://github.com/PlaceOS/placeos-models/pull/275))
+- Libraries/Models: Ppt-1622 add auth tokens cleanup code ([#277](https://github.com/PlaceOS/placeos-models/pull/277))
+- Services/Init: Ppt-1516 add support for azure blob storage to init ([#89](https://github.com/PlaceOS/init/pull/89))
+- Services/Init: Ppt-1621 updated backup/restore tasks ([#91](https://github.com/PlaceOS/init/pull/91))
+- Services/Init: Ppt-1623 cleanup task ([#92](https://github.com/PlaceOS/init/pull/92))
+- Services/Init: Ppt-1623 cleanup task ([#93](https://github.com/PlaceOS/init/pull/93))
+- Services/RestAPI: Ppt-1518 added uploads listing controller ([#391](https://github.com/PlaceOS/rest-api/pull/391))
+- Services/RestAPI: Ppt-1470 add lookup by email endpoint in domains controller ([#388](https://github.com/PlaceOS/rest-api/pull/388))
+- Services/RestAPI: Ppt-1517 add azure storage support ([#392](https://github.com/PlaceOS/rest-api/pull/392))
+- Services/StaffAPI: Ppt-642 added place controller ([#333](https://github.com/PlaceOS/staff-api/pull/333))
+
 ## 2.2409.0
 
 ### Fixed
