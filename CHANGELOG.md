@@ -11,23 +11,13 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 - Clients/Crystal [**auth**]: Auth_api_root path ([#35](https://github.com/PlaceOS/crystal/pull/35))
 - Interfaces/Backoffice: Update frontend search filters to use notes/description (ppt-1650)
-- Interfaces/Backoffice [**drivers**]: Handle errors when checking compiled state
-- Interfaces/Templates [**workplace**]: Hide space filters when feature disabled
 - Interfaces/Templates [**explore**]: Check desk rules before finalising booking (ppt-1687)
 - Interfaces/Templates [**visitor-kiosk**]: Prevent user re-checking in an finish booking (ppt-1686)
 - Interfaces/Templates [**concierge**]: Remove bookings when deleting parking space (ppt-1690)
 - Interfaces/Templates [**workplace**]: Prevent booking closed favourite spaces (ppt-1716)
-- Libraries/Driver [**driver_manager**]: Ensure connected state
-- Libraries/Models [**bookings**]: Booking_recurrences may not be filled
 - Services/Core [**Dockerfile**]: Ensure tmp folder has the correct permissions ([#274](https://github.com/PlaceOS/core/pull/274))
-- Services/Core [**Dockerfile**]: Owner user must exist on the filesystem
 - Services/Core [**module_manager**]: Ppt-1636 refactor to use empty settings when merge settin… ([#275](https://github.com/PlaceOS/core/pull/275))
-- Services/Edge [**Dockerfile**]: Ensure tmp folder has the correct permissions ([#274](https://github.com/PlaceOS/edge/pull/274))
-- Services/Edge [**Dockerfile**]: Owner user must exist on the filesystem
-- Services/Edge [**module_manager**]: Ppt-1636 refactor to use empty settings when merge settin… ([#275](https://github.com/PlaceOS/edge/pull/275))
 - Services/FrontendLoader [**Dockerfile**]: Allow random user ids in production ([#86](https://github.com/PlaceOS/frontend-loader/pull/86))
-- Services/FrontendLoader [**Dockerfile**]: Owner needs to be available in the image
-- Services/FrontendLoader [**Dockerfile**]: Use busybox to set permissions
 - Services/Init [**authority**]: Use provided name to create authority, provide correc… ([#95](https://github.com/PlaceOS/init/pull/95))
 
 ### Added
@@ -37,15 +27,10 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**workplace**]: Add desks default duration setting (ppt-1683)
 - Interfaces/Templates [**catering**]: Add ability to have multiple menus per building (ppt-1646)
 - Interfaces/Templates [**concierge**]: Add parking report (ppt-1691)
-- Interfaces/Templates [**concierge**]: Add form for modifying workplace app settings
 - Interfaces/Templates [**concierge**]: Add form for modifying visitor kiosk settings (ppt-1694)
-- Interfaces/Templates [**concierge**]: Add form for managing concierge settings
-- Services/Core [**Dockerfile**]: Minimal core
+- Services/Core [**Dockerfile**]: Minimal core image
 - Services/Core: Ppt-1701 added extra endpoints for recompile and reload ([#276](https://github.com/PlaceOS/core/pull/276))
 - Services/Core: Ppt-1635 stale driver cleanup task ([#277](https://github.com/PlaceOS/core/pull/277))
-- Services/Edge [**Dockerfile**]: Minimal core
-- Services/Edge: Ppt-1701 added extra endpoints for recompile and reload ([#276](https://github.com/PlaceOS/edge/pull/276))
-- Services/Edge: Ppt-1635 stale driver cleanup task ([#277](https://github.com/PlaceOS/edge/pull/277))
 - Services/RestAPI: Ppt-1701 refactored recompile/reload logic ([#395](https://github.com/PlaceOS/rest-api/pull/395))
 
 ### Changed
