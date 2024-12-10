@@ -12,21 +12,12 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Clients/Typescript [**drivers**]: Add endpoint for reloading compiled driver
 - Services/StaffAPI [**events**]: [ppt-1473] prefer metadata with ext_data over metadata without ([#335](https://github.com/PlaceOS/staff-api/pull/335))
 - Services/StaffAPI [**availability**]: Ppt-1629 return 404 when tenant not found ([#334](https://github.com/PlaceOS/staff-api/pull/334))
-- Services/StaffAPI [**bookings**]: /booked route to return more results
-- Services/StaffAPI [**controllers/events**]: Ensure default to user email
-- Services/StaffAPI [**bookings**]: Preference booking.description when signalling
 
 ### Added
 
 - Interfaces/Backoffice [**drivers**]: Add recompile and reload buttons (ppt-1732)
 - Interfaces/Templates [**visitor-kiosk**]: Add translation hooks for text in visitor kiosk (ppt-1720)
-- Libraries/Driver [**driver_manager**]: Implicitly call on_update
 - Services/RestAPI: Ppt-1733 add reload driver endpoint ([#396](https://github.com/PlaceOS/rest-api/pull/396))
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2412.1
-- Swagger/StaffAPI: Update for placeos-2.2412.1
 
 ## 2.2412.1
 
