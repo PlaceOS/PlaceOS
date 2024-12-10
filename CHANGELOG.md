@@ -5,6 +5,20 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2412.2
+
+### Fixed
+
+- Clients/Typescript [**drivers**]: Add endpoint for reloading compiled driver
+- Services/StaffAPI [**events**]: [ppt-1473] prefer metadata with ext_data over metadata without ([#335](https://github.com/PlaceOS/staff-api/pull/335))
+- Services/StaffAPI [**availability**]: Ppt-1629 return 404 when tenant not found ([#334](https://github.com/PlaceOS/staff-api/pull/334))
+
+### Added
+
+- Interfaces/Backoffice [**drivers**]: Add recompile and reload buttons (ppt-1732)
+- Interfaces/Templates [**visitor-kiosk**]: Add translation hooks for text in visitor kiosk (ppt-1720)
+- Services/RestAPI: Ppt-1733 add reload driver endpoint ([#396](https://github.com/PlaceOS/rest-api/pull/396))
+
 ## 2.2412.1
 
 ### Fixed
