@@ -12,29 +12,23 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Backoffice [**admin**]: Add section for managing build jobs (ppt-1758)
 - Interfaces/Templates [**concierge**]: Add report for lockers (ppt-1730)
 - Interfaces/Templates [**concierge**]: Add ability to assign desks to users (ppt-1775)
-- Libraries/LogBackend: Remove opentelemetry
 - Libraries/Models: Ppt-54 add full text search capabilities to guest model ([#278](https://github.com/PlaceOS/placeos-models/pull/278))
-- Services/StaffAPI: Ppt-54 updated guests endpoint to use  full text search capabilities ([#338](https://github.com/PlaceOS/staff-api/pull/338))
+- Services/StaffAPI: Ppt-54 updated guests endpoint to use full text search capabilities ([#338](https://github.com/PlaceOS/staff-api/pull/338))
 - Services/StaffAPI [**bookings**]: [ppt-1430] signal on induction accepted/declined ([#337](https://github.com/PlaceOS/staff-api/pull/337))
 
 ### Fixed
 
 - Interfaces/Templates [**visitor-kiosk**]: Fix visitor label printing (ppt-1744)
-- Interfaces/Templates [**catering**]: Fix handling of invalid catering item tags
-- Interfaces/Templates [**concierge**]: Fix ignore days for locker and parking reports
 - Interfaces/Templates [**concierge**]: Update desk booking local state on changes (ppt-1779)
 - Libraries/Models [**bookings**]: Prefix checked_in with bookings in sql ([#279](https://github.com/PlaceOS/placeos-models/pull/279))
 - Services/Core [**driver_manager**]: Fix reload_driver to return proper status code ([#278](https://github.com/PlaceOS/core/pull/278))
-- Services/Edge [**driver_manager**]: Fix reload_driver to return proper status code ([#278](https://github.com/PlaceOS/edge/pull/278))
 - Services/RestAPI [**asset_types**]: Refactor endpoint to respect zone_id param ([#397](https://github.com/PlaceOS/rest-api/pull/397))
 - Services/RestAPI [**webhook**]: Don't include spaces in user_id
 - Services/StaffAPI [**events**]: [ppt-1473] return most detailed metadata ([#336](https://github.com/PlaceOS/staff-api/pull/336))
 
 ### Changed
 
-- Services/Build: Minor refactor to client.compile:
-- Swagger/RestAPI: Update for placeos-2.2412.2
-- Swagger/StaffAPI: Update for placeos-2.2412.2
+- Services/Build: Minor refactor to client.compile
 
 ## 2.2412.2
 
