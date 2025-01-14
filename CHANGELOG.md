@@ -5,6 +5,12 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2501.1
+
+### Fixed
+
+- Services/StaffAPI [**bookings**]: Add `bookings.` to checked_out in sql ([#339](https://github.com/PlaceOS/staff-api/pull/339))
+
 ## 2.2501.0
 
 ### Added
