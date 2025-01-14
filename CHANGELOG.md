@@ -9,16 +9,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Services/RestAPI [**metadata**]: Modify permissions check on edit
-- Services/RestAPI [**metadata**]: Modify permissions check on edit"
-- Services/StaffAPI [**bookings**]: Add bookings. to checked_out in sql ([#339](https://github.com/PlaceOS/staff-api/pull/339))
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2501.0
-- Swagger/RestAPI: Update for placeos-2.2501.1
-- Swagger/StaffAPI: Update for placeos-2.2501.0
-- Swagger/StaffAPI: Update for placeos-2.2501.1
+- Services/StaffAPI [**bookings**]: Add `bookings.` to checked_out in sql ([#339](https://github.com/PlaceOS/staff-api/pull/339))
 
 ## 2.2501.0
 
