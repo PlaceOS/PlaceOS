@@ -5,6 +5,47 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2501.2
+
+### Fixed
+
+- Clients/Typescript [**triggers**]: Add trigger id field
+- Interfaces/Backoffice: Fix uploading bulk items with csv (ppt-1783)
+- Interfaces/Backoffice: Fix bulk upload parsing logic
+- Interfaces/Backoffice [**systems**]: Fix trigger links (ppt-1793)
+- Interfaces/Backoffice: Tweak bulk upload to remember select field mappings
+- Interfaces/Templates [**space**]: Default room status to tentative
+- Interfaces/Templates [**concierge**]: Fix keeping desks assigned to user on edit (ppt-1794)
+- Interfaces/Templates: Fix handling errors on user search field
+- Interfaces/Templates [**workplace**]: Disable checking asset availability when feature disabled
+- Interfaces/Templates [**workplace**]: Only check meeting assets on confirm when selected
+- Interfaces/Templates [**workplace**]: Display email for colleague search when no org details
+- Interfaces/Templates: Show full timezone when displayed
+- Interfaces/Templates [**concierge**]: Handle errors when saving desk details (ppt-1805)
+- Libraries/Driver [**interface/zone_access_security**]: Add nil response
+- Libraries/Driver [**interface/zone_access_security**]: Improve the interface
+- Libraries/Models [**asset_type**]: Images is nilable in the database ([#281](https://github.com/PlaceOS/placeos-models/pull/281))
+- Libraries/Models [**tenant**]: Parent_id helpers
+- Services/StaffAPI [**staff**]: Ms 500 errors if there is a space in the query
+- Services/StaffAPI [**config**]: Force ms event logging
+- Services/StaffAPI [**staff**]: Compilation issue
+
+### Added
+
+- Interfaces/Backoffice [**triggers**]: Add ability to input cron string for time conditions (ppt-1792)
+- Interfaces/Templates [**concierge**]: Add security field to desk model (ppt-1784)
+- Interfaces/Templates [**workplace**]: Add ability to show calendar links for visitor invites (ppt-1798)
+- Interfaces/Templates [**bookings**]: Add ability to hide booking checkin option (ppt-1796)
+- Interfaces/Templates [**visitor-kiosk**]: Add success header for self-registered visitors (ppt-1797)
+- Interfaces/Templates [**concierge**]: Add ability to set which visitor listing columns show (ppt-1799)
+- Libraries/Driver [**interface**]: Add zone access security interface
+- Libraries/Models [**tenant**]: Delegate tenant configuration ([#280](https://github.com/PlaceOS/placeos-models/pull/280))
+- Services/StaffAPI [**utilities/multi_tenant**]: Add parent tenant support
+
+### Changed
+
+- Interfaces/Templates [**conicerge**]: Cleanup room approval component
+
 ## 2.2501.1
 
 ### Fixed
