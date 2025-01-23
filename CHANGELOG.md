@@ -5,6 +5,30 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2501.2
+
+### Fixed
+
+- Interfaces/Backoffice: Fix uploading bulk items with csv (ppt-1783)
+- Interfaces/Backoffice [**systems**]: Fix trigger links (ppt-1793)
+- Interfaces/Templates [**concierge**]: Fix keeping desks assigned to user on edit (ppt-1794)
+- Interfaces/Templates [**concierge**]: Handle errors when saving desk details (ppt-1805)
+
+### Added
+
+- Interfaces/Backoffice [**triggers**]: Add ability to input cron string for time conditions (ppt-1792)
+- Interfaces/Templates [**concierge**]: Add security field to desk model (ppt-1784)
+- Interfaces/Templates [**workplace**]: Add ability to show calendar links for visitor invites (ppt-1798)
+- Interfaces/Templates [**bookings**]: Add ability to hide booking checkin option (ppt-1796)
+- Interfaces/Templates [**visitor-kiosk**]: Add success header for self-registered visitors (ppt-1797)
+- Interfaces/Templates [**concierge**]: Add ability to set which visitor listing columns show (ppt-1799)
+- Libraries/Models [**tenant**]: Delegate tenant configuration ([#280](https://github.com/PlaceOS/placeos-models/pull/280))
+- Services/StaffAPI [**utilities/multi_tenant**]: Add parent tenant support
+
+### Changed
+
+- Interfaces/Templates [**conicerge**]: Cleanup room approval component
+
 ## 2.2501.1
 
 ### Fixed
