@@ -5,6 +5,27 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2502.2
+
+### Fixed
+
+- Interfaces/Backoffice [**triggers**]: Fix editing of cron time conditions (ppt-1792)
+- Interfaces/Backoffice [**systems**]: Fix add trigger search
+- Interfaces/Templates: Fix table filtering with non-string values (ppt-1811)
+- Interfaces/Templates [**workplace**]: Hide colleague button when setting enabled
+- Interfaces/Templates [**visitor-kiosk**]: Fix flow redirections after registration (ppt-1812)
+- Interfaces/Templates [**workplace**]: Fix removing favourites (ppt-1814)
+- Interfaces/Templates [**workplace**]: Ignore errors when loading colleague data (ppt-1817)
+- Interfaces/Templates [**explore**]: Fix pinning points of interest (ppt-1820)
+- Libraries/Driver [**interface/lockers**]: Add a allocation id
+- Services/RestAPI [**asset_types**]: Ppt-1803 index endpoint when no matching entries found ([#398](https://github.com/PlaceOS/rest-api/pull/398))
+- Services/StaffAPI [**bookings**]: [ppt-1835] booked desks showing up as available ([#340](https://github.com/PlaceOS/staff-api/pull/340))
+
+### Added
+
+- Interfaces/Templates [**visitor-kiosk**]: Add ability to select language on visitor kiosk (ppt-1897)
+- Interfaces/Templates [**visitor-kiosk**]: Add ability for visitors to checkout (ppt-1808)
+
 ## 2.2501.2
 
 ### Fixed
