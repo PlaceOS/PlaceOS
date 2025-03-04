@@ -5,6 +5,46 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2503.1
+
+### Fixed
+
+- Interfaces/Templates [**concierge**]: Fix desk booking list after deselecting all zones (ppt-1850)
+- Interfaces/Templates [**map-kiosk**]: Fix accessibility options (proj-1137)
+- Interfaces/Templates [**workplace**]: Handle invalid resource lists for room bookings (ppt-1854)
+- Interfaces/Templates [**workplace**]: Fix confirm locker modal header (ppt-1874)
+- Interfaces/Templates [**bookings**]: Show non-accessible lockers as unavailable when show accessible active (ppt-1875)
+- Interfaces/Templates [**bookings**]: Fix resource locations when editing bookings (ppt-1876)
+- Interfaces/Templates [**concierge**]: Use the assigned users plate number when creating booking (ppt-1879)
+- Interfaces/Templates [**workplace**]: Fix translation key for event notes header (ppt-1880)
+- Interfaces/Templates [**bookings**]: Return user to bank list when options change on locker select modal (ppt-1885)
+- Interfaces/Templates [**concierge**]: Fix removing locker banks (ppt-1889)
+- Interfaces/Templates [**catering**]: Fix type in translation key (ppt-1884)
+- Interfaces/Templates [**bookings**]: Fix time options for parking select (ppt-1899, ppt-1898)
+- Interfaces/Templates [**bookings**]: Add ability to select parking from map (ppt-1897, ppt-1896)
+- Interfaces/Templates [**bookings**]: Fix parking all day fields form sync (ppt-1899)
+- Interfaces/Templates [**concierge**]: Fix booking rooms (ppt-1907)
+- Interfaces/Templates [**concierge**]: Clear query zones for reports when none selected (ppt-1827)
+- Interfaces/Templates [**concierge**]: Only show control panel option when a url is available (ppt-1923)
+- Interfaces/Templates [**bookings**]: Fix level list when selecting parking spaces (ppt-1928)
+- Interfaces/Templates [**concierge**]: Fix changing users on parking user modal (ppt-1926)
+- Libraries/Driver [**protocol/management**]: Ensure driver load success ([#168](https://github.com/PlaceOS/placeos-driver/pull/168))
+- Libraries/Models [**settings**]: Validate yaml to json conversion [ppt-1873] ([#282](https://github.com/PlaceOS/placeos-models/pull/282))
+- Services/FrontendLoader: File copy issue with some volumes ([#87](https://github.com/PlaceOS/frontend-loader/pull/87))
+- Services/StaffAPI [**events**]: Missing ext_data ([#343](https://github.com/PlaceOS/staff-api/pull/343))
+
+### Added
+
+- Interfaces/Backoffice [**metadata**]: Add ability to view metadata history (ppt-1906)
+- Interfaces/Templates [**concierge**]: Add charts to space/rooms report (ppt-1827)
+- Interfaces/Templates [**users**]: Show username if different from email (ppt-1878)
+- Interfaces/Templates: Add settings to control locker time fields (ppt-1887)
+- Libraries/Models [**bookings**]: [ppt-1846] add all_day bool flag ([#283](https://github.com/PlaceOS/placeos-models/pull/283))
+- Libraries/Models [**bookings**]: [ppt-1781] ignore clash check forvisitor booking ([#284](https://github.com/PlaceOS/placeos-models/pull/284))
+- Services/StaffAPI [**events**]: #get_metadata ([#341](https://github.com/PlaceOS/staff-api/pull/341))
+- Services/StaffAPI [**bookings**]: [ppt-1781] ignore clash check for visitor booking ([#342](https://github.com/PlaceOS/staff-api/pull/342))
+- Services/StaffAPI [**bookings**]: Add method for patching extension data ([#344](https://github.com/PlaceOS/staff-api/pull/344))
+
 ## 2.2502.2
 
 ### Fixed
