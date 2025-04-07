@@ -5,6 +5,82 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2504.3
+
+### Fixed
+
+- Clients/Crystal [**client**]: Tls context should be global
+- Clients/Typescript [**repo**]: Export missing public functions
+- Clients/Typescript: Fix some missing exports
+- Clients/Typescript: Imports
+- Clients/Typescript: Fix export of survey endpoint methods and types
+- Interfaces/Backoffice: Fix unsubscribing to observables when changing views
+- Interfaces/Templates [**concierge**]: Wait for building before loading level list
+- Interfaces/Templates: Prevent dark mode when setting enabled
+- Interfaces/Templates [**concierge**]: Fix toggling visitor remote status (proj-1253)
+- Interfaces/Templates [**concierge**]: Tweak selecting timezones for room form (ppt-1941)
+- Interfaces/Templates [**workplace**]: Fix opening edit locker view (ppt-1948)
+- Interfaces/Templates [**spaces**]: Fix level filter for space selection (ppt-1949)
+- Interfaces/Templates [**bookings**]: Fix colour of unavailable lockers (ppt-1946)
+- Interfaces/Templates [**booking-panel**]: Add extra text when no qr code (ppt-1956)
+- Interfaces/Templates [**concierge**]: Reload email template list after edit/remove (ppt-1964)
+- Interfaces/Templates [**concierge**]: Fix paged responses for surveys (ppt-1966)
+- Interfaces/Templates [**concierge**]: Fix moving email templates across buildings (ppt-1964)
+- Interfaces/Templates [**workplace**]: Fix booking modal actions after data refreshes (ppt-1962)
+- Interfaces/Templates [**events**]: Fix editing events
+- Interfaces/Templates [**events**]: Fix editing catering
+- Interfaces/Templates [**explore**]: Use visible user locations first (ppt-1944)
+- Interfaces/Templates [**workplace**]: Fix editing bookings
+- Interfaces/Templates [**workplace**]: Disable start time when date field is disabled
+- Interfaces/Templates [**workplace**]: Fix applying user's plate number when editing parking booking (ppt-1973)
+- Interfaces/Templates [**workplace**]: Fix switching to desk form while editing parking
+- Interfaces/Templates [**concierge**]: Fix catering reports using booking data
+- Interfaces/Templates [**catering**]: Fix rendering of delivery time with limited event data
+- Interfaces/Templates [**workplace**]: Fix deleting booking series (ppt-1987)
+- Interfaces/Templates [**catering**]: Tweak uploading charge code logic (ppt-1988)
+- Interfaces/Templates [**bookings**]: Fix overflow for invite visitor success view (ppt-1996)
+- Libraries/Driver [**task**]: Don't raise where task might be complete
+- Libraries/Driver [**task**]: Return early if task state set
+- Libraries/Driver [**interface/sensor**]: Don't automatically include crunits
+- Libraries/Driver [**transport/http**]: Remove @tls instance variable
+- Libraries/Driver: Use structs where it makes sense
+- Libraries/Driver [**driver_manager**]: Update must return nil
+- Libraries/Driver [**settings**]: Revert to class
+- Services/Init [**ci**]: Avoid merge conflicts on postgres branch update
+- Services/Init [**ci**]: Simplify postgres branch merge
+- Services/StaffAPI [**bookings**]: Allow patching of more fields
+
+### Added
+
+- Clients/Typescript: Move to using vite and vitest
+- Interfaces/Backoffice [**users**]: Add ability to copy user groups from about view
+- Interfaces/Templates [**concierge**]: Add ability to email access qr codes to visitors (ppt-1935)
+- Interfaces/Templates [**explore**]: Add setting to hide search items (ppt-1945)
+- Interfaces/Templates [**concierge**]: Add ability to release all lockers (ppt-1886)
+- Interfaces/Templates [**workplace**]: Remove old views
+- Interfaces/Templates [**bookings**]: Hide fav toggle when viewing select map view (ppt-1978)
+- Interfaces/Templates [**explore**]: Add setting to show/hide desk users
+- Interfaces/Templates: Add ability to change user's current work location from main control tooltip (ppt-1937)
+- Interfaces/Templates [**concierge**]: Add ability to delete user's desk bookings (ppt-1982)
+- Interfaces/Templates [**control**]: Clear dial number after joining call (ppt-1983)
+- Interfaces/Templates [**visitor-kiosk**]: Add ability to take user photos for pass labels (ppt-1981)
+- Interfaces/Templates [**concierge**]: Add ability to set custom auto-release for resource types
+- Interfaces/Templates [**concierge**]: Add extra options to auto-release (ppt-2001)
+- Libraries/Driver: Reduce spawn usage ([#169](https://github.com/PlaceOS/placeos-driver/pull/169))
+- Libraries/Driver: Refactor protocol and process manager interface
+- Libraries/Driver: Tls context only needs to be initialized once and shared
+- Libraries/Driver: Migrate protocol request to being a struct
+- Services/Core [**process_manager/local**]: Attempt to recover from abnormal conditions
+- Services/Edge [**process_manager/local**]: Attempt to recover from abnormal conditions
+- Services/Init [**postgres**]: Postgres 17 client ([#97](https://github.com/PlaceOS/init/pull/97))
+- Services/RestAPI [**systems**]: Start and stop local modules [ppt-1872] ([#399](https://github.com/PlaceOS/rest-api/pull/399))
+- Services/StaffAPI: Ppt-1994 added ms teams controller ([#345](https://github.com/PlaceOS/staff-api/pull/345))
+
+### Changed
+
+- Swagger/RestAPI: Update for placeos-2.2503.1
+- Swagger/StaffAPI: Update for placeos-2.2503.1
+
 ## 2.2503.1
 
 ### Fixed
