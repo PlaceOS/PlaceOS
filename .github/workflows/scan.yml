@@ -56,4 +56,4 @@ jobs:
       uses: github/codeql-action/upload-sarif@v1
       with:
         sarif_file: ${{ steps.scan.outputs.sarif }}
-        category: ${{ github.workflow }}/${{ github.job }}/${{ matrix.service.path }}/${{ matrix.version }}/${{ github.run_id }}
+        category: ${{ github.workflow }}/${{ github.job }}/${{ matrix.service.path }}/${{ matrix.version }}
