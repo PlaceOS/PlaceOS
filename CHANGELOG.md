@@ -5,6 +5,19 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2504.2
+
+### Fixed
+
+- Clients/Crystal [**models/response**]: Fix for crystal 1.16+
+- Interfaces/Templates [**workplace**]: Fix room booking link on mobile (proj-1304)
+- Services/Init [**entities**]: Fix + upgrade to pg-orm v2 ([#98](https://github.com/PlaceOS/init/pull/98))
+
+### Added
+
+- Interfaces/Templates [**control**]: Add ability to mute mics on a room basis (ppt-2022)
+- Libraries/Models [**control_system**]: [ppt-2004] add approval column ([#285](https://github.com/PlaceOS/placeos-models/pull/285))
+
 ## 2.2504.1
 
 ### Fixed
