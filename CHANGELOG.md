@@ -10,25 +10,13 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Fixed
 
 - Clients/Crystal [**models/response**]: Fix for crystal 1.16+
-- Interfaces/Templates [**visitor-kiosk**]: Fix booking beverages for visitors
-- Interfaces/Templates [**concierge**]: Recreate assigned booking when resource id changes
 - Interfaces/Templates [**workplace**]: Fix room booking link on mobile (proj-1304)
-- Interfaces/Templates [**controls**]: Fix translation key for hdmi content destination all
-- Libraries/Driver [**stats**]: Don't use prof_stats
-- Services/FrontendLoader [**Dockerfile**]: Make git certificate store is explicit
 - Services/Init [**entities**]: Fix + upgrade to pg-orm v2 ([#98](https://github.com/PlaceOS/init/pull/98))
-- Services/RestAPI [**Dockerfile**]: Make git certificate store is explicit
-- Services/Triggers [**Dockerfile**]: Make git certificate store is explicit
 
 ### Added
 
 - Interfaces/Templates [**control**]: Add ability to mute mics on a room basis (ppt-2022)
 - Libraries/Models [**control_system**]: [ppt-2004] add approval column ([#285](https://github.com/PlaceOS/placeos-models/pull/285))
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2504.1
-- Swagger/StaffAPI: Update for placeos-2.2504.1
 
 ## 2.2504.1
 
