@@ -5,6 +5,59 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2506.2
+
+### Fixed
+
+- Interfaces/Backoffice [**modules**]: Fix overflow on module state modal (ppt-2051)
+- Interfaces/Templates [**concierge**]: Fix routing on assets manager views (ppt-2033)
+- Interfaces/Templates [**catering**]: Fix filtering orders by location (ppt-1960)
+- Interfaces/Templates [**form-fields**]: Finish options for monthly recurrence (ppt-1993)
+- Interfaces/Templates [**concierge**]: Set user name when assigning parking spaces (ppt-2050)
+- Interfaces/Templates [**visitor-kiosk**]: Fix taking user photos (ppt-2054)
+- Interfaces/Templates [**concierge**]: Fix saving booking panel settings when non-existant (ppt-2056)
+- Interfaces/Templates [**booking-panel**]: Fix booking from panel view (ppt-2063)
+- Interfaces/Templates [**form-fields**]: Use placeos users for host select field (cdu-116)
+- Interfaces/Templates [**bookings**]: Fix showing calendar links (ppt-2081)
+- Libraries/Models [**booking.cr**]: Ppt-2007 properly handle overlapping bookings ([#286](https://github.com/PlaceOS/placeos-models/pull/286))
+- Services/RestAPI [**systems**]: Prevent bypass of email downcase ([#402](https://github.com/PlaceOS/rest-api/pull/402))
+
+### Added
+
+- Interfaces/Backoffice [**domains**]: Add azure intergration button (ppt-2032)
+- Interfaces/Backoffice [**zones**]: Add ability to filter zones by tag (ppt-2031)
+- Interfaces/Backoffice [**admin**]: Add extra fields to edge listing display (ppt-2061)
+- Interfaces/Backoffice: Add description displays to relevant about sections (ppt-2083)
+- Interfaces/Templates [**workplace**]: Add icon for recurrence on details modals (ppt-2028)
+- Interfaces/Templates [**visitor-kiosk**]: Add ability to set location for standalone visitors (ppt-2010)
+- Interfaces/Templates [**concierge**]: Add ability to print guest passes from visitor list (ppt-2029)
+- Interfaces/Templates [**concierge**]: Add ability to set approval flag for rooms (ppt-2005)
+- Interfaces/Templates [**workplace**]: Indicate to user that room bookings require approval (ppt-2006)
+- Interfaces/Templates [**concierge**]: Add ability to set default work hours for auto-release (ppt-2001)
+- Interfaces/Templates [**redirect**]: Add simple app for redirecting users to set domains (ppt-2015)
+- Interfaces/Templates [**control**]: Add ability to hide outputs when rooms are joined (ppt-2044)
+- Interfaces/Templates [**control**]: Add ability to mute outputs (ppt-2043)
+- Interfaces/Templates [**map-kiosk**]: Add view for only parking (ppt-2067)
+- Interfaces/Templates [**explore**]: Add ability to search for desks (ppt-2090)
+- Libraries/Models: User photo upload and locatable flag [ppt-2038] ([#287](https://github.com/PlaceOS/placeos-models/pull/287))
+- Libraries/Models [**storage**]: Add default storage flag ([#288](https://github.com/PlaceOS/placeos-models/pull/288))
+- Libraries/Models [**upload**]: Add cache helpers
+- Services/Core: Ppt-2047,ppt-2048 driver integrity checker + refactoring driver_manager ([#281](https://github.com/PlaceOS/core/pull/281))
+- Services/RestAPI: Ppt-2031 add endpoint to return unique zone tags ([#403](https://github.com/PlaceOS/rest-api/pull/403))
+- Services/RestAPI: Add cluster rebalance and module node details ([#404](https://github.com/PlaceOS/rest-api/pull/404))
+- Services/RestAPI: Ppt-2000 add azure 1-click integration ([#400](https://github.com/PlaceOS/rest-api/pull/400))
+- Services/RestAPI [**uploads**]: Add a tagging support ([#405](https://github.com/PlaceOS/rest-api/pull/405))
+- Services/RestAPI [**uploads**]: Add cache helpers ([#406](https://github.com/PlaceOS/rest-api/pull/406))
+- Services/StaffAPI [**staff**]: Return cached photos for azure tenants ([#348](https://github.com/PlaceOS/staff-api/pull/348)) [ppt-2038]
+- Services/StaffAPI [**bookings**]: [ppt-1942] add include_parents quary param ([#347](https://github.com/PlaceOS/staff-api/pull/347))
+
+### Changed
+
+- Interfaces/Templates [**catering**]: Clean up order select modal
+- Services/Build_service: Ppt-2039 refactored to work with latest awscr shard version
+- Swagger/RestAPI: Update for placeos-2.2504.2
+- Swagger/StaffAPI: Update for placeos-2.2504.2
+
 ## 2.2504.2
 
 ### Fixed
