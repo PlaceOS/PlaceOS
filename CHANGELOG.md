@@ -9,15 +9,9 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**users**]: Add photo_upload_id field
 - Interfaces/Backoffice: Fix metadata history action (ppt-2102)
 - Interfaces/Templates [**workplace**]: Fix booking favourited spaces (ppt-2092)
 - Services/RestAPI [**shard.lock**]: Revert changes to azblob
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2506.2
-- Swagger/StaffAPI: Update for placeos-2.2506.2
 
 ## 2.2506.2
 
