@@ -5,6 +5,14 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2506.3
+
+### Fixed
+
+- Interfaces/Backoffice: Fix metadata history action (ppt-2102)
+- Interfaces/Templates [**workplace**]: Fix booking favourited spaces (ppt-2092)
+- Services/RestAPI [**shard.lock**]: Revert changes to azblob
+
 ## 2.2506.2
 
 ### Fixed
