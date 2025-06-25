@@ -9,11 +9,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**broker**]: Add id field to model
-- Clients/Typescript [**broker**]: Add name field to model
 - Clients/Typescript [**auth**]: Change how logout is handled
-- Interfaces/Backoffice: Fix managing mqtt brokers
-- Interfaces/Templates: Add missing translation keys
 - Services/RestAPI [**application**]: Logging backtraces in production
 
 ### Added
@@ -23,11 +19,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Services/Auth [**sessions_controller**]: Revoke access token passed to logout
 - Services/RestAPI [**utilities/current-user**]: Jwt invalidation
 - Services/StaffAPI [**utilities/current-user**]: Jwt invalidation
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2506.3
-- Swagger/StaffAPI: Update for placeos-2.2506.3
 
 ## 2.2506.3
 
