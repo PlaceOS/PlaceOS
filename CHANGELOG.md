@@ -5,6 +5,30 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2506.4
+
+### Fixed
+
+- Clients/Typescript [**broker**]: Add id field to model
+- Clients/Typescript [**broker**]: Add name field to model
+- Clients/Typescript [**auth**]: Change how logout is handled
+- Interfaces/Backoffice: Fix managing mqtt brokers
+- Interfaces/Templates: Add missing translation keys
+- Services/RestAPI [**application**]: Logging backtraces in production
+
+### Added
+
+- Libraries/Models [**user**]: Add logged_out_at flag
+- Services/Auth: Expire all sessions on explicit user log out
+- Services/Auth [**sessions_controller**]: Revoke access token passed to logout
+- Services/RestAPI [**utilities/current-user**]: Jwt invalidation
+- Services/StaffAPI [**utilities/current-user**]: Jwt invalidation
+
+### Changed
+
+- Swagger/RestAPI: Update for placeos-2.2506.3
+- Swagger/StaffAPI: Update for placeos-2.2506.3
+
 ## 2.2506.3
 
 ### Fixed
