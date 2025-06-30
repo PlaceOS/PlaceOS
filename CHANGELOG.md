@@ -13,11 +13,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Services/RestAPI [**utilities/current-user**]: When using an x-api-key
 - Services/StaffAPI [**utilities/current-user**]: Current user with api-keys
 
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2506.4
-- Swagger/StaffAPI: Update for placeos-2.2506.4
-
 ## 2.2506.4
 
 ### Fixed
