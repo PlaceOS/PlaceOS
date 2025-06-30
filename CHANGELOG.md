@@ -5,6 +5,14 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2506.5
+
+### Fixed
+
+- Interfaces/Backoffice [**triggers**]: Fix cron hours when selecting in the afternoon (ppt-2111)
+- Services/RestAPI [**utilities/current-user**]: When using an x-api-key
+- Services/StaffAPI [**utilities/current-user**]: Current user with api-keys
+
 ## 2.2506.4
 
 ### Fixed
