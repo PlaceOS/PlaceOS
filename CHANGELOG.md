@@ -5,6 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2507.2
+
+### Fixed
+
+- Interfaces/Templates [**control**]: Limit controllable cameras to available ones
+- Services/FrontendLoader: Use debian to build as musl libc doesn't work with nfs
+
+### Added
+
+- Interfaces/Backoffice [**admin**]: Add search to upload library
+- Interfaces/Templates [**survey**]: Add app for performing surveys (ppt-2110)
+- Interfaces/Templates: Add ability to set pass number for visitors (ppt-2113)
+- Interfaces/Templates [**control**]: Add button to present active input to all (ppt-2121)
+- Interfaces/Templates [**control**]: Add binding to hide master audio controls (ppt-2116)
+- Interfaces/Templates [**control**]: Add topbar tooltip for lighting levels (ppt-2125)
+
 ## 2.2506.5
 
 ### Fixed
