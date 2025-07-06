@@ -9,29 +9,17 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript: Update ts-md5
-- Clients/Typescript: Fix build
-- Interfaces/Backoffice: Fix displaying of module state
-- Interfaces/Backoffice [**driver**]: Fix editing driver not allowing commit changes
-- Interfaces/Templates [**control**]: Fix binding for lighting level value
 - Interfaces/Templates [**control**]: Limit controllable cameras to available ones
-- Services/FrontendLoader: Use debian as musl libc doesn't work with nfs
+- Services/FrontendLoader: Use debian to build as musl libc doesn't work with nfs
 
 ### Added
 
 - Interfaces/Backoffice [**admin**]: Add search to upload library
-- Interfaces/Templates [**concierge**]: Add component for survey rendering, remove survey-core dep
 - Interfaces/Templates [**survey**]: Add app for performing surveys (ppt-2110)
 - Interfaces/Templates: Add ability to set pass number for visitors (ppt-2113)
 - Interfaces/Templates [**control**]: Add button to present active input to all (ppt-2121)
 - Interfaces/Templates [**control**]: Add binding to hide master audio controls (ppt-2116)
 - Interfaces/Templates [**control**]: Add topbar tooltip for lighting levels (ppt-2125)
-
-### Changed
-
-- Interfaces/Templates [**surveys**]: Cleanup survey builder and responses components
-- Swagger/RestAPI: Update for placeos-2.2506.5
-- Swagger/StaffAPI: Update for placeos-2.2506.5
 
 ## 2.2506.5
 
