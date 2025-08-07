@@ -7,7 +7,73 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ## 2.2508.4
 
-## 2.2507.2
+### Fixed
+
+- Clients/Typescript [**users**]: Add locatable field to user model
+- Clients/Typescript [**signage**]: Add method to approve playlist revisions
+- Clients/Typescript [**signage**]: Update playlist media model with approval details
+- Interfaces/Backoffice [**admin**]: Update uploads list to handle large item count (ppt-2142)
+- Interfaces/Backoffice [**domains**]: Fix delete button for authentication methods (ppt-2162)
+- Interfaces/Backoffice [**admin**]: Update data store table to make default more clear
+- Interfaces/Backoffice [**admin**]: Fix cluster graph dark mode colours
+- Interfaces/Templates [**signage**]: Add ability to add zones to displays
+- Interfaces/Templates [**form-fields**]: Fix getting non-placeos user details for host calendars
+- Interfaces/Templates [**concierge**]: Sort day view spaces by name (ppt-2135)
+- Interfaces/Templates [**events**]: Check booking rules before submitting booking
+- Interfaces/Templates [**bookings**]: Check booking rules before submitting booking request
+- Interfaces/Templates [**catering**]: Handle updating catering orders for standalone visitors (ppt-2140)
+- Interfaces/Templates [**workplace**]: Fix code flow asking for camera on checkin requests (ppt-2137)
+- Interfaces/Templates [**events**]: Fix checking booking rules on booking
+- Interfaces/Templates: Fix handling of invalid map files (ppt-2141)
+- Interfaces/Templates: Only allow mocks when available
+- Interfaces/Templates [**concierge**]: Wait for delete before recreating desk assigned booking (cdu-150)
+- Interfaces/Templates [**concierge**]: Tweak filtering of parking bookings (ppt-2168)
+- Interfaces/Templates [**form-fields**]: Fix selecting users from search field (ppt-2169)
+- Interfaces/Templates [**concierge**]: Fix form state when creating a second parking booking (ppt-2170)
+- Interfaces/Templates [**signage**]: Fix skipping items when playlist only has one item
+- Interfaces/Templates [**signage**]: Check override playlists have valid items to play
+- Libraries/Driver [**transport/ssh**]: Disconnect may not reconnect automatically
+- Libraries/Driver [**transport/ssh**]: Don't require public key for ssh connections
+- Libraries/Driver [**driver-specs/responder**]: Simplify parsing responses in specs
+- Libraries/Models [**signage**]: Playlist filtering using orientation
+- Libraries/Models [**signage/revision**]: Protect some fields
+- Libraries/Models [**signage/revision**]: User_id is nullable
+- Libraries/Models: Bump version
+- Libraries/Models [**playlist**]: Removal of cron via api
+- Services/RestAPI [**utilities/permissions**]: Should select highest permisson first
+- Services/RestAPI [**signage/triggers**]: Playlist application
+- Services/RestAPI [**asset_types**]: [ppt-1631] use single = in sql ([#408](https://github.com/PlaceOS/rest-api/pull/408))
+- Services/StaffAPI [**bookings**]: [ppt-2118] add event_title to signals ([#349](https://github.com/PlaceOS/staff-api/pull/349))
+- Services/StaffAPI [**events**]: [ppt-2114] fix nil assertion check ([#350](https://github.com/PlaceOS/staff-api/pull/350))
+
+### Added
+
+- Interfaces/Backoffice [**users**]: Add locatable field to user form
+- Interfaces/Backoffice [**systems**]: Add ability to set playlists on system triggers
+- Interfaces/Templates [**concierge**]: Add ability to set orientation of signage displays
+- Interfaces/Templates [**concierge**]: Add deals and offers section and logic (ppt-2100)
+- Interfaces/Templates [**workplace**]: Add deals and offers section and logic
+- Interfaces/Templates: Add ability for user to opt-out of location tracking (ppt-2091)
+- Interfaces/Templates [**signage**]: Add logic for metrics (ppt-2154)
+- Interfaces/Templates [**concierge**]: Add support for scheduling to signage playlists
+- Interfaces/Templates [**signage**]: Add logic for handling schedule override playlists (ppt-2146)
+- Interfaces/Templates [**signage**]: Add ability for triggers to activate playlists (ppt-2153)
+- Interfaces/Templates [**concierge**]: Add ability to approve playlist changes (ppt-2161)
+- Interfaces/Templates [**signage**]: Add ability to display webpages (ppt-2173)
+- Libraries/Models [**module**]: Add analytics configuration fields ([#291](https://github.com/PlaceOS/placeos-models/pull/291))
+- Libraries/Models [**signage**]: Add approval support
+- Libraries/Models [**module**]: Add analytics configuration fields ([#291](https://github.com/PlaceOS/placeos-models/pull/291))"
+- Services/RestAPI [**signage/playlists**]: Add approvals ([#409](https://github.com/PlaceOS/rest-api/pull/409))
+- Services/RestAPI [**uploads**]: Add simple download route
+
+### Changed
+
+- Services/RestAPI [**Cluster**]: Get endpoint to return load only when include_status is false ([#410](https://github.com/PlaceOS/rest-api/pull/410))
+- Services/Source: App on startup to conditionally start mqtt publisher ([#57](https://github.com/PlaceOS/source/pull/57))
+- Swagger/RestAPI: Update for placeos-2.2507.1
+- Swagger/StaffAPI: Update for placeos-2.2507.1
+
+## 2.2507.1
 
 ### Fixed
 
