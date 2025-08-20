@@ -5,6 +5,26 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2508.5
+
+### Added
+
+- Interfaces/Templates [**form-fields**]: Add dblclick to date calendar month to reset to current month
+- Interfaces/Templates [**workplace**]: Add ability to return to today on schedule view (ppt-2190)
+- Interfaces/Templates [**concierge**]: Add extra fields to points of interest (ppt-2175)
+- Interfaces/Templates [**explore**]: Add ability to view poi details from map (ppt-2175)
+- Services/Init [**dockerfile**]: Use latest alpine packages ([#99](https://github.com/PlaceOS/init/pull/99))
+
+### Fixed
+
+- Interfaces/Templates [**spaces**]: Fix filtering spaces by favourites (ppt-2183)
+- Interfaces/Templates [**catering**]: Fix toggle for favouriting items (ppt-2182)
+
+### Changed
+
+- Swagger/RestAPI: Update for placeos-2.2508.4
+- Swagger/StaffAPI: Update for placeos-2.2508.4
+
 ## 2.2508.4
 
 ### Fixed
