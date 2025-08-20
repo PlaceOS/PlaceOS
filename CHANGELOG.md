@@ -7,14 +7,18 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ## 2.2508.5
 
+### Added
+
+- Interfaces/Templates [**form-fields**]: Add dblclick to date calendar month to reset to current month
+- Interfaces/Templates [**workplace**]: Add ability to return to today on schedule view (ppt-2190)
+- Interfaces/Templates [**concierge**]: Add extra fields to points of interest (ppt-2175)
+- Interfaces/Templates [**explore**]: Add ability to view poi details from map (ppt-2175)
+- Services/Init [**dockerfile**]: Use latest alpine packages ([#99](https://github.com/PlaceOS/init/pull/99))
+
 ### Fixed
 
 - Interfaces/Templates [**spaces**]: Fix filtering spaces by favourites (ppt-2183)
 - Interfaces/Templates [**catering**]: Fix toggle for favouriting items (ppt-2182)
-
-### Added
-
-- Services/Init [**dockerfile**]: Use latest alpine packages ([#99](https://github.com/PlaceOS/init/pull/99))
 
 ### Changed
 
