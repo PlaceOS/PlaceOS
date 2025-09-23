@@ -9,16 +9,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**realtime**]: Change module binding method to variable for clarity
-- Clients/Typescript [**realtime**]: Add method to bind and subscribe in one method
-- Clients/Typescript [**repos**]: Add root_path field to model
-- Clients/Typescript [**http**]: Tweaks to request handling
-- Clients/Typescript [**http**]: Add some logging to mock request calling
-- Clients/Typescript [**http**]: Make mocks return 404 for endpoints by default
-- Clients/Typescript [**http**]: Fix parsing of urls for mock handler resolution
-- Interfaces/Backoffice [**driver**]: Fix check to display role field
-- Interfaces/Backoffice: Fix saving settings
-- Interfaces/Backoffice: Fix saving of settings
 - Interfaces/Templates [**spaces**]: Fix filtering spaces by favourites (ppt-2183)
 - Interfaces/Templates [**catering**]: Fix toggle for favouriting items (ppt-2182)
 - Interfaces/Templates [**booking-panel**]: Display any booking modal errors (cdu-133)
@@ -26,22 +16,10 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**concierge**]: Fix saving room availability for catering and assets (ppt-2202)
 - Interfaces/Templates [**explore**]: Fix displaying images on space tooltips (ppt-2207)
 - Interfaces/Templates [**events**]: Fix displaying attendees for group events (ppt-2209)
-- Interfaces/Templates: Allow setting modal groups collapsed state to be toggled
-- Interfaces/Templates [**bookings**]: Use existing user data for final rules check if available
-- Interfaces/Templates [**explore**]: Tweak styling for desk tooltip
 - Interfaces/Templates [**bookings**]: Fix desk status tooltip on select map (ppt-2213)
-- Interfaces/Templates [**concierge**]: Fix check to open visitor section of concierge settings
-- Interfaces/Templates [**concierge**]: Fix saving concierge and workplace settings
-- Libraries/Driver [**transport/http**]: Never stop processing queue in http drivers
-- Libraries/Driver [**transport/tcp**]: Makebreak should not disable queuing
-- Services/RestAPI [**uploads**]: Simple download glob fix
 
 ### Added
 
-- Clients/Typescript [**realtime**]: Add subscribe method to status variables
-- Interfaces/Backoffice [**repos**]: Add root_path field
-- Interfaces/Backoffice [**drivers**]: Add ability to click copy the commit hash
-- Interfaces/Templates [**form-fields**]: Add dblclick to date calendar month to reset to current month
 - Interfaces/Templates [**workplace**]: Add ability to return to today on schedule view (ppt-2190)
 - Interfaces/Templates [**concierge**]: Add extra fields to points of interest (ppt-2175)
 - Interfaces/Templates [**explore**]: Add ability to view poi details from map (ppt-2175)
@@ -62,7 +40,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Libraries/Models: [ppt-2077] added alert & dashboard models ([#296](https://github.com/PlaceOS/placeos-models/pull/296))
 - Libraries/Models: [ppt-2176] added schema and respective model attributes ([#295](https://github.com/PlaceOS/placeos-models/pull/295))
 - Services/Core: [ppt-1758] added build service monitor functionality ([#282](https://github.com/PlaceOS/core/pull/282))
-- Services/Edge: [ppt-1758] added build service monitor functionality ([#282](https://github.com/PlaceOS/edge/pull/282))
 - Services/FrontendLoader: [ppt-2172] support retrieving root path folder ([#88](https://github.com/PlaceOS/frontend-loader/pull/88))
 - Services/Init [**dockerfile**]: Use latest alpine packages ([#99](https://github.com/PlaceOS/init/pull/99))
 - Services/RestAPI: [ppt-2172] add endpoint to retrieve repo folder tree ([#411](https://github.com/PlaceOS/rest-api/pull/411))
@@ -76,8 +53,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 - Libraries/Models [**alert**]: Marked fields to be indexable in es ([#297](https://github.com/PlaceOS/placeos-models/pull/297))
 - Libraries/Models [**booking_recurring_spec**]: [ppt-1993] added more tests to validate logic ([#292](https://github.com/PlaceOS/placeos-models/pull/292))
-- Swagger/RestAPI: Update for placeos-2.2508.4
-- Swagger/StaffAPI: Update for placeos-2.2508.4
 
 ## 2.2508.4
 
