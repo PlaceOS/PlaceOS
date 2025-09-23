@@ -9,15 +9,11 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice [**repos**]: Only allow editing commits for interfaces
-- Services/Core [**constants**]: Core host ipv6 value support
-- Services/Edge [**constants**]: Core host ipv6 value support
+- Services/Core [**constants**]: IPv6 host support
 
 ### Changed
 
 - Libraries/Models [**asset_category**]: Mark hidden field to be es indexable ([#298](https://github.com/PlaceOS/placeos-models/pull/298))
-- Swagger/RestAPI: Update for placeos-2.2509.1
-- Swagger/StaffAPI: Update for placeos-2.2509.1
 
 ### Added
 
