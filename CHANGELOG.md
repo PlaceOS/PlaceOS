@@ -5,6 +5,62 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2510.6
+
+### Fixed
+
+- Clients/Typescript: Export new driverreadme method
+- Clients/Typescript [**signage**]: Export mediaorientation type
+- Clients/Typescript [**clusters**]: Add show method
+- Clients/Typescript [**clusters**]: Export new show method
+- Interfaces/Backoffice: Fix saving metadata
+- Interfaces/Backoffice [**systems**]: Fix routing to modules
+- Interfaces/Backoffice: Fix routing
+- Interfaces/Backoffice: Fix confirmation modal
+- Interfaces/Backoffice: Fix debug output terminal
+- Interfaces/Backoffice [**systems**]: Fix adding existing modules
+- Interfaces/Backoffice [**admin**]: Fix user select for api keys (ppt-2235)
+- Interfaces/Backoffice [**zones**]: Fix child zone links (ppt-2234)
+- Interfaces/Backoffice [**systems**]: Fix settings
+- Interfaces/Backoffice: Add handling for duplicate settings with the same encryption level
+- Interfaces/Backoffice: Fix reading function actions for request
+- Interfaces/Backoffice: Fix editing metadata details
+- Interfaces/Backoffice [**domains**]: Fix form imports
+- Interfaces/Backoffice: Fix update metadata name display on change
+- Interfaces/Backoffice [**admin**]: Fix loading cluster details on task list
+- Interfaces/Backoffice [**metadata**]: Fix deleting key when backend put response invalid
+- Interfaces/Templates [**stagehand**]: Fix handling connected alerts
+- Interfaces/Templates [**signage**]: Prevent infinite item switching when no valid items
+- Interfaces/Templates [**booking-panel**]: Make event panel time use a signal
+- Interfaces/Templates [**signage**]: Fix initial form state for new playlists
+- Interfaces/Templates [**bookings**]: Fix reading the show_filters state (ppt-2249)
+- Libraries/Driver [**transport/websocket**]: Ensure state changes are syncronised
+- Libraries/Driver [**transport**]: Split the requirement for both private and client certs
+- Libraries/Driver [**transport**]: Split the requirement for both private and client certs"
+- Libraries/Driver [**transport**]: Log client cert errors and continue
+- Libraries/Driver: Tcp connected state / connection recovery
+- Libraries/Driver [**transport/tcp**]: Send should return transport
+- Services/FrontendLoader [**loader**]: Treat root_folder props set to blank as nil ([#89](https://github.com/PlaceOS/frontend-loader/pull/89))
+
+### Added
+
+- Clients/Typescript [**drivers**]: Add method for getting driver readme file
+- Clients/Typescript [**alerts**]: Add alerts models and endpoint methods
+- Interfaces/Backoffice [**systems**]: Add context menu to module table
+- Interfaces/Templates [**concierge**]: Add ability to approve/reject cal event series
+- Interfaces/Templates [**stagehand**]: Add setting to change display of event column (ppt-2236)
+- Interfaces/Templates [**workplace**]: Add ability for user to set their plate number (ppt-2238)
+- Libraries/Driver [**transport**]: Add custom ca certificate support
+- Libraries/Driver [**queue**]: Simplify process for setting connect state
+- Services/Source: [ppt-2230] added influx health check ([#58](https://github.com/PlaceOS/source/pull/58))
+- Services/StaffAPI [**events**]: [ppt-2216] add approve_all endpoint for bulk event approvals ([#353](https://github.com/PlaceOS/staff-api/pull/353))
+
+### Changed
+
+- Services/Source:  root get endpoint to return services status + error details ([#59](https://github.com/PlaceOS/source/pull/59))
+- Swagger/RestAPI: Update for placeos-2.2509.2
+- Swagger/StaffAPI: Update for placeos-2.2509.2
+
 ## 2.2509.2
 
 ### Fixed
