@@ -5,6 +5,35 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2510.1
+
+### Fixed
+
+- Interfaces/Backoffice [**admin**]: Fix user select for api keys (ppt-2235)
+- Interfaces/Backoffice [**zones**]: Fix child zone links (ppt-2234)
+- Interfaces/Templates [**bookings**]: Fix reading the show_filters state (ppt-2249)
+- Interfaces/Templates [**bookings**]: Fix reading the show_filters state (ppt-2249)
+- Interfaces/Templates [**booking-panel**]: Update time to be a signal (ppt-2262)
+- Interfaces/Templates: Update event and booking details modals to use signals(ppt-2264)
+- Interfaces/Templates [**concierge**]: Add logic to handle group desk bookings (ppt-2264)
+- Services/FrontendLoader [**loader**]: Treat root_folder props set to blank as nil ([#89](https://github.com/PlaceOS/frontend-loader/pull/89))
+
+### Added
+
+- Interfaces/Templates [**stagehand**]: Add setting to change display of event column (ppt-2236)
+- Interfaces/Templates [**workplace**]: Add ability for user to set their plate number (ppt-2238)
+- Services/RestAPI [**drivers**]: [ppt-2232] add endpoint to fetch driver readme files ([#416](https://github.com/PlaceOS/rest-api/pull/416))
+- Services/SearchIngest: [ppt-2260] add support for es client authentication ([#86](https://github.com/PlaceOS/search-ingest/pull/86))
+- Services/Source: [ppt-2230] added influx health check ([#58](https://github.com/PlaceOS/source/pull/58))
+- Services/StaffAPI [**events**]: [ppt-2216] add approve_all endpoint for bulk event approvals ([#353](https://github.com/PlaceOS/staff-api/pull/353))
+- Services/Triggers: Improve health check
+
+### Changed
+
+- Services/Core [**driver_store**]: Add checks to ensure validity of existing + d… ([#283](https://github.com/PlaceOS/core/pull/283))
+- Services/Edge [**driver_store**]: Add checks to ensure validity of existing + d… ([#283](https://github.com/PlaceOS/edge/pull/283))
+- Services/Source:  root get endpoint to return services status + error details ([#59](https://github.com/PlaceOS/source/pull/59))
+
 ## 2.2509.2
 
 ### Fixed
