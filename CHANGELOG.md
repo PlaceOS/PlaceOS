@@ -10,12 +10,10 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Fixed
 
 - Interfaces/Backoffice: Fix drag and drop upload
-- Interfaces/Templates [**explore**]: Fix initial status updates
 
-### Changed
+### Added
 
-- Swagger/RestAPI: Update for placeos-2.2510.1
-- Swagger/StaffAPI: Update for placeos-2.2510.1
+- All services: support for TLS redis connectionsv
 
 ## 2.2510.1
 
