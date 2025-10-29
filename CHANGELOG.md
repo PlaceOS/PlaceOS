@@ -5,6 +5,18 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2510.2
+
+### Fixed
+
+- Interfaces/Backoffice: Fix drag and drop upload
+- Interfaces/Templates [**explore**]: Fix initial status updates
+
+### Changed
+
+- Swagger/RestAPI: Update for placeos-2.2510.1
+- Swagger/StaffAPI: Update for placeos-2.2510.1
+
 ## 2.2510.1
 
 ### Fixed
