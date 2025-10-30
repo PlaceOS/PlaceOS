@@ -9,20 +9,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates [**explore**]: Fix zones toggle
-
-### Added
-
-- Interfaces/Templates [**stagehand**]: Add ability to manage dashboard alerts
-- Libraries/Driver [**shard.yaml**]: Update redis-cluster & bump version
-- Services/Core [**shard.yaml**]: Update redis-cluster & bump version
-- Services/Edge [**shard.yaml**]: Update redis-cluster & bump version
-- Services/Source: Improve status publishing
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2510.2
-- Swagger/StaffAPI: Update for placeos-2.2510.2
+- Services/Source: status publishing
 
 ## 2.2510.2
 
