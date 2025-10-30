@@ -5,6 +5,25 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2510.3
+
+### Fixed
+
+- Interfaces/Templates [**explore**]: Fix zones toggle
+
+### Added
+
+- Interfaces/Templates [**stagehand**]: Add ability to manage dashboard alerts
+- Libraries/Driver [**shard.yaml**]: Update redis-cluster & bump version
+- Services/Core [**shard.yaml**]: Update redis-cluster & bump version
+- Services/Edge [**shard.yaml**]: Update redis-cluster & bump version
+- Services/Source: Improve status publishing
+
+### Changed
+
+- Swagger/RestAPI: Update for placeos-2.2510.2
+- Swagger/StaffAPI: Update for placeos-2.2510.2
+
 ## 2.2510.2
 
 ### Fixed
