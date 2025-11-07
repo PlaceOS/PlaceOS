@@ -9,29 +9,14 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Added
 
-- Libraries/Models: Add openid connect table
 - Libraries/Models [**booking**]: [ppt-2241] add ignore_assets parameter to clash checking ([#299](https://github.com/PlaceOS/placeos-models/pull/299))
-- Services/Auth: Bump to rails 8
-- Services/Auth: Add openid connect [ppt-2258] ([#117](https://github.com/PlaceOS/auth/pull/117))
+- Services/Auth: Add openid connect OIDC [ppt-2258] ([#117](https://github.com/PlaceOS/auth/pull/117))
 - Services/Nginx [**nginx.conf.template**]: Add .well-known support
-- Services/Source: Add day of week and time of day to points [ppt-2279] ([#60](https://github.com/PlaceOS/source/pull/60))
-- Services/Source: Ignore string payloads and add region timezones
-- Services/Source: Add week_of_year, month_of_year and year fields
-
-### Fixed
-
-- Services/Auth [**Gemfile.lock**]: Arm build
-- Services/Auth [**doorkeeper_openid_connect**]: Issuer value
-- Services/Auth [**doorkeeper_openid_connect**]: Final token should have correct issuer
-- Services/Nginx [**nginx.conf.template**]: Allow well-known routes
-- Services/Source: Influx does support string field values
+- Services/Source: Add day of week, time of day, week_of_year, month_of_year and year fields to points [ppt-2279] ([#60](https://github.com/PlaceOS/source/pull/60))
 
 ### Changed
 
-- Services/RestAPI [**Dockerfile**]: [ppt-2278] add /tmp ([#418](https://github.com/PlaceOS/rest-api/pull/418))
 - Services/RestAPI [**Dockerfile**]: [ppt-2278] set permissions on /tmp ([#419](https://github.com/PlaceOS/rest-api/pull/419))
-- Swagger/RestAPI: Update for placeos-2.2510.3
-- Swagger/StaffAPI: Update for placeos-2.2510.3
 
 ## 2.2510.3
 
