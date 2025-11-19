@@ -5,6 +5,24 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2511.2
+
+### Added
+
+- Libraries/Models [**control_system**]: Add additional fields ([#300](https://github.com/PlaceOS/placeos-models/pull/300))
+- Services/RestAPI: Add support for ms token exchange
+- Services/StaffAPI [**bookings**]: [ppt-2241] add clashing-assets endpoint ([#354](https://github.com/PlaceOS/staff-api/pull/354))
+
+### Fixed
+
+- Interfaces/Templates [**explore**]: Show free state on space info tooltip (ppt-2286)
+- Interfaces/Templates [**booking-panel**]: Fix showing the qr code (ppt-2290)
+- Interfaces/Templates [**concierge**]: Fix saving visitor pass numbers (ppt-2291)
+
+### Changed
+
+- Services/RestAPI: [ppt-2293] allow support users to start/stop modules ([#421](https://github.com/PlaceOS/rest-api/pull/421))
+
 ## 2.2511.1
 
 ### Added
