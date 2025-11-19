@@ -9,32 +9,19 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Added
 
-- Clients/Typescript [**systems**]: Add new url fields to system model
-- Interfaces/Templates [**concierge**]: Add new url fields to rooms model and form
-- Interfaces/Templates [**explore**]: Link to external url for space booking when set
-- Interfaces/Templates [**explore**]: Add ability to show event details on space tooltips
 - Libraries/Models [**control_system**]: Add additional fields ([#300](https://github.com/PlaceOS/placeos-models/pull/300))
 - Services/RestAPI: Add support for ms token exchange
 - Services/StaffAPI [**bookings**]: [ppt-2241] add clashing-assets endpoint ([#354](https://github.com/PlaceOS/staff-api/pull/354))
 
 ### Fixed
 
-- Clients/Typescript [**realtime**]: Fix reference used when calling connectionstate
-- Interfaces/Templates [**workplace**]: Fix loading of images for deals
 - Interfaces/Templates [**explore**]: Show free state on space info tooltip (ppt-2286)
-- Interfaces/Templates [**booking-panel**]: Fix check for disable_book_now_host setting
-- Interfaces/Templates [**stagehand**]: Fix setting initialising state for mqtt listener
 - Interfaces/Templates [**booking-panel**]: Fix showing the qr code (ppt-2290)
-- Interfaces/Templates [**stagehand**]: Fix remote support filters
-- Interfaces/Templates: Fix loading of user settings
 - Interfaces/Templates [**concierge**]: Fix saving visitor pass numbers (ppt-2291)
-- Services/RestAPI [**ms-token-exchange**]: Requires resource to be specified
 
 ### Changed
 
 - Services/RestAPI: [ppt-2293] allow support users to start/stop modules ([#421](https://github.com/PlaceOS/rest-api/pull/421))
-- Swagger/RestAPI: Update for placeos-2.2511.1
-- Swagger/StaffAPI: Update for placeos-2.2511.1
 
 ## 2.2511.1
 
