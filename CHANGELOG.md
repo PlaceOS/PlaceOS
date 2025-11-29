@@ -5,6 +5,24 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2511.3
+
+### Fixed
+
+
+- Services/FrontendLoader [**loader**]: [ppt-2301] continous loading failed repo ([#91](https://github.com/PlaceOS/frontend-loader/pull/91))
+- Services/RestAPI [**signage/playlist_media**]: Support deleting azure uploads
+- Services/StaffAPI [**event**]: [ppt-2294] populate attendee name from guest data ([#356](https://github.com/PlaceOS/staff-api/pull/356))
+
+### Added
+
+- Interfaces/Templates [**stagehand**]: Hook up camera links to remote support (ppt-2228)
+- Services/RestAPI: [ppt-2295] zone queries to support multiple parent_ids  ([#422](https://github.com/PlaceOS/rest-api/pull/422))
+
+### Changed
+
+- Services/Source: [ppt-2296] source should sync state when new brokers are added ([#62](https://github.com/PlaceOS/source/pull/62))
+
 ## 2.2511.2
 
 ### Added
