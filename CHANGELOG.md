@@ -5,37 +5,19 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
-## 2.2512.3
+## 2.2512.1
 
 ### Fixed
 
-- Clients/Typescript: Add any_match field to alerts and triggers
-- Interfaces/Backoffice [**systems**]: Fix row colour when module has an error
-- Interfaces/Templates [**stagehand**]: Fix select all for region/building not updating alerts
-- Interfaces/Templates [**stagehand**]: Prevent adding multiple copies of conditions to an alert
-- Interfaces/Templates [**form-fields**]: Fix overflow of rich text component
-- Libraries/Driver [**scheduler**]: Improve stability
 - Services/RestAPI [**modules**]: [ppt-2332] fix logql search query ([#424](https://github.com/PlaceOS/rest-api/pull/424))
 - Services/RestAPI [**drivers**]: Readme endpoint ([#425](https://github.com/PlaceOS/rest-api/pull/425))
-- Services/Source: Retain all mqtt messages
 
 ### Added
 
-- Clients/Typescript [**assets**]: Add assets types and endpoint methods
-- Clients/Typescript: Add typed interfaces for api method query params
-- Clients/Typescript [**short-url**]: Add methods and class for short urls
-- Clients/Typescript [**storage**]: Add methods and class for cloud storage
-- Clients/Typescript [**webrtc**]: Add methods for webrtc endpoints
-- Interfaces/Templates [**workplace**]: Add ability to get user bookings from a driver for schedule view
-- Interfaces/Templates [**concierge**]: Update emergency contacts to use the asset endpoints
 - Interfaces/Templates [**workplace**]: Update explore search to sort relative to user's location (ppt-2304)
-- Interfaces/Templates [**stagehand**]: Add push notifications for alerts
-- Interfaces/Templates [**explore**]: Add template parameters to `room_booking_url` usage
 - Interfaces/Templates [**bookings**]: Add check and flow for recurrence clashes (ppt-2241)
 - Interfaces/Templates: Migrate bookable resources to use the assets api (ppt-2176)
-- Interfaces/Templates: Migrate bookable resources to use the assets api (ppt-2176)"
 - Interfaces/Templates [**explore**]: Add all day option to explore space bookings (ppt-2334)
-- Libraries/Models: Add security_groups and any_match for triggers
 - Libraries/Models [**history**]: [ppt-2227] add history ([#301](https://github.com/PlaceOS/placeos-models/pull/301))
 - Services/RestAPI [**uploads**]: [ppt-2302] add storage_id parameter to index endpoint for listing uploads from specific storages ([#423](https://github.com/PlaceOS/rest-api/pull/423))
 - Services/RestAPI: Add signage media thumbnail shortcut
@@ -49,8 +31,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Libraries/Models: [ppt-2299] add bookings query indexes ([#302](https://github.com/PlaceOS/placeos-models/pull/302))
 - Services/FrontendLoader [**loader**]: [ppt-2328] root_path attribute to retrive folder contents ([#92](https://github.com/PlaceOS/frontend-loader/pull/92))
 - Services/Triggers: [ppt-2325] optimize loki search trigger ([#51](https://github.com/PlaceOS/triggers/pull/51))
-- Swagger/RestAPI: Update for placeos-2.2511.3
-- Swagger/StaffAPI: Update for placeos-2.2511.3
 
 ## 2.2511.3
 
