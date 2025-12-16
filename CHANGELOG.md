@@ -5,6 +5,33 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2512.1
+
+### Fixed
+
+- Services/RestAPI [**modules**]: [ppt-2332] fix logql search query ([#424](https://github.com/PlaceOS/rest-api/pull/424))
+- Services/RestAPI [**drivers**]: Readme endpoint ([#425](https://github.com/PlaceOS/rest-api/pull/425))
+
+### Added
+
+- Interfaces/Templates [**workplace**]: Update explore search to sort relative to user's location (ppt-2304)
+- Interfaces/Templates [**bookings**]: Add check and flow for recurrence clashes (ppt-2241)
+- Interfaces/Templates: Migrate bookable resources to use the assets api (ppt-2176)
+- Interfaces/Templates [**explore**]: Add all day option to explore space bookings (ppt-2334)
+- Libraries/Models [**history**]: [ppt-2227] add history ([#301](https://github.com/PlaceOS/placeos-models/pull/301))
+- Services/RestAPI [**uploads**]: [ppt-2302] add storage_id parameter to index endpoint for listing uploads from specific storages ([#423](https://github.com/PlaceOS/rest-api/pull/423))
+- Services/RestAPI: Add signage media thumbnail shortcut
+- Services/RestAPI: [ppt-11] add edge monitoring endpoints ([#417](https://github.com/PlaceOS/rest-api/pull/417))
+- Services/RestAPI: [ppt-2270] 1-click setup for outlook plugin ([#420](https://github.com/PlaceOS/rest-api/pull/420))
+- Services/StaffAPI [**events**]: [ppt-2227] record event history ([#358](https://github.com/PlaceOS/staff-api/pull/358))
+- Services/StaffAPI [**placeos**]: Add place_host_header ([#357](https://github.com/PlaceOS/staff-api/pull/357))
+
+### Changed
+
+- Libraries/Models: [ppt-2299] add bookings query indexes ([#302](https://github.com/PlaceOS/placeos-models/pull/302))
+- Services/FrontendLoader [**loader**]: [ppt-2328] root_path attribute to retrive folder contents ([#92](https://github.com/PlaceOS/frontend-loader/pull/92))
+- Services/Triggers: [ppt-2325] optimize loki search trigger ([#51](https://github.com/PlaceOS/triggers/pull/51))
+
 ## 2.2511.3
 
 ### Fixed
