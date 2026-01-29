@@ -7,7 +7,11 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ## 2.2601.2
 
-## 2.2601.3
+### Fixed
+
+- Libraries/Driver: regression listing module state
+
+## 2.2601.1
 
 ### Fixed
 
