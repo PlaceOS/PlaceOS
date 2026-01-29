@@ -5,7 +5,13 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
-## 2.2601.3
+## 2.2601.2
+
+### Fixed
+
+- Libraries/Driver: regression listing module state
+
+## 2.2601.1
 
 ### Fixed
 
