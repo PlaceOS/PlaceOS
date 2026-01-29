@@ -5,6 +5,36 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2601.3
+
+### Fixed
+
+- Interfaces/Backoffice [**systems**]: Refresh execute module when state changes
+- Interfaces/Backoffice: Fix styles for api key form modal
+- Interfaces/Templates [**signage**]: Remove building requirement for bootstrap
+- Libraries/Driver [**subscriptions**]: Synchronize changes
+- Services/Init_pg15 [**entities**]: Fix + upgrade to pg-orm v2 ([#98](https://github.com/PlaceOS/init_pg15/pull/98))
+- Services/Init_pg16 [**entities**]: Fix + upgrade to pg-orm v2 ([#98](https://github.com/PlaceOS/init_pg16/pull/98))
+- Services/RestAPI [**metadata**]: Guest jwt access more flexible
+- Services/StaffAPI [**bookings**]: [ppt-2337] update all_day booking field ([#360](https://github.com/PlaceOS/staff-api/pull/360))
+- Services/StaffAPI [**calendars**]: Use default view interval
+- Services/Triggers [**state**]: Trigger name for email subject
+
+### Added
+
+- Interfaces/Templates [**concierge**]: Add ability to delete recurring desk bookings (ppt-2351)
+- Libraries/Driver: Improve socket liveliness checks
+- Libraries/Models: [ppt-2215] add launch_on_execute attribute to module ([#303](https://github.com/PlaceOS/placeos-models/pull/303))
+- Services/Auth [**Dockerfile**]: Remove curl and wget from image
+- Services/Core: [ppt-2215] add support for launch on execute drivers ([#287](https://github.com/PlaceOS/core/pull/287))
+- Services/Edge: [ppt-2215] add support for launch on execute drivers ([#287](https://github.com/PlaceOS/edge/pull/287))
+- Services/Init_pg15 [**dockerfile**]: Use latest alpine packages ([#99](https://github.com/PlaceOS/init_pg15/pull/99))
+- Services/Init_pg16 [**dockerfile**]: Use latest alpine packages ([#99](https://github.com/PlaceOS/init_pg16/pull/99))
+
+### Changed
+
+- Services/Triggers [**loki_search_errors**]: [ppt-2344] extract timestamp from entry object instead of stream labels ([#52](https://github.com/PlaceOS/triggers/pull/52))
+
 ## 2.2512.1
 
 ### Fixed
