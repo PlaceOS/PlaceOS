@@ -9,32 +9,20 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**signage**]: Add function to generate url for media item thumbnails
-- Clients/Typescript: Fix export of mediathumbnail method
-- Clients/Typescript [**auth**]: Set initial value for _storage
-- Clients/Typescript [**auth**]: Add method to set storage method
-- Clients/Typescript [**auth**]: Add ability to delay authorisation
-- Clients/Typescript [**auth**]: Fix re-authenticating early
-- Interfaces/Backoffice [**drivers**]: Fix showing of the readme tab
 - Interfaces/Backoffice [**systems**]: Refresh execute module when state changes
 - Interfaces/Backoffice: Fix styles for api key form modal
-- Interfaces/Templates [**concierge**]: Cancel report requests when level/dates are changed
-- Interfaces/Templates [**visitor-kiosk**]: Set jwt before loading event data on beverages view
-- Interfaces/Templates [**explore**]: Fix setting room booking form when external
 - Interfaces/Templates [**signage**]: Remove building requirement for bootstrap
-- Libraries/Driver [**transport/websocket**]: Workaround compiler bug
 - Libraries/Driver [**subscriptions**]: Synchronize changes
 - Services/Init_pg15 [**entities**]: Fix + upgrade to pg-orm v2 ([#98](https://github.com/PlaceOS/init_pg15/pull/98))
 - Services/Init_pg16 [**entities**]: Fix + upgrade to pg-orm v2 ([#98](https://github.com/PlaceOS/init_pg16/pull/98))
 - Services/RestAPI [**metadata**]: Guest jwt access more flexible
 - Services/StaffAPI [**bookings**]: [ppt-2337] update all_day booking field ([#360](https://github.com/PlaceOS/staff-api/pull/360))
 - Services/StaffAPI [**calendars**]: Use default view interval
-- Services/Triggers [**state**]: Trigger email name
+- Services/Triggers [**state**]: Trigger name for email subject
 
 ### Added
 
 - Interfaces/Templates [**concierge**]: Add ability to delete recurring desk bookings (ppt-2351)
-- Interfaces/Templates [**concierge**]: Add action to download user list for desk bookings
 - Libraries/Driver: Improve socket liveliness checks
 - Libraries/Models: [ppt-2215] add launch_on_execute attribute to module ([#303](https://github.com/PlaceOS/placeos-models/pull/303))
 - Services/Auth [**Dockerfile**]: Remove curl and wget from image
@@ -46,8 +34,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Changed
 
 - Services/Triggers [**loki_search_errors**]: [ppt-2344] extract timestamp from entry object instead of stream labels ([#52](https://github.com/PlaceOS/triggers/pull/52))
-- Swagger/RestAPI: Update for placeos-2.2512.1
-- Swagger/StaffAPI: Update for placeos-2.2512.1
 
 ## 2.2512.1
 
