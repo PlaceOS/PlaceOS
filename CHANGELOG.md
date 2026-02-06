@@ -9,29 +9,16 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice: Fix service worker
-- Interfaces/Templates [**concierge**]: Fix grabbing deleted desk bookings
 - Libraries/Driver [**ssh**]: Reconnect on failed transport writes
 - Libraries/Driver [**subscriptions**]: Redis reconnect logic could drop subscriptions ([#170](https://github.com/PlaceOS/placeos-driver/pull/170))
-- Libraries/Models: [ppt-2355] allow user deletion after signage use ([#304](https://github.com/PlaceOS/placeos-models/pull/304))
+- Libraries/Models: [ppt-2355] fix signage user deletion ([#304](https://github.com/PlaceOS/placeos-models/pull/304))
 - Libraries/Models [**bookings**]: [ppt-2366] exclude deleted recurring instances from expand_bookings when include_deleted is false ([#305](https://github.com/PlaceOS/placeos-models/pull/305))
-- Services/StaffAPI: Api-key usage in params and cookies
 - Services/StaffAPI [**bookings**]: [ppt-2366] pass deleted_flag to expand_bookings to filter deleted recurring instances ([#361](https://github.com/PlaceOS/staff-api/pull/361))
 
 ### Added
 
-- Interfaces/Backoffice [**systems**]: Add action for cleaning up model order (ppt-2359)
-- Interfaces/Backoffice [**admin**]: Add ability to edit api keys (ppt-2382)
-- Interfaces/Templates [**map-kiosk**]: Add pseudo-3d map rendering using three.js
-- Interfaces/Templates [**map-kiosk**]: Add 2d mode to new map renderer
 - Services/Core: Improve exec flows ([#288](https://github.com/PlaceOS/core/pull/288))
-- Services/Edge: Improve exec flows ([#288](https://github.com/PlaceOS/edge/pull/288))
 - Services/RestAPI: [ppt-2341] add bulk retrieval endpoint to metadata controller ([#427](https://github.com/PlaceOS/rest-api/pull/427))
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2601.2
-- Swagger/StaffAPI: Update for placeos-2.2601.2
 
 ## 2.2601.2
 
