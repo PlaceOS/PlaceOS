@@ -7,10 +7,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ## 2.2602.4
 
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2602.3
-- Swagger/StaffAPI: Update for placeos-2.2602.3
+- Libraries/Redis: added Redis IO hang detection
 
 ## 2.2602.3
 
