@@ -5,6 +5,17 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2602.5
+
+### Added
+
+- Services/Source: Improve memory usage ([#63](https://github.com/PlaceOS/source/pull/63))
+
+### Fixed
+
+- Interfaces/Templates [**bookings**]: Add all day option to visitor booking (ppt-2376)
+- Interfaces/Templates [**concierge**]: Fix printing desk qr codes (ppt-2373)
+
 ## 2.2602.4
 
 - Libraries/Redis: added Redis IO hang detection
