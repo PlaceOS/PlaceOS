@@ -5,6 +5,30 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2602.5
+
+### Added
+
+- Interfaces/Templates [**bookings**]: Add ability to edit visitor bookings (ppt-2333)
+- Interfaces/Templates [**parking**]: Convert parking spaces to use assets api
+- Interfaces/Templates [**parking**]: Convert parking users to use assets api
+- Interfaces/Templates [**concierge**]: Add view for listing parking requests
+- Interfaces/Templates [**workplace**]: Add parking request flow
+- Interfaces/Templates [**concierge**]: Add international toggle for visitors (ppt-2372)
+- Interfaces/Templates [**concierge**]: Add currency options to app settings modals
+- Services/Source: Improve memory usage ([#63](https://github.com/PlaceOS/source/pull/63))
+
+### Fixed
+
+- Interfaces/Templates [**signage**]: Fix loading of systems
+- Interfaces/Templates [**bookings**]: Add all day option to visitor booking (ppt-2376)
+- Interfaces/Templates [**concierge**]: Fix printing desk qr codes (ppt-2373)
+
+### Changed
+
+- Swagger/RestAPI: Update for placeos-2.2602.4
+- Swagger/StaffAPI: Update for placeos-2.2602.4
+
 ## 2.2602.4
 
 - Libraries/Redis: added Redis IO hang detection
