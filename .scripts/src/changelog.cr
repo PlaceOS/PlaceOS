@@ -37,7 +37,7 @@ module Changelog
         Commit.from_line?(path, line)
       end
     rescue error
-      Log.warn(exception: error) { "error processing submodule: #{path}" }
+      puts "error processing submodule: #{path}"
       [] of Commit
     end
   end
