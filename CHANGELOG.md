@@ -9,57 +9,22 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice [**modules**]: Fix system count for tab
-- Interfaces/Templates [**catering**]: Fix applying catering code to menu list
 - Interfaces/Templates [**events**]: Fix editing start time of room bookings in some cases (ppt-2382)
-- Interfaces/Templates [**visitor-kiosk**]: Fix visitor authentication for beverages
-- Interfaces/Templates [**bookings**]: Fix display of desk name when booking desks
-- Interfaces/Templates [**bookings**]: Fix multiple issues with editing visitors
-- Interfaces/Templates [**visitor-kiosk**]: Fix scanning qr codes
 - Interfaces/Templates [**explore**]: Tweak handling of status signals for desk tooltips (proj-1665)
-- Interfaces/Templates [**visitor-kiosk**]: Improve responsiveness of qr scanning
-- Interfaces/Templates [**assets**]: Hide assets from being selected if category is hidden
-- Interfaces/Templates [**events**]: Tweak check for setting event resources
-- Libraries/Driver: Callback overloading from interfaces
-- Libraries/Driver: Ensure previous_def works, versus super
-- Libraries/Driver [**interface/device_info**]: User may call connected
-- Libraries/Models [**playlist**]: Should_present? params
-- Services/Build [**test**]: Use docker compose
 - Services/Init [**task**]: Use old_place_server_secret for secret rotate task ([#102](https://github.com/PlaceOS/init/pull/102))
-- Services/Init_pg16 [**task**]: Use old_place_server_secret for secret rotate task ([#102](https://github.com/PlaceOS/init_pg16/pull/102))
-- Services/RestAPI: Module connected state ([#428](https://github.com/PlaceOS/rest-api/pull/428))
-- Services/StaffAPI [**guests**]: Listing their upcoming bookings
+- Services/RestAPI: expose module connected state ([#428](https://github.com/PlaceOS/rest-api/pull/428))
 
 ### Added
 
-- Interfaces/Templates [**bookings**]: Add handling of editing group bookings
 - Interfaces/Templates [**concierge**]: Add tooltip to show extra visitor details (ppt-2389)
-- Interfaces/Templates [**concierge**]: Add inverted timeline option for room day view
-- Interfaces/Templates [**concierge**]: Add booking list view for rooms
-- Libraries/Driver: Set connected true on shutdown
-- Libraries/Driver [**interface/device_info**]: Add helper for hardware descriptions
-- Libraries/Driver [**logger**]: Allow overriding stdout levels
-- Libraries/Models [**playlist**]: Add additional validation
 - Libraries/Models: Add stagehand fields [ppt-2370] ([#306](https://github.com/PlaceOS/placeos-models/pull/306))
-- Services/Build: Remove open telemetary
-- Services/Dispatch [**Dockerfile**]: Switch to static build
-- Services/FrontendLoader [**Dockerfile**]: Switch to static build
 - Services/Init: Migrate to a scratch image ([#101](https://github.com/PlaceOS/init/pull/101))
 - Services/Init: Add support for postgresql 18
-- Services/Init_pg16: Migrate to a scratch image ([#101](https://github.com/PlaceOS/init_pg16/pull/101))
-- Services/Init_pg16: Add support for postgresql 18
-- Services/RestAPI [**Dockerfile**]: Switch to static builds
-- Services/SearchIngest [**Dockerfile**]: Switch to static build
-- Services/Source [**Dockerfile**]: Switch to static build
-- Services/StaffAPI [**Dockerfile**]: Switch to static builds
 - Services/StaffAPI [**bookings**]: [ppt-2346] include_deleted flag ([#362](https://github.com/PlaceOS/staff-api/pull/362))
-- Services/Triggers [**Dockerfile**]: Switch to static build
 
 ### Changed
 
 - Services/FrontendLoader: [ppt-2388] remove stale temp folder(s) on startup ([#93](https://github.com/PlaceOS/frontend-loader/pull/93))
-- Swagger/RestAPI: Update for placeos-2.2602.5
-- Swagger/StaffAPI: Update for placeos-2.2602.5
 
 ## 2.2602.5
 
