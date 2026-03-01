@@ -5,6 +5,27 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2603.2
+
+### Fixed
+
+- Interfaces/Templates [**events**]: Fix editing start time of room bookings in some cases (ppt-2382)
+- Interfaces/Templates [**explore**]: Tweak handling of status signals for desk tooltips (proj-1665)
+- Services/Init [**task**]: Use old_place_server_secret for secret rotate task ([#102](https://github.com/PlaceOS/init/pull/102))
+- Services/RestAPI: expose module connected state ([#428](https://github.com/PlaceOS/rest-api/pull/428))
+
+### Added
+
+- Interfaces/Templates [**concierge**]: Add tooltip to show extra visitor details (ppt-2389)
+- Libraries/Models: Add stagehand fields [ppt-2370] ([#306](https://github.com/PlaceOS/placeos-models/pull/306))
+- Services/Init: Migrate to a scratch image ([#101](https://github.com/PlaceOS/init/pull/101))
+- Services/Init: Add support for postgresql 18
+- Services/StaffAPI [**bookings**]: [ppt-2346] include_deleted flag ([#362](https://github.com/PlaceOS/staff-api/pull/362))
+
+### Changed
+
+- Services/FrontendLoader: [ppt-2388] remove stale temp folder(s) on startup ([#93](https://github.com/PlaceOS/frontend-loader/pull/93))
+
 ## 2.2602.5
 
 ### Added
