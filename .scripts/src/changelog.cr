@@ -31,9 +31,14 @@ module Changelog
 
     arguments << "#{from}..HEAD" if from
 
-    Process.run("git", arguments, output: output, chdir: path.to_s)
-    output.to_s.lines.compact_map do |line|
-      Commit.from_line?(path, line)
+    begin
+      Process.run("git", arguments, output: output, chdir: path.to_s)
+      output.to_s.lines.compact_map do |line|
+        Commit.from_line?(path, line)
+      end
+    rescue error
+      Log.warn(exception: error) { "error processing submodule: #{path}" }
+      [] of Commit
     end
   end
 
