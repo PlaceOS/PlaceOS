@@ -9,18 +9,41 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
+- Interfaces/Backoffice [**drivers**]: Show error on form when commit details fail to load (ppt-2421)
 - Interfaces/Templates [**events**]: Fix editing start time of room bookings in some cases (ppt-2382)
 - Interfaces/Templates [**explore**]: Tweak handling of status signals for desk tooltips (proj-1665)
+- Interfaces/Templates [**workplace**]: Add setting to hide nearby desk option on meeting success view (proj-1697)
+- Interfaces/Templates [**catering**]: Fix removing orders with no items (ppt-2398)
+- Interfaces/Templates [**workplace**]: Fix selecting desk from favourites to book (ppt-2403)
+- Interfaces/Templates [**concierge**]: Update desk bookings when building changes (ppt-2411)
+- Interfaces/Templates [**concierge**]: Update booking details on day view when no level is selected (ppt-2409)
+- Interfaces/Templates [**form-fields**]: Grab extra user details when selected from search (ppt-2425)
+- Interfaces/Templates [**catering**]: Fix calculating delivery time (ppt-2424)
+- Interfaces/Templates [**concierge**]: Fix ending bookings for assigned resources (ppt-2427)
 - Services/Init [**task**]: Use old_place_server_secret for secret rotate task ([#102](https://github.com/PlaceOS/init/pull/102))
-- Services/RestAPI: expose module connected state ([#428](https://github.com/PlaceOS/rest-api/pull/428))
+- Services/Init_pg16 [**task**]: Use old_place_server_secret for secret rotate task ([#102](https://github.com/PlaceOS/init_pg16/pull/102))
+- Services/RestAPI: Module connected state ([#428](https://github.com/PlaceOS/rest-api/pull/428))
+- Services/Triggers: Ensure state is in sync on load
 
 ### Added
 
+- Interfaces/Backoffice [**admin**]: Add signage plugins section (ppt-2433)
 - Interfaces/Templates [**concierge**]: Add tooltip to show extra visitor details (ppt-2389)
+- Interfaces/Templates [**explore**]: Update desk info tooltip to show time of next booking (ppt-2384)
+- Interfaces/Templates [**concierge**]: Add ability to send ad-hoc emails to users (ppt-2400)
+- Interfaces/Templates [**workplace**]: Add setting for desks and room bookings to restrict booking hours (ppt-2415)
+- Interfaces/Templates [**events**]: Add check for clashing recurring events (ppt-2366)
+- Interfaces/Templates: Add check to room booking for calendar access when booking for another (ppt-2420)
 - Libraries/Models: Add stagehand fields [ppt-2370] ([#306](https://github.com/PlaceOS/placeos-models/pull/306))
+- Libraries/Models: Add signage plugins ([#307](https://github.com/PlaceOS/placeos-models/pull/307))
+- Libraries/Models: Remove deprecated camera_snapshot_url field
+- Services/FrontendLoader: [ppt-2388] add cron task to prune strayed clone folders ([#94](https://github.com/PlaceOS/frontend-loader/pull/94))
 - Services/Init: Migrate to a scratch image ([#101](https://github.com/PlaceOS/init/pull/101))
-- Services/Init: Add support for postgresql 18
 - Services/StaffAPI [**bookings**]: [ppt-2346] include_deleted flag ([#362](https://github.com/PlaceOS/staff-api/pull/362))
+- Services/StaffAPI [**guests**]: Add catering routes
+- Services/StaffAPI: [ppt-2358] add clashing-assets + cleanup spec errors/warnings ([#363](https://github.com/PlaceOS/staff-api/pull/363))
+- Services/StaffAPI: [ppt-2420] added check calendar permission endpoint ([#365](https://github.com/PlaceOS/staff-api/pull/365))
+- Services/StaffAPI [**bookings**]: [ppt-2375] notify of changes after edit ([#364](https://github.com/PlaceOS/staff-api/pull/364))
 
 ### Changed
 
