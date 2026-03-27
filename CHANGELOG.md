@@ -9,138 +9,45 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**systems**]: Change camera_snapshot_url to camera_snapshot_urls
-- Clients/Typescript: Add alert_level field to modules and drivers
-- Clients/Typescript [**auth**]: Use set domain for relative login/logout paths
-- Clients/Typescript [**systems**]: Re-add camera_snapshot_url field
-- Interfaces/Backoffice [**modules**]: Fix system count for tab
-- Interfaces/Backoffice [**systems**]: Change camera_snapshot_url to camera_snapshot_urls
-- Interfaces/Backoffice: Add modified by tooltip to time on metadata blocks
 - Interfaces/Backoffice [**drivers**]: Show error on form when commit details fail to load (ppt-2421)
-- Interfaces/Templates [**catering**]: Fix applying catering code to menu list
 - Interfaces/Templates [**events**]: Fix editing start time of room bookings in some cases (ppt-2382)
-- Interfaces/Templates [**visitor-kiosk**]: Fix visitor authentication for beverages
-- Interfaces/Templates [**bookings**]: Fix display of desk name when booking desks
-- Interfaces/Templates [**bookings**]: Fix multiple issues with editing visitors
-- Interfaces/Templates [**visitor-kiosk**]: Fix scanning qr codes
 - Interfaces/Templates [**explore**]: Tweak handling of status signals for desk tooltips (proj-1665)
-- Interfaces/Templates [**visitor-kiosk**]: Improve responsiveness of qr scanning
-- Interfaces/Templates [**assets**]: Hide assets from being selected if category is hidden
-- Interfaces/Templates [**events**]: Tweak check for setting event resources
-- Interfaces/Templates [**catering**]: Tweak logic to work correctly
 - Interfaces/Templates [**workplace**]: Add setting to hide nearby desk option on meeting success view (proj-1697)
 - Interfaces/Templates [**catering**]: Fix removing orders with no items (ppt-2398)
-- Interfaces/Templates [**bookings**]: Fix issues with visitor booking editing
-- Interfaces/Templates [**visitor-kiosk**]: Fix navigating to right view when induction no enabled
 - Interfaces/Templates [**workplace**]: Fix selecting desk from favourites to book (ppt-2403)
-- Interfaces/Templates: Add handling for lazy load errors
 - Interfaces/Templates [**concierge**]: Update desk bookings when building changes (ppt-2411)
 - Interfaces/Templates [**concierge**]: Update booking details on day view when no level is selected (ppt-2409)
-- Interfaces/Templates [**bookings**]: Fix display for desks in group bookings
-- Interfaces/Templates [**events**]: Fix sync of all day field on space select modal
-- Interfaces/Templates [**events**]: Fix applying all_day value from form to availability request
-- Interfaces/Templates [**bookings**]: Add all day check to availability before posting booking
-- Interfaces/Templates [**concierge**]: Keep historical bookings when changing desk assignments
-- Interfaces/Templates [**concierge**]: Preserve history of assigned parking space bookings
-- Interfaces/Templates [**concierge**]: Preserve history of assigned locker bookings
-- Interfaces/Templates [**explore**]: Fix changes to handling of future desk bookings
-- Interfaces/Templates [**explore**]: Fix handling of desk booking data
 - Interfaces/Templates [**form-fields**]: Grab extra user details when selected from search (ppt-2425)
 - Interfaces/Templates [**catering**]: Fix calculating delivery time (ppt-2424)
 - Interfaces/Templates [**concierge**]: Fix ending bookings for assigned resources (ppt-2427)
-- Interfaces/Templates: Update various booking forms to handle bookable hours
-- Interfaces/Templates [**explore**]: Add bookable hours checks and handling for booking modals
-- Interfaces/Templates [**form-fields**]: Fix text for booking rules form
-- Interfaces/Templates [**workplace**]: Remove default parking request space restrictions
-- Libraries/Driver: Callback overloading from interfaces
-- Libraries/Driver: Ensure previous_def works, versus super
-- Libraries/Driver [**interface/device_info**]: User may call connected
-- Libraries/Driver [**transport/http**]: Ensure before_request configured
-- Libraries/Driver [**transport/http**]: Don't call super
-- Libraries/Driver [**interface/standby_image**]: Add optional output index
-- Libraries/Models [**playlist**]: Should_present? params
-- Libraries/Models [**control_system**]: Check if camera_snapshot_url is present
-- Libraries/Models [**signage_plugin**]: Allow http localhost for testing
-- Services/Build [**test**]: Use docker compose
 - Services/Init [**task**]: Use old_place_server_secret for secret rotate task ([#102](https://github.com/PlaceOS/init/pull/102))
 - Services/Init_pg16 [**task**]: Use old_place_server_secret for secret rotate task ([#102](https://github.com/PlaceOS/init_pg16/pull/102))
 - Services/RestAPI: Module connected state ([#428](https://github.com/PlaceOS/rest-api/pull/428))
-- Services/RestAPI [**asset_types**]: Index filters now function as expected
-- Services/SearchIngest: Add signageplugin to search indexer
-- Services/StaffAPI [**guests**]: Listing their upcoming bookings
-- Services/Triggers [**trigger_instance_resource**]: Enforce instance enabled
+- Services/Triggers: Ensure state is in sync on load
 
 ### Added
 
-- Clients/Typescript [**signage**]: Add plugin class and endpoint methods
-- Interfaces/Backoffice: Add alert level field to drivers and modules
 - Interfaces/Backoffice [**admin**]: Add signage plugins section (ppt-2433)
-- Interfaces/Backoffice: Separate out form modals for most forms
-- Interfaces/Templates [**bookings**]: Add handling of editing group bookings
 - Interfaces/Templates [**concierge**]: Add tooltip to show extra visitor details (ppt-2389)
-- Interfaces/Templates [**concierge**]: Add inverted timeline option for room day view
-- Interfaces/Templates [**concierge**]: Add booking list view for rooms
-- Interfaces/Templates [**concierge**]: Add the ability to add vehicle details to parking
 - Interfaces/Templates [**explore**]: Update desk info tooltip to show time of next booking (ppt-2384)
 - Interfaces/Templates [**concierge**]: Add ability to send ad-hoc emails to users (ppt-2400)
-- Interfaces/Templates: Add ability to set approver groups for parking requests
-- Interfaces/Templates [**workplace**]: Add settings to set request types and add group based restrictions
-- Interfaces/Templates [**form-fields**]: Add ability to restrict time ranges on time and duration fields
 - Interfaces/Templates [**workplace**]: Add setting for desks and room bookings to restrict booking hours (ppt-2415)
 - Interfaces/Templates [**events**]: Add check for clashing recurring events (ppt-2366)
-- Interfaces/Templates [**workplace**]: Add ability for users to choose to add teams meeting to room bookings
-- Interfaces/Templates [**workplace**]: Add auto-allocation logic to desk booking
-- Interfaces/Templates [**concierge**]: Add extra fields to parking space modal
-- Interfaces/Templates [**concierge**]: Add ability to upload/download parking spaces
 - Interfaces/Templates: Add check to room booking for calendar access when booking for another (ppt-2420)
-- Interfaces/Templates [**concierge**]: Add week view option to parking requests/bookings views
-- Interfaces/Templates [**visitor-kiosk**]: Add guest catering endpoints
-- Interfaces/Templates [**workplace**]: Add host field to parking request form
-- Interfaces/Templates: Add handling for multi-day bookings in form time sync
-- Interfaces/Templates [**workplace**]: Add ability to book parking requests for externals
-- Interfaces/Templates [**concierge**]: Add waitlisted status for parking requests
-- Interfaces/Templates [**concierge**]: Add bookable field to parking space table
-- Libraries/Driver: Set connected true on shutdown
-- Libraries/Driver [**interface/device_info**]: Add helper for hardware descriptions
-- Libraries/Driver [**logger**]: Allow overriding stdout levels
-- Libraries/Driver: Use non-blocking dns
-- Libraries/Driver [**interface**]: Add standby image interface
-- Libraries/Models [**playlist**]: Add additional validation
 - Libraries/Models: Add stagehand fields [ppt-2370] ([#306](https://github.com/PlaceOS/placeos-models/pull/306))
 - Libraries/Models: Add signage plugins ([#307](https://github.com/PlaceOS/placeos-models/pull/307))
 - Libraries/Models: Remove deprecated camera_snapshot_url field
-- Services/Build: Remove open telemetary
-- Services/Dispatch [**Dockerfile**]: Switch to static build
-- Services/FrontendLoader [**Dockerfile**]: Switch to static build
 - Services/FrontendLoader: [ppt-2388] add cron task to prune strayed clone folders ([#94](https://github.com/PlaceOS/frontend-loader/pull/94))
 - Services/Init: Migrate to a scratch image ([#101](https://github.com/PlaceOS/init/pull/101))
-- Services/Init: Add support for postgresql 18
-- Services/Init_pg16: Migrate to a scratch image ([#101](https://github.com/PlaceOS/init_pg16/pull/101))
-- Services/Init_pg16: Add support for postgresql 18
-- Services/RestAPI [**Dockerfile**]: Switch to static builds
-- Services/RestAPI: Improve zones filtering
-- Services/RestAPI: Add signage plugin api
-- Services/RestAPI [**signage**]: Return plugin details for signage displays
-- Services/RestAPI: Improve querying of signage plugins and assets
-- Services/SearchIngest [**Dockerfile**]: Switch to static build
-- Services/Source [**Dockerfile**]: Switch to static build
-- Services/StaffAPI [**Dockerfile**]: Switch to static builds
 - Services/StaffAPI [**bookings**]: [ppt-2346] include_deleted flag ([#362](https://github.com/PlaceOS/staff-api/pull/362))
 - Services/StaffAPI [**guests**]: Add catering routes
 - Services/StaffAPI: [ppt-2358] add clashing-assets + cleanup spec errors/warnings ([#363](https://github.com/PlaceOS/staff-api/pull/363))
 - Services/StaffAPI: [ppt-2420] added check calendar permission endpoint ([#365](https://github.com/PlaceOS/staff-api/pull/365))
 - Services/StaffAPI [**bookings**]: [ppt-2375] notify of changes after edit ([#364](https://github.com/PlaceOS/staff-api/pull/364))
-- Services/Triggers [**Dockerfile**]: Switch to static build
-- Services/Triggers: Ensure state is in sync on load
 
 ### Changed
 
-- Interfaces/Templates: Clean up time handling logic for bookings and events
 - Services/FrontendLoader: [ppt-2388] remove stale temp folder(s) on startup ([#93](https://github.com/PlaceOS/frontend-loader/pull/93))
-- Swagger/RestAPI: Update for placeos-2.2602.5
-- Swagger/RestAPI: Update for placeos-2.2603.1
-- Swagger/StaffAPI: Update for placeos-2.2602.5
-- Swagger/StaffAPI: Update for placeos-2.2603.1
 
 ## 2.2602.5
 
