@@ -5,6 +5,29 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2604.1
+
+### Fixed
+
+- Interfaces/Backoffice [**drivers**]: Improve error handling for recompile and reload
+- Interfaces/Backoffice: Trim whitespace from item searching
+- Services/Core [**driver_integrity**]: Add disable flag and logging
+- Services/Core [**process_manager/common**]: don't signal kill for pid -1
+- Services/Core [**driver_integrity**]: Disable by default
+- Services/RestAPI [**zones**]: Handle case where no zone has a tag
+
+### Added
+
+- Interfaces/Backoffice [**admin**]: Add ability to test plugins
+- Interfaces/Templates [**signage-manager**]: Add ability to add plugins as media items
+- Interfaces/Templates [**signage**]: Update player to handle plugins
+- Interfaces/Templates [**concierge**]: Add features column to room listing (ppt-2440)
+- Interfaces/Templates [**concierge**]: Add new site attendance report (ppt-2451)
+- Interfaces/Templates [**concierge**]: Add ability to view room history from management view (ppt-2227)
+- Services/Core [**driver_integrity**]: Optimise sql query
+- Services/RestAPI [**zones**]: [ppt-2429] add tree view api with parent filtering and children counts ([#429](https://github.com/PlaceOS/rest-api/pull/429))
+- Services/RestAPI [**websocket/session**]: Include user_id in exec logs
+
 ## 2.2603.2
 
 ### Fixed
