@@ -5,6 +5,74 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2604.3
+
+### Fixed
+
+- Clients/Typescript [**domains**]: Fix lookup by email request return value
+- Interfaces/Backoffice [**admin**]: Change playback type to be from driver, fix updating list after changes
+- Interfaces/Backoffice [**repos**]: Fix signal usage
+- Interfaces/Backoffice [**drivers**]: Improve error handling for recompile and reload
+- Interfaces/Backoffice: Trim whitespace from item searching
+- Interfaces/Templates [**workplace**]: Fix schedule filters for parking requests
+- Interfaces/Templates [**form-fields**]: Fix updating recurrence field instance date (proj-1773)
+- Interfaces/Templates: Fix end date for multi-day bookings
+- Interfaces/Templates [**concierge**]: Add error handling to desk assignment errors
+- Interfaces/Templates: Fix recurrence handling of never end_type
+- Interfaces/Templates [**signage**]: Fix preview and saving of plugins
+- Interfaces/Templates [**concierge**]: Improve ux for booking rules modal
+- Interfaces/Templates [**catering**]: Fix applying delivery time changes (ppt-2424)
+- Interfaces/Templates [**explore**]: Fix display of parking space names
+- Interfaces/Templates [**events**]: Fix update last event details when editing the previously created (ppt-2449)
+- Interfaces/Templates [**signage**]: Fix edge case infinite loop
+- Interfaces/Templates: Fix clearing stale recurrence data
+- Interfaces/Templates [**events**]: Fix editing events with assets
+- Libraries/Models [**doorkeeper_application**]: Consistent uids
+- Services/Core [**driver_integrity**]: Add disable flag and logging
+- Services/Core [**process_manager/common**]: Signal kill for pid -1
+- Services/Core [**driver_integrity**]: Disable by default
+- Services/Core [**driver_integrity**]: Standardize env vars
+- Services/Edge [**driver_integrity**]: Add disable flag and logging
+- Services/Edge [**process_manager/common**]: Signal kill for pid -1
+- Services/Edge [**driver_integrity**]: Disable by default
+- Services/Edge [**driver_integrity**]: Standardize env vars
+- Services/RestAPI [**zones**]: Handle case where no zone has a tag
+
+### Added
+
+- Interfaces/Backoffice [**admin**]: Add ability to test plugins
+- Interfaces/Templates [**signage-manager**]: Add media listing view
+- Interfaces/Templates [**signage-manager**]: Add playlist sidebar and item actions to media list
+- Interfaces/Templates [**signage-manager**]: Add media preview modal
+- Interfaces/Templates [**signage-manager**]: Add ability to add and edit media items
+- Interfaces/Templates [**signage-manager**]: Add playlist view
+- Interfaces/Templates [**signage-manager**]: Add zones view
+- Interfaces/Templates [**signage-manager**]: Add displays view
+- Interfaces/Templates [**signage-manager**]: Add schedule block to displays view
+- Interfaces/Templates [**signage-manager**]: Add file format validation
+- Interfaces/Templates [**signage-manager**]: Show preview stack for playlist list items
+- Interfaces/Templates [**signage-manager**]: Add playlist approvals flow
+- Interfaces/Templates [**signage-manager**]: Add schedule view for displays and zones
+- Interfaces/Templates [**signage-manager**]: Add ability to add plugins as media items
+- Interfaces/Templates [**signage**]: Update player to handle plugins
+- Interfaces/Templates: Add ability to set an all day period for bookings/events
+- Interfaces/Templates [**concierge**]: Add features column to room listing (ppt-2440)
+- Interfaces/Templates [**concierge**]: Add new site attendance report (ppt-2451)
+- Interfaces/Templates [**explore**]: Add setting to hide parking status on tooltip
+- Interfaces/Templates [**workplace**]: Add ability to show shifts based on user groups
+- Interfaces/Templates [**workplace**]: Add ability to set extra space restrictions for parking requests
+- Interfaces/Templates [**concierge**]: Add ability to view room history from management view (ppt-2227)
+- Services/Core [**driver_integrity**]: Optimise sql query
+- Services/Edge [**driver_integrity**]: Optimise sql query
+- Services/RestAPI [**zones**]: [ppt-2429] add tree view api with parent filtering and children counts ([#429](https://github.com/PlaceOS/rest-api/pull/429))
+- Services/RestAPI [**websocket/session**]: Log user execute requests
+- Services/RestAPI [**websocket/session**]: Include user_id in exec logs
+
+### Changed
+
+- Swagger/RestAPI: Update for placeos-2.2603.2
+- Swagger/StaffAPI: Update for placeos-2.2603.2
+
 ## 2.2603.2
 
 ### Fixed
