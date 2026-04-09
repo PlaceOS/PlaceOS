@@ -9,14 +9,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates: Fix form setting bindings
 - Services/RestAPI [**uploads**]: Allow id to be base64 encoded
-- Services/RestAPI [**uploads**]: Allow id to be base64 encoded
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2604.1
-- Swagger/StaffAPI: Update for placeos-2.2604.1
 
 ## 2.2604.1
 
