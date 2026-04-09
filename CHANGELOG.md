@@ -5,6 +5,19 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2604.2
+
+### Fixed
+
+- Interfaces/Templates: Fix form setting bindings
+- Services/RestAPI [**uploads**]: Allow id to be base64 encoded
+- Services/RestAPI [**uploads**]: Allow id to be base64 encoded
+
+### Changed
+
+- Swagger/RestAPI: Update for placeos-2.2604.1
+- Swagger/StaffAPI: Update for placeos-2.2604.1
+
 ## 2.2604.1
 
 ### Fixed
