@@ -5,6 +5,30 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2604.3
+
+### Fixed
+
+- Interfaces/Templates: Fix handling of all day bookings for the current date (ppt-2464)
+- Libraries/Models [**user**]: [ppt-2459] disabling mass_assignment on internal fields ([#309](https://github.com/PlaceOS/placeos-models/pull/309))
+- Services/RestAPI [**users**]: Disallow users to update email ([#431](https://github.com/PlaceOS/rest-api/pull/431))
+- Services/StaffAPI [**bookings**]: [ppt-2457] checkout other users booking ([#367](https://github.com/PlaceOS/staff-api/pull/367))
+
+### Added
+
+- Interfaces/Backoffice: Add application picker to sidebar (ppt-2474)
+- Interfaces/Templates [**bookings**]: Add setting to prevent booking when assigned (ppt-2469)
+- Interfaces/Templates [**stagehand**]: Add dark mode support (ppt-2473)
+- Interfaces/Templates [**app-loader**]: Add new app for listing available applications (ppt-2474)
+- Libraries/Driver [**subscriptions**]: Add heartbeat and improve specs
+- Libraries/Models [**signage**]: Add display monitoring features ([#308](https://github.com/PlaceOS/placeos-models/pull/308))
+- Services/RestAPI [**signage**]: Add basic playback monitoring
+- Services/RestAPI [**public_events**]: [ppt-2247] support public event sharing & registration ([#430](https://github.com/PlaceOS/rest-api/pull/430))
+
+### Changed
+
+- Interfaces/Templates [**assets**]: Cleanup handling of parking assets
+
 ## 2.2604.2
 
 ### Fixed
