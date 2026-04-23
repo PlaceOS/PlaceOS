@@ -9,33 +9,16 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**signage**]: Add preview and item_id query params to show media method
-- Clients/Typescript [**zones**]: Add new children_count field to zones
-- Clients/Typescript [**zones**]: Add include_children_count query param to query method
-- Clients/Typescript [**realtime**]: Add error handling for callbacks
-- Interfaces/Templates [**signage**]: Fix transitions between the same item
-- Interfaces/Templates [**signage-manager**]: Fix filtering displays by building
-- Interfaces/Templates [**concierge**]: Fix handling desk re-assignment failures
 - Interfaces/Templates: Fix handling of all day bookings for the current date (ppt-2464)
-- Libraries/Driver [**subscriptions**]: Remove compiler warnings
 - Libraries/Models [**user**]: [ppt-2459] disabling mass_assignment on internal fields ([#309](https://github.com/PlaceOS/placeos-models/pull/309))
-- Libraries/Models [**migration**]: Add signage monitoring
-- Services/RestAPI [**uploads**]: Check for base64 encoding
 - Services/RestAPI [**users**]: Disallow users to update email ([#431](https://github.com/PlaceOS/rest-api/pull/431))
 - Services/StaffAPI [**bookings**]: [ppt-2457] checkout other users booking ([#367](https://github.com/PlaceOS/staff-api/pull/367))
 
 ### Added
 
 - Interfaces/Backoffice: Add application picker to sidebar (ppt-2474)
-- Interfaces/Templates [**signage**]: Update player to handle passing state when requesting media
-- Interfaces/Templates [**signage**]: Add interaction handler to plugins
-- Interfaces/Templates [**signage-manager**]: Add tree view to zone listing
 - Interfaces/Templates [**bookings**]: Add setting to prevent booking when assigned (ppt-2469)
-- Interfaces/Templates [**concierge**]: Add setting to hide waitlisted parking requests section
-- Interfaces/Templates [**concierge**]: Add setting to limit assigned desks/parking
-- Interfaces/Templates [**signage**]: Add logic to allow pausing from an iframe
 - Interfaces/Templates [**stagehand**]: Add dark mode support (ppt-2473)
-- Interfaces/Templates [**concierge**]: Add setting to show/hide edit action for parking bookings
 - Interfaces/Templates [**app-loader**]: Add new app for listing available applications (ppt-2474)
 - Libraries/Driver [**subscriptions**]: Add heartbeat and improve specs
 - Libraries/Models [**signage**]: Add display monitoring features ([#308](https://github.com/PlaceOS/placeos-models/pull/308))
@@ -44,9 +27,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Changed
 
-- Interfaces/Templates [**assets**]: Cleanup handling of parking assets and add checks to prevent duplicates
-- Swagger/RestAPI: Update for placeos-2.2604.2
-- Swagger/StaffAPI: Update for placeos-2.2604.2
+- Interfaces/Templates [**assets**]: Cleanup handling of parking assets
 
 ## 2.2604.2
 
