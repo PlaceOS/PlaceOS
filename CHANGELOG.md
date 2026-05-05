@@ -5,6 +5,38 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2605.1
+
+### Added
+
+- Clients/Crystal: Driver recompile ([#36](https://github.com/PlaceOS/crystal/pull/36))
+- Clients/Typescript [**groups**]: Add group endpoint clients
+- Interfaces/Backoffice [**groups**]: Add hierarchy to group item sidebar list
+- Interfaces/Templates: Add route-based app titles
+- Interfaces/Templates [**signage-manager**]: Add signage group management
+- Libraries/Models: Add application level permission groups ([#311](https://github.com/PlaceOS/placeos-models/pull/311))
+- Libraries/Models: Add signage groups ([#312](https://github.com/PlaceOS/placeos-models/pull/312))
+- Libraries/Models [**user**]: Add subsystem_access helper
+- Services/Init: Add rollback cli ([#103](https://github.com/PlaceOS/init/pull/103))
+- Services/RestAPI: Add crud methods for managing permission groups ([#432](https://github.com/PlaceOS/rest-api/pull/432))
+- Services/SearchIngest: Add support for uuid and non string ids
+- Services/StaffAPI [**events**]: [ppt-2375] add previous detail to change signal ([#370](https://github.com/PlaceOS/staff-api/pull/370))
+
+### Fixed
+
+- Interfaces/Templates [**concierge**]: Fix desync of visitor list state when switching views (ppt-2475)
+- Interfaces/Templates [**concierge**]: Align day view list actions with event details modal (ppt-2478)
+- Libraries/Models [**control_system**]: [ppt-2460] empty string in camera_snapshot_urls ([#310](https://github.com/PlaceOS/placeos-models/pull/310))
+- Libraries/Resource [**Log**]: Set ids to string to handle uuids and complex primary keys
+- Services/Auth [**Dockerfile**]: Remove default json gem
+- Services/Auth [**omniauth**]: Fail fast on redis connection failure
+- Services/RestAPI [**controllers/signage**]: Handle empty item_id strings
+
+### Changed
+
+- Services/StaffAPI [**calendars**]: [ppt-2471] check_permission to call ms g get calendar instead ([#368](https://github.com/PlaceOS/staff-api/pull/368))
+- Services/StaffAPI [**events**]: [ppt-2358] classhing-assets to follow bookings signature ([#369](https://github.com/PlaceOS/staff-api/pull/369))
+
 ## 2.2604.3
 
 ### Fixed
