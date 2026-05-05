@@ -5,6 +5,82 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2605.2
+
+### Added
+
+- Clients/Crystal: Driver recompile ([#36](https://github.com/PlaceOS/crystal/pull/36))
+- Clients/Typescript [**groups**]: Add group endpoint clients
+- Clients/Typescript [**api**]: Add missing endpoint clients
+- Interfaces/Backoffice: Add sorting and search to exec methods
+- Interfaces/Backoffice [**domains**]: Add application subsystems field
+- Interfaces/Backoffice [**groups**]: Add group management workflows
+- Interfaces/Backoffice [**groups**]: Improve parent group metadata
+- Interfaces/Backoffice [**groups**]: Add hierarchy to group item sidebar list
+- Interfaces/Backoffice [**systems**]: Create logic modules from bulk driver ids
+- Interfaces/Backoffice [**systems**]: Add bulk start modules option
+- Interfaces/Backoffice [**bulk-add**]: Improve upload workflow
+- Interfaces/Templates [**concierge**]: Add delete option to parking bookings and hide action column when no actions are available
+- Interfaces/Templates [**stagehand**]: Add ability to view camera streams
+- Interfaces/Templates [**concierge**]: Hide levels without resources when listing bookings
+- Interfaces/Templates: Add route-based app titles
+- Interfaces/Templates [**concierge**]: Add room booking list loading state
+- Interfaces/Templates [**concierge**]: Add attendance report people breakdown
+- Interfaces/Templates [**signage**]: Add playlist display and zone assignment
+- Interfaces/Templates [**signage-manager**]: Added group support
+- Interfaces/Templates [**concierge**]: Show parking space features
+- Interfaces/Templates [**concierge**]: Report cancelled booking totals
+- Interfaces/Templates [**concierge**]: Show report inactive percentages
+- Interfaces/Templates [**signage-manager**]: Add signage group management
+- Interfaces/Templates [**concierge**]: Approve recurring parking bookings
+- Libraries/Models: Add application level permission groups ([#311](https://github.com/PlaceOS/placeos-models/pull/311))
+- Libraries/Models: Add signage groups ([#312](https://github.com/PlaceOS/placeos-models/pull/312))
+- Libraries/Models [**user**]: Add subsystem_access helper
+- Services/Init: Add rollback cli ([#103](https://github.com/PlaceOS/init/pull/103))
+- Services/RestAPI: Add crud methods for managing permission groups ([#432](https://github.com/PlaceOS/rest-api/pull/432))
+- Services/RestAPI: Add permission groups
+- Services/RestAPI [**groups**]: Hydrate group users and zones
+- Services/RestAPI [**users**]: Current user to return subsystem access
+- Services/RestAPI: Listing oauth apps a user has access to
+- Services/RestAPI [**signage**]: Add group share feature
+- Services/SearchIngest: Add support for uuid and non string ids
+- Services/StaffAPI [**events**]: [ppt-2375] add previous detail to change signal ([#370](https://github.com/PlaceOS/staff-api/pull/370))
+
+### Fixed
+
+- Clients/Typescript [**models**]: Add oauth app and user fields
+- Clients/Typescript [**api**]: Avoid duplicate slashes in control urls
+- Interfaces/Backoffice [**groups**]: Restrict membership searches by authority
+- Interfaces/Templates [**concierge**]: Fix desync of visitor list state when switching views (ppt-2475)
+- Interfaces/Templates [**workplace**]: Fix parking booking form crashing
+- Interfaces/Templates [**form-fields**]: Fix date field selecting a different date if timezone is different from local
+- Interfaces/Templates [**concierge**]: Align day view list actions with event details modal (ppt-2478)
+- Interfaces/Templates [**concierge**]: Prevent stale recurring approvals
+- Interfaces/Templates: Hide single-option level selectors
+- Interfaces/Templates [**workplace**]: Show meeting success space level
+- Interfaces/Templates [**concierge**]: Hide empty booking levels
+- Interfaces/Templates [**signage**]: Sync debug state before display load
+- Interfaces/Templates [**signage**]: Refresh playlist assignment changes
+- Interfaces/Templates [**concierge**]: Apply zones to parking spaces
+- Interfaces/Templates [**concierge**]: Isolate unsaved feature edits
+- Interfaces/Templates [**explore**]: Set desk asset id from map bookings
+- Interfaces/Templates [**concierge**]: Cap report occupancy attendees
+- Interfaces/Templates [**workplace**]: Apply parking recurrence end date
+- Libraries/Models [**control_system**]: [ppt-2460] empty string in camera_snapshot_urls ([#310](https://github.com/PlaceOS/placeos-models/pull/310))
+- Libraries/Resource [**Log**]: Set ids to string to handle uuids and complex primary keys
+- Services/Auth [**Dockerfile**]: Remove default json gem
+- Services/Auth [**Dockerfile**]: Remove default json gem
+- Services/Auth [**omniauth**]: Fail fast on redis connection failure
+- Services/Auth [**initializers/omniauth**]: Syntax error
+- Services/RestAPI [**controllers/signage**]: Handle empty item_id strings
+
+### Changed
+
+- Services/StaffAPI [**calendars**]: [ppt-2471] check_permission to call ms g get calendar instead ([#368](https://github.com/PlaceOS/staff-api/pull/368))
+- Services/StaffAPI [**events**]: [ppt-2358] classhing-assets to follow bookings signature ([#369](https://github.com/PlaceOS/staff-api/pull/369))
+- Swagger/RestAPI: Update for placeos-2.2604.3
+- Swagger/StaffAPI: Update for placeos-2.2604.3
+
 ## 2.2604.3
 
 ### Fixed
