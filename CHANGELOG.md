@@ -5,6 +5,21 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2605.2
+
+### Fixed
+
+- Libraries/Driver [**driver_model**]: Expose security groups
+- Services/RestAPI [**webrtc**]: Recaptchafailed error handling ([#433](https://github.com/PlaceOS/rest-api/pull/433))
+- Services/StaffAPI [**bookings**]: Recurring booking clash detection edge case
+- Services/Triggers: Reduce memory requirements on boot
+
+### Added
+
+- Interfaces/Backoffice [**systems**]: Add security groups field
+- Interfaces/Backoffice [**markdown**]: Add shiki code highlighting
+- Libraries/Driver [**proxy/remote_driver**]: Force core ip descovery on io::error
+
 ## 2.2605.1
 
 ### Added
