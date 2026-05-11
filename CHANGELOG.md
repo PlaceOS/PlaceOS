@@ -9,48 +9,16 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**public-events**]: Fix public token request returning an object instead of string
-- Clients/Typescript [**public-events**]: Avoid auth recovery for public endpoints
-- Clients/Typescript [**public-events**]: Fix token request to parse response as json
-- Clients/Typescript [**systems**]: Add security groups field
-- Interfaces/Templates [**workplace**]: Reset saved host after permission errors
-- Interfaces/Templates [**concierge**]: Handle parking reassignment failures
-- Interfaces/Templates [**explore**]: Hide desk and parking tooltips on mobile
-- Interfaces/Templates [**workplace**]: Persist host reset after permission check
-- Interfaces/Templates [**concierge**]: Filter report levels by resource type
-- Interfaces/Templates [**assets**]: Reduce parking space asset requests
-- Interfaces/Templates [**bookings**]: Use current user for resource rule checks
-- Interfaces/Templates [**explore**]: Respect disabled map styles
-- Interfaces/Templates [**concierge**]: Limit parking map level selection
-- Interfaces/Templates [**concierge**]: Show deleted parking booking status
-- Interfaces/Templates [**concierge**]: Fix loading asset purchase orders
-- Interfaces/Templates [**concierge**]: Align parking week status display
-- Interfaces/Templates [**concierge**]: Hide parking week space names
-- Interfaces/Templates [**concierge**]: Show declined room bookings in red
-- Interfaces/Templates [**explore**]: Disable hover tooltips for touch pointers
-- Interfaces/Templates [**workplace**]: Show booking context in lists cdu-242
 - Libraries/Driver [**driver_model**]: Expose security groups
-- Libraries/Models [**booking**]: Recurring bookings clash checks
 - Services/RestAPI [**webrtc**]: Recaptchafailed error handling ([#433](https://github.com/PlaceOS/rest-api/pull/433))
 - Services/StaffAPI [**bookings**]: Recurring booking clash detection edge case
-- Services/Triggers [**app**]: Build
+- Services/Triggers: Reduce memory requirements on boot
 
 ### Added
 
 - Interfaces/Backoffice [**systems**]: Add security groups field
 - Interfaces/Backoffice [**markdown**]: Add shiki code highlighting
-- Interfaces/Templates [**public**]: Add public events registration app
-- Interfaces/Templates [**lockers**]: Store locker banks and lockers as assets
-- Interfaces/Templates [**workplace**]: Hide selected parking spaces
-- Interfaces/Templates [**explore**]: Collapse mobile map legend
-- Interfaces/Templates [**signage-manager**]: Use modal for group selection
 - Libraries/Driver [**proxy/remote_driver**]: Force core ip descovery on io::error
-- Services/Triggers: Reduce memory requirements on boot
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2605.1
-- Swagger/StaffAPI: Update for placeos-2.2605.1
 
 ## 2.2605.1
 
