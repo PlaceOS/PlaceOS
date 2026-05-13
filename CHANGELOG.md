@@ -5,6 +5,23 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2605.3
+
+### Fixed
+
+- Interfaces/Templates [**public**]: Refresh guest token for public events ppt-2247
+- Interfaces/Templates [**concierge**]: Respect bookable hours in room utilisation ppt-2506
+- Interfaces/Templates [**workplace**]: Update parking request confirmation proj-1874
+- Interfaces/Templates [**concierge**]: Use parking timezone for request times proj-1846
+- Interfaces/Templates [**events**]: Preserve monthly recurrence weekday ppt-2509
+- Libraries/Driver [**redis**]: Reduce the possibility of a connection leak
+- Services/Build: Prevent handler wedge from stalled clients and spawn failures ([#58](https://github.com/PlaceOS/build/pull/58))
+- Services/RestAPI [**playlists**]: Provide content for shared playlists ([#434](https://github.com/PlaceOS/rest-api/pull/434))
+
+### Added
+
+- Services/Auth [**initializers/omniauth**]: Run redis events in the background
+
 ## 2.2605.2
 
 ### Fixed
