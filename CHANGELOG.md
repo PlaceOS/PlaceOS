@@ -5,6 +5,56 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2605.3
+
+### Fixed
+
+- Clients/Typescript [**signage**]: Add media field to signage playlist media type
+- Interfaces/Backoffice [**modals**]: Stretch settings fields to fill space
+- Interfaces/Backoffice [**groups**]: Show default for permissions when none set
+- Interfaces/Templates [**form-fields**]: Show selected user photo
+- Interfaces/Templates [**public**]: Refresh guest token for public events ppt-2247
+- Interfaces/Templates [**signage-manager**]: Hide groups nav without manage access
+- Interfaces/Templates [**signage-manager**]: Guard app access by group permissions
+- Interfaces/Templates [**common**]: Refresh token before uploading files
+- Interfaces/Templates [**groups**]: Show default for permissions when none set
+- Interfaces/Templates [**signage-manager**]: Refresh playlist media state
+- Interfaces/Templates [**signage-manager**]: Reset playlist approval on failure
+- Interfaces/Templates [**concierge**]: Respect bookable hours in room utilisation ppt-2506
+- Interfaces/Templates [**bookings**]: Filter recurring desk clashes ppt-2507
+- Interfaces/Templates [**concierge**]: Apply desk all day default
+- Interfaces/Templates [**workplace**]: Update parking request confirmation proj-1874
+- Interfaces/Templates [**concierge**]: Use parking timezone for request times proj-1846
+- Interfaces/Templates [**concierge**]: Count daily unique attendance
+- Interfaces/Templates [**concierge**]: Keep attendance averages raw
+- Interfaces/Templates [**concierge**]: Fix room booking list display items
+- Interfaces/Templates [**concierge**]: Show timed cross-day parking bookings
+- Interfaces/Templates [**events**]: Block recurring room conflicts ppt-2510
+- Interfaces/Templates [**signage-manager**]: Load child zones for group users
+- Interfaces/Templates [**events**]: Preserve monthly recurrence weekday ppt-2509
+- Libraries/Driver [**redis**]: Reduce the possibility of a connection leak
+- Services/Build: Prevent handler wedge from stalled clients and spawn failures ([#58](https://github.com/PlaceOS/build/pull/58))
+- Services/RestAPI [**playlists**]: Provide content for shared playlists ([#434](https://github.com/PlaceOS/rest-api/pull/434))
+- Services/RestAPI [**zones**]: Tree view when not an admin
+- Services/RestAPI [**zones**]: Parent_id might be an empty string
+- Services/RestAPI [**zones**]: Querying for root zones
+
+### Added
+
+- Interfaces/Templates [**concierge**]: Add report metric guides
+- Interfaces/Templates [**signage-manager**]: Allow duplicate playlist media
+- Interfaces/Templates [**common**]: Cache org zones and bulk load metadata
+- Interfaces/Templates [**concierge**]: Add parking request creation
+- Interfaces/Templates [**signage-manager**]: Use flat trees for zone and group lists
+- Interfaces/Templates [**signage-manager**]: Improve group hierarchy navigation
+- Services/Auth [**initializers/omniauth**]: Run redis events in the background
+
+### Changed
+
+- Interfaces/Templates [**concierge**]: Clarify attendance report logic
+- Swagger/RestAPI: Update for placeos-2.2605.2
+- Swagger/StaffAPI: Update for placeos-2.2605.2
+
 ## 2.2605.2
 
 ### Fixed
