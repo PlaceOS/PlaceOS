@@ -5,6 +5,19 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2605.4
+
+### Added
+
+- Services/StaffAPI [**bookings**]: Add include_linked guests (ppt-2375) ([#372](https://github.com/PlaceOS/staff-api/pull/372))
+
+### Fixed
+
+- Services/Auth [**omniauth**]: Redis queue should be non-blocking
+- Services/RestAPI [**security**]: Restrict driver listing, driver readme and zone trigger lookups to support users ([#435](https://github.com/PlaceOS/rest-api/pull/435))
+- Services/SearchIngest: Log actual elasticsearch endpoint when elastic_uri is set ([#88](https://github.com/PlaceOS/search-ingest/pull/88))
+- Services/StaffAPI [**events**]: Support #guest_list ical_uid lookup (ppt-2375) ([#371](https://github.com/PlaceOS/staff-api/pull/371))
+
 ## 2.2605.3
 
 ### Fixed
