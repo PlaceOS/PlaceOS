@@ -9,44 +9,14 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Added
 
-- Interfaces/Backoffice [**groups**]: Use flat tree in sidebar
-- Interfaces/Templates [**bookings**]: Add group booking containers
-- Interfaces/Templates [**workplace**]: Add notes option to parking request types
-- Interfaces/Templates [**parking**]: Support manual approval request types
-- Interfaces/Templates [**concierge**]: Add custom parking booking columns
-- Interfaces/Templates [**settings**]: Add environment bar indicator
 - Services/StaffAPI [**bookings**]: Add include_linked guests (ppt-2375) ([#372](https://github.com/PlaceOS/staff-api/pull/372))
 
 ### Fixed
 
-- Interfaces/Templates [**concierge**]: Correct site attendance reporting ppt-2451
-- Interfaces/Templates [**concierge**]: Show rejected bookings as declined in reports
-- Interfaces/Templates [**concierge**]: Show deleted desk bookings as disabled
-- Interfaces/Templates [**form-fields**]: Correct recurrence instance end dates ppt-2513
-- Interfaces/Templates [**PPT-2512**]: Preserve recurrence end dates
-- Interfaces/Templates [**PPT-2509**]: Preserve monthly recurrence week
-- Interfaces/Templates [**booking-panel**]: Fix error when parsing timezones
-- Interfaces/Templates [**concierge**]: Show deleted desk bookings as disabled"
-- Interfaces/Templates [**concierge**]: Hide level selector on site attendance report
-- Interfaces/Templates [**concierge**]: Align booking status terminology
-- Interfaces/Templates [**concierge**]: Exclude inactive attendance records
-- Interfaces/Templates [**concierge**]: Fix status display for desk bookings
-- Interfaces/Templates [**concierge**]: Keep attendance tables with print headers
-- Interfaces/Templates [**concierge**]: Avoid splitting attendance table blocks
-- Interfaces/Templates [**bookings**]: Count recurrence instances from first occurrence
-- Interfaces/Templates [**signage-manager**]: Show embedded playlist media
-- Interfaces/Templates [**concierge**]: Tweak handling of event statuses when room mismatches occur
-- Interfaces/Templates [**concierge**]: Correct space report utilisation
-- Interfaces/Templates [**signage-manager**]: Tweak loading of root zones
 - Services/Auth [**omniauth**]: Redis queue should be non-blocking
 - Services/RestAPI [**security**]: Restrict driver listing, driver readme and zone trigger lookups to support users ([#435](https://github.com/PlaceOS/rest-api/pull/435))
 - Services/SearchIngest: Log actual elasticsearch endpoint when elastic_uri is set ([#88](https://github.com/PlaceOS/search-ingest/pull/88))
 - Services/StaffAPI [**events**]: Support #guest_list ical_uid lookup (ppt-2375) ([#371](https://github.com/PlaceOS/staff-api/pull/371))
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2605.3
-- Swagger/StaffAPI: Update for placeos-2.2605.3
 
 ## 2.2605.3
 
