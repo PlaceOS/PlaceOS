@@ -5,6 +5,16 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2605.5
+
+### Fixed
+
+- Interfaces/Templates [**concierge**]: Scale parking action column with number of actions (ppt-1890)
+- Interfaces/Templates [**workplace**]: Handle overnight parking shifts proj-1881
+- Interfaces/Templates [**workplace**]: Show restricted parking all-day window proj-1878
+- Interfaces/Templates [**concierge**]: Show parking request notes proj-1882
+- Libraries/Resource: Possible infinite recursion watching resources
+
 ## 2.2605.4
 
 ### Added
