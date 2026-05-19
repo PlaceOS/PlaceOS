@@ -7,29 +7,13 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ## 2.2605.5
 
-### Added
-
-- Interfaces/Backoffice [**sidebar**]: Show lazy route loading spinner
-- Interfaces/Templates [**concierge**]: Make parking assignment map selectable proj-1891
-- Interfaces/Templates [**parking**]: Add setting to hide availability counters
-- Interfaces/Templates [**workplace**]: Add embedded menu links
-
 ### Fixed
 
-- Interfaces/Templates [**common**]: Cache organisation metadata
 - Interfaces/Templates [**concierge**]: Scale parking action column with number of actions (ppt-1890)
 - Interfaces/Templates [**workplace**]: Handle overnight parking shifts proj-1881
 - Interfaces/Templates [**workplace**]: Show restricted parking all-day window proj-1878
 - Interfaces/Templates [**concierge**]: Show parking request notes proj-1882
-- Interfaces/Templates [**control**]: Tweak tv controls bindings
-- Interfaces/Templates [**concierge**]: Scroll selected parking space into view
-- Interfaces/Templates [**workplace**]: Clean up desk success page
 - Libraries/Resource: Possible infinite recursion watching resources
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2605.4
-- Swagger/StaffAPI: Update for placeos-2.2605.4
 
 ## 2.2605.4
 
