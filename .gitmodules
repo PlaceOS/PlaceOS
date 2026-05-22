@@ -80,4 +80,4 @@
 	branch = postgresql-17
 [submodule "services/auth.cr"]
 	path = services/auth.cr
-	url = https://github.com/PlaceOS/auth.cr
+	url = https://github.com/PlaceOS/auth.cr.git
