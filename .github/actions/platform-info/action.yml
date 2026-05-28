@@ -47,7 +47,7 @@ runs:
               name: .[0],
               path: .[1],
               repo: .[2],
-              href: .[2][:-4],
+              href: (.[2] | sub("\\.git$"; "")),
               sha:  .[3],
             }
           ]'

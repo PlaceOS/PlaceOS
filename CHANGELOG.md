@@ -5,6 +5,49 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2605.6
+
+### Fixed
+
+- Interfaces/Templates [**concierge**]: Filter approved parking approvals proj-1896
+- Interfaces/Templates [**concierge**]: Show vehicle type in parking bookings
+- Interfaces/Templates [**concierge**]: Proj-1910 update room approval status
+- Interfaces/Templates [**bookings**]: Preserve monthly room recurrence ppt-2509
+- Interfaces/Templates [**common**]: Suppress bookable hours date warning for ppt-2518
+- Libraries/Driver [**subscriptions**]: Ensure redis closes on re-subscription errors
+- Libraries/Driver [**logger**]: Prevent fiber leak
+- Libraries/Models [**driver**]: Apply update_available flag without modifying timestamps
+- Services/Build_service [**compiler**]: Produce fully-symbolized stack traces for static-musl driver binaries
+- Services/Build_service [**Dockerfile**]: Ensure drivers can build with backtraces
+- Services/StaffAPI [**events**]: Correctly signal on room only change (ppt-2375) ([#374](https://github.com/PlaceOS/staff-api/pull/374))
+
+### Added
+
+- Clients/Typescript [**signage**]: Add new playlist endpoint for listing approvers
+- Interfaces/Backoffice [**admin**]: Add zone tree import export ppt-2519
+- Interfaces/Templates [**user**]: Add loading and processing of user groups and permissions
+- Interfaces/Templates [**signage-manager**]: Allow editing webpage media urls
+- Interfaces/Templates [**auth**]: Guard apps by subsystem read access
+- Interfaces/Templates [**signage-manager**]: Add media group tabs
+- Interfaces/Templates [**signage-manager**]: Add bulk media actions
+- Interfaces/Templates [**signage-manager**]: Show upcoming playlist sessions
+- Interfaces/Templates [**workplace**]: Default parking requests to desk building
+- Interfaces/Templates [**signage-manager**]: Add playlist approval preview controls
+- Interfaces/Templates [**signage-manager**]: Edit multiple playlist schedules
+- Libraries/Driver [**transport/http**]: Remove expired cookies from jar
+- Libraries/Driver: Use non blocking dns
+- Libraries/Models [**oauth_token**]: Add oauthtoken model + migration ([#315](https://github.com/PlaceOS/placeos-models/pull/315))
+- Libraries/Models: [ppt-2454] sanitize attributes ([#313](https://github.com/PlaceOS/placeos-models/pull/313))
+- Libraries/Models [**playlist**]: Refactor schedules ([#316](https://github.com/PlaceOS/placeos-models/pull/316))
+- Libraries/Models: Add pending mail table ([#317](https://github.com/PlaceOS/placeos-models/pull/317))
+- Libraries/Models: Add multiple schedules to playlists
+- Services/Core: Improve driver management ([#290](https://github.com/PlaceOS/core/pull/290))
+- Services/RestAPI: Add signage approval requests ([#436](https://github.com/PlaceOS/rest-api/pull/436))
+
+### Changed
+
+- Services/StaffAPI [**bookings**]: Clashing_assets to validate booking_start vs booking_end ([#373](https://github.com/PlaceOS/staff-api/pull/373))
+
 ## 2.2605.5
 
 ### Fixed
