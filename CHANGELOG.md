@@ -9,60 +9,14 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**signage**]: Update playlist schedule fields
-- Clients/Typescript: Fix package name for ci publish
-- Clients/Typescript [**signage**]: Add new request approval endpoint for playlists
-- Clients/Typescript: Fix exporting new method from previous commit
-- Clients/Typescript [**signage**]: Add new additional_schedules field to playlist model
-- Clients/Typescript [**signage**]: Fix exporting new playlist method
-- Clients/Typescript [**signage**]: Simplify playlist schedule fields
-- Clients/Typescript [**signage**]: Add approval_requested field to playlist media
-- Interfaces/Backoffice [**sidebar**]: Center compact loading spinner
-- Interfaces/Backoffice [**tablist**]: Show loader for loading tab
-- Interfaces/Backoffice [**metadata**]: Show spinner while loading list
-- Interfaces/Templates [**signage-manager**]: Show share options for admins
-- Interfaces/Templates [**bookings**]: Preserve monthly room recurrence ppt-2509
-- Interfaces/Templates [**bookings**]: Handle empty booking saves
-- Interfaces/Templates [**bookings**]: Align group child resources
-- Interfaces/Templates [**bookings**]: Show failed group bookings on success
-- Interfaces/Templates [**concierge**]: Apply desk all day default
 - Interfaces/Templates [**concierge**]: Filter approved parking approvals proj-1896
-- Interfaces/Templates [**workplace**]: Limit parking recurrence dates proj-1895
-- Interfaces/Templates [**bookings**]: Cleanup booking data before editing
-- Interfaces/Templates [**concierge**]: Proj-1902 align parking request edit form
 - Interfaces/Templates [**concierge**]: Show vehicle type in parking bookings
-- Interfaces/Templates [**workplace**]: Clamp recurrence dates
-- Interfaces/Templates [**form-fields**]: Limit recurrence instance count
 - Interfaces/Templates [**concierge**]: Proj-1910 update room approval status
-- Interfaces/Templates [**concierge**]: Print visitor passes from guest list
-- Interfaces/Templates [**bookings**]: Fix saving visitor bookings for room bookings
-- Interfaces/Templates [**common**]: Ppt-2518 preserve selected booking date
-- Interfaces/Templates [**events**]: Fix saving room data (proj-1918)
-- Interfaces/Templates [**concierge**]: Hide declined room timeline bookings
-- Interfaces/Templates [**events**]: Use source calendar when editing booking host
-- Interfaces/Templates [**form-fields**]: Prevent duplicate booking rule list items
 - Interfaces/Templates [**bookings**]: Preserve monthly room recurrence ppt-2509
-- Interfaces/Templates [**bookings**]: Preserve monthly room recurrence ppt-2509"
-- Interfaces/Templates [**signage-manager**]: Fix thumbnails for playlist media
-- Interfaces/Templates [**concierge**]: Hide cancelled timeline events immediately
-- Interfaces/Templates [**signage**]: Validate media against playlist schedule
-- Interfaces/Templates [**signage**]: Hold single webpage playlist items
-- Interfaces/Templates [**signage-manager**]: Improve ux for valid from/until display
-- Interfaces/Templates [**signage**]: Handle scheduled playlist timing
-- Interfaces/Templates [**workplace**]: Wait for settings before menu redirects
-- Interfaces/Templates [**signage-manager**]: Format playlist schedule durations
-- Interfaces/Templates [**signage**]: Handle playlist schedules field
 - Interfaces/Templates [**common**]: Suppress bookable hours date warning for ppt-2518
-- Interfaces/Templates [**events**]: Align recurrence payloads with calendar backend
-- Interfaces/Templates [**events**]: Handle unavailable duration options
-- Libraries/Driver [**transport**]: Use spawn to prevent stackoverflow
 - Libraries/Driver [**subscriptions**]: Ensure redis closes on re-subscription errors
-- Libraries/Driver [**transport/websocket**]: Exit connection loop on terminate
-- Libraries/Driver [**transport/tcp**]: Ensure no socket fd leaks
-- Libraries/Driver [**queue**]: Ensure resources are cleaned up
 - Libraries/Driver [**logger**]: Prevent fiber leak
 - Libraries/Models [**driver**]: Apply update_available flag without modifying timestamps
-- Libraries/Models [**pending_mail**]: Add es support and sanitization
 - Services/Build_service [**compiler**]: Produce fully-symbolized stack traces for static-musl driver binaries
 - Services/Build_service [**Dockerfile**]: Ensure drivers can build with backtraces
 - Services/StaffAPI [**events**]: Correctly signal on room only change (ppt-2375) ([#374](https://github.com/PlaceOS/staff-api/pull/374))
@@ -71,36 +25,16 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 - Clients/Typescript [**signage**]: Add new playlist endpoint for listing approvers
 - Interfaces/Backoffice [**admin**]: Add zone tree import export ppt-2519
-- Interfaces/Templates [**bookings**]: Write app metadata to extension data
-- Interfaces/Templates [**concierge**]: Add ability to disable delete action for room and desk booking
-- Interfaces/Templates [**workplace**]: Support external menu embed links
 - Interfaces/Templates [**user**]: Add loading and processing of user groups and permissions
-- Interfaces/Templates [**catering**]: Store menu items as assets
-- Interfaces/Templates [**parking**]: Add ability to prevent editing of allocated bookings
-- Interfaces/Templates [**signage-manager**]: Add playlist play hours range
 - Interfaces/Templates [**signage-manager**]: Allow editing webpage media urls
-- Interfaces/Templates [**signage-manager**]: Add playlist scheduling options
-- Interfaces/Templates [**concierge**]: Configure visitor action window
-- Interfaces/Templates [**bookings**]: Add rule host override settings
-- Interfaces/Templates [**signage-manager**]: Improve playlist schedule controls
-- Interfaces/Templates [**signage-manager**]: Allow multi-select monthly playlist schedules
 - Interfaces/Templates [**auth**]: Guard apps by subsystem read access
-- Interfaces/Templates [**signage**]: Support updated playlist schedule fields
 - Interfaces/Templates [**signage-manager**]: Add media group tabs
 - Interfaces/Templates [**signage-manager**]: Add bulk media actions
 - Interfaces/Templates [**signage-manager**]: Show upcoming playlist sessions
-- Interfaces/Templates [**signage-manager**]: Request playlist approval
-- Interfaces/Templates [**workplace**]: Require parking request plate numbers by setting
-- Interfaces/Templates [**bookings**]: Store parking request user groups
 - Interfaces/Templates [**workplace**]: Default parking requests to desk building
-- Interfaces/Templates [**signage-manager**]: Allow multiple monthly playlist instances
-- Interfaces/Templates [**signage-manager**]: Target playlist approval requests
 - Interfaces/Templates [**signage-manager**]: Add playlist approval preview controls
-- Interfaces/Templates [**concierge**]: Use user list for broadcast recipients
 - Interfaces/Templates [**signage-manager**]: Edit multiple playlist schedules
-- Interfaces/Templates [**signage**]: Show awaiting review playlists
 - Libraries/Driver [**transport/http**]: Remove expired cookies from jar
-- Libraries/Driver [**subscriptions**]: Be more deterministic
 - Libraries/Driver: Use non blocking dns
 - Libraries/Models [**oauth_token**]: Add oauthtoken model + migration ([#315](https://github.com/PlaceOS/placeos-models/pull/315))
 - Libraries/Models: [ppt-2454] sanitize attributes ([#313](https://github.com/PlaceOS/placeos-models/pull/313))
@@ -108,15 +42,11 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Libraries/Models: Add pending mail table ([#317](https://github.com/PlaceOS/placeos-models/pull/317))
 - Libraries/Models: Add multiple schedules to playlists
 - Services/Core: Improve driver management ([#290](https://github.com/PlaceOS/core/pull/290))
-- Services/Edge: Improve driver management ([#290](https://github.com/PlaceOS/edge/pull/290))
 - Services/RestAPI: Add signage approval requests ([#436](https://github.com/PlaceOS/rest-api/pull/436))
-- Services/RestAPI [**playlists**]: Mark approval requested
 
 ### Changed
 
 - Services/StaffAPI [**bookings**]: Clashing_assets to validate booking_start vs booking_end ([#373](https://github.com/PlaceOS/staff-api/pull/373))
-- Swagger/RestAPI: Update for placeos-2.2605.5
-- Swagger/StaffAPI: Update for placeos-2.2605.5
 
 ## 2.2605.5
 
