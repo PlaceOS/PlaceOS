@@ -5,74 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
-## 2.2606.6
+## 2.2606.1
 
 ### Fixed
 
-- Clients/Typescript [**signage**]: Add tags field to media
-- Interfaces/Templates [**signage-manager**]: Improve playlist schedule display
-- Interfaces/Templates [**signage**]: Count playlist metrics on loop and at end of playback
-- Interfaces/Templates [**common**]: Cap desk booking duration to bookable hours ppt-2511
-- Interfaces/Templates [**signage**]: Stabilise debug playback controls
-- Interfaces/Templates [**signage-manager**]: Fix minor styling issue
-- Interfaces/Templates [**signage-manager**]: Update playlists on media removal
-- Interfaces/Templates [**signage-manager**]: Refresh translated labels
-- Interfaces/Templates [**signage**]: Add more error handling for media items
-- Interfaces/Templates [**signage**]: Handle media load failures and harden playlist
-- Interfaces/Templates [**signage**]: Stop player freezing on a broken item when the playlist loops
-- Interfaces/Templates [**signage**]: Bound the url wait so playback can't hang on a missing item
-- Interfaces/Templates [**signage**]: Recover media cache after download errors
-- Interfaces/Templates [**signage**]: Isolate embedded player media caches
-- Interfaces/Templates [**signage**]: Refresh missing cached media files
-- Interfaces/Templates [**signage**]: Delay instant failed media skips
-- Interfaces/Templates [**signage**]: Harden media cache storage
-- Interfaces/Templates [**signage**]: Handle nested player cache ownership
 - Interfaces/Templates [**concierge**]: Apply desk duration rules ppt-2511
-- Interfaces/Templates [**service-worker**]: Harden update handling
-- Interfaces/Templates [**signage**]: Double-buffer webpage and plugin playback
-- Interfaces/Templates [**signage**]: Scope display fallback cache by display
-- Interfaces/Templates [**signage**]: Let root prune nested media cache
-- Interfaces/Templates [**signage**]: Hide preloaded media behind active item
-- Interfaces/Templates [**signage**]: Show loading spinner while waiting for media
-- Interfaces/Templates [**signage**]: Clarify invalid media timing messages
-- Interfaces/Templates [**signage-manager**]: Show loading state in media preview
-- Interfaces/Templates [**signage**]: Render media progress every frame
-- Interfaces/Templates [**signage-manager**]: Show preview load errors
-- Interfaces/Templates [**signage**]: Handle plugin playback fallback
-- Interfaces/Templates [**signage**]: Handle plugin errors and cleanup
-- Interfaces/Templates [**signage**]: Pause inactive video outputs
-- Interfaces/Templates [**signage**]: Harden player scheduling and bootstrap
-- Libraries/Driver [**proxy/drivers**]: Backwards compatibility for map reduce
-- Libraries/Driver [**subscriptions**]: Don't unbind if another bind has already been made
-- Libraries/Driver [**subscriptions**]: Additional hardening
 - Services/RestAPI [**shard.lock**]: Update required dependencies
 
 ### Added
 
-- Interfaces/Templates [**signage-manager**]: Localize app text
-- Interfaces/Templates [**signage-manager**]: Add optional locale selector
-- Interfaces/Templates [**signage-manager**]: Add media tags support
-- Interfaces/Templates [**signage-manager**]: Add app translations
-- Interfaces/Templates [**signage**]: Defer webpage and plugin reveal
-- Interfaces/Templates [**signage**]: Show build info in debug mode
-- Interfaces/Templates [**signage**]: Show media type icons in debug playlist
-- Interfaces/Templates [**signage**]: Prioritize active media cache
-- Interfaces/Templates [**service-worker**]: Support automatic app reloads
-- Interfaces/Templates [**signage**]: Improve debug playback speed handling
-- Interfaces/Templates [**signage**]: Add playlist item tooltip details
-- Interfaces/Templates [**concierge**]: Add broadcast email recipient groups
 - Libraries/Driver [**proxy/driver**]: Add json passing path
 - Services/Core [**build_api**]: [ppt-2524] add a user-agent header to build service requests ([#291](https://github.com/PlaceOS/core/pull/291))
-- Services/Edge [**build_api**]: [ppt-2524] add a user-agent header to build service requests ([#291](https://github.com/PlaceOS/edge/pull/291))
 - Services/RestAPI [**signage/playlist_media**]: Add tags query
 
 ### Changed
 
-- Interfaces/Templates [**signage**]: Simplify media playback logic
 - Services/Build_service [**application**]: [ppt-2524] add placeos_ver= and cluster_name= tags when present around the request
-- Services/Build_service [**application**]: [ppt-2524] add placeos_ver= and cluster_name= tags when present around the request
-- Swagger/RestAPI: Update for placeos-2.2605.6
-- Swagger/StaffAPI: Update for placeos-2.2605.6
 
 ## 2.2605.6
 
