@@ -5,6 +5,23 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2606.1
+
+### Fixed
+
+- Interfaces/Templates [**concierge**]: Apply desk duration rules ppt-2511
+- Services/RestAPI [**shard.lock**]: Update required dependencies
+
+### Added
+
+- Libraries/Driver [**proxy/driver**]: Add json passing path
+- Services/Core [**build_api**]: [ppt-2524] add a user-agent header to build service requests ([#291](https://github.com/PlaceOS/core/pull/291))
+- Services/RestAPI [**signage/playlist_media**]: Add tags query
+
+### Changed
+
+- Services/Build_service [**application**]: [ppt-2524] add placeos_ver= and cluster_name= tags when present around the request
+
 ## 2.2605.6
 
 ### Fixed
