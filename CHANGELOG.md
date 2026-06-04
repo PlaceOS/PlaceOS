@@ -9,25 +9,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice [**service-worker**]: Show update card safely
-- Interfaces/Templates [**signage**]: Hold single plugin playlist items
-- Interfaces/Templates [**signage-manager**]: Handle failed media uploads
-- Interfaces/Templates [**signage-manager**]: Load plugin media config from plugin
-- Interfaces/Templates [**bookings**]: Preserve monthly weekday recurrence
-- Libraries/Driver [**interface/zone_access_security**]: Provide queries for timed access
-
-### Added
-
-- Interfaces/Backoffice [**system-exec**]: Add module selector search
-- Interfaces/Backoffice [**api-keys**]: Improve user picker editing
-- Interfaces/Templates [**common**]: Show service worker update card
-
-### Changed
-
-- Interfaces/Templates: Remove legacy resource selection code
-- Interfaces/Templates: Remove legacy catering modal and canonicalize replacements
-- Swagger/RestAPI: Update for placeos-2.2606.1
-- Swagger/StaffAPI: Update for placeos-2.2606.1
+- Services [**eventbus**]: fix db lock contention ([0fa1341](https://github.com/spider-gazelle/eventbus/commit/0fa1341cf54cd6d5a700a2727b651879f35453d9))
 
 ## 2.2606.1
 
