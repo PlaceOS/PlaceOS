@@ -5,6 +5,12 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2606.2
+
+### Fixed
+
+- Services [**eventbus**]: fix db lock contention ([0fa1341](https://github.com/spider-gazelle/eventbus/commit/0fa1341cf54cd6d5a700a2727b651879f35453d9))
+
 ## 2.2606.1
 
 ### Fixed
