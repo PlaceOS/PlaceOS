@@ -5,6 +5,30 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2606.2
+
+### Fixed
+
+- Interfaces/Backoffice [**service-worker**]: Show update card safely
+- Interfaces/Templates [**signage**]: Hold single plugin playlist items
+- Interfaces/Templates [**signage-manager**]: Handle failed media uploads
+- Interfaces/Templates [**signage-manager**]: Load plugin media config from plugin
+- Interfaces/Templates [**bookings**]: Preserve monthly weekday recurrence
+- Libraries/Driver [**interface/zone_access_security**]: Provide queries for timed access
+
+### Added
+
+- Interfaces/Backoffice [**system-exec**]: Add module selector search
+- Interfaces/Backoffice [**api-keys**]: Improve user picker editing
+- Interfaces/Templates [**common**]: Show service worker update card
+
+### Changed
+
+- Interfaces/Templates: Remove legacy resource selection code
+- Interfaces/Templates: Remove legacy catering modal and canonicalize replacements
+- Swagger/RestAPI: Update for placeos-2.2606.1
+- Swagger/StaffAPI: Update for placeos-2.2606.1
+
 ## 2.2606.1
 
 ### Fixed
