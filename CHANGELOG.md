@@ -9,58 +9,25 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Added
 
-- Clients/Typescript: Replace rxjs apis with promises and signals
 - Interfaces/Templates [**visitor-kiosk**]: Add virtual keyboard support
-- Interfaces/Templates [**signage-manager**]: Add ability to upload multiple media items at once
-- Libraries/Driver [**proxy**]: Add helper for parsing json classes
-- Libraries/Driver [**subscriptions**]: Add a reconnect count
-- Libraries/Driver: Not all transports required for every driver
 - Libraries/Models [**booking_instance**]: Add additional fields
 - Libraries/Models: Ensure pkce support is enabled for auth
-- Services/Core: [ppt-2525] update crystal build for unwind support ([#292](https://github.com/PlaceOS/core/pull/292))
-- Services/Edge: [ppt-2525] update crystal build for unwind support ([#292](https://github.com/PlaceOS/edge/pull/292))
-- Services/FrontendLoader: [ppt-2525] update crystal build for unwind support ([#95](https://github.com/PlaceOS/frontend-loader/pull/95))
 - Services/RestAPI [**root**]: Add redis stats to health check
-- Services/SearchIngest: [ppt-2525] update crystal build for unwind support ([#89](https://github.com/PlaceOS/search-ingest/pull/89))
-- Services/StaffAPI: [ppt-2525] update crystal build for unwind support ([#375](https://github.com/PlaceOS/staff-api/pull/375))
-- Services/Triggers: [ppt-2525] update crystal build for unwind support ([#53](https://github.com/PlaceOS/triggers/pull/53))
 - Services/Triggers [**driver_updater**]: Reduce cpu load
 
 ### Fixed
 
-- Interfaces/Backoffice: Remove various observable handlers
-- Interfaces/Backoffice [**admin**]: Restore api key e2e mocks
-- Interfaces/Backoffice [**drivers**]: Fix module system list not updating
-- Interfaces/Backoffice: Convert template state to signals
-- Interfaces/Backoffice [**router**]: Reload on lazy chunk load failure
 - Interfaces/Templates [**concierge**]: Handle desk reject all instances ppt-2532
 - Interfaces/Templates [**concierge**]: Print individual desk qr codes ppt-2533
-- Interfaces/Templates [**concierge**]: Refresh desks after reject all
-- Interfaces/Templates [**concierge**]: Prevent parking level navigation loops
 - Interfaces/Templates [**bookings**]: Preserve monthly review recurrence ppt-2526
 - Interfaces/Templates [**concierge**]: Refresh desk rejection state ppt-2532
-- Interfaces/Templates [**form-fields**]: Remove monthly day recurrence option
-- Interfaces/Templates [**auth**]: Preserve mobile auth cookies
-- Interfaces/Templates: Set default creator after user load
-- Interfaces/Templates: Move service work init to before data loading
 - Libraries/Driver [**subscriptions**]: Improve failsafe checks
-- Libraries/Driver [**subscriptions**]: Handle more possible error locations
-- Libraries/Driver: Add placeos_all_transports env var
 - Libraries/Driver [**transport/websocket**]: Prevent interleaved writes to connected state
-- Libraries/Driver [**driver_manager**]: Ensure connect state is serialized
 - Services/RestAPI [**websocket/session**]: Subscription leak on close
 
 ### Changed
 
-- Interfaces/Backoffice [**angular**]: Upgrade to v22
-- Interfaces/Backoffice: Migrate ts-client usage to signals
-- Interfaces/Backoffice [**forms**]: Migrate to signal forms
-- Interfaces/Backoffice [**admin**]: Consolidate shared data state
-- Interfaces/Backoffice: Use service decorator for root services
-- Interfaces/Backoffice: Migrate commonmodule imports to standalone
 - Services/Triggers [**Dockerfile**]: [ppt-2278] add /tmp ([#49](https://github.com/PlaceOS/triggers/pull/49))
-- Swagger/RestAPI: Update for placeos-2.2606.2
-- Swagger/StaffAPI: Update for placeos-2.2606.2
 
 ## 2.2606.2
 
