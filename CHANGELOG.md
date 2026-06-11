@@ -5,6 +5,30 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2606.3
+
+### Added
+
+- Interfaces/Templates [**visitor-kiosk**]: Add virtual keyboard support
+- Libraries/Models [**booking_instance**]: Add additional fields
+- Libraries/Models: Ensure pkce support is enabled for auth
+- Services/RestAPI [**root**]: Add redis stats to health check
+- Services/Triggers [**driver_updater**]: Reduce cpu load
+
+### Fixed
+
+- Interfaces/Templates [**concierge**]: Handle desk reject all instances ppt-2532
+- Interfaces/Templates [**concierge**]: Print individual desk qr codes ppt-2533
+- Interfaces/Templates [**bookings**]: Preserve monthly review recurrence ppt-2526
+- Interfaces/Templates [**concierge**]: Refresh desk rejection state ppt-2532
+- Libraries/Driver [**subscriptions**]: Improve failsafe checks
+- Libraries/Driver [**transport/websocket**]: Prevent interleaved writes to connected state
+- Services/RestAPI [**websocket/session**]: Subscription leak on close
+
+### Changed
+
+- Services/Triggers [**Dockerfile**]: [ppt-2278] add /tmp ([#49](https://github.com/PlaceOS/triggers/pull/49))
+
 ## 2.2606.2
 
 ### Fixed
