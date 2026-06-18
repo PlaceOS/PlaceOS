@@ -5,6 +5,30 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2606.4
+
+### Fixed
+
+- Clients/Typescript [**auth**]: Fix handling of auth without authority session
+
+### Added
+
+- Interfaces/Backoffice [**admin**]: Add quick create option to api key section
+- Interfaces/Backoffice [**admin**]: Add expiry options to api keys (ppt-2540)
+- Libraries/Models: [ppt-2540] add expiry support to api key ([#319](https://github.com/PlaceOS/placeos-models/pull/319))
+- Services/Core: Add liveness probe
+- Services/RestAPI: [ppt-2540] add expiry support to api key ([#437](https://github.com/PlaceOS/rest-api/pull/437))
+- Services: Add nonblocking dns
+
+### Changed
+
+- Interfaces/Templates: Migrate ts-client to v5
+- Interfaces/Templates [**components**]: Replace svg-viewer map renderer with dynamic map
+- Interfaces/Templates: Update nx to 22.7.5
+- Interfaces/Templates [**angular**]: Migrate workspace to angular 22
+- Interfaces/Templates [**libs**]: Migrate template state to signals
+- Interfaces/Templates: Migrate package management to bun
+
 ## 2.2606.3
 
 ### Added
