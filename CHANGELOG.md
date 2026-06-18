@@ -10,119 +10,24 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Fixed
 
 - Clients/Typescript [**auth**]: Fix handling of auth without authority session
-- Clients/Typescript [**api-keys**]: Add expiry fields to api keys
-- Interfaces/Backoffice [**repositories**]: Surface driver repo load errors
-- Interfaces/Backoffice: Fix item sidebar handling load errors
-- Interfaces/Backoffice [**modules**]: Fix checks related to new signal forms
-- Interfaces/Backoffice: Fix checks related to new signal forms
-- Interfaces/Backoffice [**forms**]: Guard signal effect updates
-- Interfaces/Backoffice [**admin**]: Add improved filtering to api key modal scope and user fields
-- Interfaces/Backoffice: Fix buttons in form "submit"ing the form
-- Interfaces/Templates [**parking**]: Keep approval requests out of waitlist
-- Interfaces/Templates: Fix auth for native apps
-- Interfaces/Templates [**explore**]: Minor review fixes
-- Interfaces/Templates [**explore**]: Clean up handling of disabled map resource states
-- Interfaces/Templates [**concierge**]: Use actual booking times in attendance report
-- Interfaces/Templates [**concierge**]: Add ability to hide user list download button
-- Interfaces/Templates [**mobile**]: Add config to hide status bar and remove safe area
-- Interfaces/Templates [**mobile**]: Fix applying mdm system id to panel uis
-- Interfaces/Templates [**mobile**]: Fix system id mdm key
-- Interfaces/Templates [**parking**]: Fix level selections persisting when selector is disabled/hidden
-- Interfaces/Templates [**workplace**]: Fix plate number validator propagating to other types
-- Interfaces/Templates: Fix computing svg element bounds
-- Interfaces/Templates [**workplace**]: Remove leading and trailing whitespace from parking request submission html
-- Interfaces/Templates [**workplace**]: Prevent user with reserved desk from booking by default
-- Interfaces/Templates [**workplace**]: Tweaks to parking request form location
-- Interfaces/Templates [**common**]: Initialise saved org location on load
-- Interfaces/Templates [**components**]: Stop dynamic map injector signal loop
-- Interfaces/Templates [**bookings**]: Prevent asset option update loop
-- Interfaces/Templates [**workplace**]: Stabilize signal migration
-- Interfaces/Templates: Fix clash between name input and new signal forms
-- Interfaces/Templates [**concierge**]: Read use_region and org init as signals for parking init
-- Interfaces/Templates [**concierge**]: Apply level zone to selector when switching to parking map view
-- Interfaces/Templates [**concierge**]: Delete assigned desk recurrences for current day when unassigned
-- Interfaces/Templates: Add alt text for invalid user photos to avatar component
-- Interfaces/Templates [**concierge**]: Fix user avatar initialising with empty user
-- Interfaces/Templates [**workplace**]: Add style to top menu active item more obvious
-- Interfaces/Templates [**workplace**]: Hide expired deals
-- Interfaces/Templates [**concierge**]: Clean up logic for room approvals
-- Interfaces/Templates: Fix setting default user for bookings
-- Interfaces/Templates [**stagehand**]: Default sidebar to all buildings
-- Interfaces/Templates [**concierge**]: Add bay number to parking booking searchable fields
-- Interfaces/Templates [**org**]: Rework default building init logic
-- Interfaces/Templates [**bookings**]: Fix required conditional for plate number on booking form
-- Interfaces/Templates [**workplace**]: Preserve parking request shift duration
-- Interfaces/Templates [**form-fields**]: Guard date calendar invalid values
 
 ### Added
 
 - Interfaces/Backoffice [**admin**]: Add quick create option to api key section
 - Interfaces/Backoffice [**admin**]: Add expiry options to api keys (ppt-2540)
-- Interfaces/Templates [**concierge**]: Hide parking user and vehicle tabs
-- Interfaces/Templates [**mobile**]: Add mdm config support
-- Interfaces/Templates [**mobile**]: Add cleanup command
-- Interfaces/Templates: Redesign app icons and fix ios pwa/native icon rendering
-- Interfaces/Templates [**components**]: Add debug mode to dynamic map
-- Interfaces/Templates [**components**]: Show styles, actions, labels and features in map debug panel
-- Interfaces/Templates [**components**]: Add colour swatches and src truncation to map debug panel
-- Interfaces/Templates [**workplace**]: Hide locations without parking and add setting to hide locations on parking form
-- Interfaces/Templates [**components**]: Improve map debug mappings
-- Interfaces/Templates [**concierge**]: Add level svg map editor
-- Interfaces/Templates: Convert lib services to use signals
-- Interfaces/Templates: Migrate org service to be signal based
-- Interfaces/Templates [**bookings**]: Migrate booking form service to use signals
-- Interfaces/Templates [**events**]: Migrate event form service to use signals
-- Interfaces/Templates: Migrate booking and event form service to use signal forms
-- Interfaces/Templates [**concierge**]: Migrate day view to be signal based
-- Interfaces/Templates [**concierge**]: Migrate desks section to use signals
-- Interfaces/Templates [**concierge**]: Migrate reports to use signals
-- Interfaces/Templates [**concierge**]: Migrate zone and room management to use signals
-- Interfaces/Templates [**concierge**]: Migrate assets to use signals
-- Interfaces/Templates [**concierge**]: Migrate surveys and signage to use signals
-- Interfaces/Templates [**concierge**]: Migrate events, staff and url sections to use signals
-- Interfaces/Templates [**concierge**]: Migrate catering, poi, and visitor sections to use signals
-- Interfaces/Templates [**concierge**]: Migrate remaining logic to use signals
-- Interfaces/Templates [**maps**]: Standardise rasterised resolutions for map images
 - Libraries/Models: [ppt-2540] add expiry support to api key ([#319](https://github.com/PlaceOS/placeos-models/pull/319))
 - Services/Core: Add liveness probe
-- Services/Core: Use non-blocking dns
-- Services/Edge: Add liveness probe
-- Services/Edge: Use non-blocking dns
-- Services/RestAPI: Use nonblocking dns
 - Services/RestAPI: [ppt-2540] add expiry support to api key ([#437](https://github.com/PlaceOS/rest-api/pull/437))
-- Services/SearchIngest: Use nonblocking dns
-- Services/Source: Add nonblocking dns
-- Services/StaffAPI: Add nonblocking dns
+- Services: Add nonblocking dns
 
 ### Changed
 
 - Interfaces/Templates: Migrate ts-client to v5
 - Interfaces/Templates [**components**]: Replace svg-viewer map renderer with dynamic map
-- Interfaces/Templates [**explore**]: Convert explore services and map components to signals
 - Interfaces/Templates: Update nx to 22.7.5
 - Interfaces/Templates [**angular**]: Migrate workspace to angular 22
 - Interfaces/Templates [**libs**]: Migrate template state to signals
 - Interfaces/Templates: Migrate package management to bun
-- Interfaces/Templates [**stagehand**]: Migrate forms and state to signals
-- Interfaces/Templates [**booking-panel**]: Migrate state and forms to signals
-- Interfaces/Templates [**concierge**]: Migrate forms to signals
-- Interfaces/Templates [**signage-manager**]: Migrate to signals
-- Interfaces/Templates [**visitor-kiosk**]: Migrate to use signals
-- Interfaces/Templates: Update libs to use signal forms
-- Interfaces/Templates: Signal migration pass on libs
-- Interfaces/Templates [**bookings**]: Tweak plain variables for onpush templates
-- Interfaces/Templates [**concierge**]: Remove changedetectionstrategy where appropriate
-- Interfaces/Templates [**workplace**]: Remove changedetectionstrategy where appropriate
-- Interfaces/Templates [**control**]: Migrate observables to signals
-- Interfaces/Templates [**signage-manager**]: Clean up signal related changes
-- Interfaces/Templates [**signage**]: Migrate to use signals
-- Interfaces/Templates [**visitor-kiosk**]: Remove eager change detection
-- Interfaces/Templates: Migrate more apps to use signals
-- Interfaces/Templates [**stagehand**]: Remove eager change detection
-- Interfaces/Templates: Migrate apps to bootstrap as standalone components
-- Interfaces/Templates [**outlook-addin**]: Migrate to use signals
-- Swagger/RestAPI: Update for placeos-2.2606.3
-- Swagger/StaffAPI: Update for placeos-2.2606.3
 
 ## 2.2606.3
 
