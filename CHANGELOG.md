@@ -10,14 +10,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Added
 
 - Interfaces/Backoffice [**groups**]: Add ability to set permissions for bulk user upload
-- Interfaces/Templates [**concierge**]: Add warning to resource assignment for existing bookings
-
-### Changed
-
-- Interfaces/Templates: Improve bundle sizes
-- Interfaces/Templates: Migrate remaining apps to use signals
-- Swagger/RestAPI: Update for placeos-2.2606.4
-- Swagger/StaffAPI: Update for placeos-2.2606.4
 
 ### Fixed
 
