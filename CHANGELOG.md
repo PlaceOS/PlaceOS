@@ -5,6 +5,16 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2606.5
+
+### Added
+
+- Interfaces/Backoffice [**groups**]: Add ability to set permissions for bulk user upload
+
+### Fixed
+
+- Libraries/Models [**booking**]: Instance clashing checks
+
 ## 2.2606.4
 
 ### Fixed
