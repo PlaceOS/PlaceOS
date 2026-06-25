@@ -10,62 +10,24 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Added
 
 - Clients/Crystal: [ppt-2508] add metadata rename method ([#38](https://github.com/PlaceOS/crystal/pull/38))
-- Clients/Typescript [**resources**]: Dedupe identical query requests
 - Clients/Typescript [**signage**]: Add media tags endpoint
 - Interfaces/Templates [**signage-manager**]: Handle html text codes in names
-- Interfaces/Templates [**concierge**]: Reject clashing assignment bookings and reject overlapping user bookings
-- Interfaces/Templates: Update authenticated image to handle generic local requests
 - Interfaces/Templates [**signage-manager**]: Add list and folder views to media list
 - Interfaces/Templates [**signage-manager**]: Add ability to add new playlists from media view
 - Services/RestAPI: Add read replica support
 - Services/RestAPI: [ppt-2508] add metadata rename endpoint ([#438](https://github.com/PlaceOS/rest-api/pull/438))
 - Services/StaffAPI: Add support for read-replicas
-- Services/StaffAPI: Add additional specs
 
 ### Fixed
 
 - Clients/Typescript [**systems**]: Add signage_last_seen field
 - Interfaces/Templates [**mobile**]: Fix workplace safe zones for devices with notches
-- Interfaces/Templates [**bookings**]: Defer booking requests until consumed
-- Interfaces/Templates [**concierge**]: Debounce state service requests
-- Interfaces/Templates [**forms**]: Start network requests from form load
-- Interfaces/Templates [**bookings**]: Debounce booked resource checks
-- Interfaces/Templates [**bookings**]: Reduce limit for booked resources requests
-- Interfaces/Templates [**workplace**]: Fix parking form buttons submitting the form
 - Interfaces/Templates [**bookings**]: Paginate booked resource lookup
-- Interfaces/Templates [**workplace**]: Fix lookup for location availability
-- Interfaces/Templates [**workplace**]: Prevent deleting ended bookings and events
-- Interfaces/Templates [**concierge**]: Handle stale desk rejection status
-- Interfaces/Templates [**workplace**]: Keep ended bookings visible
 - Interfaces/Templates [**events**]: Return saved booking after post ppt-2462
-- Interfaces/Templates [**bookings**]: Remove using assigned_asset_name from name details
 - Interfaces/Templates: Fix handling of empty user when booking
-- Interfaces/Templates [**signage-manager**]: Fix description wrapping on playlists
-- Interfaces/Templates: Restore booking test suite
 - Interfaces/Templates [**concierge**]: Fix rejecting overlapping bookings on desk assignment
-- Interfaces/Templates [**concierge**]: Remove rejected from desk booking request
-- Interfaces/Templates [**bookings**]: Fix stale booking_end being used for clash check
-- Interfaces/Templates [**signage-manager**]: Fix thumbnail url for media items
-- Interfaces/Templates [**bookings**]: Update start/end to most strictly source from date/duration
-- Interfaces/Templates [**bookings**]: Combine booked with clashes for availability
-- Interfaces/Templates [**concierge**]: Fix bookings modals not have the model passed to the form
 - Interfaces/Templates [**signage-manager**]: Fix display status on schedule view
-- Libraries/Models [**booking**]: Recurring booking clash detection
 - Libraries/Models [**booking**]: Performance improvements and clash checks
-- Services/StaffAPI [**bookings**]: Serializable transaction for bookings
-
-### Changed
-
-- Interfaces/Templates [**concierge**]: Update button styles for tables
-- Interfaces/Templates [**signage-manager**]: Debounce active group for api requests
-- Interfaces/Templates [**workplace**]: Tweak styles for topbar search
-- Interfaces/Templates [**signage-manager**]: Update more requests to be debounced
-- Interfaces/Templates [**workplace**]: Tweak styles for footer menu
-- Interfaces/Templates [**concierge**]: Tweak week view styles for parking bookings
-- Interfaces/Templates [**bookings**]: Clean up form service
-- Interfaces/Templates [**bookings**]: Clean up extension data for bookings
-- Swagger/RestAPI: Update for placeos-2.2606.5
-- Swagger/StaffAPI: Update for placeos-2.2606.5
 
 ## 2.2606.5
 
