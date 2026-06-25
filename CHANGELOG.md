@@ -5,6 +5,30 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2606.6
+
+### Added
+
+- Clients/Crystal: [ppt-2508] add metadata rename method ([#38](https://github.com/PlaceOS/crystal/pull/38))
+- Clients/Typescript [**signage**]: Add media tags endpoint
+- Interfaces/Templates [**signage-manager**]: Handle html text codes in names
+- Interfaces/Templates [**signage-manager**]: Add list and folder views to media list
+- Interfaces/Templates [**signage-manager**]: Add ability to add new playlists from media view
+- Services/RestAPI: Add read replica support
+- Services/RestAPI: [ppt-2508] add metadata rename endpoint ([#438](https://github.com/PlaceOS/rest-api/pull/438))
+- Services/StaffAPI: Add support for read-replicas
+
+### Fixed
+
+- Clients/Typescript [**systems**]: Add signage_last_seen field
+- Interfaces/Templates [**mobile**]: Fix workplace safe zones for devices with notches
+- Interfaces/Templates [**bookings**]: Paginate booked resource lookup
+- Interfaces/Templates [**events**]: Return saved booking after post ppt-2462
+- Interfaces/Templates: Fix handling of empty user when booking
+- Interfaces/Templates [**concierge**]: Fix rejecting overlapping bookings on desk assignment
+- Interfaces/Templates [**signage-manager**]: Fix display status on schedule view
+- Libraries/Models [**booking**]: Performance improvements and clash checks
+
 ## 2.2606.5
 
 ### Added
