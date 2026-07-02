@@ -5,43 +5,21 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
-## 2.2607.2
+## 2.2607.1
 
 ### Fixed
 
-- Clients/Typescript [**signage**]: Add missing returned media schedule related fields
-- Interfaces/Backoffice [**admin**]: Tweak expiry for api keys
 - Interfaces/Backoffice: Make exec search field stick to top of dropdown list
 - Interfaces/Templates [**signage-mananger**]: Add loading states for media items and playlist sidebar
 - Interfaces/Templates [**signage-manager**]: Fix race condition for authorised check
 - Interfaces/Templates [**events**]: Enforce room booking rules in booking panel
-- Interfaces/Templates [**bookings**]: Tweak readiness gate for form state
-- Interfaces/Templates [**signage**]: Fix takeover playlists not triggering after 30 second start window
 - Interfaces/Templates [**signage-manager**]: Add line through disabled playlists on schedule views
-- Interfaces/Templates [**concierge**]: Fix locker infinite loop
-- Interfaces/Templates [**booking**]: Add guard for form cross-contamination
-- Interfaces/Templates [**bookings**]: Restrict booking extension data
-- Interfaces/Templates [**visitor-kiosk**]: Force host to null on registration form
-- Interfaces/Templates [**bookings**]: Generalize reserved-resource booking restriction
 - Interfaces/Templates [**visitor-kiosk**]: Prevent next button "submitting" the details form
 - Interfaces/Templates [**visitor-kiosk**]: Keep registration host blank
-- Interfaces/Templates [**concierge**]: Update parking report columns
-- Interfaces/Templates [**form-fields**]: Hide empty user in search field
-- Interfaces/Templates [**events**]: Keep submitted meeting success details
-- Interfaces/Templates [**events**]: Preserve selected meeting booking time
-- Interfaces/Templates [**forms**]: Wait for user before form initialisation
 - Interfaces/Templates [**uploads**]: Handle token refreshes mid-upload
-- Interfaces/Templates [**assets**]: Update parking space pipe to return unallocated for unallocated spaces
-- Interfaces/Templates: Prevent settings toggle from submitting forms
-- Interfaces/Templates [**concierge**]: Remove parking request submission info
-- Interfaces/Templates: Add try again button to unauthorised view
-- Interfaces/Templates [**assets**]: Fix resource assets using newer duplicate categories and types for resolution
-- Interfaces/Templates [**components**]: Repair broken printable portal and debug console template
 - Interfaces/Templates [**events**]: Keep host permission error visible after host revert
 - Interfaces/Templates [**concierge**]: Update parking report downloads
-- Interfaces/Templates [**bookings**]: Read parking favourites from correct settings key
 - Libraries/Models [**group**]: Improve performance of zone_children_map
-- Libraries/Models [**spec/generator**]: Improve randomness
 
 ### Added
 
@@ -50,7 +28,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**signage-manager**]: Update media folders to use tags endpoint
 - Interfaces/Templates [**signage-manager**]: Improve media topbar flow on mobile
 - Interfaces/Templates [**mobile**]: Add ms intune support to mobile apps
-- Interfaces/Templates [**concierge**]: Split parking user and vehicle visibility
 - Interfaces/Templates [**workplace**]: Add ability to set meeting space from query parameter
 - Interfaces/Templates [**signage-manager**]: Add support for distribution playlists
 - Libraries/Models [**playlist/item_schedule**]: Add individual content schedules
@@ -58,14 +35,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Services/RestAPI [**signage**]: Add media item scheduling support
 - Services/RestAPI [**asset_categories**]: Scope to authority
 - Services/StaffAPI [**config**]: Add execution contexts
-
-### Changed
-
-- Interfaces/Backoffice: Improve styling of unauthorised page
-- Interfaces/Templates [**concierge**]: Clean up styles for day view
-- Interfaces/Templates [**concierge**]: Improve table overflow for parking
-- Swagger/RestAPI: Update for placeos-2.2606.6
-- Swagger/StaffAPI: Update for placeos-2.2606.6
 
 ## 2.2606.6
 
