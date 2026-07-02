@@ -5,6 +5,37 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2607.1
+
+### Fixed
+
+- Interfaces/Backoffice: Make exec search field stick to top of dropdown list
+- Interfaces/Templates [**signage-mananger**]: Add loading states for media items and playlist sidebar
+- Interfaces/Templates [**signage-manager**]: Fix race condition for authorised check
+- Interfaces/Templates [**events**]: Enforce room booking rules in booking panel
+- Interfaces/Templates [**signage-manager**]: Add line through disabled playlists on schedule views
+- Interfaces/Templates [**visitor-kiosk**]: Prevent next button "submitting" the details form
+- Interfaces/Templates [**visitor-kiosk**]: Keep registration host blank
+- Interfaces/Templates [**uploads**]: Handle token refreshes mid-upload
+- Interfaces/Templates [**events**]: Keep host permission error visible after host revert
+- Interfaces/Templates [**concierge**]: Update parking report downloads
+- Libraries/Models [**group**]: Improve performance of zone_children_map
+
+### Added
+
+- Clients/Typescript [**signage**]: Add media schedule endpoints
+- Interfaces/Templates [**signage-manager**]: Paginate media, playlist and display requests
+- Interfaces/Templates [**signage-manager**]: Update media folders to use tags endpoint
+- Interfaces/Templates [**signage-manager**]: Improve media topbar flow on mobile
+- Interfaces/Templates [**mobile**]: Add ms intune support to mobile apps
+- Interfaces/Templates [**workplace**]: Add ability to set meeting space from query parameter
+- Interfaces/Templates [**signage-manager**]: Add support for distribution playlists
+- Libraries/Models [**playlist/item_schedule**]: Add individual content schedules
+- Libraries/Models [**assets**]: Categories and types to have unique names scoped to authority
+- Services/RestAPI [**signage**]: Add media item scheduling support
+- Services/RestAPI [**asset_categories**]: Scope to authority
+- Services/StaffAPI [**config**]: Add execution contexts
+
 ## 2.2606.6
 
 ### Added
