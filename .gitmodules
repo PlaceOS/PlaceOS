@@ -70,14 +70,6 @@
 [submodule "swagger/staff-api"]
 	path = swagger/staff-api
 	url = https://github.com/PlaceOS/staff-api-swagger-ui.git
-[submodule "services/init_pg16"]
-	path = services/init_pg16
-	url = https://github.com/PlaceOS/init.git
-	branch = postgresql-16
-[submodule "services/init_pg17"]
-	path = services/init_pg17
-	url = https://github.com/PlaceOS/init.git
-	branch = postgresql-17
 [submodule "services/auth.cr"]
 	path = services/auth.cr
 	url = https://github.com/PlaceOS/auth.cr.git
