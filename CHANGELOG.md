@@ -5,6 +5,142 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2607.2
+
+### Added
+
+- Interfaces/Backoffice [**modules**]: Search sidebar by custom name
+- Interfaces/Templates [**signage-manager**]: Show next schedule plays on hover
+- Interfaces/Templates [**concierge**]: Add site attendance graph for ppt-2564
+- Interfaces/Templates [**concierge**]: Add no show details to parking reports
+- Interfaces/Templates: Add debugging panel for settings
+- Interfaces/Templates [**components**]: Show settings source zones
+- Interfaces/Templates [**concierge**]: Add parking map availability time
+- Interfaces/Templates [**workplace**]: Add parking restriction radio options
+- Interfaces/Templates [**bookings**]: Consolidate assigned resource booking settings
+- Interfaces/Templates [**booking-panel**]: Add configurable timeline
+- Interfaces/Templates [**components**]: Dock settings debug panel
+- Interfaces/Templates [**components**]: Improve settings enum controls
+- Interfaces/Templates [**components**]: Stick expanded settings headers
+- Interfaces/Templates [**components**]: Add driver binding debug panel
+- Interfaces/Templates [**components**]: Add settings override actions
+- Interfaces/Templates [**explore**]: Add configurable map overlay toggles
+- Interfaces/Templates [**events**]: Notify only new attendees for ppt-2514
+- Interfaces/Templates [**signage-manager**]: Add group header navigation
+- Interfaces/Templates [**signage-manager**]: Add bulk media tagging
+- Interfaces/Templates [**signage-manager**]: Add save hotkeys to form modals
+- Interfaces/Templates [**visitor-kiosk**]: Separate check-in and checkout flows
+- Interfaces/Templates [**workplace**]: Add parking plate history
+- Interfaces/Templates [**bookings**]: Confirm booking checkout
+- Interfaces/Templates [**bookings**]: Add utm source to create and delete requests
+- Interfaces/Templates [**concierge**]: Show parking booking history
+- Libraries/Driver: Add support for expiring hash fields
+- Libraries/Driver [**presence_smoother**]: Helper for managing noisy motion / presence detectors
+- Libraries/Models: [ppt-2505] added space_config field to control system model ([#318](https://github.com/PlaceOS/placeos-models/pull/318))
+- Services/Auth [**omniauth.rb**]: Improve rdis tls support
+- Services/Auth.cr [**oauth**]: Serve legacy /auth/oauth/* endpoint aliases
+- Services/Auth.cr [**discovery**]: Serve legacy well-known mounts, webfinger and post userinfo
+- Services/Auth.cr [**discovery**]: Serve jwks at /auth/oauth/discovery/keys
+- Services/Auth.cr [**oauth**]: Add token introspection and token info endpoints
+- Services/Auth.cr [**oauth**]: Add authorize post/delete verbs and the native code page
+- Services/Auth.cr [**oauth**]: Add application management and authorized-applications routes
+- Services/Auth.cr [**auth**]: Serve post /auth/signup for route parity; finalise parity docs
+- Services/StaffAPI [**config.cr**]: Make offload_workers optional
+- Services/StaffAPI [**events**]: Skip notification on attendee only changes (ppt-2514) ([#377](https://github.com/PlaceOS/staff-api/pull/377))
+
+### Fixed
+
+- Interfaces/Backoffice: Tweak scopes for quick gen api keys
+- Interfaces/Backoffice [**systems**]: Show modules after refresh with same active system
+- Interfaces/Backoffice [**modules**]: Fix form fields showing and control system display for logic modules
+- Interfaces/Templates [**concierge**]: Save existing surveys via update instead of add
+- Interfaces/Templates [**stagehand**]: Correct cron field output, loading bar binding and iframe url sanitisation
+- Interfaces/Templates [**workplace**]: Repair broken timeline date handling and remove debug leftovers
+- Interfaces/Templates [**components**]: Add missing translatepipe and slicepipe imports to indoor-maps
+- Interfaces/Templates [**common**]: Break runtime import cycle between event and catering classes
+- Interfaces/Templates [**events**]: Add aria-labels to space filter selects
+- Interfaces/Templates [**components**]: Add missing matinput to login form fields
+- Interfaces/Templates: Remove created_at on posting bookings
+- Interfaces/Templates [**ci**]: Restore nx test pipeline
+- Interfaces/Templates [**signage-manager**]: Update playlist schedules by schedule id
+- Interfaces/Templates [**signage**]: Clear player when playlist is empty
+- Interfaces/Templates [**concierge**]: Normalise parking csv imports
+- Interfaces/Templates [**signage-manager**]: Refresh distribution playlist details
+- Interfaces/Templates [**concierge**]: Tweak level selections/defaults and resource booking paginations
+- Interfaces/Templates [**org**]: Fallback to individual requests for settings metadata
+- Interfaces/Templates [**bookings**]: Remove start clamping for all day bookings
+- Interfaces/Templates [**signage-manager**]: Fix loading thumbnails for distribution playlists
+- Interfaces/Templates [**workplace**]: Trim required parking plate numbers
+- Interfaces/Templates [**explore**]: Correct parking map status query
+- Interfaces/Templates [**signage-manager**]: Fix media urls on preview modal
+- Interfaces/Templates [**concierge**]: Filter unavailable parking spaces
+- Interfaces/Templates [**workplace**]: Skip hidden parking availability requests
+- Interfaces/Templates [**explore**]: Apply all-day desk booking settings
+- Interfaces/Templates [**concierge**]: Improve booking rules list
+- Interfaces/Templates [**common**]: Guard nested lookup against primitives
+- Interfaces/Templates [**signage-manager**]: Select duplicate playlist items independently
+- Interfaces/Templates [**concierge**]: Isolate desk level selections by view
+- Interfaces/Templates [**concierge**]: Isolate level selections across sections
+- Interfaces/Templates [**concierge**]: Handle malformed locker metadata
+- Interfaces/Templates [**explore**]: Make map legend collapsible on all views
+- Interfaces/Templates [**events**]: Stop catering time sync loop
+- Interfaces/Templates [**bookings**]: Prevent created at being sent to backend
+- Interfaces/Templates [**explore**]: Align zone polygons with map
+- Interfaces/Templates [**components**]: Contain dynamic map overlays
+- Interfaces/Templates [**bookings**]: Check assignments for booking recipients
+- Interfaces/Templates [**signage-manager**]: Reflect media edits immediately
+- Interfaces/Templates: Tweak how location details are display for non-visitor bookings
+- Interfaces/Templates [**bookings**]: Set group member desk names
+- Interfaces/Templates [**concierge**]: Export current desk list
+- Interfaces/Templates [**workplace**]: Require parking restriction selection
+- Interfaces/Templates: Sort user autocomplete options alphabetically
+- Interfaces/Templates [**visitor-kiosk**]: Disable browser input autocomplete
+- Interfaces/Templates [**bookings**]: Fix type displayed on modal for checkout confirm
+- Interfaces/Templates [**form-fields**]: Restrict user search fields
+- Interfaces/Templates [**concierge**]: Load all parking booking pages
+- Interfaces/Templates [**form-fields**]: Add sorting to user search field
+- Interfaces/Templates [**bookings**]: Refresh state after checkout
+- Interfaces/Templates [**parking**]: Complete registration number history
+- Interfaces/Templates [**bookings**]: Retain selected desk level during loading (proj-1951)
+- Libraries/Driver [**driver_manager**]: Crystal lang nightly issue
+- Libraries/Driver: Tapiterator returned when tapping channels on nightly
+- Libraries/Driver: Spawn same_thread removed from nightly
+- Libraries/Driver [**subscriptions**]: Remapping should happen on a separate fiber
+- Libraries/Driver [**presence_smoother**]: Implement as a class
+- Services/Auth.cr [**oauth**]: Set access-token sub to the resource owner id
+- Services/Auth.cr [**oauth**]: Emit access-token scope as a json array
+- Services/Auth.cr [**oauth**]: Drop the cid claim from access tokens
+- Services/Auth.cr [**signin**]: Accept application/x-www-form-urlencoded bodies
+- Services/Auth.cr [**logout**]: Match legacy redirect target and 302 status
+- Services/Auth.cr [**oauth**]: Report access-token expires_in as the configured ttl
+- Services/Auth.cr [**oauth2**]: Emit legacy redirect_uri (?id=) + b2clogin path rewrite
+- Services/Auth.cr [**saml**]: Drop-in parity for provider name, acs url, nameid format
+- Services/Auth.cr [**oauth2**]: Redirect provider round-trip failures to /auth/failure
+- Services/Auth.cr [**oauth**]: Restrict token introspection to the caller's own application
+- Services/Auth.cr [**auth**]: Address pr review — hardening, parity gaps and test coverage
+- Services/Auth.cr [**Dockerfile**]: Auth uses 8080 instead of 3000
+- Services/Auth.cr [**session**]: Derive cookie_session_secret from place_server_secret
+- Services/Auth.cr [**oauth**]: Allow public clients to exchange + refresh tokens without a secret
+- Services/Auth.cr [**session**]: Issue the nginx-validated `verified` asset-access cookie
+- Services/Auth.cr [**oauth**]: Accept base64url pkce challenges (rfc 7636)
+- Services/Auth.cr [**oauth**]: Preserve the user identity across token refresh
+- Services/Auth.cr [**oauth**]: Restore authorize_params + info_mappings comma-fallback
+- Services/Auth.cr [**session**]: Key cookie_session_secret off secret_key_base (not place_server_secret)
+- Services/Auth.cr [**saml**]: Skip session-state csrf for saml callbacks (relaystate/samesite)
+- Services/Auth.cr [**oauth**]: Recover the strat id from session state when an idp drops ?id=
+- Services/Auth.cr [**oauth**]: Enforce the ensure_matching login restriction
+- Services/Auth.cr [**oauth**]: Return to the continue target after a provider login
+- Services/FrontendLoader [**app**]: Add multi-threading support
+- Services/RestAPI [**shard.lock**]: Remove same_thread references in libs
+- Services/StaffAPI [**bookings**]: Don't reset on unallocated bookings
+- Services/StaffAPI [**bookings**]: Resource_ids typo ([#378](https://github.com/PlaceOS/staff-api/pull/378))
+
+### Changed
+
+- Interfaces/Templates [**signage-manager**]: Add icon to distribution playlist listings
+- Swagger/RestAPI: Update for placeos-2.2607.1
+- Swagger/StaffAPI: Update for placeos-2.2607.1
+
 ## 2.2607.1
 
 ### Fixed
