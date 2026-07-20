@@ -5,6 +5,45 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2607.2
+
+### Added
+
+- Interfaces/Templates [**signage-manager**]: Show next schedule plays on hover
+- Interfaces/Templates [**concierge**]: Add site attendance graph for ppt-2564
+- Interfaces/Templates [**concierge**]: Add no show details to parking reports
+- Interfaces/Templates: Add debugging panel for settings
+- Interfaces/Templates [**components**]: Show settings source zones
+- Interfaces/Templates [**concierge**]: Add parking map availability time
+- Interfaces/Templates [**workplace**]: Add parking restriction radio options
+- Interfaces/Templates [**bookings**]: Consolidate assigned resource booking settings
+- Interfaces/Templates [**booking-panel**]: Add configurable timeline
+- Interfaces/Templates [**events**]: Notify only new attendees for ppt-2514
+- Interfaces/Templates [**signage-manager**]: Add group header navigation
+- Interfaces/Templates [**signage-manager**]: Add bulk media tagging
+- Interfaces/Templates [**signage-manager**]: Add save hotkeys to form modals
+- Interfaces/Templates [**visitor-kiosk**]: Separate check-in and checkout flows
+- Interfaces/Templates [**workplace**]: Add parking plate history
+- Libraries/Driver: Add support for expiring hash fields
+- Libraries/Driver [**presence_smoother**]: Helper for managing noisy motion / presence detectors
+- Libraries/Models: [ppt-2505] added space_config field to control system model ([#318](https://github.com/PlaceOS/placeos-models/pull/318))
+- Services/Auth.cr [**oauth**]: Serve /auth/oauth/* endpoints
+- Services/StaffAPI [**events**]: Skip notification on attendee only changes (ppt-2514) ([#377](https://github.com/PlaceOS/staff-api/pull/377))
+
+### Fixed
+
+- Interfaces/Backoffice [**systems**]: Show modules after refresh with same active system
+- Interfaces/Templates [**signage**]: Clear player when playlist is empty
+- Interfaces/Templates [**signage-manager**]: Select duplicate playlist items independently
+- Interfaces/Templates [**signage-manager**]: Reflect media edits immediately
+- Interfaces/Templates [**bookings**]: Retain selected desk level during loading (proj-1951)
+- Services/StaffAPI [**bookings**]: Don't reset on unallocated bookings
+- Services/StaffAPI [**bookings**]: Resource_ids typo ([#378](https://github.com/PlaceOS/staff-api/pull/378))
+
+### Changed
+
+- Interfaces/Templates [**signage-manager**]: Add icon to distribution playlist listings
+
 ## 2.2607.1
 
 ### Fixed
