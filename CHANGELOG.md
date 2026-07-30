@@ -5,6 +5,109 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2607.3
+
+### Fixed
+
+- Interfaces/Templates [**bookings**]: Fix signal error for desk select modal map
+- Interfaces/Templates [**control**]: Require explicit camera selection
+- Interfaces/Templates [**bookings**]: Preserve recurrence end date proj-1953
+- Interfaces/Templates [**concierge**]: Refine all-day parking labels
+- Interfaces/Templates [**signage-manager**]: Remove scheduled playlist items
+- Interfaces/Templates [**signage**]: Resume playback when content returns
+- Interfaces/Templates [**signage**]: Refresh changed playlist schedules
+- Interfaces/Templates [**signage-manager**]: Set fallback cron for play-at schedules
+- Interfaces/Templates [**form-fields**]: Prevent dropdown form submission
+- Interfaces/Templates [**signage**]: Clear removed scheduled takeovers
+- Interfaces/Templates [**concierge**]: Disable actions for cancelled parking bookings
+- Interfaces/Templates [**explore**]: More clear pin button to bottom right
+- Interfaces/Templates [**concierge**]: Prevent email template form buttons from submitting the form
+- Interfaces/Templates [**uploads**]: Report upload failures instead of reporting success
+- Interfaces/Templates [**signage-manager**]: Stop the service worker hijacking signed upload urls
+- Interfaces/Templates [**signage-manager**]: Stop caching s3 urls in the service worker
+- Interfaces/Templates [**signage-manager**]: Stop generating black thumbnails
+- Interfaces/Templates [**signage-manager**]: Decode images deterministically before capture
+- Interfaces/Templates [**signage-manager**]: Read one-off schedule times as seconds
+- Interfaces/Templates [**common**]: Widen upload state type to unblock compilation
+- Interfaces/Templates [**enrolment**]: Let meeting details load
+- Interfaces/Templates [**signage-manager**]: Let webpage media carry a thumbnail
+- Interfaces/Templates [**workplace**]: Restore desk booking button after qr scan
+- Interfaces/Templates [**signage-manager**]: Stop bouncing permitted users to unauthorised
+- Interfaces/Templates [**bookings**]: Keep multi-visitor placeholder email in sync
+- Interfaces/Templates [**events**]: Fix check to show notify new attendees option
+- Interfaces/Templates [**bookings**]: Keep delegate host when editing a booking
+- Interfaces/Templates [**signage-manager**]: Load the whole media library up front
+- Interfaces/Templates [**concierge**]: Export reports as csv with check-in time
+- Interfaces/Templates [**bookings**]: Edit visitor group bookings as a group
+- Interfaces/Templates [**signage-manager**]: Search displays on the backend so results paginate
+- Interfaces/Templates [**signage-manager**]: Search the backend in the remaining picker modals
+- Interfaces/Templates [**form-fields**]: Preserve visitors on removal (ppt-2634)
+- Interfaces/Templates [**bookings**]: Reposition parking autocomplete on scroll (ppt-2633)
+- Interfaces/Templates [**bookings**]: Load delegated visitor group siblings (ppt-2637)
+- Interfaces/Templates [**bookings**]: Migrate visitor groups to containers (ppt-2638)
+- Interfaces/Templates [**explore**]: Separate area and sensor overlays (ppt-2639)
+- Interfaces/Templates [**bookings**]: Sync edited host identity (ppt-2640)
+- Interfaces/Templates [**auth**]: Wait for access data before checking guards
+- Interfaces/Templates [**signage-manager**]: Preserve playlist sidebar after media drop
+- Interfaces/Templates [**bookings**]: Use building timezone for clash checks
+- Interfaces/Templates [**bookings**]: Preserve visitor email on edit
+- Interfaces/Templates [**concierge**]: Prevent room modal map select button "submitting" the form
+- Interfaces/Templates [**concierge**]: Use configurable parking waitlist cutoff
+- Interfaces/Templates [**concierge**]: Update cancelled booking status
+- Interfaces/Templates [**events**]: Limit attendee-only notifications for ppt-2514
+- Interfaces/Templates [**signage**]: Delay webpage switches after load
+- Interfaces/Templates [**signage-manager**]: Scroll active display into view
+- Interfaces/Templates [**signage-manager**]: Scroll active playlist into view
+- Libraries/Models [**booking_instance**]: Extension_data is an override, not a replacement
+- Libraries/Models [**user**]: Logged_out_at does not map well in es, ignore it
+- Libraries/Models [**booking_instance**]: Restore extension data snapshots
+- Services/Auth.cr [**session**]: Reload the login form on failed browser sign-in
+- Services/Auth.cr [**health**]: Short-circuit the liveness probe before any db access
+- Services/Auth.cr [**session**]: Samesite=none; secure cookie for embedded/cross-site login parity
+- Services/Auth.cr [**applications**]: Reject cross-site writes (csrf guard for the none cookie)
+- Services/Auth.cr [**oauth**]: Preserve scope across token refresh
+- Services/Auth.cr [**session**]: Stop sharing the legacy rails session cookie name
+- Services/Auth.cr [**oauth**]: Heal scope-less refresh chains + bridge legacy doorkeeper refresh tokens
+- Services/Auth.cr [**oauth**]: Avoid compiler ice in the legacy refresh lookup
+- Services/Build: Drop spawn(same_thread: true) unsupported by crystal 1.21 ([#59](https://github.com/PlaceOS/build/pull/59))
+- Services/RestAPI [**signage**]: Stable index ordering for pagination
+- Services/StaffAPI [**events**]: [ppt-2627] skip  exchange events with no ical_uid instead of raising ([#381](https://github.com/PlaceOS/staff-api/pull/381))
+- Services/StaffAPI [**bookings**]: Change reset behaviour
+- Services/StaffAPI [**bookings**]: Stop recurrence instances detaching from the series' ext data
+
+### Added
+
+- Interfaces/Templates [**concierge**]: Show desk booking history
+- Interfaces/Templates [**signage-manager**]: Let plugins render their own thumbnails
+- Interfaces/Templates [**common**]: Show cached organisation data while the latest loads
+- Interfaces/Templates [**common**]: Show cached translations while the latest load
+- Interfaces/Templates [**common**]: Show cached user details while the latest load
+- Interfaces/Templates [**signage-manager**]: Add group breadcrumbs to section headers
+- Interfaces/Templates [**signage-manager**]: Add setting to hide the nav group selector
+- Interfaces/Templates [**signage-manager**]: Gate media group tabs on the selector setting
+- Interfaces/Templates [**signage-manager**]: Show all-groups state in breadcrumbs
+- Interfaces/Templates [**signage-manager**]: Paginate playlists and lazy-load thumbnails
+- Interfaces/Templates [**signage-manager**]: Lazy-load media thumbnails
+- Libraries/Models [**signage**]: Add widget support ([#320](https://github.com/PlaceOS/placeos-models/pull/320))
+- Libraries/Models [**signage**]: Template approval workflow and zone associations
+- Libraries/Models [**signage**]: Allow templates to be managed by groups
+- Libraries/Models [**group**]: Accessible zones as an sql subquery
+- Services/RestAPI [**signage**]: Template management controller
+- Services/RestAPI [**signage**]: Template mappings controller
+- Services/RestAPI [**signage**]: Resolve viewer zones in the database
+- Services/SearchIngest: Index signagetemplate for elasticsearch
+- Services/StaffAPI [**controllers/bookings**]: Fix booking instance ext data semantics
+
+### Changed
+
+- Interfaces/Templates [**signage-manager**]: Treat play_at as seconds without guessing
+- Interfaces/Templates [**signage**]: Treat play_at as seconds without guessing
+- Interfaces/Templates [**signage-manager**]: Split media group tabs onto their own setting
+- Interfaces/Templates [**signage-manager**]: Show group breadcrumbs in schedule header
+- Interfaces/Templates [**locale**]: Prune dead keys, de-dup shared strings, drop _n plurals
+- Swagger/RestAPI: Update for placeos-2.2607.2
+- Swagger/StaffAPI: Update for placeos-2.2607.2
+
 ## 2.2607.2
 
 ### Added
