@@ -5,6 +5,43 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2607.3
+
+### Fixed
+
+- Interfaces/Templates [**bookings**]: Preserve recurrence end date proj-1953
+- Interfaces/Templates [**uploads**]: Report upload failures instead of reporting success
+- Interfaces/Templates [**signage-manager**]: Decode images deterministically before capture
+- Interfaces/Templates [**form-fields**]: Preserve visitors on removal (ppt-2634)
+- Interfaces/Templates [**bookings**]: Reposition parking autocomplete on scroll (ppt-2633)
+- Interfaces/Templates [**bookings**]: Load delegated visitor group siblings (ppt-2637)
+- Interfaces/Templates [**bookings**]: Migrate visitor groups to containers (ppt-2638)
+- Interfaces/Templates [**explore**]: Separate area and sensor overlays (ppt-2639)
+- Interfaces/Templates [**bookings**]: Sync edited host identity (ppt-2640)
+- Interfaces/Templates [**events**]: Limit attendee-only notifications for ppt-2514
+- Interfaces/Templates [**signage**]: Delay webpage switches after load
+- Libraries/Models [**booking_instance**]: Extension_data is an override, not a replacement
+- Libraries/Models [**user**]: Logged_out_at does not map well in es, ignore it
+- Services/RestAPI [**signage**]: Stable index ordering for pagination
+- Services/StaffAPI [**events**]: [ppt-2627] skip  exchange events with no ical_uid instead of raising ([#381](https://github.com/PlaceOS/staff-api/pull/381))
+- Services/StaffAPI [**bookings**]: Add history for new asset allocation
+
+### Added
+
+- Interfaces/Templates [**concierge**]: Show desk booking history
+- Interfaces/Templates [**signage-manager**]: Let plugins render their own thumbnails
+- Interfaces/Templates [**signage-manager**]: Lazy-load media thumbnails
+- Libraries/Models [**signage**]: Add widget support ([#320](https://github.com/PlaceOS/placeos-models/pull/320))
+- Libraries/Models [**signage**]: Template approval workflow and zone associations
+- Libraries/Models [**signage**]: Allow templates to be managed by groups
+- Services/SearchIngest: Index signagetemplate for elasticsearch
+- Services/StaffAPI [**controllers/bookings**]: Fix booking instance ext data semantics
+
+### Changed
+
+- Interfaces/Templates [**signage-manager**]: Split media group tabs onto their own setting
+- Interfaces/Templates [**signage-manager**]: Show group breadcrumbs in schedule header
+
 ## 2.2607.2
 
 ### Added
