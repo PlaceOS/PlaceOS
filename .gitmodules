@@ -58,9 +58,6 @@
 [submodule "libraries/placeos-log-backend"]
 	path = libraries/placeos-log-backend
 	url = https://github.com/place-labs/log-backend
-[submodule "services/search-ingest"]
-	path = services/search-ingest
-	url = https://github.com/placeos/search-ingest.git
 [submodule "services/build_service"]
 	path = services/build_service
 	url = https://github.com/placeos/build_service.git
