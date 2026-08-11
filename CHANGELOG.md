@@ -5,27 +5,21 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
-## 2.2608.5
+## 2.2608.1
 
 ### Added
 
 - Interfaces/Backoffice [**delete**]: Optionally remove resources associated with a zone or domain (ppt-1203)
 - Interfaces/Backoffice [**delete**]: Show what a cascade removed, with ids
 - Interfaces/Backoffice [**repositories**]: Add branch and commit search
-- Interfaces/Templates [**signage**]: Memoise cron lookups and harden the schedule tick
-- Interfaces/Templates [**signage**]: Stop the media cache reading every stored file to check itself
-- Interfaces/Templates [**signage**]: Hold application reloads until they are safe to apply
-- Interfaces/Templates [**signage**]: Add window.signage console diagnostics
-- Interfaces/Templates [**signage**]: Add a stall-based recovery watchdog
-- Interfaces/Templates [**signage**]: Recover from stalls without needing an error first
-- Interfaces/Templates [**signage**]: Keep why the watchdog recovered across the reload it causes
 - Interfaces/Templates [**map-studio**]: Add map studio application
 - Interfaces/Templates [**map-studio**]: Sync floorplans with placeos zones
+- Interfaces/Templates [**signage**]: Add a stall-based recovery watchdog
+- Interfaces/Templates [**signage**]: Hold application reloads until they are safe to apply
+- Interfaces/Templates [**signage**]: Add window.signage console diagnostics
+- Interfaces/Templates [**signage-manager**]: Show zone pickers as trees
 - Interfaces/Templates [**signage-manager**]: Scope zone search to selected hierarchy
 - Interfaces/Templates [**workplace**]: Add meeting notes reset
-- Interfaces/Templates [**signage-manager**]: Show zone pickers as trees
-- Interfaces/Templates [**signage-manager**]: Align zone selector hierarchy
-- Interfaces/Templates [**signage-manager**]: Match zone selector flow to sidebar
 - Libraries/Models: [ppt-2596] add ai support agent models ([#321](https://github.com/PlaceOS/placeos-models/pull/321))
 - Services/RestAPI [**tenant_consent**]: Live progress page for the admin-consent flow (ppt-2032) ([#441](https://github.com/PlaceOS/rest-api/pull/441))
 - Services/RestAPI: Store app-only graph credentials in the staff-api tenant (ppt-2000) ([#442](https://github.com/PlaceOS/rest-api/pull/442))
@@ -35,86 +29,55 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice [**delete**]: Drop the duplicate scope line on a domain cascade
-- Interfaces/Backoffice [**ui**]: Make the delete confirmation readable on the dark theme
-- Interfaces/Backoffice [**delete**]: Make the cascade fail closed (ppt-1203 review)
-- Interfaces/Backoffice [**delete**]: Close the fail-open and half-deleted paths an adversarial review found
-- Interfaces/Backoffice [**delete**]: Type the delete-flow catch so the production build compiles
-- Interfaces/Backoffice [**delete**]: Report the actual error when a cascade stops, and pin the zone-walk cap
-- Interfaces/Templates [**e2e**]: Make the stack start on a ci runner
-- Interfaces/Templates [**e2e**]: Elasticsearch 7.17.28 for cgroup v2 compatibility
-- Interfaces/Templates [**e2e**]: Converge on desk-form state instead of assuming a set sticks
-- Interfaces/Templates [**form-fields**]: Ignore blank bookable hours ranges ppt-2641
-- Interfaces/Templates [**events**]: Prevent recurrence polluting form state
-- Interfaces/Templates [**signage-manager**]: Search id, name and display_name fields
-- Interfaces/Templates [**signage**]: Resolve cron schedules to the most recent run
-- Interfaces/Templates [**signage**]: Stop the single-pass trigger window expiring media
-- Interfaces/Templates [**signage**]: Download media for playlists scheduled later in the day
-- Interfaces/Templates [**signage**]: Re-sync the media cache when schedules open and close
-- Interfaces/Templates [**signage**]: Recover media that is missing from the cache
-- Interfaces/Templates [**signage**]: Stop the schedule tick re-syncing the media cache every tick
-- Interfaces/Templates [**signage**]: Stop the display parser mutating the response it is given
-- Interfaces/Templates [**signage**]: Make the display poll unable to stop
-- Interfaces/Templates [**common**]: Let fixed devices boot offline from cached state
-- Interfaces/Templates [**signage**]: Stop a mid-reload failure wedging the display
-- Interfaces/Templates [**signage**]: Back off media cache retries instead of retrying forever
 - Interfaces/Templates [**bookings**]: Save visitors against their own asset (ppt-2635)
-- Interfaces/Templates [**events**]: Show attendee-only notify option again (ppt-2514)
 - Interfaces/Templates [**bookings**]: Treat assigned bookings as reserved resources (ppt-2469)
 - Interfaces/Templates [**bookings**]: Match visitor group siblings by group reference (ppt-2638)
-- Interfaces/Templates [**form-fields**]: Remove only the clicked visitor from the list (ppt-2634)
-- Interfaces/Templates [**signage**]: Watch startup, not just a player that already started
-- Interfaces/Templates [**signage**]: Hold failed-initialisation restarts to the recovery limits
-- Interfaces/Templates [**parking**]: Derive request status from the booking process state
-- Interfaces/Templates [**signage**]: Let an api-key player start with no network
-- Interfaces/Templates [**signage**]: Keep the display route across a cache clearing recovery
-- Interfaces/Templates [**signage**]: Stop a version update navigating away from the display
-- Interfaces/Templates [**bookings**]: Keep user input entered while the booking form initialises
-- Interfaces/Templates [**events**]: Warn on visitor meeting host changes (ppt-2375)
-- Interfaces/Templates [**common**]: Prevent unhandled organisation retry errors
-- Interfaces/Templates [**concierge**]: Sort parking levels last on non-parking views (ppt-2566)
-- Interfaces/Templates [**events**]: Warn when changed host remains attendee (ppt-2640)
-- Interfaces/Templates [**concierge**]: Correct parking no-show reports (ppt-2565)
-- Interfaces/Templates [**bookings**]: Keep form input across the reset flows actually run
-- Interfaces/Templates [**events**]: Restore attendee-only notification option (ppt-2514)
-- Interfaces/Templates [**concierge**]: Prevent broadcast recipient flicker (ppt-2400)
-- Interfaces/Templates [**concierge**]: Clarify overnight parking bookings
-- Interfaces/Templates [**concierge**]: Make three date tests independent of the runner timezone
-- Interfaces/Templates [**concierge**]: Tie the staff listing scroll timer to its effect
-- Interfaces/Templates [**workplace**]: Cancel the group-booking timer when the success page is destroyed
-- Interfaces/Templates [**explore**]: Make the parking clamp test independent of the runner timezone
+- Interfaces/Templates [**bookings**]: Keep user input entered while the booking form initialises (ppt-2643)
 - Interfaces/Templates [**bookings**]: Resolve current desk names
-- Interfaces/Templates [**concierge**]: Exclude rooms from broadcast recipients
-- Interfaces/Templates [**signage-manager**]: Correct playlist zone assignment state
+- Interfaces/Templates [**concierge**]: Sort parking levels last on non-parking views (ppt-2566)
 - Interfaces/Templates [**concierge**]: Reset desk booking levels (ppt-2566)
+- Interfaces/Templates [**concierge**]: Correct parking no-show reports (ppt-2565)
+- Interfaces/Templates [**concierge**]: Prevent broadcast recipient flicker (ppt-2400)
+- Interfaces/Templates [**concierge**]: Exclude rooms from broadcast recipients
+- Interfaces/Templates [**concierge**]: Clarify overnight parking bookings
+- Interfaces/Templates [**events**]: Show attendee-only notify option again (ppt-2514)
+- Interfaces/Templates [**events**]: Warn on visitor meeting host changes (ppt-2375)
+- Interfaces/Templates [**events**]: Warn when changed host remains attendee (ppt-2640)
+- Interfaces/Templates [**events**]: Prevent recurrence polluting form state
+- Interfaces/Templates [**form-fields**]: Remove only the clicked visitor from the list (ppt-2634)
+- Interfaces/Templates [**form-fields**]: Ignore blank bookable hours ranges (ppt-2641)
+- Interfaces/Templates [**parking**]: Derive request status from the booking process state
+- Interfaces/Templates [**signage**]: Resolve cron schedules to the most recent run
+- Interfaces/Templates [**signage**]: Recover media that is missing from the cache
+- Interfaces/Templates [**signage**]: Let an api-key player start with no network
+- Interfaces/Templates [**signage**]: Stop a version update navigating away from the display
+- Interfaces/Templates [**signage-manager**]: Search id, name and display_name fields
+- Interfaces/Templates [**signage-manager**]: Correct playlist zone assignment state
+- Interfaces/Templates [**common**]: Let fixed devices boot offline from cached state
+- Interfaces/Templates [**workplace**]: Cancel the group-booking timer when the success page is destroyed
 - Libraries/Models [**user**]: Logged_out_at should have a timezone
-- Libraries/Models [**migrations**]: Renumber the ai-support migration above the release line ([#323](https://github.com/PlaceOS/placeos-models/pull/323))
 - Services/Auth.cr [**saml**]: Reject assertions that cannot be verified
-- Services/Auth.cr [**oauth**]: Refuse revoked refresh tokens (ir-07)
-- Services/Auth.cr [**oauth**]: Apply the refresh grace window to rotation only
+- Services/Auth.cr [**oauth**]: Refuse revoked refresh tokens
 - Services/Auth.cr [**oauth**]: Enforce pkce at redemption (rfc 7636 §4.6)
 - Services/Auth.cr [**oauth**]: Spend authorization codes exactly once (rfc 6749 §4.1.2)
-- Services/Auth.cr [**oidc**]: Give the id_token exp and iat (oidc core §2)
-- Services/Auth.cr [**oauth**]: Cascade access-token revocation to its refresh token (rfc 7009 §2.1)
-- Services/Auth.cr [**logging**]: Redact code_verifier, tokens and assertions from request logs
 - Services/Auth.cr [**oauth**]: Bind the authorization code to its client (rfc 6749 §4.1.3)
+- Services/Auth.cr [**oauth**]: Cascade access-token revocation to its refresh token (rfc 7009 §2.1)
+- Services/Auth.cr [**oauth**]: Answer an undecodable grant with 400, and keep tokens out of caches
+- Services/Auth.cr [**oidc**]: Give the id_token exp and iat (oidc core §2)
+- Services/Auth.cr [**auth**]: Reject an expired api key
+- Services/Auth.cr [**auth**]: Close the backslash open-redirect bypass in sanitize_continue
+- Services/Auth.cr [**logging**]: Redact code_verifier, tokens and assertions from request logs
 - Services/Auth.cr [**config**]: Do not go silent when production has no session secret
 - Services/Auth.cr [**boot**]: Name the cause when oauth_tokens has not been migrated
-- Services/Auth.cr [**auth**]: Reject an expired api key (ak-02, ak-04)
-- Services/Auth.cr [**oauth**]: Answer an undecodable grant with 400, and keep tokens out of caches (sec-04)
-- Services/Auth.cr [**auth**]: Close the backslash open-redirect bypass in sanitize_continue (sec-05, sc-12)
 - Services/RestAPI [**tenant_consent**]: Retry graph calls that race directory replication (ppt-2000) ([#440](https://github.com/PlaceOS/rest-api/pull/440))
 - Services/StaffAPI [**events**]: Suppress stale mirror echo in staff/event/changed signal (ppt-2375) ([#380](https://github.com/PlaceOS/staff-api/pull/380))
 - Services/StaffAPI [**events**]: Keep event metadata when a meeting changes room (ppt-2375) ([#382](https://github.com/PlaceOS/staff-api/pull/382))
-- Services/StaffAPI [**spec/events**]: Only count the signals this example caused ([#385](https://github.com/PlaceOS/staff-api/pull/385))
 - Services/StaffAPI [**deps**]: Pg-orm 2.2.4 to stop the connection pool being poisoned ([#386](https://github.com/PlaceOS/staff-api/pull/386))
 
 ### Changed
 
 - Interfaces/Templates [**assistant-panel**]: Migrate person detection to litert.js
 - Services/Auth.cr [**deps**]: Pin crystal-saml to the inherited-namespace signature fix
-- Swagger/RestAPI: Update for placeos-2.2607.3
-- Swagger/StaffAPI: Update for placeos-2.2607.3
 
 ## 2.2607.3
 
