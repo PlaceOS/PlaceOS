@@ -5,6 +5,80 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2608.1
+
+### Added
+
+- Interfaces/Backoffice [**delete**]: Optionally remove resources associated with a zone or domain (ppt-1203)
+- Interfaces/Backoffice [**delete**]: Show what a cascade removed, with ids
+- Interfaces/Backoffice [**repositories**]: Add branch and commit search
+- Interfaces/Templates [**map-studio**]: Add map studio application
+- Interfaces/Templates [**map-studio**]: Sync floorplans with placeos zones
+- Interfaces/Templates [**signage**]: Add a stall-based recovery watchdog
+- Interfaces/Templates [**signage**]: Hold application reloads until they are safe to apply
+- Interfaces/Templates [**signage**]: Add window.signage console diagnostics
+- Interfaces/Templates [**signage-manager**]: Show zone pickers as trees
+- Interfaces/Templates [**signage-manager**]: Scope zone search to selected hierarchy
+- Interfaces/Templates [**workplace**]: Add meeting notes reset
+- Libraries/Models: [ppt-2596] add ai support agent models ([#321](https://github.com/PlaceOS/placeos-models/pull/321))
+- Services/RestAPI [**tenant_consent**]: Live progress page for the admin-consent flow (ppt-2032) ([#441](https://github.com/PlaceOS/rest-api/pull/441))
+- Services/RestAPI: Store app-only graph credentials in the staff-api tenant (ppt-2000) ([#442](https://github.com/PlaceOS/rest-api/pull/442))
+- Services/Source [**mqtt**]: Upgrade to mqtt 2.0.1 and the negotiating client
+- Services/Source: Clear retained state when a topic moves or goes away ([#64](https://github.com/PlaceOS/source/pull/64))
+- Services/StaffAPI [**events**]: Hand a meeting to a new host (ppt-2640) ([#383](https://github.com/PlaceOS/staff-api/pull/383))
+
+### Fixed
+
+- Interfaces/Templates [**bookings**]: Save visitors against their own asset (ppt-2635)
+- Interfaces/Templates [**bookings**]: Treat assigned bookings as reserved resources (ppt-2469)
+- Interfaces/Templates [**bookings**]: Match visitor group siblings by group reference (ppt-2638)
+- Interfaces/Templates [**bookings**]: Keep user input entered while the booking form initialises (ppt-2643)
+- Interfaces/Templates [**bookings**]: Resolve current desk names
+- Interfaces/Templates [**concierge**]: Sort parking levels last on non-parking views (ppt-2566)
+- Interfaces/Templates [**concierge**]: Reset desk booking levels (ppt-2566)
+- Interfaces/Templates [**concierge**]: Correct parking no-show reports (ppt-2565)
+- Interfaces/Templates [**concierge**]: Prevent broadcast recipient flicker (ppt-2400)
+- Interfaces/Templates [**concierge**]: Exclude rooms from broadcast recipients
+- Interfaces/Templates [**concierge**]: Clarify overnight parking bookings
+- Interfaces/Templates [**events**]: Show attendee-only notify option again (ppt-2514)
+- Interfaces/Templates [**events**]: Warn on visitor meeting host changes (ppt-2375)
+- Interfaces/Templates [**events**]: Warn when changed host remains attendee (ppt-2640)
+- Interfaces/Templates [**events**]: Prevent recurrence polluting form state
+- Interfaces/Templates [**form-fields**]: Remove only the clicked visitor from the list (ppt-2634)
+- Interfaces/Templates [**form-fields**]: Ignore blank bookable hours ranges (ppt-2641)
+- Interfaces/Templates [**parking**]: Derive request status from the booking process state
+- Interfaces/Templates [**signage**]: Resolve cron schedules to the most recent run
+- Interfaces/Templates [**signage**]: Recover media that is missing from the cache
+- Interfaces/Templates [**signage**]: Let an api-key player start with no network
+- Interfaces/Templates [**signage**]: Stop a version update navigating away from the display
+- Interfaces/Templates [**signage-manager**]: Search id, name and display_name fields
+- Interfaces/Templates [**signage-manager**]: Correct playlist zone assignment state
+- Interfaces/Templates [**common**]: Let fixed devices boot offline from cached state
+- Interfaces/Templates [**workplace**]: Cancel the group-booking timer when the success page is destroyed
+- Libraries/Models [**user**]: Logged_out_at should have a timezone
+- Services/Auth.cr [**saml**]: Reject assertions that cannot be verified
+- Services/Auth.cr [**oauth**]: Refuse revoked refresh tokens
+- Services/Auth.cr [**oauth**]: Enforce pkce at redemption (rfc 7636 §4.6)
+- Services/Auth.cr [**oauth**]: Spend authorization codes exactly once (rfc 6749 §4.1.2)
+- Services/Auth.cr [**oauth**]: Bind the authorization code to its client (rfc 6749 §4.1.3)
+- Services/Auth.cr [**oauth**]: Cascade access-token revocation to its refresh token (rfc 7009 §2.1)
+- Services/Auth.cr [**oauth**]: Answer an undecodable grant with 400, and keep tokens out of caches
+- Services/Auth.cr [**oidc**]: Give the id_token exp and iat (oidc core §2)
+- Services/Auth.cr [**auth**]: Reject an expired api key
+- Services/Auth.cr [**auth**]: Close the backslash open-redirect bypass in sanitize_continue
+- Services/Auth.cr [**logging**]: Redact code_verifier, tokens and assertions from request logs
+- Services/Auth.cr [**config**]: Do not go silent when production has no session secret
+- Services/Auth.cr [**boot**]: Name the cause when oauth_tokens has not been migrated
+- Services/RestAPI [**tenant_consent**]: Retry graph calls that race directory replication (ppt-2000) ([#440](https://github.com/PlaceOS/rest-api/pull/440))
+- Services/StaffAPI [**events**]: Suppress stale mirror echo in staff/event/changed signal (ppt-2375) ([#380](https://github.com/PlaceOS/staff-api/pull/380))
+- Services/StaffAPI [**events**]: Keep event metadata when a meeting changes room (ppt-2375) ([#382](https://github.com/PlaceOS/staff-api/pull/382))
+- Services/StaffAPI [**deps**]: Pg-orm 2.2.4 to stop the connection pool being poisoned ([#386](https://github.com/PlaceOS/staff-api/pull/386))
+
+### Changed
+
+- Interfaces/Templates [**assistant-panel**]: Migrate person detection to litert.js
+- Services/Auth.cr [**deps**]: Pin crystal-saml to the inherited-namespace signature fix
+
 ## 2.2607.3
 
 ### Fixed
