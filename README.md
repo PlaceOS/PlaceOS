@@ -106,7 +106,6 @@ These reference commits used to construct the built artefacts at each release.
 
 [![Rest API](https://img.shields.io/github/actions/workflow/status/PlaceOS/rest-api/ci.yml?label=rest-api&logo=github)](https://github.com/PlaceOS/rest-api/actions/workflows/ci.yml)
 
-
 [![Source](https://img.shields.io/github/actions/workflow/status/PlaceOS/source/ci.yml?label=source&logo=github)](https://github.com/PlaceOS/source/actions/workflows/ci.yml)
 
 [![Staff API](https://img.shields.io/github/actions/workflow/status/PlaceOS/staff-api/ci.yml?label=staff-api&logo=github)](https://github.com/PlaceOS/staff-api/actions/workflows/ci.yml)

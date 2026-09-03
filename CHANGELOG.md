@@ -5,20 +5,15 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
-## 2.2609.3
+## 2.2609.1
 
 ### Added
 
 - Clients/Typescript [**signage**]: Add template endpoints
-- Clients/Typescript [**signage**]: Sync endpoints and types with openapi_doc
 - Clients/Typescript [**signage**]: Add shared_with field to media, playlists and templates
 - Clients/Typescript [**signage**]: Add media tag management
 - Interfaces/Backoffice [**admin**]: Remove the elasticsearch reindex/backfill cards (ppt-2644)
-- Interfaces/Backoffice [**ui**]: Make about values selectable
-- Interfaces/Backoffice [**signage**]: Add plugin type selector
-- Interfaces/Backoffice [**signage**]: Show plugin type in table
 - Interfaces/Templates [**e2e**]: Remove elasticsearch and search-ingest from the test stack (ppt-2644)
-- Interfaces/Templates [**signage-manager**]: Initial implementation for templates
 - Interfaces/Templates [**signage**]: Add template player
 - Interfaces/Templates [**signage-manager**]: Add display management ppt-2673
 - Interfaces/Templates [**signage-manager**]: Add template media backgrounds
@@ -51,13 +46,11 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Services/Init: Remove elasticsearch drop task and constants (ppt-2644) ([#104](https://github.com/PlaceOS/init/pull/104))
 - Services/RestAPI: Replace elasticsearch with postgresql full-text search (ppt-2644, 2/2) ([#445](https://github.com/PlaceOS/rest-api/pull/445))
 - Services/RestAPI [**search**]: Match elasticsearch token semantics exactly (ppt-2644) ([#446](https://github.com/PlaceOS/rest-api/pull/446))
-- Services/RestAPI [**signage**]: Implement unshare for media and templates
 - Services/RestAPI [**signage/media**]: Add tag_counts route
 - Services/RestAPI [**signage/plugins**]: Allow filtering on plugin type
 - Services/RestAPI [**signage**]: Show groups media is shared with
 - Services/RestAPI [**signage/playlist_media**]: Return playlists on show route
 - Services/RestAPI [**signage/playlists**]: Add unshare option to destroy
-- Services/RestAPI [**proxy**]: Add get proxy for use by frontends
 - Services/RestAPI [**signage**]: Add template mappings to player response
 - Services/RestAPI [**zones**]: Allow signage managers to create signage zones
 - Services/RestAPI [**signage-ai**]: Image generation runtime and controllers (ppt-2741) ([#447](https://github.com/PlaceOS/rest-api/pull/447))
@@ -66,107 +59,40 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**signage**]: Add shared_with to playlist
-- Clients/Typescript [**signage**]: Add new fields to schedule and media item
-- Clients/Typescript [**api**]: Sync client types with current spec
 - Interfaces/Backoffice [**admin**]: Drop the now-unused translatepipe import from database details (ppt-2644)
-- Interfaces/Backoffice [**signage**]: Resolve relative plugin urls
-- Interfaces/Backoffice [**signage**]: Stop edit modal plugin reloads
-- Interfaces/Backoffice [**signage**]: Make plugin defaults optional
-- Interfaces/Backoffice [**modules**]: Preserve control system on creation
-- Interfaces/Backoffice [**modules**]: Stop treating settings collection as string
-- Interfaces/Backoffice [**modules**]: Omit control system from device modules
-- Interfaces/Templates [**auth**]: Avoid unauthorised redirect during slow startup
-- Interfaces/Templates [**concierge**]: Skip terminal bookings in reject all
-- Interfaces/Templates [**parking**]: Correct request status field mapping
 - Interfaces/Templates [**bookings**]: Ignore ended visitor conflicts (ppt-2658)
 - Interfaces/Templates [**concierge**]: Allow removing visitor passes (ppt-2657)
 - Interfaces/Templates [**bookings**]: Retain cancelled booking history (ppt-2656)
-- Interfaces/Templates [**bookings**]: Hide cancel action after check-in
 - Interfaces/Templates [**bookings**]: Wait for current availability (ppt-2663)
 - Interfaces/Templates [**bookings**]: Serialize linked visitor bookings ppt-2662
-- Interfaces/Templates [**explore**]: Align desk booking dialog wording
 - Interfaces/Templates [**workplace**]: Expose visitor invite settings ppt-2666
-- Interfaces/Templates [**concierge**]: Save only application setting overrides
-- Interfaces/Templates [**concierge**]: Normalise legacy application logos
-- Interfaces/Templates [**signage-manager**]: Page the media library as the user scrolls
-- Interfaces/Templates [**concierge**]: Persist conflicting desk cancellations
-- Interfaces/Templates [**events**]: Preserve host in attendee list
-- Interfaces/Templates [**signage-manager**]: Show template details in responsive tabs
-- Interfaces/Templates [**signage-manager**]: Generate template plugin parameter fields
-- Interfaces/Templates [**signage-manager**]: Improve unselected layout preview contrast
-- Interfaces/Templates [**signage-manager**]: Normalise layout dimension inputs
 - Interfaces/Templates [**bookings**]: Filter desks by map level (ppt-2668)
-- Interfaces/Templates [**bookings**]: Hide check-in for unallocated parking
 - Interfaces/Templates [**signage-manager**]: Unshare deleted items by group ppt-2651
-- Interfaces/Templates [**signage-manager**]: Send default layout positions
 - Interfaces/Templates [**bookings**]: Use stored recurrence end date ppt-2672
 - Interfaces/Templates [**bookings**]: Check in single occurrence of recurring bookings ppt-2674
 - Interfaces/Templates [**bookings**]: Roll back bookings when asset requests fail ppt-2678
-- Interfaces/Templates [**signage-manager**]: Add shared with list to media preview modal
-- Interfaces/Templates [**signage-manager**]: Separate plugin and widget catalogues
 - Interfaces/Templates [**signage-manager**]: Include display version when editing ppt-2673
-- Interfaces/Templates [**concierge**]: Preserve parking bay zones when editing
-- Interfaces/Templates [**signage-manager**]: Fix shown details for template layouts after save
 - Interfaces/Templates [**signage-manager**]: Use media response playlists in previews ppt-2686
 - Interfaces/Templates [**signage**]: Support schedule expiry ppt-2685
 - Interfaces/Templates [**signage-manager**]: Handle template draft ids ppt-2687
 - Interfaces/Templates [**signage-manager**]: Add 15-minute play period ppt-2688
-- Interfaces/Templates [**signage-manager**]: Refresh playlist share details
-- Interfaces/Templates [**signage-manager**]: Show display zones in details
-- Interfaces/Templates [**events**]: Preserve external host details
-- Interfaces/Templates [**e2e**]: Restore elasticsearch and search-ingest to the test stack
 - Interfaces/Templates [**workplace**]: Show recurring end date on booking success ppt-2694
 - Interfaces/Templates [**bookings**]: Show cancel series by default ppt-2682
 - Interfaces/Templates [**common**]: Update favourite signals immediately ppt-2695
 - Interfaces/Templates [**events**]: Book room assets reliably ppt-2693
-- Interfaces/Templates [**events**]: Use attendee details for external hosts
-- Interfaces/Templates [**ci**]: Open prs for changelog updates
-- Interfaces/Templates [**signage**]: Remove plugin cut transition delay
-- Interfaces/Templates [**events**]: Resolve aliased host names
-- Interfaces/Templates [**events**]: Show aliased host name in event details
-- Interfaces/Templates [**concierge**]: Bound parking booking pagination
-- Interfaces/Templates [**concierge**]: Resolve aliased hosts in booking views
-- Interfaces/Templates [**events**]: Resolve host name from attendees
-- Interfaces/Templates [**concierge**]: Load paginated data in 200-item pages
-- Interfaces/Templates [**concierge**]: Resolve room host names from attendees
 - Interfaces/Templates [**concierge**]: Fix management level selectors (ppt-2566)
 - Interfaces/Templates [**events**]: Persist public event visibility ppt-2247
 - Interfaces/Templates [**events**]: Separate selected rooms from results ppt-2572
 - Interfaces/Templates [**events**]: Handle multi-room booking edge cases ppt-2572
-- Interfaces/Templates [**signage-manager**]: Prevent sidebar overflow
-- Interfaces/Templates [**signage**]: Keep plugin visible until playback starts
 - Libraries/Driver [**protocol/management**]: Settle pending start on a seq-less result
 - Libraries/Models [**shortener**]: Retry id generation on same-second create collisions ([#325](https://github.com/PlaceOS/placeos-models/pull/325))
 - Libraries/Models [**migrations**]: Use `if not exists`
-- Libraries/Models [**migrations**]: Ordering due to outdated merge
-- Libraries/Models: Migration not fail if run a second time
-- Libraries/Models [**booking**]: Ensure history is saved on instances
-- Libraries/Models [**signage_template**]: Plugin.authority_id can be nil
-- Libraries/Models [**template/layout**]: Can be 0 for floating plugins
-- Libraries/Models [**bookings**]: Pagination performance
 - Services/Auth.cr [**saml**]: Bump crystal-saml — namespace declarations + shibboleth signature verification
 - Services/Build_service: Add support for crystal 1.21
 - Services/Core [**driver_manager**]: Ensure drivers are compiled if missing on lazy load path
-- Services/Core: Specs and bump driver
-- Services/Edge [**driver_manager**]: Ensure drivers are compiled if missing on lazy load path
-- Services/Edge: Specs and bump driver
-- Services/Init [**sam**]: Binary size
 - Services/Init: Raise error on failed migration
-- Services/RestAPI [**systems**]: Signage manager users can add and edit displays
-- Services/RestAPI [**models**]: Template widget validation fix
-- Services/RestAPI [**signage/templates**]: Should return the drafts by default
-- Services/RestAPI [**signage/templates**]: Improve draft handling
-- Services/RestAPI [**signage/playlist_media**]: Bust signage caches on updates
-- Services/RestAPI [**subsystem**]: Fixes for support subsystem access
 - Services/StaffAPI [**bookings**]: Recurring instance history saved
 - Services/StaffAPI [**bookings**]: Pagination calculation
-
-### Changed
-
-- Interfaces/Templates [**nx**]: Migrate workspace to nx 23
-- Swagger/RestAPI: Update for placeos-2.2608.1
-- Swagger/StaffAPI: Update for placeos-2.2608.1
 
 ## 2.2608.1
 
