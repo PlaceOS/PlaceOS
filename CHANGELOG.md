@@ -5,6 +5,25 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2609.2
+
+### Added
+
+- Clients/Typescript [**signage**]: Ai image generation functions (ppt-2741)
+- Interfaces/Templates [**signage-manager**]: Show templates in display schedules
+- Services/FrontendLoader [**Dockerfile**]: Use busybox from the image
+- Services/Init [**Dockerfile**]: Don't manually download busybox
+- Services/RestAPI [**signage/template_mappings**]: To return zone mappings when a display specified
+- Services/RestAPI [**signage**]: Change param that saves analytics
+- Services/StaffAPI [**bookings**]: Restrict booking approval to concierge users [ppt-2767]
+
+### Fixed
+
+- Services/Auth.cr [**oauth**]: Carry the authorize request into the login redirect
+- Services/Auth.cr [**sessions**]: Encode the continue substituted into login_url
+- Services/Auth.cr [**oauth**]: Keep the native authorize route's annotations on its method; assert the login bounce stays local
+- Services/Auth.cr [**oauth**]: Include created_at in token responses ([#36](https://github.com/PlaceOS/auth.cr/pull/36))
+
 ## 2.2609.1
 
 ### Added
