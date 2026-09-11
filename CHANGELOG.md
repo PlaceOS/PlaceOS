@@ -5,6 +5,36 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2609.3
+
+### Fixed
+
+- Clients/Typescript [**http**]: Fix resolving requests with invalid tokens
+- Clients/Typescript [**users**]: Add deleted field
+- Interfaces/Templates [**bookings**]: Serialize booking models before sending requests
+- Interfaces/Templates [**assets**]: Defer asset bookings until confirmation
+- Interfaces/Templates [**auth**]: Update client to recover expired-token requests
+- Interfaces/Templates: Sort parking levels below normal building levels
+- Interfaces/Templates [**explore**]: Preserve location selection and building bindings
+- Interfaces/Templates [**components**]: Prevent server warning during startup
+- Libraries/Models [**settings**]: Helper to select setting at encryption level
+- Services/Init [**Dockerfile**]: Pg_dump dynamic link libs
+
+### Added
+
+- Clients/Typescript [**api**]: Add url proxy and missing signage options
+- Interfaces/Backoffice: Add support subsystem access and group switching
+- Interfaces/Backoffice [**users**]: Add toggle to include deleted users
+- Interfaces/Backoffice [**users**]: Add force delete and restore actions
+- Interfaces/Backoffice [**users**]: Indicate deleted users in lists and about page
+- Interfaces/Templates [**signage-manager**]: Add schedule timezone selection
+- Interfaces/Templates [**signage-manager**]: Limit timezone options to play-once schedules
+
+### Changed
+
+- Swagger/RestAPI: Update for placeos-2.2609.2
+- Swagger/StaffAPI: Update for placeos-2.2609.2
+
 ## 2.2609.2
 
 ### Added
