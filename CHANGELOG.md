@@ -9,8 +9,43 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Libraries/Models [**settings**]: Helper for selecting setting encryption level
+- Clients/Typescript [**http**]: Fix resolving requests with invalid tokens
+- Clients/Typescript [**users**]: Add deleted field
+- Interfaces/Templates [**bookings**]: Serialize booking models before sending requests
+- Interfaces/Templates [**assets**]: Defer asset bookings until confirmation
+- Interfaces/Templates [**auth**]: Update client to recover expired-token requests
+- Interfaces/Templates: Sort parking levels below normal building levels
+- Interfaces/Templates [**explore**]: Preserve location selection and building bindings
+- Interfaces/Templates [**components**]: Prevent server warning during startup
+- Interfaces/Templates [**events**]: Exclude placeholder visitor attendees
+- Interfaces/Templates [**explore**]: Align room and desk booking dialog layouts
+- Interfaces/Templates [**bookings**]: Hide visitors removed from group bookings
+- Libraries/Models [**settings**]: Helper to select setting at encryption level
+- Libraries/Models: Suppress signage heartbeat changefeed events ([#327](https://github.com/PlaceOS/placeos-models/pull/327))
+- Libraries/Models: Ignore control system metadata changefeed updates ([#328](https://github.com/PlaceOS/placeos-models/pull/328))
+- Libraries/Models: Suppress runtime metadata changefeed updates ([#329](https://github.com/PlaceOS/placeos-models/pull/329))
+- Libraries/Models: Restore control system display name events ([#330](https://github.com/PlaceOS/placeos-models/pull/330))
 - Services/Init [**Dockerfile**]: Pg_dump dynamic link libs
+
+### Added
+
+- Clients/Typescript [**api**]: Add url proxy and missing signage options
+- Interfaces/Backoffice: Add support subsystem access and group switching
+- Interfaces/Backoffice [**users**]: Add toggle to include deleted users
+- Interfaces/Backoffice [**users**]: Add force delete and restore actions
+- Interfaces/Backoffice [**users**]: Indicate deleted users in lists and about page
+- Interfaces/Backoffice [**admin**]: Add tenant bookable period
+- Interfaces/Templates [**signage-manager**]: Add schedule timezone selection
+- Interfaces/Templates [**signage-manager**]: Limit timezone options to play-once schedules
+- Interfaces/Templates [**debug**]: Add shared menu and improve driver inspection
+- Libraries/Models [**tenant**]: Add booking range
+
+### Changed
+
+- Swagger/RestAPI: Update for placeos-2.2609.2
+- Swagger/RestAPI: Update for placeos-2.2609.3
+- Swagger/StaffAPI: Update for placeos-2.2609.2
+- Swagger/StaffAPI: Update for placeos-2.2609.3
 
 ## 2.2609.2
 
