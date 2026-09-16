@@ -70,3 +70,12 @@
 [submodule "services/auth.cr"]
 	path = services/auth.cr
 	url = https://github.com/PlaceOS/auth.cr.git
+[submodule "libraries/eventbus"]
+	path = libraries/eventbus
+	url = https://github.com/spider-gazelle/eventbus.git
+[submodule "libraries/pg-orm"]
+	path = libraries/pg-orm
+	url = https://github.com/spider-gazelle/pg-orm.git
+[submodule "local"]
+	path = local
+	url = https://github.com/PlaceOS/local.git
