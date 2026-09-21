@@ -5,6 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2609.5
+
+### Fixed
+
+- Interfaces/Templates [**signage-manager**]: Show unapproved template layouts in live preview
+- Services/Auth.cr: Stop login traffic starving the scheduler and failing healthchecks
+
+### Added
+
+- Interfaces/Templates [**signage-manager**]: Resize panels by dragging their edges
+- Interfaces/Templates [**signage-manager**]: Add schedule validity start times
+- Interfaces/Templates [**signage-manager**]: Add schedule masks
+- Libraries/Models [**signage**]: Add valid_from to schedules
+- Libraries/Models [**signage**]: Add bitmask to schedules
+- Libraries/Models [**signage_template**]: Add merge flag
+
 ## 2.2609.4
 
 ### Fixed
