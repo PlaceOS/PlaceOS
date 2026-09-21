@@ -9,31 +9,17 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Templates [**signage**]: Sync unsaved layouts to live template preview
-- Interfaces/Templates [**signage-manager**]: Keep template layout edits across list reloads
-- Interfaces/Templates [**signage-manager**]: Omit empty fields when saving templates
-- Interfaces/Templates [**signage**]: Show unapproved template layouts in live preview
-- Interfaces/Templates [**signage-manager**]: Reset settings when layout plugin changes
-- Interfaces/Templates [**signage**]: Preview template changes before first approval
-- Interfaces/Templates [**components**]: Send plugin config changes after auto-play load
+- Interfaces/Templates [**signage-manager**]: Show unapproved template layouts in live preview
 - Services/Auth.cr: Stop login traffic starving the scheduler and failing healthchecks
 
 ### Added
 
-- Interfaces/Templates [**debug**]: Resize panels by dragging their edges
-- Interfaces/Templates [**signage-manager**]: Show template details in the main mobile tabs
-- Interfaces/Templates [**signage-manager**]: Highlight differences in template approval modal
+- Interfaces/Templates [**signage-manager**]: Resize panels by dragging their edges
 - Interfaces/Templates [**signage-manager**]: Add schedule validity start times
 - Interfaces/Templates [**signage-manager**]: Add schedule masks
-- Interfaces/Templates [**styles**]: Add animated gradient background
 - Libraries/Models [**signage**]: Add valid_from to schedules
 - Libraries/Models [**signage**]: Add bitmask to schedules
 - Libraries/Models [**signage_template**]: Add merge flag
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2609.4
-- Swagger/StaffAPI: Update for placeos-2.2609.4
 
 ## 2.2609.4
 
