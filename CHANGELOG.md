@@ -5,6 +5,48 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2609.6
+
+### Added
+
+- Clients/Typescript [**signage**]: Add template merge flag
+- Clients/Typescript [**api**]: Add group features, repository files and schedule mask
+- Clients/Typescript [**signage**]: Add play_at_local to playlist schedule
+- Interfaces/Backoffice [**systems**]: Select trigger playlists by name
+- Interfaces/Backoffice [**signage**]: Import plugins from a frontend repository
+- Interfaces/Templates [**signage-manager**]: Add template merge flag
+- Interfaces/Templates [**signage**]: Merge active template layouts in the player
+- Interfaces/Templates [**signage**]: Apply schedule masks to playback
+- Interfaces/Templates [**signage-manager**]: Edit name and display name for displays and zones
+- Interfaces/Templates [**signage-manager**]: Add display status, loop length and unsaved template guard
+- Interfaces/Templates [**signage-manager**]: Add media sort/filter, delete usage and duplicate
+- Interfaces/Templates [**signage-manager**]: Add command palette
+- Interfaces/Templates [**signage-manager**]: Add takeover conflict warnings and content report
+- Interfaces/Templates [**signage-manager**]: Add group level feature flags
+- Interfaces/Templates [**concierge**]: To, cc and bcc fields on email templates (ppt-2239)
+- Libraries/Models [**group**]: Add feature flags
+- Libraries/Models [**playlist/schedule**]: Add play_at_local field
+- Services/RestAPI [**groups**]: Add feature flag support
+- Services/RestAPI [**repositories**]: Add file listing helper
+- Services/StaffAPI [**staff**]: Add additional_fields query param
+
+### Fixed
+
+- Interfaces/Templates [**bookings**]: Hide actions on cancelled desk bookings (ppt-2769)
+- Interfaces/Templates [**bookings**]: Translate booked-for tooltip (ppt-2699)
+- Interfaces/Templates [**concierge**]: Block completed desk booking actions (ppt-2698)
+- Interfaces/Templates [**events**]: Clear stale room booking state (ppt-2696)
+- Libraries/Driver [**driver-specs**]: Include security_groups when updating settings
+- Libraries/Driver [**transport/tcp**]: Signal offline when the socket drops so reconnects fire callbacks
+- Libraries/Models [**group**]: Zone grants apply only to the owner group's membership
+- Services/RestAPI [**docker-compose**]: Pull minio images from quay.io
+- Services/StaffAPI [**bookings**]: Guest checkout frees booking
+- Services/StaffAPI [**tenants**]: Persist and return booking_range
+
+### Changed
+
+- Services/FrontendLoader [**loader**]: [ppt-2388] clean up to not swallow exceptions + log and retry ([#96](https://github.com/PlaceOS/frontend-loader/pull/96))
+
 ## 2.2609.5
 
 ### Fixed
