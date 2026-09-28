@@ -22,31 +22,8 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**signage-manager**]: Add media sort/filter, delete usage and duplicate
 - Interfaces/Templates [**signage-manager**]: Add command palette
 - Interfaces/Templates [**signage-manager**]: Add takeover conflict warnings and content report
-- Interfaces/Templates [**control**]: Add room qol improvements
 - Interfaces/Templates [**signage-manager**]: Add group level feature flags
 - Interfaces/Templates [**concierge**]: To, cc and bcc fields on email templates (ppt-2239)
-- Interfaces/Templates [**timetable**]: Add room status, zone selection and display qol
-- Interfaces/Templates [**timetable**]: Add e-ink mode for slow-refresh panels
-- Interfaces/Templates [**timetable**]: Add auto-paging, night mode and burn-in protection
-- Interfaces/Templates [**catering**]: Add order workflow tools to the order list
-- Interfaces/Templates [**catering**]: Add prep summary and delivery runs panel
-- Interfaces/Templates [**catering**]: Alert staff about new and cancelled orders
-- Interfaces/Templates [**catering**]: Add kitchen display board
-- Interfaces/Templates [**catering**]: Print order dockets and export orders as csv
-- Interfaces/Templates [**catering**]: Add bulk menu actions and item duplicate
-- Interfaces/Templates [**booking-panel**]: Add opt-in panel qol features
-- Interfaces/Templates [**booking-panel**]: Add night mode and burn-in protection
-- Interfaces/Templates [**concierge**]: Add keyboard shortcuts
-- Interfaces/Templates [**signage-manager**]: Scroll arrows and active item reveal in nav sidebar
-- Interfaces/Templates [**components**]: Select table rows by key and show load errors
-- Interfaces/Templates [**concierge**]: Show load errors instead of empty lists
-- Interfaces/Templates [**components**]: Add bulk action helper and selection bar
-- Interfaces/Templates [**catering**]: Change the status of selected orders
-- Interfaces/Templates [**concierge**]: Approve or reject bookings in bulk
-- Interfaces/Templates [**concierge**]: Warn before leaving unsaved changes
-- Interfaces/Templates [**concierge**]: Add setting to enable bulk actions
-- Interfaces/Templates [**signage**]: Support local time play once schedules
-- Interfaces/Templates [**control**]: Improve voice assistant feedback and reliability
 - Libraries/Models [**group**]: Add feature flags
 - Libraries/Models [**playlist/schedule**]: Add play_at_local field
 - Services/RestAPI [**groups**]: Add feature flag support
@@ -55,60 +32,20 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Clients/Typescript [**auth**]: Stop stale auth failures blocking sign in
-- Interfaces/Backoffice [**admin**]: Remove obsolete signage plugin defaults on save
-- Interfaces/Backoffice [**modules**]: Allow non-logic module creation from systems
-- Interfaces/Backoffice [**admin**]: Make signage plugin repos searchable in wizard
-- Interfaces/Templates [**signage-manager**]: Omit unset playlist schedule timestamps
-- Interfaces/Templates [**signage-manager**]: Show playlist assignment errors
-- Interfaces/Templates [**workplace**]: Exclude cancelled bookings from home upcoming
-- Interfaces/Templates [**workplace**]: Report partial group desk booking failures
-- Interfaces/Templates [**workplace**]: Recover quick bookings and handle calendar errors
-- Interfaces/Templates [**bookings**]: Retain room zones in native reservations
-- Interfaces/Templates [**bookings**]: Preserve delegated room host identity
-- Interfaces/Templates [**events**]: Preserve native room recurrence
-- Interfaces/Templates [**bookings**]: Preserve native room booking duration
-- Interfaces/Templates [**bookings**]: Save single visitor invitation edits
-- Interfaces/Templates [**bookings**]: Give visitor groups separate identifiers
-- Interfaces/Templates [**workplace**]: Cancel native rooms through the bookings api
 - Interfaces/Templates [**bookings**]: Hide actions on cancelled desk bookings (ppt-2769)
 - Interfaces/Templates [**bookings**]: Translate booked-for tooltip (ppt-2699)
 - Interfaces/Templates [**concierge**]: Block completed desk booking actions (ppt-2698)
 - Interfaces/Templates [**events**]: Clear stale room booking state (ppt-2696)
-- Interfaces/Templates [**outlook-addin**]: Wrap office sso callback in a promise
-- Interfaces/Templates [**common**]: Show light logo when dark mode is not allowed
-- Interfaces/Templates [**outlook-addin**]: Return the dialog token to the task pane
-- Interfaces/Templates [**ci**]: Build apps affected since the last successful run
-- Interfaces/Templates [**bookings**]: Hold every selected room in native room bookings
-- Interfaces/Templates [**timetable**]: Show booking times, states and overlaps correctly
-- Interfaces/Templates [**catering**]: Show load errors and keep order updates reliable
-- Interfaces/Templates [**mocks**]: Use valid catering order statuses
-- Interfaces/Templates [**booking-panel**]: Fix meeting state errors and panel text
-- Interfaces/Templates [**mocks**]: Make the bookings mock keep panel state
-- Interfaces/Templates [**concierge**]: Guard email templates and deals routes
-- Interfaces/Templates [**concierge**]: Match staff search regardless of case
-- Interfaces/Templates [**concierge**]: Confirm before removing an email template
-- Interfaces/Templates [**concierge**]: Reload visitors after the invite dialog closes
-- Interfaces/Templates [**concierge**]: Correct empty messages on short url and email template lists
-- Interfaces/Templates [**concierge**]: Stop hide_user_list_download showing the button
-- Interfaces/Templates [**concierge**]: Warn when parking request approval fails
-- Interfaces/Templates [**signage-manager**]: Keep nav sidebar scroll position across pages
-- Interfaces/Templates [**components**]: Wait for chat socket to open before sending
 - Libraries/Driver [**driver-specs**]: Include security_groups when updating settings
 - Libraries/Driver [**transport/tcp**]: Signal offline when the socket drops so reconnects fire callbacks
 - Libraries/Models [**group**]: Zone grants apply only to the owner group's membership
-- Services/RestAPI [**groups**]: Zone grants no longer flow to child groups
 - Services/RestAPI [**docker-compose**]: Pull minio images from quay.io
 - Services/StaffAPI [**bookings**]: Guest checkout frees booking
 - Services/StaffAPI [**tenants**]: Persist and return booking_range
 
 ### Changed
 
-- Interfaces/Templates [**deps**]: Bump @placeos/ts-client to 6.5.1
-- Interfaces/Templates [**form-fields**]: Move date options component out of concierge
-- Services/FrontendLoader [**loader**]: [ppt-2388] clean up to not swallow exceptions +  log and retry ([#96](https://github.com/PlaceOS/frontend-loader/pull/96))
-- Swagger/RestAPI: Update for placeos-2.2609.5
-- Swagger/StaffAPI: Update for placeos-2.2609.5
+- Services/FrontendLoader [**loader**]: [ppt-2388] clean up to not swallow exceptions + log and retry ([#96](https://github.com/PlaceOS/frontend-loader/pull/96))
 
 ## 2.2609.5
 
