@@ -15,7 +15,7 @@ Always fix existing issues if you find them in a test suite. We always want the 
 
 Use `crystal tool format` and `./bin/ameba` to format and lint code. Read the `AGENTS.md` or `CLAUDE.md` of each project before starting work.
 
-A single issue might span multiple pull requests against different projects. i.e. `./libraries/placeos-models` (https://github.com/PlaceOS/models) might require changes to implement a feature on `./services/rest-api` (https://github.com/PlaceOS/rest-api) - when this occurs, you can update the downstream `shard.yml` / `shard.lock` files to point to the models branch. Once models is merged, it will automatically bump the version based on the commit message (fix: patch bump, feat: minor bump) and then you can point rest-api back to the latest release version of models.
+A single issue might span multiple pull requests against different projects. i.e. `./libraries/placeos-models` (https://github.com/PlaceOS/models) might require changes to implement a feature on `./services/rest-api` (https://github.com/PlaceOS/rest-api) - when this occurs, you can update the downstream `shard.yml` / `shard.lock` files to point to the models branch. Once models is merged, it will automatically bump the version based on the commit message (fix: patch bump, feat: minor bump) and then you can point rest-api back to the latest release version of models. (rest-api specs pick up new models migrations straight from models master after a Docker prune)
 
 services/auth is no longer maintained, it has been replaced by services/auth.cr
 
