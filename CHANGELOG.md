@@ -5,7 +5,7 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
-## 2.2610.4
+## 2.2610.1
 
 ### Added
 
@@ -24,16 +24,8 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**auth**]: Exchange entra tokens for placeos tokens
 - Interfaces/Templates [**signage-manager**]: Ppt-2649 search all reachable zones
 - Interfaces/Templates: Make app icons easier to read at a glance
-- Interfaces/Templates [**common**]: Send app identity headers with api requests
-- Interfaces/Templates [**apps**]: Reduce initial bundle sizes
 - Interfaces/Templates [**common**]: Fetch the default locale and lazy-load the native domain form
-- Interfaces/Templates [**common**]: Load sentry and the snack bar on demand
-- Interfaces/Templates [**common**]: Keep forms, qr and upload libraries out of initial bundles
-- Interfaces/Templates [**concierge**]: Drop eager chips, dialog and timezone code from startup
 - Interfaces/Templates [**outlook-addin**]: Add parking to the calendar pane
-- Libraries/Eventbus: Replace installed cdc update policy on differing declaration
-- Libraries/Models [**group**]: Add default permission support
-- Libraries/Models [**group**]: Add ad group mapping support
 - Libraries/Models [**control_system**]: Add signage display dimension fields
 - Libraries/Models [**user**]: Add `user#resource_token` for delegated sso access ([#333](https://github.com/PlaceOS/placeos-models/pull/333))
 - Local [**compose**]: Add browserless browser service for rest-api screenshots
@@ -46,23 +38,12 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Services/RestAPI [**uploads**]: Add web page screenshot capabilities ([#448](https://github.com/PlaceOS/rest-api/pull/448))
 - Services/RestAPI [**signage**]: Static media routes for e-ink displays
 - Services/RestAPI [**mcp**]: Expose the api as an mcp server
-- Services/RestAPI [**mcp**]: Call_tool proxy for claude and chatgpt
-- Services/RestAPI [**mcp**]: Call_read_only proxy, mark driver details as not read only
 - Services/RestAPI [**zones**]: Ppt-2649 search every zone the user can reach ([#449](https://github.com/PlaceOS/rest-api/pull/449))
 - Services/RestAPI [**chatgpt**]: Serve each system's plugin as an mcp endpoint
-- Services/RestAPI [**chatgpt**]: Hint call_function as read only
 - Services/RestAPI [**signage**]: Default signage ai image generation to gpt-image-2.5 ([#450](https://github.com/PlaceOS/rest-api/pull/450))
 - Services/RestAPI [**chatgpt**]: Describe each system in its mcp instructions
-- Services/RestAPI [**assets**]: Scope asset records to the caller's authority
 - Services/StaffAPI [**MCP**]: Add mcp support and clean up tech debt
-- Services/StaffAPI [**assets**]: Add asset controllers ported from rest-api
-- Services/StaffAPI [**MCP**]: Spaces, cards and lean booking tools
-- Services/StaffAPI [**MCP**]: Nearby desks and a lean desk booking tool
-- Services/StaffAPI [**MCP**]: Show a booking's asset on its level map
-- Services/StaffAPI [**MCP**]: Desk booking prompt and free desk listing
-- Services/StaffAPI [**MCP**]: Desks near colleagues, space photos and space map
 - Services/StaffAPI [**MCP**]: Prompts for booking rooms and checking bookings and meetings
-- Services/StaffAPI [**MCP**]: Card fixes, meeting availability and rooms on the staff card
 
 ### Fixed
 
@@ -193,7 +174,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**signage**]: Correct takeover, trigger and random playlist scheduling
 - Interfaces/Templates [**signage**]: Recover from stalled plugins, hung recovery and failed boot
 - Interfaces/Templates [**signage**]: Bound media cache storage, bandwidth and memory
-- Interfaces/Templates [**control**]: Handle hang-up failure without rethrowing
 - Interfaces/Templates [**signage**]: Play single-pass takeovers apart from timed takeovers
 - Interfaces/Templates [**signage**]: Retry a lone silent plugin and stop competing reloads
 - Interfaces/Templates [**signage**]: Keep playback in the cache budget and fall back to network
@@ -239,43 +219,28 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**booking-panel**]: Prevent booking modal button reloading page
 - Interfaces/Templates [**booking-panel**]: Avoid staff api queries for immediate bookings
 - Interfaces/Templates [**signage-manager**]: Tidy image generation and align its styling
-- Interfaces/Templates [**booking-panel**]: Save api bookings with the correct end time
 - Interfaces/Templates [**booking-panel**]: Allow check-in booking with upcoming bookings
 - Interfaces/Templates [**common**]: Don't stall startup when analytics fails to initialise
 - Interfaces/Templates [**bookings**]: Hide empty action menu after early check-in (ppt-2629)
 - Interfaces/Templates [**events**]: Keep delegated host for native room bookings
 - Interfaces/Templates [**bookings**]: Keep meeting title on native room bookings
-- Interfaces/Templates [**concierge**]: Open catering pages from landing tiles
 - Interfaces/Templates [**events**]: Keep public event visibility and edits correct ppt-2247
 - Interfaces/Templates [**concierge**]: Warn when room calendars do not load
 - Interfaces/Templates [**bookings**]: Store the flow type on a quick-book booking
 - Interfaces/Templates [**bookings**]: Link catering and equipment to native room bookings
-- Interfaces/Templates [**bookings**]: Let a locker be chosen and booked from the locker form
 - Interfaces/Templates [**concierge**]: Survive a failing staff directory call
-- Interfaces/Templates [**bookings**]: Leave approval to the backend for users who cannot approve
-- Interfaces/Templates [**bookings**]: Set the flow type when the booking form opens
 - Interfaces/Templates [**concierge**]: Show a retryable error when staff data fails to load
 - Interfaces/Templates [**booking-panel**]: Use disable_qr_booking to hide checkin book buttons
-- Interfaces/Templates [**concierge**]: Name the locker on the locker bookings listing
 - Interfaces/Templates [**outlook-addin**]: Keep desk links in sync with the outlook item
 - Interfaces/Templates [**e2e**]: Make driver seeding safe to re-run on a reused stack
 - Interfaces/Templates [**signage-manager**]: Ppt-2649 enable zone search before a zone is selected
-- Interfaces/Templates [**bookings**]: Type the untyped booking from loadform
 - Interfaces/Templates [**concierge**]: Show progress while the directory loads, notify once per failure run
 - Interfaces/Templates [**bookings**]: Keep native booking children scoped to their parent
 - Interfaces/Templates [**signage-manager**]: Ppt-2649 keep unscoped zone search usable
-- Interfaces/Templates [**concierge**]: Give room approvals 30s to complete
-- Interfaces/Templates [**concierge**]: Update sidebar labels when translations load
-- Interfaces/Templates [**lint**]: Clear all lint errors in the workspace
-- Interfaces/Templates [**schedule**]: List every page of a day's bookings on your bookings
 - Interfaces/Templates [**mobile**]: Update capacitor to 8.5.3
 - Libraries/Driver [**proxy**]: Return implementing modules in the system's module order (ppt-2816) ([#172](https://github.com/PlaceOS/placeos-driver/pull/172))
 - Libraries/Models [**booking**]: Ppt-2436 expand a cancelled series when include_deleted is set ([#331](https://github.com/PlaceOS/placeos-models/pull/331))
 - Libraries/Models [**model**]: Pgenumconverter correctly underscores
-- Libraries/Models [**booking**]: Sql injection
-- Libraries/Models [**survey**]: Improve validation
-- Libraries/Models [**survey**]: Question versioning
-- Libraries/Models [**purchase_order**]: Associate with an authority
 - Local [**ci**]: Render the service graph with its connections
 - Local [**compose**]: Staff-api depends on redis
 - Services/Auth.cr [**client_metadata**]: Accept clients that also support public auth
@@ -291,28 +256,14 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Changed
 
-- Interfaces/Backoffice [**nx**]: Upgrade to v23.3.0
 - Interfaces/Templates [**signage-manager**]: Share one cron module that matches the player
 - Interfaces/Templates [**signage-manager**]: Remove unused schedule form recurrence code
 - Interfaces/Templates [**signage-manager**]: Share the group features 404 handler
 - Interfaces/Templates [**signage-manager**]: Split signageservice by data type
 - Interfaces/Templates [**signage-manager**]: Share paged list loading
 - Interfaces/Templates [**signage-manager**]: Rename ai code to imagegen
-- Interfaces/Templates [**control**]: Remove dead code and merge duplicates
-- Interfaces/Templates: Remove dead code reported by fallow
-- Interfaces/Templates: Reduce complexity in the top fallow refactoring targets
-- Interfaces/Templates [**apps**]: Set initial bundle budgets from current sizes
-- Interfaces/Templates: Replace any with stricter types where the compiler allows
-- Interfaces/Templates: Remove unused code and add lifecycle interfaces
-- Interfaces/Templates [**lint**]: Allow any and non-null assertions in spec files
-- Interfaces/Templates [**nx**]: Update nx to 23.3.0
-- Interfaces/Templates [**hooks**]: Lint the working tree before a push
-- Interfaces/Templates [**lint**]: Replace eslint with oxlint for all rules but templates
-- Interfaces/Templates [**deps**]: Add the missing teams-js lockfile entry
 - Services/RestAPI [**users**]: Obtain resource tokens via user#resource_token from models ([#452](https://github.com/PlaceOS/rest-api/pull/452))
 - Services/StaffAPI: Remove rest-api client, access placeos directly ([#391](https://github.com/PlaceOS/staff-api/pull/391))
-- Swagger/RestAPI: Update for placeos-2.2609.6
-- Swagger/StaffAPI: Update for placeos-2.2609.6
 
 ## 2.2609.6
 
