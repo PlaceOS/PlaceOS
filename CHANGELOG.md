@@ -5,6 +5,315 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2610.4
+
+### Added
+
+- Clients/Typescript [**groups**]: Add default permissions and ad group mappings
+- Clients/Typescript [**auth**]: Add microsoft entra token exchange
+- Clients/Typescript [**http**]: Send app identity headers with every request
+- Interfaces/Backoffice [**groups**]: Configure default permissions and ad group sync
+- Interfaces/Backoffice [**admin**]: Default new signage ai providers to gpt-image-2.5-sunburst ([#318](https://github.com/PlaceOS/backoffice/pull/318))
+- Interfaces/Backoffice: Cut initial bundle size by 44%
+- Interfaces/Templates [**signage-manager**]: Add group default permissions and ad group sync
+- Interfaces/Templates [**outlook-addin**]: Calendar pane for rooms and desks
+- Interfaces/Templates [**workplace**]: Run as a teams and microsoft 365 personal tab
+- Interfaces/Templates [**signage-manager**]: Screenshot thumbnails for webpage and plugin media (ppt-2822)
+- Interfaces/Templates [**signage-manager**]: Build takeover blocks once per playlist
+- Interfaces/Templates [**outlook-addin**]: Sign in with nested app authentication
+- Interfaces/Templates [**auth**]: Exchange entra tokens for placeos tokens
+- Interfaces/Templates [**signage-manager**]: Ppt-2649 search all reachable zones
+- Interfaces/Templates: Make app icons easier to read at a glance
+- Interfaces/Templates [**common**]: Send app identity headers with api requests
+- Interfaces/Templates [**apps**]: Reduce initial bundle sizes
+- Interfaces/Templates [**common**]: Fetch the default locale and lazy-load the native domain form
+- Interfaces/Templates [**common**]: Load sentry and the snack bar on demand
+- Interfaces/Templates [**common**]: Keep forms, qr and upload libraries out of initial bundles
+- Interfaces/Templates [**concierge**]: Drop eager chips, dialog and timezone code from startup
+- Interfaces/Templates [**outlook-addin**]: Add parking to the calendar pane
+- Libraries/Eventbus: Replace installed cdc update policy on differing declaration
+- Libraries/Models [**group**]: Add default permission support
+- Libraries/Models [**group**]: Add ad group mapping support
+- Libraries/Models [**control_system**]: Add signage display dimension fields
+- Libraries/Models [**user**]: Add `user#resource_token` for delegated sso access ([#333](https://github.com/PlaceOS/placeos-models/pull/333))
+- Local [**compose**]: Add browserless browser service for rest-api screenshots
+- Services/Auth.cr [**entra_token_exchange**]: Add token exchange support
+- Services/Auth.cr [**oauth**]: Seamless authentication for mcp clients
+- Services/Auth.cr [**discovery**]: Serve oauth protected resource metadata (rfc 9728)
+- Services/Auth.cr [**registrations**]: Reuse matching clients and limit new ones globally
+- Services/Dispatch: Add support for tls connections
+- Services/RestAPI [**groups**]: Add ad group mapping support
+- Services/RestAPI [**uploads**]: Add web page screenshot capabilities ([#448](https://github.com/PlaceOS/rest-api/pull/448))
+- Services/RestAPI [**signage**]: Static media routes for e-ink displays
+- Services/RestAPI [**mcp**]: Expose the api as an mcp server
+- Services/RestAPI [**mcp**]: Call_tool proxy for claude and chatgpt
+- Services/RestAPI [**mcp**]: Call_read_only proxy, mark driver details as not read only
+- Services/RestAPI [**zones**]: Ppt-2649 search every zone the user can reach ([#449](https://github.com/PlaceOS/rest-api/pull/449))
+- Services/RestAPI [**chatgpt**]: Serve each system's plugin as an mcp endpoint
+- Services/RestAPI [**chatgpt**]: Hint call_function as read only
+- Services/RestAPI [**signage**]: Default signage ai image generation to gpt-image-2.5 ([#450](https://github.com/PlaceOS/rest-api/pull/450))
+- Services/RestAPI [**chatgpt**]: Describe each system in its mcp instructions
+- Services/RestAPI [**assets**]: Scope asset records to the caller's authority
+- Services/StaffAPI [**MCP**]: Add mcp support and clean up tech debt
+- Services/StaffAPI [**assets**]: Add asset controllers ported from rest-api
+- Services/StaffAPI [**MCP**]: Spaces, cards and lean booking tools
+- Services/StaffAPI [**MCP**]: Nearby desks and a lean desk booking tool
+- Services/StaffAPI [**MCP**]: Show a booking's asset on its level map
+- Services/StaffAPI [**MCP**]: Desk booking prompt and free desk listing
+- Services/StaffAPI [**MCP**]: Desks near colleagues, space photos and space map
+- Services/StaffAPI [**MCP**]: Prompts for booking rooms and checking bookings and meetings
+- Services/StaffAPI [**MCP**]: Card fixes, meeting availability and rooms on the staff card
+
+### Fixed
+
+- Interfaces/Backoffice [**systems**]: Keep module connection state after power toggle
+- Interfaces/Backoffice [**modules**]: Correct inverted start/stop controls on about page
+- Interfaces/Backoffice [**zones**]: Keep parent zone when saving before it loads
+- Interfaces/Backoffice [**triggers**]: Repair instance list, mailer reorder and zone removal
+- Interfaces/Backoffice [**triggers**]: Build and parse valid cron schedules
+- Interfaces/Backoffice [**i18n**]: Add missing locale keys and fix mistyped keys
+- Interfaces/Backoffice [**overlays**]: Block confirm dismissal while its action runs
+- Interfaces/Backoffice: Stop cancelled confirm dialogs from running actions
+- Interfaces/Backoffice [**ui**]: Escape user names in confirm modal and editor html
+- Interfaces/Backoffice [**app**]: Drop unused x-api-key url param handler
+- Interfaces/Backoffice: Show real api error messages in toasts
+- Interfaces/Backoffice [**drivers**]: Repair module removal, update checks and driver form
+- Interfaces/Backoffice [**ui**]: Stop bypassing href sanitising for stored uris
+- Interfaces/Backoffice: Only show success toasts when the request succeeds
+- Interfaces/Backoffice [**admin**]: Sandbox signage plugin embed to an opaque origin
+- Interfaces/Backoffice [**ui**]: Ignore hotkeys when unlisted modifiers are held
+- Interfaces/Backoffice [**systems**]: Keep tab state per system and stop form resets
+- Interfaces/Backoffice [**admin**]: Stop losing api key expiry, edge keys and extensions
+- Interfaces/Backoffice [**common**]: Drop stale item loads and keep settings saved mid-flight
+- Interfaces/Backoffice [**triggers**]: Stop removing the wrong action or condition
+- Interfaces/Backoffice [**domains**]: Keep oauth client id and handle empty settings
+- Interfaces/Backoffice [**csv**]: Parse quoted newlines and crlf line endings
+- Interfaces/Backoffice: Correct small logic and markup bugs
+- Interfaces/Backoffice [**ui**]: Save only editable dirty settings levels
+- Interfaces/Backoffice [**zones**]: Load full lists and fix user, group and zone forms
+- Interfaces/Backoffice: Handle rejections that left spinners and modals stuck
+- Interfaces/Backoffice [**a11y**]: Link form labels to inputs and label password toggles
+- Interfaces/Backoffice [**overlays**]: Repair metadata, duplicate, bulk add and auth modals
+- Interfaces/Backoffice [**ui**]: Validate extension embed urls and frame messages
+- Interfaces/Backoffice: Derive loading state from each resource
+- Interfaces/Backoffice: Bound polling and fix timer handles
+- Interfaces/Backoffice [**app**]: Update shell state for tenants, uploads, offline and locale
+- Interfaces/Backoffice [**admin**]: Repair tenant expiry, imports, uploads and cluster lookup
+- Interfaces/Backoffice [**systems**]: Use a strict check for the public row
+- Interfaces/Backoffice: Use signals where async work updates the view
+- Interfaces/Backoffice [**settings**]: Default debug output to off in production
+- Interfaces/Backoffice [**app**]: Load full browser locale tag again
+- Interfaces/Backoffice [**a11y**]: Satisfy template lint rules
+- Interfaces/Backoffice: Keep select dialogs working after confirm check change
+- Interfaces/Backoffice [**systems**]: Show loading while removing a trigger or module
+- Interfaces/Backoffice [**triggers**]: Say action, not condition, in action save toasts
+- Interfaces/Backoffice [**i18n**]: Correct broker host, reorder and settings error strings
+- Interfaces/Backoffice [**groups**]: Refresh and clear the parent when the authority changes
+- Interfaces/Backoffice [**domains**]: Show the stored client id for existing apps
+- Interfaces/Backoffice [**csv**]: Keep columns missing from the first row on export
+- Interfaces/Backoffice [**repositories**]: Block save when branch is empty
+- Interfaces/Backoffice [**drivers**]: Refresh module count and name module in remove confirm
+- Interfaces/Backoffice [**systems**]: Use renamed warn colour for changed zones
+- Interfaces/Backoffice [**admin**]: Clear outlook config when the toggle is off
+- Interfaces/Backoffice [**app**]: Show offline, lang and secret expiry banners
+- Interfaces/Backoffice [**triggers**]: Save custom cron at once and stop date fields submitting the form
+- Interfaces/Backoffice [**ui**]: Dispose diff models after the editor swaps them
+- Interfaces/Backoffice: Stop stuck loading bars and unhandled rejections
+- Interfaces/Backoffice: Show readable api errors when entity saves fail
+- Interfaces/Backoffice [**a11y**]: Stop password toggles from focusing the input
+- Interfaces/Backoffice [**a11y**]: Link remaining form labels to their controls
+- Interfaces/Backoffice [**ui**]: Escape item names in search field options
+- Interfaces/Backoffice [**ui**]: Scope hotkeys to the top dialog and ignore modifier order
+- Interfaces/Backoffice [**ui**]: Require scheme:// form for driver and module uris
+- Interfaces/Backoffice: Notify and return instead of rethrowing after error toasts
+- Interfaces/Backoffice [**admin**]: Show a readable error when a zone tree import fails
+- Interfaces/Backoffice: Clear outlook config and name modules in system remove confirm
+- Interfaces/Backoffice [**a11y**]: Link the trigger reference system label
+- Interfaces/Backoffice [**groups**]: Drop parent clear button
+- Interfaces/Backoffice [**extensions**]: Load admin tabs and reply to all frame requests
+- Interfaces/Backoffice [**build**]: Use node fs in the version script
+- Interfaces/Templates [**bookings**]: Save full day for all-day room bookings (ppt-2804)
+- Interfaces/Templates [**common**]: Apply synced user groups after first load (ppt-2811)
+- Interfaces/Templates [**bookings**]: Update the bookings linked to an event in place
+- Interfaces/Templates [**bookings**]: Send booking times and skip no-op linked booking updates
+- Interfaces/Templates [**bookings**]: Pre-select nearby desk (ppt-2663)
+- Interfaces/Templates [**concierge**]: Prevent data loss and unsafe signage urls
+- Interfaces/Templates [**concierge**]: Repair broken booking, report and survey features
+- Interfaces/Templates [**concierge**]: Recover modals and spinners after failed requests
+- Interfaces/Templates [**concierge**]: Keep event calendar and open map picker on the right level
+- Interfaces/Templates [**concierge**]: Address local testing findings for modal error handling
+- Interfaces/Templates [**concierge**]: Show response status in translated error toasts
+- Interfaces/Templates [**concierge**]: Fix bugs found while testing against local placeos
+- Interfaces/Templates [**concierge**]: Show new parking spaces at once and hide stale overlay
+- Interfaces/Templates [**concierge**]: Address local testing findings for tester fixes
+- Interfaces/Templates [**form-fields**]: Start a new range on the first date picker click
+- Interfaces/Templates [**form-fields**]: Keep a valid date range and guard user search
+- Interfaces/Templates [**concierge**]: Write both report dates in one url update
+- Interfaces/Templates [**signage-manager**]: Guard the template live preview player path
+- Interfaces/Templates [**signage-manager**]: Only allow http(s) webpage media urls
+- Interfaces/Templates [**signage-manager**]: Show takeover conflict times in clock time across dst
+- Interfaces/Templates [**signage-manager**]: Label the command palette for screen readers
+- Interfaces/Templates [**signage-manager**]: Keep lists, permissions and flags on the settled group
+- Interfaces/Templates [**signage-manager**]: Load every display and playlist on the schedules page
+- Interfaces/Templates [**signage-manager**]: Harden ai image job, rail and save flows
+- Interfaces/Templates [**signage-manager**]: Keep template edits and show template errors
+- Interfaces/Templates [**signage-manager**]: Tighten group admin, sharing and branding
+- Interfaces/Templates [**signage-manager**]: Keep media list state through uploads and failures
+- Interfaces/Templates [**signage-manager**]: Read only video headers to check codecs
+- Interfaces/Templates [**signage-manager**]: Harden playlist approval, editing and loading
+- Interfaces/Templates [**signage-manager**]: Show overlapping and overnight blocks on the schedule timeline
+- Interfaces/Templates [**signage-manager**]: Reload the content report and show partial checks
+- Interfaces/Templates [**signage-manager**]: Keep schedule form state when a schedule is removed
+- Interfaces/Templates [**signage-manager**]: Translate the item schedules label
+- Interfaces/Templates [**signage-manager**]: Fix display and zone data, errors and paging
+- Interfaces/Templates [**signage-manager**]: Make zone trees keyboard accessible and retryable
+- Interfaces/Templates [**signage-manager**]: Add display and zone error keys to the default locale
+- Interfaces/Templates [**signage-manager**]: Keep the current parent in the group edit modal
+- Interfaces/Templates [**signage-manager**]: Save webpage urls in their parsed form
+- Interfaces/Templates [**signage-manager**]: Scope display lookups to the group and count saves
+- Interfaces/Templates [**signage-manager**]: Show the parent name for an unlisted parent group
+- Interfaces/Templates [**signage-manager**]: Wait for the live user and accept a missing flags route
+- Interfaces/Templates [**signage-manager**]: Check layout positions before saving a template
+- Interfaces/Templates [**signage-manager**]: Add elapsed time for play end times across dst
+- Interfaces/Templates [**signage-manager**]: Show the date of a display last seen before today
+- Interfaces/Templates [**signage-manager**]: Keep media total in sync and show errors in folders
+- Interfaces/Templates [**signage-manager**]: Retry playlist list and show version load errors
+- Interfaces/Templates [**signage-manager**]: Keep the display total when later pages lag
+- Interfaces/Templates [**signage-manager**]: Name media checkboxes and bulk action buttons
+- Interfaces/Templates [**signage-manager**]: Show the date in timeline last seen before today
+- Interfaces/Templates [**signage-manager**]: Label unreadable parents and accept a missing features route
+- Interfaces/Templates [**signage-manager**]: Fall back to plugin thumbnail when screenshot fails
+- Interfaces/Templates [**control**]: Sanitize help content and stop runaway camera moves
+- Interfaces/Templates [**control**]: Stop stuck spinners and stale room state
+- Interfaces/Templates [**control**]: Tab defaults, voice lifecycle and recording controls
+- Interfaces/Templates [**control**]: Restore unknown system redirect and e2e splash selector
+- Interfaces/Templates [**control**]: Readable errors, calendar loading and call page fixes
+- Interfaces/Templates [**bookings**]: Recreate linked bookings when a host change moves the event
+- Interfaces/Templates [**control**]: Meeting list opens once, driver error text, call help space
+- Interfaces/Templates [**signage**]: Correct takeover, trigger and random playlist scheduling
+- Interfaces/Templates [**signage**]: Recover from stalled plugins, hung recovery and failed boot
+- Interfaces/Templates [**signage**]: Bound media cache storage, bandwidth and memory
+- Interfaces/Templates [**control**]: Handle hang-up failure without rethrowing
+- Interfaces/Templates [**signage**]: Play single-pass takeovers apart from timed takeovers
+- Interfaces/Templates [**signage**]: Retry a lone silent plugin and stop competing reloads
+- Interfaces/Templates [**signage**]: Keep playback in the cache budget and fall back to network
+- Interfaces/Templates [**signage**]: Limit single-pass media by the single-pass schedule
+- Interfaces/Templates [**signage**]: Stop parallel downloads spending the same cache room
+- Interfaces/Templates [**control**]: Leave the call page once when a call ends
+- Interfaces/Templates [**control**]: Stop voice at once and drop pending commands on room change
+- Interfaces/Templates [**control**]: Clear the recalled preset when the camera changes
+- Interfaces/Templates [**control**]: Keep later call choices and new chat sockets
+- Interfaces/Templates [**signage**]: Keep display updates, cron and metrics reliable
+- Interfaces/Templates [**signage**]: Stop playback leaks, restarts and stalls
+- Interfaces/Templates [**signage-manager**]: Keep group selection and lists stable
+- Interfaces/Templates [**signage-manager**]: Fix display and zone selection and states
+- Interfaces/Templates [**signage-manager**]: Fix shared list, decode and picker behaviour
+- Interfaces/Templates [**signage**]: Remember remote pause and retry template loads
+- Interfaces/Templates [**signage**]: Keep a bootstrapped player off the display picker
+- Interfaces/Templates [**signage**]: Stop watchdog reloads on the picker and clock jumps
+- Interfaces/Templates [**signage-manager**]: Fix brand kit saves and image editor flows
+- Interfaces/Templates [**signage-manager**]: Keep templates on their live id
+- Interfaces/Templates [**signage-manager**]: Fix media uploads, selection and animations
+- Interfaces/Templates [**signage-manager**]: Fix playlist approval, adding media and status
+- Interfaces/Templates [**signage-manager**]: Match schedule conflicts to the player
+- Interfaces/Templates [**signage**]: Keep watchdog limits and times through clock corrections
+- Interfaces/Templates [**signage**]: Keep the message of non-error values in the error handler
+- Interfaces/Templates [**signage-manager**]: Retry the failed playlist page and skip stale link warnings
+- Interfaces/Templates [**signage**]: Keep template content on screen when a retry fails
+- Interfaces/Templates [**signage**]: Reload failed preloads and drop stale url results
+- Interfaces/Templates [**signage-manager**]: End schedule runs after their elapsed length
+- Interfaces/Templates [**signage-manager**]: Decode names once and retry only the current search
+- Interfaces/Templates [**signage**]: Find long cron runs and keep completed takeovers done
+- Interfaces/Templates [**signage-manager**]: Open the media edit dialog before the thumbnail renders
+- Interfaces/Templates [**signage-manager**]: Clean up image jobs abandoned when the editor closes
+- Interfaces/Templates [**signage-manager**]: Show zone count and playlist load failures
+- Interfaces/Templates [**signage-manager**]: Open the first group per account and keep rows on failed reloads
+- Interfaces/Templates [**signage-manager**]: Open template links reliably and lock undo while it runs
+- Interfaces/Templates [**signage**]: Keep template content only on a retry of the same assignment
+- Interfaces/Templates [**signage-manager**]: Keep the empty playlist tab for items with no playlists
+- Interfaces/Templates [**signage-manager**]: Retry a failed template link on list retry
+- Interfaces/Templates [**bookings**]: Keep catering orders on edit and stop on a failed lookup
+- Interfaces/Templates [**signage-manager**]: Fill the frame with unpositioned floating panels
+- Interfaces/Templates [**signage**]: Fill the frame with unpositioned floating items
+- Interfaces/Templates [**signage**]: Keep plugin transitions visible until paint
+- Interfaces/Templates [**booking-panel**]: Prevent booking modal button reloading page
+- Interfaces/Templates [**booking-panel**]: Avoid staff api queries for immediate bookings
+- Interfaces/Templates [**signage-manager**]: Tidy image generation and align its styling
+- Interfaces/Templates [**booking-panel**]: Save api bookings with the correct end time
+- Interfaces/Templates [**booking-panel**]: Allow check-in booking with upcoming bookings
+- Interfaces/Templates [**common**]: Don't stall startup when analytics fails to initialise
+- Interfaces/Templates [**bookings**]: Hide empty action menu after early check-in (ppt-2629)
+- Interfaces/Templates [**events**]: Keep delegated host for native room bookings
+- Interfaces/Templates [**bookings**]: Keep meeting title on native room bookings
+- Interfaces/Templates [**concierge**]: Open catering pages from landing tiles
+- Interfaces/Templates [**events**]: Keep public event visibility and edits correct ppt-2247
+- Interfaces/Templates [**concierge**]: Warn when room calendars do not load
+- Interfaces/Templates [**bookings**]: Store the flow type on a quick-book booking
+- Interfaces/Templates [**bookings**]: Link catering and equipment to native room bookings
+- Interfaces/Templates [**bookings**]: Let a locker be chosen and booked from the locker form
+- Interfaces/Templates [**concierge**]: Survive a failing staff directory call
+- Interfaces/Templates [**bookings**]: Leave approval to the backend for users who cannot approve
+- Interfaces/Templates [**bookings**]: Set the flow type when the booking form opens
+- Interfaces/Templates [**concierge**]: Show a retryable error when staff data fails to load
+- Interfaces/Templates [**booking-panel**]: Use disable_qr_booking to hide checkin book buttons
+- Interfaces/Templates [**concierge**]: Name the locker on the locker bookings listing
+- Interfaces/Templates [**outlook-addin**]: Keep desk links in sync with the outlook item
+- Interfaces/Templates [**e2e**]: Make driver seeding safe to re-run on a reused stack
+- Interfaces/Templates [**signage-manager**]: Ppt-2649 enable zone search before a zone is selected
+- Interfaces/Templates [**bookings**]: Type the untyped booking from loadform
+- Interfaces/Templates [**concierge**]: Show progress while the directory loads, notify once per failure run
+- Interfaces/Templates [**bookings**]: Keep native booking children scoped to their parent
+- Interfaces/Templates [**signage-manager**]: Ppt-2649 keep unscoped zone search usable
+- Interfaces/Templates [**concierge**]: Give room approvals 30s to complete
+- Interfaces/Templates [**concierge**]: Update sidebar labels when translations load
+- Interfaces/Templates [**lint**]: Clear all lint errors in the workspace
+- Interfaces/Templates [**schedule**]: List every page of a day's bookings on your bookings
+- Interfaces/Templates [**mobile**]: Update capacitor to 8.5.3
+- Libraries/Driver [**proxy**]: Return implementing modules in the system's module order (ppt-2816) ([#172](https://github.com/PlaceOS/placeos-driver/pull/172))
+- Libraries/Models [**booking**]: Ppt-2436 expand a cancelled series when include_deleted is set ([#331](https://github.com/PlaceOS/placeos-models/pull/331))
+- Libraries/Models [**model**]: Pgenumconverter correctly underscores
+- Libraries/Models [**booking**]: Sql injection
+- Libraries/Models [**survey**]: Improve validation
+- Libraries/Models [**survey**]: Question versioning
+- Libraries/Models [**purchase_order**]: Associate with an authority
+- Local [**ci**]: Render the service graph with its connections
+- Local [**compose**]: Staff-api depends on redis
+- Services/Auth.cr [**client_metadata**]: Accept clients that also support public auth
+- Services/Core [**mappings**]: Serialise module mapping writes for a system (ppt-2816) ([#293](https://github.com/PlaceOS/core/pull/293))
+- Services/Edge [**mappings**]: Serialise module mapping writes for a system (ppt-2816) ([#293](https://github.com/PlaceOS/edge/pull/293))
+- Services/RestAPI [**ms-token-exchange**]: Improve security
+- Services/RestAPI [**signage**]: Samsung eink content duration
+- Services/RestAPI [**params**]: Accept json arrays for comma separated list params
+- Services/StaffAPI [**bookings**]: Checkout guests when booking checked out
+- Services/StaffAPI [**bookings**]: Ppt-2436 keep cancelled recurring occurrences when include_deleted is set ([#387](https://github.com/PlaceOS/staff-api/pull/387))
+- Services/StaffAPI [**bookings**]: Ppt-2436 list a cancelled series when include_deleted is set ([#388](https://github.com/PlaceOS/staff-api/pull/388))
+- Services/StaffAPI [**events**]: A meeting moved to a new host is sent with the attendees as given (ppt-2640) ([#389](https://github.com/PlaceOS/staff-api/pull/389))
+
+### Changed
+
+- Interfaces/Backoffice [**nx**]: Upgrade to v23.3.0
+- Interfaces/Templates [**signage-manager**]: Share one cron module that matches the player
+- Interfaces/Templates [**signage-manager**]: Remove unused schedule form recurrence code
+- Interfaces/Templates [**signage-manager**]: Share the group features 404 handler
+- Interfaces/Templates [**signage-manager**]: Split signageservice by data type
+- Interfaces/Templates [**signage-manager**]: Share paged list loading
+- Interfaces/Templates [**signage-manager**]: Rename ai code to imagegen
+- Interfaces/Templates [**control**]: Remove dead code and merge duplicates
+- Interfaces/Templates: Remove dead code reported by fallow
+- Interfaces/Templates: Reduce complexity in the top fallow refactoring targets
+- Interfaces/Templates [**apps**]: Set initial bundle budgets from current sizes
+- Interfaces/Templates: Replace any with stricter types where the compiler allows
+- Interfaces/Templates: Remove unused code and add lifecycle interfaces
+- Interfaces/Templates [**lint**]: Allow any and non-null assertions in spec files
+- Interfaces/Templates [**nx**]: Update nx to 23.3.0
+- Interfaces/Templates [**hooks**]: Lint the working tree before a push
+- Interfaces/Templates [**lint**]: Replace eslint with oxlint for all rules but templates
+- Interfaces/Templates [**deps**]: Add the missing teams-js lockfile entry
+- Services/RestAPI [**users**]: Obtain resource tokens via user#resource_token from models ([#452](https://github.com/PlaceOS/rest-api/pull/452))
+- Services/StaffAPI: Remove rest-api client, access placeos directly ([#391](https://github.com/PlaceOS/staff-api/pull/391))
+- Swagger/RestAPI: Update for placeos-2.2609.6
+- Swagger/StaffAPI: Update for placeos-2.2609.6
+
 ## 2.2609.6
 
 ### Added
