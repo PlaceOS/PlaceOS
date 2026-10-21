@@ -5,6 +5,385 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2610.2
+
+### Fixed
+
+- Clients/Typescript [**test**]: Use jsdom's localstorage on node 25+
+- Interfaces/Backoffice [**ui**]: Stop the required-marker colour applying to checkboxes
+- Interfaces/Backoffice [**build**]: Stop the @layer polyfill overriding material styles
+- Interfaces/Backoffice: Repair zone bulk-add, import links, edge keys and driver modules
+- Interfaces/Backoffice [**ui**]: Stop edit modals and forms dropping unsaved work
+- Interfaces/Backoffice [**ui**]: Name delete targets and report failed list loads
+- Interfaces/Backoffice [**ui**]: Fit tablet layouts, readable dark placeholders, closable menus
+- Interfaces/Backoffice [**ui**]: Name icon buttons, guard hotkeys and fix copy
+- Interfaces/Templates [**workplace**]: Fix topbar date picker
+- Interfaces/Templates [**workplace**]: Fix zone filters for new room and desk flows
+- Interfaces/Templates [**workplace**]: Fix opening event details on week view
+- Interfaces/Templates [**form-fields**]: Add scrolling to selected item list for time and duration fields
+- Interfaces/Templates [**form-field**]: Fix date selection of past times
+- Interfaces/Templates [**workplace**]: Fix saving multiple contacts
+- Interfaces/Templates [**workplace**]: Various fixes to map selection for desks and meetings
+- Interfaces/Templates [**workplace**]: Fix schedule filters affecting the upcoming view on landing
+- Interfaces/Templates: Ignore empty lines in csv files
+- Interfaces/Templates [**workplace**]: Fix handling of ending bookings early
+- Interfaces/Templates [**workplace**]: Add handling for ending all day bookings early
+- Interfaces/Templates: Fix wording of allow/deny on booking rules form
+- Interfaces/Templates [**workplace**]: Fix positioning of events on day calendar
+- Interfaces/Templates [**workplace**]: Fix updating the display of time on new meeting flow on changes
+- Interfaces/Templates [**bookings**]: Fix zone handling for visitor bookings
+- Interfaces/Templates [**workplace**]: Re-enable recent visitors
+- Interfaces/Templates [**workplace**]: Tweaks to fix visitor issues
+- Interfaces/Templates [**workplace**]: Remove undefined recent visitors from view
+- Interfaces/Templates [**workplace**]: Load resource data for favourites after org initialised
+- Interfaces/Templates [**workplace**]: Fix various visitor edit bugs
+- Interfaces/Templates [**workplace**]: Fix selecting desk from favourites to book (ppt-2404)
+- Interfaces/Templates [**workplace**]: Save visitor phone to history (ppt-2333)
+- Interfaces/Templates [**workplace**]: Fix changing buildings for visitor bookings
+- Interfaces/Templates [**workplace**]: Fix parking filter showing on schedule view
+- Interfaces/Templates [**workplace**]: Fix desk group booking details on success
+- Interfaces/Templates [**workplace**]: Fix capacity display for -1
+- Interfaces/Templates [**workplace**]: Add visitor scoped settings for can_book_for...
+- Interfaces/Templates [**workplace**]: Hide team schedule colleague actions when feature disabled (ppt-2448)
+- Interfaces/Templates [**workplace**]: Fix showing host select field on visitor form
+- Interfaces/Templates [**workplace**]: Tweak handling of editing booking start times
+- Interfaces/Templates [**workplace**]: Align upcoming booking actions with availability
+- Interfaces/Templates [**workplace**]: Correct sidebar embed layout
+- Interfaces/Templates [**workplace**]: Handle desk asset query param race
+- Interfaces/Templates [**workplace**]: Clear desk selection on building change
+- Interfaces/Templates [**workplace**]: Keep selected desk visible after list changes
+- Interfaces/Templates [**workplace**]: Update building for desk query param
+- Interfaces/Templates [**workplace**]: Allow weekend desk week bookings
+- Interfaces/Templates [**workplace**]: Keep spaces dropdowns accessible proj-1868
+- Interfaces/Templates [**workplace**]: Honour desk all-day default
+- Interfaces/Templates [**workplace**]: Make auto-assigned desks all-day
+- Interfaces/Templates [**workplace**]: Limit desk booking date range
+- Interfaces/Templates [**workplace**]: Hide group container details on desk success form
+- Interfaces/Templates [**concierge**]: Apply desk all day default
+- Interfaces/Templates [**workplace**]: Proj-1898 keep visitor time fields visible
+- Interfaces/Templates [**workplace**]: Proj-1900 guard dirty visitor invite navigation
+- Interfaces/Templates [**concierge**]: Proj-1902 align parking request edit form
+- Interfaces/Templates [**workplace**]: Apply recurrence changes to new forms
+- Interfaces/Templates [**workplace**]: Fix visitor search value being undefined/null
+- Interfaces/Templates [**workplace**]: Preserve monthly recurrence start ppt-2509
+- Interfaces/Templates [**workplace**]: Proj-1919 persist colleague desk booking type
+- Interfaces/Templates [**events**]: Fix saving room data (proj-1918)
+- Interfaces/Templates [**workplace**]: Restore edited room selection ppt-2528
+- Interfaces/Templates [**workplace**]: Complete nearby desk bookings ppt-2527
+- Interfaces/Templates [**events**]: Preserve monthly recurrence metadata ppt-2526
+- Interfaces/Templates [**auth**]: Preserve mobile auth cookies
+- Interfaces/Templates [**workplace**]: Clear plate number validators on desk form
+- Interfaces/Templates [**workplace**]: Fix plate number validator propagating to other types
+- Interfaces/Templates [**workplace**]: Fix landing desk calendar not applying selected date on book
+- Interfaces/Templates [**workplace**]: Preserve parking request shift duration
+- Interfaces/Templates [**workplace**]: Fix parking space display on schedule views
+- Interfaces/Templates [**workplace**]: Limit desk week booking navigation
+- Interfaces/Templates [**workplace**]: Tweak check for booking type
+- Interfaces/Templates [**concierge**]: Fix parking request form modal
+- Interfaces/Templates [**workplace**]: Add way to select dates for schedule list on mobile
+- Interfaces/Templates [**events**]: Return saved booking after post ppt-2462
+- Interfaces/Templates [**workplace**]: Disable delete action for ended bookings on landing
+- Interfaces/Templates [**bookings**]: Combine booked with clashes for availability
+- Interfaces/Templates [**workplace**]: Tweak level selection when on map view
+- Interfaces/Templates [**workplace**]: Fix z-indexing of layout items on mobile
+- Interfaces/Templates [**concierge**]: Allow searching parking bookings by plate number
+- Interfaces/Templates [**concierge**]: Add default sort by bay number on parking bookings
+- Interfaces/Templates [**concierge**]: Add ability to sort parking bookings by plate number
+- Interfaces/Templates [**workplace**]: Prevent deleting early-ended bookings from home page
+- Interfaces/Templates [**workplace**]: Fix initialising event form state on meeting form
+- Interfaces/Templates [**concierge**]: Fix sorting of parking bay numbers
+- Interfaces/Templates [**workplace**]: Tweak desk select mobile filter overlay
+- Interfaces/Templates [**concierge**]: Tweak handling of bay number displays
+- Interfaces/Templates [**catering**]: Fix infinite loop after adding order
+- Interfaces/Templates [**bookings**]: Restrict booking extension data
+- Interfaces/Templates [**bookings**]: Generalize reserved-resource booking restriction
+- Interfaces/Templates [**events**]: Keep submitted meeting success details
+- Interfaces/Templates [**events**]: Preserve selected meeting booking time
+- Interfaces/Templates [**bookings**]: Restore booking form save payload filtering
+- Interfaces/Templates [**concierge**]: Fix parking report checked in time
+- Interfaces/Templates [**assets**]: Update parking space pipe to return unallocated for unallocated spaces
+- Interfaces/Templates [**concierge**]: Normalise parking csv imports
+- Interfaces/Templates [**org**]: Fallback to individual requests for settings metadata
+- Interfaces/Templates [**concierge**]: Sort parking user groups
+- Interfaces/Templates [**workplace**]: Restore desk map selection (proj-1950)
+- Interfaces/Templates [**bookings**]: Fix signal error for desk select modal map
+- Interfaces/Templates [**concierge**]: Show parking restriction names
+- Interfaces/Templates [**workplace**]: Fix max width of room/desk names on form select list
+- Interfaces/Templates [**workplace**]: Remove duplicate event location on landing upcoming card
+- Interfaces/Templates [**workplace**]: Preserve desk selection across building change
+- Interfaces/Templates [**workplace**]: Restore desk booking button after qr scan
+- Interfaces/Templates [**workplace**]: Reset visitor form state
+- Interfaces/Templates [**workplace**]: Hide inactive bookings from landing
+- Interfaces/Templates [**concierge**]: Use configurable parking waitlist cutoff
+- Interfaces/Templates [**workplace**]: Fix applying selected building to visitor bookings
+- Interfaces/Templates [**workplace**]: Fix floating overlay element anchoring to scrolled elements
+- Interfaces/Templates [**workplace**]: Apply waitlist cutoffs to schedule views
+- Interfaces/Templates [**bookings**]: Support multi-level desk filters
+- Interfaces/Templates [**bookings**]: Use current form for availability requests
+- Interfaces/Templates [**bookings**]: Preserve availability when selecting desks
+- Interfaces/Templates [**bookings**]: Honour visitor duration settings
+- Interfaces/Templates [**signage-manager**]: Unshare deleted items by group ppt-2651
+- Interfaces/Templates [**workplace**]: Update unallocated parking actions
+- Interfaces/Templates [**concierge**]: Show parking allocation groups
+- Interfaces/Templates [**concierge**]: Bound parking booking pagination
+- Interfaces/Templates [**visitor-kiosk**]: Improve qr code scanning
+- Interfaces/Templates [**common**]: Recover stalled zone loading
+- Interfaces/Templates [**ci**]: Repair affected app builds
+- Interfaces/Templates [**loading-screen**]: Reduce zone load timeout from 120s to 30s
+- Interfaces/Templates [**auth**]: Update client to recover expired-token requests
+- Interfaces/Templates: Sort parking levels below normal building levels
+- Interfaces/Templates [**explore**]: Preserve location selection and building bindings
+- Interfaces/Templates [**workplace**]: Hide cancelled bookings from calendars (hio-488)
+- Interfaces/Templates [**bookings**]: Hide actions for cancelled bookings (hio-488)
+- Interfaces/Templates [**workplace**]: Keep cancelled days of recurring bookings (hio-488)
+- Interfaces/Templates [**workplace**]: Show server error when booking cancel fails (hio-489)
+- Interfaces/Templates [**common**]: Report identifiable ga4 page views per route (hio687as) ([#560](https://github.com/PlaceOS/templates/pull/560))
+- Interfaces/Templates [**workplace**]: Give the new landing and booking flows parity with the old ones
+- Interfaces/Templates [**concierge**]: Remove the fixed ga4 id and fix the parking lists
+- Interfaces/Templates: Restore shared library behaviour for all apps
+- Interfaces/Templates [**bookings**]: Keep desk form choices across the initialisation reset (ppt-2643)
+- Interfaces/Templates [**map-editor**]: Validator accepts server bookkeeping, locks hides, denies style markup, warns on wrappers
+- Interfaces/Templates [**map-editor**]: Applier reports dropped tspans, anchors style rule matches, refuses editor attributes
+- Interfaces/Templates [**map-editor**]: Op bookkeeping fields, replacement deny tags and one attribute allow-list
+- Interfaces/Templates [**map-editor**]: Decode css escapes before the style safety checks
+- Interfaces/Templates [**map-editor**]: Plural layer groups are not bookable
+- Interfaces/Templates [**map-editor**]: One session contract for the editor and the ai panel
+- Interfaces/Templates [**bookings**]: Keep edits on non-desk forms after a form clear (ppt-2643)
+- Interfaces/Templates [**map-editor**]: Rebuild the session index once the map is rendered
+- Interfaces/Templates [**map-editor**]: Measure the trial document with attribute geometry
+- Interfaces/Templates [**workplace**]: Keep desk form choices in the new desk flow (ppt-2643)
+- Interfaces/Templates [**concierge**]: Keep a map's file name across saves and show it in the list
+- Interfaces/Templates [**workplace**]: Keep the prefilled value when a home shortcut opens the meeting form
+- Interfaces/Templates [**map-editor**]: Include complete furniture and named label context
+- Interfaces/Templates [**map-editor**]: Refresh remaining ai usage after submission
+- Interfaces/Templates [**workplace**]: Keep the prefilled value when a shortcut of the new home page opens the meeting form
+- Interfaces/Templates [**stagehand**]: Refetch a system's modules before dropping an unknown alert
+- Interfaces/Templates [**workplace**]: Show international visitor option in visitor flow
+- Interfaces/Templates [**bookings**]: Start new forms with the configured default duration (ppt-2851)
+- Interfaces/Templates [**booking-panel**]: Fix image loading
+- Interfaces/Templates [**control**]: Read acronyms letter by letter in voice replies
+- Interfaces/Templates [**users**]: Proj-1630 add an attendee from find availability only once
+- Interfaces/Templates [**control**]: Handle voice worker failures and stale speech
+- Interfaces/Templates [**components**]: Keep virtual table position on data refresh
+- Interfaces/Templates [**bookings**]: Keep loads off and find home building on first sign-in
+- Interfaces/Templates [**bookings**]: Keep the visitor internal or external type
+- Interfaces/Templates [**signage-manager**]: Show zone names when editing a display
+- Interfaces/Templates [**control**]: Keep source bindings when the same list is sent again
+- Interfaces/Templates [**control**]: Stop idle panels repainting the page every frame
+- Interfaces/Templates [**visitor-kiosk**]: Find email check-ins in the kiosk building
+- Interfaces/Templates [**map-editor**]: Smoother ai review panel and map selection
+- Interfaces/Templates [**common**]: Stop org settings overrides after teardown
+- Interfaces/Templates [**map-editor**]: Change only the ticked row's marker when a checkbox changes
+- Interfaces/Templates [**enrolment**]: Read internal_user_domain after domain overrides
+- Interfaces/Templates [**visitor-kiosk**]: Correct kiosk settings and the concierge kiosk form
+- Interfaces/Templates [**booking-panel**]: Show the dark logo and read missing system settings
+- Interfaces/Templates [**concierge**]: Correct dead, duplicate and misnamed settings
+- Interfaces/Templates [**workplace**]: Correct dead, duplicate and misnamed settings
+- Interfaces/Templates [**catering**]: Honour the legacy multiple spaces setting
+- Interfaces/Templates [**concierge**]: Save only changed settings in the app settings forms
+- Interfaces/Templates [**bookings**]: Use one locker booking window on every page
+- Interfaces/Templates [**enrolment**]: Stop loading every bookable space at startup
+- Interfaces/Templates [**concierge**]: Fix z-index of desk and parking refresh floating block
+- Interfaces/Templates [**concierge**]: Match booking list overflow to parking
+- Interfaces/Templates [**concierge**]: Match catering order list overflow to parking
+- Interfaces/Templates [**concierge**]: Refresh translated labels after locale changes
+- Interfaces/Templates [**map-editor**]: Clearer ai change rows
+- Interfaces/Templates [**map-editor**]: Undo marks and map changes in order, and explain the drawing tools
+- Interfaces/Templates [**map-editor**]: Review findings on the ai preview, undo and job polling
+- Interfaces/Templates [**map-editor**]: Tighter checks on ai style rules, new ids and replacement markup
+- Interfaces/Templates [**concierge**]: Save only the map on the level, and drop the old map modal
+- Interfaces/Templates [**map-studio**]: Fix editor save model, kiosk live data and other ux issues
+- Interfaces/Templates [**map-studio**]: Let imported kiosk rooms and desks take taps
+- Interfaces/Templates [**service-worker**]: Stop caching signed s3 upload urls
+- Interfaces/Templates [**service-worker**]: Cache s3 urls in a data group
+- Interfaces/Templates [**rich-text**]: Wait for upload completion before inserting image
+- Interfaces/Templates [**map-editor**]: Strip attributes with external url values
+- Interfaces/Templates [**concierge**]: Leave the booking available period unset by default
+- Interfaces/Templates [**concierge**]: Open map studio from links and allow the maps feature
+- Interfaces/Templates [**map-editor**]: Spread preview pins that would overlap (ppt-2846)
+- Interfaces/Templates [**workplace**]: Restore notify-new-attendees-only option in meeting edit flow
+- Interfaces/Templates [**bookings**]: Keep the visitor type in legacy group mode
+- Interfaces/Templates [**workplace**]: Validate the visitor reason in the booking form
+- Interfaces/Templates [**events**]: Address review of attendee flags
+- Interfaces/Templates [**map-editor**]: Accept dominant-baseline on ai-edited text (ppt-2832)
+- Interfaces/Templates [**concierge**]: Correct six booking and status logic bugs
+- Interfaces/Templates [**concierge**]: Keep data safe when loads fail or filters change
+- Interfaces/Templates [**workplace**]: Meeting flow ux fixes
+- Interfaces/Templates [**concierge**]: Make signage playlist workflows behave as shown
+- Interfaces/Templates [**concierge**]: Show loading states and announce table sorting
+- Interfaces/Templates [**workplace**]: Desk flow ux fixes
+- Interfaces/Templates [**concierge**]: Let the sidebar collapse and fit tables on laptops
+- Interfaces/Templates [**workplace**]: Visitor, parking, locker and code flow ux fixes
+- Interfaces/Templates [**concierge**]: Confirm destructive actions and show failed updates
+- Interfaces/Templates [**concierge**]: Correct small copy and accessibility issues
+- Interfaces/Templates [**workplace**]: Your bookings, team schedule and other page ux fixes
+- Interfaces/Templates [**workplace**]: Home page and app shell ux fixes
+- Interfaces/Templates [**concierge**]: Expand sidebar by default
+- Interfaces/Templates [**workplace**]: Update e2e specs for the ux audit changes
+- Libraries/Models [**groups**]: Allow multiple roots
+- Libraries/Models [**booking**]: Proj-1652 hydrate_parents with no parent ids ([#335](https://github.com/PlaceOS/placeos-models/pull/335))
+- Libraries/Models [**history**]: Keep existing event and template history ([#339](https://github.com/PlaceOS/placeos-models/pull/339))
+- Libraries/Models [**booking**]: Reject open-ended recurring bookings when a range is set
+- Libraries/PgOrm: Ignore ordering when calculating aggregates ([#24](https://github.com/PlaceOS/pg-orm/pull/24))
+- Libraries/PgOrm: Cursor pagination direction and cursors, raise on failed relation creates
+- Libraries/Resource: Page the initial load by key, not by offset ([#20](https://github.com/PlaceOS/placeos-resource/pull/20))
+- Services/Auth.cr [**deps**]: Use authly fork for crystal 1.22 support
+- Services/RestAPI [**groups**]: Allow multiple roots
+- Services/RestAPI [**constants**]: Default source hostname
+- Services/RestAPI [**mcp**]: Notify subscriptions once acknowledged
+- Services/RestAPI [**modules**]: State lookup returns "null" for unset keys
+- Services/Source [**mqtt**]: Keep retained state topics accurate ([#65](https://github.com/PlaceOS/source/pull/65))
+- Services/Source [**mqtt**]: Keep startup memory and time flat on large estates ([#66](https://github.com/PlaceOS/source/pull/66))
+- Services/StaffAPI: Unified change history, stateless mcp specs and stale linked bookings ([#393](https://github.com/PlaceOS/staff-api/pull/393))
+
+### Added
+
+- Clients/Typescript [**root**]: Remove reindex and backfill
+- Clients/Typescript [**root**]: Add sourceresync and sourceresyncstatus
+- Clients/Typescript [**history**]: Unified change history api
+- Interfaces/Backoffice [**admin**]: Mqtt re-sync and clear & re-sync on the database page
+- Interfaces/Backoffice [**build**]: Self-host fonts, shrink icon fonts and speed up ci
+- Interfaces/Backoffice [**ui**]: Cut per-tick work in tables, forms and lists
+- Interfaces/Backoffice: Load each detail page once and fetch tab lists on demand
+- Interfaces/Backoffice: Drop redundant requests and upload buffering
+- Interfaces/Backoffice [**build**]: Shallow build checkout, smaller monaco copy, faster e2e
+- Interfaces/Backoffice: Page support zone searches and chunk the resource email lookup
+- Interfaces/Backoffice [**systems**]: Load tab lists on demand and reload only what changed
+- Interfaces/Backoffice [**ui**]: Virtual rows for large lists and a lazy markdown renderer
+- Interfaces/Backoffice [**admin**]: Configure tenant maximum booking length ([#327](https://github.com/PlaceOS/backoffice/pull/327))
+- Interfaces/Templates [**workplace**]: Add new desk flow
+- Interfaces/Templates [**workplace**]: Add new visitor booking flow
+- Interfaces/Templates [**workplace**]: Add desk week card to landing page (ppt-2330)
+- Interfaces/Templates [**workplace**]: Add ui for new team schedule view
+- Interfaces/Templates [**workplace**]: Add initial api integration for team schedule
+- Interfaces/Templates [**workplace**]: Hook up favourites and team member flags for colleagues
+- Interfaces/Templates [**workplace**]: Add ability to add colleagues from team schedule view
+- Interfaces/Templates [**concierge**]: Add week view for parking requests and bookings
+- Interfaces/Templates [**concierge**]: Add homebase field to desks (ppt-2413)
+- Interfaces/Templates [**workplace**]: Display visitor name on schedule day and week view cards (ppt-2434)
+- Interfaces/Templates [**workplace**]: Update desk auto-assign to factor in user groups
+- Interfaces/Templates [**workplace**]: Hide levels without bookable resources
+- Interfaces/Templates [**visitor-kiosk**]: Add virtual keyboard support
+- Interfaces/Templates [**components**]: Add debug mode to dynamic map
+- Interfaces/Templates [**components**]: Add colour swatches and src truncation to map debug panel
+- Interfaces/Templates [**catering**]: Support external catering backend in workplace bookings
+- Interfaces/Templates [**concierge**]: Add user groups column to parking bookings
+- Interfaces/Templates [**workplace**]: Add ability to change room capacity option on select view
+- Interfaces/Templates [**concierge**]: Add checked in time column to parking report bookings
+- Interfaces/Templates [**workplace**]: Add any capacity option to meeting flow form
+- Interfaces/Templates [**workplace**]: Add bookings for others schedule filter
+- Interfaces/Templates [**concierge**]: Show parking booking request time
+- Interfaces/Templates [**concierge**]: Show parking space restrictions
+- Interfaces/Templates [**signage-manager**]: Add display management ppt-2673
+- Interfaces/Templates [**common**]: Add google analytics ([#496](https://github.com/PlaceOS/templates/pull/496))
+- Interfaces/Templates [**workplace**]: Show desk booker in booking map tooltip (hio-491)
+- Interfaces/Templates [**common**]: Add dark theme colour overrides and a domain loading gradient
+- Interfaces/Templates [**map-editor**]: Snapshot history and browser draft store
+- Interfaces/Templates [**map-editor**]: Proposal validator and render check port
+- Interfaces/Templates [**map-editor**]: Operation vocabulary, json schema and applier
+- Interfaces/Templates [**map-editor**]: Document core for the ai map editor
+- Interfaces/Templates [**map-editor**]: Editor session over the document core
+- Interfaces/Templates [**map-editor**]: Canvas host, properties strip and editor shell
+- Interfaces/Templates [**map-editor**]: Revert, marksaved and id-matched baseline on the session
+- Interfaces/Templates [**map-editor**]: Ai panel component
+- Interfaces/Templates [**map-editor**]: Proposal state
+- Interfaces/Templates [**map-editor**]: Proposal context and snapshot
+- Interfaces/Templates [**map-editor**]: Map ai client
+- Interfaces/Templates [**concierge**]: Map management page with the map editor
+- Interfaces/Templates [**concierge**]: Mount the ai panel in the map management editor
+- Interfaces/Templates [**map-editor**]: Ground the ai in containment, glyphs, mentions and a tagged picture
+- Interfaces/Templates [**map-editor**]: Cluster outlined labels and send them with the context
+- Interfaces/Templates [**map-editor**]: Place after deleted siblings and lay out text lines
+- Interfaces/Templates [**map-editor**]: Group the stacked layers of one drawn object as a piece
+- Interfaces/Templates [**map-editor**]: Multi-line labels in the properties strip
+- Interfaces/Templates [**map-editor**]: Choose the ai model; text labels and labels outside rooms
+- Interfaces/Templates [**concierge**]: Add a report of the bookings of a single user (ppt-2844)
+- Interfaces/Templates [**concierge**]: Add the landing page layout settings to the workplace settings form
+- Interfaces/Templates [**workplace**]: Let users customise the landing page
+- Interfaces/Templates [**concierge**]: Make the sidebar compact and keep groups collapsed
+- Interfaces/Templates [**concierge**]: Group the remaining sidebar links under other
+- Interfaces/Templates [**concierge**]: Move the topbar items into the sidebar
+- Interfaces/Templates [**stagehand**]: Take the hot list from the broker, without rest checks
+- Interfaces/Templates [**workplace**]: Stop unused loads in home, schedule and explore
+- Interfaces/Templates [**map-editor**]: Canvas-first editor layout with ai preview pins
+- Interfaces/Templates [**concierge**]: Reduce list rendering and workflow requests
+- Interfaces/Templates [**control**]: Run voice assistant speech on device with litert
+- Interfaces/Templates [**control**]: Show when speech is heard and improve wake phrase pickup
+- Interfaces/Templates [**control**]: Use whistle for voice assistant speech to text
+- Interfaces/Templates [**stagehand**]: Scope stagehand to the selected support group ([#580](https://github.com/PlaceOS/templates/pull/580))
+- Interfaces/Templates [**bookings**]: Add an internal or external type for visitors
+- Interfaces/Templates [**signage-manager**]: Cut repeat requests and row rebuilds
+- Interfaces/Templates [**visitor-kiosk**]: Stop the hidden background gradient animation
+- Interfaces/Templates [**visitor-kiosk**]: Decode qr frames only while the camera image moves
+- Interfaces/Templates [**visitor-kiosk**]: Return to the welcome page after inactivity
+- Interfaces/Templates [**components**]: Pause the page background animation after loading
+- Interfaces/Templates [**signage**]: Cut repeated work in display polls and schedule ticks
+- Interfaces/Templates [**signage**]: Unload videos once they leave the screen
+- Interfaces/Templates [**signage**]: Wait for new media to paint before a transition
+- Interfaces/Templates [**signage**]: Stop debug controls re-rendering the player while it plays
+- Interfaces/Templates [**map-studio**]: Open the level being edited, signed in from concierge
+- Interfaces/Templates [**map-studio**]: Compose the imported map once per drag, not per pointer move
+- Interfaces/Templates [**map-studio**]: Keep the editor responsive on large floors
+- Interfaces/Templates [**workplace**]: Add a setting to use the legacy home page and booking flows
+- Interfaces/Templates [**events**]: Flag attendees as international and internal/external
+- Interfaces/Templates [**bookings**]: Support internal or external visitors in the legacy flow
+- Interfaces/Templates [**workplace**]: Require visitor reason by setting in the new flow (ppt-2782)
+- Interfaces/Templates [**map-editor**]: Note the rejected changes the server had the ai correct (ppt-2832)
+- Libraries/Models [**models**]: Support ai map edit jobs (ppt-2832) ([#334](https://github.com/PlaceOS/placeos-models/pull/334))
+- Libraries/Models [**history**]: Unified change history ([#337](https://github.com/PlaceOS/placeos-models/pull/337))
+- Libraries/Models [**history**]: Lazily built metadata provider ([#338](https://github.com/PlaceOS/placeos-models/pull/338))
+- Libraries/Models [**tenant**]: Add booking period
+- Libraries/PgOrm: Add on_persist hook ([#23](https://github.com/PlaceOS/pg-orm/pull/23))
+- Services/Auth.cr [**oauth**]: Serve the implicit grant (response_type=token) ([#37](https://github.com/PlaceOS/auth.cr/pull/37))
+- Services/RestAPI [**root**]: Proxy source's mqtt resync for system admins ([#454](https://github.com/PlaceOS/rest-api/pull/454))
+- Services/RestAPI [**map-ai**]: Generate svg edit proposals for concierge (ppt-2832) ([#453](https://github.com/PlaceOS/rest-api/pull/453))
+- Services/RestAPI [**history**]: Unified change history api ([#456](https://github.com/PlaceOS/rest-api/pull/456))
+- Services/RestAPI [**mcp**]: Module state and logs as mcp resources ([#457](https://github.com/PlaceOS/rest-api/pull/457))
+- Services/RestAPI [**map-ai**]: Repair round for rejected ops, and accept dominant-baseline (ppt-2832) ([#458](https://github.com/PlaceOS/rest-api/pull/458))
+- Services/RestAPI [**modules**]: Create a module and add it to a system in one request
+- Services/Source [**api**]: Clear and resync the mqtt brokers on request ([#67](https://github.com/PlaceOS/source/pull/67))
+- Services/StaffAPI [**MCP**]: Show cards on booking, people search and room listings
+- Services/StaffAPI [**MCP**]: Card redesign with browser tests in the card previewer
+- Services/StaffAPI [**MCP**]: Cards show "booked!" and the new booking without reloading
+- Services/StaffAPI [**tenants**]: Persist and return booking_period
+
+### Changed
+
+- Interfaces/Templates [**workplace**]: Remove changedetectionstrategy where appropriate
+- Interfaces/Templates [**concierge**]: Update parking report graphs and metrics to be more useful
+- Interfaces/Templates [**deps**]: Add dompurify for inserted svg markup
+- Interfaces/Templates [**workplace**]: Simplify international visitor handling
+- Interfaces/Templates [**stagehand**]: Remove the unused alertsservice
+- Interfaces/Templates [**map-editor**]: One helper for the points an annotation covers
+- Interfaces/Templates [**desks**]: Drop duplicate default duration from desk forms
+- Interfaces/Templates: Remove unused landing, booking flow and day view components
+- Interfaces/Templates [**concierge,map-studio**]: Allow 16 kb of styles per component in production
+- Interfaces/Templates [**map-editor**]: Sanitise replacement markup without dompurify
+- Services/Auth.cr [**Dockerfile**]: Use the libevent event loop
+- Services/Build: Libevent event loop for the service and compiled drivers
+- Services/Build_service: Libevent event loop for the service and compiled drivers
+- Services/Core [**Dockerfile**]: Use the libevent event loop
+- Services/Core [**Dockerfile**]: Link without pie for readable backtraces
+- Services/Dispatch [**Dockerfile**]: Use the libevent event loop
+- Services/Dispatch [**Dockerfile**]: Link without pie for readable backtraces
+- Services/Edge [**Dockerfile**]: Use the libevent event loop
+- Services/Edge [**Dockerfile**]: Link without pie for readable backtraces
+- Services/FrontendLoader [**Dockerfile**]: Use the libevent event loop
+- Services/FrontendLoader [**Dockerfile**]: Link without pie for readable backtraces
+- Services/RestAPI [**Dockerfile**]: Use the libevent event loop
+- Services/RestAPI [**Dockerfile**]: Link without pie for readable backtraces
+- Services/Source [**Dockerfile**]: Use the libevent event loop
+- Services/Source [**Dockerfile**]: Link without pie for readable backtraces
+- Services/StaffAPI [**Dockerfile**]: Release binary, linked without pie
+- Services/StaffAPI [**Dockerfile**]: Libevent event loop, execution contexts off
+- Services/StaffAPI [**Dockerfile**]: Use the libevent event loop
+- Services/Triggers [**Dockerfile**]: Use the libevent event loop
+- Services/Triggers [**Dockerfile**]: Link without pie for readable backtraces
+- Swagger/RestAPI: Update for placeos-2.2610.1
+- Swagger/RestAPI: Update swagger-ui to v5.33.1
+- Swagger/StaffAPI: Update for placeos-2.2610.1
+- Swagger/StaffAPI: Update swagger-ui to v5.33.1
+
 ## 2.2610.1
 
 ### Added
