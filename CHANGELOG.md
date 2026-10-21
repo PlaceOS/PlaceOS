@@ -5,6 +5,84 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2610.2
+
+### Fixed
+
+- Interfaces/Templates [**workplace**]: Fix selecting desk from favourites to book (ppt-2404)
+- Interfaces/Templates [**workplace**]: Save visitor phone to history (ppt-2333)
+- Interfaces/Templates [**workplace**]: Hide team schedule colleague actions when feature disabled (ppt-2448)
+- Interfaces/Templates [**workplace**]: Keep spaces dropdowns accessible proj-1868
+- Interfaces/Templates [**workplace**]: Preserve monthly recurrence start ppt-2509
+- Interfaces/Templates [**workplace**]: Proj-1919 persist colleague desk booking type
+- Interfaces/Templates [**events**]: Fix saving room data (proj-1918)
+- Interfaces/Templates [**workplace**]: Restore edited room selection ppt-2528
+- Interfaces/Templates [**workplace**]: Complete nearby desk bookings ppt-2527
+- Interfaces/Templates [**events**]: Preserve monthly recurrence metadata ppt-2526
+- Interfaces/Templates [**events**]: Return saved booking after post ppt-2462
+- Interfaces/Templates [**workplace**]: Restore desk map selection (proj-1950)
+- Interfaces/Templates [**signage-manager**]: Unshare deleted items by group ppt-2651
+- Interfaces/Templates [**workplace**]: Hide cancelled bookings from calendars (hio-488)
+- Interfaces/Templates [**bookings**]: Hide actions for cancelled bookings (hio-488)
+- Interfaces/Templates [**workplace**]: Keep cancelled days of recurring bookings (hio-488)
+- Interfaces/Templates [**workplace**]: Show server error when booking cancel fails (hio-489)
+- Interfaces/Templates [**common**]: Report identifiable ga4 page views per route (hio687as) ([#560](https://github.com/PlaceOS/templates/pull/560))
+- Interfaces/Templates [**bookings**]: Keep desk form choices across the initialisation reset (ppt-2643)
+- Interfaces/Templates [**bookings**]: Keep edits on non-desk forms after a form clear (ppt-2643)
+- Interfaces/Templates [**workplace**]: Keep desk form choices in the new desk flow (ppt-2643)
+- Interfaces/Templates [**bookings**]: Start new forms with the configured default duration (ppt-2851)
+- Interfaces/Templates [**map-editor**]: Spread preview pins that would overlap (ppt-2846)
+- Interfaces/Templates [**map-editor**]: Accept dominant-baseline on ai-edited text (ppt-2832)
+- Libraries/Models [**booking**]: Proj-1652 hydrate_parents with no parent ids ([#335](https://github.com/PlaceOS/placeos-models/pull/335))
+- Libraries/Models [**history**]: Keep existing event and template history ([#339](https://github.com/PlaceOS/placeos-models/pull/339))
+- Libraries/PgOrm: Ignore ordering when calculating aggregates ([#24](https://github.com/PlaceOS/pg-orm/pull/24))
+- Libraries/PgOrm: Cursor pagination direction and cursors, raise on failed relation creates
+- Libraries/Resource: Page the initial load by key, not by offset ([#20](https://github.com/PlaceOS/placeos-resource/pull/20))
+- Services/RestAPI [**groups**]: Allow multiple root groups
+- Services/RestAPI [**modules**]: State lookup returns "null" for unset keys
+- Services/Source [**mqtt**]: Keep retained state topics accurate ([#65](https://github.com/PlaceOS/source/pull/65))
+- Services/Source [**mqtt**]: Keep startup memory and time flat on large estates ([#66](https://github.com/PlaceOS/source/pull/66))
+- Services/StaffAPI: Unified change history, stateless mcp specs and stale linked bookings ([#393](https://github.com/PlaceOS/staff-api/pull/393))
+
+### Added
+
+- Interfaces/Backoffice [**admin**]: Configure tenant maximum booking length ([#327](https://github.com/PlaceOS/backoffice/pull/327))
+- Interfaces/Templates [**workplace**]: Add desk week card to landing page (ppt-2330)
+- Interfaces/Templates [**concierge**]: Add homebase field to desks (ppt-2413)
+- Interfaces/Templates [**workplace**]: Display visitor name on schedule day and week view cards (ppt-2434)
+- Interfaces/Templates [**signage-manager**]: Add display management ppt-2673
+- Interfaces/Templates [**common**]: Add google analytics ([#496](https://github.com/PlaceOS/templates/pull/496))
+- Interfaces/Templates [**workplace**]: Show desk booker in booking map tooltip (hio-491)
+- Interfaces/Templates [**concierge**]: Add a report of the bookings of a single user (ppt-2844)
+- Interfaces/Templates [**stagehand**]: Scope stagehand to the selected support group ([#580](https://github.com/PlaceOS/templates/pull/580))
+- Interfaces/Templates [**workplace**]: Require visitor reason by setting in the new flow (ppt-2782)
+- Interfaces/Templates [**map-editor**]: Note the rejected changes the server had the ai correct (ppt-2832)
+- Libraries/Models [**models**]: Support ai map edit jobs (ppt-2832) ([#334](https://github.com/PlaceOS/placeos-models/pull/334))
+- Libraries/Models [**history**]: Unified change history ([#337](https://github.com/PlaceOS/placeos-models/pull/337))
+- Libraries/Models [**history**]: Lazily built metadata provider ([#338](https://github.com/PlaceOS/placeos-models/pull/338))
+- Libraries/Models [**tenant**]: Add booking period, how far in the future can you book
+- Libraries/PgOrm: Add on_persist hook ([#23](https://github.com/PlaceOS/pg-orm/pull/23))
+- Services/Auth.cr [**oauth**]: Serve the implicit grant (response_type=token) ([#37](https://github.com/PlaceOS/auth.cr/pull/37))
+- Services/RestAPI [**map-ai**]: Generate svg edit proposals for concierge (ppt-2832) ([#453](https://github.com/PlaceOS/rest-api/pull/453))
+- Services/RestAPI [**history**]: Unified change history api ([#456](https://github.com/PlaceOS/rest-api/pull/456))
+- Services/RestAPI [**mcp**]: Module state and logs as mcp resources ([#457](https://github.com/PlaceOS/rest-api/pull/457))
+- Services/RestAPI [**modules**]: Create a module and add it to a system in one request
+- Services/Source [**api**]: Clear and resync the mqtt brokers on request ([#67](https://github.com/PlaceOS/source/pull/67))
+- Services/StaffAPI [**MCP**]: Show cards on booking, people search and room listings
+- Services/StaffAPI [**tenants**]: add booking_period to limit the length of bookings
+
+### Changed
+
+- Interfaces/Templates [**workplace**]: Remove changedetectionstrategy where appropriate
+- Interfaces/Templates [**concierge**]: Update parking report graphs and metrics to be more useful
+- Interfaces/Templates [**workplace**]: Simplify international visitor handling
+- Interfaces/Templates [**map-editor**]: One helper for the points an annotation covers
+- Interfaces/Templates: Remove unused landing, booking flow and day view components
+- Interfaces/Templates [**concierge,map-studio**]: Allow 16 kb of styles per component in production
+- Services/Build_service: Libevent event loop for the service and compiled drivers
+- Swagger/RestAPI: Update swagger-ui to v5.33.1
+- Swagger/StaffAPI: Update swagger-ui to v5.33.1
+
 ## 2.2610.1
 
 ### Added
