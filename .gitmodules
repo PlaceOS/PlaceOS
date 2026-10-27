@@ -1,6 +1,3 @@
-[submodule "services/auth"]
-	path = services/auth
-	url = https://github.com/placeos/auth.git
 [submodule "services/core"]
 	path = services/core
 	url = https://github.com/placeos/core.git
