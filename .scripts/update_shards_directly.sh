@@ -3,7 +3,7 @@
 # Description:
 #   1. Reads submodule URLs from .gitmodules for each folder under services/.
 #   2. Shallow clones the submodule into /tmp.
-#   3. Skips submodules whose folder names end in auth, build, edge, or nginx.
+#   3. Skips submodules whose folder names end in build, edge, or nginx.
 #   4. Runs `shards update` with specified flags, commits & pushes changes to the default branch.
 #   5. Removes temp folder.
 #
@@ -30,8 +30,8 @@ fi
 for submodule_path in "${submodule_paths[@]}"; do
   repository_name="$(basename "$submodule_path")"
 
-  # Skip if name ends with "auth", "build", "edge", or "nginx"
-  if [[ "$repository_name" =~ (auth|build|edge|nginx)$ ]]; then
+  # Skip if name ends with "build", "edge", or "nginx"
+  if [[ "$repository_name" =~ (build|edge|nginx)$ ]]; then
     echo "Skipping submodule: $submodule_path"
     continue
   fi

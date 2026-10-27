@@ -5,6 +5,27 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2610.3
+
+### Fixed
+
+- Interfaces/Templates [**deps**]: Update ts-client to reject oauth callbacks with no pending login
+- Libraries/Models [**security**]: Bind user input in raw sql where clauses
+- Libraries/Models [**survey**]: Only trigger surveys of the booking's authority
+- Services/Build [**driver_store/s3**]: Treat a failed bucket listing as a cache miss
+- Services/RestAPI [**search**]: Match dotted room numbers like "4.23" as a single term
+- Services/RestAPI [**security**]: Prevent bad behaviour in uploads search and domain lookup
+- Services/RestAPI [**security**]: Enforce token/authority domain match for bare-host domains
+- Services/Source [**influx**]: Keep influxdb ingest independent of mqtt brokers ([#68](https://github.com/PlaceOS/source/pull/68))
+- Services/Source [**mqtt**]: Keep reconnecting after a session takeover ([#69](https://github.com/PlaceOS/source/pull/69))
+- Services/StaffAPI [**search**]: Match dotted room numbers like "4.23" as a single term
+- Services/StaffAPI [**guests**]: Treat punctuation in search queries as a word break
+- Services/StaffAPI [**survey**]: Keep survey answers and triggers within the tenant
+
+### Changed
+
+- Interfaces/Templates [**concierge**]: Remove signage management section
+
 ## 2.2610.2
 
 ### Fixed

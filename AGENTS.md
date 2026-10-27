@@ -17,8 +17,6 @@ Use `crystal tool format` and `./bin/ameba` to format and lint code. Read the `A
 
 A single issue might span multiple pull requests against different projects. i.e. `./libraries/placeos-models` (https://github.com/PlaceOS/models) might require changes to implement a feature on `./services/rest-api` (https://github.com/PlaceOS/rest-api) - when this occurs, you can update the downstream `shard.yml` / `shard.lock` files to point to the models branch. Once models is merged, it will automatically bump the version based on the commit message (fix: patch bump, feat: minor bump) and then you can point rest-api back to the latest release version of models. (rest-api specs pick up new models migrations straight from models master after a Docker prune)
 
-services/auth is no longer maintained, it has been replaced by services/auth.cr
-
 ## 1. Plan Node Default
 - Enter plan mode for ANY non-trivial task (3+ steps or architectural decisions)
 - If something goes sideways, STOP and re-plan immediately, don’t keep pushing
