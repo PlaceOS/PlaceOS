@@ -5,6 +5,143 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2611.4
+
+### Fixed
+
+- Clients/Typescript [**assets**]: Keep authority_id on asset categories
+- Interfaces/Backoffice [**sentry**]: Ignore resizeobserver loop errors in dev builds
+- Interfaces/Backoffice [**app**]: Hide optional ui when its deferred chunk fails to load
+- Interfaces/Backoffice [**settings**]: Stop a failed user settings load from raising an unhandled error
+- Interfaces/Backoffice [**sentry**]: Stop reporting monaco cancellations when an editor closes
+- Interfaces/Backoffice [**app**]: Stop failed startup imports from raising unhandled chunk errors
+- Interfaces/Backoffice: Re-enable item copy actions and fix list and dialog bugs
+- Interfaces/Backoffice [**monaco**]: Stop reporting worker load errors after an editor closes
+- Interfaces/Templates [**deps**]: Update sentry to 11 and keep its data collection unchanged
+- Interfaces/Templates: Harden shared libs against script injection and token leaks
+- Interfaces/Templates [**explore**]: Hide map toggles for groups locked off by settings
+- Interfaces/Templates [**bookings**]: Hide the parking space in the booking card location (ppt-2858)
+- Interfaces/Templates: Harden apps against script injection and url key leaks
+- Interfaces/Templates: Remove the api key from the url when setup fails too
+- Interfaces/Templates [**workplace**]: Share in-flight schedule event requests
+- Interfaces/Templates [**workplace**]: Ignore daily recurrence check after choosing none
+- Interfaces/Templates [**workplace**]: Let explicit desk and parking allow_all_day override bookings
+- Interfaces/Templates [**bookings**]: Lock locker date and time when disabled_date_select is set
+- Interfaces/Templates [**workplace**]: Explicit desks.has_assets false now overrides bookings
+- Interfaces/Templates [**workplace**]: Respect desks.allow_time_changes in the new desk flow
+- Interfaces/Templates [**workplace**]: Hide the parking space name in all booking cards (ppt-2863)
+- Interfaces/Templates [**explore**]: Open the device tooltip from the visible indicator
+- Interfaces/Templates [**stagehand**]: Fix broken editor, list, and filter workflows
+- Interfaces/Templates [**stagehand**]: Stop leaking data through system names, logs and the analytics frame
+- Interfaces/Templates [**map-studio**]: Stop leaking credentials and injecting markup through map data
+- Interfaces/Templates [**map-studio**]: Resolve editor, project page and kiosk ux issues
+- Interfaces/Templates [**concierge**]: Exclude directory guests from staff searches
+- Interfaces/Templates [**concierge**]: Preserve external attendee search
+- Interfaces/Templates [**ci**]: Generate changelogs without github api access
+- Interfaces/Templates [**map-studio**]: Read quoted cells in the labelling id list import
+- Interfaces/Templates [**workplace**]: Explicit desks/parking can_book_for_others false now overrides bookings
+- Interfaces/Templates [**explore**]: Look up device owners on the areamanagement system
+- Interfaces/Templates [**bookings**]: Locker picker no longer errors while lockers load
+- Interfaces/Templates [**libs**]: Keep catering favourites apart from desks and cap desk tooltip retries
+- Interfaces/Templates [**workplace**]: Room and desk start times stop before closing time
+- Interfaces/Templates [**bookings**]: Booking type timezone settings override the generic setting
+- Interfaces/Templates [**common**]: Use current iana names in the time zone list
+- Interfaces/Templates: Desk assets support in workplace and concierge ([#656](https://github.com/PlaceOS/templates/pull/656))
+- Interfaces/Templates [**desks**]: Keep desk data on csv import and find desks across the org
+- Interfaces/Templates: Desk custom ids in client_ids ([#658](https://github.com/PlaceOS/templates/pull/658))
+- Interfaces/Templates [**apps**]: Fix small bugs found in the cleanup audit
+- Interfaces/Templates [**map-studio,signage-manager**]: Fix rotation, kiosk canvas size and counts
+- Interfaces/Templates [**apps**]: Fix bugs in signage, stagehand, assistant panel and small apps
+- Interfaces/Templates [**components,visitor-kiosk,workplace**]: Fix setup screen and idle reset review issues
+- Interfaces/Templates [**components**]: Keep chat messages that cannot be sent
+- Interfaces/Templates [**signage**]: Resend plugin config when a plugin reports loaded
+- Interfaces/Templates [**signage-manager**]: Show and open new playlists right away
+- Interfaces/Templates [**test**]: Destroy testing module after each app spec
+- Interfaces/Templates [**signage-manager**]: Keep distribution playlist items in sync after add and remove
+- Interfaces/Templates [**e2e**]: Disable workplace hmr for ci stability (18 unique settings, 36 existing scenarios; 0 new settings, 0 new scenarios)
+- Interfaces/Templates [**e2e**]: Harden settings harness teardown and split browser-only specs by suffix
+- Interfaces/Templates [**assets**]: Prefer same-authority categories for desks, lockers and parking
+- Interfaces/Templates [**assets**]: Pick authority categories without waiting for authority()
+- Interfaces/Templates [**deps**]: Bump @placeos/ts-client to 6.12.2
+- Interfaces/Templates [**workplace**]: Exclude directory guests from host searches
+- Interfaces/Templates [**bookings**]: Visitor timezone setting overrides the bookings setting
+- Interfaces/Templates [**workplace**]: Cancel replaced staff searches and document guest exclusion scope
+- Interfaces/Templates [**concierge**]: Desk booking without a desk no longer raises an unhandled rejection
+- Interfaces/Templates [**explore**]: Show the locate-user notice when the user is not found
+- Interfaces/Templates [**mocks**]: Point mock driver bindings at a registered system
+- Interfaces/Templates [**bookings**]: Visitor forms fall back to bookings timezone after a building switch
+- Interfaces/Templates [**e2e**]: Turn sentry off in the workplace e2e dev server
+- Libraries/Models [**playlist/item_schedule**]: Record change history against the playlist
+- Services/Init [**desk_assets**]: Match app settings, hide desk category, remap short urls
+- Services/Init [**desk_assets**]: Keep desk ids in client_ids
+- Services/RestAPI [**security**]: Cap jwt permissions by the user's current admin/support
+- Services/RestAPI [**auth**]: Take jwt sys_admin/support from the user record ([#459](https://github.com/PlaceOS/rest-api/pull/459))
+- Services/Source [**mqtt**]: Apply broker changes from the database seamlessly ([#70](https://github.com/PlaceOS/source/pull/70))
+- Services/Source [**mqtt**]: Stop clearing when removals do not reach the broker
+- Services/StaffAPI [**security**]: Take jwt sys_admin/support from the user record ([#394](https://github.com/PlaceOS/staff-api/pull/394))
+
+### Changed
+
+- Interfaces/Backoffice: Remove dead members, pipes and table options
+- Interfaces/Backoffice: Remove unused files and dependencies
+- Interfaces/Backoffice [**ui**]: Share one item page shell across features
+- Interfaces/Backoffice: Share guards, dialog waits, timestamps and metadata tab
+- Interfaces/Backoffice [**admin**]: Share confirm flow, domain picker and table
+- Interfaces/Backoffice [**forms**]: Share dialog form submit and save hotkey
+- Interfaces/Backoffice [**groups**]: Share group membership logic and table
+- Interfaces/Templates [**assets**]: Share the hidden asset category and type lookup
+- Interfaces/Templates [**libs**]: Share one helper for toggling favourites
+- Interfaces/Templates [**mocks**]: Remove unused mock endpoints and data helpers
+- Interfaces/Templates [**libs**]: Remove unused code from bookings, assets, catering and events
+- Interfaces/Templates [**libs**]: Remove unused code from common, users and payments
+- Interfaces/Templates [**libs**]: Remove unused components, pipes and upload permission wiring
+- Interfaces/Templates [**common**]: Build the time zone list from the browser
+- Interfaces/Templates [**libs**]: Add providevalueaccessor for form field providers
+- Interfaces/Templates [**libs**]: Share the zone rules loader and app version details
+- Interfaces/Templates [**mocks**]: Build asset crud mocks from one helper
+- Interfaces/Templates [**form-fields**]: Share the upload helper and merge compact-counter
+- Interfaces/Templates [**assets**]: Share the desk asset lookup by legacy id
+- Interfaces/Templates [**concierge**]: Share the desk csv import
+- Interfaces/Templates [**concierge**]: Remove the unused desks topbar
+- Interfaces/Templates [**apps**]: Remove unused members from live files
+- Interfaces/Templates [**apps**]: Remove unused components, pipes and specs
+- Interfaces/Templates [**workplace**]: Share calendar links, filters and group bookings
+- Interfaces/Templates [**concierge**]: Share confirm actions, timelines and form helpers
+- Interfaces/Templates [**concierge**]: Share the report page shell and usage parts
+- Interfaces/Templates [**concierge**]: Share app settings load, save, fields and menu
+- Interfaces/Templates [**libs**]: Move code that apps imported from other apps
+- Interfaces/Templates [**libs**]: Share the system and kiosk location setup screens
+- Interfaces/Templates [**libs**]: Share the themed logo, announce directive and helpers
+- Interfaces/Templates [**signage-manager**]: Share tabs, headers, panels and pickers
+- Interfaces/Templates [**apps**]: Use lib helpers in place of app copies
+- Interfaces/Templates [**apps**]: Share app setup, test setup and service worker config
+- Interfaces/Templates [**signage**]: Share player rules with the signage manager
+- Interfaces/Templates [**apps**]: Remove unused code from the remaining apps
+- Interfaces/Templates [**stagehand,map-studio,public**]: Share page, geometry and helpers
+- Interfaces/Templates [**signage-manager**]: Share assignment, approval and schedule text
+- Services/StaffAPI [**e2e**]: Upgrade playwright to 1.64.1 ([#395](https://github.com/PlaceOS/staff-api/pull/395))
+- Swagger/RestAPI: Update for placeos-2.2610.3
+- Swagger/StaffAPI: Update for placeos-2.2610.3
+
+### Added
+
+- Interfaces/Backoffice [**systems**]: Allow editing camera snapshot urls
+- Interfaces/Templates [**common**]: Add opt-in sentry session replay
+- Interfaces/Templates [**stagehand**]: Keep the hot list updating under steady broker traffic
+- Interfaces/Templates [**concierge**]: Load room booking levels with one systems query
+- Interfaces/Templates [**map-studio**]: Stop redundant svg composes, re-checks and writes
+- Interfaces/Templates [**e2e**]: Pause the animated page background in every browser context
+- Interfaces/Templates [**mocks**]: Remove duplicate mock events with a set
+- Interfaces/Templates [**signage-manager**]: Add media to a playlist from the playlist view
+- Interfaces/Templates [**ci**]: Generate app changelogs from one git-cliff history pass
+- Interfaces/Templates [**common**]: Enable sentry by default with dev and prod sample rates
+- Interfaces/Templates [**concierge**]: Lazy load mock data to cut startup block by ~260ms
+- Services/Init: Add migrate:desk_assets task ([#107](https://github.com/PlaceOS/init/pull/107))
+- Services/Init [**desk_assets**]: Store unmapped desk fields in other_data
+- Services/Init [**desk_assets**]: Backfill the zone path of every asset
+- Services/RestAPI [**signage/playlists**]: Add playlist change history endpoint
+- Services/Source [**mqtt**]: Retain boolean statuses under their value as well
+
 ## 2.2610.3
 
 ### Fixed
