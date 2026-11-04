@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install crystal
-        uses: crystal-lang/install-crystal@v1.6.0
+        uses: crystal-lang/install-crystal@v1.9.3
         with:
           crystal: ${{ env.CRYSTAL_VERSION }}
       - name: Install shards
