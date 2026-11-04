@@ -5,6 +5,26 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2611.4
+
+### Fixed
+
+- Interfaces/Templates: Desk assets support in workplace and concierge ([#656](https://github.com/PlaceOS/templates/pull/656))
+- Services/RestAPI [**auth**]: Take jwt sys_admin/support from the user record ([#459](https://github.com/PlaceOS/rest-api/pull/459))
+- Services/Source [**mqtt**]: Apply broker changes from the database seamlessly ([#70](https://github.com/PlaceOS/source/pull/70))
+- Services/Source [**mqtt**]: Stop clearing when removals do not reach the broker
+- Services/StaffAPI [**security**]: Take jwt sys_admin/support from the user record ([#394](https://github.com/PlaceOS/staff-api/pull/394))
+
+### Added
+
+- Interfaces/Backoffice [**systems**]: Allow editing camera snapshot urls
+- Interfaces/Templates [**stagehand**]: Keep the hot list updating under steady broker traffic
+- Interfaces/Templates [**map-studio**]: Stop redundant svg composes, re-checks and writes
+- Interfaces/Templates [**signage-manager**]: Add media to a playlist from the playlist view
+- Services/Init: Add migrate:desk_assets task ([#107](https://github.com/PlaceOS/init/pull/107))
+- Services/RestAPI [**signage/playlists**]: Add playlist change history endpoint
+- Services/Source [**mqtt**]: Retain boolean statuses under their value as well
+
 ## 2.2610.3
 
 ### Fixed
