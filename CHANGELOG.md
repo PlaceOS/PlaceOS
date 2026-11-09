@@ -5,6 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2611.5
+
+### Fixed
+
+- Libraries/PgOrm: Keep connection and transaction state on the fiber
+
+### Added
+
+- Services/Auth.cr [**discovery**]: Serve an agentic resource discovery manifest
+- Services/RestAPI [**mcp**]: Describe the server for its mcp server card
+- Services/StaffAPI [**mcp**]: Describe the server for its mcp server card
+
+### Changed
+
+- Interfaces/Templates [**form-fields**]: Image uploads follow a progress signal in place of polling
+
 ## 2.2611.4
 
 ### Fixed
