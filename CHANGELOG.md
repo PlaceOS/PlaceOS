@@ -9,56 +9,10 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice: Raise lighthouse scores to 100 on the landing page
-- Interfaces/Templates [**components**]: Debug tools open only for admin and support users
-- Interfaces/Templates [**components**]: Sanitise the changelog and limit attachment previews
-- Interfaces/Templates [**components**]: Map zoom limits, slow taps and keyboard control
-- Interfaces/Templates [**components**]: Simple table sort, filter and paging
-- Interfaces/Templates [**components**]: Modal state, keyboard selection and banner close
-- Interfaces/Templates [**components**]: Binding directive rebinds and cleans up
-- Interfaces/Templates [**components**]: Safe assistant markdown and chat input fixes
-- Interfaces/Templates [**components**]: Work location menu and survey submit
-- Interfaces/Templates [**components**]: Mapsindoors follows level and zoom changes
-- Interfaces/Templates [**components**]: Form labels, dark theme contrast and empty states
-- Interfaces/Templates [**components**]: Keyboard access for tooltips, carousel and avatar
-- Interfaces/Templates [**components**]: Virtual keyboard maxlength, selection and enter key
-- Interfaces/Templates [**components**]: Keyboard focus for click tooltips
-- Interfaces/Templates [**common**]: Debug setting overrides apply to one app
-- Interfaces/Templates [**components**]: Offline access respects the last online denial
-- Interfaces/Templates [**concierge**]: Desk bulk actions match the bookings table search
-- Interfaces/Templates [**form-fields**]: Uploads, rich text, pickers and disabled state work as expected
-- Interfaces/Templates [**form-fields**]: Date url echo, pristine duration default, exact times and internal domains
-- Interfaces/Templates [**form-fields**]: Duration default no longer throws in signal forms
-- Interfaces/Templates [**control**]: Read tv channels from system first
-- Interfaces/Templates [**form-fields**]: Typed time input shows the picked time after an error
-- Interfaces/Templates [**common**]: Empty csv text no longer hangs csvtojson
-- Interfaces/Templates [**form-fields**]: Translate the remaining hard-coded text
-- Interfaces/Templates [**form-fields**]: Recurrence week labels update when translations load
-- Interfaces/Templates [**bookings**]: Booking form store skips missing session storage
-- Interfaces/Templates [**common**]: Media redirected to s3 loads again with sentry tracing
-- Interfaces/Templates [**explore**]: Closing the desk booking dialog no longer reports an error
-- Interfaces/Templates [**explore**]: A failed desk booking from the map no longer throws an unhandled error
-- Interfaces/Templates [**components**]: Table rows open again and forms follow their parent control
-- Interfaces/Templates [**a11y**]: Icons are hidden from screen readers and icon buttons have names
-- Interfaces/Templates [**components**]: Debug panels show activity from before they open
-- Interfaces/Templates [**components**]: Modals have names, keep focus and recover from failed saves
-- Interfaces/Templates [**components**]: Uploaded previews and stored api keys stay safe
-- Interfaces/Templates [**components**]: Chat, survey and user controls recover from failures
-- Interfaces/Templates [**components**]: Maps recover from load failures and fixed maps leave the tab order
-- Interfaces/Templates [**common**]: A failed user load no longer throws an uncaught error
 - Libraries/PgOrm: Keep connection and transaction state on the fiber
 
 ### Added
 
-- Interfaces/Templates [**components**]: Faster debug console and binding panel filters
-- Interfaces/Templates [**components**]: Draw explore zone polygons as svg
-- Interfaces/Templates [**components**]: Stream authenticated video and audio
-- Interfaces/Templates [**components**]: Look up mapsindoors styled locations in parallel
-- Interfaces/Templates [**components**]: Map style changes no longer re-parse the svg
-- Interfaces/Templates [**form-fields**]: Typed time entry and range calendar hints and limits
-- Interfaces/Templates [**form-fields**]: File type and size limits, drag-over styling and csv preview
-- Interfaces/Templates [**workplace**]: Lazy load mock data so page load no longer blocks for ~300ms
-- Interfaces/Templates [**signage**]: Lazy load mock data so player startup blocks ~70% less
 - Services/Auth.cr [**discovery**]: Serve an agentic resource discovery manifest
 - Services/RestAPI [**mcp**]: Describe the server for its mcp server card
 - Services/StaffAPI [**mcp**]: Describe the server for its mcp server card
@@ -66,8 +20,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Changed
 
 - Interfaces/Templates [**form-fields**]: Image uploads follow a progress signal in place of polling
-- Swagger/RestAPI: Update for placeos-2.2611.4
-- Swagger/StaffAPI: Update for placeos-2.2611.4
 
 ## 2.2611.4
 
