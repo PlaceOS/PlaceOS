@@ -5,6 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2611.6
+
+### Added
+
+- Interfaces/Templates [**stagehand**]: Show loading and broken states for camera images
+- Interfaces/Templates [**signage-manager**]: Import pdf pages as images ([#685](https://github.com/PlaceOS/templates/pull/685))
+- Interfaces/Templates [**signage-manager**]: Upload files dropped on a playlist and add them to it
+- Interfaces/Templates [**signage-manager**]: Import powerpoint files as slide images
+
+### Fixed
+
+- Interfaces/Templates [**map-editor**]: Keep new and selected elements in the ai element index ([#699](https://github.com/PlaceOS/templates/pull/699))
+- Services/Nginx: Serve .mjs files as javascript, and fix the config ci check ([#27](https://github.com/PlaceOS/nginx/pull/27))
+- Services/RestAPI [**map-ai**]: Keep selected elements when the index is capped ([#460](https://github.com/PlaceOS/rest-api/pull/460))
+- Services/RestAPI [**users**]: fix leaking password digests and sso tokens ([#461](https://github.com/PlaceOS/rest-api/pull/461))
+
 ## 2.2611.5
 
 ### Fixed
