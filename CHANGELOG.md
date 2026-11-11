@@ -5,6 +5,69 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2611.6
+
+### Added
+
+- Clients/Typescript [**http**]: Mock endpoints can return response headers
+- Interfaces/Backoffice [**mocks**]: Show the same buildings, rooms and staff as the other placeos apps
+- Interfaces/Templates [**stagehand**]: Show loading and broken states for camera images
+- Interfaces/Templates [**signage-manager**]: Import pdf pages as images ([#685](https://github.com/PlaceOS/templates/pull/685))
+- Interfaces/Templates [**signage-manager**]: Upload imported pdf pages straight away
+- Interfaces/Templates [**signage-manager**]: Stop offering file access permissions on upload
+- Interfaces/Templates [**signage-manager**]: Upload files dropped on a playlist and add them to it
+- Interfaces/Templates [**components**]: Signage thumbnails no longer fetch twice per page
+- Interfaces/Templates [**signage-manager**]: Import powerpoint files as slide images
+- Interfaces/Templates [**signage-manager**]: Show windows and macos chips in the powerpoint confirm
+- Interfaces/Templates [**concierge**]: Load more bookings when the list scrolls to the end
+
+### Fixed
+
+- Clients/Typescript [**api**]: Add the missing slash to 25 endpoint urls
+- Interfaces/Backoffice [**mocks**]: Mock every endpoint the app calls and keep changes for the session
+- Interfaces/Backoffice [**mocks**]: Make mock ids and secrets with the crypto api
+- Interfaces/Backoffice [**ci**]: Demo site deploys once a day, and build branches stop failing on vercel
+- Interfaces/Templates [**events**]: A failed space load no longer throws an uncaught error
+- Interfaces/Templates [**workplace**]: Stop failed debug launcher loads raising ng0750
+- Interfaces/Templates [**stagehand**]: Wait for a slow broker connection to fail before opening another
+- Interfaces/Templates [**stagehand**]: Keep alerts across tab switches and let slow sockets fail
+- Interfaces/Templates [**stagehand**]: Never abandon a broker connection attempt
+- Interfaces/Templates [**stagehand**]: Back off broker reconnects to at most 3 minutes
+- Interfaces/Templates [**booking-panel**]: Update the next booking countdown with the panel clock
+- Interfaces/Templates [**common**]: Keep the route when startup adds the page query
+- Interfaces/Templates [**mocks**]: Return 404 for a missing survey
+- Interfaces/Templates [**concierge**]: Load all desk bookings when the first page has recurring bookings
+- Interfaces/Templates [**explore**]: Show desks in use as occupied when they are not bookable
+- Interfaces/Templates [**signage**]: Stop holding an expired lone webpage or plugin on screen
+- Interfaces/Templates [**common**]: Stop sending browser extension rejections to sentry
+- Interfaces/Templates [**ci**]: Templates demo deploys once a day instead of ~100 times
+- Interfaces/Templates [**assets**]: Bulk asset saves use ts-client again
+- Interfaces/Templates [**mocks**]: Every app works in mock mode, and changes survive reloads and sync across tabs
+- Interfaces/Templates [**signage-manager**]: Wrap a long pdf page name example
+- Interfaces/Templates [**mocks**]: Room panels stay in sync with mock events
+- Interfaces/Templates [**concierge**]: Preserve csv file picker click action
+- Interfaces/Templates [**common**]: Set up uploads once so hashing uploads don't hang
+- Interfaces/Templates [**common**]: Load the user in mock mode once the mocks are registered
+- Interfaces/Templates [**signage-manager**]: Address playlist file drop review findings
+- Interfaces/Templates [**signage-manager**]: Harden pdf import loading, closing and page count
+- Interfaces/Templates [**signage-manager**]: Stop re-rendering pdf pages on retry and close pdfs on failure
+- Interfaces/Templates [**common**]: Preserve linked catering booking hosts
+- Interfaces/Templates [**control**]: Stop camera tooltip crash when a camera has no presets
+- Interfaces/Templates [**signage-manager**]: Recover pdf import when the pdf.js worker fails to load
+- Interfaces/Templates [**signage-manager**]: Show document import progress and confirm powerpoint first
+- Interfaces/Templates [**mocks**]: Show catering orders in the caterer ui and concierge
+- Interfaces/Templates [**map-editor**]: Keep new and selected elements in the ai element index ([#699](https://github.com/PlaceOS/templates/pull/699))
+- Interfaces/Templates [**form-fields**]: Load date range reports only after the end date is picked
+- Services/Nginx: Serve .mjs files as javascript, and fix the config ci check ([#27](https://github.com/PlaceOS/nginx/pull/27))
+- Services/RestAPI [**map-ai**]: Keep selected elements when the index is capped ([#460](https://github.com/PlaceOS/rest-api/pull/460))
+- Services/RestAPI [**users**]: Stop leaking password digests and sso tokens ([#461](https://github.com/PlaceOS/rest-api/pull/461))
+
+### Changed
+
+- Interfaces/Templates [**common**]: Type linked event host_email
+- Swagger/RestAPI: Update for placeos-2.2611.5
+- Swagger/StaffAPI: Update for placeos-2.2611.5
+
 ## 2.2611.5
 
 ### Fixed
