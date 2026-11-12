@@ -7,62 +7,11 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ## 2.2611.7
 
-### Added
-
-- Interfaces/Templates [**mocks**]: Page mock list endpoints with the placeos api headers
-
 ### Fixed
 
-- Interfaces/Templates [**visitor-kiosk**]: Stop induction after the redirect and show plain error messages
-- Interfaces/Templates [**stagehand**]: Raise any-match alerts for every matching condition
-- Interfaces/Templates [**public**]: Reject a guest name of only spaces
-- Interfaces/Templates [**outlook-addin**]: Ignore errors from an older event refresh
-- Interfaces/Templates [**map-studio**]: Do not reuse an svg id after an object is deleted
-- Interfaces/Templates [**map-kiosk**]: Show 0% free for a parking level with no spaces
-- Interfaces/Templates [**control**]: Show the correct icon for display sources
-- Interfaces/Templates [**concierge**]: Keep a 0% asset discount cap and update staff onsite state at once
-- Interfaces/Templates [**assistant-panel**]: Accept a repeated question from a new visitor
-- Interfaces/Templates [**users**]: Read wfh preferences by day and keep caller data on cancel
-- Interfaces/Templates [**mocks**]: Filter events by exact zone id and allow delete by any user
-- Interfaces/Templates [**map-editor**]: Undo the latest change after the history cap trims entries
-- Interfaces/Templates [**explore**]: Do not crash on group checks before the user loads
-- Interfaces/Templates [**components**]: Show milliseconds in media durations and show 'soon' for near times
-- Interfaces/Templates [**bookings**]: Match parking users by email in any case and follow user changes
-- Interfaces/Templates [**assets**]: Stop the asset picker loop and match exact asset ids
-- Interfaces/Templates [**workplace**]: Ignore stale deals after a building change
-- Interfaces/Templates [**users**]: Accept common phone number formats
-- Interfaces/Templates [**bookings**]: List region parking levels with their building names
-- Interfaces/Templates [**booking-panel**]: Keep the qr code when hide_qr_code is false
-- Interfaces/Templates [**events**]: Ignore the event's own booking in all of its rooms
-- Interfaces/Templates [**form-fields**]: Allow booking rules that start at midnight
-- Interfaces/Templates [**assets**]: Do not throw for a category without a name
-- Interfaces/Templates [**map-kiosk**]: Stop waiting for parking spaces after 10 seconds
-- Interfaces/Templates [**workplace**]: Hide a removed booking at once
-- Interfaces/Templates [**map-editor**]: Undo a new change before a mark after an earlier undo
-- Interfaces/Templates [**concierge**]: Hide a removed booking that was just created or edited
-- Interfaces/Templates [**stagehand**]: Raise all-match alerts when the debounce period is 0
 - Interfaces/Templates [**map-editor**]: Shortlist named groups of outlined letters the instruction quotes ([#701](https://github.com/PlaceOS/templates/pull/701))
-- Interfaces/Templates [**bookings**]: Require a parking restriction only when options exist
-- Interfaces/Templates [**signage-manager**]: Keep video and audio requests out of the service worker
-- Interfaces/Templates [**signage-manager**]: Show a reload prompt when the media preview chunk is gone
-- Interfaces/Templates [**control**]: Show a notice when a camera is busy, not an unhandled error
-- Interfaces/Templates [**workplace**]: Add host search to the new meeting flow
-- Interfaces/Templates [**explore**]: Keep the chosen start time when bookable hours are set
-- Interfaces/Templates [**assistant-panel**]: Retry the presence model after a failed load
-- Interfaces/Templates [**catering**]: Report a failed option removal as an error
-- Interfaces/Templates [**form-fields**]: Stop the time field from hanging when the step is over 30 minutes
-- Interfaces/Templates: Wait for the signed-in user before applying app restrictions
-- Interfaces/Templates [**common**]: Show the right error when an async handler is missing its name or callback
-- Interfaces/Templates [**events**]: Leave empty guests out of google calendar links
-- Interfaces/Templates [**form-fields**]: Keep the visit-expected value from csv imports
-- Interfaces/Templates [**mocks**]: Make the mock guest and event endpoints behave like the api
 - Libraries/Models [**user**]: Never serialise password digests or sso tokens ([#341](https://github.com/PlaceOS/placeos-models/pull/341))
 - Services/RestAPI [**group_users**]: Don't return sensitive fields ([#462](https://github.com/PlaceOS/rest-api/pull/462))
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2611.6
-- Swagger/StaffAPI: Update for placeos-2.2611.6
 
 ## 2.2611.6
 
