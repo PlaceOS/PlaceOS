@@ -5,6 +5,14 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2611.7
+
+### Fixed
+
+- Interfaces/Templates [**map-editor**]: Shortlist named groups of outlined letters the instruction quotes ([#701](https://github.com/PlaceOS/templates/pull/701))
+- Libraries/Models [**user**]: Never serialise password digests or sso tokens ([#341](https://github.com/PlaceOS/placeos-models/pull/341))
+- Services/RestAPI [**group_users**]: Don't return sensitive fields ([#462](https://github.com/PlaceOS/rest-api/pull/462))
+
 ## 2.2611.6
 
 ### Added
