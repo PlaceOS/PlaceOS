@@ -19,6 +19,7 @@ env:
   CRYSTAL_VERSION: latest
   RELEASE_REPO: PlaceOS/PlaceOS
   PARTNER_ENVIRONMENT_REPO: placeos/local
+  BACKOFFICE_REPO: placeos/backoffice
 
 jobs:
   discover:
@@ -212,6 +213,17 @@ jobs:
           event-type: update
           repository: ${{ env.PARTNER_ENVIRONMENT_REPO }}
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
+      # Backoffice publishes the commit that interfaces/backoffice pins for this
+      # version to its build/prod branch. See docs/releases.md in placeos/backoffice.
+      -
+        name: Release backoffice
+        if: ${{ steps.prepare-release.outputs.should-release == 'true' }}
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: placeos-release
+          repository: ${{ env.BACKOFFICE_REPO }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          client-payload: '{"version": "${{ steps.prepare-release.outputs.version }}"}'
       -
         name: Google Chat Notification
         if: success()
