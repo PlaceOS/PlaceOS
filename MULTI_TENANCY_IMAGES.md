@@ -9,18 +9,22 @@ Build all 13 services discovered by the canonical platform build using Buildx fo
 - [x] Refresh and verify the four feature heads, their expected branches and green CI; preserve all unrelated nightly service pins.
 - [x] Pin the four feature gitlinks, set VERSION=multi-tenancy and add an explicit images-only workflow option.
 - [x] Validate the exact 13-source/image matrix and workflow; an images-only run must skip the entire Git tagging/release/notification/UI-dispatch job.
-- [ ] Obtain the configured release-team approval for this concrete custom build. Do not weaken or bypass the release environment protections.
-- [ ] Build and publish both architectures through the canonical workflow.
-- [ ] Inspect each registry manifest and OCI revision/version labels, record digests and verify init migration payload.
+- [x] Obtain the configured release-team approval for this concrete custom build. Do not weaken or bypass the release environment protections.
+- [x] Build and publish both architectures through the canonical workflow.
+- [x] Inspect each registry manifest and OCI revision/version labels, record digests and verify init migration payload.
 
-## Publication gate
+## Results and pull references
 
-The existing `release` environment requires review from PlaceOS/release and only permits nightly/monthly/preview branches. This dedicated `ai/multi-tenancy-images` branch is not currently allowed. Any temporary allowlist addition and approval must be explicit; retain all team-review requirements and remove the one added branch rule after publishing. Local Docker has no registry credentials.
+All13 `docker.io/placeos/<service>:multi-tenancy` images are published for both `linux/amd64` and `linux/arm64`. Docker selects the host architecture automatically. The exact source/image set is in `multi-tenancy-images.json`; verified index and per-platform digests, OCI labels and test evidence are in `multi-tenancy-image-receipt.json`. `multi-tenancy-images.lock` lists immutable pull references for a cluster rollout. No cluster configuration or database was changed.
 
-The build does not merge the feature PRs, activate enforcement, migrate a cluster, modify driver/interface source, or publish latest/preview/nightly tags. Service Dockerfiles and their locked dependencies remain the build authority; platform library gitlinks do not inject dependencies into other services. Init's migration source and REST/Staff model locks point at the reviewed models branch/head.
+The source snapshot remains **cca78ae53610853ac3550d488931736644746dc6**. [Original build44216582470](https://github.com/PlaceOS/PlaceOS/actions/runs/44216582470) published12 images; init exhausted memory while two platform compilers overlapped. [Recovery44225358298](https://github.com/PlaceOS/PlaceOS/actions/runs/44225358298) successfully published init only, using execution workflow9d7e11dd with source_ref=cca78ae5. Both runs skipped Tag and release.
 
-## Review
+Init already limited Crystal LLVM workers with --threads=1. The recovery adds init-only BuildKit max-parallelism1, so its compiler processes run serially. All other jobs finished before retrying init, per Steve's guidance. Recovery controls preserve the source SHA for checkout and PLACE_COMMIT and select an exact discovered service; defaults and invalid-input cases were tested. actionlint, TOML parsing, current-head Shard Report CI and independent review passed.
 
-Workflow/source-manifest validation passed with actionlint1.7.12 and execution of the actual platform-info/version/tag scripts. Discovery matches all13 pinned sources; every generated tag is exactly placeos/<service>:multi-tenancy. Explicit images_only=true is accepted and false/missing is rejected. Both architectures, immutable approved platform SHA, protected release environment and complete release-job skip are verified. Existing invalid branch-glob escapes and Node16-era actions in the touched workflow were corrected to supported action versions.
+Registry verification confirms all13 current tags match the recorded immutable index digests, with both requested architectures and the expected source/version labels. REST2.0.0 and Staff1.2.0 execute --version successfully on both architectures with networking disabled. On both init architectures, all149 database files byte-match models716ca76; pg_dump18.7 starts successfully. Payload inspection used containers that were never started; no migration ran.
 
-All four feature branches are clean/current with master, their shards are installed, and their current required CI/image checks are green. Publication remains pending the configured release gate and subsequent registry/migration-payload verification. No images have been published by this branch yet.
+The user approved only this test-image publication. Temporary release branch rule67207274 was removed after verification; the original branch policies and release-team review remain intact. No Git tags/releases, stable-channel tags, chat notifications or UI publication were performed by these runs. The four source feature PRs remain unmerged, Staff stays domain-based and driver/interface source is unchanged.
+
+## Known follow-up
+
+[REST#468](https://github.com/PlaceOS/rest-api/issues/468) tracks a pre-existing /platform display-label bug: character-set stripping renders the custom name as mutitnny. Registry tags and OCI version labels remain exactly multi-tenancy. The approved application sources were retained; use the verified image references/digests for candidate identification.
