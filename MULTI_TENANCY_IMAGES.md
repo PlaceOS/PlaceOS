@@ -7,8 +7,8 @@ Build all 13 services discovered by the canonical platform build using Buildx fo
 ## Plan and verification
 
 - [x] Refresh and verify the four feature heads, their expected branches and green CI; preserve all unrelated nightly service pins.
-- [ ] Pin the four feature gitlinks, set VERSION=multi-tenancy and add an explicit images-only workflow option.
-- [ ] Validate the exact 13-source/image matrix and workflow; an images-only run must skip the entire Git tagging/release/notification/UI-dispatch job.
+- [x] Pin the four feature gitlinks, set VERSION=multi-tenancy and add an explicit images-only workflow option.
+- [x] Validate the exact 13-source/image matrix and workflow; an images-only run must skip the entire Git tagging/release/notification/UI-dispatch job.
 - [ ] Obtain the configured release-team approval for this concrete custom build. Do not weaken or bypass the release environment protections.
 - [ ] Build and publish both architectures through the canonical workflow.
 - [ ] Inspect each registry manifest and OCI revision/version labels, record digests and verify init migration payload.
@@ -21,4 +21,6 @@ The build does not merge the feature PRs, activate enforcement, migrate a cluste
 
 ## Review
 
-Pending workflow/source-manifest validation, protected publication approval and multi-architecture registry verification. No images have been published by this branch yet.
+Workflow/source-manifest validation passed with actionlint1.7.12 and execution of the actual platform-info/version/tag scripts. Discovery matches all13 pinned sources; every generated tag is exactly placeos/<service>:multi-tenancy. Explicit images_only=true is accepted and false/missing is rejected. Both architectures, immutable approved platform SHA, protected release environment and complete release-job skip are verified. Existing invalid branch-glob escapes and Node16-era actions in the touched workflow were corrected to supported action versions.
+
+All four feature branches are clean/current with master, their shards are installed, and their current required CI/image checks are green. Publication remains pending the configured release gate and subsequent registry/migration-payload verification. No images have been published by this branch yet.
