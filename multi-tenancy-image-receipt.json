@@ -1,0 +1,607 @@
+{
+  "verified_at_utc": "2026-11-18T03:39:40.342746+00:00",
+  "workflow_run": "https://github.com/PlaceOS/PlaceOS/actions/runs/44216582470",
+  "approved_platform_commit": "cca78ae53610853ac3550d488931736644746dc6",
+  "tag": "multi-tenancy",
+  "models_commit": "716ca764f68e09a72b9028aa3380fdb06a50a635",
+  "images": [
+    {
+      "name": "auth.cr",
+      "image": "docker.io/placeos/auth.cr:multi-tenancy",
+      "source_commit": "8f6b520372ef3aab535aa57ede3c3dacdc7218c7",
+      "digest": "sha256:5a454e0b97a510447d0a8eed4dd4eced7583a1a0a8f42fb3ddb1f6b60990ab99",
+      "pinned_image": "docker.io/placeos/auth.cr@sha256:5a454e0b97a510447d0a8eed4dd4eced7583a1a0a8f42fb3ddb1f6b60990ab99",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:27e5804f5bc48e530c5376bb32cf933a302c99bd50d2f8357e122a3ea2cc8003",
+          "labels": {
+            "org.opencontainers.image.revision": "8f6b520372ef3aab535aa57ede3c3dacdc7218c7",
+            "org.opencontainers.image.source": "https://github.com/PlaceOS/auth.cr/tree/8f6b520372ef3aab535aa57ede3c3dacdc7218c7",
+            "org.opencontainers.image.title": "auth.cr",
+            "org.opencontainers.image.url": "https://github.com/PlaceOS/auth.cr",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:eaee4fe52dc6d102c691fa6898e1dd0a7f61b12769b745fce6c2c2ac673c919d",
+          "labels": {
+            "org.opencontainers.image.revision": "8f6b520372ef3aab535aa57ede3c3dacdc7218c7",
+            "org.opencontainers.image.source": "https://github.com/PlaceOS/auth.cr/tree/8f6b520372ef3aab535aa57ede3c3dacdc7218c7",
+            "org.opencontainers.image.title": "auth.cr",
+            "org.opencontainers.image.url": "https://github.com/PlaceOS/auth.cr",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "build",
+      "image": "docker.io/placeos/build:multi-tenancy",
+      "source_commit": "786793a8f2715fddd0d5fec0aeb6f5c47976ec62",
+      "digest": "sha256:57fba3d1f1475b981d1bfad88123e0a87c5090b02d49935f9507ade23f7a9ed0",
+      "pinned_image": "docker.io/placeos/build@sha256:57fba3d1f1475b981d1bfad88123e0a87c5090b02d49935f9507ade23f7a9ed0",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:0787a4827bbd773526f77e7d0048146223897b3b55127c4db77c5d754a66a50c",
+          "labels": {
+            "org.opencontainers.image.revision": "786793a8f2715fddd0d5fec0aeb6f5c47976ec62",
+            "org.opencontainers.image.source": "https://github.com/PlaceOS/build/tree/786793a8f2715fddd0d5fec0aeb6f5c47976ec62",
+            "org.opencontainers.image.title": "build",
+            "org.opencontainers.image.url": "https://github.com/PlaceOS/build",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:5e835c3b3b75c9ae2356b97f3df47bf72ca12ab88dc8ee4437da521952d68f81",
+          "labels": {
+            "org.opencontainers.image.revision": "786793a8f2715fddd0d5fec0aeb6f5c47976ec62",
+            "org.opencontainers.image.source": "https://github.com/PlaceOS/build/tree/786793a8f2715fddd0d5fec0aeb6f5c47976ec62",
+            "org.opencontainers.image.title": "build",
+            "org.opencontainers.image.url": "https://github.com/PlaceOS/build",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "build_service",
+      "image": "docker.io/placeos/build_service:multi-tenancy",
+      "source_commit": "4206237708a0dbc902782c1317daa07948e33195",
+      "digest": "sha256:34227719e07a24ce6e1fc972160ec23cd926edb1a614c6d73a6a2a6ce724c51e",
+      "pinned_image": "docker.io/placeos/build_service@sha256:34227719e07a24ce6e1fc972160ec23cd926edb1a614c6d73a6a2a6ce724c51e",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:3ba21ec4df664228bd27322b4810f9716bd281d22f36ab9994604ff9d68af0f8",
+          "labels": {
+            "org.opencontainers.image.revision": "4206237708a0dbc902782c1317daa07948e33195",
+            "org.opencontainers.image.source": "https://github.com/placeos/build_service/tree/4206237708a0dbc902782c1317daa07948e33195",
+            "org.opencontainers.image.title": "build_service",
+            "org.opencontainers.image.url": "https://github.com/placeos/build_service",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:846566d852d2d531bfc52902bee435f7020dd259f5cf41459de33175309c5744",
+          "labels": {
+            "org.opencontainers.image.revision": "4206237708a0dbc902782c1317daa07948e33195",
+            "org.opencontainers.image.source": "https://github.com/placeos/build_service/tree/4206237708a0dbc902782c1317daa07948e33195",
+            "org.opencontainers.image.title": "build_service",
+            "org.opencontainers.image.url": "https://github.com/placeos/build_service",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "core",
+      "image": "docker.io/placeos/core:multi-tenancy",
+      "source_commit": "98791b8f528823853c7951d9433abfe41a47434d",
+      "digest": "sha256:ee0f0f2eed0d5cf0923fac2570943f61954d1364bf233789b9757ed4019ac6a7",
+      "pinned_image": "docker.io/placeos/core@sha256:ee0f0f2eed0d5cf0923fac2570943f61954d1364bf233789b9757ed4019ac6a7",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:8c62e2aaf1076b21e9765e77a245d2811fd335c23cbfa6745de0d18d55863cab",
+          "labels": {
+            "org.opencontainers.image.revision": "98791b8f528823853c7951d9433abfe41a47434d",
+            "org.opencontainers.image.source": "https://github.com/placeos/core/tree/98791b8f528823853c7951d9433abfe41a47434d",
+            "org.opencontainers.image.title": "core",
+            "org.opencontainers.image.url": "https://github.com/placeos/core",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:be05b5ab50b5324eb5bf3242e89a84ef0a89bf2a35553903a1068dcc90245bc0",
+          "labels": {
+            "org.opencontainers.image.revision": "98791b8f528823853c7951d9433abfe41a47434d",
+            "org.opencontainers.image.source": "https://github.com/placeos/core/tree/98791b8f528823853c7951d9433abfe41a47434d",
+            "org.opencontainers.image.title": "core",
+            "org.opencontainers.image.url": "https://github.com/placeos/core",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "dispatch",
+      "image": "docker.io/placeos/dispatch:multi-tenancy",
+      "source_commit": "9c99aaf858a78a4ebfbb15fb8f3e57eddeaba23f",
+      "digest": "sha256:651a30931c0a6de2db859a490e72216c03cbfe8807bbce9d33512b3086b83a07",
+      "pinned_image": "docker.io/placeos/dispatch@sha256:651a30931c0a6de2db859a490e72216c03cbfe8807bbce9d33512b3086b83a07",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:2a69b76f8eb790669de2236f94d5b5458a94da4bcb9e789f1046fde8f3ea04e8",
+          "labels": {
+            "org.opencontainers.image.revision": "9c99aaf858a78a4ebfbb15fb8f3e57eddeaba23f",
+            "org.opencontainers.image.source": "https://github.com/placeos/dispatch/tree/9c99aaf858a78a4ebfbb15fb8f3e57eddeaba23f",
+            "org.opencontainers.image.title": "dispatch",
+            "org.opencontainers.image.url": "https://github.com/placeos/dispatch",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:27ced9748e4280dc9a4deecbac34773f3c38934ba61d820eff6ee5c5a24e80e0",
+          "labels": {
+            "org.opencontainers.image.revision": "9c99aaf858a78a4ebfbb15fb8f3e57eddeaba23f",
+            "org.opencontainers.image.source": "https://github.com/placeos/dispatch/tree/9c99aaf858a78a4ebfbb15fb8f3e57eddeaba23f",
+            "org.opencontainers.image.title": "dispatch",
+            "org.opencontainers.image.url": "https://github.com/placeos/dispatch",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "edge",
+      "image": "docker.io/placeos/edge:multi-tenancy",
+      "source_commit": "98791b8f528823853c7951d9433abfe41a47434d",
+      "digest": "sha256:880d31337b7f49f4e029919aae1ca9c1f1897f5263af5e54b74b6fc4f290a9df",
+      "pinned_image": "docker.io/placeos/edge@sha256:880d31337b7f49f4e029919aae1ca9c1f1897f5263af5e54b74b6fc4f290a9df",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:bff32e65da462228efc8b0234c5e333bf9fa6362909408f7183cce009f3074b1",
+          "labels": {
+            "org.opencontainers.image.revision": "98791b8f528823853c7951d9433abfe41a47434d",
+            "org.opencontainers.image.source": "https://github.com/placeos/core/tree/98791b8f528823853c7951d9433abfe41a47434d",
+            "org.opencontainers.image.title": "edge",
+            "org.opencontainers.image.url": "https://github.com/placeos/core",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:bd69df3414c103878212d946ad6edcd2269ff738d1ef8835b34b616c406f212e",
+          "labels": {
+            "org.opencontainers.image.revision": "98791b8f528823853c7951d9433abfe41a47434d",
+            "org.opencontainers.image.source": "https://github.com/placeos/core/tree/98791b8f528823853c7951d9433abfe41a47434d",
+            "org.opencontainers.image.title": "edge",
+            "org.opencontainers.image.url": "https://github.com/placeos/core",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "frontend-loader",
+      "image": "docker.io/placeos/frontend-loader:multi-tenancy",
+      "source_commit": "850e2f460162bce3b6abce5cefb715c08037035f",
+      "digest": "sha256:9f8fcfd95b4929c1b46c4acec47f1d709287046dcdcf97b14dbc6e22cc854bae",
+      "pinned_image": "docker.io/placeos/frontend-loader@sha256:9f8fcfd95b4929c1b46c4acec47f1d709287046dcdcf97b14dbc6e22cc854bae",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:e45dbb5e438c4eefea4cf0db2145c3b028fc7359d514cacf605cea1a740991d2",
+          "labels": {
+            "org.opencontainers.image.revision": "850e2f460162bce3b6abce5cefb715c08037035f",
+            "org.opencontainers.image.source": "https://github.com/placeos/frontend-loader/tree/850e2f460162bce3b6abce5cefb715c08037035f",
+            "org.opencontainers.image.title": "frontend-loader",
+            "org.opencontainers.image.url": "https://github.com/placeos/frontend-loader",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:d6b3fed063f91833e1c9d21c63f1793582d21af05fc4729640ff714d3f169a72",
+          "labels": {
+            "org.opencontainers.image.revision": "850e2f460162bce3b6abce5cefb715c08037035f",
+            "org.opencontainers.image.source": "https://github.com/placeos/frontend-loader/tree/850e2f460162bce3b6abce5cefb715c08037035f",
+            "org.opencontainers.image.title": "frontend-loader",
+            "org.opencontainers.image.url": "https://github.com/placeos/frontend-loader",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "init",
+      "image": "docker.io/placeos/init:multi-tenancy",
+      "source_commit": "2a986f86e0888fae6782ef09d5a63d566ce6e404",
+      "digest": "sha256:8e2392e97a8014445d6cd04fa0a034a313a847ced6f844b3042a40f759f8c0e3",
+      "pinned_image": "docker.io/placeos/init@sha256:8e2392e97a8014445d6cd04fa0a034a313a847ced6f844b3042a40f759f8c0e3",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:fb20087d8578860218da89f9529073aa9f515247bc6e74e4ec0a6f9b033ff1a6",
+          "labels": {
+            "org.opencontainers.image.revision": "2a986f86e0888fae6782ef09d5a63d566ce6e404",
+            "org.opencontainers.image.source": "https://github.com/placeos/init/tree/2a986f86e0888fae6782ef09d5a63d566ce6e404",
+            "org.opencontainers.image.title": "init",
+            "org.opencontainers.image.url": "https://github.com/placeos/init",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:f46310b2d3869f7a570ad272eb0bccf1aa3322c091521b57a34ad6129c119ce2",
+          "labels": {
+            "org.opencontainers.image.revision": "2a986f86e0888fae6782ef09d5a63d566ce6e404",
+            "org.opencontainers.image.source": "https://github.com/placeos/init/tree/2a986f86e0888fae6782ef09d5a63d566ce6e404",
+            "org.opencontainers.image.title": "init",
+            "org.opencontainers.image.url": "https://github.com/placeos/init",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "nginx",
+      "image": "docker.io/placeos/nginx:multi-tenancy",
+      "source_commit": "457e75bd187a11ac6d572e73fea193b958e7b870",
+      "digest": "sha256:938a5d3180e331de08805d36857231f7e3078883b4a17cb590a14a6d591d3104",
+      "pinned_image": "docker.io/placeos/nginx@sha256:938a5d3180e331de08805d36857231f7e3078883b4a17cb590a14a6d591d3104",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:19914c9cf7594c0a44e20124a805a4629a2bfba546593f0eb1a794448970de32",
+          "labels": {
+            "maintainer": "Evan Wies <evan@neomantra.net>",
+            "org.opencontainers.image.revision": "457e75bd187a11ac6d572e73fea193b958e7b870",
+            "org.opencontainers.image.source": "https://github.com/placeos/nginx/tree/457e75bd187a11ac6d572e73fea193b958e7b870",
+            "org.opencontainers.image.title": "nginx",
+            "org.opencontainers.image.url": "https://github.com/placeos/nginx",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy",
+            "resty_add_package_builddeps": "",
+            "resty_add_package_rundeps": "",
+            "resty_config_deps": "--with-pcre     --with-cc-opt='-DNGX_LUA_ABORT_AT_PANIC -I/usr/local/openresty/pcre/include -I/usr/local/openresty/openssl/include'     --with-ld-opt='-L/usr/local/openresty/pcre/lib -L/usr/local/openresty/openssl/lib -Wl,-rpath,/usr/local/openresty/pcre/lib:/usr/local/openresty/openssl/lib'     ",
+            "resty_config_options": "    --with-compat     --with-file-aio     --with-http_addition_module     --with-http_auth_request_module     --with-http_dav_module     --with-http_flv_module     --with-http_geoip_module=dynamic     --with-http_gunzip_module     --with-http_gzip_static_module     --with-http_image_filter_module=dynamic     --with-http_mp4_module     --with-http_random_index_module     --with-http_realip_module     --with-http_secure_link_module     --with-http_slice_module     --with-http_ssl_module     --with-http_stub_status_module     --with-http_sub_module     --with-http_v2_module     --with-http_v3_module     --with-http_xslt_module=dynamic     --with-ipv6     --with-mail     --with-mail_ssl_module     --with-md5-asm     --with-sha1-asm     --with-stream     --with-stream_ssl_module     --with-threads     ",
+            "resty_config_options_more": "",
+            "resty_eval_post_download_pre_configure": "",
+            "resty_eval_post_make": "",
+            "resty_eval_pre_configure": "",
+            "resty_fat_image_base": "openresty/openresty",
+            "resty_fat_image_tag": "1.25.3.2-alpine-aarch64",
+            "resty_image_base": "alpine",
+            "resty_image_tag": "3.20.6",
+            "resty_luajit_options": "--with-luajit-xcflags='-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT'",
+            "resty_luarocks_version": "3.12.0",
+            "resty_openssl_patch_version": "1.1.1f",
+            "resty_openssl_url_base": "https://www.openssl.org/source/old/1.1.1",
+            "resty_openssl_version": "1.1.1w",
+            "resty_pcre_build_options": "--enable-jit",
+            "resty_pcre_options": "--with-pcre-jit",
+            "resty_pcre_sha256": "4e6ce03e0336e8b4a3d6c2b70b1c5e18590a5673a98186da90d4f33c23defc09",
+            "resty_pcre_version": "8.45",
+            "resty_version": "1.25.3.2"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:1b164ceba5ce95fbcf10255d60d5ac35d12cbcc02520d13220f5fc7684689110",
+          "labels": {
+            "maintainer": "Evan Wies <evan@neomantra.net>",
+            "org.opencontainers.image.revision": "457e75bd187a11ac6d572e73fea193b958e7b870",
+            "org.opencontainers.image.source": "https://github.com/placeos/nginx/tree/457e75bd187a11ac6d572e73fea193b958e7b870",
+            "org.opencontainers.image.title": "nginx",
+            "org.opencontainers.image.url": "https://github.com/placeos/nginx",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy",
+            "resty_add_package_builddeps": "",
+            "resty_add_package_rundeps": "",
+            "resty_config_deps": "--with-pcre     --with-cc-opt='-DNGX_LUA_ABORT_AT_PANIC -I/usr/local/openresty/pcre/include -I/usr/local/openresty/openssl/include'     --with-ld-opt='-L/usr/local/openresty/pcre/lib -L/usr/local/openresty/openssl/lib -Wl,-rpath,/usr/local/openresty/pcre/lib:/usr/local/openresty/openssl/lib'     ",
+            "resty_config_options": "    --with-compat     --with-file-aio     --with-http_addition_module     --with-http_auth_request_module     --with-http_dav_module     --with-http_flv_module     --with-http_geoip_module=dynamic     --with-http_gunzip_module     --with-http_gzip_static_module     --with-http_image_filter_module=dynamic     --with-http_mp4_module     --with-http_random_index_module     --with-http_realip_module     --with-http_secure_link_module     --with-http_slice_module     --with-http_ssl_module     --with-http_stub_status_module     --with-http_sub_module     --with-http_v2_module     --with-http_v3_module     --with-http_xslt_module=dynamic     --with-ipv6     --with-mail     --with-mail_ssl_module     --with-md5-asm     --with-sha1-asm     --with-stream     --with-stream_ssl_module     --with-threads     ",
+            "resty_config_options_more": "",
+            "resty_eval_post_download_pre_configure": "",
+            "resty_eval_post_make": "",
+            "resty_eval_pre_configure": "",
+            "resty_fat_image_base": "openresty/openresty",
+            "resty_fat_image_tag": "1.25.3.2-alpine-amd64",
+            "resty_image_base": "alpine",
+            "resty_image_tag": "3.20.6",
+            "resty_luajit_options": "--with-luajit-xcflags='-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT'",
+            "resty_luarocks_version": "3.12.0",
+            "resty_openssl_patch_version": "1.1.1f",
+            "resty_openssl_url_base": "https://www.openssl.org/source/old/1.1.1",
+            "resty_openssl_version": "1.1.1w",
+            "resty_pcre_build_options": "--enable-jit",
+            "resty_pcre_options": "--with-pcre-jit",
+            "resty_pcre_sha256": "4e6ce03e0336e8b4a3d6c2b70b1c5e18590a5673a98186da90d4f33c23defc09",
+            "resty_pcre_version": "8.45",
+            "resty_version": "1.25.3.2"
+          }
+        }
+      }
+    },
+    {
+      "name": "rest-api",
+      "image": "docker.io/placeos/rest-api:multi-tenancy",
+      "source_commit": "1507d3a0120f25cc237eab9a90d8875c0b7438e7",
+      "digest": "sha256:24ca592bf7b37663b9ddbf090a7c5fd3832699c449852642c9ed568ecf466d6d",
+      "pinned_image": "docker.io/placeos/rest-api@sha256:24ca592bf7b37663b9ddbf090a7c5fd3832699c449852642c9ed568ecf466d6d",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:ac3d3d924c1670f069f1dc8db434471aae69a15fdf3526616bd1042358d89ff1",
+          "labels": {
+            "org.opencontainers.image.revision": "1507d3a0120f25cc237eab9a90d8875c0b7438e7",
+            "org.opencontainers.image.source": "https://github.com/placeos/rest-api/tree/1507d3a0120f25cc237eab9a90d8875c0b7438e7",
+            "org.opencontainers.image.title": "rest-api",
+            "org.opencontainers.image.url": "https://github.com/placeos/rest-api",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:43f81b7cd51f9bc1cbba468beb1cc26ad47f310c4d4b1af2e76a9157ea553985",
+          "labels": {
+            "org.opencontainers.image.revision": "1507d3a0120f25cc237eab9a90d8875c0b7438e7",
+            "org.opencontainers.image.source": "https://github.com/placeos/rest-api/tree/1507d3a0120f25cc237eab9a90d8875c0b7438e7",
+            "org.opencontainers.image.title": "rest-api",
+            "org.opencontainers.image.url": "https://github.com/placeos/rest-api",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "source",
+      "image": "docker.io/placeos/source:multi-tenancy",
+      "source_commit": "68f70cbf083146f2eab7d557c57d5f5ee5b5435d",
+      "digest": "sha256:a6b6d19dc00537328372bf321ceaf5770a3eb666d6bed1c71e16416453e86395",
+      "pinned_image": "docker.io/placeos/source@sha256:a6b6d19dc00537328372bf321ceaf5770a3eb666d6bed1c71e16416453e86395",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:a3ea6eb8431471cf50cb1d7e4fa6c09d5eee670d8de8f72f4e836d37cd0c3adf",
+          "labels": {
+            "org.opencontainers.image.revision": "68f70cbf083146f2eab7d557c57d5f5ee5b5435d",
+            "org.opencontainers.image.source": "https://github.com/placeos/source/tree/68f70cbf083146f2eab7d557c57d5f5ee5b5435d",
+            "org.opencontainers.image.title": "source",
+            "org.opencontainers.image.url": "https://github.com/placeos/source",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:5eada9e16eeda22e98bcf3faf1d71c5f5bebccaf8a103a3284b0d7f5f3f46b1e",
+          "labels": {
+            "org.opencontainers.image.revision": "68f70cbf083146f2eab7d557c57d5f5ee5b5435d",
+            "org.opencontainers.image.source": "https://github.com/placeos/source/tree/68f70cbf083146f2eab7d557c57d5f5ee5b5435d",
+            "org.opencontainers.image.title": "source",
+            "org.opencontainers.image.url": "https://github.com/placeos/source",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "staff-api",
+      "image": "docker.io/placeos/staff-api:multi-tenancy",
+      "source_commit": "a9b8a2141f6f63c07dc6b7931e88717af2f8d8c0",
+      "digest": "sha256:0747b18244e72e12b6a6491ffaf57cd929f9b3ae024e0fa5e43a9095503f0c59",
+      "pinned_image": "docker.io/placeos/staff-api@sha256:0747b18244e72e12b6a6491ffaf57cd929f9b3ae024e0fa5e43a9095503f0c59",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:272d664ea7c7a0116f81d255656eb020296650e3f8ac13a6a709d9de25d5c4e0",
+          "labels": {
+            "org.opencontainers.image.revision": "a9b8a2141f6f63c07dc6b7931e88717af2f8d8c0",
+            "org.opencontainers.image.source": "https://github.com/placeos/staff-api/tree/a9b8a2141f6f63c07dc6b7931e88717af2f8d8c0",
+            "org.opencontainers.image.title": "staff-api",
+            "org.opencontainers.image.url": "https://github.com/placeos/staff-api",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:6787ba2a7600d32f82a9cefd2bfead48a90a84c5e9119638ed7244d7cacee326",
+          "labels": {
+            "org.opencontainers.image.revision": "a9b8a2141f6f63c07dc6b7931e88717af2f8d8c0",
+            "org.opencontainers.image.source": "https://github.com/placeos/staff-api/tree/a9b8a2141f6f63c07dc6b7931e88717af2f8d8c0",
+            "org.opencontainers.image.title": "staff-api",
+            "org.opencontainers.image.url": "https://github.com/placeos/staff-api",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    },
+    {
+      "name": "triggers",
+      "image": "docker.io/placeos/triggers:multi-tenancy",
+      "source_commit": "8296bea9e53de5f50afe46b7ad718926883d4d05",
+      "digest": "sha256:583464c9f8da508b3f538a0f92ff2e34123fd7fc043673d5a0f9d6eeb25ff313",
+      "pinned_image": "docker.io/placeos/triggers@sha256:583464c9f8da508b3f538a0f92ff2e34123fd7fc043673d5a0f9d6eeb25ff313",
+      "platforms": {
+        "linux/arm64": {
+          "digest": "sha256:94bfaf15e62277ed97a3cefda8b1c27a029198913551c99f520c9ddf67b4a385",
+          "labels": {
+            "org.opencontainers.image.revision": "8296bea9e53de5f50afe46b7ad718926883d4d05",
+            "org.opencontainers.image.source": "https://github.com/placeos/triggers/tree/8296bea9e53de5f50afe46b7ad718926883d4d05",
+            "org.opencontainers.image.title": "triggers",
+            "org.opencontainers.image.url": "https://github.com/placeos/triggers",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        },
+        "linux/amd64": {
+          "digest": "sha256:37f1f434d2bc4a552fe80a74f8352b6cfec6c7f06306c374328c9dbc52a17835",
+          "labels": {
+            "org.opencontainers.image.revision": "8296bea9e53de5f50afe46b7ad718926883d4d05",
+            "org.opencontainers.image.source": "https://github.com/placeos/triggers/tree/8296bea9e53de5f50afe46b7ad718926883d4d05",
+            "org.opencontainers.image.title": "triggers",
+            "org.opencontainers.image.url": "https://github.com/placeos/triggers",
+            "org.opencontainers.image.vendor": "Place Technology Limited",
+            "org.opencontainers.image.version": "multi-tenancy"
+          }
+        }
+      }
+    }
+  ],
+  "workflow_runs": {
+    "original": "https://github.com/PlaceOS/PlaceOS/actions/runs/44216582470",
+    "init_recovery": "https://github.com/PlaceOS/PlaceOS/actions/runs/44225358298"
+  },
+  "recovery_execution_commit": "9d7e11dd4970e355bbedc95c0a6f604fe6cb674f",
+  "init_buildkit_max_parallelism": 1,
+  "current_tag_verification": [
+    {
+      "image": "docker.io/placeos/auth.cr:multi-tenancy",
+      "digest": "sha256:5a454e0b97a510447d0a8eed4dd4eced7583a1a0a8f42fb3ddb1f6b60990ab99",
+      "status": "active",
+      "last_updated": "2026-11-18T01:43:23.040816Z"
+    },
+    {
+      "image": "docker.io/placeos/build:multi-tenancy",
+      "digest": "sha256:57fba3d1f1475b981d1bfad88123e0a87c5090b02d49935f9507ade23f7a9ed0",
+      "status": "active",
+      "last_updated": "2026-11-18T01:39:13.983801Z"
+    },
+    {
+      "image": "docker.io/placeos/build_service:multi-tenancy",
+      "digest": "sha256:34227719e07a24ce6e1fc972160ec23cd926edb1a614c6d73a6a2a6ce724c51e",
+      "status": "active",
+      "last_updated": "2026-11-18T01:45:23.899999Z"
+    },
+    {
+      "image": "docker.io/placeos/core:multi-tenancy",
+      "digest": "sha256:ee0f0f2eed0d5cf0923fac2570943f61954d1364bf233789b9757ed4019ac6a7",
+      "status": "active",
+      "last_updated": "2026-11-18T01:43:32.323579Z"
+    },
+    {
+      "image": "docker.io/placeos/dispatch:multi-tenancy",
+      "digest": "sha256:651a30931c0a6de2db859a490e72216c03cbfe8807bbce9d33512b3086b83a07",
+      "status": "active",
+      "last_updated": "2026-11-18T01:39:04.460086Z"
+    },
+    {
+      "image": "docker.io/placeos/edge:multi-tenancy",
+      "digest": "sha256:880d31337b7f49f4e029919aae1ca9c1f1897f5263af5e54b74b6fc4f290a9df",
+      "status": "active",
+      "last_updated": "2026-11-18T01:38:47.385553Z"
+    },
+    {
+      "image": "docker.io/placeos/frontend-loader:multi-tenancy",
+      "digest": "sha256:9f8fcfd95b4929c1b46c4acec47f1d709287046dcdcf97b14dbc6e22cc854bae",
+      "status": "active",
+      "last_updated": "2026-11-18T01:44:31.324521Z"
+    },
+    {
+      "image": "docker.io/placeos/init:multi-tenancy",
+      "digest": "sha256:8e2392e97a8014445d6cd04fa0a034a313a847ced6f844b3042a40f759f8c0e3",
+      "status": "active",
+      "last_updated": "2026-11-18T03:37:51.664863Z"
+    },
+    {
+      "image": "docker.io/placeos/nginx:multi-tenancy",
+      "digest": "sha256:938a5d3180e331de08805d36857231f7e3078883b4a17cb590a14a6d591d3104",
+      "status": "active",
+      "last_updated": "2026-11-18T01:34:20.924962Z"
+    },
+    {
+      "image": "docker.io/placeos/rest-api:multi-tenancy",
+      "digest": "sha256:24ca592bf7b37663b9ddbf090a7c5fd3832699c449852642c9ed568ecf466d6d",
+      "status": "active",
+      "last_updated": "2026-11-18T01:53:03.428639Z"
+    },
+    {
+      "image": "docker.io/placeos/source:multi-tenancy",
+      "digest": "sha256:a6b6d19dc00537328372bf321ceaf5770a3eb666d6bed1c71e16416453e86395",
+      "status": "active",
+      "last_updated": "2026-11-18T01:45:34.910088Z"
+    },
+    {
+      "image": "docker.io/placeos/staff-api:multi-tenancy",
+      "digest": "sha256:0747b18244e72e12b6a6491ffaf57cd929f9b3ae024e0fa5e43a9095503f0c59",
+      "status": "active",
+      "last_updated": "2026-11-18T02:42:12.544809Z"
+    },
+    {
+      "image": "docker.io/placeos/triggers:multi-tenancy",
+      "digest": "sha256:583464c9f8da508b3f538a0f92ff2e34123fd7fc043673d5a0f9d6eeb25ff313",
+      "status": "active",
+      "last_updated": "2026-11-18T01:43:40.681731Z"
+    }
+  ],
+  "runtime_smoke_checks": {
+    "rest": {
+      "image": "docker.io/placeos/rest-api@sha256:24ca592bf7b37663b9ddbf090a7c5fd3832699c449852642c9ed568ecf466d6d",
+      "platforms": {
+        "amd64": {
+          "output": "rest-api v2.0.0",
+          "exit_code": 0,
+          "network": "none"
+        },
+        "arm64": {
+          "output": "rest-api v2.0.0",
+          "exit_code": 0,
+          "network": "none"
+        }
+      }
+    },
+    "staff": {
+      "image": "docker.io/placeos/staff-api@sha256:0747b18244e72e12b6a6491ffaf57cd929f9b3ae024e0fa5e43a9095503f0c59",
+      "platforms": {
+        "amd64": {
+          "output": "staff-api v1.2.0",
+          "exit_code": 0,
+          "network": "none"
+        },
+        "arm64": {
+          "output": "staff-api v1.2.0",
+          "exit_code": 0,
+          "network": "none"
+        }
+      }
+    }
+  },
+  "init_payload_verification": {
+    "amd64": {
+      "tracked_db_files": 149,
+      "models_commit": "716ca764f68e09a72b9028aa3380fdb06a50a635",
+      "started": false,
+      "all_hashes_match": true,
+      "pg_dump_version": "pg_dump (PostgreSQL) 18.7"
+    },
+    "arm64": {
+      "tracked_db_files": 149,
+      "models_commit": "716ca764f68e09a72b9028aa3380fdb06a50a635",
+      "started": false,
+      "all_hashes_match": true,
+      "pg_dump_version": "pg_dump (PostgreSQL) 18.7"
+    }
+  },
+  "init_db_source_tree": "0fb79e5363d236b10cb14226d413f750b5b1e99a",
+  "release_gate_cleanup": {
+    "temporary_branch_rule_removed": true,
+    "rule_id": 67207274,
+    "verified_at_utc": "2026-11-18T03:41:31.393155+00:00",
+    "original_policies_retained": true,
+    "release_team_review_retained": true
+  },
+  "known_followups": [
+    {
+      "issue": "https://github.com/PlaceOS/rest-api/issues/468",
+      "scope": "REST platform-info display label",
+      "note": "Existing prefix normalisation renders multi-tenancy as mutitnny in /platform; Docker Hub tags and OCI version labels are verified as multi-tenancy."
+    }
+  ]
+}
