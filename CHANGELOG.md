@@ -5,6 +5,132 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2611.8
+
+### Fixed
+
+- Interfaces/Backoffice [**ui**]: Tooltips and floating panels keep clear of edges
+- Interfaces/Backoffice [**ui**]: Tooltip and panel gaps clear their shadows, and arrows join cleanly
+- Interfaces/Backoffice [**ui**]: Sidebar search no longer pushes the filter button out of view
+- Interfaces/Backoffice [**ui**]: Review fixes for selects, form fields, tabs, tooltips and duplicates
+- Interfaces/Backoffice [**systems**]: Module menu keeps its module while other rows are hovered
+- Interfaces/Backoffice [**ci**]: E2e tests run on ubuntu 24.04, where playwright can install chromium
+- Interfaces/Backoffice [**ci**]: Release backoffice with each placeos release
+- Interfaces/Backoffice [**ci**]: Limit workflow token permissions and release only develop commits
+- Interfaces/Backoffice [**ui**]: Sidebar highlight slides behind fixed link text
+- Interfaces/Backoffice [**ui**]: Toasts use the type that matches what happened
+- Interfaces/Backoffice [**ui**]: Empty uploads and invalid email domains show an error toast
+- Interfaces/Backoffice [**ui**]: Sidebar highlight slides from the last link, not the top
+- Interfaces/Templates [**remote-setup**]: Only clear by system for entries after the setup
+- Interfaces/Templates [**assistant-panel**]: Close the chat when a visitor leaves without speech recognition
+- Interfaces/Templates [**visitor-kiosk**]: Keep the kiosk level and link building set on load
+- Interfaces/Templates [**catering**]: Stop writing the caterer filter inside a computed
+- Interfaces/Templates [**explore**]: Locate users on the level of the pinned location
+- Interfaces/Templates [**events**]: Remove old room and stale visitor entries on save
+- Interfaces/Templates [**common**]: Keep retried timers, skip own logger lines and fix multi-day all-day end
+- Interfaces/Templates [**mocks**]: Keep room routes, cancelled jobs, and group ids separate
+- Interfaces/Templates [**bookings**]: Keep recent visitors whose email contains the invited email
+- Interfaces/Templates [**assets**]: Build an event from the options for asset zone rules
+- Interfaces/Templates [**bookings**]: Hide edit for rejected bookings
+- Interfaces/Templates: Catch error when requesting a wake lock
+- Interfaces/Templates [**ci**]: Release web and mobile apps one at a time with tags
+- Interfaces/Templates [**concierge**]: Show group event load errors and fix list actions
+- Interfaces/Templates [**events**]: Keep the public event link on this origin
+- Interfaces/Templates [**public**]: Let a remembered guest sign out
+- Interfaces/Templates [**public**]: Make the guest details form accessible
+- Interfaces/Templates [**events**]: Improve group event details modal accessibility
+- Interfaces/Templates [**concierge**]: Improve group events accessibility
+- Interfaces/Templates [**public**]: Improve events pages accessibility
+- Interfaces/Templates [**public**]: Stop the not-configured message flashing on load
+- Interfaces/Templates [**public**]: Show registration progress and the end date of long events
+- Interfaces/Templates [**concierge**]: Translate group event form errors and the view page
+- Interfaces/Templates [**ci**]: Address release tag review findings
+- Interfaces/Templates [**ci**]: Stop older release tags from replacing newer builds
+- Interfaces/Templates [**workplace**]: Show draft group events only to creator or host
+- Interfaces/Templates [**stagehand**]: Give pages unique titles, ordered headings and named controls
+- Interfaces/Templates [**stagehand**]: Announce loading states, empty feeds and condition counts
+- Interfaces/Templates [**stagehand**]: Label every field in the dashboard and alert editors
+- Interfaces/Templates [**signage-manager**]: Keep the nav outside main and keep focus on navigation
+- Interfaces/Templates [**stagehand**]: Name dialogs and keep focus in the editors
+- Interfaces/Templates [**signage-manager**]: Name dialogs and remove extra main landmarks
+- Interfaces/Templates [**signage-manager**]: Give form controls accessible names
+- Interfaces/Templates [**signage-manager**]: Expose selection and status without relying on colour
+- Interfaces/Templates [**signage-manager**]: Announce loading, error and progress states
+- Interfaces/Templates [**signage-manager**]: Make rows, reordering and previews keyboard accessible
+- Interfaces/Templates [**signage-manager**]: Make the zone and group trees work from the keyboard
+- Interfaces/Templates [**signage-manager**]: Keep focus when a render removes the focused control
+- Interfaces/Templates [**signage-manager**]: Give repeated buttons and links distinct names
+- Interfaces/Templates [**signage-manager**]: Animate drag sorting, the bulk bar and the drop overlay
+- Interfaces/Templates [**stagehand**]: Animate page changes and the editors
+- Interfaces/Templates [**stagehand**]: Pulse changed counts and fade in loaded content
+- Interfaces/Templates [**stagehand**]: Fade the sidebar labels when it collapses
+- Interfaces/Templates [**signage-manager**]: Animate page changes with view transitions
+- Interfaces/Templates [**stagehand**]: Fade in camera images, dashboards and new form fields
+- Interfaces/Templates [**signage-manager**]: Animate tabs, tab panels and tree rows
+- Interfaces/Templates [**stagehand**]: Keep the sidebar labels still on page changes
+- Interfaces/Templates [**signage-manager**]: Fade in arriving content and show upload progress
+- Interfaces/Templates [**concierge**]: Animate page changes
+- Interfaces/Templates [**concierge**]: Fade in loaded content and slide the bulk bar
+- Interfaces/Templates [**concierge**]: Pulse changed statuses and counts
+- Interfaces/Templates [**concierge**]: Fade in booking views and keep progress bars in place
+- Interfaces/Templates [**concierge**]: Animate drawers, view switches and remote setup steps
+- Interfaces/Templates [**concierge**]: Show the email template saving state
+- Interfaces/Templates [**control**]: Animate page and tab changes
+- Interfaces/Templates [**visitor-kiosk**]: Cross-fade page changes
+- Interfaces/Templates [**control**]: Fade in screens that change inside a page
+- Interfaces/Templates [**control**]: Fade in loaded content and pulse changed statuses
+- Interfaces/Templates [**control**]: Ease state changes on controls
+- Interfaces/Templates [**visitor-kiosk**]: Move the step card between check-in steps
+- Interfaces/Templates [**components**]: Fade in tooltip popovers
+- Interfaces/Templates [**visitor-kiosk**]: Fade in content that changes on a page
+- Interfaces/Templates [**visitor-kiosk**]: Show feedback for photos, scans and check-in
+- Interfaces/Templates [**concierge**]: Show the user menu drawer above the page content
+- Interfaces/Templates [**control**]: Keep layout styles in help content
+- Interfaces/Templates [**common**]: Stop sending an extension background rejection to sentry
+- Interfaces/Templates [**bookings**]: Report the real error when check-in loses network
+- Interfaces/Templates [**signage**]: Stop the player crashing sony tv browsers on load
+- Interfaces/Templates [**concierge,workplace**]: Keep video and audio requests out of the service worker
+- Interfaces/Templates [**common**]: Stop locale network failures causing unhandled rejections
+- Interfaces/Templates [**booking-panel,explore**]: Show room conflicts without unhandled rejections
+- Interfaces/Templates [**common**]: Load the locale file when zone overrides fail
+- Interfaces/Templates [**locale**]: Translate the strings that showed english
+- Libraries/Models: Describe converted model timestamps as integers ([#342](https://github.com/PlaceOS/placeos-models/pull/342))
+- Libraries/Models: Describe serialized model fields in openapi ([#343](https://github.com/PlaceOS/placeos-models/pull/343))
+- Services/RestAPI [**openapi**]: Document unix-second timestamps as integers ([#469](https://github.com/PlaceOS/rest-api/pull/469))
+- Services/RestAPI [**openapi**]: Align schemas with serialized fields ([#471](https://github.com/PlaceOS/rest-api/pull/471))
+- Services/StaffAPI [**openapi**]: Document staff api wire responses ([#398](https://github.com/PlaceOS/staff-api/pull/398))
+
+### Changed
+
+- Interfaces/Backoffice [**ui**]: Replace angular material with our own controls
+- Interfaces/Backoffice [**ui**]: Remove unused animation styles and document the motion conventions
+- Interfaces/Templates [**control**]: Read next meeting from the bookings driver
+- Interfaces/Templates [**locale**]: Remove dead keys and keep only en-gb and en-us differences
+- Interfaces/Templates [**common**]: Drop the unneeded locale override details fallback
+- Interfaces/Templates [**locale**]: Combine keys that have the same text and meaning
+- Swagger/RestAPI: Update for placeos-2.2611.7
+- Swagger/StaffAPI: Update for placeos-2.2611.7
+
+### Added
+
+- Interfaces/Backoffice [**ui**]: Toasts fade out, and the upload list, banner and tab counts animate in
+- Interfaces/Backoffice [**ui**]: Item details fade in over the skeleton, and the mobile menu slides in
+- Interfaces/Backoffice [**ui**]: Menus, select panels and the search overlay animate in
+- Interfaces/Backoffice [**ui**]: Pages crossfade on navigation, and the active tab and links slide to the new one
+- Interfaces/Templates: Set up booking, control and signage devices from a phone
+- Interfaces/Templates [**remote-setup**]: Cap devices at 1,000 and spread register calls
+- Interfaces/Templates [**remote-setup**]: Register only from the setup screen, clear by list
+- Interfaces/Templates [**remote-setup**]: Reconfigure devices that the driver does not list
+- Interfaces/Templates [**public**]: Stop rebuilding event card text on every render
+- Interfaces/Templates [**concierge**]: Start the group events request without timer delays
+- Interfaces/Templates [**concierge**]: Filter group events by level without a new request
+- Interfaces/Templates [**public**]: Keep loaded events and load recaptcha only when needed
+- Interfaces/Templates [**concierge**]: Skip the metadata requests when viewing a group event
+- Interfaces/Templates [**control**]: Move present options to the start of the display strip
+- Interfaces/Templates [**control**]: Only request events when the meeting modal opens
+- Services/Auth.cr [**saml**]: Verify cert-less strats against the idp's published metadata
+- Services/RestAPI [**websocket**]: Add support for binding to interfaces
+
 ## 2.2611.7
 
 ### Fixed
