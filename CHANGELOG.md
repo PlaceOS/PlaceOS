@@ -5,6 +5,13 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2611.9
+
+### Added
+
+- Interfaces/Templates [**signage-manager**]: Include child group content
+- Services/RestAPI [**signage**]: Support child group content and tag changes
+
 ## 2.2611.8
 
 ### Fixed
