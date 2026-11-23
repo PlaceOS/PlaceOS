@@ -4,14 +4,14 @@
     "linux/amd64",
     "linux/arm64"
   ],
-  "base_platform_commit": "3d9aab108de9adf79fa88d0d24288e44ec539a87",
-  "models_commit": "716ca764f68e09a72b9028aa3380fdb06a50a635",
+  "base_platform_commit": "ca943cd632671d70d84fb5d66cd5c181ee86aa11",
+  "models_commit": "26b6225598b0e9dc286ad5aa9ed25fa19662cbc2",
   "services": [
     {
       "name": "auth.cr",
       "path": "services/auth.cr",
       "repo": "https://github.com/PlaceOS/auth.cr.git",
-      "sha": "8f6b520372ef3aab535aa57ede3c3dacdc7218c7",
+      "sha": "dbb4299db5aa6a5e7ed7a5b7f9f72aea586b0500",
       "image": "docker.io/placeos/auth.cr:multi-tenancy"
     },
     {
@@ -25,42 +25,42 @@
       "name": "build_service",
       "path": "services/build_service",
       "repo": "https://github.com/placeos/build_service.git",
-      "sha": "4206237708a0dbc902782c1317daa07948e33195",
+      "sha": "e75ebe17ac55e1315d8a2705fb9c5eb948ce60ac",
       "image": "docker.io/placeos/build_service:multi-tenancy"
     },
     {
       "name": "core",
       "path": "services/core",
       "repo": "https://github.com/placeos/core.git",
-      "sha": "98791b8f528823853c7951d9433abfe41a47434d",
+      "sha": "0b841b0a05328d63d49e86db37fbc39c4bdeab89",
       "image": "docker.io/placeos/core:multi-tenancy"
     },
     {
       "name": "dispatch",
       "path": "services/dispatch",
       "repo": "https://github.com/placeos/dispatch.git",
-      "sha": "9c99aaf858a78a4ebfbb15fb8f3e57eddeaba23f",
+      "sha": "8e5a4113ea11054249dc3679f7df70fa190a3814",
       "image": "docker.io/placeos/dispatch:multi-tenancy"
     },
     {
       "name": "edge",
       "path": "services/edge",
       "repo": "https://github.com/placeos/core.git",
-      "sha": "98791b8f528823853c7951d9433abfe41a47434d",
+      "sha": "0b841b0a05328d63d49e86db37fbc39c4bdeab89",
       "image": "docker.io/placeos/edge:multi-tenancy"
     },
     {
       "name": "frontend-loader",
       "path": "services/frontend-loader",
       "repo": "https://github.com/placeos/frontend-loader.git",
-      "sha": "850e2f460162bce3b6abce5cefb715c08037035f",
+      "sha": "1210b80f67a0be5fddddf2291b1524b8511e9189",
       "image": "docker.io/placeos/frontend-loader:multi-tenancy"
     },
     {
       "name": "init",
       "path": "services/init",
       "repo": "https://github.com/placeos/init.git",
-      "sha": "2a986f86e0888fae6782ef09d5a63d566ce6e404",
+      "sha": "3bf71267b6a54593928188f0f32363641284918b",
       "image": "docker.io/placeos/init:multi-tenancy"
     },
     {
@@ -74,28 +74,28 @@
       "name": "rest-api",
       "path": "services/rest-api",
       "repo": "https://github.com/placeos/rest-api.git",
-      "sha": "1507d3a0120f25cc237eab9a90d8875c0b7438e7",
+      "sha": "0ae90b0a7809b7d6283c51678e6787b5df878892",
       "image": "docker.io/placeos/rest-api:multi-tenancy"
     },
     {
       "name": "source",
       "path": "services/source",
       "repo": "https://github.com/placeos/source.git",
-      "sha": "68f70cbf083146f2eab7d557c57d5f5ee5b5435d",
+      "sha": "dc1d5db8bc1898f9dec82cb52aae83c220a4669a",
       "image": "docker.io/placeos/source:multi-tenancy"
     },
     {
       "name": "staff-api",
       "path": "services/staff-api",
       "repo": "https://github.com/placeos/staff-api.git",
-      "sha": "a9b8a2141f6f63c07dc6b7931e88717af2f8d8c0",
+      "sha": "623ab3ddd39a35df7d30e06ba58db46060e2bbab",
       "image": "docker.io/placeos/staff-api:multi-tenancy"
     },
     {
       "name": "triggers",
       "path": "services/triggers",
       "repo": "https://github.com/placeos/triggers.git",
-      "sha": "8296bea9e53de5f50afe46b7ad718926883d4d05",
+      "sha": "e436fa007c444617e7f6e65f17dac86ee68c53e6",
       "image": "docker.io/placeos/triggers:multi-tenancy"
     }
   ]

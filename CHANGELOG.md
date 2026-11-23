@@ -5,6 +5,22 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2611.8
+
+### Fixed
+
+- Interfaces/Templates [**signage**]: Stop the player crashing sony tv browsers on load
+- Libraries/Models: Describe converted model timestamps as integers ([#342](https://github.com/PlaceOS/placeos-models/pull/342))
+- Libraries/Models: Describe serialized model fields in openapi ([#343](https://github.com/PlaceOS/placeos-models/pull/343))
+- Services/RestAPI [**openapi**]: Document unix-second timestamps as integers ([#469](https://github.com/PlaceOS/rest-api/pull/469))
+- Services/RestAPI [**openapi**]: Align schemas with serialized fields ([#471](https://github.com/PlaceOS/rest-api/pull/471))
+- Services/StaffAPI [**openapi**]: Document staff api wire responses ([#398](https://github.com/PlaceOS/staff-api/pull/398))
+
+### Added
+
+- Services/Auth.cr [**saml**]: Verify cert-less strats against the idp's published metadata
+- Services/RestAPI [**websocket**]: Add support for binding to interfaces
+
 ## 2.2611.7
 
 ### Fixed
