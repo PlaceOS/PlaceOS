@@ -12,16 +12,6 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 - Interfaces/Templates [**signage-manager**]: Include child group content
 - Services/RestAPI [**signage**]: Support child group content and tag changes
 
-### Fixed
-
-- Interfaces/Templates [**apps**]: Stop failed debug launcher loads raising ng0750
-- Interfaces/Templates [**apps**]: Stop failed chat loads raising ng0750
-
-### Changed
-
-- Swagger/RestAPI: Update for placeos-2.2611.8
-- Swagger/StaffAPI: Update for placeos-2.2611.8
-
 ## 2.2611.8
 
 ### Fixed
