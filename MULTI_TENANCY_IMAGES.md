@@ -4,20 +4,13 @@ Owner: stakach. Start date: 2026-11-18 (Australia/Sydney). Tracking: [PlaceOS/re
 
 Build all 13 services discovered by the canonical platform build using Buildx for `linux/amd64` and `linux/arm64`, publishing only `docker.io/placeos/<service>:multi-tenancy`. The current planned inputs are in `multi-tenancy-images.json`. Models is a library/migration input, not a runtime image. The earlier verified publication is recorded separately in `multi-tenancy-image-receipt.json` and `multi-tenancy-images.lock`; those files remain immutable evidence for that snapshot.
 
-## Refresh prepared on 2026-11-23
+## Refresh published on 2026-11-23
 
-The planned manifest is being refreshed from default branch `nightly` at `ca943cd632671d70d84fb5d66cd5c181ee86aa11`, retaining the four updated multi-tenancy feature heads. Other service and interface pins follow that upstream snapshot. This candidate has not been built or published; the historical receipt and immutable pull references below do not verify its new inputs.
+[Build 45105437771](https://github.com/PlaceOS/PlaceOS/actions/runs/45105437771) published the 13 `docker.io/placeos/<service>:multi-tenancy` tags from PlaceOS commit `96bd0b73bf6ad73c1eeb6126988b8cee9884b38c`, based on `nightly` commit `ca943cd6`. All 26 native architecture builds and 13 publication jobs passed. GitHub skipped Tag and release in images-only mode.
 
-The upstream native-runner build change (#379) replaces QEMU with separate `amd64` and `arm64` jobs (`ubuntu-latest` and `ubuntu-24.04-arm`). The 26 architecture jobs push by digest; 13 publication jobs then assemble the two-platform tags after the selected builds succeed. The release environment gate remains on architecture builds. Init retains its BuildKit worker limit of one. An exact single-service retry now selects two architecture jobs and one publication job.
+The [refresh receipt](multi-tenancy-image-receipt-96bd0b73.json) records immutable pull references and source verification for both architectures of each image. Live Docker Hub platform digests match the native build outputs, and the registry config blobs match the expected source revision and tag on both architectures. The temporary feature-branch rule was removed after verification and the release environment matched its original configuration.
 
-The image-only dispatch requirement for `multi-tenancy`, full-SHA source resolution, selected-service validation, resolved `PLACE_COMMIT`, and the entire Tag and release exclusion remain intact. Static checks execute the actual source/tag/digest shell steps against fixtures and a Docker stub; no build, tag publication, environment change or release was performed for this refresh.
-
-- [x] Merge current default branch normally, preserving feature pins and test-build controls.
-- [x] Adopt upstream native architecture builds and digest-based publication.
-- [x] Pass targeted actionlint and actual-workflow script checks.
-- [ ] Confirm refreshed feature CI and review the concrete planned source snapshot.
-- [ ] Approve and run a fresh images-only build.
-- [ ] Verify the new registry manifests and init payload, then record a separate receipt.
+Use `docker.io/placeos/init@sha256:d29be022c138a97172a0f97429de2dc0f5af0ee8b13b5463346b814a70f28599` to rerun the existing init job. Both init build logs show models `26b6225` and the migration copy step. Docker Hub rate-limited the anonymous manifests, so the new init image contents could not be checked independently by pull.
 
 ## Original publication plan and verification
 
