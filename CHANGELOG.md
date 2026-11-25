@@ -9,39 +9,7 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 
 ### Fixed
 
-- Interfaces/Backoffice: Parse json-text metadata details, fix history dates, keep console out of sentry
-- Interfaces/Backoffice: Bugs found by the local e2e suite
-- Interfaces/Backoffice: Guard the module power reply and share only running metadata loads
-- Interfaces/Backoffice: Keep 6.x behaviour for missing metadata, offline sign-in and empty webhook methods
-- Interfaces/Backoffice [**triggers**]: A new trigger gets post as its webhook method again
-- Interfaces/Backoffice [**ui**]: Sidebar loads applications once, popup refreshes on open
-- Interfaces/Templates [**payments**]: Close the gaps that review found in the checkout
-- Interfaces/Templates [**payments**]: Disable payments outside a secure context
-- Interfaces/Templates [**concierge,signage-manager**]: Tidy the remote debugging admin views
-- Interfaces/Templates [**components**]: Keep the debug panel in step with the driver
-- Interfaces/Templates [**payments**]: Close the gaps that the council review found
-- Interfaces/Templates [**payments**]: Settle the items that the council review disputed
-- Interfaces/Templates [**concierge,signage-manager**]: Keep the device selection steady and list template players
-- Interfaces/Templates [**components**]: Run panel calls in order and stop them when the panel closes
-- Interfaces/Templates [**common**]: Filter credentials and keep captures in the memory limit
-- Interfaces/Templates [**concierge**]: Show which device open goes to
-- Interfaces/Templates [**components**]: Keep the selected level until the driver shows it
-- Interfaces/Templates [**common**]: Check every viewer binding field and keep plain code= text
-- Interfaces/Templates [**mocks**]: Release the capture files of removed devices
-- Interfaces/Templates [**common**]: Register devices set up without a reload and scale canvases in captures
-- Interfaces/Templates [**payments**]: Leave out declined rooms in take payment
-- Interfaces/Templates [**payments**]: Reload on building change and show failed releases
-- Interfaces/Templates [**payments**]: Show failed releases in place of the save error and send a refund request id
-- Interfaces/Templates [**payments**]: New refund request id for changed values
-- Interfaces/Templates [**payments**]: Keep a failed refund fixed until it is settled
-- Interfaces/Templates [**payments**]: Load the payment once before a new refund
-- Interfaces/Templates [**control**]: Stop the camera after a quick joystick tap
-- Interfaces/Templates [**common**]: Strip console colour styles from sentry breadcrumbs
-- Interfaces/Templates [**concierge**]: Keep declined bookings in filtered report downloads
-- Interfaces/Templates [**control**]: Show a notice when a lighting command times out, not an unhandled error
-- Interfaces/Templates [**common**]: Reload when the service worker installs an update unannounced
 - Libraries/Driver [**driver**]: Redact execution errors for sensitive methods ([#174](https://github.com/PlaceOS/placeos-driver/pull/174))
-- Libraries/Driver [**ci**]: Repair alpine setup and json schema specs ([#175](https://github.com/PlaceOS/placeos-driver/pull/175))
 - Services/Auth.cr: Route outbound internet fetches through https_proxy
 - Services/Auth.cr: Route entra discovery and jwks fetches through https_proxy
 - Services/Auth.cr: Pin client metadata connections to validated addresses
@@ -49,24 +17,9 @@ and this project adheres to [PlaceOS Platform Versioning](https://github.com/Pla
 ### Changed
 
 - Interfaces/Backoffice [**deps**]: Migrate to @placeos/ts-client 7
-- Interfaces/Backoffice [**deps**]: Use ts-client 7.0.0-next.2 and drop its workarounds
-- Interfaces/Backoffice: Share page, settings and http error helpers, remove dead code
-- Interfaces/Backoffice: One save path per item type, typed active item, empty lists on load
-- Interfaces/Templates: Copy the md5 upload worker into the device app builds
-- Swagger/RestAPI: Update for placeos-2.2611.9
-- Swagger/StaffAPI: Update for placeos-2.2611.9
 
 ### Added
 
-- Interfaces/Templates [**payments**]: Add a generic payment driver and payment pages
-- Interfaces/Templates [**payments**]: Reopen the hosted page of an open payment
-- Interfaces/Templates [**payments**]: Show the payment of a booking in the concierge lists
-- Interfaces/Templates [**mocks**]: Add a mock remotedebug driver
-- Interfaces/Templates [**common**]: Add remote debugging for logs, status and screen captures
-- Interfaces/Templates [**concierge,signage-manager**]: Add remote debugging admin views
-- Interfaces/Templates [**components**]: Add a remote debugging panel for admin views
-- Interfaces/Templates [**common**]: Register fixed devices so the debug views list them
-- Interfaces/Templates [**components**]: Clearer remote debugging views
 - Interfaces/Templates [**signage-manager**]: Show the group hierarchy in the group select
 - Interfaces/Templates [**signage-manager**]: Support heif and heic uploads
 - Interfaces/Templates [**concierge**]: Download booking reports without cancellations
