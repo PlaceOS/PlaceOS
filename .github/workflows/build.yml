@@ -9,11 +9,27 @@ on:
   push:
     branches:
       # Monthly releases
-      - '[0-9]+\.[0-9][0-9][0-9][0-9]'
+      - '[0-9]+.[0-9][0-9][0-9][0-9]'
       # Release candidates
-      - '[0-9]+\.[0-9][0-9][0-9][0-9]\.[0-9]+\-preview'
+      - '[0-9]+.[0-9][0-9][0-9][0-9].[0-9]+-preview'
 
   workflow_dispatch:
+    inputs:
+      images_only:
+        description: Build images without Git tags, releases or notifications
+        required: true
+        type: boolean
+        default: false
+      source_ref:
+        description: Optional immutable platform source SHA for an images-only retry
+        required: false
+        type: string
+        default: ''
+      service:
+        description: Optional single discovered service to retry in images-only mode
+        required: false
+        type: string
+        default: ''
 
 env:
   CRYSTAL_VERSION: latest
@@ -25,20 +41,65 @@ jobs:
   discover:
     runs-on: ubuntu-latest
     outputs:
-      services: ${{ steps.introspect.outputs.services }}
+      services: ${{ steps.select.outputs.services }}
       version:  ${{ steps.introspect.outputs.version }}
-      commit:   ${{ github.sha }}
+      commit:   ${{ steps.source.outputs.commit }}
     name: Discover
     steps:
     -
       name: Checkout local actions and scripts
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+    -
+      name: Resolve immutable source
+      id: source
+      shell: bash
+      env:
+        IMAGES_ONLY: ${{ inputs.images_only }}
+        SOURCE_REF: ${{ inputs.source_ref }}
+        SERVICE: ${{ inputs.service }}
+      run: |
+        if [[ "$IMAGES_ONLY" == 'true' ]]; then
+          source_ref="${SOURCE_REF:-$GITHUB_SHA}"
+          [[ "$source_ref" =~ ^[0-9a-f]{40}$ ]] || { echo 'source_ref must be a full commit SHA' >&2; exit 1; }
+          echo "ref=$source_ref" >> "$GITHUB_OUTPUT"
+          echo "commit=$source_ref" >> "$GITHUB_OUTPUT"
+        else
+          [[ -z "$SOURCE_REF" && -z "$SERVICE" ]] || { echo 'source/service overrides require images_only' >&2; exit 1; }
+          echo "ref=$GITHUB_REF" >> "$GITHUB_OUTPUT"
+          echo "commit=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+        fi
     -
       name: Discover services
       id:   introspect
       uses: ./.github/actions/platform-info
       with:
-        ref: ${{ github.ref }}
+        ref: ${{ steps.source.outputs.ref }}
+    -
+      name: Validate multi-tenancy test build
+      if: ${{ steps.introspect.outputs.version == 'multi-tenancy' }}
+      shell: bash
+      env:
+        IMAGES_ONLY: ${{ inputs.images_only }}
+      run: |
+        if [[ "$IMAGES_ONLY" != 'true' ]]; then
+          echo 'multi-tenancy requires an explicit images-only workflow dispatch' >&2
+          exit 1
+        fi
+
+    -
+      name: Select services
+      id: select
+      shell: bash
+      env:
+        SERVICES: ${{ steps.introspect.outputs.services }}
+        SERVICE: ${{ inputs.service }}
+      run: |
+        selected="$SERVICES"
+        if [[ -n "$SERVICE" ]]; then
+          selected="$(jq -c --arg name "$SERVICE" '[.[] | select(.name == $name)]' <<< "$SERVICES")"
+          [[ "$(jq 'length' <<< "$selected")" == '1' ]] || { echo 'service must match one discovered service' >&2; exit 1; }
+        fi
+        echo "services=$selected" >> "$GITHUB_OUTPUT"
 
   build:
     needs: discover
@@ -65,6 +126,9 @@ jobs:
     -
       name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v4
+      with:
+        # Bound init build workers even though each architecture has its own runner.
+        buildkitd-config-inline: ${{ matrix.service.name == 'init' && 'worker.oci.max-parallelism = 1' || '' }}
     -
       name: Build image
       id: build
@@ -201,6 +265,7 @@ jobs:
         docker buildx imagetools create "${tag_args[@]}" "${images[@]}"
 
   release:
+    if: ${{ needs.discover.outputs.version != 'multi-tenancy' && !inputs.images_only }}
     needs:
       - publish
       - discover
@@ -209,7 +274,7 @@ jobs:
     steps:
       -
         name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       -
         name: Tag
         shell: bash
@@ -260,7 +325,7 @@ jobs:
       # TODO: See if there's a way to embed a range of text from the CHANGELOG, like a code snippet.
       -
         name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         if: ${{ steps.prepare-release.outputs.should-release == 'true' }}
         with:
           token: ${{ github.token }}
