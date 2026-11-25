@@ -5,6 +5,26 @@ All notable changes to PlaceOS are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PlaceOS Platform Versioning](https://github.com/PlaceOS/PlaceOS/blob/release/README.md#platform-versioning).
 
+## 2.2611.10
+
+### Fixed
+
+- Libraries/Driver [**driver**]: Redact execution errors for sensitive methods ([#174](https://github.com/PlaceOS/placeos-driver/pull/174))
+- Services/Auth.cr: Route outbound internet fetches through https_proxy
+- Services/Auth.cr: Route entra discovery and jwks fetches through https_proxy
+- Services/Auth.cr: Pin client metadata connections to validated addresses
+
+### Changed
+
+- Interfaces/Backoffice [**deps**]: Migrate to @placeos/ts-client 7
+
+### Added
+
+- Interfaces/Templates [**signage-manager**]: Show the group hierarchy in the group select
+- Interfaces/Templates [**signage-manager**]: Support heif and heic uploads
+- Interfaces/Templates [**concierge**]: Download booking reports without cancellations
+- Interfaces/Templates [**stagehand**]: Subscribe to offline device topics
+
 ## 2.2611.9
 
 ### Added
